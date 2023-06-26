@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="History and evolution of programming languages">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="programming, languages, evolution, history">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>SC Languages</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="../https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="prism.css">
+  <script src="prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="../index.html" rel="nofollow">engineering</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>Programming Languages</h1>
+
+<div class="alert alert-secondary shadow-sm">Programming languages are artificial languages created for humans to create computer software and resolve problems. In general, artificial languages are simpler than spoken languages but more precise.</div>
+
+<h4>Page bookmarks</h4>
+
+<ul>
+<li><a href="#classification">Language classification</a></li>
+<li><a href="#history">Historic Languages</a></li>
+<li><a href="#traditional">Traditional Languages</a></li>
+<li><a href="#emerging">Emerging Languages</a></li>
+<li><a href="#features">Language features</a></li>
+<li><a href="#future">Future development</a></li>
+</ul>
+
+<hr>
+
+<h4>Learning languages</h4>
+
+<p>Making software applications implicit requires you to learn a programming language. Before you do you must understand this is not an easy task and it will require significant effort. To learn a new language you have to learn these things:</p>
+
+<ul>
+<li>Logic &ndash; already presented;</li>
+<li>Paradigms &ndash; the conceptual design;</li>
+<li>Syntax &ndash; the words and rules of the language;</li>
+<li>Semantic &ndash; the way we create statements; </li>
+<li>Packages &ndash; standard library and components;</li>
+</ul>
+
+<p><b>Example:</b> Next is a complete program written in Python:</p>
+
+<pre><code class="language-python"># compute factorial of n
+def factorial(n):
+    if n==0:
+        return 1
+    else:
+        return n*factorial(n-1)
+# call factorial function and capture result
+result=factorial(5)
+print(result)</code></pre>
+
+<p>Note: The programming languages and computer languages are synonyms. However I think a computer language signify languages more close to the machine while programming language are more abstract.</p>
+
+
+<h2><a id="classification">Language classification</a></h2>
+
+<p>Computer languages can be categorized by the complexity and purpose in [1-5] generations:</p>
+
+<p><b>A: Close to machines</b></p>
+<ul>
+<li>1GL &ndash; First Generation:</li>
+<li>2GL &ndash; Second Generation</li>
+</ul>
+<p><b>B: Close to humans</b></p>
+<ul>
+<li>3GL &ndash; Third Generation Language</li>
+<li>4GL &ndash; Forth Generation Language</li>
+<li>5GL &ndash; Fifth Generation Language</li>
+</ul>
+<h4>Examples:</h4>
+<ul>
+<li>Machine code is 1'st generation language;</li>
+<li>Assembly is 2'nd generation language;</li>
+<li>C is 3'rd generation language;</li>
+<li>Java is 3'rd generation language;</li>
+<li>SQL is a 4'th generation language;</li>
+<li>Haskell is a 4'th generation language;</li>
+</ul>
+
+<div class="alert alert-info shadow-sm">
+<b>Info: </b>A language once implemented can&rsquo;t be changed too much, or if you do you can loose your customers. So to make improvements you need to create a new language from scratch. Therefore today we have numerous computer languages competing for usability or performance.
+</div>
+
+<p>I have organized programming languages in 6 categories each containing top 5. This was a research project I have done in 2017 using Google+ surveys. I will try to update this top every year using Twitter since Google+ is gone now. Follow me and vote when I post articles about it. The link for twitter the little bird icon on bottom of this page.</p>
+
+<div class="alert alert-warning"><span style="color:brown">Disclaimer:&nbsp;</span>In next classification, the languages are ordered of our estimated technical value not in order of popularity. For independent popularity index you can study the: official <em><a href="https://www.tiobe.com/tiobe-index/" rel="nofollow noopener noreferrer">tiobe engineering</a></em></div>
+
+<h3>A: First class compiled languages</h3>
+<p>These are very efficient languages for creation of native applications on diverse platforms. These languages have static types and all are curly bracket languages from C family except Nim.</p>
+<ul>
+<li>Go &ndash; default for Google cloud;</li>
+<li>Rust &ndash; Mozilla native language;</li>
+<li>Swift &ndash; specific to Apple OS;</li>  
+<li>Nim &ndash; statically typed system language;</li>    
+</ul>
+
+<h3>B: Traditional compiled languages</h3>
+<ul>
+<li>Assembly &ndash; second generation language;</li>
+<li>C/C++ This is the king of computer languages;</li>
+<li>Fortran &ndash; fast language created by IBM</li>
+<li>Ada &ndash; very robust language designed for US army</li>
+<li>Pascal/Delphi &ndash; my first computer language;</li>
+<li>D &ndash; A very fast system language;</li>
+</ul>
+
+<h3>C: Virtual machine or interpreted</h3>
+<ul>
+<li>JavaScript &ndash; default language for web;</li>
+<li>Python &ndash; the most easy to learn language;</li>
+<li>Java &ndash; open source language created by SUN and maintained by Oracle;</li>
+<li>C# &ndash; default language for Microsoft Visual Studio;</li>
+<li>Dart &ndash; client-optimized programming language for apps on multiple platforms.</li>
+</ul>
+
+<h3>D: Java Virtual Machine (JVM)</h3>
+<ul>
+<li>Kotlin &ndash; a new computer language created by Jetbrains company;</li>
+<li>Scala &ndash; this is also a functional language;</li>
+<li>JRuby &ndash; a dynamic language derived from Ruby;</li>
+<li>Groovy &ndash; a dynamic language for website back-end;</li>
+<li>Jyton &ndash; a Python dialect that can run in JVM;</li>
+</ul>
+
+<h3>E: Dynamic Languages</h3>
+<ul>
+<li>Julia &ndash; is a new dynamic language similar to Python but faster;</li>
+<li>Ruby &ndash; a language created for dynamic website back-end;</li>
+<li>Python &ndash; a very popular dynamic language;</li>
+<li>Perl &ndash; a scripting language created for command line and back-end programming;</li>
+<li>Lisp &ndash; a functional language that is very dynamic;</li>
+</ul>
+
+<h3>F: Functional languages</h3>
+<ul>
+<li>Scala &ndash; this is mentioned second time here so it is a functional language for JVM;</li>
+<li>Haskell &ndash; this is the most pure functional language similar to OCaml;</li>
+<li>OCaml &ndash; one of the first functional languages;</li>
+<li>Closure &ndash; this is a functional language similar to Lisp that run in JVM;</li>
+<li>F# &ndash; this is a functional language for Microsoft Visual Studio;</li>
+</ul>
+
+<h2><a id="history">Historic Languages</a></h2>
+
+<p>Languages that have more then 40 years are considered traditional. That is before the Internet was born. That was the golden age of classic computer languages: { Fortran, Lisp, Simula, Algol, Pascal, B, C, C++, Forth, Scheme, ML, Smalltalk. } Two of these languages remain very influential:&nbsp;<b>C</b>&nbsp;family and&nbsp;<b>Algol</b>&nbsp;family. Functional languages are derived from Lisp and Object oriented languages are derived from Simula.</p>
+
+<div class="center">
+    <img src="img/ace-1945.jpg" class="img-fluid protect rounded shadow border" alt="Alan Turing Computer">
+    <p>Ace-1945 Computer <br>
+    design by Alan Turing</p>
+</div>
+
+
+<h2><a id="traditional"></a>Traditional Languages</h2>
+
+<p>Next computer languages are less then 40 years old. Let&rsquo;s review some of them. Maybe you will find a language that you can learn to create your next project with it. I will update this list from time to time with new languages I find worthy.</p>
+<table class="table table-striped table-bordered table-dark">
+<thead>
+<tr>
+<th>Year</th>
+<th>Name</th>
+<th>Homepage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1983</td>
+<td>Ada</td>
+<td><a href="http://www.adacore.com/" rel="nofollow">http://www.adacore.com/</a></td>
+</tr>
+<tr>
+<td>1986</td>
+<td>Erlang</td>
+<td><a href="https://www.erlang.org/" rel="nofollow">https://www.erlang.org/</a></td>
+</tr>
+<tr>
+<td>1990</td>
+<td>Haskell</td>
+<td><a href="https://www.haskell.org/" rel="nofollow">https://www.haskell.org</a></td>
+</tr>
+<tr>
+<td>1990</td>
+<td>Ruby</td>
+<td><a href="https://www.ruby-lang.org/" rel="nofollow">https://www.ruby-lang.org/</a></td>
+</tr>
+<tr>
+<td>1991</td>
+<td>Python</td>
+<td><a href="https://www.python.org/" rel="nofollow">https://www.python.org/</a></td>
+</tr>
+<tr>
+<td>1993</td>
+<td>Lua</td>
+<td><a href="https://www.lua.org/about.html" rel="nofollow">https://www.lua.org/about.html</a></td>
+</tr>
+<tr>
+<td>1995</td>
+<td>Racket</td>
+<td><a href="https://racket-lang.org/" rel="nofollow">https://racket-lang.org/</a></td>
+</tr>
+<tr>
+<td>1995</td>
+<td>Java</td>
+<td><a href="https://www.oracle.com/java/technologies/" rel="nofollow">https://www.oracle.com/java/technologies/</a></td>
+</tr>
+<tr>
+<td>1995</td>
+<td>JavaScript</td>
+<td><a href="https://www.ecma-international.org/ecma-262/6.0/" rel="nofollow">https://www.ecma-international.org/ecma-262/6.0/</a></td>
+</tr>
+<tr>
+<td>2001</td>
+<td>Scala</td>
+<td><a href="http://www.scala-lang.org/" rel="nofollow">http://www.scala-lang.org</a></td>
+</tr>
+<tr>
+<td>2009</td>
+<td>Closure</td>
+<td><a href="http://clojure.org/" rel="nofollow">http://clojure.org</a></td>
+</tr>
+<tr>
+<td>2009</td>
+<td>Go</td>
+<td><a href="https://golang.org/" rel="nofollow">https://golang.org</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2><a id="emerging"></a>Emerging Languages</h2>
+
+<p>These languages are not yet ready but promising. We are going to research these languages in our programming classes. If you wish you can learn these languages by yourself but only if you are not yet busy working for raising a family or having a busy life.</p>
+
+<table class="table table-striped table-bordered table-dark">
+<thead>
+<tr>
+<th>Year</th>
+<th>Name</th>
+<th>Homepage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2011</td>
+<td>Dart</td>
+<td><a href="https://www.dartlang.org/" rel="nofollow">https://www.dartlang.org</a></td>
+</tr>
+<tr>
+<td>2011</td>
+<td>Elixir</td>
+<td><a href="https://elixir-lang.org/" rel="nofollow">https://elixir-lang.org/</a></td>
+</tr>
+<tr>
+<td>2012</td>
+<td>Julia</td>
+<td><a href="http://julialang.org/" rel="nofollow">http://julialang.org</a></td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Rust</td>
+<td><a href="https://www.rust-lang.org/" rel="nofollow">https://www.rust-lang.org</a></td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Swift</td>
+<td><a href="https://swift.org/" rel="nofollow">https://swift.org</a></td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Hack</td>
+<td><a href="http://hacklang.org/" rel="nofollow">http://hacklang.org</a></td>
+</tr>
+<tr>
+<td>2014</td>
+<td>Crystal</td>
+<td><a href="https://crystal-lang.org/" rel="nofollow">https://crystal-lang.org/</a></td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Nim</td>
+<td><a href="https://nim-lang.org/" rel="nofollow">https://nim-lang.org/</a></td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Kotlin</td>
+<td><a href="https://kotlinlang.org/" rel="nofollow">https://kotlinlang.org/</a></td>
+</tr>
+<tr>
+<td>2016</td>
+<td>Zig</td>
+<td><a href="https://ziglang.org/" rel="nofollow">https://ziglang.org/</a></td>
+</tr>
+<tr>
+<td>2018</td>
+<td>ELM</td>
+<td><a href="https://elm-lang.org/" rel="nofollow">https://elm-lang.org/</a></td>
+</tr>
+<tr>
+<td>2022</td>
+<td>Carbon</td>
+<td><a href="https://github.com/carbon-language/carbon-lang" rel="nofollow">https://github.com/carbon-language</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2><a id="features"></a>Language features</h2>
+
+<p>To describe a computer language you can enumerate it&rsquo;s features. These are characteristics or attributes that can be compared. Some languages looks like each other and create a family. Here are the most significant features.</p>
+<table class="table table-striped table-bordered table-dark">
+<thead>
+<tr>
+<th>FEATURE</th>
+<th>DESCRIPTION</th>
+<th>DETAILS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Syntax style</td>
+<td>Different syntax styles can create a so called language family.</td>
+<td>C, Algol</td>
+</tr>
+<tr>
+<td>Programming paradigm</td>
+<td>Is the programming style or concept.</td>
+<td>Procedural, Declarative, Object Oriented, Logical, Functional</td>
+</tr>
+<tr>
+<td>Execution mode</td>
+<td>The way final program works</td>
+<td>Interpreted, Virtual machine or Compiled</td>
+</tr>
+<tr>
+<td>Type system</td>
+<td>Data types can be defined during design time or run-time</td>
+<td>Dynamic/ Static/ Gradual </td>
+</tr>
+<tr>
+<td>Scope Model</td>
+<td>How sub-programs and functions store local scope variables.</td>
+<td>Dynamic (stack)/ Static (hip)</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>The way we can use parameters in procedures and functions</td>
+<td>Optional parameters, Variadic parameter, default values etc.</td>
+</tr>
+<tr>
+<td>Dispatch</td>
+<td>The way we identify a function</td>
+<td>Function overloading/ Signature</td>
+</tr>
+<tr>
+<td>Exceptions</td>
+<td>The way we deal with errors</td>
+<td>Exception handling (try) or not</td>
+</tr>
+<tr>
+<td>Memory management</td>
+<td>The way we allocate and free memory during execution</td>
+<td>Manual / Garbage Collector / Reference counting</td>
+</tr>
+<tr>
+<td>Character set</td>
+<td>The characters we can use for keywords operators and constants</td>
+<td>ASCII / Unicode</td>
+</tr>
+</tbody>
+</table>
+
+<h2><a id="future"></a>Future development</h2>
+
+<div class="alert alert-secondary shadow-sm">Why are we creating so many new computer languages? I will try to clarify this subject. To do so, I have search YouTube for a relevant video about the <em>"future of programming languages"</em> and I have found one. It is all about learning from history.</div>
+
+<p>There are many computer languages out there and takes a lifetime to learn them all. The languages with the strongest position in software industry are: Fortran, C, C++, Objective-C and Lisp. New computer languages are created because old computer languages can not be fixed.</p>
+<p>Once a computer language was used in production it is needed unchanged for support. If is changing too much then it becomes a new computer language. This is what happen to Niklaus Wirth languages. They have evolved too fast: Pascal, Modula, Oberon. All genial, all forgotten.</p>
+<p>For developers is very difficult to switch from one computer language to another. Every new computer language promises to correct previous issues from other languages. Some languages may have new paradigms that may be even harder to grasp.</p>
+
+<h4>Bob Martin</h4>
+
+<p>Next video is about 1h +20min. If you have the time, I highly recommend this speech about the future of programming languages. This video is very popular it has now 23k views. I have enjoyed watching, it is very informative and fun!</p>
+
+<div class="center">
+    <a href="https://www.youtube.com/watch?v=ecIWPzGEbFc"
+    target="_blank" rel="nofollow noopener noreferrer">
+    <img src="https://sagecode.net/images/youtube.svg" width="200" alt="Programming"></a>
+</div>
+
+<hr>
+
+<div class="alert alert-danger"><span style="color:brown">Conclusion from this video:&nbsp;</span>Sooner or later programming languages will be ruled by politicians. We will have regulations surrounding programming activity and probable the government will approve one or other language for most critical applications.</div>
+
+<h4>My opinion</h4>
+
+<p>Programming languages should improve communication between humans. We write and read the code, not the computers. The computer should do whatever we tell him to do. It should be able to compile any kind of language. The strive is to make languages that are efficient to compile but also programmer friendly.</p>
+
+<p>In the future, programmers will avoid regulations and will create disruptive new, open source programming languages. There will be always rogue programmers. Rogue languages will be learned quickly by smart individuals who need jobs and will become influential because they will work better. The government do not like to spend money on technology so they will chose open source languages that can't be regulated.</p>
+
+<hr>
+<p><b>Read next:</b>
+<a href="paradigms.html">Programming Paradigms</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

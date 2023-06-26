@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Data structures overview. Research paper.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="software, engineering, data structures">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Data Structures</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="../https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="prism.css">
+  <script src="prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="../index.html" rel="nofollow">engineering</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>SC Data Structures</h2>
+
+<div class="alert alert-secondary shadow-sm">
+Data structures are specialized formats for organizing and storing data in a computer's memory or on disk. They are used to efficiently perform operations on data in various algorithms and applications. In computer science, data structures are divided into two main categories:
+</div>
+
+<ul>
+  <li><strong>Primitive data types:</strong> These are the most basic types of data in computer science, and include simple values like integers, floating-point numbers, and characters.</li>
+
+  <li><strong>Abstract data types:</strong> Also known as ADTs, these are complex structures that consist of multiple primitive data types and operations that can be performed on them. Examples of ADTs include linked lists, binary trees, hash tables, and stacks and queues.</li>
+</ul>
+
+<h4>Page bookmarks</h4>
+<hr>
+<ul>
+  <li><a href="#arrays">Arrays</a></li>
+  <li><a href="#lists">Linked Lists</a></li>
+  <li><a href="#stacks">Stacks</a></li>
+  <li><a href="#queues">Queues</a></li>
+  <li><a href="#heaps">Heaps</a></li>
+  <li><a href="#trees">Trees</a></li>
+  <li><a href="#graphs">Graphs</a></li>
+  <li><a href="#hash">Hash Tables</a></li>
+  <li><a href="#exotic">Exotic structures</a></li>
+  <li><a href="#strings">String representation</a></li>
+</ul>
+<hr>
+
+<h2>Well known</h2>
+
+<p>The choice of data structure often depends on the specific problem being solved and the operations that are required to be performed on the data. Some structures are better suited to certain kinds of algorithms or data types, and may offer advantages in memory usage or processing time over others. These are most common data structures:</p>
+
+<hr>
+<h2><a id="arrays"></a>Arrays</h2>
+
+<p>An array is a collection of elements of same data type arranged in contiguous memory locations.</p>
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a homogeneous collection of elements</li>
+  <li>Elements are stored in contiguous memory locations</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Accessing elements has constant time complexity</li>
+  <li>Easy to implement and use</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Storing and accessing a collection of specific size</li>
+  <li>Implementing dynamic programming algorithms</li>
+</ul>
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Insertion and deletion operations can be slow if the array needs to be resized</li>
+  <li>Insertion and deletion can be slow because items must often be shifted in memory.</li>
+</ul>
+
+<hr>
+
+<h2><a id="lists"></a>Linked Lists</h2>
+
+<p>A list is a series of nodes, each containing some data and a pointer to the next node.</p>
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a homogeneous or heterogeneous collection of elements</li>
+  <li>Elements are stored in non-contiguous memory locations and linked with pointers</li>
+</ul>
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Insertion and deletion have constant time complexity</li>
+  <li>Memory can be optimized by removing unused space</li>
+</ul>
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing dynamic data structures</li>
+  <li>Implementing queues and stacks</li>
+</ul>
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Accessing elements has linear time complexity</li>
+  <li>Extra memory is required to store pointers</li>
+</ul>
+<hr>
+
+<h3><a id="stacks"></a>Stacks</h3>
+ <p>A stack is a collection of elements, with push and pop operations that allow elements to be added or removed only from the top of the stack.</p>
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a homogeneous or heterogeneous collection of elements</li>
+  <li>Elements are accessed using LIFO (last-in-first-out) ordering</li>
+  <li>Supports push and pop operations</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Easy to implement and use</li>
+  <li>Can be used to reverse a sequence of elements</li>
+</ul>
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing algorithms involving recursion</li>
+  <li>Implementing undo-redo functionality</li>
+</ul>
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Accessing elements other than the topmost element has linear time complexity</li>
+  <li>The stack size is limited by the available memory</li>
+</ul>
+
+
+<hr>
+<h3><a id="queues"></a>Queues</h3>
+<p>A queue is a collection of elements, where elements are inserted at the back and removed from the front.</p>
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a homogeneous or heterogeneous collection of elements</li>
+  <li>Elements are accessed using FIFO (first-in-first-out) ordering</li>
+  <li>Supports enqueue and dequeue operations</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Easy to implement and use</li>
+  <li>Can be used to implement a buffering system</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing a waiting line system</li>
+  <li>Implementing a cache</li>
+</ul>
+
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Accessing elements other than the frontmost element has linear time complexity</li>
+  <li>The queue size is limited by the available memory</li>
+</ul>
+
+<hr>
+<h3><a id="heaps"></a>Heaps</h3>
+ <p>A heaps is a complete binary tree in which every level of the tree is completely filled except for the last level, which is filled from left to right, and every node is greater than or equal to (or less than or equal to) its children, as per the type of heap.</p>
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a homogeneous collection of elements</li>
+  <li>Elements are stored in a binary tree structure</li>
+  <li>Supports efficient insertion and removal of the minimum or maximum element</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Efficient for finding the minimum or maximum element</li>
+  <li>Can be used to implement priority queues</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing algorithms such as heap sort and Dijkstra's algorithm</li>
+  <li>Implementing a priority queue</li>
+</ul>
+
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Accessing elements other than the topmost element has linear time complexity</li>
+  <li>The heap size is limited by the available memory</li>
+</ul>
+
+<p>These data structures are widely used in computer science for various applications and algorithmic implementations. Let's analyze some features of these algorithms.</p>
+<hr>
+<h3><a id="trees"></a>Trees</h3>
+<p>A tree is a hierarchical data structure consisting of nodes connected by edges, with the topmost node known as the root.</p>
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a heterogeneous collection of elements</li>
+  <li>Elements are arranged in a hierarchical structure with a root node and children nodes</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Efficient insertion, deletion, and search operations</li>
+  <li>Can be used to represent data with a hierarchical relationship</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing search algorithms such as binary search</li>
+  <li>Representing data with a parent-child relationship such as file systems</li>
+</ul>
+
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Can be difficult to implement and understand</li>
+  <li>The height of the tree can greatly affect the performance of operations</li>
+</ul>
+
+<hr>
+<h3><a id="graphs"></a>Graphs</h3>
+ <p>A graph is a collection of vertices connected by edges, where each edge can have a weight or cost associated with it.</p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a heterogeneous collection of elements</li>
+  <li>Elements are arranged in a network of vertices and edges</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Can be used to represent complex relationships between data</li>
+  <li>Supports traversal algorithms such as DFS and BFS</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Representing social network relationships</li>
+  <li>Implementing search algorithms such as Dijkstra's algorithm</li>
+</ul>
+
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Can be difficult to implement and optimize</li>
+  <li>Complexity can quickly become unmanageable with large graphs</li>
+</ul>
+
+<hr>
+<h3><a id="hash"></a>Hash Tables</h3>
+ <p>A Hash tables is an associative array data structure that maps keys to values, with a hash function used to compute an index into an array of buckets or slots.</p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Stores a homogeneous or heterogeneous collection of elements</li>
+  <li>Elements are accessed using key-value pairs</li>
+  <li>Uses a hash function to map keys to indexes in an array</li>
+</ul>
+
+
+<strong>Advantages:</strong>
+<ul>
+  <li>Efficient insertion, deletion, and search operations on average</li>
+  <li>Supports dynamic resizing</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing a dictionary or mapping data structure</li>
+  <li>Speeding up search operations by using the right hash function</li>
+</ul>
+
+
+<strong>Disadvantages:</strong>
+<ul>
+  <li>Worst-case time complexity can be slow if there are many hash collisions</li>
+  <li>Extra memory is required to handle collisions</li>
+</ul>
+
+
+<h2><a id="exotic"></a>Exotic Structures</h2>
+
+<div class="alert alert-secondary">Exotic data structures are less commonly used data structures that have specialized use-cases and are designed to solve specific problems. These data structures are not well-known or widely used like arrays, stacks, queues, linked lists, trees, and graphs, but they are still important concepts in computer science.</div>
+
+<h3>Bloom filters</h3>
+
+<p>Bloom filters are a probabilistic data structure used to determine whether an element is a member of a set. Bloom filters require minimal memory space and check false positives in return for false negatives. </p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Efficient data structure for probabilistic membership testing</li>
+  <li>Uses a hash table and multiple hash functions to check if an item is probably in a set</li>
+  <li>False positives are possible, but false negatives are not</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Checking if an item is in a large set without storing the entire set</li>
+  <li>Detecting spam emails without checking every email against a list of known spam emails</li>
+</ul>
+
+
+<h3>HyperLogLog</h3>
+
+<p> HyperLogLog is another probabilistic data structure like Bloom filters. It uses a fixed amount of memory to estimate the number of distinct elements in a set with high accuracy even for large datasets. </p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Probabilistic data structure for estimating the cardinality of a set</li>
+  <li>Uses a hash function and bit manipulation to approximate the number of unique elements in a set</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Counting distinct elements in a large dataset without having to store every element</li>
+  <li>Estimating the number of unique visitors to a website</li>
+</ul>
+
+
+<h3>Interval Trees</h3>
+
+<p> Interval trees are data structures used for searching intervals that contain or overlap a given point or interval. The Tree structures store intervals as leaf nodes and each internal Node stores the maximum end-point of the descendant intervals. This provides a fast way to find all the intervals in a tree that overlap with a given interval or point.</p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Data structure for quickly finding all intervals that overlap with a given interval</li>
+  <li>Uses a binary search tree and interval comparison to store and query intervals</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Finding all schedule conflicts in a list of appointments</li>
+  <li>Finding all genomic intervals that contain a specific SNP</li>
+</ul>
+
+
+<h3>Tries</h3>
+
+<p>Tries are tree-like data structures used to store strings with keys that share common prefixes. Tries are useful for prefix matching and search facilities in a large amount of text data.</p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Data structure for storing a set of strings or other values with keys that share prefixes</li>
+  <li>Uses a tree structure with each node representing a prefix or a complete word</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Implementing autocomplete functionality in a text editor or search engine</li>
+  <li>Storing dictionaries or other sets of words</li>
+</ul>
+
+
+<h3>Wavelet trees</h3>
+
+<p>Wavelet Trees are data structures that encode a large array of alphanumeric characters into a sequence of binary digits that can be queried using bitwise operations. Wavelet Trees exploit the repetition of characters to compress the data and to perform queries by multiple bitwise operations in log time.</p>
+
+
+<strong>Features:</strong>
+<ul>
+  <li>Data structure for managing large amounts of data and answering various types of queries</li>
+  <li>Uses the wavelet matrix encoding for compressing data and representing queries as bit operations</li>
+</ul>
+
+
+<strong>Use cases:</strong>
+<ul>
+  <li>Managing and querying large data sets such as genomic sequences or weblogs</li>
+  <li>Implementing full-text search functionality in a document database</li>
+</ul>
+
+
+
+<h2><a id="strings"></a>String Representation</h2>
+
+
+<p>In programming, there are many alternative data structures that can be used as alternatives for internal representations of strings and large strings. Here are a few examples of suitable data structures:</p>
+
+<ul>
+  <li><strong>Rope Data Structure:</strong> Ropes are a data structure that is used to efficiently store and manipulate large strings. Ropes are binary trees where each node contains a small string or a reference to another node. This data structure allows for fast string concatenation and substring operations.</li>
+  
+  <li><strong>Array of Strings:</strong> When dealing with a small number of fixed-size strings, an array of strings is a suitable data structure. This data structure stores each string as a separate element in an array. This method is straightforward and easy to implement and access.</li>
+  
+  <li><strong>Trie Data Structure:</strong> A Trie data structure is a useful alternative for storing large numbers of strings with common prefixes, like in a dictionary. Trie is tree data structure made of nodes that contains char/words as values  or pointers to kids and end of word respectively. This data structure allows for fast retrieval of strings based on their prefix, but it can be memory-intensive if the strings have a large number of unique characters.</li>
+  
+  <li><strong>Hash Tables:</strong> Hash tables are another alternative for storing and manipulating large strings. Hash tables use a hash function to map strings to an array of buckets, with each bucket storing a linked list of strings. This data structure allows for fast string retrieval, but has a higher memory overhead than some other data structures.</li>
+  
+  <li><strong>Suffix Arrays:</strong> Suffix Arrays are useful when a large number of string lookups is required. It stores an array of suffixes of the input string, where each suffix is a sequence of characters that start from each index of the string. The suffixes are sorted into lexographic order. Exact sub-string search can be achieved using binary search. Suffix Arrays are useful for text compression and indexing.</li>
+</ul>
+
+<p>The choice of which data structure to use depends on the specific requirements of the application, such as the size and number of strings, the operations needed to perform on the strings, and the available memory resources.</p>
+
+<hr>
+<p><b>Read next:</b>
+<a href="algorithms.html">Algorithms</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>
