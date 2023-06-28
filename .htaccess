@@ -1,0 +1,15 @@
+RewriteEngine on
+RewriteCond ${LeechProtect:/home/sageco10/cse.sagecode.net:%{REMOTE_USER}:%{REMOTE_ADDR}:10:UM49b3f3Nb1XSUHNyRqgjQpBzZ6qVSlb} leech
+RewriteRule .* https://sagecode.net
+
+#----------------------------------------------------------------cp:ppd
+# Section managed by cPanel: Password Protected Directories     -cp:ppd
+# - Do not edit this section of the htaccess file!              -cp:ppd
+#----------------------------------------------------------------cp:ppd
+#AuthType Basic
+#AuthName "Protected subdomain: cse.sagecode.net"
+#AuthUserFile "/home/sageco10/.htpasswds/cse.sagecode.net/passwd"
+#Require valid-user
+#----------------------------------------------------------------cp:ppd
+# End section managed by cPanel: Password Protected Directories -cp:ppd
+#----------------------------------------------------------------cp:ppd
