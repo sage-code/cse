@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Hardware tutorial for engineers">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="data, storage, backup, tape, hard-disk, cd-rom, personal computer, component, memory, motherboard, video-card, silent, home server, tutorial, make, build, raid">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>SC Computer Hardware</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="prism.css">
+  <script src="prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#topics" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>RAID Array</h2>
+
+<div class="alert alert-secondary shadow-sm">RAID = Redundant Array of Inexpensive Disks. This is a technology used for servers to enlarge storage capacity and improve reliability quality for data storage in data centers. This technique is called RAID. There are multiple types of RAID configurations optimized for speed, safety or a balance between the two.</div>
+
+<h4>Page bookmarks</h4>
+
+<ul>
+<li><a href="#infrastructure">Infrastructure</a></li>
+<li><a href="#storage">Permanent Storage</a></li>
+<li><a href="#hpc">Performance Computing</a></li>
+<li><a href="#raid">High capacity RAID</a></li>
+</ul>
+<h2><a id="raid"></a>High capacity RAID</h2>
+
+<div class="alert alert-secondary">RAID = Redundant Array of Inexpensive Disks. This is a technology used for servers to enlarge storage capacity and improve reliability quality for data storage in data centers. This technique is called RAID. There are multiple types of RAID configurations optimized for speed, safety or a balance between the two.</div>
+
+<h2>Backup on RAID</h2>
+
+<p>A backup disk must be a single disk on Windows. Sometimes you can use 2 independent disks for alternative backups. For windows NT you can specify several disks for backup that are automatically used by the system and do not have assigned a letter like the other disks. We do not recommend RAID array for desktop computers but only for servers or workstations. One large HDD can be superior to a bad RAID array.</p>
+
+<h2>RAID Inconvenience</h2>
+
+<ul>
+<li>For RAID you use several disks that can make computer more heavy;</li>
+<li>You need a computer case with 4 or more HDD locations to create a RAID;</li>
+<li>RAID consume more power then a single disk in a computer;</li>
+<li>You should not use SSD for any RAID other then RAID0.</li>
+</ul>
+
+<h2>RAID Type</h2>
+
+<p><b>There are 2 ways to create a RAID array:</b></p>
+<p>Software RAID and hardware RAID. For hardware RAID you need a specific card that is to control several disks. New PC motherboards have support for RAID using SATA controller. Software RAID is available as a feature of the operating system. RAID Parameters</p>
+
+<h2>RAID Parameters</h2>
+
+<p>There are 2 important parameters you have to consider when you decide what kind of RAID to create:</p>
+<ul>
+  <li>CHUNK SIZE</li>
+  <li>RAID LEVEL</li>
+</ul>
+
+<h3>CHUNK SIZE</h3>
+
+<p>To get good performance you must have a reasonable chunk size specific to your work or job.</p>
+<p>For video editing: You want a lot of bandwidth, so you want a small chunk size. Anywhere from 512 bytes (one block) to 8 KB is a small chunk size. This will allow multiple disks to contribute to data stream at once increasing the data bandwidth.</p>
+
+<p>For a database: You want to maximize your IOPS, which ideally means sending each I/O to only one disk. So you want a large chunk size &ndash; at least 64 KB or more. That large chunk will mean that most I/Os get serviced by a single disk and more I/Os are available on the remaining disks.</p>
+
+<h3>RAID LEVELS</h3>
+
+<p>RAID capacity, performance and reliability are in balance. Depending on your goal one kind of RAID is better then another. Here are the most important RAID flavors:</p>
+<p><b>JBOD:</b>&nbsp;Just a bunch of disks. is known as "spanned volume" on Windows. It is the best choice for a desktop PC. It increase the size of the volume and keep the performance at maximum. This is the most suitable RAID for a beginner who has too many disks in his computer.</p>
+<p><b>RAID-0:</b>&nbsp;Known as "striped volume" on Windows. RAID-0 is good for speed, you can use two or more hard drives.The storage capacity grow linear with the number of drives. On Linux RAID-0 can be created using MD-RAID, LVM or BtrFS.</p>
+
+<p class="center"><img src="img/Raid0.svg" alt="Raid Picture" class="img-fluid protect rounded shadow" width="420" ></p>
+
+<p>The major limitation of RAID-0 compared to other RAID levels is that does not offer any redundancy. RAID-0 can be used to increase storage capacity, sequential read and sequential write.</p>
+
+<p><b>RAID-1:</b>&nbsp;Known as "mirrored volume" for Windows, RAID-1 is good for data safety and it increase the reading speed but you can use only 2 hard drives. RAID-1 offer 100% redundancy but will not increase your writing speed or disk space.</p>
+<p>This is available only on Windows professional edition and Windows server edition. It is not available on Windows home edition.</p>
+
+<p class="center"><img src="img/Raid1.svg" alt="Raid Picture" class="img-fluid protect rounded shadow" width="400" ></p>
+
+<p><b>Note:</b>&nbsp;RAID chunk size do not have effect on performance for RAID 1.</p>
+
+<p><b>RAID-5:</b>&nbsp;is using 3 or more hard drives and has a special algorithm to distribute data across these disks. If one of the disk fail it can be replaced and array is rebuild by the system. The tricky part is to know which hard disk has failed. If you replace the wrong hard drive you will probably loose all the data.</p>
+
+
+<p class="center"><img src="img/Raid5.svg" alt="Raid Picture" class="img-fluid protect rounded shadow" width="460" ></p>
+
+<p><b>RAID 6:</b>&nbsp;is using 4 or more hard drives and is using double redundancy. So if any disk fail you can replace the disk but if you replace the wrong disk data is not lost. This RAID is using some more processing power to write and read from the HDD due to redundancy algorithm. This is the most used RAID in enterprise class NAS or server storage.</p>
+<p><b>RAID-10</b>&nbsp;A server need minimum 4 disks to create RAID-10. The speed for write will be up to 2x faster then a single disk while the speed for reading is 4x faster. RAID-10 can use 4, 6 or 8 HDD for storing videos and pictures. RAID-10 is not good for servers.</p>
+
+<p class="center"><img src="img/Raid10.svg" alt="Raid Picture" class="img-fluid protect rounded shadow" width="520" ></p>
+
+<h3>Raid combination</h3>
+
+<p>Enterprise servers are using RAID-6, however combinations of RAID-6 and STRIP can create larger had drive arrays that are faster than RAID-6 by using RAID-60. You can find schema for different kind of combinations on the interned. Important to know is that it can be done.</p>
+
+<h3>Spare disks</h3>
+
+<p>Some RAID arrays have support for one or more spare disks. These disks do not have data but they are in reserve. If one of disks fail, the RAID is able to repair itself, disabling the defect disk automatically and rebuilding the array on the fly. This is a professional solution and is used frequent on critical servers.</p>
+
+<h2>Personal computer RAID</h2>
+
+<p>Personal computer sometimes enable RAID but most of the time a desktop computer has one single hard disk. If you use two disks then one is for operating system one is for backup. If you have 4 disks then you can use different size disks or same size disks.</p>
+
+<p>First disk is for Windows System, and it can be SSD. Second disk is of large capacity and is for Backup. Disks 3 &amp; 4 can be same size and connected in RAID-1. Do not ever use RAID-0 on a PC it is dangerous to loose data. The RAID 0 can break easy on a desktop computer if you sue SATA disks. On server there is a different class of hard-disks: Enterprise Class, made express for RAID. If you purchase this kind of disks you can have RAID at home.</p>
+
+
+<h2>NAS Storage</h2>
+
+<p>A NAS storage is an external box having several HDD installed in RAID. It is in fact a computer that is dedicated for large storage capacity. It can connect using a e-sata cable (external SATA) or fiber optics. In the next picture you can see an example of NAS storage. Feel free to investigate careful for your NAS or external drive solution before you buy. This is not for everyone but it can be useful for a small office to make backups on it or to store a large database.</p>
+
+<p class="center"><img src="img/qnap-nas.jpg" alt="Picture" width="500" loading="lazy" ></p>
+
+
+<h2>Server / NAS RAID storage</h2>
+
+<p>RAID is usually required for servers. In the picture below we show you a RAC with several disks that are mounted. Each disk can be extracted easy without any tool. The drivers are installed in special drawers that have ventilation and a special handle that will disconnect the diver and then you can pull the driver out while the server is running.</p>
+
+<p>Of course you must have a good reason to pull out a disk or an entire array. Usually a defect disk has a red light that indicate is defect and must be changed. If does not then you can measure temperature of disk and if one gets hot then it must be changed. Of course this id difficult if the drawer do not have a thermometer on it.</p>
+
+<p class="center"><img src="img/NAS-server.jpg"
+class="img-fluid protect rounded shadow" alt="Raid Picture" width="500" loading="lazy"></p>
+
+<!-- work in progress-->
+<h3>Server / NAS RAID storage</h3>
+
+<p>RAID is usually required for servers. In the picture below we show you a RAC with several disks that are mounted. Each disk can be extracted easy without any tool. The drivers are installed in special drawers that have ventilation and a special handle that will disconnect the diver and then you can pull the driver out while the server is running.</p>
+
+<p>Of course you must have a good reason to pull out a disk or an entire array. Usually a defect disk has a red light that indicate is defect and must be changed. If does not then you can measure temperature of disk and if one gets hot then it must be changed. Of course this id difficult if the drawer do not have a thermometer on it.</p>
+
+<p class="center"><img src="img/NAS-server.jpg"
+class="img-fluid protect rounded shadow" alt="Raid Picture" width="500" loading="lazy"></p>
+
+
+<hr>
+<p><b>You are ready!</b>
+<a href="../index.html">Go back & take the exam.</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

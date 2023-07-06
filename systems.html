@@ -247,13 +247,34 @@ It was filmed in Chicago by Elucian in Jul, 24, 2016 but is still very much actu
 <p>If you type "cmd" and press button "ok" then you have done a good job. Now you can see a black window where you can type commands like a hacker. This is very useful for programmers to start applications and install components. In the picture below, I have used command "cd" and command "dir". This is how I display content from a folder.</p>
 
 <div class="center">
-    <img src="images/cmd.jpg"  alt="Programming Concepts"
+    <img src="images/cmd.jpg"  alt="Command Console"
      class="img-fluid protect rounded shadow" width="500">
     <p>Windows Terminal <br>(Command Prompt)</p>
 </div>
 
 <div class="alert alert-info">System programming does not necessary mean you create a new computer language or a new command or a new driver. It means you know how to make a script that can run operating system commands. This can be on the cloud, on a server or on your own computer.</div>
 
+<h2>Performance Tips</h2>
+
+<p>There are some significant performance tips you can use for speading up an operating system. Some of these tips are related to storage and hardware. If you use a fast small storage you can have a cache or a faster boot partition. Also it helps to have a faster swap and temporary disk. Usually these tips require multiple storage solutions.</p>
+
+<h3>What is ReadyBoost?</h3>
+
+<p>You can improve Windows performance using a small SSD as secondary disk. You can use up to 32 GB of SSD disk to be used as cache using windows ReadyBoost technology. For this you select an empty SSD and format as NTFS. Then you use disk/properties/readyBoost to set-up the disk for cache. This may improve performance only if your primary disk is not already SSD.</p>
+
+<div class="center"><img src="img/ready-boost.jpg" alt="Picture"
+class="img-fluid protect rounded shadow" width="400" loading="lazy"></div>
+
+<h3>LINUX BOOT DISK</h3>
+
+<p>If you have a small SSD for Linux this is great. You can install / (root) on SSD format using EXT4 and use /noatime option for mounting. Then you have a very fast boot time.</p>
+<p>If you have more then one HDD in your computer or you use a RAID array then you can use SSD to store /boot partition (up to 200 ~ 500 mb). This can be formatted EXT3 or EXT4.</p>
+<p>Use secondary disk or RAID array to mount / (root) partition. This will allow you to store larger amount of data on the computer or server.</p>
+
+<h3>BOOT PARTITION</h3>
+
+<p>It is problematic to install boot loader for operating system on a software based RAID. Therefore usually the primary disk on Windows operating system is not RAID based.</p>
+<p>On Linux you can have a very small partition for /boot (~ 256 mb &lt; 512 mb) then the root partition "/" can be installed on software RAID array. However if you create a boot partition on one of the RAID disks then this disk will have less space then the other disks. On RAID it is preferred to have the same disk size. The new memory SD card can have a large capacity it is not sensitive to light or mechanical damage if you drop it and can be used to store data for a long time.</p>
 
 <h2>Cloud Platforms</h2>
 
@@ -358,7 +379,7 @@ It was filmed in Chicago by Elucian in Jul, 24, 2016 but is still very much actu
 
 <hr>
 <p><b>Read next:</b>
-<a href="https://sagecode.net/bash/index.html">Shell Programming</a></p>
+<a href="tools.html">Developer Tools</a></p>
 
 <!-- Footer -->
 <footer class="footer">
