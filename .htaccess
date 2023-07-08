@@ -6,10 +6,10 @@ RewriteRule .* https://sagecode.net
 # Section managed by cPanel: Password Protected Directories     -cp:ppd
 # - Do not edit this section of the htaccess file!              -cp:ppd
 #----------------------------------------------------------------cp:ppd
-#AuthType Basic
-#AuthName "Protected subdomain: cse.sagecode.net"
-#AuthUserFile "/home/sageco10/.htpasswds/cse.sagecode.net/passwd"
-#Require valid-user
+AuthType Basic
+AuthName "CS1 Software Engineering"
+AuthUserFile "/home/sageco10/.htpasswds/cse.sagecode.net/passwd"
+Require valid-user
 #----------------------------------------------------------------cp:ppd
 # End section managed by cPanel: Password Protected Directories -cp:ppd
 #----------------------------------------------------------------cp:ppd
