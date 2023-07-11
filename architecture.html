@@ -108,16 +108,58 @@ Software architecture is a comprehensible way of describing the components and f
 <p>I engineering we have a theory that analyze systems. This theory include concepts and principles that can be extended to software. Next we enumerate some of these concepts:
 </p>
 
-<ul>
-<li>fault-tolerance,</li>
-<li>backward compatibility,</li>
-<li>extensible,</li>
-<li>reliability,</li>
-<li>maintainability,</li>
-<li>availability,</li>
-<li>security,</li>
-<li>usability.</li>
-</ul>
+
+<table class="table table-bordered table-striped table-dark">
+<thead>
+<tr>
+<th>Quality Attribute</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fault-tolerance</td>
+<td>The ability of a system to continue to operate even when some of its components fail.</td>
+</tr>
+<tr>
+<td>Backward compatibility</td>
+<td>The ability of a system to continue to work with older versions of itself or with other systems that are not compatible with the latest version.</td>
+</tr>
+<tr>
+<td>Extensibility</td>
+<td>The ability of a system to be extended with new features and functionality without affecting the existing functionality.</td>
+</tr>
+<tr>
+<td>Reliability</td>
+<td>The ability of a system to work correctly even when there are errors.</td>
+</tr>
+<tr>
+<td>Maintainability</td>
+<td>The ability of a system to be maintained and updated without affecting the existing functionality.</td>
+</tr>
+<tr>
+<td>Availability</td>
+<td>The ability of a system to be available to users when they need it.</td>
+</tr>
+<tr>
+  <td>Efficiency</td>
+  <td>The ability of a system to use its resources (such as time, memory, and processing power) in an effective and efficient manner.</td>
+  </tr>
+<tr>
+<td>Security</td>
+<td>The ability of a system to protect its data from unauthorized access, data breaches, and other attacks.</td>
+</tr>
+<tr>
+<td>Usability</td>
+<td>The ability of a system to be used by users to achieve their goals effectively and efficiently.</td>
+</tr>
+<tr>
+  <td>Portability</td>
+  <td>The ability of a system to be transferred to a new environment without affecting the existing functionality.</td>
+  </tr>
+</tbody>
+</table>
+
 
 <p>Your project should address and monitor all these aspects of quality. Identification of quality issues is a profession. There are quality specialists that can perform code review and quality assessment. These persons are very expensive and difficult to have in a company, therefore Software Developers must cover some of these skills.</p>
 
@@ -194,36 +236,128 @@ Software architecture is a comprehensible way of describing the components and f
 <li>When you are not sure use parametrized sub-programs;</li>
 </ol>
 
-<h4>Sage advices</h4>
-<ul>
-<li>Never release or deploy untested software;</li>
-<li>Store testing code and application code together;</li>
-<li>Save and version control your configuration files;</li>
-<li>Start your source files with a short comment;</li>
-<li>Do not stay astray from left side of the screen;</li>
-<li>Short lines of code are better than long lines;</li>
-<li>Group global variables and constants in records or structures;</li>
-<li>Create a local scope if possible. Local is better then the global;</li>
-<li>It is better to define global constants than to use magic literals;</li>
-<li>Use comments in your code and make references to documentation;</li>
+<h4>Sage-Code Advices</h4>
 
-<li>Create subroutines only if you need to. Subroutine call can be expensive;</li>
-<li>Avoid unnecessary data movement by using references;</li>
-<li>Favor explicit declarations against type inference or gradual types;</li>
-<li>Favor explicit loop and stacks over recursive functions;</li>
-<li>Favor different identifiers over subroutine overloading;</li>
-<li>Do not be afraid of long identifier names for subroutines and variables;</li>
-<li>Do not be afraid of long processes: create subroutines only when necessary;</li>
-<li>Do not be afraid to do refectory whenever you think is necessary;</li>
-<li>Do not create functionality that is not required: let the future to care about itself;</li>
-<li>Favor declarative programming over imperative programming;</li>
-<li>Favor imperative programming over functional programming;</li>
-<li>Favor functional programming over object oriented programming;</li>
-<li>Avoid deep class trees. They are hard to understand and debug;</li>
-<li>Avoid classes with features and favor mix-in classes or traits instead;</li>
-<li>Favor precondition checking over exception handling;</li>
-<li>Favor efficient algorithms over parallel computing;</li>
-</ul>
+<p>Next table show you advices that can be an example of principles an architect should enumerate in architecural runway principles. These are Sage-Code advices, you can modify and add new advices for your own organization. </p>
+
+<table class="table table-bordered table-striped table-dark">
+<thead>
+  <tr>
+  <th>Advice</th>
+  <th>Comments</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+  <td>Never release or deploy untested software.</td>
+  <td>This is one of the most important rules in software engineering. It is essential to test your software thoroughly before releasing it to the public.</td>
+  </tr>
+  <tr>
+  <td>Store testing code and application code together.</td>
+  <td>This will make it easier to maintain and update your tests.</td>
+  </tr>
+  <tr>
+  <td>Save and version control your configuration files.</td>
+  <td>This will help you to track changes to your configuration files and to restore them if necessary.</td>
+  </tr>
+  <tr>
+  <td>Start your source files with a short comment.</td>
+  <td>This will help you to understand the purpose of the file and to document your code.</td>
+  </tr>
+  <tr>
+  <td>Do not stay astray from left side of the screen.</td>
+  <td>This will help to make your code more readable and easier to maintain.</td>
+  </tr>
+  <tr>
+  <td>Short lines of code are better than long lines.</td>
+  <td>This will make your code easier to read and understand.</td>
+  </tr>
+  <tr>
+  <td>Group global variables and constants in records or structures.</td>
+  <td>This will make your code more organized and easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Create a local scope if possible. Local is better then the global.</td>
+  <td>This will help to prevent name collisions and to make your code more readable.</td>
+  </tr>
+  <tr>
+  <td>It is better to define global constants than to use magic literals.</td>
+  <td>This will make your code more readable and easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Use comments in your code and make references to documentation.</td>
+  <td>This will help to document your code and to make it easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Create subroutines only if you need to. Subroutine call can be expensive.</td>
+  <td>This will help to improve the performance of your code.</td>
+  </tr>
+  <tr>
+  <td>Avoid unnecessary data movement by using references.</td>
+  <td>This will help to improve the performance of your code.</td>
+  </tr>
+  <tr>
+  <td>Favor explicit declarations against type inference or gradual types.</td>
+  <td>This will help to make your code more readable and easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Favor explicit loop and stacks over recursive functions.</td>
+  <td>This will help to improve the performance of your code and to make it easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Favor different identifiers over subroutine overloading.</td>
+  <td>This will help to make your code more readable and easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Do not be afraid of long identifier names for subroutines and variables.</td>
+  <td>This will help to make your code more readable and easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Do not be afraid of long processes: create subroutines only when necessary.</td>
+  <td>This will help to improve the performance of your code.</td>
+  </tr>
+  <tr>
+  <td>Do not be afraid to do refectory whenever you think is necessary.</td>
+  <td>This will help to improve the quality of your code.</td>
+  </tr>
+  <tr>
+  <td>Do not create functionality that is not required: let the future to care about itself.</td>
+  <td>This will help to keep your code lean and easy to maintain.</td>
+  </tr>
+  <tr>
+  <td>Favor declarative programming over imperative programming.</td>
+  <td>This will help to make your code more readable and easier to understand.</td>
+  </tr>
+  <tr>
+  <td>Favor imperative programming over functional programming.</td>
+  <td>This will help to make your code more efficient.</td>
+  </tr>
+  <tr>
+  <td>Favor functional programming over object oriented programming.</td>
+  <td>This will help to make your code more modular and easier to test.</td>
+  </tr>
+  <tr>
+  <td>Avoid deep class trees. They are hard to understand and debug.</td>
+  <td>This will help to make your code more readable and easier to maintain.</td>
+  </tr>
+  <tr>
+  <td>Avoid classes with features and favor mix-in classes or traits instead.</td>
+  <td>This will help to make your code more modular and easier to test.</td>
+  </tr>
+  <tr>
+  <td>Favor precondition checking over exception handling.</td>
+  <td>This will help to improve the performance of your code.</td>
+  </tr>
+  <tr>
+  <td>Favor efficient algorithms over parallel computing.</td>
+  <td>This will help to improve the performance of your code.</td>
+  </tr>
+</tbody>
+</table>
+
+<h4>Conclusion:</h4>
+
+<p>These are just a few of the many good practices that can help you to write better software. By following these practices, you can improve the quality, performance, and maintainability of your code. </p>
 
 <h3>Naming Conventions</h3>
 
@@ -272,26 +406,7 @@ pass # end if</code></pre>
 
 <h2><a id="patterns"></a>Design Patterns</h2>
 
-<p>A design pattern is a general, reusable solution to a commonly occurring problem in software architecture within a given context. There are many recognized architectural patterns and styles, among them:</p>
-<ul>
-<li>Blackboard</li>
-<li>Client-server (3-tier, n-tier, cloud computing )</li>
-<li>Component-based</li>
-<li>Data-centric</li>
-<li>Event-driven versus Implicit invocation</li>
-<li>Layered versus Multilayered architecture</li>
-<li>Monolithic application</li>
-<li>Peer-to-peer (P2P)</li>
-<li>Pipes and filters</li>
-<li>Plug-ins</li>
-<li>Representational state transfer (REST)</li>
-<li>Rule-based</li>
-<li>Service-oriented</li>
-<li>Micro-service architecture</li>
-<li>Shared nothing architecture</li>
-<li>Space-based architecture</li>
-<li>Data-centric architecture</li>
-</ul>
+<p>A design pattern is a general, reusable solution to a commonly occurring problem in software architecture within a given context. There are many recognized architectural patterns and styles. We will elaborate this topic in next article.</p>
 
 <h2><a id="tiers"></a>Application Tiers</h2>
 
@@ -397,18 +512,20 @@ pass # end if</code></pre>
 </ol>
 <p>In this order, but number 4 should be considered from start. Complexity can kill a project sooner or later. Making a site work is not so simple and is the first step because you must start with a prototype and then improve.</p>
 
-<h3>Front End</h3>
+<h3>Front End - HTML5</h3>
 <p>To do the front-end you need HTML+CSS &amp; JavaScript. If you learn these languages you can make websites but also desktop applications. HTML+CSS are two languages actually. But you learn them together. Some people argue that these are not languages but do not listen to them. These both are programming languages, more precise: data oriented language.</p>
 
 <p>JavaScript is very specific to web programming. It can be used for making a dynamic website. Usually belong to front-end design but can be used also for back-end programming. It has a very small runtime and it can be executed into a browser.</p>
 
 <p><b>no patience? you can jump to:</b></p>
 <ul>
-<li><a href="html/index.html" rel="nofollow">Learning: HTML&amp;CSS</a></li>
-<li><a href="script/index.html" rel="nofollow">Learning: JavaScript</a></li>
+<li><a href="https://cse.sagecode.net/html/index.html" 
+    rel="nofollow">Learning: HTML&amp;CSS</a></li>
+<li><a href="https://csp.sagecode.net/script/index.html" 
+    rel="nofollow">Learning: JavaScript</a></li>
 </ul>
 
-<h3>Back end</h3>
+<h3>Back end JavaScript</h3>
 
 <p>You can write back-end programs using any of the following languages: Python, Java, Julia, Go, Ruby &hellip; In general each language has it's own back-end framework. Though when you use a framework it become fuse what part is the front end (View/Model) and what part is the back-end (Model/Controller)</p>
 
@@ -416,10 +533,9 @@ pass # end if</code></pre>
 
 <p>For JavaScript back-end you need to use a Node.JS engine and a <em>Web Framework</em>. This framework can be one of: {Ember, Angular, React or Vue}. I think the best framework right now is Vue. React is now more popular and used by companies. Angular people say is overengineered and will be abandoned by Google sooner or later.</p>
 
+<h3>Back end Alternatives</h3>
 
 <p>Select one of the languages: {Python, Ruby, Julia, Go, Rust, C++, Java, Scala}. These are used for server-side/(back-end)  and system programming. These languages are preferred by back-end developers. If you learn at least one language in this category you can perform professional development tasks in a company. You should apply for a job or continue your freelancing activity on next level.</p>
-
-<p><b>comments:</b></p>
 <ol>
 <li>Python is a mandatory language for freelancers. I prefer Ruby, but Python is more popular and is on high demand. Python is not so easy to learn as JavaScript.It is because Python is a multi-paradigm language while JavaScript is a functional language. If you learn python as your first computer language you will understand JavaScript faster.</li>
 <li>C language is as easy to learn, but is less useful for freelancers. It is more used for System Programming by companies. Do not start learning the programming concepts using this language. You will have hard time understanding and will get irreparable "brain damage" that is hard to fix later using another language. We recommend Rust instead of C as your first system language.</li>
@@ -481,24 +597,13 @@ pass # end if</code></pre>
 
 <li><a href="https://eluchn.hashnode.dev/web-development" target = "_blank" rel="noreferrer nooppener">Web developement</a></li>
 <li><a href="https://eluchn.hashnode.dev/back-end-api" target = "_blank" rel="noreferrer nooppener">Back-end API</a></li>
-
-</ul>
-
-<h2><a id="SC"></a>Supercomputer Centers</h2>
-
-<p>A supercomputer center is actually a network of powerful computers used for scientific applications. Many non profit organizations have access to these networks and can run applications remotely on several machines.</p>
-
-<ul>
-<li><a href="https://nersc.gov/">NRSC = National Research Supercomputer Center</a></li>
-<li><a href="https://www.sdsc.edu/">SDSC = San Diego Supercomputer Center</a></li>
-<li><a href="https://www.osc.edu/">OSC = Ohio Supercomputer Center</li>
 </ul>
 
 <p>I hope you enjoy this reading. Good luck!</p>
 
 <hr>
 <p><b>Read next:</b>
-<a href="patterns.html">Software Testing</a></p>
+<a href="patterns.html">Design Patterns</a></p>
 
 
 <!-- Footer -->

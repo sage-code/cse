@@ -55,56 +55,85 @@ Design patterns are reusable solutions to common problems that arise when design
 <p>Design paterns can be very specific for a particular programming paradigm. We study design patterns to avoid reinventing the weel. If you know about common patterns you can search for code snipets or you can use AI to generate code for a specific language.</p>
 
 <table class="table table-bordered table-striped table-dark" >
-<thead>
-  <tr>
-    <th>Programming Paradigm</th>
-    <th>Design Pattern</th>
-    <th>Description</th>
-  </tr>
-</thead>
-<tbody>
-  <!-- Object-Oriented Programming Paradigm -->
-  <tr>
-    <td rowspan="2">Object-Oriented Programming (OOP)</td>
-    <td>Factory Method</td>
-    <td>Creates objects without specifying the exact class to create.</td>
-  </tr>
-  <tr>
-    <td>Singleton</td>
-    <td>Ensures a class has only one instance, and provides a global point of access to it.</td>
-  </tr>
-  <!-- Functional Programming Paradigm -->
-  <tr>
-    <td rowspan="2">Functional Programming (FP)</td>
-    <td>Higher-Order Functions</td>
-    <td>Functions that can take functions as arguments and/or return functions as results.</td>
-  </tr>
-  <tr>
-    <td>Currying</td>
-    <td>Technique of transforming a function with multiple arguments into a sequence of functions with a single argument.</td>
-  </tr>
-  <!-- Reactive Programming Paradigm -->
-  <tr>
-    <td rowspan="2">Reactive Programming</td>
-    <td>Observer</td>
-    <td>Objects that are notified when a subject's state changes.</td>
-  </tr>
-  <tr>
-    <td>Reactive Extensions (Rx)</td>
-    <td>Library for composing asynchronous and event-based programs by using observable sequences.</td>
-  </tr>
-  <!-- Procedural Programming Paradigm -->
-  <tr>
-    <td rowspan="2">Procedural Programming</td>
-    <td>Module</td>
-    <td>Encapsulates related functions and data into a reusable and maintainable unit of code.</td>
-  </tr>
-  <tr>
-    <td>Command</td>
-    <td>Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.</td>
-  </tr>
-</tbody>
-</table>
+  <thead>
+    <tr>
+      <th>Programming Paradigm</th>
+      <th>Design Pattern</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Object-Oriented Programming Paradigm -->
+    <tr>
+      <td rowspan="8">Object-Oriented Programming (OOP)</td>
+      <td>Factory Method</td>
+      <td>Creates objects without specifying the exact class to create.</td>
+    </tr>
+    <tr>
+      <td>Singleton</td>
+      <td>Ensures a class has only one instance, and provides a global point of access to it.</td>
+    </tr>
+    <tr>
+      <td>Abstract Factory</td>
+      <td>Creates families of related objects without specifying their concrete classes.</td>
+    </tr>
+    <tr>
+      <td>Builder</td>
+      <td>Separates the construction of a complex object from its representation.</td>
+    </tr>
+    <tr>
+      <td>Prototype</td>
+      <td>Creates a new object by copying an existing object.</td>
+    </tr>
+    <tr>
+      <td>Adapter</td>
+      <td>Allows two incompatible interfaces to work together.</td>
+    </tr>
+    <tr>
+      <td>Bridge</td>
+      <td>Decouples an abstraction from its implementation.</td>
+    </tr>
+    <tr>
+      <td>Facade</td>
+      <td>Provides a simplified interface to a complex subsystem.</td>
+    </tr>
+    <!-- Functional Programming Paradigm -->
+    <tr>
+      <td rowspan="3">Functional Programming (FP)</td>
+      <td>Higher-Order Functions</td>
+      <td>Functions that can take functions as arguments and/or return functions as results.</td>
+    </tr>
+    <tr>
+      <td>Currying</td>
+      <td>Technique of transforming a function with multiple arguments into a sequence of functions with a single argument.</td>
+    </tr>
+    <tr>
+      <td>Immutability</td>
+      <td>Provides a number of benefits, such as increased safety, performance, and concurrency.</td>
+    </tr>
+    <!-- Reactive Programming Paradigm -->
+    <tr>
+      <td rowspan="2">Reactive Programming</td>
+      <td>Observer</td>
+      <td>Objects that are notified when a subject's state changes.</td>
+    </tr>
+    <tr>
+      <td>Reactive Extensions (Rx)</td>
+      <td>Library for composing asynchronous and event-based programs by using observable sequences.</td>
+    </tr>
+    <!-- Procedural Programming Paradigm -->
+    <tr>
+      <td rowspan="2">Procedural Programming</td>
+      <td>Module</td>
+      <td>Encapsulates related functions and data into a reusable and maintainable unit of code.</td>
+    </tr>
+    <tr>
+      <td>Command</td>
+      <td>Encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.</td>
+    </tr>
+  </tbody>
+  </table>
+  
 
 <h2>Web Development</h2>
 
@@ -153,8 +182,8 @@ Design patterns are reusable solutions to common problems that arise when design
 
 <p>A design pattern for parallel computing is a repeatable solution to a common problem that arises when designing parallel applications. These patterns help designers structure their code to make the most of parallelism by identifying and exploiting the available parallelism in a computation.</p>
 
-<table class="table table-bordered table-striped ">
-  <thead class="thead-dark">
+<table class="table table-bordered table-striped thead-dark">
+  <thead>
     <tr>
       <th>Design Pattern</th>
       <th>Description</th>
