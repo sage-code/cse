@@ -13,3 +13,5 @@ Require valid-user
 #----------------------------------------------------------------cp:ppd
 # End section managed by cPanel: Password Protected Directories -cp:ppd
 #----------------------------------------------------------------cp:ppd
+
+ErrorDocument 401 /401.html
