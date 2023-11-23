@@ -101,39 +101,6 @@ This article is designed for beginners in computer science. We start with basic 
 
 <p>Believe it or not in Fortran, parameters are not the same thing as in other languages. In fortran, parameters are actually constants. In most other languages parameters are variables.</p>
 
-<h3>Argument values</h3>
-
-<div class="alert alert-secondary shadow-sm">Sub-programs must receive values that are assigned to parameters. These values are called sometimes "actual parameters" or "arguments". Important thing is that values of parameters can be: constants/expressions or variables.</div>
-
-<p>If an argument is a constant, you may be able to modify them inside sub-program but this has no effect over the argument. The argument remain constant. If an argument is a variable, then you have a choice to propagate changes back to caller or to protect the parameters against this secondary effect.</p>
-
-<p>Output parameters are parameters that can propagate back the modified values outside of sub-program. This is a feature many languages have. It may be implemented using "pointers" or "references". For each computer language you have to learn how to use input/output parameters.</p>
-
-<h3>Variadic arguments</h3>
-
-<div class="alert alert-secondary shadow-sm">Lately, most languages can support a variable number of arguments using a special prefix for a parameter that accept multiple values. This symbol can be "*" or "...", depending on the language.</div>
-<p>When you make a sub-routine call, you can use many arguments separated by comma that will be grouped to into a collection and sent to the sub-routine. Then you can access these parameters by index and use each value.</p>
-<p>Sometimes, parameters are optional. In this case, the call can also have a variable number of arguments but the arguments that are optional must be specified by name. You will understand these concepts better if we use an example:</p>
-
-<h4>Example:</h4>
-
-<pre><code class="language-python">#last parameter is optional
-def add(a, b, c = 0, *d):
-    return a+b+c+sum(d)
-print( add(1,2) ) # 3
-print( add(1,2,3) ) # 6
-print( add(1,2,c = 3) ) # 6
-print( add(1,2,3, 4, 5) )# 15</code></pre>
-
-<h3>Result values</h3>
-
-<div class="alert alert-secondary shadow-sm">The result can be collected by the main program and used in next computations. Depending on the programming language the syntax to define the result is different.</div>
-
-<p>A subprogram, function or method can create a result. This is a value that will be used by the calling program to replace the function or method with its value.</p>
-
-<p>Sometimes the result is defined explicit like a local variable. It has a name and a type. You can assign value to the result during the subprogram execution.</p>
-
-<p>Some programming languages use keyword "return" or "result" to create the result value. In expression oriented languages, the last expression value is the result of the function or method.</p>
 
 <h2><a id="symbols">Programming Symbols</a></h2>
 
@@ -175,7 +142,7 @@ print( add(1,2,3, 4, 5) )# 15</code></pre>
 
 <h4>Sentences</h4> 
 
-<p>Sentances are enumerations of words that together express an idea, describe a situation or fact, give a command or inquiry about a fact, status or situation. Sentences can be classified in four categories</p>
+<p>Sentences are enumerations of words that together express an idea, describe a situation or fact, give a command or inquiry about a fact, status or situation. Sentences can be classified in four categories</p>
 
 <ul>
 <li>Imperative sentences (orders/commands)</li>
@@ -390,7 +357,7 @@ Predicate logic is an extension of propositional logic. In propositional logic w
 
 <p>A predicate is a property or a relation between one or more terms. One term can be a variable or a constant. A predicate is not a logic entity but it can be evaluated to value True, False or invalid, depending on the range of predicate arguments.</p>
 
-<p>Predicates with one argument, are called monadic. Predicates with more arguments are called dyadic, n-adic or polyadic. Some languages are using monadic predicates while other languages can accept polyadic predicates.</p>
+<p>Predicates with one argument, are called monadic. Predicates with more arguments are called dyadic, n-adic or poly-adic. Some languages are using monadic predicates while other languages can accept poly-adic predicates.</p>
 
 <h4>Arguments</h4>
 
@@ -739,6 +706,36 @@ R = A x N = {(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)}
 </ul>
 <p>DEI in AI is a complex and challenging issue, but it is important to address it in order to ensure that AI systems are fair and inclusive.</p>
 
+<h3>What is LLM?</h3>
+
+<p>LLM stands for **Large Language Model**. It is a type of artificial intelligence (AI) that is trained on a massive amount of text data. This data can include books, articles, code, and other forms of written language. LLMs are able to learn the patterns and relationships between words and phrases in this data, which allows them to generate new text that is similar to the text they were trained on.</p>
+
+<p>LLMs are used in a variety of applications, including:</p>
+
+<ul>
+  <li><strong>Machine translation:</strong> LLMs can be used to translate text from one language to another. For example, Google Translate uses an LLM to translate text between over 100 languages.</li>
+  <li><strong>Text summarization:</strong> LLMs can be used to summarize long pieces of text into shorter summaries. This can be useful for quickly getting the main points of a document or article.</li>
+  <li><strong>Chatbots:</strong> LLMs can be used to create chatbots that can have natural conversations with humans. This can be used for customer service applications, or for providing information or assistance to users.</li>
+  <li><strong>Creative writing:</strong> LLMs can be used to generate creative text formats, like poems, code, scripts, musical pieces, email, letters, etc. This can be used for entertainment purposes, or for generating new ideas.</li>
+</ul>
+
+<p>LLMs are still under development, but they have already learned to perform many kinds of tasks. As LLMs continue to develop, they are likely to become even more powerful and versatile.</p>
+
+<p>Here are some examples of LLMs:</p>
+
+<ul>
+  <li><strong>GPT-3:</strong> GPT-3 is an LLM developed by OpenAI. It has 175 billion parameters and is one of the most powerful LLMs in the world. GPT-3 can be used for a variety of tasks, including machine translation, text summarization, and creative writing.</li>
+  <li><strong>LaMDA:</strong> LaMDA is an LLM developed by Google AI. It is similar to GPT-3 in terms of its capabilities, but it has been specifically designed to be more factual and less likely to generate offensive or harmful content.</li>
+  <li><strong>Megatron-Turing NLG:</strong> Megatron-Turing NLG is an LLM developed by Google AI and NVIDIA. It is the largest LLM in the world, with 530 billion parameters. Megatron-Turing NLG is still under development, but it has already shown promising results in machine translation and text summarization.</li>
+</ul>
+
+<p>LLMs are a powerful new tool that has the potential to revolutionize the way we interact with computers. As LLMs continue to develop, they are likely to become even more important in our lives.</p>
+
+<h3>Generative AI</h3>
+
+<p>
+  Generative AI is a branch of artificial intelligence (AI) that focuses on creating new content, such as text, images, audio, and code. It is able to learn the patterns and structures of existing data and then use this knowledge to generate new data that is similar in style or form. This makes it a powerful tool for a variety of applications, including art, design, and product development.</p>
+  
 <h3>Disclaim</h3>
 
 <p>This website was improved using AI. You can use AI for free using Google web application. All you need is a Google account. This service is in beta. It can not be used for programming, but if you ask the right questions you will get good responses.</p>
