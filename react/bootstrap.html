@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Comprehensive introduction to react chapter 1.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="react, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>React Tutorial</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://sagecode.net/prism.css">
+  <script src="https://sagecode.net/prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col bottom-right">
+        <a href="index.html#css" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1><a href="bootstrap.html">Chapter 8: Integrating Bootstrap with React</a></h1>
+
+<div class="alert alert-secondary shadow-sm">
+Chapter 8 dives into incorporating Bootstrap, a popular CSS framework, into your React application. Bootstrap provides pre-built components and styles, accelerating development and ensuring a consistent look and feel.
+</div>
+
+<h2>Importing Bootstrap CSS in a React App</h2>
+
+<p>There are two main ways to include Bootstrap's CSS in your React project:</p>
+
+<ol>
+<li><b>Using a CDN Link:</b> You can directly reference Bootstrap's CDN library within your HTML's `<head>` section. This is a quick and straightforward approach, but it relies on an external source for the styles.</li>
+<li><b>Installing and Importing Bootstrap Package:</b> Here, you install the `bootstrap` package using npm or yarn and import the styles within your React components. This method gives you more control over the included Bootstrap components and allows for customization.</li>
+</ol>
+
+<p><b>Recommendation:</b> Installing Bootstrap as a package offers greater flexibility and customization, especially for larger projects.</p>
+
+<h2>Using Bootstrap Components in React</h2>
+
+<p>Once Bootstrap is included, you can leverage its pre-built components directly within your React components. Bootstrap components are typically accessed through classes or functions provided by the framework.</p>
+
+<pre class="language-javascript"><code>
+import React from 'react';
+
+function Card() {
+    return (
+        &lt;div className="card"&gt;
+        &lt;div className="card-body"&gt;
+            &lt;h5 className="card-title">Card title&lt;/h5&gt;
+            &lt;p className="card-text">This is some card content.&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li>The `Card` component uses Bootstrap's predefined `.card`, `.card-body`, `.card-title`, and `.card-text` classes to style the card's structure and content.</li>
+</ul>
+
+<h2>Building a Layout using Bootstrap Grid System</h2>
+
+<p>Bootstrap's grid system is a powerful tool for creating responsive layouts that adapt to different screen sizes. It provides a set of grid classes and utilities that allow you to structure your page content in rows and columns.</p>
+
+<p>We'll explore the Bootstrap grid system and building layouts in more detail in the next chapter.</p>
+
+<p>By integrating Bootstrap, you can significantly enhance your React application's styling and development speed while maintaining a consistent UI across devices.</p>
+
+
+<hr>
+
+<p><b>Homepage:</b>
+<a href="https://sagecode.net/index.html">Sage-Code</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Comprehensive introduction to react chapter 1.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="react, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>React Tutorial</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://sagecode.net/prism.css">
+  <script src="https://sagecode.net/prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col bottom-right">
+        <a href="index.html#css" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h1><a href="events.html">Chapter 6: Handling Events</a></h1>
+
+<div class="alert alert-secondary shadow-sm">
+    Chapter 6 dives into handling user interactions in React applications using event handlers. Events allow your components to respond to user actions like clicks, form submissions, or keyboard presses, making your UI interactive.
+</div>
+
+<h2>Working with Event Handlers in React</h2>
+
+<p>React components can attach event listeners to DOM elements using event handler functions. These functions are triggered when the corresponding event occurs on the element.</p>
+
+<p>Here's the basic syntax for attaching an event handler:</p>
+
+<pre class="language-javascript"><code>
+function Button() {
+    const handleClick = () => {
+        console.log('Button clicked!');
+    };
+
+    return (
+        <button onClick={handleClick}>Click me</button>
+    );
+}
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li>We define a `handleClick` function that logs a message to the console when clicked.</li>
+<li>The `button` element has an `onClick` attribute set to the `handleClick` function. This tells React to call `handleClick` whenever the button is clicked.</li>
+</ul>
+
+<h2>Passing Event Data to Components</h2>
+
+<p>Event handler functions can receive an event object as an argument, containing information about the event that occurred. This data can be used within the handler to react to the specific details of the user interaction.</p>
+
+<pre class="language-javascript"><code>
+function Input(props) {
+    const handleChange = (event) => {
+        props.onChange(event.target.value); // Pass the input value to the parent component
+    };
+
+    return (
+        <input type="text" onChange={handleChange} />
+    );
+}
+</code></pre>
+
+<p>This example demonstrates passing the input value to a parent component:</p>
+
+<ul>
+<li>The `Input` component receives an `onChange` prop as a function from its parent.</li>
+<li>The `handleChange` function within `Input` retrieves the current input value from the event object's `target.value` property.</li>
+<li>It then calls the `onChange` prop function (passed from the parent) and provides the input value as an argument, enabling communication between components.</li>
+</ul>
+
+<h2>Building Interactive Elements</h2>
+
+<p>By combining event handling with state management and conditional rendering, you can build interactive UI elements that respond to user input and update the application's state. This allows you to create dynamic and engaging user experiences.</p>
+
+<p>We'll explore more advanced event handling techniques and explore building complex interactive features in the following chapters. Stay tuned!</p>
+
+<hr>
+
+<p><b>Next page:</b>
+<a href="css.html">Using CSS</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

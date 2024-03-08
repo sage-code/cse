@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Comprehensive introduction to react chapter 3.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="react, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Building Blocks</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://sagecode.net/prism.css">
+  <script src="https://sagecode.net/prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col bottom-right">
+        <a href="index.html#css" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>Chapter 3: Building Blocks</h1>
+
+<div class="alert alert-secondary shadow-sm">
+In Chapter 3, we'll delve into the heart of React applications: components! Components are reusable UI building blocks that encapsulate data (state or props) and behavior (rendering logic). They serve as the foundation for creating complex and maintainable UIs.
+</div>
+
+<h2>Creating Your First React Component</h2>
+
+<p>Let's get started by building our first React component! Here's a simple example that displays a greeting message:</p>
+
+<pre class="language-javascript"><code>
+function Greeting() {
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;Hello, World!&lt;/h1&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre>
+
+<p>This code defines a function named `Greeting` that returns JSX code. The JSX code defines a `div` element containing an `h1` element with the text "Hello, World!". This component can be reused throughout your application to display the greeting message.</p>
+
+<h2>Using JSX Syntax for Writing Components</h2>
+
+<p>JSX (JavaScript XML) is a syntax extension that allows you to write component code resembling HTML. It improves readability by combining the familiarity of HTML with the power of JavaScript. Within JSX, you write HTML-like tags that represent UI elements, and you can embed JavaScript expressions within those tags using curly braces (`{}`).</p>
+
+<p>Here are some key points about JSX:</p>
+
+<ul>
+<li>JSX elements are typically camelCase (e.g., `div`, `h1`).</li>
+<li>You can use attributes within JSX elements (e.g., `class`, `style`).</li>
+<li>Curly braces (`{}`) allow you to embed JavaScript expressions within JSX for dynamic content.</li>
+</ul>
+
+<h2>Component Properties (Props)</h2>
+
+<p>Components often need to receive data from other components to customize their behavior and appearance. This data is passed down through properties (props). Props are read-only values that a component receives from its parent component.</p>
+
+<p>Let's modify the `Greeting` component to accept a name as a prop:</p>
+
+<pre class="language-javascript"><code>
+function Greeting(props) {
+    return (
+        &lt;div&gt;
+            &lt;h1&gt;Hello, {props.name}!&lt;/h1&gt;
+        &lt;/div&gt;
+    );
+}
+</code></pre>
+
+<p>In this example, the `Greeting` component now takes a single prop named `name`. Inside the JSX, we use curly braces to access the `name` prop and dynamically render the greeting message with the provided name.</p>
+
+<p>We'll explore using components and props in more detail in the following chapters, along with advanced concepts like state management and lifecycle methods. Stay tuned!</p>
+
+<hr>
+
+<p><b>Homepage:</b>
+<a href="rendering.html">Rendering Components</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>

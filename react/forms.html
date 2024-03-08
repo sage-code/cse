@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Comprehensive introduction to react Chapter 9.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="react, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>React Forms</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://sagecode.net/prism.css">
+  <script src="https://sagecode.net/prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col bottom-right">
+        <a href="index.html#css" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1><a href="forms.html">Chapter 9: Working with Forms in React</a></h1>
+
+
+<div class="alert alert-secondary shadow-sm">
+Chapter 9 delves into creating and handling forms in React applications. Forms allow users to interact with your application by providing input, and React provides mechanisms to manage this user interaction effectively.
+</div>
+
+<h2>Handling Form Submissions in React</h2>
+
+<p>Unlike traditional HTML forms that submit data directly to the server, forms in React applications typically handle submissions using JavaScript within the component itself. This allows you to control the submission process, validate user input, and update the application state accordingly.</p>
+
+<p>Here's a basic example of handling form submission in React:</p>
+
+<pre class="language-javascript"><code>
+import React, { useState } from 'react';
+
+function ContactForm() {
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+
+const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    console.log('Form submitted!', { name, email });
+    // Here, you can perform additional actions like sending data to an API
+    setName('');
+    setEmail('');
+};
+
+return (
+    &lt;form onSubmit={handleSubmit}&gt;
+    &lt;label htmlFor="name">Name: &lt;/label&gt;
+    &lt;input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} /&gt;
+    &lt;label htmlFor="email">Email: &lt;/label&gt;
+    &lt;input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} /&gt;
+    &lt;button type="submit">Submit &lt;/button&gt;
+    &lt;/form &gt;
+);
+}
+</code></pre>
+
+<p>In this example:</p>
+
+<ul>
+<li>We use the `useState` hook to manage the form's state, including the `name` and `email` fields.</li>
+<li>The `handleSubmit` function is triggered when the form is submitted. It prevents the default form submission behavior using `event.preventDefault()`. </li>
+<li>Inside `handleSubmit`, you can access the current state values (`name` and `email`) and perform actions like logging them to the console, sending data to a server using an API call, or updating the application's state based on the submitted data.</li>
+<li>The form element has an `onSubmit` prop set to the `handleSubmit` function, ensuring it's called when the form is submitted.</li>
+<li>Each input field has an `onChange` handler that updates the corresponding state variable (`name` or `email`) with the entered value, keeping the component's state in sync with user input.</li>
+<li>After submission, the state values are reset to clear the form.</li>
+</ul>
+
+<h2>Controlled Components for Form Inputs</h2>
+
+<p>In React, forms are typically implemented using controlled components. This means the form data is controlled by the React component's state, rather than by the DOM itself. This approach allows for better control over the form's behavior and validation.</p>
+
+<p>Here, the input fields have a `value` attribute set to the corresponding state variable (`name` or `email`). This ensures the displayed value in the input reflects the current state. The `onChange` handler updates the state whenever the user modifies the input, maintaining consistency between the UI and the component's state.</p>
+
+<h2>Validating User Input</h2>
+
+<p>Validating user input is crucial to ensure the integrity of your application's data. React allows you to implement validation logic to check if the entered data meets specific criteria before submission.</p>
+
+<p>Here are some common validation techniques:</p>
+
+<ul>
+    <li><b>Inline Validation:</b> You can display error messages directly next to the input field based on the validation rules.</li>
+    <li><b>Form-Level Validation:</b> You can display a general error message at the top of the form after submission if there are any validation errors.</li>
+    <li><b>Regular Expressions:</b> You can use regular expressions to validate
+</ul>
+
+<b>Regular Expressions</b>
+        
+<p>You can use regular expressions to validate specific input formats, such as email addresses, phone numbers, or passwords. Libraries like `react-hook-form` or custom validation functions can help with this process.</p>
+        
+<b>Example of Inline Validation:</b>
+        
+<pre class="language-javascript"><code>
+import React, { useState } from 'react';
+
+function RegistrationForm() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+
+    const validateEmail = (email) => {
+    const re = /^(([^&lt;>()[\]\\.,;:\s@"]+(\.[^&lt;>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        if (name === 'email') {
+            setErrorMessage(validateEmail(value) ? '' : 'Please enter a valid email address');
+        }
+        // Update state for name or email based on event.target
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Perform form submission logic
+    };
+
+    return (
+        &lt;form onSubmit={handleSubmit}&gt;
+            &lt;label htmlFor="name"&gt;Name:&lt;/label&gt;
+            &lt;input type="text" id="name" value={name} onChange={handleChange} /&gt;
+            &lt;label htmlFor="email"&gt;Email:&lt;/label&gt;
+            &lt;input type="email" id="email" value={email} onChange={handleChange} /&gt;
+            &lt;span style={{ color: 'red' }}&gt;{errorMessage}&lt;/span&gt;
+            &lt;button type="submit"&gt;Register&lt;/button&gt;
+        &lt;/form&gt;
+    );
+}
+</code></pre>
+ 
+<hr>
+
+
+
+<p><b>Homepage:</b>
+<a href="https://sagecode.net/index.html">Sage-Code</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>
