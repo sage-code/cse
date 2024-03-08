@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Comprehensive introduction to React: Chapter 1">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="react, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Introduction to React</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://sagecode.net/prism.css">
+  <script src="https://sagecode.net/prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col bottom-right">
+        <a href="index.html#css" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h1><a href="environment.html">Chapter 2: Setting Up a React</a></h1>
+
+<p>Welcome to Chapter 2! Now that you've grasped the fundamental concepts of React, it's time to prepare your development environment to start building your own React applications. This chapter will guide you through installing the necessary tools and creating a React project using a popular tool called Create React App (CRA).</p>
+
+<h2>Prerequisites</h2>
+
+<p>Before we begin, ensure you have a text editor or code editor of your choice installed (e.g., Visual Studio Code, Sublime Text). Familiarity with basic JavaScript syntax is also beneficial.</p>
+
+<h2>Installing Node.js and npm</h2>
+
+<p>React applications rely on JavaScript for functionality. Node.js is a JavaScript runtime environment that allows you to run JavaScript code outside of a web browser. Node.js also comes bundled with a package manager called npm (Node Package Manager) that helps you install and manage JavaScript libraries and tools. Head over to the official Node.js website (https://nodejs.org/en) to download and install the latest stable version of Node.js for your operating system.</p>
+
+<p>Once installed, open your terminal or command prompt and type the following command to verify the Node.js and npm installations:</p>
+
+<pre class="language-bash"><code>
+node -v
+npm -v
+</code></pre>
+
+<p>These commands should output the installed versions of Node.js and npm. If you encounter any issues during installation, refer to the official Node.js documentation for troubleshooting steps.</p>
+
+<h2>Creating a React Project using Create React App</h2>
+
+<p>Create React App (CRA) is a popular tool that simplifies the process of setting up a new React project. It includes all the necessary configurations, dependencies, and a development server out of the box. Let's use npm to install Create React App globally on your system:</p>
+
+
+<pre class="language-bash"><code>
+npm install -g create-react-app
+</code></pre>
+
+<p>The `-g` flag in the command indicates a global installation, making the `create-react-app` command available from anywhere on your system. Now, navigate to your desired project directory in the terminal and run the following command to create a new React project named `my-react-app` (replace with your preferred name):</p>
+
+<pre class="language-bash"><code>
+create-react-app my-react-app
+</code></pre>
+
+<p>This command will create a new directory named `my-react-app` with the basic React project structure. Navigate into the project directory using `cd my-react-app` and start the development server using:</p>
+
+<pre class="language-bash"><code>
+npm start
+</code></pre>
+
+<p>This will launch a development server, typically at `http://localhost:3000/` by default, where you can view your React application running in the browser. Congratulations! You've successfully created your first React project.</p>
+
+<h2>Project Structure Overview</h2>
+
+<p>Let's take a quick look at the essential files and folders within your newly created React project:</p>
+
+<ul>
+<li><strong>public/</strong>: This folder contains static assets like images, fonts, or favicons that your application might use.</li>
+<li><strong>src/</strong>: The heart of your React application. This folder houses all your React components, JavaScript files, and other source code.</li>
+    <ul>
+    <li><strong>App.js</strong>: The main component of your React application. It serves as the starting point for your UI.</li>
+    <li><strong>index.js</strong>: The entry point for your React application. It renders the root component (typically `App.js`) to the DOM.</li>
+    </ul>
+<li><strong>package.json</strong>: This file lists all the dependencies your project uses and their versions. It also contains scripts for various tasks like starting the development server or building your application for production.</li>
+</ul>
+
+<p>We'll delve deeper into these components and explore building your first React application in the following chapters. Stay tuned!</p>
+
+<hr>
+
+<p><b>Read next:</b>
+<a href="template.html">Template Page</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>
