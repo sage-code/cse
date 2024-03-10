@@ -41,16 +41,16 @@ Chapter 10 dives into fetching data from external APIs within your React applica
 </div>
 
 
-<h2>Making API Calls using `fetch` or Axios</h2>
+<h2>Making API Calls using "fetch" or Axios</h2>
 
 <p>There are two main approaches to make API calls in React:</p>
 
 <ul>
-<li><b>Using the Fetch API:</b> The `fetch` API is a built-in browser functionality that allows you to make HTTP requests to APIs. It provides a promise-based approach for asynchronous data fetching.</li>
-<li><b>Using Axios:</b> Axios is a popular third-party library that simplifies making HTTP requests in Javascript. It offers a cleaner syntax and additional features like automatic JSON parsing compared to the native `fetch` API.</li>
+<li><b>Using the Fetch API:</b> The "fetch" API is a built-in browser functionality that allows you to make HTTP requests to APIs. It provides a promise-based approach for asynchronous data fetching.</li>
+<li><b>Using Axios:</b> Axios is a popular third-party library that simplifies making HTTP requests in Javascript. It offers a cleaner syntax and additional features like automatic JSON parsing compared to the native "fetch" API.</li>
 </ul>
 
-<b>Here's a basic example using the `fetch` API to fetch data from an API:</b>
+<b>Here's a basic example using the "fetch" API to fetch data from an API:</b>
 
 <pre class="language-js"><code>
 function fetchData() {
@@ -69,10 +69,10 @@ function fetchData() {
 <p><b>Explanation:</b></p>
 
 <ul>
-<li>The `fetchData` function makes a `fetch` call to the specified API endpoint (`https://api.example.com/data`).</li>
-<li>The `then` method is used to handle the successful response. Here, we parse the JSON response using `response.json()` and then handle the data within the next `then` callback.</li>
-<li>The final `then` callback receives the parsed data, which you can use to update your component's state or display it in the UI.</li>
-<li>The `catch` method handles any errors that occur during the request.</li>
+<li>The "fetchData" function makes a "fetch" call to the specified API endpoint ("https://api.example.com/data").</li>
+<li>The "then" method is used to handle the successful response. Here, we parse the JSON response using "response.json()" and then handle the data within the next "then" callback.</li>
+<li>The final "then" callback receives the parsed data, which you can use to update your component's state or display it in the UI.</li>
+<li>The "catch" method handles any errors that occur during the request.</li>
 </ul>
 
 <b>Using Axios (similar approach but with simpler syntax):</b>
@@ -125,13 +125,13 @@ function UserList() {
 
 
 <ul>
-    <li> `fetchData` function to make the API call using Axios.</li>
+    <li> "fetchData" function to make the API call using Axios.</li>
     <li> The async/await syntax is used for a cleaner approach to handling asynchronous operations.</li>
-    <li>Inside `fetchData`, the `axios.get` method fetches data from the API endpoint (`https://api.example.com/users`).</li>
-    <li> Upon successful response (`try` block), the response data is parsed using `response.data`.</li>
-    <li> The fetched data is then used to update the component's state with `setUsers(response.data)`. 
+    <li>Inside "fetchData", the "axios.get" method fetches data from the API endpoint ("https://api.example.com/users").</li>
+    <li> Upon successful response ("try" block), the response data is parsed using "response.data".</li>
+    <li> The fetched data is then used to update the component's state with "setUsers(response.data)". 
             This triggers a re-render of the component with the updated user data.</li>
-    <li>The `catch` block handles any errors that might occur during the API call.</li>
+    <li>The "catch" block handles any errors that might occur during the API call.</li>
 </ul>
 
 <h2>Working with Asynchronous Data</h2>
@@ -139,9 +139,9 @@ function UserList() {
 <p>Fetching data from APIs is asynchronous, meaning it takes time to receive the response. React provides mechanisms to handle this asynchronous nature effectively.</p>
 
 <ul>
-    <li><b>Promises:</b> As seen in the `fetch` API example, promises are a way to handle the eventual result of an asynchronous operation. The `then` and `catch` methods are used to handle successful responses and errors, respectively.</li>
-    <li><b>Async/Await:</b> Introduced with ES2017, async/await provides a cleaner syntax for working with asynchronous code. The `async` keyword is used to declare asynchronous functions, and `await` is used to pause execution until a promise resolves.</li>
-    <li><b>useEffect Hook:</b> The `useEffect` hook is a powerful tool for managing side effects in functional React components. It allows you to perform actions like data fetching after the component mounts or when specific dependencies change.</li>
+    <li><b>Promises:</b> As seen in the "fetch" API example, promises are a way to handle the eventual result of an asynchronous operation. The "then" and "catch" methods are used to handle successful responses and errors, respectively.</li>
+    <li><b>Async/Await:</b> Introduced with ES2017, async/await provides a cleaner syntax for working with asynchronous code. The "async" keyword is used to declare asynchronous functions, and "await" is used to pause execution until a promise resolves.</li>
+    <li><b>useEffect Hook:</b> The "useEffect" hook is a powerful tool for managing side effects in functional React components. It allows you to perform actions like data fetching after the component mounts or when specific dependencies change.</li>
 </ul>
 
 <p>By understanding these concepts, you can effectively fetch data from APIs and manage asynchronous operations within your React applications.</p>

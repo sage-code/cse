@@ -76,11 +76,11 @@ return (
 <p>In this example:</p>
 
 <ul>
-<li>We use the `useState` hook to manage the form's state, including the `name` and `email` fields.</li>
-<li>The `handleSubmit` function is triggered when the form is submitted. It prevents the default form submission behavior using `event.preventDefault()`. </li>
-<li>Inside `handleSubmit`, you can access the current state values (`name` and `email`) and perform actions like logging them to the console, sending data to a server using an API call, or updating the application's state based on the submitted data.</li>
-<li>The form element has an `onSubmit` prop set to the `handleSubmit` function, ensuring it's called when the form is submitted.</li>
-<li>Each input field has an `onChange` handler that updates the corresponding state variable (`name` or `email`) with the entered value, keeping the component's state in sync with user input.</li>
+<li>We use the "useState" hook to manage the form's state, including the "name" and "email" fields.</li>
+<li>The "handleSubmit" function is triggered when the form is submitted. It prevents the default form submission behavior using "event.preventDefault()". </li>
+<li>Inside "handleSubmit", you can access the current state values ("name" and "email") and perform actions like logging them to the console, sending data to a server using an API call, or updating the application's state based on the submitted data.</li>
+<li>The form element has an "onSubmit" prop set to the "handleSubmit" function, ensuring it's called when the form is submitted.</li>
+<li>Each input field has an "onChange" handler that updates the corresponding state variable ("name" or "email") with the entered value, keeping the component's state in sync with user input.</li>
 <li>After submission, the state values are reset to clear the form.</li>
 </ul>
 
@@ -88,7 +88,7 @@ return (
 
 <p>In React, forms are typically implemented using controlled components. This means the form data is controlled by the React component's state, rather than by the DOM itself. This approach allows for better control over the form's behavior and validation.</p>
 
-<p>Here, the input fields have a `value` attribute set to the corresponding state variable (`name` or `email`). This ensures the displayed value in the input reflects the current state. The `onChange` handler updates the state whenever the user modifies the input, maintaining consistency between the UI and the component's state.</p>
+<p>Here, the input fields have a "value" attribute set to the corresponding state variable ("name" or "email"). This ensures the displayed value in the input reflects the current state. The "onChange" handler updates the state whenever the user modifies the input, maintaining consistency between the UI and the component's state.</p>
 
 <h2>Validating User Input</h2>
 
@@ -104,7 +104,7 @@ return (
 
 <b>Regular Expressions</b>
         
-<p>You can use regular expressions to validate specific input formats, such as email addresses, phone numbers, or passwords. Libraries like `react-hook-form` or custom validation functions can help with this process.</p>
+<p>You can use regular expressions to validate specific input formats, such as email addresses, phone numbers, or passwords. Libraries like "react-hook-form" or custom validation functions can help with this process.</p>
         
 <b>Example of Inline Validation:</b>
         

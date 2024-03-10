@@ -53,7 +53,7 @@ function Button() {
     };
 
     return (
-        <button onClick={handleClick}>Click me</button>
+        &lt;button onClick={handleClick}>Click me&lt;/button&gt;
     );
 }
 </code></pre>
@@ -61,8 +61,8 @@ function Button() {
 <p>In this example:</p>
 
 <ul>
-<li>We define a `handleClick` function that logs a message to the console when clicked.</li>
-<li>The `button` element has an `onClick` attribute set to the `handleClick` function. This tells React to call `handleClick` whenever the button is clicked.</li>
+<li>We define a "handleClick" function that logs a message to the console when clicked.</li>
+<li>The "button" element has an "onClick" attribute set to the "handleClick" function. This tells React to call "handleClick" whenever the button is clicked.</li>
 </ul>
 
 <h2>Passing Event Data to Components</h2>
@@ -76,7 +76,7 @@ function Input(props) {
     };
 
     return (
-        <input type="text" onChange={handleChange} />
+        &lt;input type="text" onChange={handleChange} /&gt;
     );
 }
 </code></pre>
@@ -84,9 +84,9 @@ function Input(props) {
 <p>This example demonstrates passing the input value to a parent component:</p>
 
 <ul>
-<li>The `Input` component receives an `onChange` prop as a function from its parent.</li>
-<li>The `handleChange` function within `Input` retrieves the current input value from the event object's `target.value` property.</li>
-<li>It then calls the `onChange` prop function (passed from the parent) and provides the input value as an argument, enabling communication between components.</li>
+<li>The "Input" component receives an "onChange" prop as a function from its parent.</li>
+<li>The "handleChange" function within "Input" retrieves the current input value from the event object's "target.value" property.</li>
+<li>It then calls the "onChange" prop function (passed from the parent) and provides the input value as an argument, enabling communication between components.</li>
 </ul>
 
 <h2>Building Interactive Elements</h2>

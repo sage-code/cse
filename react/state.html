@@ -44,11 +44,11 @@
 
 <p>State is a specific piece of data that a component manages. It can change over time, triggering the component to re-render with the updated state. This allows your UI to respond to user actions and data changes.</p>
 
-<h2>Manage State with `useState` Hook</h2>
+<h2>Manage State with "useState" Hook</h2>
 
-<p>React provides the `useState` hook for managing state within functional components. This hook allows you to declare and manipulate state variables within a component.</p>
+<p>React provides the "useState" hook for managing state within functional components. This hook allows you to declare and manipulate state variables within a component.</p>
 
-<p>Here's how to use `useState`:</p>
+<p>Here's how to use "useState":</p>
 
 <pre class="language-javascript"><code>
 import React, { useState } from 'react';
@@ -56,15 +56,15 @@ import React, { useState } from 'react';
 function Counter() {
     const [count, setCount] = useState(0); // Declare state variable "count" with initial value 0
 
-    const handleClick = () => {
+    const handleClick = () =>; {
         setCount(count + 1); // Update state using the setCount function
     };
 
     return (
-        <div>
-        <p>You clicked {count} times</p>
-        <button onClick={handleClick}>Click me</button>
-        </div>
+        &lt;div&gt;
+        &lt;p&gt;You clicked {count} times&lt;/p&gt;
+        &lt;button onClick={handleClick}&gt;Click me&lt;/button&gt;
+        &lt;/div&gt;
     );
 }
 </code></pre>
@@ -72,11 +72,11 @@ function Counter() {
 <p>In this example:</p>
 
 <ul>
-<li>We import `useState` from `react`.</li>
-<li>Inside the `Counter` component, we use `useState(0)` to declare a state variable named `count` with an initial value of 0.</li>
-<li>The `useState` hook returns an array containing the current state value (`count`) and a function to update it (`setCount`).</li>
-<li>We define a `handleClick` function that increments the `count` state by 1 using the `setCount` function.</li>
-<li>The component renders the current `count` value and a button that triggers the `handleClick` function on click, updating the state and re-rendering the component.</li>
+<li>We import "useState" from "react".</li>
+<li>Inside the "Counter" component, we use "useState(0)" to declare a state variable named "count" with an initial value of 0.</li>
+<li>The "useState" hook returns an array containing the current state value ("count") and a function to update it ("setCount").</li>
+<li>We define a "handleClick" function that increments the "count" state by 1 using the "setCount" function.</li>
+<li>The component renders the current "count" value and a button that triggers the "handleClick" function on click, updating the state and re-rendering the component.</li>
 </ul>
 
 <h2>Conditional Rendering based on State</h2>
@@ -87,23 +87,23 @@ function Counter() {
 function Login() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const handleLogin = () => {
+    const handleLogin = () =&gt; {
         setIsLoggedIn(true);
     };
 
     return (
-        <div>
+        &lt;div&gt;
         {isLoggedIn ? ( // Conditional rendering based on state
-            <p>Welcome, you are logged in!</p>
+            &lt;p&gt;Welcome, you are logged in!&lt;/p&gt;
         ) : (
-            <button onClick={handleLogin}>Login</button>
+            &lt;button onClick={handleLogin}&gt;Login&lt;/button&gt;
         )}
-        </div>
+        &lt;/div&gt;
     );
 }
 </code></pre>
 
-<p>This example demonstrates how to conditionally render content based on the `isLoggedIn` state. We'll explore more advanced state management techniques and concepts in the following chapters. Stay tuned!</p>
+<p>This example demonstrates how to conditionally render content based on the "isLoggedIn" state. We'll explore more advanced state management techniques and concepts in the following chapters. Stay tuned!</p>
 
 
 <hr>

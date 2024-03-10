@@ -44,16 +44,16 @@ In Chapter 4, we'll delve into the essential process of rendering components in 
 
 <p>The Document Object Model (DOM) is a hierarchical representation of your web page's structure. React interacts with the DOM to create and update UI elements based on your components.</p>
 
-<h2>Using the `ReactDOM.render` Function</h2>
+<h2>Using the "ReactDOM.render" Function</h2>
 
-<p>React provides the `ReactDOM.render` function, a vital tool for rendering React components within the DOM. It takes two arguments:</p>
+<p>React provides the "ReactDOM.render" function, a vital tool for rendering React components within the DOM. It takes two arguments:</p>
 
 <ol>
 <li><strong>The component to render:</strong> This is the React component you want to display on the page. You can either pass the component itself or a JSX element representing the component.</li>
-<li><strong>The container element (DOM element):</strong> This is the HTML element in your web page where you want the component to be displayed. You typically use the `document.getElementById` method to reference an existing element with a specific ID.</li>
+<li><strong>The container element (DOM element):</strong> This is the HTML element in your web page where you want the component to be displayed. You typically use the "document.getElementById" method to reference an existing element with a specific ID.</li>
 </ol>
 
-<p>Here's an example of using `ReactDOM.render`:</p>
+<p>Here's an example of using "ReactDOM.render":</p>
 
 <pre class="language-javascript"><code>
 import React from 'react';
@@ -61,30 +61,30 @@ import ReactDOM from 'react-dom';
 
 function Greeting() {
   return (
-    <div>
-      <h1>Hello, World!</h1>
-    </div>
+    &lt;div&gt;
+      &lt;h1&gt;Hello, World!&lt;/h1&gt;
+    &lt;/div&gt;
   );
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<Greeting />, rootElement);
+ReactDOM.render(&lt;Greeting/&gt;, rootElement);
 </code></pre>
 
 <p>In this example:</p>
 
 <ul>
-<li>We import `React` and `ReactDOM` from their respective libraries.</li>
-<li>We define the `Greeting` component.</li>
-<li>We use `document.getElementById('root')` to get a reference to the DOM element with the ID "root".</li>
-<li>We call `ReactDOM.render` to render the `<Greeting>` component within the `rootElement`.</li>
+<li>We import "React" and "ReactDOM" from their respective libraries.</li>
+<li>We define the "Greeting" component.</li>
+<li>We use "document.getElementById('root')" to get a reference to the DOM element with the ID "root".</li>
+<li>We call "ReactDOM.render" to render the &lt;Greeting&gt; component within the "rootElement".</li>
 </ul>
 
 <h2>Nesting Components</h2>
 
 <p>React components can be nested within each other to create complex UI structures. A parent component can render child components, which in turn can render their own child components, and so on. This hierarchical structure allows you to build modular and reusable components.</p>
 
-<p>For example, you might have a `NavBar` component containing a `Logo` component and a list of `Link` components.</p>
+<p>For example, you might have a "NavBar" component containing a "Logo" component and a list of "Link" components.</p>
 
 <p>We'll explore more advanced rendering techniques and component relationships in the following chapters. Stay tuned!</p>
 

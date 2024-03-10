@@ -45,22 +45,22 @@ Chapter 7 explores how to style your React components with CSS. Styling is essen
 <p>There are two main approaches to styling React components with CSS:</p>
 
 <ul>
-<li><b>Inline Styles:</b> You can apply styles directly to JSX elements using the `style` attribute. This approach is convenient for simple styling, but it can lead to less maintainable code as styles become scattered throughout your components.</li>
-<li><b>External Stylesheets:</b> Here, you create separate CSS files containing your styles and link them to your React components using the `<link>` tag in the HTML head section. This approach promotes better separation of concerns and keeps your styles organized.</li>
+<li><b>Inline Styles:</b> You can apply styles directly to JSX elements using the "style" attribute. This approach is convenient for simple styling, but it can lead to less maintainable code as styles become scattered throughout your components.</li>
+<li><b>External Stylesheets:</b> Here, you create separate CSS files containing your styles and link them to your React components using the &lt;<link>&gt; tag in the HTML head section. This approach promotes better separation of concerns and keeps your styles organized.</li>
 </ul>
 
 <p><b>Recommendation:</b> Generally, using external stylesheets is preferred for maintainability and scalability, especially for larger projects.</p>
 
 <h2>Applying CSS Classes to Components</h2>
 
-<p>You can apply CSS classes to your React components using the `className` attribute in JSX. This allows you to define styles in your external stylesheet and associate them with specific components or elements within your components.</p>
+<p>You can apply CSS classes to your React components using the "className" attribute in JSX. This allows you to define styles in your external stylesheet and associate them with specific components or elements within your components.</p>
 
 <pre class="language-javascript"><code>
 import React from 'react';
 
     function Button(props) {
     return (
-        <button className={props.className}>{props.text}</button>
+        &lt;button className={props.className}>{props.text}&lt;/button&gt;
     );
 }
 </code></pre>
@@ -90,9 +90,9 @@ import React from 'react';
 <p>In this example:</p>
 
 <ul>
-<li>The `Button` component accepts a `className` prop and a `text` prop.</li>
-<li>The button element's `className` is set to the value of the `className` prop, allowing the parent component to determine the button's style.</li>
-<li>The external stylesheet defines classes like `.primary-button` and `.secondary-button` that can be applied to buttons for different styles.</li>
+<li>The "Button" component accepts a "className" prop and a "text" prop.</li>
+<li>The button element's "className" is set to the value of the "className" prop, allowing the parent component to determine the button's style.</li>
+<li>The external stylesheet defines classes like ".primary-button" and ".secondary-button" that can be applied to buttons for different styles.</li>
 </ul>
 
 <h2>Using CSS Modules for Component-Scoped Styling</h2>
