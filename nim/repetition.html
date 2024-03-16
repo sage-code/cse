@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Nim fundamentals: Repetitive statements. A tutorial for absolute beginners. Augmented using ChatGPT.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="nim, lang, language, repetitive statement, loop, cycle, while, for, syntax, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Nim Repetition</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<main class="container">
+
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Nim Repetition</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+A repetitive statement is a statement that executes multiple times, usually until a certain condition is met. The most common repetitive statements in programming are loops. Loops allow you to execute the same code multiple times without having to repeat the code multiple times.
+</div>
+
+<h2>Types of loops</h2>
+
+<p>There are four types of repetitive statements in Nim:</p>
+
+<ul>
+  <li>For loops</li>
+  <li>While loops</li>
+  <li>Do-while loops</li>
+  <li>Nested loops</li>
+</ul>
+
+<h2>For loops</h2>
+
+<p>A for loop iterate over a range of values or a colection. The loop can be intrerupted using keywords "break" or can be shortcut using keyword "continue"</p>
+
+<div align="center">
+  <img src="../images/for-loop.svg" alt="repetition" 
+  width="640" class="img-fluid protect rounded shadow border" >
+  <p>for loop</p>
+</div>
+
+<h4>Example:</h4>
+
+<p>Following code prints the numbers from 1 to 10:</p>
+<pre><code class="language-nim line-numbers">
+for i in 1..10:
+  print(i)
+</pre></code>
+
+<h2>Nested loops</h2>
+
+<p>Nested loops allow you to iterate over multiple ranges of values at the same time. For example, the following code prints the numbers from 1 to 10, but only if the number is even and the number is divisible by 5:</p>
+
+<pre><code class="language-nim line-numbers">
+for i in 2..10:
+  if i % 2 == 0 and i % 5 == 0:
+    print(i)
+</pre></code>
+
+<h2>Intreruption</h2>
+
+<p>An interruption in Nim is a way to break out of a loop early. There are two ways to do this: Using "break" or "return" keywords. Also you can force the loop to iterate using "continue" keyword. This do not intrerupe the loop but force the loop to skip some statement and reiterate.</p>
+
+<pre><code class="language-nim line-numbers">
+var i = 0
+
+while i < 10:
+  i += 1
+
+  if i == 3:
+    continue  # Skip over the rest of the loop for this iteration
+
+  if i == 7:
+    break  # Exit the loop entirely
+
+  echo (i)
+
+echo ("Done!")
+
+</code></pre>
+
+<h2>While loops</h2>
+
+<p>While loops iterate while a condition is true. For example, the following code prints the numbers from 1 to 10, but only if the number is even:</p>
+
+<div align="center">
+  <img src="../images/while.svg" alt="repetition" srcset="../images/while.svg"
+  width="520" class="img-fluid protect rounded shadow border" >
+  <p>while loop diagram</p>
+</div>
+
+<h4>Example</h4>
+
+<pre><code class="language-nim line-numbers">
+i = 2
+while i <= 10:
+  if i % 2 == 0:
+    print(i)
+    i += 1
+</pre></code>
+
+<h2>Do-while loops</h2>
+
+<p>Do-while loops are similar to while loops, but the condition is checked at the end of the loop instead of the beginning. This means that the loop will always execute at least once, even if the condition is false. For example, the following code prints the numbers from 1 to 10, but only if the number is odd:</p>
+
+
+<!-- a regular diagram -->
+<div class="text-center">
+  <img src="../images/do-while.svg" alt="do loop diagram"
+       width="600" class="img-fluid protect rounded shadow border" >
+  <p>do-while loop</p>
+</div>
+
+<h4>Example</h4>
+
+<pre><code class="language-nim line-numbers">
+i = 1
+do:
+  print(i)
+  i += 1
+while i <= 10
+</pre></code>
+
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="objects.html">Objects</a>
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</main>
+</body>
+</html>

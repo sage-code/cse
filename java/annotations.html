@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Java programming free tutorial by Sage-Code.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="language, syntax, programming, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Java Tutorial</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Java Annotations</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+Annotations, a form of metadata, provide data about a program that is not part of the program itself. Annotations have no direct effect on the operation of the code they annotate.
+</div>
+
+<h4>Annotation Syntax</h4>
+
+<pre><code class="language-java">/* different annotations */
+@annotation
+@annotation(value)
+@annotation(value, value, ...) 
+@annotation(name=value) 
+@annotation(name=value, name=value ...)
+</code></pre>
+
+<h4>Using annotations</h4>
+
+<p>1. Annotations have multiple use cases. It can be used for declaration statements, above the declaration in a single line or multiple lines. Also more then one annotations can apply to one declaration.<p>
+
+<p>2. As of the Java SE 8 release, annotations can also be applied to the use of types. Here are some examples:
+
+<pre><code class="language-java">/* Special annotations */
+ 
+//Class instance creation expression
+      new @Interned MyObject();
+//Type cast with annotation
+      myString = (@NonNull String) str;
+//Implementation clause
+      class UnmodifiableList&lt;T&gt; implements
+          @Readonly List&lt;@Readonly T&gt; { ... }
+//Thrown exception declaration
+      void monitorTemperature() throws
+          @Critical TemperatureException { ... }
+</code></pre>
+
+<h2>Predefined Annotations</h2>
+
+<p>A set of annotation types are predefined in the Java SE API. Some annotation types are used by the Java compiler, and some apply to other annotations. These are called meta annotations.</p>
+
+<h4>True Annotations</h4>
+
+<ul>
+<li>@Deprecated,</li>
+<li>@Override,</li> 
+<li>@SuppressWarnings</li>
+<li>@SafeVarargs</li>
+<li>@FunctionalInterface</li>
+</ul>
+
+<h4>Meta Annotations</h4>
+
+<ul>
+<li>@Retention</li>
+<li>@Documented</li>
+<li>@Target</li>
+<li>@Inherited</li>
+<li>@Repeatable</li>
+</ul>
+
+<a href="https://docs.oracle.com/javase/tutorial/java/annotations/basics.html">Annotations DOC</a>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="packages.html">Packages</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

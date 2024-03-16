@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to block statements in Ruby.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="ruby, statements, block, blocks, syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Ruby Blocks</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#ruby-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+    
+<h2>Ruby Blocks</h2>
+
+<div class="alert alert-secondary shadow-sm"> 
+There is somesing exotic in Ruby that makes the language intresting to use. 
+These are called <em>"blocks"</em>. A block consist of a chunk of code, enclosed in curly brackets.
+It allows you to group code into a standalone unit that you can use as a method argument.
+Using blocks is a way of injecting code inside a method, dinamicly changing its behaviour without modifiyng the method.
+</div>
+
+<p><b>Pattern:</b> for single line syntax.</p>
+
+<pre><code class="language-ruby match-braces">block_name { statement } </code></pre>
+
+<p><b>Pattern:</b> for multy line syntax.</p>
+
+<pre><code class="language-ruby match-braces">block_name 
+do
+   statement1
+   statement2
+   ..........
+end</code></pre>
+
+<p><b>Note:</b>Both syntax patterns are doing the same thing. As a general rule of thumb, it’s better to use the do/end version if your code has more than one line, just to make it easier to read.</p>
+
+
+<h2>Using Blocks</h2>
+
+<p>A method can call a block once or several times using <em>yield</em> keyword. 
+This keyword require the method to be called using a block after the argument list.
+When yield is used, the method require a block. 
+If the block do not exist in the method call, you will end-up with an error.
+<p>
+
+<pre><code class = "language-ruby batch-braces line-numbers"># define a method that require a block
+# define a method that require a block
+def method
+  yield
+end  
+
+#call method with block arguments
+method {puts "first call"}  
+method {puts "second call"}  
+</code></pre>
+
+<ht>
+
+<h2>Block Parameters</h2>
+
+<p>Blocks can have parameters. The syntax to define parammeters is different from methods. 
+Parameters are enclosed between two vertical lines like in the pattern below:
+</p>
+
+<pre><code class="language-ruby match-braces">block_name {|a, b| statement }</code></pre>
+
+<h4>Example:</h4>
+
+<pre><code class = "language-ruby batch-braces line-numbers"># define a method that require a block
+def demo
+  yield('hello', 100)  
+end  
+
+#call method with block arguments
+demo {|str, num| puts str + '-' + num.to_s}  
+demo {|str, num| puts str + ':' + num.to_s}  
+</code></pre>
+
+<h2>Result Value</h2>
+
+<p>A code block can return a value. It is the value of the last expression evaluated in the code block. This is made available inside the associated method as result of yield that is used to call the block. It can be captured using the assign "=" statement.
+</p>
+
+<h4>Example:</h4>
+
+<pre><code class = "language-ruby batch-braces line-numbers"># define a method that require a block
+def eval(p1, p2)
+  result = yield(p1, p2)  
+  print "result = ", result, "\n"
+end  
+
+#call method with block arguments
+eval(4, 3) {|a, b| a + b}  
+eval(4, 3) {|a, b| a - b}  
+eval(4, 3) {|a, b| a * b}  
+</code></pre>
+
+<p><b>Output:</b></p>
+<pre><code class = "language-output">result = 7
+result = 1
+result = 12
+</code></pre>
+
+<h2>Special Blocks</h2>
+
+<p>In a Ruby script you can define two special named blocks: BEGIN and END Blocks
+The BEGIN blocks are run automatically when script is being loaded. 
+The END blocks are executed after the program has finished executing.
+You can create more than one of BEGIN blocks and more than one END blkcs.</p>
+
+<pre><code class="language-ruby match-braces line-numbers">#!/usr/bin/ruby
+
+BEGIN { 
+   # BEGIN block code 
+   puts "BEGIN code block"
+} 
+
+END { 
+   # END block code 
+   puts "END code block"
+}
+
+# main code (do not use keyword MAIN 
+puts "main code block"
+</code></pre>
+
+<h2>HTML Wrapper</h2>
+<p>Blocks are the good candidates whenever you need to wrap dynamic code within some static code. 
+For example if you want to surrond some text with html tags. 
+The text is the the dynamic part and the tags are the static part.
+
+<pre><code class="language-ruby match-braces line-numbers">#demo: wrapper method
+def wrap_text(tag)
+  "&lt;#{tag}&gt;" + yield + "&lt;/#{tag}&gt;"
+end
+
+# create html elements
+str   = wrap_text("h1"){ "Page header"} 
+str  += wrap_text("p") { "This is a paragraph."} 
+
+# wrap the html document
+page  = wrap_text("html") {str}
+print page 
+</code></pre>
+
+<pre><code class="language-output">&lt;html&gt;&lt;h1&gt;Page header&lt;/h1&gt;&lt;p&gt;This is a paragraph.&lt;/p&gt;&lt;/html&gt;
+</code></pre>
+
+<p><b>Read next:</b>
+<a href="classes.html">Classes</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

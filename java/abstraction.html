@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to abstract classes in Java.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="sage, code, java, oop, abstract, class, abstraction, generalization">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>OOP Abstraction</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>OOP Abstraction</h1>
+
+<div class="alert alert-secondary shadow-sm">There are two things you can make abstract: A method and a class. Abstract methods are designed to be implemented later. Abstract classes are designed to be extended by other classes. You can not instantiate an abstract class and you can not execute an abstract method.
+</div>
+
+<h2>Abstract Methods</h2>
+
+<p>An abstract method is declared without an implementation. That is curly bracket block is missing. In addition you must use keyword "abstract" at the beginning of declaration. Let's see: </p>
+
+<h4>Example:</h4>
+
+<p>Next code fragment implements an abstract method that have only name, no parameters and no return value. Also, declaration is ending with ";". There is no implementation block {...} therefore it requires to be declared abstract.</p>
+
+<pre><code class="language-java">//declare abstract method with no result
+abstract void draw();
+</pre></code>
+
+<p><b>Note:</b>By declaring one abstract method in a class, the class must be also abstract. It can not be used but to be extended by a descendent class.</p>
+
+<h2>Abstract Classes</h2>
+
+<p>An abstract class is declared using keyword <em>"abstract"</em>. This kind of class do have a block for implementation but inside the block we do not have all the methods implemented. Some can be abstract methods to be implemented in a descendent class.</p>
+
+<h4>Example:</h4>
+
+<p>Next code fragment implements an abstract class that have inside an abstract method:</p>
+
+<pre><code class="language-java">//declare abstract method with no result
+public abstract class GraphicObject {
+   // declare fields
+   ...   
+   // declare abstract methods
+   abstract void draw();
+   ...   
+   // declare nonabstract methods
+   ...
+}
+</pre></code>
+
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="interfaces.html">Interfaces</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

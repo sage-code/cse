@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to Ruby variables.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="ruby, language, syntax, programming, tutorial, website, developer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Ruby Variables</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#ruby-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h2>Ruby Variables</h2>
+
+<div class="alert alert-secondary shadow-sm">
+Variables are identifiers representing data elements. Every element have a data type that is automatically associated by Ruby using type inference. You can perform different operations on different data types using operators, functions and methods.
+</div>
+
+<h2>Dynamic Typing</h2>
+<p>Ruby is a dynamic typed language. This thing is important and you have to learn how to live with it to avoid logical errors. Dynamic typing means you can change the variable content and type during program execution. This may be unintentional.&nbsp; Usually is a bad practice to change data type of a variable and reuse variables for other purposes they are initially designed for.</p>
+<p><b>Example</b></p>
+<p>I can change data type for a variable! Wait&hellip; what ?</p>
+<pre><code class="language-ruby line-numbers"># declare integer variable
+x = 1
+puts "x = #{x}"
+puts x.class # Integer
+
+# changing data type for x variable
+x = '?' 
+puts "x = #{x}"
+puts x.class # String</code></pre>
+<h4>Notes:</h4>
+<ul>
+<li>variable names are simple identifiers starting with lowercase letters,</li>
+<li>you can use string interpolation "#{}" to display nice messages,</li>
+<li>later you can change a variable using a&nbsp; new data type,</li>
+<li>all variables in Ruby represent instances of specific classes.</li>
+</ul>
+<h2>Data Type</h2>
+<p>Ruby has built-in data types you can use to define variables and attributes.</p>
+<ol>
+<li>Numbers</li>
+<li>Strings</li>
+<li>Boolean</li>
+<li>Symbols</li>
+<li>Arrays</li>
+<li>Hashes</li>
+</ol>
+<h2>Literals</h2>
+<p>Literals are constants, created with alphanumeric symbols. Each data type has a specific literal notation that can be used to determine the type of variable. In Ruby you do not have to specify the type like you do in Java, C++ or Ada or Pascal. It is good enough to make an assignment using a literal.</p>
+<h4>Examples:</h4>
+<p>In next example we use&nbsp;<em>"assign operator"&nbsp;</em>this will create an&nbsp;<em>"assign statement".&nbsp;</em></p>
+<pre><code class="language-ruby line-numbers">a = 0   #integer
+b = 0.5 #float
+
+# define two strings
+s1 = 'single quoted string'
+s2 = "double quoted string"
+
+puts s1 
+puts s2
+
+h = true  #boolean true
+q = false #boolean false
+n = nil   #nothing at all
+
+#define a symbol
+x = :test 
+print "x=", x,"\n"</code></pre>
+<p><b>Note:&nbsp;</b>In Ruby there is no keyword for&nbsp;<em>"assign"</em>&nbsp;statement. You start with an&nbsp;<em>"identifier"&nbsp;</em>of a variable that may exist or not. If the variable do not exist it will be created immediate and will have an initial value equal to the expression literal.</p>
+<p><b>Homework:&nbsp;</b>Open this example live and run it:&nbsp;<a href="https://repl.it/@elucian/ruby-data-types" target="_blank" rel="noopener noreferrer">ruby data types</a></p>
+
+<h2>Collections</h2>
+<p>Ruby has two built-in collections. You can create a collection using type inference with literals like in Python. The two literals are using two kind of brackets: square brackets for Array and squiggly brackets for hash map:</p>
+<ul>
+<li>[, , , ]&nbsp; define one array</li>
+<li>{ , , , } define one hash map</li>
+</ul>
+<p><b>Examples</b></p>
+<pre><code class="language-ruby line-numbers">#array of integers
+v = [1,2,3] 
+print "v=",v, "\n"
+print "v[0]=", v[0], "\n" #first element
+print "v[-1]=",v[-1], "\n"#last element
+
+#array of strings
+z = ['a','b','x'] 
+print "z=",z, "\n"
+
+#array of symbols
+u = [:a,:b,:c] 
+print "u=", u, "\n"
+
+#hash of strings
+o = {'a' =&gt; 1, 'b' =&gt; 2, 'c' =&gt; 3}
+print "o=", o, "\n"
+
+#hash of symbols
+q = {:a =&gt; 1, :b =&gt; 2, :c =&gt; 3}
+print "q=", q, "\n"</code></pre>
+<p><b>Homework:&nbsp;</b>Open this example live and run it:&nbsp;<a href="https://repl.it/@elucian/ruby-collections" target="_blank" rel="noopener noreferrer">ruby collections</a></p>
+
+<h2>Conversion</h2>
+<p>In Ruby you can not operate on different data types. There is a type safety built-in. However, some types are compatible and operator "==" is doing automatic conversion between float and integer type. Unlike JavaScript though you can not compare one string with one number.</p>
+<p>Sometimes you must do explicit conversion between two data types. You can do this using "to_x" methods, where "x" can be "i", "f", "s" &hellip; depending on data type. For example let&rsquo;s convert one number and concatenate the number with a string:</p>
+<h4>Example:</h4>
+<pre><code class="language-ruby line-numbers">#convert integer to number
+x = 10;
+
+# use conversion and concatenation
+puts x.to_s + "%"; # 10%
+
+# alternative use string interpolation
+puts "#{x}%" 
+</code></pre>
+<p><b>Note:&nbsp;</b>In the previous example we use&nbsp;<em>string interpolation</em>&nbsp;as alternative. Sometimes you can do one thing in many ways in Ruby. It depends on every team to develop a style. You have to be prepared though to understand other&rsquo;s code so we sometimes offer an alternative.</p>
+
+<hr>
+
+<p><b>Read next:</b>
+<a href="decision.html">Decision Statement</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

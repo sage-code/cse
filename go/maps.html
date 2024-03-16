@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Go tutorial: warking with map data type.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="go, programming, map, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Go Tutorial</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Go Tutorial</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+A "map" is a data type that is like a hash table with two columns: key and a value. It is similar to a Python dictionary. Keys of a map can be string or numbers. The value can be any data type. All values must have the same type.
+</div>
+
+<h2>Maps</h2>
+
+<p>This is how a "map" declaration look like:</p>
+<pre><code class="language-go">var x<b> map</b>[T] <b>type</b></code></pre>
+
+<p>Where T is a type of the key and <b>type</b> is the type of the values.</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file map_type.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	Lat, Long float64
+}
+
+var m map[string] Vertex
+
+func main() {
+	m = make(map[string] Vertex)
+	m["Bell Labs"] = Vertex {
+		40.68433, -74.39967,
+	}
+	fmt.Println(m["Bell Labs"])
+}
+</code></pre>
+
+
+
+<h2>Notes:</h2>
+
+<ul>
+<li>A <em><b>nil</b> </em>map has no keys, nor can keys be added to a <em><b>nil</b> </em>map. This is the <em>zero value</em> of a map.</li>
+<li>The <b><em>make</em></b> function can be used to create a map of the given type, initialized and ready for use.</li>
+</ul>
+
+<h2>Map literals</h2>
+
+<p>A map literal is a notation that describe all members of a maps that can be used to initialize a map variable. This literal notation is using nested braces { } to define the collection elements. Map literals are like struct literals  and the keys are required.</p>
+
+<pre><code class="language-go line-numbers">//file map_literal.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m = map[string] Vertex{
+    "Bell Labs": Vertex {
+        40.68433, -74.39967,
+    },
+    "Google": Vertex{
+        37.42202, -122.08408,
+    },
+}
+
+func main() {
+    fmt.Println(m)
+}
+
+</code></pre>
+
+<h4>Alternative</h4>
+
+<p>You can omit the type from the elements of the literal. This is alternative simplified sintax:</p>
+
+<pre><code class="language-go line-numbers">//map_alternative.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+    Lat, Long float64
+}
+
+var m = map[string]Vertex {
+    "Bell Labs": {40.68433, -74.39967},
+    "Google":    {37.42202, -122.08408},
+}
+
+func main() {
+    fmt.Println(m)
+}
+
+</code></pre>
+
+<h2>Mutating Maps</h2>
+
+<p>In next example we demonstrate several operations using a map "m".</p>
+
+<pre><code class="language-go line-numbers">//file map_mutation.go
+package main
+
+import "fmt"
+
+func main() {
+    // declare a map m using type inference operator ":="   
+    m := make(map[string]int)
+
+    // create a new element in the map
+    m["Answer"] = 42
+    fmt.Println("The value:", m["Answer"])
+
+    // create a new element in the map
+    m["Answer"] = 48
+    fmt.Println("The value:", m["Answer"])
+
+    // remove element from the map
+    delete(m, "Answer")
+    fmt.Println("The value:", m["Answer"])
+
+    // search for map element by name
+    v, ok := m["Answer"]
+    fmt.Println("v = ", v)    
+    
+    // expected: false
+    fmt.Println("The Answer is present?", ok)
+}
+</code></pre>
+
+<p><b>Output:</b></p>
+
+<pre><code class="language-output">The value: 42
+The value: 48
+The value: 0
+The Answer is present? false</code></pre>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="control.html">Control Flow</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

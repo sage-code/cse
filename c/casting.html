@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to type casting in C programming language.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="C, type, casting, coercion">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>C Casting</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#c-lang" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>C Type Casting</h1>
+
+<div class="alert alert-secondary shadow-sm">
+Type casting is the conversion of one data type into another data. This conversion can be implicit or explicit. The implicit conversion is possible when there is not possible to loose information during data transformation. Explicit casting is necessary when data conversion may cause data losses or data alteration.
+</div>
+
+
+<h2>Implicit casting</h2>
+
+<p>Sometimes implicit casting of integer type is also called "integer promotion". There is an type hierarchy from smaller integer size data larger size that can be done with no data loses and is performed implicit using assign operator.</p>
+<p><b>Integer promotion</b>: char -&gt; short int -&gt; int -&gt; long int&nbsp;</p>
+<p><b>Float promotion</b>: float -&gt; double</p>
+<p>In addition, integer can be converted to float or double. Unsigned can be converted to signed integer with no data loses. If data casting fail, C will just give you bad result and will not produce an error.</p>
+
+<h2>Expressions result&nbsp;</h2>
+
+<p>C operators are overloaded. For example division operator "/" can operate with integer types or float types. Sometimes the result is unexpected. Therefore we need to pay attention to operands and perform explicit conversion if appropriate.</p>
+<h4>Example:</h4>
+<pre><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+int main()
+{
+    int a = 10;
+    int b = 20;
+    double c,d;
+    // integer division
+    c = a / b;
+    printf("c = %lf\n", c); // 0.000000
+    // float division
+    d = (double) a / b;
+    printf("d = %lf\n", d); // 0.500000
+    return 0;
+}</code></pre>
+<p><b>Output:</b></p>
+<pre><code class="language-output">c = 0.000000
+d = 0.500000</code></pre>
+
+<h2>Explicit casting</h2>
+
+<p>This is necessary when conversion is unsafe. The notation is very strange, you must get use to it. Same notation is used in Java. You must prefix the variable with type name enclosed in parentheses:</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+int main()
+{
+    int a = 0;
+    float b = 1.5;
+    //explicit conversion
+    a = (int)b;
+    printf("a = %d\n", a);
+    //implicit conversion
+    b = a;
+    printf("a = %f\n", b);
+    return 0;
+}</code></pre>
+<p><b>Output:</b></p>
+<pre><code class="language-output">a = 1
+a = 1.000000 </code></pre>
+
+<h2>Numeric Limits</h2>
+
+<p>Library file:<b>&nbsp;limits.h&nbsp;</b>&nbsp;includes definitions of the characteristics of common variable types. The values are implementation specific, but may not be of lower magnitude than specified standard C.</p>
+<div>
+<table class="table table-striped table-bordered table-dark">
+<tbody>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Typical value</th>
+</tr>
+<tr>
+<td>CHAR_BIT</td>
+<td>Number of bits in a char</td>
+<td>8</td>
+</tr>
+<tr>
+<td>SCHAR_MIN</td>
+<td>Minimum value for a signed char</td>
+<td>&minus;128</td>
+</tr>
+<tr>
+<td>SCHAR_MAX</td>
+<td>Maximum value for a signed char</td>
+<td>+127</td>
+</tr>
+<tr>
+<td>UCHAR_MAX</td>
+<td>Maximum value for an unsigned char</td>
+<td>+255</td>
+</tr>
+<tr>
+<td>CHAR_MIN</td>
+<td>Minimum value for a char</td>
+<td>&minus;128</td>
+</tr>
+<tr>
+<td>CHAR_MAX</td>
+<td>Maximum value for a char</td>
+<td>+127</td>
+</tr>
+<tr>
+<td>SHRT_MIN</td>
+<td>Minimum value for a short int</td>
+<td>&minus;32,768</td>
+</tr>
+<tr>
+<td>SHRT_MAX</td>
+<td>Maximum value for a short int</td>
+<td>+32,767</td>
+</tr>
+<tr>
+<td>USHRT_MAX</td>
+<td>Maximum value for an unsigned short int</td>
+<td>+65,535</td>
+</tr>
+<tr>
+<td>INT_MIN</td>
+<td>Minimum value for an int</td>
+<td>&minus;2,147,483,648</td>
+</tr>
+<tr>
+<td>INT_MAX</td>
+<td>Maximum value for an int</td>
+<td>+2,147,483,647</td>
+</tr>
+<tr>
+<td>UINT_MAX</td>
+<td>Maximum value for an unsigned int</td>
+<td>+4,294,967,295</td>
+</tr>
+<tr>
+<td>LONG_MAX</td>
+<td>Minimum value for a long int</td>
+<td>+9,223,372,036,854,775,808</td>
+</tr>
+<tr>
+<td>ULONG_MAX</td>
+<td>Maximum value for an unsigned long int</td>
+<td>+18,446,744,073,709,551,615</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><b>Note:</b>&nbsp;Use these limits to check you data before conversion.</p>
+
+<h2>String conversion</h2>
+
+<p>Type casting is available only for numeric data type. You can not cast a composite data type. For conversion from a string to a number there are available these functions:</p>
+<ul>
+<li>atoi(): convert a string to integer</li>
+<li>atof(): convert a string to float</li>
+<li>atol(): convert a string to long</li>
+<li>atoll(): convert a string to long long</li>
+<li>sprintf(): convert a float into a string</li>
+</ul>
+<p><b>Note:</b>&nbsp;Conversion function itoa() and itol() are not implemented in all compilers. Most of the time you use printf() or fprintf() to convert numbers into messages. Sometimes you prepare a string using spritf()&nbsp;</p>
+
+<h4>Example:</h4>
+<pre><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+int main()
+{
+    char a[10];
+    int i;
+    i = atoi("12345"); //convert string to integer
+    sprintf(a,"%d",i); //convert integer to string
+    printf("i = %d\n",i);
+    printf("a = %s\n",a);
+    return 0;
+}</code></pre>
+
+<hr>
+
+<p><b>Read next:</b>
+<a href="strings.html">String Functions</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to string functions in C programming language.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="C, string, functions">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>C Tutorial</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#c-lang" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h2>C String Functions</h2>
+
+<div class="alert alert-secondary shadow-sm">
+<p>Strings are actually arrays of characters terminated by a null character "\0". Elements of the array can be modified, therefore a string is mutable, unlike Java strings that are immutable. However the capacity of a C string is fixed. If you wish to change the capacity you must move the string in a new memory location.</p>
+</div>
+
+
+<h2>String Initialization</h2>
+
+<p>There are two ways to initialize a string: By using a string literal and by using the array literal. The string literal is an enumeration of characters enclosed in double quotes: "&hellip;". The null character do not have to be specified, it is automatically added at the end of the string.</p>
+
+<h4>Examples:</h4>
+<pre><code class="language-c">/* initialize a string: test */
+char test[10] = {'t','e','s','t','\0'};
+/* using string literal */
+char test[] = "test";</code></pre>
+
+<h2>Functions</h2>
+
+<p>To use string functions you must include header file: &lt;string.h&gt;&nbsp;</p>
+<div>
+<table class="table table-striped table-bordered table-dark">
+<tbody>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>strcpy(s1, s2)</td>
+<td>
+<p>Copies string s2 into string s1.</p>
+</td>
+</tr>
+<tr>
+<td>strcat(s1, s2)</td>
+<td>
+<p>Concatenates string s2 onto the end of string s1.</p>
+</td>
+</tr>
+<tr>
+<td>strlen(s1)</td>
+<td>
+<p>Returns the length of string s1.</p>
+</td>
+</tr>
+<tr>
+<td>strcmp(s1, s2)</td>
+<td>
+<p>Returns 0 if s1 and s2 are the same; less than 0 if s1&lt;s2; greater than 0 if s1&gt;s2.</p>
+</td>
+</tr>
+<tr>
+<td>strchr(s1, ch)</td>
+<td>
+<p>Returns a pointer to the first occurrence of character ch in string s1.</p>
+</td>
+</tr>
+<tr>
+<td>strstr(s1, s2)</td>
+<td>
+<p>Returns a pointer to the first occurrence of string s2 in string s1.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4>Example:</h4>
+<pre><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+int main () {
+    char hello[] = "Hello ";
+    char world[] = "World ";
+    char both[24];
+    int len ;
+    /* copy hello to both */
+    strcpy(both, hello);
+    printf("strcpy(both, hello): %s\n", both );
+    /* concatenates str1 and str2 */
+    strcat( both, world);
+    printf("strcat(both, world): %s\n", both );
+    /* total length of both after concatenation */
+    len = strlen(both);
+    printf("strlen(both) : %d\n", len );
+    return 0;
+}</code></pre>
+
+<p><b>Output:</b></p>
+<pre><code class="language-output">strcpy(both, hello): Hello
+strcat(both, world): Hello World
+strlen(both) : 12
+</code></pre>
+
+<p><b>Note:</b></p>
+<p>The capacity of string "both" is larger then the actual string. So there is an unused region of memory after "\0" for the string "both". The len function will report only the used part and ignore the rest.</p>
+
+<h2>String traversal</h2>
+
+<p>Since a string is actually an array, we can traverse the string character by character. This may be useful if we wish to make modifications in the string. In example below we use this trick to find the length of a string without a function:</p>
+<p><b>Example</b></p>
+<pre><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+int main()
+{
+    char s[1000];
+    int i;
+    printf("Enter a string: ");
+    scanf("%s", s);
+    for(i = 0; s[i] != '\0'; ++i);
+    printf("Length of string: %d", i);
+    return 0;
+}</code></pre>
+
+<hr>
+
+<p><b>Read next:</b>
+<a href="bbsort.html">Bubble Sort</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

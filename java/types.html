@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Java type system, explained by Sage-Code.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="java, data, types, syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Java Types</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>Java Types</h1>
+
+<div class="alert alert-secondary shadow-sm">
+Java is a statically typed language. Java type system involve primitive types and user defined types that are actually classes. In this article we will focus on primitive types: You will learn how to define variables and how to operate.
+</div>
+
+<h2>Primitive Types</h2>
+
+<p>Java programming language supports eight primitive data types. A primitive type is predefined by the language and is named by a reserved keyword. Each primitive type have a fixed size in memory. The eight primitive data types supported by the Java programming language are:</p>
+
+<table class="table table-striped table-bordered table-dark">
+<thead>
+  <tr>
+    <th>type</th>
+    <th>default</th>
+    <th>size</th>
+    <th>minimum</th>
+    <th>maximum</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>byte</td>
+    <td>0</td>
+    <td>8-bit</td>
+    <td>-128</td>
+    <td>127</td>
+  </tr>
+  <tr>
+    <td>short</td>
+    <td>0</td>
+    <td>16-bit</td>
+    <td>-32768</td>
+    <td>32767</td>
+  </tr>
+  <tr>
+    <td>int</td>
+    <td>0</td>
+    <td>32-bit</td>
+    <td>-2**31</td>
+    <td>2**31-1</td>
+  </tr>
+  <tr>
+    <td>long</td>
+    <td>0L</td>
+    <td>64-bit</td>
+    <td>-2**63</td>
+    <td>2**63-1</td>
+  </tr>
+  <tr>
+    <td>float</td>
+    <td>0f</td>
+    <td>32-bit</td>
+    <td>1/10**6</td>
+    <td>10**6</td>
+  </tr>
+  <tr>
+    <td>double</td>
+    <td>0d</td>
+    <td>64-bit</td>    
+    <td>1/10**15</td>
+    <td>10**15</td>
+  </tr>
+  <tr>
+    <td>boolean</td>
+    <td>false</td>
+    <td>8-bit</td>
+    <td>false</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>char</td>
+    <td>'\u0000'</td>
+    <td>16-bit</td>
+    <td>'\u0000'</td>
+    <td>'\uFFFF'</td>
+  </tr>
+</tbody>
+</table>
+
+<div class="alert alert-warning"><span style="color:brown">Default Values:&nbsp;</span>
+Usually you specify the initial value when you declare them. If you don't initialize,
+fields (properties) of a class get default values but local variables get Null value instead.
+Don't let JVM lead you, always use initializers.
+</div>
+
+<h2>Constant Literals</h2>
+
+<p>You can specify the initial value for fields (properties) or local variables by using constant literals.
+In addition, constant literals, can be also used in expressions. Let's investigate first the most common literals:
+</p>
+
+<p><b>Examples:</b><p>
+
+<pre><code class="language-java line-numbers">/* initialize variables using literals */
+boolean result = true;
+char capitalC = 'C';
+byte b = 100;
+short s = 10000;
+int i = 100000;
+
+// hexadecimals and binary prefix: 0x and 0b
+int hexVal = 0x1abcdef;
+int binVal = 0b11101001;
+
+// long integer literals
+long x1 = 1000l; // don't use lowercase l
+long x2 = 1000L; // use uppercase L
+
+// numeric literal with underscore "_"
+long y = 1000_000_000_000L;
+
+// double precision literals
+double d1 = 123.45;
+double d2 = 10234e2;
+
+//float single precision literal
+float f1  = 123.45f;
+</code></pre>
+
+<h2>Type Casting</h2>
+
+<p>Sometimes you need to convert one variable from one type to another type that can be more or less compatible. Type casting is when you assign a value of one primitive data type to another type. There is a special notation for explicit casting in Java, and it looks like this:</p>
+
+<pre><code class="language-java">(TypeName)Expression</code></pre>
+
+<p>Using type casting is very important skill especially in object oriented programming we will study later. For primitive data types, there are two techniques for conversion. First is the transparent, <em>implicit conversion</em> and the second is <em>explicit conversion</em>.</p>
+
+1. Widening Casting (transparent) - converting a smaller type to a larger type size
+<pre><code class="language-java">byte -> short -> char -> int -> long -> float -> double</code></pre>
+
+2. Narrowing Casting (explicit) - converting a larger type to a smaller size type
+<pre><code class="language-java">double -> float -> long -> int -> char -> short -> byte</code></pre>
+
+<p><b>Example:</b><p>
+
+<p>Next example demonstrate both: implicit &amp; explicit casting.
+
+<pre><code class="language-java line-numbers">public class Main {
+  public static void main(String[] args) {
+    /* implicit casting initialization */
+    long   x = 10L;  // No casting involved
+    double y = x;    // Automatic casting
+
+    // test automatic casting
+    System.out.println(x);   // Outputs 10
+    System.out.println(y);   // Outputs 10.0
+
+    /* explicit casting initialization*/
+    double demoDob = 30.42d;
+    int    demoInt = (int)demoDob; // Explicit casting
+
+    // test explicit casting
+    System.out.println(demoDob);   // Outputs 30.42
+    System.out.println(demoInt);   // Outputs 30
+  }
+}</code></pre>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="strings.html">Strings</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

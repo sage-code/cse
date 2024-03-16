@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="How to handling exceptions in Julia.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="try, catch, syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Julia Exceptions</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>Julia Exceptions</h1>
+
+<div class="alert alert-secondary shadow-sm">
+When something goes wrong the execution of the program can be stopped. This is called an exception. We can create exceptions on purpose to show to the user that something has gone wrong and we can print a message to explain the situation. In Julia there are pre-define exceptions that have a name and are automatically created by the system in certain situations.
+</div>
+
+<h2>Handling Exceptions</h2>
+
+<p>We have two cases. One is when you wish to "catch" the exception and continue the program. Another is we wish to "finalize". That is to execute something important before the program stop execution. We use a <em>try block </em>with two keywords: <em>catch</em> and <em>finally</em>. You can use both clauses or only one depending on the case.</p>
+
+<h4>Syntax:</h4>
+
+<pre><code class="language-julia line-numbers"># try block syntax
+try
+    [executable_region]
+catch
+    [exception_handler]
+finally
+    [something_important]
+end
+</code></pre>
+
+<h4>Example:</h4>
+<pre><code class="language-julia line-numbers"># opening and closing a file
+f = open("file")
+try
+    # operate on file
+finally
+    close(f)
+end</code></pre>
+
+<h4>Example:</h4>
+<pre><code class="language-julia line-numbers"># catching an error
+x = 0
+try
+    z= y/x
+catch err
+    if isa(err, ZeroDivide)
+        println("error division by zero")
+    end
+end</code></pre>
+
+<p><b>Note:</b> In the previous example we catch the error and copy the error in variable err. Then we use function isa() to analyze the error type. We can create errors using error() function and throw() function. Most of the type we do not catch errors and we do not create error handlers in programs.</p>
+
+<!-- work in progress-->
+
+<div class="alert alert-info"><b>Final Note:</b>Our introductory tutorial ends here but not your journey. There is more to learn from the official user manual. Follow the link below. I hope you will enjoy this language and later maybe you help us to improve our tutorial for next students. We look forward for feedback on Twitter and Discord about your experience. Have fun!
+</div>
+
+<hr>
+<p><b>Go back:</b>
+    <a href="index.html">Julia Tutorial</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

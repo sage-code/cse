@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to Java OOP inheritance.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="sage, code, java, oop, inheritance">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Java Inheritance</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>Java Inheritance</h1>
+
+<div class="alert alert-secondary shadow-sm">
+In the Java, classes can be derived from other classes. This is called inheritance. A class that is derived from another class is called a <em>subclass</em>. The parent class is called <em>superclass</em>. A subclass inherit the fields and the methods of the parent class.
+</div>
+
+<p>Inheritance is one of fundamental features of Object Oriented programming. It is a powerful method to reuse code in a comprehensive manner. Once you learn this concept in Java you will be able to use this knowledge to learn other OOP Languages more easily.</p>
+
+<h2>Object is a Class?</h2>
+
+<p>Yes, there is a special class that is called <em>"Object"</em>. This is the root class, and this is the only class that does not have a <em>superclass</em>. All other classes defined in Java are descended from the Object class.</em>
+
+<h2>Single Inheritance</h2>
+
+<p>Every class has one and only one direct superclass. In the absence of any other explicit superclass, a class is implicitly derived from Object. This model is called single inheritance. Notice that other languages like C++ and Python can use multiple inheritance model.</p>
+
+
+<div align="center">
+  <img src="img/Inheritance.svg" alt="Inheritance"
+       width="640" class="img-fluid protect rounded shadow border" >
+  <p>Java Class Hierarchy</p>
+</div>
+
+<h4>Syntax:</h4>
+
+<p>We declare a subclass similar to a class in addition we specify the superclass using keyword: <em>"extends"</em>. This is the idea to memorize: One subclass can extends a superclass like in this syntax pattern:</p>
+
+<pre><code class="language-java">//define a demo standard class
+public class ParentClass {
+  ...
+};
+//define a subclass of ParentClass
+public class ChildClass extends ParentClass {
+  ...
+};
+</pre></code>
+
+<div class="alert alert-warning"><span style="color:brown">Warning:&nbsp;</span>There are classes that can not be extended. These classes are called: <em>final classes</em>. A class that is declared <em>final</em> cannot be subclassed. This is useful, for example, to create <em>immutable classes</em> like the String class.</div>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="abstraction.html">Abstraction</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

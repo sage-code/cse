@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introductory Go tutorial">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="go, language, syntax, programming, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Go Tutorial</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Go Types</h2>
+
+<div class="alert alert-secondary shadow-sm">
+In Go languages all variables have a type that can't be changed once established. This makes Go a strongly typed language similar to C++, Rust, Ada and Java. Types are used to verify if expressions or values create the correct data type for specific use-cases at compilation time. This reduce probability of runtime errors.
+</div>
+
+<p>Go has predefined types, used to declare: constants, variables, parameters and results. Go enable you to declare new data types and composite data types using basic types.</p>
+
+<h2>Basic Types</h2>
+
+<p>The basic types are the most simple predefined types:</p>
+<table class="table table-bordered table-striped table-dark">
+<thead>
+<tr>
+<th>Type Name</th>
+<th>Keywords</th>
+<th>Bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boolean</td>
+<td>bool</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Integers</td>
+<td>int, int8, int16, int32, int64;</td>
+<td>1-8</td>
+</tr>
+<tr>
+<td>Unsigned</td>
+<td>uint, uint8, uint16, uint32, uint64, uintptr;</td>
+<td>1-8</td>
+</tr>
+<tr>
+<td>Unsigned byte</td>
+<td>byte = alias for uint8;</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Unicode code point</td>
+<td>rune = alias for int32</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Fractional numbers</td>
+<td>float32, float64;</td>
+<td>4-8</td>
+</tr>
+<tr>
+<td>Complex numbers</td>
+<td>complex64, complex128;</td>
+<td>8-16</td>
+</tr>
+</tbody>
+</table>
+
+<p><b>Note:</b> The int, uint, and uintptr types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems. When you need an integer value you should use int unless you have a specific reason to use a sized or unsigned integer type.</p>
+
+
+<pre><code class="language-go line-numbers">// file type_num.go
+package main
+
+import (
+	"fmt"
+	"math/cmplx"
+)
+
+var (
+	ToBe   bool       = false
+	MaxInt uint64     = 1&lt;&lt;64 - 1
+	z      complex128 = cmplx.Sqrt(-5 + 12i)
+)
+
+func main() {
+	const f = "%T(%v)\n"
+	fmt.Printf(f, ToBe, ToBe)
+	fmt.Printf(f, MaxInt, MaxInt)
+	fmt.Printf(f, z, z)
+}
+</code></pre>
+
+<h4>Factoring:</h4>
+
+<p>Variable declarations and import may be "factored" into special blocks, that are enclosed in round brackets (...) not like the usual blocks. This convention is rarely used in other programming languages.</p>
+<div class="slide-content ng-binding">
+
+<h2>Zero values</h2>
+
+<p>Variables declared without an explicit initial value are given their <em>zero value</em>.</p>
+<p>The zero value is:</p>
+<ul>
+<li>0 for numeric types,</li>
+<li>false for the boolean type, and</li>
+<li>"" (the empty string) for strings.</li>
+</ul>
+</div>
+
+<h2>Pointers</h2>
+
+<p>A pointer holds the memory address of a variable. Go pointers are using 2 operators: Star "*" in front of the pointer type to define a pointer. Star "*" in front of pointer variable to refer the value stored. Ampersand "&amp;" in front of a variable to get the address of a variable and assign its address to a pointer.</p>
+
+<div class="text-center">
+  <img src="../images/pointer.svg" alt="array" width="520"
+  class="img-fluid protect rounded shadow border">
+  <p>Pointer Concept</p>
+</div>
+
+<hr>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file type_ptr.go
+package main
+
+import "fmt"
+
+func main() {
+	i, j := 42, 2701
+
+	p := &amp;i     // point to i
+	fmt.Println(*p) // read i through the pointer (42)
+	*p = 21         // set i through the pointer
+	fmt.Println(i)  // see the new value of i (21)
+
+	p = &amp;j      // point to j
+	*p = *p / 37    // divide j through the pointer
+	fmt.Println(j)  // see the new value of j (2701/37 = 73)
+}
+</code></pre>
+
+<p><b>Note:</b> Unlike C, Go has no pointer arithmetic. This is to avoid unsafe pointer values. The pointers are used in Go to send and receive references to variables or to functions.</p>
+
+<h2>Composite Structure</h2>
+
+<p>In Go a <b><em>struct</em></b> is a collection of fields. Each field has a name and a type. Fields are enumerated on different lines. We use struct to define new data types.</p>
+
+<pre><code class="language-go line-numbers">//file type_struct.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	fmt.Println(Vertex{1, 2})
+}
+</code></pre>
+
+<p>Struct fields are accessed using a dot operator "."</p>
+
+<pre><code class="language-go line-numbers">//file struc_attr.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	v.X = 4
+	fmt.Println(v.X)
+}
+</code></pre>
+
+<h2>Struct Literals</h2>
+
+<p>A struct literal denotes a newly allocated struct value by listing the values of its fields. You can list just a subset of fields by using the "Name:" syntax. The order of named fields is irrelevant. The special prefix &amp; returns a pointer to the struct value.</p>
+
+
+<pre><code class="language-go line-numbers">//file struc_lit.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X, Y int
+}
+
+var (
+	v1 = Vertex{1, 2}  // has type Vertex
+	v2 = Vertex{X: 1}  // Y:0 is implicit
+	v3 = Vertex{}      // X:0 and Y:0
+	p  = &amp;Vertex{1, 2} // has type *Vertex
+)
+
+func main() {
+	fmt.Println(v1, p, v2, v3)
+}
+</code></pre>
+
+<h2>Pointers to structs</h2>
+
+<p>Struct fields can be accessed through a struct pointer.  To access the field X of a struct when we have the struct pointer p we could write (*p).X. However, that notation is cumbersome, so the language permits us instead to write just p.X, without the explicit de-reference.</p>
+
+<pre><code class="language-go line-numbers">//file struc_ptr.go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	v := Vertex{1, 2}
+	p := &amp;v
+	p.X = 10
+	fmt.Println(v) // {10 2}
+}</code></pre>
+
+<h2>Stringers</h2>
+
+<p>A Stringer is a type that can describe itself as a string. The fmt package (and many others) look for this interface to print values. This is an interface defined by the <em>fmt</em> package.</p>
+
+<pre><code class="language-go line-numbers">type Stringer interface {
+    String() string
+}</code></pre>
+<p><b>Example of use:</b></p>
+
+<pre><code class="language-go line-numbers">//file stringer.go
+package main
+
+import "fmt"
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf("%v (%v years)", p.Name, p.Age)
+}
+
+func main() {
+	a := Person{"Arthur Dent", 42}
+	z := Person{"Zaphod Beeblebrox", 9001}
+	fmt.Println(a, z)
+}
+</code></pre>
+
+<h2>Type inference</h2>
+
+<p>Inside a function, the symbol ":=" is used for assignment. It can be useful in place of a <em>var</em> declaration to assign a value and implicit type from expression evaluation or type literals. This is called "type inference".</p>
+
+<pre><code class="language-go line-numbers">//file type_inference.go
+package main
+
+import "fmt"
+import "reflect"
+
+func main() {
+	var i, j int = 1, 2
+	k := 3
+	c, p, g := true, false, "no!"
+
+	fmt.Println(i, j, k, c, p, g)  
+  fmt.Println("typeof(c)=",reflect.TypeOf(c))
+  fmt.Println("typeof(g)=",reflect.TypeOf(g))    
+}
+</code></pre>
+
+<p><b>Note:</b> Outside of a function, every statement begins with a keyword the symbol ":=" is not available.</p>
+
+<p>When declaring a variable without specifying an explicit type (either by using the := syntax or var = expression syntax), the variable's type is inferred from the value on the right hand side. When the right hand side of the declaration is typed, the new variable is of that same type:</p>
+
+<pre><code class="language-go line-numbers">var i int
+j := i // j is an int
+</code></pre>
+
+<p>When the right hand side contains a numeric constant, the new variable may be an int, float64, or complex128 depending on the precision of the constant. Most of the time the new type is the right. In the next example we use type inference for i, f and g variables.</p>
+
+<pre><code class="language-go line-numbers">package main
+import "fmt"
+
+func main() {
+   i := 42 // int
+   f := 3.142 // float64
+   g := 0.867 + 0.5i // complex128
+}
+</code></pre>
+
+<h2>Type conversion</h2>
+
+<p>Sometimes in Go we need to convert one type to another type. This is called "data coercion". The expression T(v) converts the value v to the type T.</p>
+
+<p><b>Example:</b> Some numeric conversions:</p>
+
+<pre><code class="language-go line-numbers">var i int = 42
+var f float64 = float64(i)
+var u uint = uint(f)</code></pre>
+<p><b>Example:</b> The var keyword is not even required. We can use ":=" symbol to declare and initialize variables. Unlike C the Go assignment between items of different type requires an explicit conversion.</p>
+<pre><code class="language-output">i := 42         //type inference to int
+f := float64(i) //explicit conversion
+u := uint(f)    //explicit conversion</code></pre>
+
+<h2>Type Switch</h2>
+
+<p>A <em>type switch</em> is a construct that permits several type assertions in series. A type switch is like a regular switch statement, but the cases in a type switch specify types (not values), and those values are compared against the type of the value held by the given interface value.</p>
+
+<pre><code class="language-go line-numbers">switch v := i.(type) {
+  case T:
+    // here v has type T
+  case S:
+    // here v has type S
+  default:
+    // no match; here v has the same type as i
+}</code></pre>
+<p><b>Note:</b>This switch statement tests whether the interface value i holds a value of type T or S. In each of the T and S cases, the variable v will be of type T or S respectively and hold the value held by i. In the default case where there is no match, the variable v is of the same interface type and value as i.</p>
+<p><b>Example: </b>type switch</p>
+
+<pre><code class="language-go line-numbers">//file type_switch.go
+package main
+
+import "fmt"
+
+func do(i interface{}) {
+	switch v := i.(type) {
+	case int:
+		fmt.Printf("Twice %v is %v\n", v, v*2)
+	case string:
+		fmt.Printf("%q is %v bytes long\n", v, len(v))
+	default:
+		fmt.Printf("I don't know about type %T!\n", v)
+	}
+}
+
+func main() {
+	do(21)
+	do("hello")
+	do(true)
+}</code></pre>
+
+<h2>Type Assertions</h2>
+
+<p>A type assertion provides access to an interface value's underlying concrete value.</p>
+
+<pre><code class="language-go">t := i.(T)</code></pre>
+<p>This statement asserts that the interface value i holds the concrete type T and assigns the underlying T value to the variable t. If i does not hold a T, the statement will trigger a panic.</p>
+<p>To test whether an interface value holds a specific type, a type assertion can return two values: the underlying value and a boolean value that reports whether the assertion succeeded.</p>
+<pre><code class="language-go">t, ok := i.(T)</code></pre>
+<p>If i holds a T, then t will be the underlying value and ok will be true. If not, ok will be false and t will be the zero value of type T, and no panic occurs. Note the similarity between this syntax and that of reading from a map.</p>
+
+<pre><code class="language-go line-numbers">//file type_assert.go
+package main
+
+import "fmt"
+
+func main() {
+	var i interface{} = "hello"
+
+	s := i.(string)
+	fmt.Println(s)
+
+	s, ok := i.(string)
+	fmt.Println(s, ok)
+
+    //expect to pring "false"
+	f, ok := i.(float64)
+	fmt.Println(f, ok)
+
+	//f = i.(float64) // panic
+	fmt.Println(f)
+}
+</code></pre>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="arrays.html">Arrays</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

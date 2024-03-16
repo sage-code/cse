@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to Go concurrency features: goroutine and channels.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="go, golang, concurrency, parallel, goroutine, channels">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Go Concurency</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Go Concurrency</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+Concurrency is a vast subject. It is defined as a style of programming that enable execution of multiple logical threads in the same time. Go language enable developers to write multi-thread and concurrent lightweight processes.</div>
+
+<h4>Page bookmarks:</h4>
+
+<ul>
+	<li><a href="#goroutines">Start goroutines</a></li>
+	<li><a href="#define">Define channels</a></li>
+	<li><a href="#create">Create channels</a></li>
+	<li><a href="#closing">Closing channels</a></li>
+	<li><a href="#buffered">Buffered channels</a></li>
+	<li><a href="#select">Select channels</a></li>
+	<li><a href="#default">Default Selection</a></li>	
+	<li><a href="#mutex">Mutex object</a></li>	
+</ul>
+
+<hr>
+
+<h2><a id="goroutines"></a>Start goroutines</h2>
+
+<p>A <em>goroutine</em> is a lightweight thread managed by the Go runtime Having a function "f(x,y,z)" we can run the function using "go" keyword asynchronously. After calling goroutine the main program continue to execute, and sometimes can finish faster then it should. Therefore we should wait for all processes to finish before main program ends.</p>
+
+<pre><code class="language-go">
+go f(x, y, z)
+</code></pre>
+
+<p>Goroutines run in the same address space, so the access to shared memory must be <em>synchronized.</em> The "<em>sync" </em>package provides useful primitives, although you won't need them much in Go as there are other primitives: Channels that allow superior implementation.</p>
+
+<pre><code class="language-go line-numbers">//file goroutine.go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func say(s string) {
+	for i := 0; i &lt; 5; i++ {
+		time.Sleep(100 * time.Millisecond)
+		fmt.Println(i, s)
+
+	}
+}
+
+func main() {
+	go say("run")
+    time.Sleep(1000 * time.Millisecond)
+    fmt.Println("done");
+}
+</code></pre>
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/xqL65e1n82T"
+       rel="noopener" target="_blank">goroutines.go</a>
+</p>
+
+<h2><a id="define"></a>Define Channel</h2>
+
+<p>Channels are a typed conduit through which you can send and receive values with the channel operator, <code>&lt;-</code>. The data flows in the direction of the arrow. This symbol is sometimes used as a prefix for a channel to access the first value of a channel.</p>
+
+<h4>Patterns</h4>
+
+<pre><code class="language-go">// Send v to channel ch.
+ch &lt;- v    
+
+// Receive from ch, and assign value to v.
+v := &lt;-ch  
+</code></pre>
+
+<h2><a id="create"></a>Create channels</h2>
+
+<p>Like maps and slices, channels must be created before use using <em><b>make</b></em> this will create a new instance in memory for the channel values: </p>
+
+<pre><code  class="language-go">ch := make(chan int)</code></pre>
+
+<p>By default, sends and receives is blocking the channel until the other side is ready. This allows goroutines to synchronize without explicit locks or condition variables.</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file: using_channel.go
+package main
+
+import "fmt"
+
+func sum(s []int, c chan int) {
+    sum := 0
+    for _, v := range s {
+        sum += v
+    }
+    c &lt;- sum // send sum to c
+}
+
+func main() {
+    s := []int{7, 2, 8, -9, 4, 0}
+
+    c := make(chan int)
+    go sum(s[:len(s)/2], c)
+    go sum(s[len(s)/2:], c)
+    x, y := &lt;-c, &lt;-c // receive from c
+
+    fmt.Println(x, y, x+y)
+}</code></pre>
+
+
+<p><b>Note:</b> The example code sums the numbers in a slice, distributing the work between two goroutines. Once both goroutines have completed their computation, it calculates the final result.</p>
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/SFNPghi3L3v"
+       rel="noopener" target="_blank">using_channels.go</a>
+</p>
+
+
+<h2><a id="closing"></a>Closing a channel</h2>
+
+<p>A sender can close a channel to indicate that no more values will be sent. Receivers can test whether a channel has been closed by assigning a second parameter to the received expression: after <code class="language-go">v, ok := &lt;-ch</code>, when "ok" is false, if there are no more values to receive and the channel is closed.</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file close_channel.go
+package main
+
+import (
+	"fmt"
+)
+
+func fibonacci(n int, c chan int) {
+	x, y := 0, 1
+	for i := 0; i &lt; n; i++ {
+		c &lt;- x
+		x, y = y, x+y
+	}
+	close(c)
+}
+
+func main() {
+	c := make(chan int, 10)
+	go fibonacci(cap(c), c)
+	for i := range c {
+		fmt.Println(i)
+	}
+}
+</code></pre>
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/REPnWUxLB7_0"
+       rel="noopener" target="_blank">using_channels.go</a>
+</p>
+
+
+<h4>Notes:</h4>
+
+<ul>
+<li>The loop for i := range c receives values from the channel repeatedly until it is closed.</li>
+<li>Only the sender should close a channel, never the receiver. Sending on a closed channel will cause a panic.</li>
+<li> Channels aren't like files; you don't usually need to close them. Closing is only necessary when the receiver must be told there are no more values coming, such as to terminate a range loop.</li>
+</ul>
+
+<h2><a id="buffered"></a>Buffered Channels</h2>
+
+<p>Channels can be <em>buffered</em>. Provide the buffer length as the second argument to "make" to initialize a <em>buffered channel:</em></p>
+
+<pre><code class="language-go">ch := make(chan int, 100)</code></pre>
+
+<h4>Example:</h4>
+<p>Sends to a buffered channel block only when the buffer is full. Receives block when the buffer is empty.</p>
+
+<pre><code class="language-go line-numbers">//file buffer_channel.go
+package main
+
+import "fmt"
+
+func main() {
+	ch := make(chan int, 2)
+	ch &lt;- 1
+	ch &lt;- 2
+	fmt.Println(&lt;-ch)
+	fmt.Println(&lt;-ch)
+}
+</code></pre>
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/nCY6oJvYwd0"
+       rel="noopener" target="_blank">using_channels.go</a>
+</p>
+
+
+<h2><a id="select"></a>Select channels</h2>
+
+<p>The "select" statement lets a goroutine wait on multiple communication operations. A "select" blocks the main process until one of its cases can run, then it executes that case. It chooses one at random if multiple are ready.</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file go_select.go
+package main
+
+import "fmt"
+
+func fibonacci(c, quit chan int) {
+	x, y := 0, 1
+	for {
+		select {
+		case c &lt;- x:
+			x, y = y, x+y
+		case &lt;-quit:
+			fmt.Println("quit")
+			return
+		}
+	}
+}
+
+func main() {
+	c := make(chan int)
+	quit := make(chan int)
+	go func() {
+		for i := 0; i &lt; 10; i++ {
+			fmt.Println(&lt;-c)
+		}
+		quit &lt;- 0
+	}()
+	fibonacci(c, quit)
+}
+</code></pre>
+
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/8TCBdALDJaC"
+       rel="noopener" target="_blank">go_select.go</a>
+</p>
+
+
+<h2><a id="default"></a>Default Selection</h2>
+
+<div>
+<p>Basic sends and receives on channels are blocking. However, we can use select with a default clause to implement non-blocking sends, receives, and even non-blocking multi-way selects.</p>
+</div>
+
+<pre><code class="language-go">select {
+case i := &lt;-c:
+    // use i
+default:
+    // receiving from c would block
+}</code></pre>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file select_default.go
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	tick := time.Tick(100 * time.Millisecond)
+	boom := time.After(500 * time.Millisecond)
+	for {
+		select {
+		case &lt;-tick:
+			fmt.Println("tick.")
+		case &lt;-boom:
+			fmt.Println("BOOM!")
+			return
+		default:
+			fmt.Println("    .")
+			time.Sleep(50 * time.Millisecond)
+		}
+	}
+}
+</code></pre>
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/wWahnqgYVGa"
+       rel="noopener" target="_blank">select_default.go</a>
+</p>
+
+<h2><a id="mutex"></a>Mutex object</h2>
+
+<p>We've seen how channels are great for communication among goroutines. What if we don't need communication but just a way to make sure only one goroutine can access a variable at a time?</p>
+
+<p>This concept is used to avoid conflicts. It is called for short <em>mutex</em>, that means <em>mutual exclusion</em>. Go standard library provides mutual exclusion data structure type: sync.Mutex, that implements two methods: {lock, unlock}</p>
+
+<p>We can define a block of code to be executed in mutual exclusion by surrounding it with a call to  <em>lock</em> and <em>unlock</em> as shown on the Inc method. We can also use "defer" to ensure the mutex will be unlocked as in the "value" method.</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-go line-numbers">//file mutex.go
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+// SafeCounter is safe to use concurrently.
+type SafeCounter struct {
+	v   map[string]int
+	mux sync.Mutex
+}
+
+// Inc increments the counter for the given key.
+func (c *SafeCounter) Inc(key string) {
+	c.mux.Lock()
+	// Lock so only one goroutine at a time can access the map c.v.
+	c.v[key]++
+	c.mux.Unlock()
+}
+
+// Value returns the current value of the counter for the given key.
+func (c *SafeCounter) Value(key string) int {
+	c.mux.Lock()
+	// Lock so only one goroutine at a time can access the map c.v.
+	defer c.mux.Unlock()
+	return c.v[key]
+}
+
+func main() {
+	c := SafeCounter{v: make(map[string]int)}
+	for i := 0; i &lt; 1000; i++ {
+		go c.Inc("somekey")
+	}
+
+	time.Sleep(time.Second)
+	fmt.Println(c.Value("somekey"))
+}
+</code></pre>
+<!-- work in progress-->
+
+<p>Try it: 
+	<a href="https://go.dev/play/p/BIncMtCh6Ab"
+       rel="noopener" target="_blank">mutex_ob.go</a>
+</p>
+
+
+<hr>
+<p><b>Read next:</b>
+<a href="examples.html">Go Examples</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Java new features: sealed classes.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="java, seald, classes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Sealed Classes</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h2>Sealed Classes</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+A sealed class is almost like a regular class but there is a restricted list of children classes that can extend it. By sealing a class, you can specify which classes are permitted to extend it and prevent any other arbitrary class from doing so.</div>
+
+<pre class="line-numbers"><code class="language-java"
+>public sealed class Shape
+    permits Circle, Square, Rectangle {
+}
+
+final class Circle extends Shape {
+    float radius;
+}
+
+non-sealed class Square extends Shape {
+    float side;
+}
+
+sealed class Rectangle extends Shape {
+    float length, width;
+}
+</code></pre>
+
+<h4>Notes:</h4> 
+
+<p>1. You can see two new keywords: "sealed" and "permits". The second keyword "permits" is optional. If the class extendign a sealed class are in the same file, the permits is default to current package. </p>
+
+<p>2. Subclasses of a seald class can be also sealed, float or none-sealed. One of these modifiers is mandatory but they are exclusive.</p>
+
+<h2>Sealed Interfaces</h2>
+
+<p>Sealed interface similar to classes can be implemented by "permited" list of classes. In next example we implement the interface Expr in dwo record classes we have just learned.</p>
+
+<pre class="line-numbers"><code class="language-java"
+>sealed interface Expr
+    permits ConstantExpr, PlusExpr {
+    public int eval();
+}
+
+record ConstantExpr(int i) implements Expr {
+    public int eval() { return i(); }
+}
+
+record PlusExpr(Expr a, Expr b) implements Expr {
+    public int eval() { return a.eval() + b.eval(); }
+}
+</code></pre>
+
+<p><b>Read more:</b>
+<a href="https://docs.oracle.com/en/java/javase/18/language/sealed-classes-and-interfaces.html" target="_blank">Java Sealed Classes</a></p>
+
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="performance.html">Performance Computing</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

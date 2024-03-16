@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to Julia module concept.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="julia, module, modular, syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Julia Modules</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>Julia Modules</h1>
+
+<div class="alert alert-secondary shadow-sm">
+Julia is modular. A <em>module </em>is like a package that encapsulate several members. A module can import other modules and can export members. One module is stored in one or many files. One file can contain one or more modules. So the module is a supra-structure used to group together members. Each member exported or not.
+</div>
+
+<h4>Syntax:</h4>
+<pre><code class="language-julia line-numbers">module &lt;module_name&gt;
+[import &lt;module&gt;]
+...
+[export &lt;members&gt;]
+...
+[declare_members]
+...
+end</code></pre>
+
+<p><b>import &amp; export</b></p>
+
+<p>A module can have two optional keywords: <em>import</em> and <em>export</em>. The module is using hoisting technique. We can export a member before we declare the member. So the export is above the declaration region. Julia has 3 standard modules that we do not have to import: Main, Core, and Base.</p>
+
+<p>When you import a module all its exported members can be used in the global namespace of the current module. The private members of the imported modules can be used only with dot "." punctuation: ModuleName.member_name. Module name are usually starting with capital letters. Member name is usually lower-case except types that start with upper-case letter.</p>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="exceptions.html">Exceptions</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

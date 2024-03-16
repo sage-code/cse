@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Java programming free tutorial by Sage-Code.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="language, syntax, programming, tutorial">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>OOP Paradigm</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h1>OOP Paradigm</h1>
+
+
+<div class="alert alert-secondary shadow-sm">
+A programming paradigm in Computer Science is a programming style. It consist of concepts and ideas that can lead to a better approach to create applications of quality. One of this paradigms is OOP = Object Oriente Programming that is addopted by Java à la carte.
+</div>
+
+<h2>Core Principles</h2>
+
+<p>Object oriented programming has four principles, called the pillars of OOP programming.</p> 
+
+<ol>
+<li><em><b>Abstraction:</b></em>&nbsp;you can define abstract classes and interfaces,</li>
+<li><em><b>Encapsulation:</b></em>&nbsp;you can define public and private properties and members,</li>
+<li><em><b>Inheritance:</b></em>&nbsp;one class can inherit properties and methods from parent class,</li>
+<li><em><b>Polymorphism:</b></em>&nbsp;one method from a parent class can be overwritten in a child class.</li>
+</ol>
+
+<h3>Encapsulation</h3>
+
+<p>Encapsulation in Java is a mechanism of wrapping the data (properties and attributes) and code acting on the data (methods) together as a single unit. Declare the variables of a class as private makes encapsulation stronger.</p>
+
+<h3>Inheritance</h3>
+
+<p>In Java you can define one class based on other class. This mechanism is called Inheritance. All classes are derived from a primary class called the Object class. So in other words a Class can "extend" another class. ;</p>
+<p>In practice sometimes this model do not work. So we need to define other concepts: "mixin" and "dependency injection" that are advanced topics for future articles.</p>
+
+<h3>Polymorphism</h3>
+
+<p>A derived class "inherit" all properties and methods from base class. Sometimes we can "overwrite" a method to change the default behavior of base class. This allow us to extend and modify one class to create a different class that have similar but not exact the same behavior.</p>
+
+<h2>Advanced Features</h2>
+
+<p>Java offer other feature related to OOP. These features enhance even farther the capability of programmers to create good code and to reuse code made by other developers. However, learning these features require additional effort. Let's define these features:</p>
+
+<h3>Abstraction</h3>
+
+<p>We can use "abstract" modifier to declare a special Class that can't be instantiated. This kind of class is usually used as a base class to create "extended" class using a pattern. The pattern implements some but not all the functionality. Some functionality is implemented in the extended class.</p>
+
+<h3>Generics</h3>
+
+<p>Generics are classes that are not very specific for a particular data type. For example a dynamic list has the same logic but can apply to different primitive types: List of integers, List of floats and List of Double. In this case we can use a generic library to create a specific List.</p>
+
+<p>This mechanism was created to relax a little bit the strong typing paradigm. It reduces the required lines of code we need to write for a specific design pattern. For dynamic programming languages this is not necessary since a particular object or data member can have any data type.</p>
+
+<h3>Interfaces</h3>
+
+<p>Interfaces are "abstract" concepts that force a specific behavior. Interfaces are almost the same as "abstraction" except that one class can implement multiple interfaces but can extend only one abstract class. So that's the main difference.</p>
+<p>An interface use to have all methods abstract in older Java versions. Now you can create methods that have a default implementation using an interface. However most developers are using abstract method declarations for interfaces.</p>
+
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="abstraction.html">Abstraction</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

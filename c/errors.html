@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to error handling in C programming language.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="C, error, exception, handling">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>C Tutorial</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#c-lang" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>C Error handling</h1>
+
+<div class="alert alert-secondary shadow-sm">
+In C there is very little error management support. C does not have try/except statement like Java or Python. To handle errors in C you must analyze the function result and the global error number that can be set by a function during execution.
+</div>
+
+<h2>Design flaw?</h2>
+
+<p>When C was invented the main focus was to get as much efficiency as possible without syntax overhead. Therefore in C language you will not find safety mechanics present in higher level languages of today.&nbsp;</p>
+<div class="alert alert-warning">Error handling require high level abstractions not available in C. However a good programmer will be concern about making safe applications. In this article we explain the little support C offers for error handling.</div>
+
+<h2>Error code</h2>
+
+<p>Most functions indicate that they detected an error by returning a special value, typically&nbsp;NULL&nbsp;for functions that return&nbsp;pointers, and &minus;1 for functions that return integers. In addition to this you can set "errno" global variable. Any non zero value for "errno" after a function call will indicate an error.&nbsp;</p>
+<p>Various system errors are defined in &lt;error.h&gt; header file. You can use these codes to compare&nbsp;<em>errno</em>&nbsp;and do some actions depending on the error code. It is a good practice, to set&nbsp;<em>errno</em>&nbsp;to zero (0) before computation or action. After you can check&nbsp;<em>errno</em>&nbsp;to verify if operation was successful.</p>
+
+
+<h2>Error message</h2>
+
+<p>Only error code will not be good enough for user to understand the error. Therefore a good practice is to send an error message to consol or to standard error stream. This can be redirected by the user into a log file using a script or command line arguments.</p>
+
+<p>Standard C provide two functions that are useful to produce the error message:</p>
+<ul>
+<li>
+<p><b>perror()</b>&nbsp;function: displays the string you pass to it, followed by a colon, a space, and then the textual representation of the current&nbsp;<em>errno</em>&nbsp;value.</p>
+</li>
+<li>
+<p><b>strerror()</b>&nbsp;function: returns a pointer to the textual representation of the current&nbsp;<em>errno</em>&nbsp;value.</p>
+</li>
+</ul>
+
+<h4>Example:</h4>
+<pre><code class="language-c line-numbers">#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+extern int errno; //global variable
+int main () {
+    FILE * f;
+    //try to open file "test"
+    f = fopen ("test", "r");
+    //check if operation was successful
+    if (f == NULL) {
+        fprintf(stderr, "Error: %d, %s\n", errno, strerror(errno));
+    } else {
+        fclose (f);
+    }
+    return 0;
+}</code></pre>
+<p><b>Note:&nbsp;</b>It is better to have a preventive design in your application than a reactive design. What that means is you can check parameter values before you use these values as parameters to call other functions or computations to prevent possible errors.</p>
+<p>A reactive design uses whatever values and analyze later if the computation was successful. After the fact you may have less information available about the reason the computation was failed. However it is a good practice to check&nbsp;<em>errno&nbsp;</em>every time even if you use preconditions to prevent the errors in the first place.</p>
+
+<hr>
+
+<p><b>Read next:</b>
+<a href="casting.html">Type Casting</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

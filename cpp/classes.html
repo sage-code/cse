@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="author" content="Elucian Moise">
+  <meta name="description" content="Introduction to OOP in  C++ programming language.">
+  <meta name="keywords" content="cpp, classes, objects, oop,syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>C++ Classes</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+</head>
+<body>
+
+<div class="container">
+
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h1>C++ Classes</h1>
+
+<div class="alert alert-secondary shadow-sm">
+The main difference between C and C++ is the programming paradigm. While C is <em>structured</em>, C++ is object oriented. That is you can define classes. A class is a <em>derived data type</em> that encapsulate private and public elements. In this article we will explain how to create and use classes and objects to create better applications.
+</div>
+
+<h2>What is OOP?</h2>
+
+<p>Sometimes you get this question on job interviews. Here it is the correct answer:
+Object Oriented Programming is a <em>programming paradigm</em> designed to improve code reusability.
+It has four principles, called the pillars of OOP programming.
+
+C++ implements these principles:</p>
+<ol>
+<li><em><b>Abstraction:</b></em>&nbsp;you can define abstract classes and interfaces,</li>
+<li><em><b>Encapsulation:</b></em>&nbsp;you can define public and private properties and members,</li>
+<li><em><b>Inheritance:</b></em>&nbsp;one class can inherit properties and methods from parent class,</li>
+<li><em><b>Polymorphism:</b></em>&nbsp;one method from a parent class can be overwritten in a child class.</li>
+</ol>
+
+<h2>What is a Class?</h2>
+
+<p>A class is a named block of code declared using keyword <em>"class"</em>.
+Class name usualy start with uppercase letter and can contain any letters numbers and underscore.
+The class has a block of code that contains declarations inside.
+Everithing declared in the class block is called <em>"member"</em> of the class.</p>
+
+<h4>Example:</h4>
+
+<p>Next we define a class called Vechicle that has 3 members. All members are public properties of a Vechicle.
+We will use this class in next examples to demonstrate how to use a class. Let's study the definition:
+</p>
+
+<pre><code class="language-cpp line-numbers">//define a class
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class Vechicle {
+    public:
+        string maker;
+        int year;
+        int price;
+};
+</code></pre>
+
+<h2>Using a Class</h2>
+
+<p>A class can serve for two purposes. First is to encapsulate functionality like a library of functions.
+This use-case is more rarely used. More frequent is to serve as a blueprint to enable creation of objects.</p>
+
+<p>Since the class is basicly a data type it is only logical we can declare variables of this type.
+These are called <em>"objects"</em> and reprezent data structures with members defined by the Class.
+Each "object" is also called <em>"instance"</em> of the class.
+</p>
+
+<h4>Example:</h4>
+
+<p>Next we show how to create two Vechicles that use the class defined in previous example.</p>
+
+<pre><code class="language-cpp line-numbers">//code fragment that use a class
+
+int main() {
+    Vechicle v1; //first vechicle
+    Vechicle v2; //second vechicle
+
+    // set properties of first vechicle
+    v1.maker = "Ford";
+    v1.year  = 2001;
+    v1.price = 500;
+
+    // set properties of second vechicle
+    v2.maker = "Toyota";
+    v2.year  = 2015;
+    v2.price = 8000;
+
+    // output some of the properties
+    cout &lt;&lt; "First vechicle is a " &lt;&lt; v1.maker &lt;&lt; " from " &lt;&lt; v1.year &lt;&lt; "\n";
+    cout &lt;&lt; "Second vechicle is a " &lt;&lt; v2.maker &lt;&lt; " from " &lt;&lt; v2.year &lt;&lt; "\n";
+}
+</code></pre>
+
+<div class="alert alert-warning"><span style="color:brown">Caution:&nbsp;</span>
+Maybe you are a Java programmer. You will notice we do not use keyword <em>"new"</em>
+like in Java to create objects. That is just in case you wander.
+In C++ the keyword "new" do exist but has a different ussage.</div>
+
+<p><b>Homework: </b>Open this example on repl.it and run it:
+<a href="https://repl.it/@elucian/cpp-class#main.cpp"
+   rel ="noopener noreferrer nofollow" target="_blank">cpp-class</a></p>
+
+
+
+<hr>
+<p><b>Read next:</b>
+<a href="exceptions.html">Exceptions</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

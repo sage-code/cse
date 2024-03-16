@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to SQL DML.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="SQL, DML, select, update, delete, insert">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>DB Operate</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#sql-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>DB Operate</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+There are several regular operations we do against a database.
+This is: add new data, query data and update or delete data.
+For this we use DML = <em>"Data Manipulation Language"</em>.
+The person who use DML is called <em>database operator.</em>
+</div>
+
+<h2>DML: INSERT</h2>
+
+<p>This SQL command is used create new data into a table. 
+The new data can be created using data literals or can be procured from <em>data sources</em>.
+You can insert one row or multiple rows in <em>batch</em>.
+Data source can be a query that retrieve data from pther tables, views or files.
+</p>
+
+<h4>Example:</h4>
+
+<p>Remember our Agile database? Let's try to insert some data in our tables. 
+First thing we need is a team. Then one or more developers, then a project.
+If this use-case fail we have to review our database structure.
+</p>
+
+<p>
+
+<pre><code class="language-sql">-- demo script for adding new data
+START TRANSACTION;
+
+INSERT INTO team 
+    (name)
+VALUES
+    ("Sage-Code");
+
+SET @team_id = LAST_INSERT_ID();
+
+INSERT INTO developer 
+    (team_id, name, skill)
+VALUES
+    (@team_id,"Elucian Moise", "SQL, Rust, Julia, Python");
+
+INSERT INTO developer 
+    (team_id, name, skill)
+VALUES
+    (@team_id,"Laura Moise", "SQL, Java");
+
+COMMIT;    
+</code></pre>
+
+<p><b>Note:</b>In this script I have also used commands <em>START TRANSACTION</em> and <em>COMMIT</em> that are part of TCL.
+We can combine many SQL commands into one comprehensive script that can be run against a database to create new data.
+</p>
+
+<h2>DML: SELECT</h2>
+
+<p>The <em>SELECT</em> command is used create a <em>query</em> statement. 
+This can retrieve data from one or many <em>data sources</em>.
+The data source can be a local or remote table or view.
+A query has a result dataset that looks like a readonly table.
+</p>
+
+<h4>Example:</h4>
+
+<p>Now we have data so we can create our first query.</p>
+
+<pre><code class="language-sql">-- query tabe: developer
+SELECT * FROM developer;
+</code></pre>
+
+<p><b>Output:</b></p>
+
+<pre><code class="language-output">
+1,1,"Elucian Moise","SQL, Julia, Rust"
+2,1,"Laura Moise","SQL, Java"
+</code></pre>
+
+<p><b>Homework: </b>open the actual csv file:<a href="demo/developer.csv">developer.csv</a></p>
+
+<h2>SQL: WHERE</h2>
+
+<p>Things start to get intresting. 
+We will create our first join between two tables by using <em>WHERE</em> query clause.
+Usual the join is made between primary key of master table and the foreign key of detail table.
+This is one of many clauses you can use in a select statement.
+<p>
+
+<pre><code class="language-sql">-- query tabe: developer
+SELECT  
+    team.name as team_name, 
+    developer.name as developer_name       
+  FROM developer, team 
+ WHERE team.id = developer.team_id;
+</code></pre>
+
+<p><b>Output:</b></p>
+
+<pre><code class="language-output">
+"Sage-Code","Elucian Moise"
+"Sage-Code","Laura Moise"
+</code></pre>
+
+<p><b>Note: </b>The output actually depends on the tool you are using. 
+Some tools enable you to save the data result on the disk as file in a particular format that you chose.
+These tools are using the SQL dataset and transform the data internaly before display pr export.
+</p>
+
+<p><b>Homework: </b>open the actual csv file:<a href="demo/members.csv">members.csv</a></p>
+
+<h2>SQL: DELETE</h2>
+
+<p>Sometimes we need to remove one or more records.
+For this we use <em>DELETE</em> with <em>WHERE</em> clause. 
+In the next example we start a transaction and we remove data.
+After this we <em>COMMIT</em> to make modifications permanent.
+<p>
+
+<pre><code class="language-sql">-- clear data from tables
+START TRANSACTION
+DELETE FROM developer WHERE id = 2;
+DELETE FROM developer WHERE id = 1;
+DELETE FROM developer TEAM;
+COMMIT;
+</code></pre>
+
+<hr>
+
+<p><b>Read next:</b>
+<a href="maintain.html">Maintain</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+
+
+</div>
+
+
+</body>
+</html>

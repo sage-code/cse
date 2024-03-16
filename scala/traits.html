@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to traints in Scala.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="sage, code, scala, syntax, traits">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Scala Traints</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</div>
+    
+
+<hr>
+
+<h1>Scala Traits</h1>
+
+<div class="alert alert-secondary shadow-sm">
+Traits are reusable fragments of code. Think of traits like specification, contract or better sead requirements of implementation. A trait is not useful until it is implemented by a class. We use traits as a form of abstractization similar to Java interfaces.
+</div>
+
+<p>Traits enable Scala to simulate multiple inheritance model. One class can extend a single other class but can extend multiple traits. This greatly improve code reusability. Let's see this model in a picture:</p>
+
+<div align="center">
+  <img src="img/ScalaTraits.svg" alt="ScalaTraits" width="720" 
+       class="img-fluid protect rounded shadow border" >    
+  <p>Multiple Inheritance</p>
+</div>  
+
+<h4>Syntax:</h4>
+
+<p>Next is scala "pseudo-code" that explain how to create a trait and how to use the trait to define a class. In next examples we will add more details to explain variations of base syntax.</p>
+
+<pre><code class="language-scala line-numbers">//declare a simple trait
+trait Trait_Name {
+   // Variables
+   ...
+   // Methods
+   ...
+}
+
+//using a trait previously defined
+class Class_Name extends Trait_Name {
+   // Variables
+   ...
+   // Methods
+   ...
+}
+</code></pre>
+
+<h2>Abstract Methods</h2>
+
+<p>A trait usually contains a list of methods that have just the signature. That is an abstract method. These kind of methods must be implemented by a class or another sub-trait. There are traits that implement fully all methods. These are special!
+</p>
+
+<h4>Example:</h4>
+
+<pre><code class="language-scala line-numbers">//define first trait
+trait Test1 {
+   def sayHello(): Unit = {
+     println("Hello Friend")
+   }
+}
+//define second trait
+trait Test2 {
+   def todo(what: String): Unit //abstract
+}
+
+// this class extends two traits
+class Demo() extends Test1 with Test2 {
+  def todo(what: String) {
+     println("You must " + what)
+  }
+}
+
+// lets check out the new class Demo
+object Main {
+  def main(args: Array[String]): Unit = {
+    val x = new Demo()
+    x.sayHello()
+    x.todo("wash dishes")
+  }
+}
+</code></pre>
+
+<h4>Notes:</h4>
+
+<ul>
+<li>Class Demo exteds two treats: Test1 and Test2;</li>
+<li>We use keyword: "extend" for first trait and "with" for second trait;</li>
+<li>In trait named Test2, the method "todo()" is abstract;</li>
+<li>Instance x has access to both methods: sayHello() and todo().</li>
+</ul>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="collections.html">Collections</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

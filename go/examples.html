@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="GoLang opensource examples of code. Ready to study on Go Playground.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="golan, tutorial, programming, examples, playground, opensource, learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Go Examples</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Go Examples</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+Next examples are ready for study on Go Playground website. You can run them on-line and check the output. You can create new examples or modify these ones and re-share. All these examples are open sources created by volunteers.
+</div>
+
+<h4>Page bookmarks</h4>
+<hr>
+<ul>
+    <li><a href="#control">control flow</a></li>
+    <li><a href="#functions">functions</a></li>
+    <li><a href="#collections">collections</a></li>
+    <li><a href="#objects">objects</a></li>
+    <li><a href="#errors">error handling</a></li>
+    <li><a href="#processing">data processing</a></li>
+    <li><a href="#concurrency">concurrency</a></li>  
+    <li><a href="#files">working with files</a></li>      
+</ul>
+<hr>
+<p>Links to: <a href="https://go.dev/play" target="_blank">Go Playground</a></p>
+<table class="table table-bordered table-hover table-dark">
+<thead>
+<tr>
+    <th>00</th>
+    <th>Syntax demo</th>
+    <th>Description</th>
+</tr>
+</thead>  
+<tbody>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/NeviD0awXjt" 
+        target="_blank" rel="noopener">hello world</a></td>
+    <td>How to print a message</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/N5rWndIliJW" 
+        target="_blank" rel="noopener">variables</a></td>
+    <td>How to declare variables</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/Vw-pXSfo9_b" 
+        target="_blank" rel="noopener">constants</a></td>
+    <td>How to declare constants</td>
+</tr>
+<tr>
+    <th><a id="control"></a>01</th>
+    <th colspan="2">Control flow</th>
+</tr> 
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/2-4H-ArwHHS" 
+        target="_blank" rel="noopener">for loop</a></td>
+    <td>Repetitive block statement</td>
+</tr> 
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/qVDqWoUQ6AI" 
+        target="_blank" rel="noopener">switch</a></td>
+    <td>Multi-path value selector statement</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/U7xcpdutgCJ" 
+        target="_blank" rel="noopener">conditional</a></td>
+    <td>Conditional branching, if statement</td>
+</tr>
+<tr>
+    <th><a id="functions"></a>02</th>
+    <th colspan="2">Functions</th>    
+</tr>  
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/-o49-dQfGbK" 
+        target="_blank" rel="noopener">functions</a></td>
+    <td>How to create a function in GoLang</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/vZdUvLB1WbK" 
+        target="_blank" rel="noopener">return</a></td>
+    <td>How to define and capture multiple results</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/glNdE8aKPNq" 
+        target="_blank" rel="noopener">varargs</a></td>
+    <td>How to define variadic function</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/NpgpzS8ZG8y" 
+        target="_blank" rel="noopener">closure</a></td>
+    <td>How to use high order functions</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/MBTKk9VpAiK" 
+        target="_blank" rel="noopener">recursion</a></td>
+    <td>How to create a recursive function</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/OlWCLpxAyBz" 
+        target="_blank" rel="noopener">pointers</a></td>
+    <td>How to define and use pointers in functions</td>
+</tr>
+<tr>
+    <th><a id="collections"></a>03</th>
+    <th colspan="2">Collections</th>
+</tr>    
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/bBVikSoZ1Z7" 
+        target="_blank" rel="noopener">array</a></td>
+    <td>How to define arrays</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/76f4Jif5Z8o" 
+        target="_blank" rel="noopener">slices</a></td>
+    <td>How to define slices</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/ulCzODwCde_0" 
+        target="_blank" rel="noopener">maps</a></td>
+    <td>How to define a hash map</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/kRsyWNmLFLz" 
+        target="_blank" rel="noopener">range</a></td>
+    <td>How to traverse a collection using range</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/y9AcFzz3UJn" 
+        target="_blank" rel="noopener">strings</a></td>
+    <td>How to create strings & runes</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/_gY0tANzJ4l" 
+        target="_blank" rel="noopener">sorting</a></td>
+    <td>Using built-in .sort() method</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/h4g4vaLBtkw" 
+        target="_blank" rel="noopener">custom sort</a></td>
+    <td>Using a callback function to sort()</td>
+</tr>
+<tr>
+    <th><a id="objects"></a>04</th>
+    <th colspan="2">Objects</th> 
+</tr> 
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/n7jt1x3iw4Z" 
+        target="_blank" rel="noopener">struct</a></td>
+    <td>How to declare a data structure</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/4wmDCAydC1e" 
+        target="_blank" rel="noopener">methods</a></td>
+    <td>How to define bounded functions</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/XJASG4MxBQr" 
+        target="_blank" rel="noopener">interfaces</a></td>
+    <td>How to define interfaces</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/TqMui3hJuX7" 
+        target="_blank" rel="noopener">embedding</a></td>
+    <td>How to define a nested struct</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/uXlb-AyeYmQ" 
+        target="_blank" rel="noopener">generics</a></td>
+    <td>How to define generic struct</td>
+</tr>
+<tr>
+    <th><a id="errors"></a>05</th>
+    <th colspan="2">Error Handling</th>
+</tr>  
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/NiJOpCPO3L0" 
+        target="_blank" rel="noopener">errors</a></td>
+    <td>Define custom error using: errors.New()</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/9-2vCvRuhmE" 
+        target="_blank" rel="noopener">panic</a></td>
+    <td>How to create an exception</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/5SDVfc_jxbg" 
+        target="_blank" rel="noopener">defer</a></td>
+    <td>How to postpone execution of a statement</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/Sk-SVdofEIZ" 
+        target="_blank" rel="noopener">recover</a></td>
+    <td>How to handle errors and avoid crash</td>
+</tr>
+<tr>
+    <th><a id="processing"></a>06</th>
+    <th colspan="2">Data processing</th>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/DSKkoyx9Rcy" 
+        target="_blank" rel="noopener">string functions</a></td>
+    <td>String processing functions</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/EZCZX1Uwp6D" 
+        target="_blank" rel="noopener">formating</a></td>
+    <td>String "fmt" package and format technique</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/pDwkw1iMACF" 
+        target="_blank" rel="noopener">templates</a></td>
+    <td>Text template and format technique</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/fI2YIfYsCaL" 
+        target="_blank" rel="noopener">regex</a></td>
+    <td>How to use regular expressions</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href=" " 
+        target="_blank" rel="noopener">JSON</a></td>
+    <td>How to parse JSON data</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/OVq7kNMk0GR" 
+        target="_blank" rel="noopener">XML</a></td>
+    <td>How to work with XML format</td>
+</tr>
+
+
+<tr>
+    <th><a id="concurrency"></a>05</th>
+    <th colspan="2">Concurrency</th>
+</tr>  
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/I7scqRijEJt" 
+        target="_blank" rel="noopener">goroutines</a></td>
+    <td>Learn how to use "go" to start a concurent function</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/MaLY7AiAkHM" 
+        target="_blank" rel="noopener">channels</a></td>
+    <td>Learn how to declare channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/3BRCdRnRszb" 
+        target="_blank" rel="noopener">buffers</a></td>
+    <td>How to create a buffered channel</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/Nw-1DzIGk5f" 
+        target="_blank" rel="noopener">synchronization</a></td>
+    <td>How to synchronize go routines using channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/mjNJDHwUH4R" 
+        target="_blank" rel="noopener">direction</a></td>
+    <td>How to define uni-directional channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/FzONhs4-tae" 
+        target="_blank" rel="noopener">select</a></td>
+    <td>How to handle multiple channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/gyr0NbVKBVf" 
+        target="_blank" rel="noopener">timeouts</a></td>
+    <td>Learn how to stop waiting for a go routine</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/TFv6-7OVNVq" 
+        target="_blank" rel="noopener">non-blocking</a></td>
+    <td>How to create non-blocking channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/vCvRjcMq7p3" 
+        target="_blank" rel="noopener">closing</a></td>
+    <td>How to close a channel and synchronize</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/yQMclmwOYs9" 
+        target="_blank" rel="noopener">range & channel</a></td>
+    <td>How to creat a range over channel</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/gF7VLRz3URM" 
+        target="_blank" rel="noopener">timers</a></td>
+    <td>How to create a timer: time.newTimer()</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/gs6zoJP-Pl9" 
+        target="_blank" rel="noopener">tikers</a></td>
+    <td>How to create a ticker: time.NewTicker()</td>
+</tr>
+
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/hiSJJsYZJKL" 
+        target="_blank" rel="noopener">worker pool</a></td>
+    <td>How to use worker pool with goroutine.</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/S98GjeaGBX0" 
+        target="_blank" rel="noopener">wait group</a></td>
+    <td>https://gobyexample.com/waitgroups</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/lqf7pC2FUeT" 
+        target="_blank" rel="noopener">rate limiting</a></td>
+    <td>How to control resource utilization</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/j-14agntvEO" 
+        target="_blank" rel="noopener">atomic counters</a></td>
+    <td>Using sync/atomic alternative to channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/JU735qy2UmB" 
+        target="_blank" rel="noopener">mutex</a></td>
+    <td>Use "mutex" as alternative to channels</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/TBcWd-OfnaA" 
+        target="_blank" rel="noopener">stateful goroutines</a></td>
+    <td>How to manage state using channels</td>
+</tr>
+
+<tr>
+    <th><a id="files"></a>07</th>
+    <th colspan="2">Working with files</th>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/DF2Wo8nDKaF" 
+        target="_blank" rel="noopener">reading</a></td>
+    <td>How to read files</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/Y12O-L_zFS1" 
+        target="_blank" rel="noopener">writing</a></td>
+    <td>How to write files</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/kNcupWRsYPP" 
+        target="_blank" rel="noopener">filter</a></td>
+    <td>How to create "line filter" app</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/5h3lUytvmyO" 
+        target="_blank" rel="noopener">path</a></td>
+    <td>How to work with path/filepath package</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/cICbVSX51zI" 
+        target="_blank" rel="noopener">folder</a></td>
+    <td>How to create/remove a folders</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/hVcPg9RH3_V" 
+        target="_blank" rel="noopener">temporary</a></td>
+    <td>How to work with temporary files</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/6m2ll-D52BB" 
+        target="_blank" rel="noopener">embeded</a></td>
+    <td>How to work with embeded files</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/NwEcabnZysz" 
+        target="_blank" rel="noopener">ReadDir()</a></td>
+    <td>How to list files using ioutil package</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/FuQn7HnPhnm" 
+        target="_blank" rel="noopener">Walk()</a></td>
+    <td>How to list files using filepath package</td>
+</tr>
+<tr>
+    <td> </td>
+    <td><a href="https://go.dev/play/p/1j4VnIikQCt" 
+        target="_blank" rel="noopener">ReadDir()</a></td>
+    <td>How to list files using file.ReadDir function</td>
+</tr>
+
+
+</tbody>
+</table>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Homework:</b>
+<a href="index.html#quiz" rel="nofollow">Take the Quiz</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

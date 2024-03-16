@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark"><head>
+  <meta charset="utf-8">
+  <meta name="description" content="Java new features: Introduction to switch expressions.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="java, switch, expression, syntax">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Switch Expressions</title>  
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">  
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<div class="container">
+        
+<!-- header -->
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+    </div>  
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+<h2>Switch Expressions</h2>
+
+<div class="alert alert-secondary shadow-sm">Switch expressions are similar to switch statement. Instead of imperative syntax is using an alternative syntax that can return a value just like a function.</div>
+
+<p>The advantage of switch expressions is to simplify syntax for making compact expressions. It is a variation of ternary operator "?" that is used in C and C++</p>
+
+<p>Switch expressions has 2 alternative syntax. One is called "Case L ->", the other is called "Case L :". You can use symbol "->" or "yield" to return a value.</p>
+
+<h2>Case ":" (imperative)</h2>
+
+<p>Next syntax pattern is classic, it was available before JDK-8 and is yet available. This pattern can't be used in expressions. It is an imperative statement.</p>
+
+<pre class="line-numbers"><code class="language-java"
+>switch (variable) {
+    case value1: //fall through
+    case value2:
+        result = result1;
+        break;   //stop evaluation
+    case value3:
+        result = result2;
+        break;   //stop evaluation
+    ...
+    default:
+        result = resultN;
+}
+</code></pre>
+
+<h2>Case L -> (functional)</h2>
+
+<p>Using the new expression syntax require symbol "->"  follow by an expression. This form do not allow fall-through but enable a list of values to be used for one or more cases.</p>
+
+<pre class="line-numbers"><code class="language-java"
+>result = switch (variable) {
+    case value1, value2 -> result1;
+    case value3         -> result2;
+    ...
+    default             -> resultN;
+}
+</code></pre>
+
+<h2>Case L ":" (functional)</h2>
+
+<p>Using this expression syntax require symbol ":" follow by a block of code and keyword "yield". This syntax require "yield" and do not use break.</p>
+
+<pre class="line-numbers"><code class="language-java"
+>result = switch (variable) {
+    case value1, value2: { 
+        ...
+        yield result1; 
+    }
+    case value3: { 
+        ...
+        yield result2; 
+    }
+    ...
+    default: { 
+        ...
+        yield resultX; 
+    }
+}
+</code></pre>
+
+<hr>
+
+<div class="alert alert-info"><b>Note: </b> Usually a switch expression or statement is used with an enumeration type. Don't warry, if the compiler do not like your switch statement it will complain. If you find yourself in trable you should read more in Oracle documentation.</div>
+
+<p><b>External Article:</b>
+<a href="https://docs.oracle.com/en/java/javase/18/language/switch-expressions.html">Switch Expressions</a></p>
+
+
+<hr>
+<p><b>Read next:</b>
+<a href="records.html">Record Classes</a></p>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</div>
+</body>
+</html>

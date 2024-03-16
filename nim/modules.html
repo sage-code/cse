@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Nim fundamentals: Define modules. A tutorial for absolute beginners.">
+  <meta name="author" content="Elucian Moise">
+  <meta name="keywords" content="nim, lang, language, syntax, tutorial, module, import">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Website title -->
+  <title>Nim Modules</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <!-- Icon -->
+  <link rel="icon" type="image/png"  href="https://sagecode.net/images/favicon.ico">
+  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="../prism.css">
+  <script src="../prism.js"></script>
+  <!-- custom css -->
+  <link rel="stylesheet" href="https://sagecode.net/sage.css">
+  </head>
+<body>
+
+<main class="container">
+
+<header class="row">
+    <div class="col">
+        <a href="https://sagecode.net"><img src="https://sagecode.net/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+    </div>
+    <div class="col  bottom-right">
+        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+    </div>
+</header><hr>
+
+
+<h2>Nim Modules</h2>
+
+
+<div class="alert alert-secondary shadow-sm">
+A module in Nim programming language is a file that contains a collection of functions and variables that can be used by other parts of the program. Modules are a way of organizing code into smaller, more manageable units.
+</div>
+
+<p>Modules are a powerful way to organize and manage code in Nim. They can help you to make your programs more modular and easier to maintain.</p>
+
+<p>To create a module, you create a file with the .nim extension. The file can contain any number of functions and variables. When you use a function or variable from a module, you need to import the module into your program.</p>
+
+<p>To import a module, you use the import keyword followed by the name of the module. For example, if you have a module called "math" that contains a function called "add", you would import it into your program like this:</p>
+
+<pre><code class="language-nim">
+import math
+</pre></code>
+
+
+<p>Once you have imported a module, you can use its functions and variables in your program.</p>
+
+<h2>Example</h2>
+
+<p>Here's an example of how to call a function and procedure defined in a module using Nim:</p>
+
+<p>Suppose we have a module called "utilities.nim" that defines a "multiply" function and a "printMessage" procedure. Here's what the contents of "utilities.nim" might look like:</p>
+
+<pre><code class="language-nim line-numbers">
+# utilities.nim module
+
+proc printMessage(message: string) =
+  echo message
+
+proc multiply(x: int, y: int): int =
+  return x * y
+</code></pre>
+
+<p>To call these functions/procedures in another file, we can import the "utilities" module and then call the functions/procedures using the dot notation. Here's an example of how to do that in another file called "main.nim":</p>
+
+<pre><code class="language-nim line-numbers">
+# main.nim file
+
+import utilities
+
+var x = 5
+var y = 10
+
+let result = utilities.multiply(x, y)
+echo result # Output: 50
+
+utilities.printMessage("Hello, world!") # Output: Hello, world!
+</code></pre>
+
+<p>In this example, we import the "utilities" module using the "import" statement, and then call the "multiply" function and "printMessage" procedure using the dot notation. We pass arguments to the functions/procedures as needed.</p>
+
+<!-- work in progress-->
+
+<hr>
+<p><b>Read next:</b>
+<a href="errors.html">Errors</a>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-copyright text-center"></div>
+</footer>
+</main>
+</body>
+</html>
