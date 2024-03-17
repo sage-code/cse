@@ -3,7 +3,7 @@ class record: pass
 
 # define attributes
 record.type    = "url"
-record.domain  = "https://sagecode.net"
+record.domain  = "https://sage-cse.vercel.app"
 record.purpose = "Research Laboratory"
 
 # print attributes

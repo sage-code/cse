@@ -5,16 +5,16 @@ import queue
 
 q = queue.Queue()
 
-URLS = ['https://sagecode.net/python',
-        'https://sagecode.net/ruby',
-        'https://sagecode.net/script',
-        'https://sagecode.net/java',
-        'https://sagecode.net/html',
-        'https://sagecode.net/c',
-        'https://sagecode.net/cpp',
-        'https://sagecode.net/php',
-        'https://sagecode.net/sql',
-        'https://sagecode.net/julia',
+URLS = ['https://sage-cse.vercel.app/python',
+        'https://sage-cse.vercel.app/ruby',
+        'https://sage-cse.vercel.app/script',
+        'https://sage-cse.vercel.app/java',
+        'https://sage-cse.vercel.app/html',
+        'https://sage-cse.vercel.app/c',
+        'https://sage-cse.vercel.app/cpp',
+        'https://sage-cse.vercel.app/php',
+        'https://sage-cse.vercel.app/sql',
+        'https://sage-cse.vercel.app/julia',
         ]
 
 def feed_the_workers(spacing):

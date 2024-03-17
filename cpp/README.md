@@ -2,7 +2,7 @@
 
 This is a full, add free tutorial for C++ programming language.
 
-pibshed: [here](https://sagecode.net/cpp)
+pibshed: [here](https://sage-cse.vercel.app/cpp)
 
 ## Contribution
 

@@ -1,4 +1,4 @@
-# https://sagecode.net/python-data/
+# https://sage-cse.vercel.app/python-data/
 
 v = 100    #declare an integer variable
 r = 100.25 #declare a float variable

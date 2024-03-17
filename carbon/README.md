@@ -1,6 +1,6 @@
 # Carbon Tutorial
 
-Published: [here](https://sagecode.net/carbon)
+Published: [here](https://sage-cse.vercel.app/carbon)
 
 ---
 

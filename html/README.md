@@ -2,7 +2,7 @@
 
 HTML5 & CSS Tutorial
 
-Visit: [HTML Tutorial](https://sagecode.net/html/)
+Visit: [HTML Tutorial](https://sage-cse.vercel.app/html/)
 
 # License
 
