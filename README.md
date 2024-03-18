@@ -8,7 +8,7 @@ Validate pages using: [W3 Validator](https://validator.w3.org/)
 
 Any abuse, spam, hidden ads, or self-promotion is not tolerated on our website. If we find such a contribution you will be reported. We are professionals and we do not accept PR without review. Do not break our trust!
 
-This is published here: [home](https://sagecode.net)
+This is published here: [home](https://sage-cse.vercel.app)
 
 **note**  (for contributors)
 

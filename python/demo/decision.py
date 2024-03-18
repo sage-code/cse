@@ -1,6 +1,5 @@
 # ------------------------------------------
 # program example for decision statement
-# article link: https://sagecode.net/python-decision/
 # ------------------------------------------
 x = int(input("Please enter an integer: "))
 if x < 0:
