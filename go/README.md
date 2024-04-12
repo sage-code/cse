@@ -2,7 +2,7 @@
 
 This is an comprehesive, open source Go language tutorial. You can use this tutorial to learn fundamental Go programming language syntax and concepts. It include Go 1.20 updates.
 
-Homepage: [Go Tutorial](https://sage-cse.vercel.app/go/)
+Homepage: [Go Tutorial](https://sagecode.pro/go/)
 
 
 # Description
