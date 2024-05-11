@@ -245,28 +245,9 @@ pre span.line:before {
   color: black; /* Or a color you prefer */
 }
 
-/* style used by social image */
-.fix-social {
-  width:  4rem;
-  height: 4rem;
-  overflow: hide;
-  position: relative;
-}
-
 /* Improve contrast on black theme */
 body[data-bs-theme="dark"] .fix-social {
   filter: invert(1);
-}
-
-/* style used by social buttons on first page */
-.icon-sm {
-  margin: 6px 6px;
-  background-color: rgb(106, 35, 35);
-}
-
-.icon-sm:hover {
-  background-color: rgb(106, 35, 35);
-  opacity: 0.7;
 }
 
 a:hover {
@@ -413,4 +394,24 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 5px;
+}
+
+/* style used by social buttons on first page */
+.icon-lg {
+  width:auto;
+  height:auto;
+  font-size: 2rem;
+  margin: 6px;
+  background-color: rgb(58, 42, 42);
+}
+
+.icon-lg:hover {
+  background-color: rgb(159, 132, 122);
+  opacity: 0.7;
+}
+
+/* style used by social image */
+.fix-social {
+  position: relative;
+  border-style: solid 2px;
 }
