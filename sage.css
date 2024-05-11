@@ -247,20 +247,25 @@ pre span.line:before {
 
 /* style used by social image */
 .fix-social {
-  width:  45px;
-  height: 45px;
+  width:  4rem;
+  height: 4rem;
   overflow: hide;
   position: relative;
+}
+
+/* Improve contrast on black theme */
+body[data-bs-theme="dark"] .fix-social {
+  filter: invert(1);
 }
 
 /* style used by social buttons on first page */
 .icon-sm {
   margin: 6px 6px;
-  background-color: silver;
+  background-color: rgb(106, 35, 35);
 }
 
 .icon-sm:hover {
-  background-color: silver;
+  background-color: rgb(106, 35, 35);
   opacity: 0.7;
 }
 
