@@ -1,6 +1,6 @@
 # Carbon Tutorial
 
-Published: [here](https://sagecode.pro/carbon)
+Published: [here](../carbon)
 
 ---
 

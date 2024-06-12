@@ -1,4 +1,4 @@
-# https://sagecode.pro/python-data/
+# ../python-data/
 
 v = 100    #declare an integer variable
 r = 100.25 #declare a float variable

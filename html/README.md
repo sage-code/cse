@@ -2,7 +2,7 @@
 
 HTML5 & CSS Tutorial
 
-Visit: [HTML Tutorial](https://sagecode.pro/html/)
+Visit: [HTML Tutorial](../html/)
 
 # License
 

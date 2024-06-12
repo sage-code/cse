@@ -2,7 +2,7 @@
 
 This tutorial is a simplified introduction to Julia.
 
-Hosted: [here](https://sagecode.pro/julia)
+Hosted: [here](../julia)
 
 ---
 Copyright (c) - SageCode 2023

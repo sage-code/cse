@@ -4,7 +4,7 @@
 * This is an open source tutorial for Linux and MacOS;
 * It consist of text articles, code snippets and video recording;
 
-Visit: [sagecode/bash](https://sagecode.pro/bash/index.html)
+Visit: [sagecode/bash](../bash/index.html)
 
 ---
 
