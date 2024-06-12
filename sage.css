@@ -415,3 +415,7 @@ a:hover {
   position: relative;
   border-style: solid 2px;
 }
+
+.round {
+  border-radius: 50%;
+}
