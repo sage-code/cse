@@ -152,7 +152,7 @@ Data types represent a <em>domains of values</em>. In other words, data type rep
 <td>(&forall; UTF8)</td>
 </tr>
 <tr>
-<td>0B0,0B1</td>
+<td>0b0,0b1</td>
 <td>B</td>
 <td>(0,1) &amp; B</td>
 </tr>
@@ -606,16 +606,16 @@ set False = 0;
 set True  = 1; 
 </code></pre>
 
-<p>Printing native Boolean values is going to print numbers. Type B can support a number between 0b0 and 0b00000001. Therefore printing this type is done using notation 0B0 and 0B1.</p>
+<p>Printing native Boolean values is going to print numbers. Type B can support a number between 0b0 and 0b00000001. Therefore printing this type is done using notation 0b0 and 0b1.</p>
 <pre><code class="language-bee">
 ** printing Boolean values
 rule main:
-  print False; -- 0B0
-  print True;  -- 0B1
+  print False; -- 0b0
+  print True;  -- 0b1
 return;
 </code></pre>
 
-<p>You can convert B to a number, safely. You can convert a number to B explicit using cast operator: <code>number :&gt; B. </code>The number will loose all it's significance and become 0B1 or 0B0.</p> 
+<p>You can convert B to a number, safely. You can convert a number to B explicit using cast operator: <code>number :&gt; B. </code>The number will loose all it's significance and become 0b1 or 0b0.</p> 
 
 
 <h3>Logic operations</h3>
@@ -1069,9 +1069,9 @@ rule main:
     print (a &asymp; b); -- 0B0: (False, 0.033 - 0.25 = 0.08 )
 
     ** using specified precision:
-    print (a &asymp; b &plusmn; 0.01); -- 0B0 (False)     
-    print (a &asymp; b &plusmn;  0.05); -- 0B0 (False)    
-    print (a &asymp; b &plusmn;  0.10); -- 0B1 (True)
+    print (a &asymp; b &plusmn; 0.01);  -- 0b0 (False)     
+    print (a &asymp; b &plusmn;  0.05); -- 0b0 (False)    
+    print (a &asymp; b &plusmn;  0.10); -- 0b1 (True)
 return
 </code></pre>
 
