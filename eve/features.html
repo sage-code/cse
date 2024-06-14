@@ -29,62 +29,57 @@
     </div>
 </header><hr>
 
-<h1>Eve features</h1>
+<h1>Eve Language</h1>
 
-<div class="alert alert-secondary shadow-sm">
-Eve is a front-end data processing imperative programming language. Eve is multi-paradigm, statically typed, with type inference and gradual typing. Our intention is to create a verbose robust language for enterprise applications.</div>
+<div class="alert alert-info shadow-sm">
+  Eve empowers developers with a domain-specific, modular programming language. Designed for improved productivity and ease of learning. Eve fosters a safe, versatile, and effective environment for data manipulation tasks across various domains.  This includes working with text data, binary data (like images and video streams), and database connectivity.
+</div>
+
+<section>
+  <h3>Key Features</h3>
+  <ul>
+    <li>
+      <h4>Readable Syntax</h4>
+      <p>
+        Eve leverages familiar keywords and syntax inspired by established languages like Java, C++, Ada, Pascal, and Ruby. It employs an explicit, consistent, and verbose style for enhanced code readability and learning by example. Additionally, Eve supports syntax highlighting and colorization for improved code comprehension.
+      </p>
+    </li>
+    <li>
+      <h4>Effective and Productive</h4>
+      <p>
+        Eve is tailored towards domain-specific jobs, prioritizing developer productivity. It focuses on effectiveness over extreme efficiency or high-performance computing.
+      </p>
+    </li>
+    <li>
+      <h4>Safe and Type-Safe</h4>
+      <p>
+        Eve utilizes a static type system to ensure type safety. It mitigates null pointer exceptions by employing boxed values and initializing basic types with zero values.
+      </p>
+    </li>
+    <li>
+      <h4>Modular Design</h4>
+      <p>
+        Eve encourages code reusability through scripts and modules, promoting separation of concerns in larger projects. It offers three module types:
+        <ul>
+          <li><b>Drivers:</b> Serve as executable entry points for your programs.</li>
+          <li><b>Aspects:</b> Represent individual processes launched from drivers and unloaded from memory upon completion.</li>
+          <li><b>Modules:</b> Provide reusable but non-executable components that persist until the driver finishes.</li>
+        </ul>
+      </p>
+    </li>
+    <li>
+      <h4>Versatile Data Handling</h4>
+      <p>
+        Eve will be able to connect and manipulates data from various databases. It reads and writes diverse data formats, including text, images, and video streams. We will create specific drivers for each database we interact with and optimize data access for reliability and performance.
+      </p>
+    </li>
+  </ul>
+</section>
+
+<h2>Code Example</h2>
 
 
-<p><b>Names: </b>{eve, Eve, EVE) are related. Eve is the language name, EVE is the virtual machine, *.eve is the source code extension for script files. Initially Eve use to be called Level 123 but we have simplified the name. Level project was archived in 2007.</p>
-
-<h4>Target Features:</h4>
-
-<table class="table table-bordered table-striped table-sm">
-<tr>
-<th>#</th><th>Feature</th><th>Description</th></tr>
-
-<tr><td>1</td>
-<td><a href="#readable">readable</a></td>
-<td>use familiar keywords</td>
-</tr>
-<tr><td>2</td>
-<td><a href="#effective">effective</a></td>
-<td>focus on domain specific jobs</td>
-</tr>
-<tr><td>3</td>
-<td><a href="#safe">safe</a></td>
-<td>use static data type system</td>
-</tr>
-<tr><td>4</td>
-<td><a href="#modular">modular</a></td>
-<td>has reusable scripts and modules</td>
-</tr>
-<tr><td>5</td>
-<td><a href="#versatile">versatile</a></td>
-<td>can connect to multiple databases</td>
-</tr>
-</table>
-
-<hr>
-<div class="alert alert-warning"><b>Design:&nbsp;</a></b>Eve has a classic design inspired from Ada, Ruby & Fortran. Therefore learning Eve is more easy if you know one of these languages. Eve is not a curly bracket language, and is much more different than C, C++, Java, Rust, Go, Swift, JavaScript.</div>
-
-
-<h2><a id="readable"></a>Readable</h2>
-<p>Eve is designed to be learned by reading code examples. It has an explicit consistent and verbose syntax. We believe future users will learn a language much more easly, when the syntax looks right.</p>
-
-<p>Eve has ... </p>
-<ul>
-<li>familiar English keywords, with no abbreviation;</li>
-<li>declarative statements based on noun keywords;</li>
-<li>sugestive keywords to finish a block statement;</li>
-<li>only ASCII operators and delimiters not Unicode symbols;</li>
-<li>more flat code by making indentation optional at 2 spaces;</li>
-<li>comprehensive data literals for constants and collections;</li>
-<li>uppercase and lowercase to separate data types from variables;</li>
-<li>sigil/prefix for some identifiers to reduce name collisions;</li>
-</ul>
-
-<p>The result of these choices is demonstrate below with an example. You can observe different comment notations enable different colors. Syntax colorizer is able to identify the keywords and highlight every statement. This can not be achieved in a curly bracket language.</p>
+<p>This Eve program calculates the 5th number in the Fibonacci sequence. Here's a breakdown:</p>
 
 <pre><code class="language-eve"># Fibonacci series demonstrate
 driver fibonacci:
@@ -111,79 +106,36 @@ return;
 </code></pre>
 
 
-<h2><a id="effective"/>Effective</h2>
-
-<p>Eve is aiming to be effective and feasible. This means Eve is design to improve developer productivity and get the job done. Effective does not necessarily imply extreme efficiency or higher performance. Eve is design to be productive and easy to learn.</p>
-
-<p>Eve ...</p>
+<h3>Explanation</h3>
 
 <ul>
-<li>is using gradual typing;</li>
-<li>is using type inference;</li>
-<li>is using separation of concerns;</li>
-<li>enables string templates and interpolation</li>
-<li>enables exclusive database connectivity;</li>
-<li>enables model first application design;</li>
-<li>enables generative (macro) programming;</li>
+  <li>
+    <b>Driver and Function Definition:</b>
+    <ul>
+      <li>The line "driver fibonacci:" declares the main program named "fibonacci".</li>
+      <li>The line "function fib(n:Integer) => (y:Integer)" defines a function named "fib" that takes an integer "n" as input and returns an integer value.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Recursive Calculation:</b>
+    <ul>
+      <li>The "fib" function uses recursion to calculate the nth Fibonacci number.</li>
+      <li>The "if" statement checks if "n" is either 1 or 0, which are the base cases in the sequence (both 1).</li>
+      <li>The "else" block calculates "fib(n)" using the values of "fib(n-1)" and "fib(n-2)", demonstrating recursion.</li>
+    </ul>
+  </li>
+  <li>
+    <b>Main Program Execution:</b>
+    <ul>
+      <li>The "process" block defines the main execution flow.</li>
+      <li>A variable "r" is declared to store the result.</li>
+      <li>The line "let r := fib(5);" calls the "fib" function with "5" and assigns the result (5th Fibonacci number) to "r".</li>
+      <li>The "print r;" statement displays the calculated value to the console.</li>
+    </ul>
+  </li>
 </ul>
 
-<h2><a id="safe"/>Safe</h2>
-<p>Eve is designed to be a safe. For this we avoid using Null pointers. Eve is using boxed values that are actually references but we initialize all the basic types with zero values. Null is equivalent to zero value. We believe the next principles will help us design a better language:</p>
-
-<ol>
-<li>We favor safety over performance,</li>
-<li>It is better to be productive than efficient,</li>
-<li>Implicit values are better than wrong values,</li>
-<li>A good error message worth more than gold,</li>
-<li>If the system is not ready it should tell you,</li>
-<li>If a process fail it should report the errors,</li>
-<li>Sometimes if you try a second time it works!</li>
-</ol>
-
-<h2><a id="modular"/>Modular</h2>
-<p>Eve applications are usually small, based on single source file that do one job. However we enable usage of multiple files for separation of concerns in large project. There are 3 kind of modules defined for Eve, as follows:</p>
-<ol>
-
-<div align="center">
-  <img src="img/eve-design.svg" alt="Eve Modules" width="600" class="img-fluid protect rounded" >
-  <p>Eve modular design</p>
-</div>
-<hr>
-
-<li>One <em>master script</em> called "<em>driver</em>"</li>
-<li>Multiple <em>secondary scripts</em> called "<em>aspects</em>"</li>
-<li>Multiple reusable <em>modules</em> organized in libraries.</li>
-</ol>
-
-<p>Drivers and aspects are executable while modules are reusable but not executable. Aspects are launched from the driver and are individual process. Once an aspect is resolved it is removed from memory, unlike modules that are persistent until the driver ends.</p>
-
-<h2><a id="versatile"/>Versatile</h2>
-
-<p>Eve is a domain specific language but it looks and feel like a general purpose language. We do not do graphics but we manipulate data in any form. This can be text data but also row bit data. So we can read and write images and video streams. Next design choices will make Eve a versatile language:</p>
-
-<ol>
-  <li>Eve variables and parameters can be declared using: type hint, type inference and gradual typing. This improve readability and reduce clutter;</li>
-  <li>Eve use implicit data types that are static but enable also variant type. The variant type can support a number of alternative data types that can be specified.</li>
-  <li>Eve has processes that can support input/output parameters. A process can run in a separate thread. However a process can not be used in expressions.</li>
-  <li>Eve has functions. Functions are usually defined in modules. A function can return one or more results. You can define the result name and type explicit.</li>
-  <li>Eve has lambda expressions. These are similar to functions but restricted. A lambda expression can't have side effects and can return a single value.</li>
-  <li>Variables and parameters are automatically initialized with zero value when there is no explicit initialization. Also, if a parameter has explicit initial value it becomes optional.</li>
-  <li>In a subroutine, native type parameters are transferred <em>by value</em>.  You can sent parameters <em>by reference</em> using "@" prefix.</li>
-  <li>Eve has two assignment operators: "::" (clone) and ":=" (assign). Developers can control the assignment explicit.</li>
-</ol>
-
-<h2><a id="classic"/>Classic</h2>
-
-<p>Eve is using a familiar syntax. We try to avoid being disruptive. If you know Java or C++ you will be able to learn Eve in less then one week. Also if you know Ada or Pascal, or Ruby you will be comfortable learning Eve.</p>
-
-<ol>
-  <li>Eve is using classic control flow statements: {decision, selection, repetition, error handlers} that you already know from other languages.</li>
-  <li>Eve is using ASCII operators, and keyword based operators but not Unicode. This enable fast code input required to write large business oriented scripts.</li>
-  <li>Eve has user defined data types (classes). Eve is a hybrid language it has suport for object oriented programming OOP. </li>
-  <li>Eve is familiar with SQL, HTML and JSON. To deal with many SQL dialects, Eve have specific drivers that enable direct interaction with major databases.</li>
-</ol>
-<!-- work in progress-->
-<hr>
+<p>Ready to dive deeper into Eve? This brief demo has only scratched the surface of its capabilities. Explore the detailed explanations we've prepared to unlock the full potential of Eve for your data manipulation needs.  As you delve into Eve's design, you'll gain valuable insights into programming language principles. Who knows, maybe one day you'll be inspired to create your own language or even contribute to the ongoing evolution of Eve!</p>
 
 <p><b>Read next:</b>
 <a href="syntax.html">Eve Syntax</a></p>
