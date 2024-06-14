@@ -34,7 +34,7 @@
 
 <h1>Eve Syntax</h1>
 
-<div class="alert alert-secondary shadow-sm">Eve syntax is inspired from many other languages. We use short English keywords without abbreviation. We get inspired from many other languages: Ada, Ruby, Fortran & Python. Eve is not a curly bracket language. We hope you will enjoy learning it.</div>
+<div class="alert alert-secondary shadow-sm">Eve's syntax draws inspiration from a variety of programming languages. We leverage short English keywords without resorting to abbreviations. Notably, languages like Ada, Ruby, Fortran, and Python have influenced Eve's design. Unlike some languages, Eve doesn't rely on curly braces for code blocks. We believe you'll find Eve enjoyable to learn.</div>
 
 <h4>Page bookmarks</h4>
 
@@ -57,7 +57,7 @@
 
 <h2>Hello World</h2>
 
-</p>For start let's honor a tradition: We should print "Hello world!" to the console using EVE. Next is a simple program that ca write a message on the console.</p>
+</p>For start let's honor a tradition: We should print "Hello world!" to the console using EVE. Next is a simple program that ca write a message on the console. Notice the console is a native feature of eve and you do not need to import a package to be able to write out a message. Also, observe in this example we do not have "main()" functions. We have replaced the entry point with a main process.</p>
 
 <h4>Example:</h4>
 
@@ -72,13 +72,14 @@ return;
 
 <h2><a id="elements">Syntax Elements</h2>
 
-<p>Next code fragment represents a very simple program written in Eve language. Let's identify the main syntactic elements and punctuation. This is how we will present eve, using examples of code and fragments.</p>
+<p>Next code fragment represents a very simple program written in Eve language. Let's identify the main syntactic elements and punctuation. This is how we will present Eve language, using examples of code and fragments.</p>
 
 <h4>Example:</h4>
 
 <pre><code class="language-eve">
 # main script in Eve is called: "driver"
-driver syntax_elements(a, b: Integer)::
+# this script accepts two arguments -a -b
+driver syntax_elements(a, b: Integer):
 
 ** define two global lambda expressions
 global
@@ -103,9 +104,7 @@ return;
 
 <h2><a id="punctuation"/>Punctuation:</h2>
 
-<p>I describe the syntax using some conventions. The code snippets you are going to see are not all real executable code. Some are just fragments of code, syntax "design patterns" or "pseudo-code". You will get it after a while.</p>
-
-<p>When the snippets is a "pattern" then we use square brackets like [...] for optional parts. Sometimes we use 3 dots "..." for a sequence that is missing. Sometimes [x] represents real code and is mandatory, depending on the context. Read the "example" snippets to understand better the syntax.</p>
+<p>I describe the syntax using some conventions. The code snippets you are going to see are not all real executable code. Some are just fragments of code, syntax "design patterns" or "pseudo-code". We use square brackets like [...] for optional parts. Sometimes we use 3 dots "..." for a sequence that is missing. Sometimes [] represents real code and is mandatory, depending on the context. Read the code snippets to understand better the syntax.</p>
 
 <ul>
 <li>Eve is using infix expressions like Java and other popular languages,</li>
