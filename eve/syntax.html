@@ -20,17 +20,18 @@
   </head>
 <body onload="eve_render();">
 
-<p class="container">
+<div class="container">
 
 <!-- header -->
-<div class="row">
+<header class="row">
     <div class="col">
         <a href="https://sagecode.pro"><img src="../images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
     </div>
     <div class="col  bottom-right">
         <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
     </div>
-</div><hr>
+</header><hr>
+
 
 <h1>Eve Syntax</h1>
 
@@ -61,7 +62,7 @@
 
 <h2>Hello World</h2>
 
-</p>One of the best ways to get started with a new programming language is through the classic "Hello World" example. In Eve, printing "Hello World!" to the console is straightforward and highlights some key aspects of the language's syntax:.</p>
+<div>One of the best ways to get started with a new programming language is through the classic "Hello World" example. In Eve, printing "Hello World!" to the console is straightforward and highlights some key aspects of the language's syntax:.</div>
 
 <h4>Example:</h4>
 
@@ -877,14 +878,14 @@ return;</code></pre>
 <pre class="fixed"># , : . ; = ~ ? % ^ * - + / &lt; &gt; &amp; | ! @ $</pre>
 
 <p><b>Two symbols:</b></p>
-<pre class="fixed">== !=  => <= >= :> <: .. !. !~ </pre>
+<pre class="fixed">== !=  => <= >= :> <: .. !. !~ && ||</pre>
 
 <p><b>Three symbols:</b></p>
 <pre class="fixed">.|. .&. .+. </pre>
 
 <p><b>Modifiers:</b></p>
 
-<pre class="fixed">:: := += -= *= /= %= ^= &= |= +> <+ >> << -> <- </pre>
+<pre class="fixed">:: := += -= *= /= %= ^= +> <+ >> << -> <- </pre>
 
 <p><b>Delimiters:</b></p>
 <pre class="fixed">"_" '_' (...) [...] {...} #(...)</code></pre>
@@ -1016,7 +1017,7 @@ return;</code></pre>
 </tr>
 <tr>
   <td>||</td>
-  <tr>represents: union of two Sets "&cup;" operator</tr>
+  <td>represents: union of two sets</td>
 </tr>
 </tbody>
 </table>
@@ -1178,6 +1179,11 @@ return;</code></pre>
 <td>check elements are different. (compare locations)</td>
 </tr>
 </tr>
+<tr>
+  <td>as</td>
+  <td>quick conversion  using format constants for date/time</td>
+  </tr>
+  </tr>
 <tr>
 <td>eq</td>
 <td>equivalence  "&equiv;" (compare value & type)</td>
@@ -1393,6 +1399,10 @@ return;</code></pre>
 <p>For printing output using a format we use operator <em>as</em> that is the "quick format" operator. We can use system constant templates that are available for making different formats for different data types. This operator is a bit smarter than the "?" operator that we can use for "string templates".</p>
 
 <h4>Date Format</h4>
+
+
+<p>Eve can constants to define date format. These constants are important</p>
+
 <table class="table table-bordered table-striped">
 
 <tr><th>Constant</th><th>Value</th></tr>
@@ -1404,6 +1414,8 @@ return;</code></pre>
 
 <h4>Time Format</h4>
 
+<p>Eve can constants to define time format. These constants are important</p>
+
 <table class="table table-bordered table-striped">
 <tr><th>Constant</th><th>Value</th></tr>
 <tr><td>T24</td><td>HH:MM:SS,MS</td></tr>
@@ -1412,6 +1424,8 @@ return;</code></pre>
 </table>
 
 <h4>Numeric Format</h4>
+
+<p>Eve can print comma "," for decimal numbers but also can print  dot.</p>
 
 <table class="table table-bordered table-striped">
 
