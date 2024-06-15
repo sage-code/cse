@@ -54,12 +54,13 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 <li><a href="#gradual-typing">Gradual typing</a></li>
 <li><a href="#calendar-date">Calendar date</a></li>
 <li><a href="#time-duration">Time duration</a></li>
+<li><a href="#format">Quick format</a></li>
 </ul>
 <hr>
 
 <h2><a id="native-types"/>Native Types</h2>
 
-<p>Native types are implemented by operating system. We name native types using a single lowercase letter followed by number of bytes. The maximum range is a power of 2 multiplied with the number of bytes specified.</p>
+<p>Native types are implemented by operating system. We name native types using a single lowercase letter followed by the number of bytes used: {8, 16, 3, 64}.</p>
 
 
 <table class="table table-bordered table-striped">
@@ -93,11 +94,11 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 </tbody>
 </table>
 
-<p>Native types are not usually necessary in Eve scripts. However the system library is using these types to create Primitive Types. A native type can be boxed using a primitive type as a box.</p>
+<p>Native types are used by low level EVE core libraries and not usually necessary in Eve scripts. The system library is using these types to create Primitive Types and communicate with other languages. A native type can be boxed using a primitive types that we will define next.</p>
 
 <h2><a id="primitive-types"/>Primitive Types</h2>
 
-<p>Primitive types are predefined in Eve core library. They have an equivalent native type. Primitive types are slower than equivalent native types, but have more features.</p>
+<p>Primitive types are predefined in Eve core library. They have an equivalent native type. Primitive types are slower than equivalent native types, ocupy more memory but they have more features. Primitive types are created using OOP so tey are actually classes.</p>
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -177,7 +178,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 </tbody>
 </table>
 
-<div class="alert alert-success"><b>Note:</b>&nbsp;Primitive types get zero initial values automatically and can not be Null. This is a major thing in EVE. No Null primitive-types! Numeric values have initial value zero. An emty symboll is NIL.</div>
+<div class="alert alert-success"><b>Note:</b>&nbsp;Primitive types get zero initial values automatically and can not be Null. This is a major thing in EVE. No Null primitive-types! Numeric values have initial value zero. An emty Symboll is NIL.</div>
 
 
 <h2><a id="numeric-types"></a>Numeric Types</h2>
@@ -346,22 +347,25 @@ return;
 </code></pre>
 <p><b>See also:</b>&nbsp;<a href="https://en.wikipedia.org/wiki/Scientific_notation#Other_bases" rel="nofollow">scientific notation</a></p>
 
-<h2><a id="symbol"/>Single Symbol</h2>
+<h2><a id="symbol"/>Type "Symbol"</h2>
 
-<p>For representing a single character/symbol you can use single quoted strings. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes. This type is called "rune" in Go language.</p>
+<p>We name Symbol type a single UNICODE UTF8 encoded sumbol. You can use single quoted string to encapsulare a single symbol. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes unlike C that has 1 byte for char. This type is called "rune" in Go language but we call it Symbol. Though we know that some people reffer to many characters together to create a single symbol.</p>
 
 <h4>Examples</h4>
 
 <pre><code class="language-eve">
 process
+  ** several examples of local Symbol type variables. 
   new letter   := 'a';
   new capital  := 'B';
   new number   := '5';
-  new unicode  := '&beta;';
-  new operator := '&not;';
+  new unicode  := &beta;
+  new operator := &not;
   ...
 return;
 </code></pre>
+
+<p>As you can se in the example we can use a special notation to create a Symbol literal with sigil & follow by "; In this case the single quote is not required. The compiler should be able to recognize the "&" at the beginning of a reserved keyword and will create a Uncode symbol.</p>
 
 <h4>Unicode Literal</h4>
 
@@ -447,26 +451,27 @@ return;
 
 <h3><a id="range"></a>Range</h3>
 
-<p>A range is a notation that can create a class or a collection of discrete elements. Range is not expanded in memory until is assigned to a variable.</p>
+<p>A range is a notation that describe a set of discrete elements. Range is not expanded in memory. Ranges enable creation of efficient and comprehensive statements in a declarative way.</p>
 
 <h4>Usecases:</h4>
 
-<p>Ranges can be used as generators to populate collections, make logic evaluations, or generate values for loops. Range operations should be optimized by the compiler using leasy evaluation. Elements are generated as needed not stored in memory.</p>
+<p>Ranges can be used in collection builders, make logic evaluations, or generate values for loops. Range logic operations should be optimized by the compiler. In for loops, elements will be generated one by one as needed until the loop end.</p>
 
 <h4>Syntax:</h4>
 
+<p>In next example we creste a range class. The new range is actually a subclsdd of Range. We will learn later how to use ranges in different cases. We use .. and : to define the range.</p>
+
 <pre class="language-out">
-new l := (min..max:ratio); // list
-new a := [min..max:ratio]; // array
-new d := {min..max:ratio}; // data set
+class range = (min..max:ratio) <: Range;
 </pre>
 
 <h4>Notes:</h4>
 <ul>
 <li>Limits are included by default,</li>
 <li>Ratio is defaul 1 and optional,</li>
-<li>Limiits can be inverted,</li>
+<li>Limits can be inverted,</li>
 <li>Ratio can be negative,</li>
+<li>Compiler should verify a range declaration to make sens.</li>
 </ul>
 
 <h4>Example:</h4>
@@ -482,12 +487,12 @@ class R5 = (0..5) <: Range;
 
 process
   ** test range limits
-  expect 0 in R5;
-  expect 5 in R5;
+  expect 0 in R5; -- assert logic expression
+  expect 5 in R5; -- assert logic expression
 
-  ** test limits with other ranges
-  expect 4 in (1..8:2)
-  expect 5 not in (-10..10:2)
+  ** test limits with range literals
+  expect 4 in (1..8:2);
+  expect 5 not in (-10..10:2);
 return;
 </code></pre>
 
@@ -496,18 +501,18 @@ return;
 <p>Symbol range, specify Unicode symbols as limits.</p>
 
 <pre class="line-numbers"><code class="language-eve">
-# using symbol ranges
+# using symbolic ranges to print out a collection that do not exist
 driver symbol_range:
 process
   ** elements of these ranges are written one by one
   print ('0'..'5') -- ('0','1','2','3','4','5')
-  print ['a'..'f'} -- ['a','b','c','d','e','f']
-  print {'A'..'F'} -- {'A','B','C','D','E','F'}
+  print ('a'..'f') -- ('a','b','c','d','e','f')
+  print ('A'..'F') -- ('A','B','C','D','E','F')
 
   ** use range as validation domains
   expect '0' in ('0'..'9');  -- range of digits
-  expect 'c' in ['a'..'z'];  -- range of symbols
-  expect 'X' in {'A'..'Z'};  -- range of symbols
+  expect 'c' in ('a'..'z');  -- range of symbols
+  expect 'X' in ('A'..'Z');  -- range of symbols
 return;
 </code></pre>
 
@@ -531,6 +536,7 @@ return;
 </code></pre>
 
 <h2><a id="data-coercion"></a>Data Coercion</h2>
+
 <p>In computer science coercion is used to implicitly or explicitly change an entity of one data type into another of different type. This is ready to take advantage of type hierarchies and type representations. If not designed properly the coercion can be a fatal mistake. Eve is a safe language so we do only safe coercion.</p>
 
 <p><b>Implicit coercion</b>&nbsp;In Eve the arithmetic operators are polymorphic. Numeric operators can do implicit data conversion to accommodate the data types and return an accurate result. Automatic conversion is possible only when there is no risk of loosing data precision. If there is a loss of precision we can end-up with a&nbsp;<em>run-time error</em>. To prevent this Eve will implement a safe compile-time check.</p>
@@ -562,10 +568,8 @@ return;
 <p>Examples of explicit coercion:</p>
 <pre><code class="language-eve"># explicit coercion in EVE
 driver explicit_coercion:
-
   set a = 0   :Integer;
   set b = 1.5 :Real;
-
 process
 **explicit coercion lose (0.5)
   let a := floor(b);
@@ -587,11 +591,10 @@ driver number_to_string:
   ** local states
   set s :String;
   set v :Integer;
-
 process
   let v := 1000;
-  let s := format(v); --  explicit coercion s = '1000'
-  expect (s == '1000');
+  let s := format(v); --  explicit coercion s = "1000"
+  expect (s == "1000");
 return;
 </code></pre>
 
@@ -607,7 +610,6 @@ driver string_to_number:
 
   set s = "1000"  :String;
   set r = "200.02":String;
-
 process
   let v := parse(s); --  make v = 1000
   let v := parse(r); --  make v = 200 and decimal .02 is lost
@@ -618,8 +620,10 @@ return;
 <p><b>Note:</b>&nbsp;Build-in functions that are located in EVE&nbsp;<em>default</em>&nbsp;library: { parse(), format(), ceiling(), floor() round()}.  This module is one of the standard modules that are automatically included in any Eve program.</p>
 
 <h2><a id="default-types"></a>Default types</h2>
-<p>Literals are representations of specific particular data type in source code.</p>
-<p><b>Basic types</b>&nbsp;Next notation use "9" to show any digit in range (0..9).</p>
+
+<p>Literals are representations of specific particular data type in source code. We connect data literals to default types for every literal to be able to use type inference in declarations and expressions. In next table we show this association.</p>
+
+<p><b>Note</b>&nbsp;Next notation use "9" to show any digit in range (0..9) but it can be any digit. We also use A..F to show hexadecimal numbers examples. It can be of course any digit or letter in hexadecimal range.</p>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -747,28 +751,28 @@ return;
 
 <h2><a id="type-inference"></a>Type Inference</h2>
 
-<p>Type inference is a logical association of data type from a constant literal or expression. Type inference can be used in declarations.</p>
+<p>Type inference is a logical association of data type from a constant literal or expression. Type inference can be used in declarations of new variables with the specific assign operators capable to infer data types.</p>
 
-<p>Type inference is enabled by operators {:=, ::}. You can use type inference with keyword "new" or "let". Type inference can improve a type declaration if the declaration is partial.</p>
+<p>Type inference is enabled by operators {:=, ::}. You can use type inference with keyword "new" but not with heyword "set". Type inference can improve a type declaration if the declaration is partial using operator "let".</p>
 
-<h4>Example 1:</h4>
+<h4>Gradual Typing:</h4>
 
 <p>In next example we use a List data literal to create a shared collection fo type List[Integer]. However the type used is partial. Do not have element type, that is going to be Integer.</p>
 
 <pre><code class="language-eve">#test partial inference
 driver type_inference:
   ** Define a list without element type
-  set ls :List; 
+  set ls :List;  -- partial type declaration
 
 process main
   ** establish element data type
-  let ls := (0,1,2,3,4,5,6,7,8,9);
+  let ls := (0,1,2,3,4,5,6,7,8,9); -- gradial typing
   print  ls.type();
   expect type(ls) is ()Integer;
 return;
 </code></pre>
 
-<h4>Example 2</h4>
+<h4>Collection Inference</h4>
 
 <p>You can declare empty collections using partial inference and determine the type of elements later, using "let". After type is established, it can't be changed later and start functioning as a contract. That is, you must respect the element types for next expressions.</p>
 
@@ -778,13 +782,14 @@ process
   new v := [];  -- empty Vector
   new s := {};  -- empty DataSet
 
-  ** add elements
-  let a := (10,11,12) -- establish element type
-  let a += "4"        -- error, elements are Integer
+  ** add elements using gradual typing
+  let a := (10,11,12) -- establish element type integer
+  let a += "4"        -- expect error, you can't add a string now
 return;
 </code></pre>
 
 <h3>Type verification</h3>
+
 <p>We can verify the type using "is" operator:</p>
 <pre><code class="language-eve"># using operator "is" to check type
 driver type_check:
@@ -810,7 +815,7 @@ return;
 process print_type:
   new i := 1.5;
   expect type(i) is Real;
-  print "type of i is \s" ? i.type();
+  print "type of i is #s" ? i.type();
 return;
 </code></pre>
 
@@ -819,13 +824,11 @@ return;
 
 <p>In mathematics there are very few operators: {+, -, &divide; , * } that can operate with any kind of numbers: negative, positive, rational or real. Operators are not bound to specific data types. Therefore these operators are called&nbsp;<em>"polymorphic"</em>.</p>
 
-<p>Some languages define different operators for Integers and Floating decimal numbers. For example in OCaml the operator "/" can divide Integers while "/." can divide Floating point decimal numbers. This is unexpected for a mathematician who is expecting to use one single operator for division.</p>
-
-<p>In EVE, operators are mapped to functions. To design polymorphic operators we overload the function signature using type dispatch. The dispatch is using left side operand first, this is the leading operand. For unary operators there is only right side operand so this becomes the leading operand.</p>
+<p>In EVE, operators are functions. To design polymorphic operators we overload the function signature using type dispatch. The dispatch is using left side operand first, this is the leading operand. For unary operators there is only right side operand so this becomes the leading operand.</p>
 
 <h2><a id="logical-type" class="anchor" href="#logical-type"></a>Logical type</h2>
 
-<p>In Latin the "falsus" and "verum" are translated in English to "false" and "true". In many languages False and True are two constants. In Fortran we use to have .T. and .F. condtants while in C we use to have {0, 1}. Two values.</p>
+<p>In Latin the "falsus" and "verum" are translated in English to "false" and "true". In many languages False and True are two constants. In Fortran we use to have .T. and .F. while in C we use to have {0, 1}. Two values.</p>
 
 <ul>
 <li>falsus := &perp; defined by &perp; := &not; ⊤ and ( P &and; &not;P )</li>
@@ -863,14 +866,17 @@ global
 </code></pre>
 
 <p><b>Internal design</b></p>
-<p>Probably best to define Logic type is Ordinal:</p>
+<p>In Eve we Logic type as a subtipe of Ordinal:</p>
 
 <pre><code class="language-eve">
 class Logic = {False:0 , True} &lt;: Ordinal;
 </code></pre>
 
+<p>So in Eve we have False.value == 0 and True.value == 1. These are Logic values not Boolean as in other languages. You can use False and True with == or != to establish conditionals.</p>
+
 <p><b>Logical expressions</b></p>
-<p>A logical expression is a demonstration or logical deduction having result <em>True</em> or <em>False.</em>  Operator precedence is: {not, and, or, xor}. The order of operations can be controlled using operator precedence and round parentheses.</p>
+
+<p>A logical expression is a demonstration or logical deduction having result <em>True</em> or <em>False.</em>  Operator precedence is: {not, and, or, xor}. The order of operations can be controlled using operator precedence and round parentheses. Relation operators {>, <, >=, <=, ==, !=} have higer precedence than logic operators.</p>
 
 <p>Result of logical expressions can be used into a conditional statement to make a decision. Also results of logical expressions can be stored in logical variables to be used later in other conditions.</p>
 
@@ -946,24 +952,25 @@ driver variant_type:
   set v, x ,t: { Real | Integer };
 
 process
-  ** safe conversion
-  let t := 1 / 2;   -- make t Real
-  print type(t)     -- Real
-
-  let t := 12;      -- change type
+  ** using a variant first time 
+  let t := 12;      -- assign an Integer (possible)
   print type(t)     -- Integer
+
+  ** using a variant second time
+  let t := 1 / 2;   -- assign a Real (possible)
+  print type(t)     -- Real
 
   ** unsafe conversion
   let x := 1.5;  --  x is Real
   let v := 1;    --  v is Integer
   let v := x;    --  v becomes Real
-  print type(v)  -- Real
+  print type(v)  --  Real
 return;
 </code></pre>
 
 <h4>Example 2:</h4>
 
-<p>A variant is a way to create a generic routine. For this we use variant parameters:</p>
+<p>A variant is a way to circumvent the type system. It can be used in a generic routine. For this we use variant parameters. Using variabt parameters enable a routine to be called with different argument types making the program more dynamic:</p>
 
 <pre><code class="language-eve"># variant parameter in routines
 driver variant_params:
@@ -997,6 +1004,7 @@ return;
 
 
 <h2><a id="calendar-date"></a>Calendar date</h2>
+
 <p>In Eve we represent calendar date.</p>
 <p><b>Date storage</b></p>
 <ul>
@@ -1092,6 +1100,47 @@ process
   print d4  -- 3661000ms
 return;
 </code></pre>
+
+<h2><a id = "format"></a>Quick Format</h2>
+
+<p>For printing output using a format we use operator <em>as</em> that is the "quick format" operator. We can use system constant templates that are available for making different formats for different data types. This operator is a bit smarter than the "?" operator that we can use for "string templates".</p>
+
+<h4>Date Format</h4>
+
+
+<p>Eve can constants to define date format. These constants are important</p>
+
+<table class="table table-bordered table-striped">
+
+<tr><th>Constant</th><th>Value</th></tr>
+<tr><td>YDM</td><td>YYYY/DD/MM</td></tr>
+<tr><td>DMY</td><td>DD/MM/YYYY</td></tr>
+<tr><td>MDY</td><td>MM/DD/YYYY</td></tr>
+
+</table>
+
+<h4>Time Format</h4>
+
+<p>Eve can constants to define time format. These constants are important</p>
+
+<table class="table table-bordered table-striped">
+<tr><th>Constant</th><th>Value</th></tr>
+<tr><td>T24</td><td>HH:MM:SS,MS</td></tr>
+<tr><td>T12</td><td>HH:MM:SSpm,MS | HH:MM:SSam,MS</td></tr>
+
+</table>
+
+<h4>Numeric Format</h4>
+
+<p>Eve can print comma "," for decimal numbers but also can print  dot.</p>
+
+<table class="table table-bordered table-striped">
+
+<tr><th>Constant</th><th>Value</th></tr>
+<tr><td>EUR</td><td>,.</td></tr>
+<tr><td>USA</td><td>.,</td></tr>
+
+</table>
 
 <hr>
 <p><b>Read next:</b>
