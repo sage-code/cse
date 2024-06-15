@@ -60,7 +60,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 
 <h2><a id="native-types"></a>Native Types</h2>
 
-<p>Native types are implemented by operating system. We name native types using a single lowercase letter followed by the number of bytes used: {8, 16, 3, 64}.</p>
+<p>Native types are implemented by operating system. We name native types using a single lowercase letter followed by the number of bytes used: {8, 16, 32, 64}. In next table we show the convetion of notation for these types.</p>
 
 
 <table class="table table-bordered table-striped">
@@ -93,6 +93,14 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 <tr>
 </tbody>
 </table>
+
+<p>This will give us the native types used in Eve:</p>
+
+<ul>
+  <li>Unsigned integers: {u8, u16, u32, u64}</li>
+  <li>Signed integers: {u8, u16, u32, u64}</li>
+  <li>Single / Double precision floats: {f32, f64}</li>
+</ul>
 
 <p>Native types are used by low level EVE core libraries and not usually necessary in Eve scripts. The system library is using these types to create Primitive Types and communicate with other languages. A native type can be boxed using a primitive types that we will define next.</p>
 
