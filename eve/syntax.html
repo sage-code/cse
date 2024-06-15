@@ -20,7 +20,7 @@
   </head>
 <body onload="eve_render();">
 
-<div class="container">
+<p class="container">
 
 <!-- header -->
 <div class="row">
@@ -55,9 +55,13 @@
 </ul>
 <hr>
 
+<h2>Design Strategy</h2>
+
+<p>Eve aims to strike a balance between a verbose, explicit syntax for learning purposes and a concise, intuitive syntax for ease of use. The goal is to design a syntax that is both descriptive and readable for beginners, while also being concise and "looking right" for experienced users.</p>
+
 <h2>Hello World</h2>
 
-</p>For start let's honor a tradition: We should print "Hello world!" to the console using EVE. Next is a simple program that ca write a message on the console. Notice the console is a native feature of eve and you do not need to import a package to be able to write out a message. Also, observe in this example we do not have "main()" functions. We have replaced the entry point with a main process.</p>
+</p>One of the best ways to get started with a new programming language is through the classic "Hello World" example. In Eve, printing "Hello World!" to the console is straightforward and highlights some key aspects of the language's syntax:.</p>
 
 <h4>Example:</h4>
 
@@ -72,9 +76,9 @@ return;
 
 <h2><a id="elements">Syntax Elements</h2>
 
-<p>Next code fragment represents a very simple program written in Eve language. Let's identify the main syntactic elements and punctuation. This is how we will present Eve language, using examples of code and fragments.</p>
+<p>To better understand Eve's syntax, let's examine a simple program and identify its key syntactic elements and punctuation symbols. While we will describe the role of each symbol and keyword, you don't need to memorize them all at once. We'll create detailed explanations for the language's semantics later on.</p>
 
-<h4>Example:</h4>
+<h4>Example 1:</h4>
 
 <pre><code class="language-eve">
 # main script in Eve is called: "driver"
@@ -104,8 +108,6 @@ return;
 
 <h2><a id="punctuation"/>Punctuation:</h2>
 
-<p>I describe the syntax using some conventions. The code snippets you are going to see are not all real executable code. Some are just fragments of code, syntax "design patterns" or "pseudo-code". We use square brackets like [...] for optional parts. Sometimes we use 3 dots "..." for a sequence that is missing. Sometimes [] represents real code and is mandatory, depending on the context. Read the code snippets to understand better the syntax.</p>
-
 <ul>
 <li>Eve is using infix expressions like Java and other popular languages,</li>
 <li>Multiple expressions can be separated with comma,</li>
@@ -122,7 +124,7 @@ return;
 <li>Block comments are inspired from Java:&nbsp;"/* ... */"</li>
 </ul>
 
-<h4>Examples:</h4>
+<h4>Examples 2:</h4>
 
 <pre><code class="language-eve">
 # boxed comments in Eve language
@@ -156,7 +158,6 @@ used for notes or outline large blocks of code.
 comments. So you can comment out large sections
 of code that already have some comments.
 */
-
 </code></pre>
 
 <h4>Notes:</h4>
@@ -169,6 +170,7 @@ of code that already have some comments.
 </ul>
 
 <h2><a id="identifiers"></a>Identifiers</h2>
+
 <p>The name of identifiers in Eve can have a length of 30 characters. A name starts with lowercase letters (a..z) or capital letters (A..Z) followed by one or more characters or numbers. No special characters or spaces are permitted in the name except underscore ("_"). An identifier can contain underscore and can start with underscore but it can not end with underscore and can not use two consecutive underscores.</p>
 
 <p><b>These are valid identifiers</b></p>
@@ -189,24 +191,29 @@ not_valid_
 _not_valid_
 </pre>
 
+<p>To summarize, Eve identifiers follow a conventional naming style similar to many programming languages, with some additional restrictions on the use of underscores at the beginning, end, and consecutive positions within the identifier name.</p>
+
 <h3>Prefix & Sigil</h3>
 
-<p>Identifier prefix is used to declare a variable, but is not required when using the variable. A sigil is part of variable name and it must be used when you use the variable.</p>
+<p>Identifier prefix is used to declare a variable, but is not required when using the variable. A sigil is part of variable name and it must be used when you use the variable. </p>
 
 <table class="table table-bordered table-sm table-striped">
 <tr><th style = "text-align:center;">*</th>
-  <td>vararg parameter prefix</td></tr>
+  <td>vararg parameter prefix, this simbol is not part of the identifier.</td></tr>
 <tr><th style = "text-align:center;">@</th>
-  <td>receiver parameter prefix</td></tr>
+  <td>receiver parameter prefix, this simbol is not part of the identifier.</td></tr>
 <tr><th style = "text-align:center;">_</th>
-  <td>protected member sigil</td></tr>
+  <td>protected member sigil, this simbol is not part of the identifier.</td></tr>
 <tr><th style = "text-align:center;">$</th>
-  <td>system state/variable sigil</td></tr>  
+  <td>system state/variable sigil, this simbol is part of the identifier.</td></tr>  
 </table>
+
+
+<p>So in summary, Eve uses specific prefixes like * and @ to denote special parameter types, and sigils like _ and $ as part of variable names to indicate their scope and accessibility (protected or system-wide). This convention helps differentiate various types of identifiers and variables within the Eve programming language.</p>
 
 <h3>System Variables</h3>
 
-<p>System variables start with sigil: "$", that is making a "system state". System states are static and public, shared in a process. A sigil is part of the identifier.</p>
+<p>System variables start with sigil: "$", that is making a "system state". System states are static and public, shared in a a process.</p>
 
 <table class="table table-bordered">
 <thead>
@@ -239,30 +246,29 @@ _not_valid_
 </ul>
 
 <h2><a id="globals"></a>Globals</h2>
-<p>In any script you can define global variables. These are primitive values or references to objects. A global variable is represented by an identifier and value. Type is optional hint.</p>
+<p>In any Eve script you can define global variables. These are primitive values or references to objects. A global variable is represented by an identifier and value. Type is optional hint. Global variables do not use a sigil.</p>
 
 <p>Global variables can be declared using "set" statement. Initial value is establish with operator "=" follow by a type hint. Globals can be modified during the program execution using "let" statement with <em>modifier operators</em>&nbsp;like: { :=, ::, +=, -= ... }.</p>
 
 <h4>Globals example:</h4>
 
-<p>Most of the examples are also stored on GitHub. However it is possible the one in GitHub to be different from then the one in documentation. This is due to fast evolution of the language and not by intention.</p>
-
-<h4>Fragment</h4>
+<p>Most of the examples are also stored on GitHub. However it is possible the one in GitHub to be different from then the one in documentation. This is due to fast evolution of the language and not by intention. We declare globals outside of any process in a "global" region. You can use global keyword multiple times in a module but all globals are in the same memory heap and must be unique regarding the region they are defined in.</p>
 
 <pre><code class="language-eve">
 ** define global system states
 global
-  set $s = "test" :String;
+  set s = "test" :String;
 
   ** two integers
-  set $a :Integer;
-  set $b :Integer;
+  set a :Integer;
+  set b :Integer;
 
+global
   ** one Real variable
-  set $d = 0.5 :Real;
+  set d = 0.5 :Real;
 </code></pre>
 
-<p><b>Globals </b> are also called "state variables" because they are staticly defined in module scope. We use "set" keyword to create new states. If the state alredy exist, it can be modified using "let". Compiler will signal an error if you set a variable two times.</p>
+<p><b>Globals </b> are staticly defined in module scope (global) scope. We use "set" keyword to create a global state. If the state alredy exist, it can be modified using "let" in a process or subprogram. Compiler will signal an error if you "set" a variable two times or if you use "set" in a process or in a subprogram. "set" can't change value of a variable.</p>
 
 <h4>Initial Value</h4>
 
@@ -270,11 +276,11 @@ global
 
 <h4>Zero Values</h4>
 
-<p>When a variable is specified, with no initializer, the variables takes default <em>zero values</em>. These values are different for each data type. For example zero value for Integer = 0 for Real = 0.0 and for String = "" (empty string). Composite data types are initialized to "Null", that is (), [], {}, all equivalent to "∅" used in set theory.</p>
+<p>When a variable is specified, with no initializer, the variables takes default <em>zero values</em>. These values are different for each data type. For example zero value for Integer = 0 for Real = 0.0 and for String = "" (empty string). Composite data types are initialized to "Empty", that is (), [], {}, all equivalent to "∅" used in set theory.</p>
 
 <h4>Cascade Initialization</h4>
 
-<p>Operator "=" is used to create an expression. That means you can initialize multiple variables using a single declaration. This is different than assignment ":=" or clone "::" that create a statement and not an expression. Operator "=" has a result. So it can be chained.</p>
+<p>Operator "=" is used to create an expression. That means you can initialize multiple variables using a single declaration. This is different than assignment ":=" or clone "::" that create a statement and not an expression. Operator "=" create a result, so it can be chained like in Python.</p>
 
 <h4>Fragment</h4>
 
@@ -288,7 +294,7 @@ return;
 </code></pre>
 
 <h2><a id="expressions"></a>Expressions</h2>
-<p>An expression is a syntax element that can be evaluated using mathematical rules and principles. Expressions are created using identifiers, operators, functions and constant literals.</p>
+<p>An expression is a syntax element that can be evaluated using mathematical rules and principles. Expressions are created using identifiers, operators, functions and constant literals. Expressions can be grouped using round paranthesis (). Multiple expressions can be used in a statement.</p>
 
 <p>expressions...</p>
 
@@ -308,7 +314,7 @@ return;
 process
   print 10;
   write "this is a test";
-  ** complex expressions can use ()
+  ** complex expressions can use grouping: ()
   print (10 + 10 + 15); -- numeric expression
   print (10 &gt; 5) or (2 &lt; 3); -- logical expression
   ** list of expressions are enclosed in ()
@@ -335,7 +341,7 @@ return;
 
 <h3>Assign Expression</h3>
 
-<p>To assign result of an expression to a variable you can use assign operator: ":=". This operator has a strange behavior that you must understand to avoid unintended side-effects. When a boxed variable is used as an expression, the operator transfer a value "by sharing" a reference, so it does not "copy" the value but the reference to that value. When the type is native, the value is transfered and not the reference.</p>
+<p>In Eve, you can assign the result of an expression to a variable using the assignment operator <code>:=</code>. However, this operator exhibits a behavior that you must understand to avoid unintended side effects. When assigning a non-primitive (boxed) variable as an expression, the operator transfers the value by sharing a reference, rather than copying the value itself. This means that the new variable will reference the same underlying object as the original variable. In contrast, when assigning a primitive (native) type, the operator transfers the actual value, creating a separate copy of the data.</p>
 
 <h4>Assign: by reference</h4>
 
@@ -345,14 +351,14 @@ return;
   new identifier1 := literal;         -- constant literal
   new identifier2 := expression;      -- execute expression
   new identifier3 := function_name(); -- function call
-  new identifier4 := variable;        -- borrow 
+  new identifier4 := variable;        -- borrow (create a refference or copy a value) 
   new identifier5 := native_var;      -- copy value
   ...
 </code></pre>
 
 <h4>Assign: by value:</h4>
 
-<p>To make a clone/copy of an Object attributes you must use&nbsp;<em>clone</em>&nbsp;operator that is (::) instead of (:=). This will transfer values not references. After cloning, we can modify one value without affecting the original.</p>
+<p>To make a deep clone/copy of an Object you must use&nbsp;<em>clone</em>&nbsp;operator that is (::) instead of (:=). This will transfer values of attributes, not references. After cloning, we can modify one value without affecting the original. Making a clone is not possible for native variables, it works only with objects.</p>
 
 <h4>Syntax:</h4>
 
@@ -361,7 +367,7 @@ return;
   expect object is not original;
 </code></pre>
 
-<p><b>Note: </b>Native types are exceptions. For native type, the operator "is" do not work at all. Attempting to use "is" or "is not" with a native type will always return false even if the values are equal.</p> 
+<p><b>Note: </b>For native type, the operator "is" do not work at all. Attempting to use "is" or "is not" with a native type will always return false even if the values are equal. For native types you have to use "==" to compare the values. For objects, "==" will execute deep comparison, and will return "true" if all object attributes or data elements have also equal values.</p> 
 
 <h3>Ternary expression</h3>
 
@@ -396,8 +402,12 @@ process
 return;
 </code></pre>
 
+
+<b><b>Note: </b>While the traditional ternary operator syntax with "?" and ":" is widely adopted in many programming languages, Eve's approach with the "if" keyword prioritize readability, consistency, and scalability. This design choice aligns with Eve's goals of being a comprehensible and accessible language, especially for beginners.</p>
+
+
 <h2><a id="statements"></a>Statements</h2>
-<p>One statement can be declarative or imperative. We use both but mostly declarative statements. Thoug many times the statements are imperative. I guess Eve is hybrid then.</p>
+<p>One statement can be declarative or imperative. We use both in our language. Therefore Eve is an imperative & declarstive language in the same time. Also Eve has support for OOP and Functional Programming paradigms.  This makes Eve a modern hybrid language that can be used by developers for small or large projects.</p>
 
 <ul>
 <li>A statement is usually a single line of code,</li>
@@ -405,11 +415,12 @@ return;
 <li>A group of several statements is called a code block,</li>
 <li>A block is finalized with one of thes: {"return", "repeat", "done"},</li>
 <li>A statement end with symbol ";", that is mandatory;</li>
+<li>A block of code is usually indented using equal number of spaces;</li>
 </ul>
 
 <h3>Single line statement</h3>
 
-<p>The most simple statements are definitely single line statements:</p>
+<p>The most simple statements are definitely single line statements. In next example we demonstrate 5 simple statements. Every statement start with a keyword (new, let, expect) and end with semicolumn ";". First line is not a statement but a declaration. Last keyword "return" is actually the end of declaration and not a statement. </p>
 
 <h4>Fragment:</h4>
 
@@ -429,6 +440,7 @@ return;
 </code></pre>
 
 <h3>Multi-line statements</h3>
+
 <p>One expression can span multiple lines.</p>
 <ul>
 <li>The expression may be enclosed in parenthesis or quotation marks;</li>
@@ -456,7 +468,7 @@ return;</code></pre>
 
 <h2><a id="keywords"></a>Reserved keywords</h2>
 
-<p>Computer was invented in England during WW2, so we prefer English keywords, even though a computer language could be created using keywords from other spoken languages. Eve is using about 100 reserved keywords.</p>
+<p>Computer was invented in England during WW2, so we prefer English keywords, even though a computer language could be created using keywords from other spoken languages. Eve is using about 100 reserved keywords. In next table we collect all keywords reserved for Eve. Some keywords may not yet be used. If we reserve new keywords they should be added here later. Please signal keywords that are not here to help us improve this inventory.</p>
 
 <table class="table table-bordered table-dark table-hover table-sm shadow">
 <tr><td>catch    </td><td>alias    </td><td>alter     </td><td>analyze</td></tr>
@@ -946,7 +958,7 @@ return;</code></pre>
 </tr>
 <tr>
 <td>|</td>
-<td>Used in set builders | Set union "&cup;"</td>
+<td>Used in set builders to separate condition from generator</td>
 </tr>
 <tr>
 <td>_</td>
@@ -999,9 +1011,13 @@ return;</code></pre>
 <td>Assign value of expression to a variable.</td>
 </tr>
 <tr>
+  <td>&&</td>
+  <td>Represents intersection of two sets"</td>
+</tr>
+<tr>
   <td>||</td>
-  <td>String concatenation | Set intersection "&cap;"</td>
-</tr>  
+  <tr>represents: union of two Sets "&cup;" operator</tr>
+</tr>
 </tbody>
 </table>
 
@@ -1017,11 +1033,11 @@ return;</code></pre>
 <tbody>
 <tr>
 <td>*</td>
-<td>Numeric multiplication | Scalar operator</td>
+<td>Numeric multiplication | String replication</td>
 </tr>
 <tr>
 <td>/</td>
-<td>Numeric division</td>
+<td>Numeric division | Path concatenation</td>
 </tr>
 <tr>
 <td>%</td>
@@ -1029,7 +1045,7 @@ return;</code></pre>
 </tr>
 <tr>
 <td>+</td>
-<td>Numeric addition | String concatenation | Set union</td>
+<td>Numeric addition | String concatenation </td>
 </tr>
 <tr>
 <td>-</td>
@@ -1037,8 +1053,12 @@ return;</code></pre>
 </tr>
 <tr>
 <td>^</td>
-<td>Power. (We can't use ** that is for comments)</td>
+<td>Power operator. (We can't use ** that is for comments)</td>
 </tr>
+<tr>
+  <td>~</td>
+  <td>Regex like operator (regular expression matching)</td>
+</tr>  
 </tbody>
 </table>
 
@@ -1081,7 +1101,7 @@ return;</code></pre>
 
 <h2>Modifiers</h2>
 
-<p>Each modifier is created with pattern "?=", where "?" is a symbol, haiving one of these values: {:, +, -, *, /, %, ^}. Also the symbol "::" is a modifier.</p>
+<p>Each modifier is created with pattern "?=", where "?" is one of these: {:, +, -, *, /, %, ^}. Also the symbol "::" is a modifier.</p>
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -1125,11 +1145,11 @@ return;</code></pre>
 </tr>
 <tr>
   <td>+&gt;</td>
-  <td>Feed | append before</td>
+  <td>Feed left | insert elements at the beginning or at the left side</td>
 </tr>
 <tr>
   <td>&lt;+</td>
-  <td>Feed | append last</td>
+  <td>Feed right | append element in last position or at the right side</td>
 </tr>
 </tbody>
 </table>
