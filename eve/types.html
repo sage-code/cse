@@ -58,7 +58,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 </ul>
 <hr>
 
-<h2><a id="native-types"/>Native Types</h2>
+<h2><a id="native-types"></a>Native Types</h2>
 
 <p>Native types are implemented by operating system. We name native types using a single lowercase letter followed by the number of bytes used: {8, 16, 3, 64}.</p>
 
@@ -96,7 +96,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 
 <p>Native types are used by low level EVE core libraries and not usually necessary in Eve scripts. The system library is using these types to create Primitive Types and communicate with other languages. A native type can be boxed using a primitive types that we will define next.</p>
 
-<h2><a id="primitive-types"/>Primitive Types</h2>
+<h2><a id="primitive-types"></a>Primitive Types</h2>
 
 <p>Primitive types are predefined in Eve core library. They have an equivalent native type. Primitive types are slower than equivalent native types, ocupy more memory but they have more features. Primitive types are created using OOP so tey are actually classes.</p>
 
@@ -347,7 +347,7 @@ return;
 </code></pre>
 <p><b>See also:</b>&nbsp;<a href="https://en.wikipedia.org/wiki/Scientific_notation#Other_bases" rel="nofollow">scientific notation</a></p>
 
-<h2><a id="symbol"/>Type "Symbol"</h2>
+<h2><a id="symbol"></a>Type "Symbol"</h2>
 
 <p>We name Symbol type a single UNICODE UTF8 encoded sumbol. You can use single quoted string to encapsulare a single symbol. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes unlike C that has 1 byte for char. This type is called "rune" in Go language but we call it Symbol. Though we know that some people reffer to many characters together to create a single symbol.</p>
 
@@ -376,7 +376,7 @@ return;
 <li>U-HHHHHH from: U+000000 to U+FFFFFF</li>
 </ul>
 
-<h2><a id="composite-types"/>Composite Types</h2>
+<h2><a id="composite-types"></a>Composite Types</h2>
 
 <p>Composite data types are unions of data elements. A composite variable that is not initialized can have Null value. These types are going to be explained later in other pages.</p>
 
