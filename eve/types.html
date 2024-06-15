@@ -755,7 +755,7 @@ return;
 
 <p>Type inference is enabled by operators {:=, ::}. You can use type inference with keyword "new" but not with heyword "set". Type inference can improve a type declaration if the declaration is partial using operator "let".</p>
 
-<h4>Gradual Typing:</h4>
+<h4>Partial Inference:</h4>
 
 <p>In next example we use a List data literal to create a shared collection fo type List[Integer]. However the type used is partial. Do not have element type, that is going to be Integer.</p>
 
@@ -768,7 +768,7 @@ process main
   ** establish element data type
   let ls := (0,1,2,3,4,5,6,7,8,9); -- gradial typing
   print  ls.type();
-  expect type(ls) is ()Integer;
+  expect type(ls[1]) is Integer;
 return;
 </code></pre>
 
