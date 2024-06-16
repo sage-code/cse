@@ -241,7 +241,7 @@ while condition loop
   ** early interruption
   stop if condition;
   ...
-then
+else
   ** alternative path
   ...
 repeat [label];
@@ -268,8 +268,8 @@ process
         write e;
         write ',' if e is not this.tail;
     done;
-  then
-    write "i = " + i;
+  else
+    panic;
   repeat; 
   ** flush the write buffer
   print; -- "c","d","e"
