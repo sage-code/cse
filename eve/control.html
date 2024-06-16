@@ -204,12 +204,12 @@ cycle [label]:
   ...
 loop
   ** loop shortcut
-  skip [label] [if condition] ;
+  skip [label] [if condition];
   ...
   ** early interruption
   stop [label] [if condition];
   ...
-repeat [label] [if condition];
+repeat [label];
 </code></pre>
 
 <h4>Notes:</h4>
@@ -244,7 +244,7 @@ while condition loop
 then
   ** alternative path
   ...
-repeat [label] [if condition];
+repeat [label];
 </code></pre>
 
 <h4>Example:</h4>
