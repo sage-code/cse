@@ -7,7 +7,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- Website title -->
-   <title>Eve OOP</title>
+   <title>Eve Classses</title>
 
    <!-- Bootstrap CSS -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -33,7 +33,7 @@
     </div>
 </header><hr>
 
-<h1>Eve OOP</h1>
+<h1>Eve Classes</h1>
 
 <div class="alert alert-secondary shadow-sm">
 Eve is an object oriented language. We define objects and classes. A class is a <em>user defined data type</em>, that encapsulate data structure and methods. An object is an instance of a class. We use classes to create data structures and algorithms.</div>
@@ -80,11 +80,6 @@ Eve is an object oriented language. We define objects and classes. A class is a 
 <pre><code class="language-eve">#define an object instance
 ** declare a class with two attributes
 class MyClass = {a, b: Integer} <: Object;
-
-** create several class signatures in a "class region"
-class
-  Foo = {attr:Type, ...} <: Object;
-  Bar = {attr:Type, ...} <: Object;
   ...
 </code></pre>
 
@@ -92,7 +87,8 @@ class
 
 <ul>
 <li>Drivers and Aspects can define private classes;</li>
-<li>Only modules can define public classes. </li>
+<li>Only modules can define public classes; </li>
+<li>Classes defined in modules use a dot prefix to become public;</li>
 </ul>
 
 <h2><a id="object">Object type</h2>
@@ -121,19 +117,20 @@ return;
 # define a "Point" class:
 driver test_point:
 
+** declare a private class "Point"
 class Point = {x, y :Real} <: Object; 
 
-method (@self:Point) move(a, b: Real):
+method(@self:Point) move(a, b: Real):
   let self.x += a;
   let self.y += b;
 return;
 
-method (@self:Point)  string() => (string:String):
+method(@self:Point) string() => (string:String):
   let string := "# = (#:#)" ? (self.id, self.a, self.b);
 return;
 
 process
-  ** initialize the points
+  ** initialize the points using Point constructor
   new p := Point(x:1, y:2);
 
   ** move the point
@@ -149,9 +146,9 @@ return;
 <p>A class can define attributes for future object instances. The class constructor must set initial values for object attributes and can create new private attributes.</p>
 
 <ul>
-<li>We declare attributes using = {...}  or += {...} after class name;</li>
+<li>We declare public attributes using = {...}  or += {...n} after class name;</li>
 <li>Public attributes must be initialized using "let" in constructor;</li>
-<li>Private attributes are created with keyword "new" in constructor;</li>
+<li>Private attributes can be created with keyword "new" in constructor;</li>
 </ul>
 
 <p>To access public attributes you must use dot notation like:</p>
@@ -164,10 +161,9 @@ return;
 
 <p><b>Note </b>A class does not know anything about its objects. You can not ask the class anything about its instances, except if you create a special logic using class properties.</p>
 
-
 <h2><a id="class-members"></a>Class members</h2>
 
-<p>A class can have properties and methods. Class properties and metods are static members and must be defined inside the class declaration region.</p>
+<p>A class can have properties and methods. Class properties and metods are static members and must be defined inside the class declaration region. In contrast, methods that are defined outside of the class body are public and depend on the object instance not on the class.</p>
 
 <p>An object can have attributes and methods. Attributes are defined by the constructor. Object methods are defined later in the same module, outside of the class body. Object attributes and methods are dynamic.</p>
 
@@ -186,7 +182,7 @@ return;
 
 <h3><a id="class-methods">Class Methods</h2>
 
-<p>You can define methods inside of a class body. Class methods have access to all class members, without using any qualifier but have no access to object instance. @self object is not available in class methods:</p>
+<p>You can define methods inside of a class body. Class methods have access to all class members, without using any qualifier but have no access to object instance. @self object is not available in class methods, unless explicit injected.:</p>
 
 <h4>Example:</h4>
 
@@ -224,28 +220,6 @@ process
 return;
 </code></pre>
 
-<h3><a id="module-methods">Module Methods</h2>
-
-<p>You can define methods in modules that are usable with any basic type similar to class methods. Also, you can define general methods. These methods are not bound to a particular data type.</p>
-
-<h4>Example:</h4>
-
-<pre><code class="language-eve">
-module console:
-
-** module method 
-method print (*args:Variant):
-  ...
-return;
-
-** module initialization
-init
-  ...
-return;
-</code></pre>
-
-<p><b>Note:</b>Module methods will be useful, when we create the system library. Is enaugh to say we have left the design open, so that we can bootstrap Eve later.</b>
-
 <h2><a id="class-tree"></a>Class Tree</h2>
 
 <p>Using the <em>"Object"</em> as the <em>"root class"</em>, you can create a hierarchy of classes. Each classes is derived from the Object or from other <em>"superclass"</em> forming a <em>"class tree"</em>. Like a real tree the class hierarchy has a single root.</p>
@@ -254,8 +228,6 @@ return;
    <img src="img/class-tree.svg" alt="Class Tree" width="680" class="img-fluid protect rounded shadow border" >
    <p>Class Tree</p>
 </div>
-
-
 
 <h3><a id="constructor"></a>Class Constructor</h3>
 
@@ -270,7 +242,7 @@ return;
 class NewType = {attributes} <: Object:
   ** declaration
   ... 
-create (parameters) => (@self :NewType):
+create(parameters) => (@self :NewType):
   ** constructor
   ...    
 release
@@ -279,7 +251,7 @@ release
 return;
 </code></pre>
 
-<p><b>Notes:&nbsp;</b>A class has a declaration region where you can define static members, and an initialization region "create". This region is called contructor. A class can have one single constructor. The constructor is optional.</p>
+<p><b>Notes:&nbsp;</b>A class has a declaration region where you can define static members, and an initialization region "create". This region is called contructor. A class can have one single constructor. The constructor is optional and it looks like a method except.</p>
 
 <h4>Parameters:</h4>
 
@@ -429,7 +401,7 @@ p2 = {x:2, y:2}
 
 <h2><a id="comparing-objects"></a>Comparing objects</h2>
 
-<p>We can use two comparison operators with objects: "is" and "==". First operator "is" will compare the object location. If the objects have the same location they represent the same object. Second operator: "==" compare object type and object attributes or value. There are complementar operators "is not" and "!=". That can be used to create conditionals.</p>
+<p>We can use two comparison operators with objects: "is" and "==". First operator "is" will compare the object memory address. If the objects have the same address they represent the same object. Second operator: "==" compare object type and object attributes. There are complementar operators "is not" and "!=". That can be used to create conditionals.</p>
 
 <h4>Example:</h4>
 
@@ -545,7 +517,7 @@ return;
 
 <h4>Type Inference</h4>
 
-<p>Using a data literal you can shortcut the design pattern. This is possible due to type inference. Eve create the types for you. After collection is created you can add new elements.</p>
+<p>Using a  constant literal you can shortcut the design and create more simpe code. This is possible due to type inference. Eve create the types for you. After collection is created you can add new elements.</p>
 
 <pre><code class="language-eve">
 ** define object using type inference
