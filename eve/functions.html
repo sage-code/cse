@@ -80,6 +80,7 @@ return;
 <li>A function has a name. There are no anonymous functions,</li>
 <li>A function can raise errors but it can't handle errors,</li>
 <li>A function can be suspended and resumed on demand,</li>
+<li>A function can't modify a global variable.</li>
 </ul>
 
 <p><b>Execute function</b>&nbsp;Function is executed in expressions using the name of the function followed by semicolon, and list of arguments in round brackets (). Brackets are mandatory even if there are no arguments.</p>
@@ -157,7 +158,7 @@ driver test_closure:
 function generator(start:Integer) => (@closure:Function):
   new current := start; 
 
-  ** define a closure
+  ** define a closure using let
   let closure := Function() => (@result:Integer): 
       let current += 1;
       let result := current;
@@ -423,7 +424,7 @@ process
 return;
 </code></pre>
 
-<div class="alert alert-warning"><b>Warning: </b>Observe we have used "set" to create the initial value for a global variable. Then we alter it using "let". The new value is used by the function to cut several decimals after round(). This is not exactly a side-effect but is an influence, that is not accepted in functional programming.</div>
+<div class="alert alert-warning"><b>Warning: </b>Observe we have used "set" to create the initial value for a global variable. Then we alter it using "let" inside the process. The new value is used by the function to cut several decimals after round(). This is not exactly a side-effect but is an influence, that is not accepted in functional programming.</div>
 
 <p><b>Disclaim: </b>We acknowledge, Eve is not a pure functional language. This behavior is present in many other modern languages. Eve is not different. We seek for a balance between the theory and pragmatism.</p>
 
