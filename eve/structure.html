@@ -37,7 +37,7 @@
 <h1>Eve Structure</h1>
 
 <div class="alert alert-secondary shadow-sm">
-Eve is designed to quickly build a data processing app that can run several jobs in order on a precise schedule. You can create one module app but sometimes you need to divide a project into many small modules that run together. Eve provide features to do both kind of applications.</div>
+Eve is designed to quickly build a data processing app that can have jobs to be executed in order on a precise schedule. You can create one module app but sometimes you need to divide a project into many small modules that run together. Eve provide features to do both kind of applications.</div>
 
 <h4>Page bookmarks:</h4>
 
@@ -472,7 +472,7 @@ return;
 <li>Modules don't have parameters.</li>
 <li>Modules are not executable;</li>
 <li>Modules can define public members and shared states;</li>   
-<li>Modules run in the process of a driver or aspect;</li>
+<li>Modules are loaded in a process that belong to driver or aspect;</li>
 <li>A module "init" region is executed immediate after module is loaded;</li>
 </ul>
 
@@ -595,7 +595,7 @@ return;
 
 <h4>Synchronously</h4>
 
-<p>Aspects can be run in serial mode one after another. Let's consider we have 3 aspects: {one, two, three}. We can execute each aspect using keyword: "apply". This will interrupt the driver process and will execute aspect process one by one then return control to driver and continue the main process:</p>
+<p>Aspects can be executed in serial mode one after another. Let's consider we have 3 aspects: {one, two, three}. We can execute each aspect using keyword: "apply". This will interrupt the driver process and will execute aspect process one by one then return control to driver and continue the main process:</p>
 
 <pre><code class="language-eve">
 driver test_apply:

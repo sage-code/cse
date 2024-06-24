@@ -45,12 +45,11 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 <li><a href="#native-types">Native Types</a></li>
 <li><a href="#primitive-types">Primitive Types</a></li>
 <li><a href="#symbol">Single symbol</a></li>
-<li><a href="#composite-types">Composite</a></li>
+<li><a href="#composite-types">Composite Types</a></li>
 <li><a href="#data-coercion">Data coercion</a></li>
 <li><a href="#type-inference">Type inference</a></li>
 <li><a href="#default-types">Default types</a></li>
 <li><a href="#logical-type">Logical type</a></li>
-<li><a href="#user-type">User type</a></li>
 <li><a href="#gradual-typing">Gradual typing</a></li>
 <li><a href="#calendar-date">Calendar date</a></li>
 <li><a href="#time-duration">Time duration</a></li>
@@ -155,15 +154,9 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 </tr>
 <tr>
 <td>Ordinal</td>
-<td>Enumeration of symbols, Equivalent to Short</td>
+<td>Enumeration of named Short integers</td>
 <td>0</td>
 <td>2^16-1</td>
-</tr>
-<tr>
-<td>Date</td>
-<td>Calendar date</td>
-<td>01/01/0001</td>
-<td>01/01/9999</td>
 </tr>
 <tr>
 <td>Time</td>
@@ -186,7 +179,9 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 </tbody>
 </table>
 
-<div class="alert alert-success"><b>Note:</b>&nbsp;Primitive types get zero initial values automatically and can not be Null. This is a major thing in EVE. No Null primitive-types! Numeric values have initial value zero. An emty Symboll is NIL.</div>
+<p>Primitive types can be converted in native types using .value() method. This method will return the native type equivalent and will perform "Unboxing" operation. Value can't return Null.</p>
+
+<div class="alert alert-success"><b>Note:</b>&nbsp;Native and primitive types are automaticly inititialized to zero value unless specified otherwise using a data literal. Symbols have initial value NIL equivalent to ''.</div>
 
 
 <h2><a id="numeric-types"></a>Numeric Types</h2>
@@ -357,7 +352,7 @@ return;
 
 <h2><a id="symbol"></a>Type "Symbol"</h2>
 
-<p>We name Symbol type a single UNICODE UTF8 encoded sumbol. You can use single quoted string to encapsulare a single symbol. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes unlike C that has 1 byte for char. This type is called "rune" in Go language but we call it Symbol. Though we know that some people reffer to many characters together to create a single symbol.</p>
+<p>We name Symbol type a single UNICODE UTF32 encoded sumbol. You can use single quoted string to encapsulare a single symbol. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes unlike C that has 1 byte for char. This type is called "rune" in Go language but we call it Symbol. Though we know that some people reffer to many characters together to create a single symbol.</p>
 
 <h4>Examples</h4>
 
@@ -367,28 +362,104 @@ process
   new letter   := 'a';
   new capital  := 'B';
   new number   := '5';
-  new unicode  := &beta;
-  new operator := &not;
+  new unicode  := '&beta';
+  new operator := '&not';
   ...
 return;
 </code></pre>
 
-<p>As you can se in the example we can use a special notation to create a Symbol literal with sigil & follow by "; In this case the single quote is not required. The compiler should be able to recognize the "&" at the beginning of a reserved keyword and will create a Uncode symbol.</p>
+<p>As you can se in the example Symbol literal is enclosed in single quotes '' follow by ";" to end the declaration statement. In Eve a Symbol can hold 4 bytes but only one ASCII symbol or UNICODE symbol.</p>
 
 <h4>Unicode Literal</h4>
 
-<p>Unicode literals start with prefix U+ or U-. Such literals is compatible with single quoted Symbol code point. Unicode literals are case insensitive hexadecimals.</p>
+<p>Unicode literals start with prefix U+ or U-. Such literals is compatible with single quoted Symbol code point. Unicode literals are case insensitive hexadecimals and do not require single quotes.</p>
 
 <ul>
 <li>U+HHHH from: U+0000 to U+FFFF</li>
 <li>U-HHHHHH from: U+000000 to U+FFFFFF</li>
 </ul>
 
-<h2><a id="composite-types"></a>Composite Types</h2>
+<h4>Examples</h4>
 
-<p>Composite data types are unions of data elements. A composite variable that is not initialized can have Null value. These types are going to be explained later in other pages.</p>
+<pre><code class="language-eve">
+process
+  ** Several examples of local Symbol type variables. 
 
-<p><b>Note: </b>We try the best to enable implicit data types for specific literals. For most cases, impicit data type works. Sometimes you need precise to specify the type using a type hint.</p> 
+  new letter   := U+0061; -- Unicode for lowercase 'a'
+  new capital  := U+0042; -- Unicode for uppercase 'B'
+  new number   := U+0035; -- Unicode for digit '5'
+  new unicode  := U+03B2; -- Unicode for beta (β) character
+  new operator := U+00AC; -- Unicode for NOT operator (¬)
+
+  ...
+return;
+</code></pre>
+
+<h2 id="boxing-unboxing">Boxing and Unboxing</h2>
+
+<p>In Eve, "boxing" and "unboxing" are crucial concepts that describe the conversion between native types and their corresponding primitive types.</p>
+
+<h3>Boxing</h3>
+
+<p>Boxing is the process of wrapping a native type value within a primitive type object. This allows native types to be treated as objects, giving them access to methods and properties defined in the primitive type classes.</p>
+
+<pre><code class="language-eve">
+** Boxing (often implicit)
+new x :Integer = 5;  -- 5 (native i64) is boxed into an Integer object
+</code></pre>
+
+<h3>Unboxing</h3>
+
+<p>Unboxing is the reverse process of extracting the native type value from a primitive type object. This is typically done when you need to perform low-level operations or interface with system libraries that expect native types.</p>
+
+<pre><code class="language-eve">
+** Unboxing (explicit)
+let native_value :i64 = x.value();  -- Extracts the i64 value from the Integer object
+</code></pre>
+
+<h3>Key Points</h3>
+
+<ul>
+    <li>Boxing is often implicit in Eve, happening automatically when you use a native value where a primitive type is expected.</li>
+    <li>Unboxing is typically explicit, using methods like <code>.value()</code> to retrieve the native value.</li>
+    <li>Primitive types in Eve are implemented as classes, providing additional functionality over their native counterparts.</li>
+    <li>Boxing allows for null values and additional methods, while native types are more memory-efficient but lack these features.</li>
+    <li>The use of boxing and unboxing allows Eve to balance performance with the benefits of an object-oriented type system.</li>
+</ul>
+
+<div class="alert alert-info">
+    <strong>Note:</strong> While boxing provides additional features, it comes with a small performance overhead. Use native types for performance-critical operations where the additional features of primitive types are not needed.
+</div>
+
+<h3>Example: Boxing and Unboxing in Action</h3>
+
+<pre><code class="language-eve">
+process boxing_demo:
+    ** Boxing
+    new boxed_integer :Integer = 42;  -- 42 is boxed into an Integer object
+    
+    ** Using a method available on the boxed value
+    print boxed_integer.to_binary();  -- Prints binary representation
+    
+    ** Unboxing
+    let raw_value :i64 = boxed_integer.value();
+    
+    ** raw_value is now a native i64, without object methods
+    print raw_value;  -- Prints 42
+    
+    ** This would cause an error:
+    print raw_value.to_binary();  -- Error: i64 has no method 'to_binary'
+return;
+</code></pre>
+
+<p>Understanding boxing and unboxing is essential for efficient memory management and performance optimization in Eve programs, especially when working with large datasets or in performance-critical sections of code.</p>
+
+
+<h2><a id="composite-ypes"></a>Composite Types</h2>
+
+<div class="alert alert-info">Composite data types, also called structured types or user-defined types, group multiple primitive data types (like integers, strings) into a single unit. They define a structure to hold this data and often include ways to access and manipulate it. </div> 
+
+<p><b>Note: </b>We define implicit data types for specific data literals. For most cases, impicit data type works correctly. Sometimes, implicit data type can create undesired data type. This is because data literals may overlap between different data types. To avoid this case you should use a type hint.</p> 
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -423,6 +494,10 @@ return;
 <td>Real quote delimited symbol: "..."</td>
 </tr>
 <tr>
+  <td>Date</td>
+  <td>Calendar date.</td>
+  </tr>
+<tr>
 <td>List</td>
 <td>Dynamic ordered enumeration of values of same type</td>
 </tr>
@@ -452,8 +527,12 @@ return;
 </tr>
 <tr>
 <td>Error</td>
-<td>Composite type derived from Object base class</td>
+<td>Composite type derived from Object base class that signify an exception.</td>
 </tr>
+<tr>
+  <td>Null</td>
+  <td>Null is a constant object (not a class) that represents the absence of a valid data structure for composite types.</td>
+  </tr>
 </tbody>
 </table>
 
@@ -888,11 +967,6 @@ class Logic = {False:0 , True} &lt;: Ordinal;
 
 <p>Result of logical expressions can be used into a conditional statement to make a decision. Also results of logical expressions can be stored in logical variables to be used later in other conditions.</p>
 
-<h2><a id="user-type">User types</h2>
-
-<p>In Eve you can define new data types. Types are derived from system types. When you create a new type you can use { }, [ ] or ( ) to define the type structure.<p>
-
-<p>User types are defined in a region that start with keyword "type". You can define multiple types on several lines separated by semicolumn and end of line.</p>
 
 <h2><a id="gradual-typing"></a>Gradual typing</h2>
 
@@ -1013,38 +1087,77 @@ return;
 
 <h2><a id="calendar-date"></a>Calendar date</h2>
 
-<p>In Eve we represent calendar date.</p>
-<p><b>Date storage</b></p>
+<h2 id="calendar-date">Calendar Date</h2>
+
+<p>In Eve, we represent calendar dates using a Date object that contains four fields: year, month, day.</p>
+
+<h3>Date Structure</h3>
+<p>The Date type is defined as an object with the following fields:</p>
 <ul>
-<li>Date type is internally stored as number on 4 bytes;</li>
-<li>First byte store the day, second byte store the month;</li>
-<li>Last 2 bytes store the year;</li>
+    <li><code>year</code>: Integer representing the year</li>
+    <li><code>month</code>: Integer representing the month (1-12)</li>
+    <li><code>day</code>: Integer representing the day of the month (1-31)</li>
 </ul>
-<p><b>Date literals</b></p>
-<p>When can create a date literal using 3 format functions:</p>
+
+<p><b>Note:</b> Years before the Common Era/Anno Domini are represented with negative numbers.</p>
+
+<h3>Date Literals</h3>
+<p>We can create a date literal using the following format functions:</p>
 <ul>
-<li>ydm() format: "YYYY/DD/MM"</li>
-<li>dmy() format: "DD/MM/YYYY"</li>
-<li>ydm() format: "MM/DD/YYYY"</li>
+    <li><code>ymd()</code> format: "YYYY/MM/DD"</li>
+    <li><code>dmy()</code> format: "DD/MM/YYYY"</li>
+    <li><code>mdy()</code> format: "MM/DD/YYYY"</li>
 </ul>
-<p><b>Note:</b>&nbsp;A reversible function is overloaded.</p>
+
+<p><b>Note:</b> The era_label (CE or AD) is optional for positive years. If omitted, the system default (configurable) is used.</p>
+
+<h3>Example Usage:</h3>
 
 <pre><code class="language-eve">
-#overloaded function
-process
-  new date := "2019/01/30" as YDM;
+#date format demo
+driver date_demo:
 
-  ** convert string in Date type
-  print date as YDM; --  2019/01/30
-  print date as DMY; --  30/01/2019
-  print date as MDY; --  01/30/2019
+process
+    new date1 := "2023/06/15" as YMD;     -- June 15, 2023 CE
+    new date2 := "30/11/-753" as DMY;     -- November 30, 753 BCE
+    new date3 := "07/04/1776" as MDY;     -- July 4, 1776 AD
+    new date4 := "01/01/2000" as DMY;     -- January 1, 2000 
+
+    // Date comparisons (era labels don't affect comparison)
+    expect date3 > date2;  // 1776 AD is after 753 BCE
+    expect date1 > date3;  // 2023 CE is after 1776 AD
+    expect date4 > date3;  // 2000 is after 1776
+
+    // Access individual fields
+    print "Year of date1: #" ? date1.year;
+    print "Month of date2: #" ? date2.month;
+    print "Day of date3: #" ? date3.day;
+
+    // Create a new date
+    new custom_date := {year: 1066, month: 10, day: 14};
+    print custom_date; // {year: 1066, month: 10, day: 14}
+
 return;
 </code></pre>
 
+<h3>Additional Methods</h3>
+<p>The Date object provides various methods for manipulation and querying:</p>
+<ul>
+    <li><code>is_bce()</code>: Returns true if the year is negative (before Common Era), false otherwise</li>
+    <li><code>to_julian()</code>: Converts the date to Julian Day Number</li>
+    <li><code>from_julian(jdn)</code>: Creates a date from a Julian Day Number</li>
+    <li><code>add_days(n)</code>: Returns a new Date object n days after this date</li>
+    <li><code>subtract_days(n)</code>: Returns a new Date object n days before this date</li>
+    <li><code>days_between(other_date)</code>: Calculates days between two dates</li>
+</ul>
+
+<div class="alert alert-info">
+    <strong>Note:</strong> All dates are internally represented using the same numerical system, with negative years for BCE/BC.
+</div>
 
 <h2><a id="time-duration"></a>Time & Duration</h2>
 
-<p>For time you can use Time or Duration data types.</p>
+<p>We use Time or Duration data types. These are primitive types not nullable.</p>
 
 
 <h3>Time</h3>

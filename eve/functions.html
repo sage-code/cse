@@ -149,7 +149,7 @@ return;
 
 <h4>Why closures?</h4>
 
-<p>Closures are enabled in Eve to offer a convenient way to create generators. These are functions that can return a different result for every call. A closure is a light weight object.</p>
+<p>Closures are enabled in Eve to offer a convenient way to create generators. These are functions that can return a different result for every call. A closure is a light weight object. Like objects closures are dynamicly created at runtime using "new" keyword.</p>
 
 <pre><code class="language-eve">
 driver test_closure:
@@ -177,7 +177,12 @@ process
 return;
 </code></pre>
 
-<p><b>Note: </b>Closures are stochastic functions, that is opposite to deterministic. The compiler will make no effort to optimize this kind of functions.</p>
+<p><b>Notes: </b>
+<ul>
+  <li>Closures are stochastic functions, that is opposite to deterministic. The compiler will make no effort to optimize this kind of functions.</li>
+  <li>Closures can be created only in higher order functions not in routines or classes. A class method can't create closures.</li>
+  <li>One high order function can create multiple closures. This advanced feature will be demonstrated in examples of code later when we create de compiler.</li>
+</ul>
 
 <h2><a id="routines"></a>Routines</h2>
 
@@ -214,12 +219,12 @@ return;
 
 <h2><a id="side-effects"></a>Side Effects</h2>
 
-<p>A process can use states. When a state is changed by a routine or method this is called side-effect. This may be good but potential unsafe. Some side effects may be harder to debug.</p>
+<p>A process can use states and can have side-effects. When a state is changed by a routine or method this is called side-effect. This may be good but potential unsafe. Some side effects may be harder to debug.</p>
 
 <p>these are side effects...</p>
 
 <ul>
-  <li>modify a shared variable or state;</li>
+  <li>modify a global variable or state;</li>
   <li>open and write into an external file;</li>
   <li>print a message or accept input from console;</li>
   <li>upload something on internet or network;</li>
@@ -241,8 +246,8 @@ return;
 
 ** define main process
 process
-  let p1 := 10;      
-  let p2 := 20;     
+  let p1 := 10;
+  let p2 := 20;
   call add_numbers;   --  simple subroutine call
   expect test == 30;
 return;
@@ -251,6 +256,8 @@ return;
 <h2><a id="coroutines"><a>Coroutines</a></h2>
 
 <p>A coroutine is a subprogram that has a name and can start a secondary thread. Coroutines can be suspended using <em>"yield"</em> keyword, and later wake-up with a signal and the thread continue with the next statement. Also the main thread can <em>yield</em> for a coroutine.</p>
+
+<p>Unlike simple routines, coroutines can't modify the global variables. This is to prevent race conditions. Compiler should detect if you try to use <i>let</i> with a global variable.</p>
 
 <!-- a regular diagram -->
 <div class="text-center">
@@ -267,7 +274,7 @@ return;
 driver shoulder_thread:
 
 ** coroutine producer, make 100 numbers
-routine generator(cap:Integer, @result:()Float):
+coroutine generator(cap:Integer, @result:()Float):
   new count := 0;
   loop
     for i in (1..100) loop
@@ -282,7 +289,7 @@ process
   new batch :()Float;
   new total :Real;
   ** initialize the generator and produce first batch
-  run generator(1000, result:batch):
+  start generator(1000, result:batch):
   while batch.count() > 0 loop
     ** process current batch
     for x in batch loop
@@ -306,7 +313,7 @@ return;
 driver parallel_threading:
 
 ** coroutine producer, make 1000 numbers
-routine producer(@pipeline: ()Integer, count = 1000: Integer):
+coroutine producer(@pipeline: ()Integer, count = 1000: Integer):
   cycle:
     new i: Integer;
   for i in (1..count) loop
@@ -319,7 +326,7 @@ routine producer(@pipeline: ()Integer, count = 1000: Integer):
 return;
 
 ** consume 100 numbers
-routine consumer(@pipeline, @partials: ()Integer):
+coroutine consumer(@pipeline, @partials: ()Integer):
     loop
       cycle:
         new element: Integer;
@@ -340,9 +347,9 @@ process
   new partials: ()Integer; 
 
   ** execute producer/consumer
-  run producer(pipeline, 10000);
+  start producer(pipeline, 10000);
   for i in [1..32] loop
-    run consumer(pipeline,partials);
+    start consumer(pipeline,partials);
     wait 3ms;
   repeat;
   ** wait fo all threads to finish
