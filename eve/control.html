@@ -209,7 +209,7 @@ loop
   ** early interruption
   stop [label] [if condition];
   ...
-repeat [label];
+repeat [label] [if condition];
 </code></pre>
 
 <h4>Notes:</h4>
@@ -269,7 +269,7 @@ process
         write ',' if e is not this.tail;
     done;
   else
-    panic;
+    panic; -- in canse of length() == 0
   repeat; 
   ** flush the write buffer
   print; -- "c","d","e"

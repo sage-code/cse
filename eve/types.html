@@ -331,7 +331,7 @@ driver numeric_literals:
   set g2 = 0.0 :Float;
 
 ** define main process
-process
+process:
   ** check equality
   expect g1 == g2;     -- value is equivalent
   expect g1 is not g2; -- not the same
@@ -357,7 +357,7 @@ return;
 <h4>Examples</h4>
 
 <pre><code class="language-eve">
-process
+process:
   ** several examples of local Symbol type variables. 
   new letter   := 'a';
   new capital  := 'B';
@@ -382,7 +382,7 @@ return;
 <h4>Examples</h4>
 
 <pre><code class="language-eve">
-process
+process:
   ** Several examples of local Symbol type variables. 
 
   new letter   := U+0061; -- Unicode for lowercase 'a'
@@ -572,7 +572,7 @@ driver numeric_range:
 ** define a validation class
 class R5 = (0..5) <: Range;
 
-process
+process:
   ** test range limits
   expect 0 in R5; -- assert logic expression
   expect 5 in R5; -- assert logic expression
@@ -590,7 +590,7 @@ return;
 <pre class="line-numbers"><code class="language-eve">
 # using symbolic ranges to print out a collection that do not exist
 driver symbol_range:
-process
+process:
   ** elements of these ranges are written one by one
   print ('0'..'5') -- ('0','1','2','3','4','5')
   print ('a'..'f') -- ('a','b','c','d','e','f')
@@ -611,7 +611,7 @@ return;
 <pre class="line-numbers"><code class="language-eve">
 # using fractional ranges
 driver fraction_range:
-process
+process:
   ** elements of these ranges are written one by one
   print (0..0.5:0.1) -- (0.0,0.1,0.2,0.3,0.4,0.5)
 
@@ -619,6 +619,28 @@ process
   expect 0.01  in (0.0..1.0); 
   expect 0.001 in (0.00..1.00); 
   expect 0.001 not in (0.0..1.0);   
+return;
+</code></pre>
+
+<h2><a id="random-method"></a>Random method</h2>
+
+<p>The range and domain are iterable and have a number of methods that are useful for data processing but these are not collections but generators. One method is very useful and is going to be used in many examples: random(). It is implemented for all collections.</p>
+
+<h4>Examples:</h4>
+<pre><code class="language-eve"># domain demo
+driver random_demo:
+
+  class Small = [0..1:0.1] <: Range;
+  class Large = (0..2^64 ) <: Range;
+
+process:
+  ** you can call random() like this
+  print Small.random(); -- 0.3
+  print Large.random(); -- 65535
+
+  ** you can call random() like this
+  print random(1..2^32:2);       -- 143453566436
+  print random(1..2^32:0.25);    -- 43.75
 return;
 </code></pre>
 
@@ -637,7 +659,7 @@ return;
 <pre><code class="language-eve">#example of implicit conversion
 driver implicit_coercion:
 
-process
+process:
   ** local variables
   new a := 2;
   new b := 1.5;
@@ -657,7 +679,7 @@ return;
 driver explicit_coercion:
   set a = 0   :Integer;
   set b = 1.5 :Real;
-process
+process:
 **explicit coercion lose (0.5)
   let a := floor(b);
   write  a; -- will print: 1
@@ -678,7 +700,7 @@ driver number_to_string:
   ** local states
   set s :String;
   set v :Integer;
-process
+process:
   let v := 1000;
   let s := format(v); --  explicit coercion s = "1000"
   expect (s == "1000");
@@ -697,7 +719,7 @@ driver string_to_number:
 
   set s = "1000"  :String;
   set r = "200.02":String;
-process
+process:
   let v := parse(s); --  make v = 1000
   let v := parse(r); --  make v = 200 and decimal .02 is lost
   let b := parse(r); --  make b = 200.02 and decimal .02 is preserved
@@ -864,7 +886,7 @@ return;
 <p>You can declare empty collections using partial inference and determine the type of elements later, using "let". After type is established, it can't be changed later and start functioning as a contract. That is, you must respect the element types for next expressions.</p>
 
 <pre><code class="language-eve"># gradual type declaration
-process
+process:
   new a := ();  -- empty List
   new v := [];  -- empty Vector
   new s := {};  -- empty DataSet
@@ -885,7 +907,7 @@ driver type_check:
   
   ** define hash table
   set t = {'key1':"value1",'ley2':"value2"} :DataSet;
-process
+process:
   ** check variable types using introspection
   expect type(r.name)  is String;
   expect type(r.age)   is Integer
@@ -1012,7 +1034,7 @@ class Number = { Integer | Real | Null } &lt;: Variant;
 ** use nullable variant
 global
   set x: Number;
-process
+process:
   let x = 10;    -- x is Integer
   let x = 45.5;  -- x is Real
   let x = Null;  -- x is Null
@@ -1033,7 +1055,7 @@ driver variant_type:
 ** tefine variants
   set v, x ,t: { Real | Integer };
 
-process
+process:
   ** using a variant first time 
   let t := 12;      -- assign an Integer (possible)
   print type(t)     -- Integer
@@ -1069,7 +1091,7 @@ routine swap(@x, @y: {Integer | Real} ):
   let y := i; --  second swap
 return;
 
-process
+process:
   ** invert two  Integer numbers
   new x := 10;
   new y := 20;
@@ -1115,7 +1137,7 @@ return;
 #date format demo
 driver date_demo:
 
-process
+process:
     new date1 := "2023/06/15" as YMD;     -- June 15, 2023 CE
     new date2 := "30/11/-753" as DMY;     -- November 30, 753 BCE
     new date3 := "07/04/1776" as MDY;     -- July 4, 1776 AD
@@ -1172,7 +1194,7 @@ return;
 <pre><code class="language-eve"># time demo
 driver time_demo:
 
-process
+process:
   ** define 3 variable of same type
   new time1, time2, time3: Time;
 
@@ -1205,7 +1227,7 @@ return;
 <pre><code class="language-eve"># duration demo
 driver duration_demo:
 
-process
+process:
   ** define 3 variable of same type
   new d1 := 10ms;    --    10 millisec
   new d2 := 1s;      --  1000 millisec
@@ -1263,7 +1285,7 @@ return;
 
 <hr>
 <p><b>Read next:</b>
-<a href="classes.html">Classes </a></p>
+<a href="structure.html">Structure</a></p>
 
 <!-- Footer -->
 <footer class="footer">

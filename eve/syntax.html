@@ -69,21 +69,22 @@
 <pre><code class="language-eve">#demo: hello world
 driver hello:
 
-process
-  ** main process
+process:
+  ** main process:
   print "Hello World!";
 return;
 </code></pre>
 
+<p>In example above we have a script, the file name must be hello.eve. It consist of driver with name "hello". Inside we have a single main process that print to console "Hello World!". This is basicly a small Eve program.</p>
+
 <h2><a id="elements">Syntax Elements</h2>
 
-<p>To better understand Eve's syntax, let's examine a simple program and identify its key syntactic elements and punctuation symbols. While we will describe the role of each symbol and keyword, you don't need to memorize them all at once. We'll create detailed explanations for the language's semantics later on.</p>
+<p>To better understand Eve's syntax, let's examine a another program and identify its key syntactic elements and punctuation symbols. While we will describe the role of each symbol and keyword, you don't need to memorize them all at once. We'll create detailed explanations for the language's semantics later on.</p>
 
 <h4>Example 1:</h4>
 
 <pre><code class="language-eve">
-# main script in Eve is called: "driver"
-# this script accepts two arguments -a -b
+# Eve programs start with a "driver"
 driver syntax_elements(a, b: Integer):
 
 ** define two global lambda expressions
@@ -91,8 +92,8 @@ global
   set add = (p1, p2: Integer) => (p1 + p2);
   set sub = (p1, p2: Integer) => (p1 - p2);
 
-process
-  ** main process has access to parameters
+process:
+  ** the process use arguments -a -b
   print "param1: {a}, param2: {b}";
 
   ** define local variables
@@ -115,8 +116,7 @@ return;
 <li>Each statement start with a keyword and is ending in semicolon,</li>
 <li>Statement regions and nested blocks use mandatory indentation.</li>
 </ul>
-
-<h2><a id="comments"></a>Comments</h2>
+ments"></a>Comments</h2>
 <ul>
 <li>Hash sign "#" is used for title comments,</li>
 <li>Subtitle comments are using two stars:&nbsp;"**";</li>
@@ -140,7 +140,7 @@ driver comment_demo:
 -- Single line comments are inspired from Ada 
 -- You can use these comments at end of lines 
 ----------------------------------------------
-process
+process:
   ** this comment style is inspired from "md"
   new a = 0, b = 1 :Integer;
 
@@ -256,6 +256,7 @@ _not_valid_
 <p>Most of the examples are also stored on GitHub. However it is possible the one in GitHub to be different from then the one in documentation. This is due to fast evolution of the language and not by intention. We declare globals outside of any process in a "global" region. You can use global keyword multiple times in a module but all globals are in the same memory heap and must be unique regarding the region they are defined in.</p>
 
 <pre><code class="language-eve">
+...
 ** define global system states
 global
   set s = "test" :String;
@@ -267,6 +268,7 @@ global
 global
   ** one Real variable
   set d = 0.5 :Real;
+...
 </code></pre>
 
 <p><b>Globals </b> are staticly defined in module scope (global) scope. We use "set" keyword to create a global state. If the state alredy exist, it can be modified using "let" in a process or subprogram. Compiler will signal an error if you "set" a variable two times or if you use "set" in a process or in a subprogram. "set" can't change value of a variable.</p>
@@ -286,10 +288,10 @@ global
 <h4>Fragment</h4>
 
 <pre><code class="language-eve">
-# multiple variables
-process
-  new a = b = 1 :Integer;
-  new x = y = z = 0.5 :Real;
+...
+process:
+  new a = b = 1 :Integer;    -- create and initialize a,b 
+  new x = y = z = 0.5 :Real; -- create and initialize a,y,z
   ...
 return;
 </code></pre>
@@ -312,7 +314,7 @@ return;
 
 <pre><code class="language-eve">
 ## simple expressions
-process
+process:
   print 10;
   write "this is a test";
   ** complex expressions can use grouping: ()
@@ -377,7 +379,7 @@ return;
 <h4>Syntax:</h4>
 
 <pre><code class="language-eve"># ternary expression
-process
+process:
 ** regular style using a single line of code:
   new variable1 := (value1 if condition else value2);
 
@@ -394,7 +396,7 @@ return;
 <p>In next example we use a ternary expression as argument.</p>
 
 <pre><code class="language-eve">
-process
+process:
   ** create a logic variable
   new test := True;
   ...
@@ -426,7 +428,7 @@ return;
 <h4>Fragment:</h4>
 
 <pre><code class="language-eve">driver assign_demo:
-process
+process:
   ** initialization statements
   new a :=  2;
   new b := .0;
@@ -452,7 +454,7 @@ return;
 
 <pre><code class="language-eve">
 # multiple line demo
-process
+process:
   ** multi-row expression
   new var := 1
             +2
@@ -481,7 +483,7 @@ return;</code></pre>
 <tr><td>else     </td><td>end      </td><td>error     </td><td>exit     </td></tr>
 <tr><td>expect   </td><td>fail     </td><td>feature   </td><td>fetch    </td></tr>
 <tr><td>for      </td><td>from     </td><td>function  </td><td>group    </td></tr>
-<tr><td>halt     </td><td>if       </td><td>import    </td><td>inherit  </td></tr>
+<tr><td>halt     </td><td>if       </td><td>import    </td><td>initialize</td></tr>
 <tr><td>insert   </td><td>into     </td><td>item      </td><td>join     </td></tr>
 <tr><td>limit    </td><td>loop     </td><td>method    </td><td>object   </td></tr>
 <tr><td>offset   </td><td>open     </td><td>order     </td><td>one      </td></tr>
@@ -489,13 +491,14 @@ return;</code></pre>
 <tr><td>process  </td><td>raise    </td><td>read      </td><td>record   </td></tr>
 <tr><td>recover  </td><td>release  </td><td>resume    </td><td>repeat   </td></tr>
 <tr><td>reset    </td><td>rest     </td><td>result    </td><td>on       </td></tr>
-<tr><td>retry    </td><td>return   </td><td>rollback  </td><td>routine  </td></tr>
+<tr><td>retry    </td><td>return   </td><td>rollback  </td><td>coroutine</td></tr>
 <tr><td>global   </td><td>select   </td><td>all       </td><td>skip     </td></tr>
 <tr><td>step     </td><td>store    </td><td>switch    </td><td>job      </td></tr>
 <tr><td>then     </td><td>trial    </td><td>try       </td><td>reset    </td></tr>
 <tr><td>update   </td><td>use      </td><td>labe      </td><td>view     </td></tr>
 <tr><td>where    </td><td>while    </td><td>with      </td><td>write    </td></tr>
 <tr><td>call     </td><td>panic    </td><td>any       </td><td>other    </td></tr>
+<tr><td>constant </td><td>         </td><td>          </td><td>         </td></tr>
 </table>
 
 <h3>Definition regions</h3>
@@ -574,8 +577,12 @@ return;</code></pre>
 </tr>
 <tr>
 <td>process</td>
-<td>define a named block of code that has several steps</td>
+<td>define an executable region for driver or aspect</td>
 </tr>
+<tr>
+  <td>initialize</td>
+  <td>define an executable region of a module</td>
+  </tr>
 <tr>
 <td>return</td>
 <td>terminate a process/function or a class declaration</td>
@@ -1395,7 +1402,7 @@ return;</code></pre>
 
 <hr>
 <p><b>Read next:</b>
-<a href="structure.html">Structure</a></p>
+<a href="types.html">Data Types</a></p>
 
 <!-- Footer -->
 <footer class="footer">

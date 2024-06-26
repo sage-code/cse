@@ -100,23 +100,22 @@ project
 <li>Module, created with keyword: "module",</li>
 </ul>
 
-<p><b>Notes:&nbsp;</b>One project can contain one or many drivers. Each driver is an independent script. A driver has a single executable process. Eve virtual machine can run a single driver at a time but several aspects in the same time. A driver can "import" modules and can "start" several aspects in parallel.</p>
+<p><b>Notes:&nbsp;</b>One project can contain one or many drivers. Each driver is an independent script. A driver has a single executable process. A driver control the execution of aspects. An aspect is encapsulated and contains it's own process. An aspect can receive parameters from the driver. An aspect or driver can "import" modules and can use classes or functions defined in these modules.</p>
 
 <h4>Features:</h4>
 
 <ul>
 <li>A driver can import one or more modules;</li>
-<li>A driver can <em>apply</em> aspects in sequence;</li>
-<li>A driver can <em>start</em> aspects in parallel;</li>
-<li>A driver can have at least one process that is the main process;</li>
-<li>An aspect can be split into multiple other aspects;</li>
-<li>An aspect can import several modules;</li>
-<li>Modules can share states with all other scripts.</li>
+<li>A driver can <em>run</em> aspects in a sequence or asynchron;</li>
+<li>A driver or aspect define a single executable process;</li>
+<li>An aspect or driver can import modules;</li>
+<li>Every driver/aspect hasi it's own global scope;</li>
+<li>Modules can share states with the driver or aspect global scope.</li>
 </ul>
 
 <h3><a id="regions"></a>Regions</h3>
 
-<p>A script file is divided into regions using keywords: {import, alias, global, process}. Regions members are using indentation, like Python. A region ends when next region begins. Eve try to be flat as much as possible. Therefore these regions are right side aligned.</p>
+<p>A script file is divided into regions using keywords: {import, alias, constant, global, process, initialize}. Regions members are using indentation, like Python. A region ends when next region begins. Eve try to be flat as much as possible. Therefore these regions are right side aligned.</p>
 
 <h4>Syntax Pattern:</h4>
 
@@ -127,7 +126,7 @@ project
  Header comments: explain the module purpose  
  These comments can be used on top of module      
 ---------------------------------------------+
-[driver | aspect | module] name(parameters):
+[driver | aspect | module] name:
 
 ** set system variables
   set $sys_con    = value;
@@ -142,8 +141,12 @@ alias
   AliasName1 = library_name.MemberName;
   AliasName2 = ClassName[parameters];
   ...
+** define constants 
+constant
+  NAME = Value;
+  ...
 
-** define user types
+** define user types (classes)
 class
   NewType  = {} &lt;: Type;
   ...
@@ -157,8 +160,12 @@ global
   ...
 ----------------------------------------------------
 ** main process, or initialization region
-[process | init]
+process | initialize:
   new my_var  = value;  -- private variable
+  ** executable region
+  ...
+[recover]
+  ** emergency error handling area 
   ...
 [finalize | release]
   ** release locked resources & log reports
@@ -223,9 +230,12 @@ return;
 
 <pre><code class="language-eve">
 ** define global scope
-global
+constant
   set PI  = 3.14 :Float;      -- global constant
+  ...
+global
   set var = 0    :Integer;    -- global variable
+  ...
 </code></pre>
 
 
@@ -241,15 +251,19 @@ global
 <h4>Example</h4>
 
 <pre><code class="language-eve">
-driver test():
+driver test:
 
-** private class
+** driver context constant
+constant
+  E = 2.52 :Real;    -- Euler's number
+  
+** driver private class
 class Person = {name:String, age:Integer} &lt;: Object;
 
-** create states using type inference
+** driver context variable
 global
-  set  E = 2.52 :Real;    -- Euler's number
   set  x = 0    :Integer; -- global state
+...
 </code></pre>
 
 <h4>Notes:</h4>
@@ -259,6 +273,10 @@ global
 <li>We are using operator "=" for initialization,</li>
 <li>Constants are by convention using uppercase letters,</li>
 <li>In the global regions you can not use type inference,</li>
+<li>$user_path is a shared variable defined by the user;</li>
+<li>spaces in script-names are not supported you must use: "_";</li>
+<li>aliases are created from public members of other module;</li>
+<li>variables can be concatenate using smart operator /</li>
 </ul>
 
 <h3>Import region</h3>
@@ -268,7 +286,7 @@ global
 <h4>Syntax:</h4>
 <pre><code class="language-eve">
 driver script_name:
-  ** define global states
+  ** define global system variable
   set $user_path := root_path/relative_path;
 
 import
@@ -278,31 +296,42 @@ import
 alias
   ** create alias for some of the hidden members
   set new_name := module_name.member_name;
-process
+process:
   ...
 return;
 </code></pre>
 
-<h4>Notes:</h4>
-<ul>
-<li>$user_path is a shared variable defined by the user;</li>
-<li>spaces in file-names are not supported you must use: "_";</li>
-<li>aliases are created from public members of other module;</li>
-<li>variables can be concatenate using smart operator /</li>
-</ul>
 
-<h2><a id="library"></a>Library</h2>
+<h2><a id="routines"></a>Process</h2>
 
-<p>A&nbsp;<em>library</em>&nbsp;is a set of reusable modules. A library can be installed in EVE environment or can be project specific. EVE machine is using a special system variable to search for a library: $EVE_LIB. If the library is not found the module can't be imported and the script fails.</p>
+<p>A process is an executable region of a script, mandatory for drivers and aspects. While modules don't use the 'process' keyword, they have an initialization region that serves a similar purpose. This initialization region is executed first when a process starts. For modules imported by a driver, the initialization runs within the driver's main process. When imported by an aspect, it runs in the sub-process created by that aspect.</p> 
 
-<ul>
-<li>libraries contain generic functionality and can be shared between multiple projects;</li>
-<li>using import, several modules can be loaded from a library one by one or all using (*);</li>
-<li>circular import is possible, but EVE prevent infinite recursive reference;</li>
-<li>after import you can call public members of a module using&nbsp;<em>dot notation</em>;</li>
-</ul>
+<h4>Process context</h4>
 
-<p><b>Note: </b>Library name is the name of the subfolder. Module is the name of the last folder in a path. By convention you can create intermediate subfolder but only the last folder is relevant and it must be unique in a library.<p>
+<p>Every process has a local context. In this context you can define variables, and instantiate objects but you can't define routines, classes, methods or functions. Process local members can't be shared but can be send as input/output parameters to subprograms or aspects.</p>
+
+<h3>Process Termination:</h3>
+
+<p>Process can be early terminated using: <em>"over"</em> or <em>"panic"</em>. This is a way to release all locked resources and terminate the process. Program can end with an error code using "panic N" statement, otherwise it will automatically return 1 with panic and 0 with "over". Actually "panic 0" is equivalent to "over".</p>
+
+<h4>Example:</h4>
+
+<p>Next code sequence is terminated after 100 iterations:</p>
+
+<pre><code class="language-eve">
+# terminate a program with: over
+driver test_over:
+
+process:
+  cycle:
+    new i = 0 :Integer;
+  loop
+    write "."; wait  10;
+    over if i > 10;
+    let   i += 1;
+  repeat;
+return;
+</code></pre>
 
 <h2><a id="drivers"></a>Drivers</h2>
 
@@ -322,7 +351,7 @@ return;
 
 <p>An <em>"aspect"</em> is a script specific to a particular project. It resolve a problem or address a specific concern. Aspect files are executable. One aspect can execute other aspects, however it can't be recursive.</p>
 
-<p>An aspect can receive parameters. One aspect has a declaration region and an executable region. You can resolve an aspect by using keyword: "apply" or "start". An aspect must handle it's own errors. If errors are not handled, the program panic and stop execution.</p>
+<p>An aspect can receive parameters. One aspect has a declaration region and an executable region. You can execute main() process of an aspect by using keyword: "run". An aspect must handle it's own errors it can't raise errors. If errors are not handled, the program panic and stop execution.</p>
 
 <h4>Aspect Syntax:</h4>
 
@@ -330,7 +359,7 @@ return;
 aspect aspect_name(parameter_list):
   ** declare variables
   ...
-process
+process:
   ** executable region
   ...
 recover
@@ -339,87 +368,9 @@ recover
 return;
 </code></pre>
 
-<p><b>Parameters</b>&nbsp; are defined in round brackets () separated by comma. Each parameter must have type and name. Using parameters require several conventions:</p>
+<h3>Running an Aspect</h3>
 
-<h4>Parameter Syntax:</h4>
-
-<p>Mandatory parameters do not have initial values but only type. Optional parameters have initial value that is assign using operator "=" with explicit :type, or ":=" with type inference. Not both.</p>
-
-<ul>
-<li>parameter :Type</li>
-<li>parameter  = value :Type</li>
-<li>parameter := expression</li>
-</ul>
-
-<h4>Notes:</h4>
-
-<ol>
-<li>One aspect can receive one or more parameters,</li>
-<li>Parameters having initial values are optional,</li>
-<li>Values used for parameters at runtime, are called "arguments",</li>
-<li>You can assign arguments by position using a list of values,</li>
-<li>You can assign arguments by name using <code>(name:value)</code> pairs;</li>
-</ol>
-
-<p><b>Vararg parameters</b></p>
-<p>One aspect can receive multiple arguments of the same type into a single collection parameter. This can be a List, DataSet or HashMap, depending on declaration.</p>
-
-<ul>
-<li>First arguments can be captured using named parameters,</li>
-<li>The rest of arguments are captured into vararg parameter,</li>
-<li>An aspect can have one single vararg parameter,</li>
-<li>The vararg parameter name is declared using prefix: "*",</li>
-<li>You can use any name but "*args" is the usual name for it.</li>
-</ul>
-
-<h4>Example:</h4>
-<pre><code class="language-eve"># print all arguments
-aspect test(*args: ()String):
-
-** list all arguments
-process
-  cycle:
-    new arg :String;
-  for arg in args loop
-    print arg;
-  repeat;
-return;
-</code></pre>
-
-<h4>Process context</h4>
-
-<p>One script can have one single executable main process. Every process has a local context. In this context you can define variables, and instantiate objects but you can't define routines, classes, methods or functions. Process local members can't be shared but can be send as input/output parameters to other subprograms.</p>
-
-<h4>Output Parameters</h4>
-<p>To avoid overuse of global variables you must use input/output parameters. We prefix output parameters using symbol "@". Output parameters require a variable as argument, otherwise you will not be able to capture the output value. Compiler will complain if you do not send a valid refference to an output parameter.</p>
-
-<pre><code class="language-eve">
-#demo output parameters
-aspect output_params:
-
-** private subroutine
-routine add(p1 = 0, p2 = 1: Integer, @op: Integer):
-  let op := p1 + p2;
-return;
-
-process 
-  new result: Integer;
-
-  ** inpur/output argument require a variable
-  call add(1,2, op:result);
-  print result;     -- expected value 3
-
-  ** negative test, will fail
-  call add(1,2,4); -- error, "out" parameter require a variable
-return;
-</code></pre>
- 
-<h4>Notes:</h4>
-<ul>
-<li>Output parameters are usually the last parameters;</li>
-<li>Output parameters are having "@" prefix;</li>
-<li>Routine invocation is done using a "call" keyword;</li>
-</ul>
+<p>Aspect is executed with keyword "run". An aspect can be executed synchron or asynchorn. We will explain more about aspect execution after we define the control flow, coroutines, functions and error handling. At this time let's focus on Driver execution and Modules.</p>
 
 <h2><a id="modules"></a>Modules</h2>
 
@@ -456,7 +407,7 @@ import
 
 ** declare members
   ...
-init
+initialize
 ** setup initial states 
   let $system_variable := value;
   ...
@@ -469,11 +420,10 @@ return;
 
 <h4>Notes:</h4>
 <ul>
-<li>Modules don't have parameters.</li>
-<li>Modules are not executable;</li>
+<li>Modules are not executable and can't define processes;</li>
 <li>Modules can define public members and shared states;</li>   
 <li>Modules are loaded in a process that belong to driver or aspect;</li>
-<li>A module "init" region is executed immediate after module is loaded;</li>
+<li>A module "initialize" region is executed immediate after module is loaded;</li>
 </ul>
 
 <p><b>Module names </b>are using lowercase letters, can contain underscore or digits but no special characters and no Unicode strings. Longer names that use several words can be separate with underscore. The module name can be 30 characters long.</p>
@@ -487,6 +437,19 @@ return;
 <p>A configuration file have extension .cfg. One application can run with different configuration file. Application documentation must contain description of all variables required by the application.</p>
 
 <p>A good practice is to provide a configuration <em>template</em>&nbsp;. The template file may contain comments and $key = value pairs. Values can be numeric, string, symbol, date, time or data literals: [],(),{}. Eve application will automatically parse configuration file to read values for the <em>system variables</em>.</p>
+
+<h2><a id="library"></a>Library</h2>
+
+<p>A&nbsp;<em>library</em>&nbsp;is a set of reusable modules. A library can be installed in EVE environment or can be project specific. EVE machine is using a special system variable to search for a library: $EVE_LIB. If the library is not found the module can't be imported and the script fails.</p>
+
+<ul>
+<li>libraries contain generic functionality and can be shared between multiple projects;</li>
+<li>using import, several modules can be loaded from a library one by one or all using (*);</li>
+<li>circular import is possible, but EVE prevent infinite recursive reference;</li>
+<li>after import you can call public members of a module using&nbsp;<em>dot notation</em>;</li>
+</ul>
+
+<p><b>Note: </b>Library name is the name of the subfolder. Module is the name of the last folder in a path. By convention you can create intermediate subfolder but only the last folder is relevant and it must be unique in a library.<p>
 
 
 <h2><a id="execution"></a>Script Execution</h2>
@@ -509,7 +472,7 @@ return;
 
 <h3>Driver Execution:</h3>
 
-<p>When a driver is loaded, all it's components are compiled in memory, then the <em>main process</em> is executed. If a driver do not have a "process", it can be manually loaded from eve console. Then you can call one routine or function at a time, for testing purpose.</p>
+<p>When a driver is loaded, all it's components are compiled in memory, then the <em>main process</em> is executed. An aspect do not have a "main process", however it can be manually loaded from EVE console. Then you can call one process or function at a time, for testing purpose.</p>
 
 <h4>Start EVE REPL</h4>
 
@@ -587,105 +550,21 @@ return;
 <p>In debug mode you can modify the configuration and reload using "setup" command. REPL must be in "ready" state when you reload settings otherwise you will get an error.</p>
 <!-- work in progress-->
 
-<h3>Aspect Execution:</h3>
-
-<p>One aspect is executed from driver or from another aspect. You can not execute an aspect from itself. Recursive aspects are not supported. The compiler will detect a recursive aspect and will fail at runtime.</p>
-
-<p>You can debug an aspect just like a driver. You can load an aspect, execute the aspect step by step and create a report. Aspects are independent processes. However you can't debug aspects in parallel.</p>
-
-<h4>Synchronously</h4>
-
-<p>Aspects can be executed in serial mode one after another. Let's consider we have 3 aspects: {one, two, three}. We can execute each aspect using keyword: "apply". This will interrupt the driver process and will execute aspect process one by one then return control to driver and continue the main process:</p>
-
-<pre><code class="language-eve">
-driver test_apply:
-
-# synchronous call
-process
-  ** apply each aspect
-  apply [folder/]aspect_one(arguments);
-  apply [folder/]aspect_two(arguments);
-  apply [folder/]aspect_three(arguments);
-  ...
-return;
-</code></pre>
-
-<p><b>Note: </b>You do not have to import an aspect into a driver but you must specify the relative path of the aspect. If the aspect is in a subfolder, you must include relative folder name. If the aspect is in the same location as the driver, you do not need a folder name.</p>
-
-<h4>Asynchronously</h4>
-
-<p>Aspects can be resolved asynchronously using keyword "start". This is not blocking the main process and you can start multiple aspects in parallel. Each aspect will start it's own process in this case.</p>
-
-<pre><code class="language-eve">
-# asynchronous call demo
-driver async_demo:
-process
-  ** enqueue aspects to be resolved
-  start [folder/]aspect_one(arguments);
-  start [folder/]aspect_two(arguments);
-  start [folder/]aspect_three(arguments);
-
-  ** wait for all aspects to finish
-  yield all;
-return;
-</code></pre>
-
-<h4>Parallel processes</h4>
-
-<p>One script can start same aspect multiple times with different parameters and compute different data sets. Next example show how to execute one aspect using a loop.</p>
-
-<pre><code class="language-eve">
-** resolve several aspects
-driver async_loop:
-process
-  ** enqueue same aspect 4 times
-  cycle
-    new i: Integer;
-  for i in (1..4) loop
-    start demo(i);
-  repeat;
-  yield all;
-return;
-</code></pre>
-
 <h3>Module import:</h3>
 
-<p>The driver or aspect can import modules. After import, all public elements of modules can be used on demand. The parent process is controlling the execution. Remember, modules are not directly executable and must be hosted into a main process.</p>
+<p>The driver or aspect can import modules. After import, all public elements of modules can be used on demand. The parent process is controlling the execution. Remember, modules are not directly executable and must be hosted into a process.</p>
 
-<p>Modules are "singleton" once a module is loaded in memory, it will not load a second time for same process. Eve is a multi-session system. Module states are bound the the parent process.</p>
+<p>Modules are "singleton" once a module is loaded in memory, it will bind it's scope to the process. Global variables are all merged in the context of driver or aspect. Eve is a multi-session system. In each session you can have run single driver.</p>
 
 <h3>Exclusive mode:</h3>
 
-<p>When a eve is executed, it can be started with parameter: -x or --exclusive. This is a signal that only one process can run at a time. In this mode "start" is not starting a new process but works like "apply" in serial mode. You can use this more especially for debugging or tunning purpose.</p>
- 
-<h2>Program Termination:</h2>
-
-<p>Program can be early terminated using: <em>"over"</em> or <em>"panic"</em>. This is a way to release all locked resources and terminate the application. Program can end with an error code using "panic N" statement, otherwise it will automatically return 1 with panic and 0 with "over". Actually "panic 0" is equivalent to "over".</p>
-
-<p>When drive is terminated, for debug mode the modules remain in memory. The memory can be investigated using commands and program can be debugged. In regular mode, the memory is cleared when the process finish.</p>
-
-<h4>Example:</h4>
-
-<p>Next code sequence is terminated after 100 iterations:</p>
-
-<pre><code class="language-eve">
-# terminate a program with: over
-driver test_over:
-process
-  cycle:
-    new i = 0 :Integer;
-  loop
-    write "."; wait  10;
-    over if i > 10;
-    let   i += 1;
-  repeat;
-return;
-</code></pre>
+<p>When a eve is executed, it can be started with parameter: -x or --exclusive. This is a signal that only one session can run at a time. In this mode "start" is not starting a new driver if any other driver is active. You can use this more especially for debugging or tunning purpose.</p>
 
 
 <hr>
 <p><b>Read next:</b>
-<a href="types.html">Data Types</a></p>
+<a href="concurency.html">Concurency </a></p>
+
 
 <!-- Footer -->
 <footer class="footer">

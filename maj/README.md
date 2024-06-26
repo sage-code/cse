@@ -7,17 +7,17 @@ Maj is an artificial spoken language,  with following attributes:
 * *Familiar:* using Latin alphabet and borrowed words;
 * *Simple:* no silent letters, for one letter one sound;
 
-Home Page: [Sage-Code Maj](https://maj.sagecode.net)
+Home Page: [Sage-Code Maj](https://sagecode.pro/maj/)
 
 **Purpose ...**
 
 Maj language has several potential use-cases:
 
 1. Linguistic studies;
-1. Artificial reasoning;
-1. Fictional writing;
-1. International exchange;
-1. Language learning;
+2. Artificial reasoning;
+3. Fictional writing;
+4. International exchange;
+5. Language learning;
 
 **Tools:** 
 

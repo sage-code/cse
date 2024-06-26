@@ -129,7 +129,7 @@ method(@self:Point) string() => (string:String):
   let string := "# = (#:#)" ? (self.id, self.a, self.b);
 return;
 
-process
+process:
   ** initialize the points using Point constructor
   new p := Point(x:1, y:2);
 
@@ -209,7 +209,7 @@ class ClassName <: Object:
   return;
 return;
 
-process
+process:
   ** access class method
   ClassName.change(10); 
   ClassName.change(12); 
@@ -296,7 +296,7 @@ create(*parameters: HashMap) => (@self:NewName):
   ...
 return;
 
-process
+process:
   ** instantiate a local object using constructor
   new object := NewName(param:value,...);
   ...
@@ -327,7 +327,7 @@ create(x = 0, y = 0 :Real) => (@self: Point):
 return;
 
 # using the class
-process 
+process:
   ** initialize the points
   new p1 := Point(x:1, y:2);
   new p2 := Point(x:2, y:2);
@@ -374,7 +374,7 @@ release(@self: Point):
   let instances -= 1;
 return;
 
-process 
+process:
   ** initialize the points
   new p1 := Point(x:1, y:2);
   new p2 := Point(x:2, y:2);
@@ -411,7 +411,7 @@ p2 = {x:2, y:2}
 #object comparison demo
 driver object_compare:
   set m = n = 1: Integer; 
-process
+process:
   ** equal values and types
   expect   m   == n;
   expect   not (m != n);
@@ -501,7 +501,7 @@ class ElementType = {a,b,c: Integer} <: DataSet;
 ** making a list of elements
 class UserList = ()ElementType <: List; 
 
-process
+process:
   ** instantiate UserList object 
   new myList := UserList(); 
 
@@ -541,7 +541,7 @@ class Person = {name:String, age:Integer} <: Object;
 global
    set myList: ()Person; 
 
-process
+process:
 ** define object using type inference
    let myList := (
       {name: "Elucian", age: 56},
@@ -559,7 +559,7 @@ return;
 <p><b>Note: </b>In a collection you can use objects of the same type or descendents types of the declared element type. In this case if you derive a type Employe from Person, then you can add Emplyes to this list.</p>
 
 <p><b>Read next:</b>
-<a href="functions.html">Functions</a></p>
+<a href="collections.html">Collections</a></p>
 
 <!-- Footer -->
 <footer class="footer">

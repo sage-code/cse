@@ -40,7 +40,7 @@
 <h1>Eve Commands</h1>
 
 <div class="alert alert-secondary shadow-sm">
-Eve enable direct interaction with system commands and shell scripts. This make Eve a true scripting language. You can call a script using: "shell" command with parameters and pipeline operators. 
+Eve enable direct interaction with system commands and shell scripts. This make Eve a true scripting language. You can call a script using: "call" command with parameters and pipeline operators. 
 </div>
 
 <h2>System variables</h2>
@@ -56,21 +56,21 @@ Eve enable direct interaction with system commands and shell scripts. This make 
 
 <h2>Shell command</h2>
 
-<p>We introduce: "shell" keyword. This will send a command to the operating system and will execute a native kernel command. This new keyword is also a EVE CLI command.</p>
+<p>We introduce: "call" keyword. This will send a command to the operating system and will execute a native kernel command. This new keyword is also a EVE CLI command.</p>
 
 <h3>Shell syntax</h3>
 
 <pre class="fixed output">
-shell [input +&gt;] command [+&gt; output] 
+call [input +&gt;] command [+&gt; output] 
 </pre>
 <p>command   ::= "os_command -flags #s #s ..." ? (value, value ...) 
 <br>os_command::= {ls, cd, rm, chmod, ...}
 </p>
 <p><b>Note: </b>The shell commands are string literals or variables. Binding Eve variables to OS command is using string interpolation. That means you can use #s or #(var_name) in the command string with ? operator.</p>
 
-<h2>Using shell</h2>
+<h2>Using call</h2>
 
-<p>Shell command is useful to execute a shell script (.sh) or a os command, usually this will produce an output to console. The output can be redirected to a file or piped to another command.</p>
+<p>Call is useful to execute an OS shell script (.sh) or a OS commands, usually this will produce an output to console. The output can be redirected to a file or piped to another command.</p>
 
 <h4>capture output</h4>
 
@@ -80,9 +80,9 @@ shell [input +&gt;] command [+&gt; output]
 # listing files in folder "test"
 driver shell_output:
   set files: ()String;
-process
-  shell "cd #($HOME)/test";
-  shell "ls -l *.dat" +&gt; files;
+process:
+  call "cd #($HOME)/test";
+  call "ls -l *.dat" +&gt; files;
   cycle: 
     new file: String:
   for file in files loop
@@ -97,9 +97,9 @@ return;
 # execute a shell script
 driver shell_input:
   set files: ()String;
-process
-  shell "cd #($HOME)/test";
-  shell ("hello", "world") +&gt; "./shell_test.sh";
+process:
+  call "cd #($HOME)/test";
+  call ("hello", "world") +&gt; "./shell_test.sh";
 return;
 </code></pre>
 
@@ -124,8 +124,8 @@ done < /dev/stdin
 driver folder_test:
   set files: ()File;
   set folder: Folder;
-process
-  let folder := Folder($HOME/"test") 
+process:
+  let folder := Folder($HOME/"test"); 
   cycle: 
     new file: File:
   for file in folder.files() loop
