@@ -5,6 +5,7 @@ function apply_style(str) {
     str = str.replace(/^alias\b/,keyword("alias")) 
     str = str.replace(/^class\b/,keyword("class"))    
     str = str.replace(/^global\b/,keyword("global"))   
+    str = str.replace(/^constant\b/,keyword("constant")) 
     str = str.replace(/^return\b/,keyword("return"))
     str = str.replace(/^create\b/,keyword("create"))
     str = str.replace(/^release\b/,keyword("release"))
@@ -19,15 +20,15 @@ function apply_style(str) {
     str = str.replace(/\brecover\b/,keyword("recover"))
     str = str.replace(/\bfinalize\b/,keyword("finalize"))
     str = str.replace(/\bprocess\b/,keyword("process"))  
-    str = str.replace(/\binit\b/,keyword("init"))  
+    str = str.replace(/\binitialize\b/,keyword("initialize"))  
 
     // mandatory 2 space intentation
-    str = str.replace(/\s\sreturn\b/,keytab("  return"))
-    str = str.replace(/\s\smethod\b/,keytab("  method"))
-    str = str.replace(/\s\screate\b/,keytab("  create"))
-    str = str.replace(/\s\srelease\b/,keytab("  release"))
-    str = str.replace(/\s\sfunction\b/,keytab("  function"))
-    str = str.replace(/\s\sshell\b/,keytab("  shell"))
+    str = str.replace(/\breturn\b/,keytab("return"))
+    str = str.replace(/\bmethod\b/,keytab("method"))
+    str = str.replace(/\bcreate\b/,keytab("create"))
+    str = str.replace(/\brelease\b/,keytab("release"))
+    str = str.replace(/\bfunction\b/,keytab("function"))
+    str = str.replace(/\bshell\b/,keytab("shell"))
 
     // keywords in statement     
     str = str.replace(/\bsession\b/,keytab("session"))
@@ -148,6 +149,7 @@ function apply_style(str) {
     str = str.replace(/\bfail\b/,keytab("fail"))
     str = str.replace(/\braise\b/,keytab("raise"))
     str = str.replace(/\bretry\b/,keytab("retry"))
+    str = str.replace(/\bsuspend\b/,keytab("suspend"))
     str = str.replace(/\bresume\b/,keytab("resume"))
     str = str.replace(/\bsynchronise\b/,keytab("synchronise"))
     str = str.replace(/\brollback\b/,keytab("rollback"))
