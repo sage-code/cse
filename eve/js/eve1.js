@@ -37,13 +37,13 @@ function apply_style(str) {
     str = str.replace(/\buse\b/,keytab("use"))
 
     // keyword operators  
-    str = str.replace(/\bin\b/g,keytab("in"))     
-    str = str.replace(/\bis\b/g,keytab("is"))
-    str = str.replace(/\bas\b/g,keytab("as"))    
-    str = str.replace(/\bor\b/g,keytab("or"))
-    str = str.replace(/\beq\b/g,keytab("eq"))    
-    str = str.replace(/\band\b/g,keytab("and"))
-    str = str.replace(/\bnot\b/g,keytab("not"))
+    str = str.replace(/\bin\b/g,operator("in"))     
+    str = str.replace(/\bis\b/g,operator("is"))
+    str = str.replace(/\bas\b/g,operator("as"))    
+    str = str.replace(/\bor\b/g,operator("or"))
+    str = str.replace(/\beq\b/g,operator("eq"))    
+    str = str.replace(/\band\b/g,operator("and"))
+    str = str.replace(/\bnot\b/g,operator("not"))
 
 
     // mandatory two space indentation
@@ -177,16 +177,20 @@ function apply_style(str) {
     str = str.replace(/\+=/g,operator("+="))    
     str = str.replace(/\^=/g,operator("^="))  
     str = str.replace(/\%=/g,operator("%=")) 
+    str = str.replace(/\&=/g,operator("&="))
 
     //problematic operators
     str = str.replace(/ <= /g,operator(" <= "))
     str = str.replace(/ >= /g,operator(" >= "))    
     str = str.replace(/ << /g,operator(" << ")) 
     str = str.replace(/ >> /g,operator(" >> ")) 
+    str = str.replace(/ && /g,operator(" && ")) 
+    str = str.replace(/ \|\| /g,operator(" || "))   
 
-    // supertype & coercion
+    // supertype & coercion111
     str = str.replace(/<\+/g,operator("<+"))
     str = str.replace(/\+>/g,operator("+>"))
+    
 
     // fix encoded symbols
     str = str.replace(/\b=\&gt;\b/g,operator("=&gt;"))

@@ -985,11 +985,11 @@ return;
 <p>You can intersect 2 lists but the result will be a DataSet.</p>
 
 <pre><code class="language-eve">
-# Create intersection using &amp;
+# Create intersection using &&
 driver set_intersection_demo:
   set test: DataSet; -- Null set
 process:
-  let test := (1,2,3,4) &amp; (2,3,4,5);
+  let test := (1,2,3,4) && (2,3,4,5);
   expect test == {2,3,4};
 return;
 </code></pre>
@@ -1492,7 +1492,7 @@ return;
 
 <h3><a id="text-literals"></a>Text Literals</h3>
 
-<p>Strings can contain multiple lines separated with end of line character. Large text literal can be defined on multiple lines. Eve do not have triple quoted  strings """...""" but we use a very special trick to parse long strings. You start with "\n and end with ";. This indicate to the compiler this is a Text or template large string. This kind of string is mutable.</p>
+<p>Strings can contain multiple lines separated with end of line character. Large text literal can be defined on multiple lines. Eve use triple quoted  strings """...""" and very special trick to parse long strings.</p>
 
 <p>A Text has an different internal representation and can be used to represent HTML or XML and other data format like CSV. Double quotes are preserved without escape sequence. Te example below demonstrate our little trick.</p>
 
@@ -1502,23 +1502,23 @@ driver text_literal:
 
 process:
   ** multiline text literal is possible in Eve
-  new my_text:="
-    Opportunity is missed by most people
+  new my_text:="""
+  "Opportunity is missed by most people
   because it is dressed in overalls
-  and looks like work.
-  "; 
+  and looks like work."
+  """;
   print my_text;
 return;
 </code></pre>
 
 <p><b>Output:</b></p>
 <pre class="output">
-Opportunity is missed by most people
+"Opportunity is missed by most people
 because it is dressed in overalls
-and looks like work.
+and looks like work."
 </pre>
 
-<p>An equal number of spaces was detected by the compiler and removed. The equal number of spaces is the indentation of last double quote, that must be on a new line (alone) follow by semicolumn. This is used by the compiler to determine the indentation.</p>
+<p>An equal number of spaces was detected by the compiler and removed. The equal number of spaces is the indentation of last tripple quote, that must be on a new line (alone) follow by semicolumn. This is used by the compiler to determine the indentation.</p>
 
 <h3>String functions</h3>
 
