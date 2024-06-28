@@ -241,21 +241,17 @@ process:
   ** initialized list
   let lst := ('a','b','c','b'); 
 
-  ** create a new element at the beginning
-  let lst += 'z';
+  ** create a new element at the begining of list
+  add lst <+ 'z';
   expect lst ==  ('a','b','c','b','z');
 
-  ** remove all "b" from list
-  let lst -= 'b';
+  ** remove all "b" elements from list
+  del 'b' in lst;
   expect lst ==  ('a','c','z');
 
-  ** append element to list 
-  let a := a <+ 'x';
+  ** append element to end of list 
+  add lst <+ 'x';
   expect a ==  ('a','c','z','x');
-
-  ** enqueue element in list
-  let a := 'v' +> a;
-  expect a ==  ('v','a','b','z','x');
 return;
 </code></pre>
 
@@ -274,20 +270,20 @@ return;
 </ul>
 
 <pre><code class="language-eve">
-#remove elements from list
+#using a list as a queue
 driver list_remove:
   ** initialized queue
   set queue := ()Symbol; 
 process:
-  ** enqueue one element
-  let queue += "x";
+  ** enqueue one element (at beginning)
+  add queue +> "x";
   expect queue ==  ('x');
   ** enqueue several elements
-  let queue += ('z','y')
+  add queue +> ('z','y')
   expect queue ==  ('z', 'y', 'x')
 
-  ** create new element and dequeue
-  new e: Symbol; let queue := queue -&gt; e; 
+  ** create new element and dequeue (from end)
+  pop queue -&gt; e; 
   expect queue ==  ('z', 'y');
   expect e == 'x';
 return;
@@ -299,8 +295,8 @@ return;
 
 <p>For stack, two operations are possible</p>
 <ul>
-<li>push  - can append elements at beginning of List</li>
-<li>pop   - can extract the first element of the List</li>
+<li>add  - can append elements at end of List</li>
+<li>pop  - can extract the last element of the List</li>
 </ul>
 
 <pre><code class="language-eve">
@@ -309,28 +305,28 @@ driver list_remove:
   ** initialized stack
   set stack := ('a','b','c'); 
 process:
-  ** append element at the beginning
-  let Symbol += 'x';
-  expect stack ==  ('x','a','b','c');
+  ** append element at the end
+  add stack <+ 'x';
+  expect stack ==  ('a','b','c','x');
 
-  ** extract element from the beginning
-  new x &lt;- stack;
-  expect stack ==  ('x','a','b','c');
+  ** extract element from the end
+  pop stack -> x;
+  expect stack ==  ('a','b','c');
   expect x == 'x';
 return;
 </code></pre>
 
 <h3>List methods</h3>
 
-<p>A List is a class, so it has all required methods and properties to be used in algorithms and expressions. We do not yet forsee all methods bu maybe these would be useful</p>
+<p>A List is a class, so it has all required methods and properties to be used in algorithms and expressions. We do not yet forsee all methods bu maybe these would be useful. Here is a minimalist suggestion for some methods.</p>
 
 <pre><code class="language-eve">
-List.empty();  -- true/false
-List.full();   -- true/false
+List.empty;  -- true/false
+List.full;   -- true/false
 List.capacity; -- list with capacity
 </code></pre>
 
-<h4>Join() method</h4>
+<h4>join() method</h4>
 
 <p>The join method receive a list and convert elements into a string separated be specified character.</p>
 
@@ -342,7 +338,7 @@ function list_join:
 return;
 </code></pre>
 
-<p><b>Split() method</b>&nbsp;The split method is actually a method of a String, that create a List of strings by splitting a long string into parts. Usually you split by comma, but any symbol can be used. The separator is removed and will not be part of the resulting list.</p>
+<p><b>split() method</b>&nbsp;The split method is actually a method of a String, that create a List of strings by splitting a long string into parts. Usually you split by comma, but any symbol can be used. The separator is removed and will not be part of the resulting list.</p>
 
 <pre><code class="language-eve">
 ** string split demo
@@ -367,7 +363,7 @@ driver test_iteration:
 process:
   cycle: 
     new element: Symbol;
-  for element is collection loop
+  for element in collection loop
      write element;
      write ',' if element is not collection.last;
   repeat;
@@ -388,7 +384,7 @@ process:
   for e in my_list loop
     write e;
     if e == 'd' then
-      break; --  early termination;
+      stop; --  early termination;
     else
       write(',');
     done;
@@ -519,13 +515,13 @@ return;
 
 <pre><code class="language-eve">
 ** declare an Array initialized using range
-   set array = [min..max:ratio]: [?]Type;
+   set array = [min..max:ratio]: []ElementType;
 
 ** declare a new Array using a map function with range
-   set array = [ f(x) | x in (min..max:ratio)]: [n]Type;
+   set array = [ f(x) | x in (min..max:ratio)]: []ElementType;
 
-** declare a new 2d array that is called matrix
-   set matrix = [ f(x) | x in (min..max:ration)]: [n,m]Type;
+** declare a new 2d array that is called matrix, row by row
+   set matrix = [ f(x) | x in (min..max:ration)]: [n,m]ElementType;
 </code></pre>
 
 <h4>Example:</h4>
@@ -535,14 +531,13 @@ driver test_matrix:
   set array  :[4]Integer;
   set matrix :[4,4]Integer;
 process:
-** init a vector Array
+** init a vector Array using a range
    let array := [ x | x in (1..10:3)];
    expect array == [1,4,7,10];
    print array;
-   print;
-
-** init a matrix Array
-   let matrix := [ x * y | x in (1..4) and y in (1..4)];
+   print ("----------")
+** init a matrix Array  usinc cartesian pruduct between two ranges
+   let matrix := [(1..4) * (1..4)];
    print matrix;
 return;
 </code></pre>
@@ -551,7 +546,7 @@ return;
 
 <pre class="language-output fixes">
  1 4 7 10
-
+ ----------
  1 2  3  4
  2 4  6  8
  3 6  9 12
@@ -565,25 +560,23 @@ return;
 <pre><code class="language-eve">
 #array deconstruct demo
 driver array_deconstruct:
-  set a :[?]Integer;
+  set a :[]Integer;
 process:
   ** initialize array from Range
   let a := [1..10]; 
 
   ** create new variables using deconstruct
-  new x, y, *_, z := a;
+  new x, y, *, z := a;
 
   ** check new variables
   expect x == 1;
   expect y == 2;
   expect z == 10;
 
-  ** anonymous variable vanish the value
-  expect _ == Null;
 return;
 </code></pre>
 
-<p><b>Note: </b>The spreading statement must specify what is happening with all the elements. Using *_ you can ignore several elements and reach the last element z. You can have only one rest operator "*" in a statement.</p>
+<p><b>Note: </b>The spreading statement must specify what is happening with all the elements. Using * you can ignore several elements and reach the last element z. You can have only one rest operator "*" in a statement.</p>
 
 
 <h3>Array slicing</h3>
@@ -596,7 +589,7 @@ return;
 
 <pre><code class="language-eve">
 driver test_slice:
-  set slice :[?]Symbol;
+  set slice :[]Symbol;
 process:
   new base: [20]Symbol;
   let base := "this is a test array".split();
@@ -852,16 +845,14 @@ global
 </ul>
 
 <h4>Mutability</h4>
-<p>A set can be modified during run-time using operators. When you modify a set, keep in mind that set's are automaticly sorted by a hash key.</p>
-
-<p> You never know what the position of the new element is going to be. Also if you add or remove an element the position of several other elements will be shifted.</p>
+<p>A set can be modified during run-time using operators. When you modify a set, keep in mind that set's are automaticly sorted by a hash key. You never know what the position of the new element is going to be. Also if you add or remove an element the position of several other elements will be shifted.</p>
 
 <ul>
-<li>let += ... -- append</li>
-<li>let -= ... -- delete</li>
+<li>add x in dataSet</li>
+<li>del x in dataSet</li>
 </ul>
 
-<p><b>Note: </b>Any modifier "x=" can be used for altering individual elements. You can rever to all elements using "*" and modify them.</p>
+<p><b>Note: </b>You can rever to all elements using "*" and modify them using modifiers.</p>
 
 <h4>Example:</h4>
 <pre><code class="language-eve">
@@ -872,12 +863,12 @@ driver set_demo:
   set my_set = {0,2,3} :DataSet;
 process
   ** append element 1
-  let my_set += 1;
-  expect 1 in test;
+  add 1 in my_set;
+  expect 1 in my_set;
 
   ** remove element 2
-  let my_set -= 2;
-  expect 2 not in test;
+  del 2 in my_set;
+  expect 2 not in  my_set;
 
   ** remove all elements
   let my_set := {};
@@ -907,18 +898,18 @@ return;
 <p>Intersect operator &amp; find common elements:</p>
 
 <pre><code class="language-eve">
-# Create intersection using &amp;
+# Create intersection using &amp;&amp;
 driver set_intersection_demo:
   set test: DataSet; -- Null set
 process
-  let test := {1,2,3,4} &amp; {3,4,5};
+  let test := {1,2,3,4} &amp;&amp; {3,4,5};
   expect test == {3,4};
 return;
 </code></pre>
 
 <h3>Difference</h3>
 
-<p>Difference operator "-", and modifier "-=", extract elements.</p>
+<p>Difference operator "-", and modifier "-=", extract elements. With this trick you can remove one single element from a DataSet instead of using "del".  Addition "+" operator and "+= modifier will not add elements. You can use && and &= that will perform union. This is to prevent the missconception that you can add elements to a set. Remember, elements in a set must be unique.</p>
 
 <pre><code class="language-eve">
 # Extraact severa lelements;
@@ -933,47 +924,45 @@ process
   ** use modifier -= 
   let test -= {1,3}
   expect test == {2,4};
+
+  ** use modifier &= to add elements
+  let test &= {1,3,5};
+  expect test == {1,2,2,4,5}; -- we keep elements sorted 
 return;
 </code></pre>
 
-<h2><a id="using-dataSet"></a>Using DataSet</h2>
+<h2><a id="using-dataSet"></a>Using DataSet </h2>
 
-<p>A DataSet is very useful for it's property to hold unique elements sorted. This enable deduplication of elements in a list by converting the list to a DataSet.</p>
+<p>A DataSet is very useful for it's property to hold unique elements sorted. This enable deduplication of elements in a list by converting the list to a DataSet. Operator && is overloaded to accept list arguments but will return a DataSet.</p>
 
 <pre><code class="language-eve">
 # convert a list to a dataset
 process:
   new list := (1,2,1,2,3,1,2,3,4);
 
-  ** using operator ":&gt;"
-  new dset := list :&gt; DataSet;
-
-  ** check the new set
+  ** using operator && (union)
+  new dset := {} && list;
   expect dset == {1,2,3,4};
-  
-  ** using operator "+>"
-  new alt := list +> {};
-  expect alt == {1,2,3,4};
 return;
 </code></pre>
 
-<h3>Builder<h3>
+<h3>DataSet Builder<h3>
 
 <p>You can create elements of a DataSet from a range using builder.</p>
 
 <pre><code class="language-eve">
 # demonstrate how to create a set from a range
 process:
-  new dset := {x^2 | x in (2..8:2)};
+  new dset := {1 << x | x in (2..6)};
 
   ** check the new set
-  expect dset == {4,16,36,64};
+  expect dset == {4,8,16,32,64};
 return;
 </code></pre>
 
 <h3>Difference</h3>
 
-<p>You can extract elements out of a DataSet using a list.</p>
+<p>You can extract elements out of a DataSet using a list, or another set.</p>
 
 <pre><code class="language-eve">
 # Extract several elements;
@@ -1020,10 +1009,9 @@ return;
 class Dic = {}(String,Object) &lt;: HashMap;
 driver test:
 # Null map
-  set m :Dic;
+  set m :Dic; -- declare empty dataset
 process
   expect type(m) == HashMap;
-  expect m is Null;
   expect m == {};
 return;
 </code></pre>
@@ -1045,16 +1033,15 @@ process
   new h('c') := 3;
   new h('d') := 4;
 
-  ** optput
+  ** optput all elements
   print h -- {'a':1, 'b':2, 'c':3, 'd':4};
 return;
 </code></pre>
 
 
-
 <h2><a id="using-hashMap"></a>Using HashMap</h2>
 
-<p>Maps are sorted in memory by&nbsp;<em>key</em>&nbsp;for faster search. It is more difficult to search by value because is not unique and not sorted. To search by value one must create a loop and verify every element. This is called full scan and is very slow so you should never use this process.</p>
+<p>Maps are sorted in memory by&nbsp;<em>key</em>&nbsp;for faster search. It is more difficult to search by value because usually is not unique and not sorted. To search by value one must create a loop and verify every element. This is called full scan and is slow so you should never use this process.</p>
 
 <h3>Map Initialization</h3>
 
@@ -1067,8 +1054,11 @@ process:
   ** initialize my_map with values
   let my_map := {1:'a',2:'b',3:'c'};
 
-  ** check if a key is present in a map collection
+  ** check if a specific key is present in a map collection
   expect 3 in my_map; -- will pass
+  
+  ** check if a sub-set of keys is present in a map collection
+  expect {1,3} in my_map;
 return;
 </code></pre>
 
@@ -1082,8 +1072,8 @@ process:
   let animals += {"Rob":"dog", "Kiwi":"bird"};
 
   ** create single element
-  new animals["Toto":"parot"]
-  print  animals;
+  new animals["Toto"] := "parot"
+  print  animals; 
 return;
 </code></pre>
 
@@ -1122,14 +1112,14 @@ return;
 <p>{List, Map, Set}</p>
 <p><b>built-in:</b></p>
 <ul>
-<li>count - retrieve the number of elements</li>
-<li>capacity - retrieve the maximum capacity</li>
-<li>next - position next element</li>
+<li>count() - retrieve the number of elements</li>
+<li>capacity() - retrieve the maximum capacity</li>
+<li>next  - position next element</li>
 <li>first - position to first element</li>
 <li>last - position to last element</li>
 <li>this - reference to current element</li>
 </ul>
-<p><b>set iteration</b>&nbsp;Map and Set are similar. We can visit all elements using&nbsp;<em>for</em>&nbsp;loop:</p>
+<p><b>set iteration</b>&nbsp;Map and Set are iterable. We can visit all elements using&nbsp;<em>for</em>&nbsp;loop:</p>
 
 <h4>Example:</h4>
 <pre><code class="language-eve">
@@ -1163,7 +1153,7 @@ return;
 <pre><code class="language-eve">
 # HashMap iteration
 driver map_generator:
-  set my_map = { (x + y):2^y | x in ('a'..'c') and y in (1..3)}: HashMap;
+  set my_map = { ((x + y): 1 << y) | x in ('a'..'c') and y in (1..3)}: HashMap;
 process:
   cycle: 
     new key  :String;
@@ -1236,9 +1226,9 @@ process
   ** simple object with two fields
   new object = {} :Object; 
 
-  ** create new attributes
-  let object += (x:1);
-  let object += (y:2);
+  ** create new attributes using &= (union modifier)
+  let object &= (x:1);
+  let object &= (y:2);
   ...
   print object.x; -- 1
   print object.y; -- 2
@@ -1258,9 +1248,9 @@ return;
 <h4>Syntax:</h4>
 <pre><code class="language-eve">
 process
-  ** define Null string with default capacity
-  new str1 :String;  -- default Null 
-  new str2 = "": String; -- equivalent to Null
+  ** define empty string with default capacity
+  new str1 :String;      
+  new str2 = "": String; -- equivalent
 ...
 </code></pre>
 
@@ -1282,21 +1272,22 @@ process
   expect str is not ref; --  different locations
 
   ** operator ":=" works by reference
-  let ref := str;        --  reset ref
+  let ref := str;    --  reset ref
   expect str == ref; --  same value
-  expect str is ref; --  same reference
-
-  ** if we modify "str" then "ref" will remain the same
-  ** because the strings are immutable in Eve
-  let str &lt;+ (':'); --  create a new string
-  expect str == "First value:"; --  modified
-  expect ref == "First value";  --  not modified
-  expect str is ref; -- the reference was broken
+  expect str is ref; --  same reference (old reference is garbage)
 
   ** if we recreate str, reference is reset
   let str := "First value"; --  new string
   expect str == ref;     --  same value
   expect str is not ref; --  different location
+
+  ** if we modify "str" then "ref" will remain the same
+  ** because the strings are immutable in Eve
+  let str += ':'; --  create a new string (concatenate ":")
+  expect str == "First value:"; --  modified
+  expect ref == "First value";  --  not modified
+  expect str is not ref; -- the reference was broken
+
 return;
 </code></pre>
 
@@ -1312,7 +1303,7 @@ return;
 <li>Two strings are compared using relation operators: { ==, !=, &lt;, &gt;, &gt;=, &lt;= };</li>
 <li>Single quoted symbols can be compared to Real quoted strings;</li>
 <li>The length of the string is the number of symbols:</li>
-<li>Empty string "" == '' has length 0 and is Null;</li>
+<li>Empty string "" == '' has length 0 and is Empty but not Null;</li>
 </ul>
 
 <h4>Example:</h4>
@@ -1325,27 +1316,29 @@ return;
 </code></pre>
 
 <h3><a id="null-strings"></a>Null strings</h3>
-<p>We can test if a string is Null using "is Null" expression.</p>
-<pre><code class="language-eve"># null string demo
+
+<p>We can test if a string is Null using "is Null" expression. In Eve "" is empty string but Null string is not "" that is empty, A Null string is declared but uninitialized. That is equivalent with Null object.</p>
+
+<pre><code class="language-eve">
+# null string & symbol demo
 driver null_string:
-  ** Null strings
-  set str :String; 
-  set btr := '&omega;';   
+  set str :String; -- Null string
+  set emp := "";   -- empty string
+  set btr :Symbol; -- Null symbol  
 process
   ** null string
   expect str is Null;
-  expect str == Null;
-  expect str == '';
-  expect str == "";
+  expect emp is not Null;
+  
+  ** empty string
+  expect emp is not Null;
+  expect emp == "";
+  expect emp.length() == 0;
 
-  ** initialized string
+  ** symbol follow the same rule
+  expect btr is Null;
+  let btr == '';
   expect btr is not Null;
-  expect btr == "&omega;";
-  expect btr == '&omega;';
-
-  ** somesing unexpected
-  expect btr is not '&omega;'; -- pass, different 
-  expect btr is "&omega;"; -- fail, different objects
 return;
 </code></pre>
 
@@ -1356,50 +1349,41 @@ return;
 
 <p>See also:&nbsp;<a href="https://en.wikipedia.org/wiki/Universal_Coded_Character_Set" rel="nofollow">wikipedia ucs</a>,&nbsp;<a href="https://en.wikipedia.org/wiki/List_of_Unicode_characters#Character_reference_overview" rel="nofollow">unicode characters</a></p>
 
-<p>HTML standard is using special escape codes for each symbol. Is not the scope of this document to explain this codification. In example below we show you some Unicode symbols.</p>
+<p>HTML standard is using special escape codes for each symbol. Is not the scope of this document to explain this codification. In example below we show you some Unicode symbols. Using convention &code; we can escape special UNICODE characters in double quoted string. Eve is parsing a double quoted string and replace these characters with the correct code point.</p>
 
 <h4>Example:</h4>
 <pre><code class="language-eve"># text type has unicode support
 process unicode_text:
-  new us = "I can write Greek: \&alpha;&beta;&gamma;&delta;\.";
+  new us = "I can write Greek: {&alpha;,&beta;,&gamma;,&delta;}";
   print us;
 return;
 </code></pre>
 
 <h4>Output:</h4>
 
-<pre class="fixed">I can write Greek: "&alpha;&beta;&gamma;&delta;".</pre>
+<pre class="fixed">I can write Greek: {&alpha;,&beta;,&gamma;,&delta;}.</pre>
 
-<p>To edit source code containing Unicode literals one must use a specific font and UTF-8 source files. The preferred font for Eve programming is "DejaVu Sans Mono".</p>
+<p>To edit Eve source code containing Unicode literals one must use a specific font and UTF-8 source files. The preferred font for Eve programming is "DejaVu Sans Mono". In this case it is not necesary to use &code; convention. You can copy paste the real Unicode Symbol from character map.</p>
 
 <h4>Tips & Trics</h4>
 
-<p>Due to internal representation of Symbol, it can store 4 ASCII characters. This is a side-effect, not by intention. Is just a feature that you can use as a tric to store data more compressed. We can also store two UTF16 symbols, and one UTF32. This is a curiosity of Eve.</p>
+<p>Sytrings are immutable You can handle more efficient strings using list. For this you can create a list from string. Conversion is implicit made using "feed" operator "<+". This operator is populating the list with characters from string, preserving the spaces between words, reduce many spages to one space.</p>
 
-<pre><code class="language-eve"># Single quoted string 
+<pre><code class="language-eve"># create list from string
 process
-  ** short ASCII strings
-  new str1 := 'a';
-  new str2 := 'abcd';
-  new str3 := '0xFF';
-  new str4 := 'NULL';
+  ** ASCII string buffers
+  new str1  = "test": 
+  new str2  = () <+ str1; -- feed the list with Symbols
 
-  ** all 4 strings have same type
-  expect type(str4) == Symbol;
-
-  ** somesing surprising
-  expect str4 == "NULL";
-  expect str4 != Null;
+  ** check list elements
+  expect str2[1]  == 't';  
+  expect str2 == ('t','e','s','t');
 return;
 </code></pre>
 
-<p><b>Note: </b>Intresting, all hex number (0x00..0xFF) can be stored as Symbol. Notice this is 4 times more that necesary. We know these values can be encoded in a single Byte.</p>
-
-
-
 <h3><a id="using-strings"></a>Using strings:</h3>
 
-<p>In next examples we use type inference to create strings. The length of the string is the number of symbols. You can use operator "*" to initialize a long string with the same symbol or a pattern of symbols.</p>
+<p>In next examples we use type inference to create strings. The length of the string is the number of symbols. You can use operator "*" to initialize a long string with the same Symbol or a String pattern.</p>
 
 <pre><code class="language-eve">
 # string generators
@@ -1407,17 +1391,20 @@ process:
   ** examples of empty strings
   new short_string := "short string";-- most common form of literal
   new long_line := '-' * 80;         -- a long line of 80 dashes
-  new dash_dot  := "-&middot;" * 40; -- a long line -&midot;-&midot;-&midot;
+  new dash_dot  := "-&middot;" * 40; -- a long line "-&middot;-&middot;-&middot;";
+return;
 </code></pre>
 
 
 <h3>String: concatenation</h3>
-<p>Strings can be concatenated using operators and modifiers:</p>
+
+<p>Strings can be concatenated using operator "+" and modifier "+=" and some other ways:</p>
 
 <ul>
   <li>regular concatenation: "+"</li>
+  <li>concatenation with modifier "+="</li>
   <li>string formatting: "#s", "#n" and ?</li>
-  <li>string string pipes "&lt;+":</li>
+  <li>string string pipe "&lt;+":</li>
   <li>collection join() method</li>
 </ul>
 
@@ -1430,8 +1417,8 @@ process:
     new str := " this " + "string"; 
     expect str == " this string";
     
-    ** use string interpolation
-    print "I have insert #{str} here!"
+    ** use string interpolation #{str} is recognized
+    print "I have insert #{str} here!";
   
     ** concatenate string with collection
     print "digits = " + {1,2,3}.join(",")
@@ -1439,14 +1426,14 @@ process:
     ** string pipeline
     print "" <+ {"this ","is ","a "," string"};
   
-    ** string format operator ?
+    ** string format operator ? with #n placeholders for numbers
     print "these numbers #n, #n, #n are prime" ? (1,3,5);
   return;
 </code></pre>
 
 <p><b>symbols & numbers</b></p>
 
-<p>You can concatenate a character with number and number with character. There is an implicit coercion that will transform the number into a string before concatenation. However, to concatenate two numbers you must explicitly join the numbers together using a function join() that will produce a string.</p>
+<p>You can concatenate a Symbol (character) with number. There is an implicit coercion that will transform the number into a string before concatenation. However, to concatenate two numbers you must explicitly join the numbers together using a function join() that will produce a string.</p>
 
 <pre><code class="language-eve">
 # numeric concatenation
@@ -1457,19 +1444,18 @@ process:
 
   ** explicit conversion
   new c := 1 + 'a'; 
-  expect c == "1a"; -- that works
+  expect c == "1a"; -- is a string
 
-  ** concatenate binary numbers (fail)
-  new d := 0b101 + 0b100;
-  expect d == 0b1001; 
-
+  ** explicit join list elements with empty Symbol
+  new test = (1,2,3).join('');
+  expect test == "123";
 return;
 
 </code></pre>
 
 <h3>String: builders</h3>
 
-<p>You can convert a string to a list of symbols, and a collection into a string by using operators: &gt;+ and +&lt; This trick is used to create a string using string builders. In next example we demonstrate several use-cases that will be explained in details later.</p>
+<p>You can convert a range to a list of symbols by using operators: &gt;+ and +&lt;. In next example we demonstrate several use-cases useful to create new strings using range notations.</p>
 
 <pre><code class="language-eve">
 # different ways to convert data into string
@@ -1482,33 +1468,31 @@ process:
   new str2 := "" &lt;+ ("A".."F"); 
   expect str2 == "ABCDEF";
 
-  ** Join a collection
-  new str2 := { ("0x" + a) | a in ("A".."F") }.join(","); 
-  expect str2 == "0xA,0xB,0xC,0xD,0xE,0xF";
+  ** Join a set created with set builder in place
+  new str2 := {"0x1" + a | a in ("A".."F")}.join(','); 
+  expect str2 == "0x1A,0x1B,0x1C,0x1D,0x1E,0x1F";
 return;
 </code></pre>
 
 <h3>String split</h3>
 
-<p>You can split a string in list of words. When you do this, you can specify a symbol or a regular expression. The content of regular expression is removed and not included in the string.<p>
-
-<p>You can split by regular expression and keep the match substring in the result by using "look around" regular expression features. It is not our scope to teach regular expressions.</p>
+<p>You can split a string in list of words. When you do this, you can specify a symbol or a list of symbols all considered separators. Separator is removed and not included in the string.<p>
 
 <pre><code class="language-eve">
 process:
-  new str   := "Eve is a cool language.";
+  new str   := "Eve is a cool language. True?";
   new words := str.split(" ");
-  print words;
+  print words; 
 return;
 </code></pre>
 
 <pre class="output">
-("Eve","is","a", "cool", "language",".");
+("Eve","is","a", "cool", "language.","True?");
 </pre>
 
 <h3><a id="text-literals"></a>Text Literals</h3>
 
-<p>Strings can contain multiple lines separated with end of line character. Large text literal can be defined on multiple lines. We do not have triple quoted  strings """...""" but we use a very special trick to parse long strings. You start with "\n and end with ";. This indicate to the compiler this is a Text or template large string. This kind of string is mutable.</p>
+<p>Strings can contain multiple lines separated with end of line character. Large text literal can be defined on multiple lines. Eve do not have triple quoted  strings """...""" but we use a very special trick to parse long strings. You start with "\n and end with ";. This indicate to the compiler this is a Text or template large string. This kind of string is mutable.</p>
 
 <p>A Text has an different internal representation and can be used to represent HTML or XML and other data format like CSV. Double quotes are preserved without escape sequence. Te example below demonstrate our little trick.</p>
 
@@ -1517,10 +1501,11 @@ return;
 driver text_literal:
 
 process:
+  ** multiline text literal is possible in Eve
   new my_text:="
     Opportunity is missed by most people
-    because it is dressed in overalls
-    and looks like work.
+  because it is dressed in overalls
+  and looks like work.
   "; 
   print my_text;
 return;
@@ -1533,10 +1518,11 @@ because it is dressed in overalls
 and looks like work.
 </pre>
 
+<p>An equal number of spaces was detected by the compiler and removed. The equal number of spaces is the indentation of last double quote, that must be on a new line (alone) follow by semicolumn. This is used by the compiler to determine the indentation.</p>
 
 <h3>String functions</h3>
 
-<p>Full inventory of functions will be design in package specification. We enumerate several functions we wish to have but is not our scope yet to enumerate all possible functions.</h4>
+<p>Full inventory of functions will be design in package specification. We enumerate several function as example that we wish to have, but is not our scope yet to enumerate all possible functions.</h4>
 
 <ul>
   <li>String.split();</li> 

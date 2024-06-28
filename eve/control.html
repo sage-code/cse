@@ -40,9 +40,10 @@ Most languages have similar flow control statements. These are block statements 
 <h2>Page bookmarks</h2>
 
 <table class="table table-sm table-bordered">
+<tr><th>0</th><th><a href="#if"     >job    </a></th> <td>error management block     </td></tr>  
 <tr><th>1</th><th><a href="#if"     >if     </a></th> <td>conditional expression      </td></tr>
 <tr><th>2</th><th><a href="#else"   >else   </a></th> <td>decision block              </td></tr>
-<tr><th>3</th><th><a href="#ladder"  >ladder  </a></th> <td>conditional selector        </td></tr>
+<tr><th>3</th><th><a href="#ladder" >ladder </a></th> <td>conditional selector        </td></tr>
 <tr><th>3</th><th><a href="#match"  >match  </a></th> <td>value based selector       </td></tr>
 <tr><th>4</th><th><a href="#loop"   >loop   </a></th> <td>unconditional repetition    </td></tr>
 <tr><th>5</th><th><a href="#while"  >while  </a></th> <td>conditional repetition      </td></tr>
@@ -74,20 +75,20 @@ Most languages have similar flow control statements. These are block statements 
     ** close resources, tear-down test cases, other things
     ...
     let job_name.status = "pass" if condition; -- job status 
-  done [name];
+  done [name]; -- you can't use if after done
 </code></pre>
 
-<p><b>Notes:</b>Job statement also use keywords: {raise, catch, other, break and done}, but it can use also: {exit, over, panic} to intrerupt a program prematurly. A job can fail but the program will continue with next job. A job status is recorded for reporting. Job status is handled automaticly by the system. If a job raise an error, automaticly is considered failed.</p>
+<p><b>Notes:</b>Job statement also use keywords: {raise, catch, other, break and done}, but it can use also: {expect, exit, over, panic} to intrerupt a program prematurly. A job can fail but the program will continue with next job if failure is handled properly. A job status is recorded for reporting. Job status is handled automaticly by the system. If a job raise an error, automaticly is considered failed. </p>
 
-<p>Job block is similar with try block in java, except it does not have a final clause instead we use "resolve" that is more relevant for purose of job. A job can be rezolved in a flexible way. The most common is to set-up job "status". A job is an object in Eve, so the job has methods.</p>
+<p>Job block is similar with try block in java, except it does not have a final clause instead we use "resolve" that is more relevant for purpose of a job. A job can be rezolved in a flexible way. The most common is to set-up job "status". A job is an object in Eve, so the job has methods and properties. We reffer to current job by it's name.</p>
 
 <h2><a id="if"></a>Conditional</h2>
 
-<p>Keyword "if" establish a conditional statement. Also it can be used in expressions. A conditional statement can be a simple statement or a block statement. You can use "if" after a simple statement or before a block statement.</p>
+<p>Keyword "if" establish a conditional statement. Also it can be used in expressions. A conditional statement can be a simple statement or a block statement. You can also use "if" after a simple statement or before a block statement.</p>
 
 <h4>Code pattern</h4>
 
-<p>This is syntax for a simple statement with conditional execution. It enable or prevent a statement to be executed. It can not be used for block statements.</p>
+<p>This is syntax for a simple statement with conditional execution. It enable or prevent a statement to be executed. </p>
 
 <pre><code class="language-eve"># conditioned statement
 statement if boolean_variable;
@@ -103,9 +104,11 @@ print "a is even" if (a % 2  = 0);
 print "a is odd"  if (a % 2 != 0);
 </code></pre>
 
+<p><b>>Note: </b> The "if" is restricted for some statements. It can't be used after expect, done or next, but it can be used sometimes after "repeat" to terminate a loop. We will explain syntax for each block statement.</p>
+
 <h2><a id="else"></a>Decision block</h2>
 
-<p>In next pattern we use "if/else" keywords to create a decision fork.</p>
+<p>In next pattern we use "if/else" keywords to create a decision branch/fork.</p>
 
 <div align="center">
   <img src="../images/decision.svg" alt="decision" 
@@ -120,13 +123,15 @@ if expression then
 else
   ** false branch
   ...
-done;
+done; -- you can't use if after done
 </code></pre>
 
 <h4>Notes:</h4>
 <ol>
+    <li>The if block dont have a name;</li>
     <li>The if block dont have a local scope;</li>
     <li>The if block if closed with "done;";</li>
+    <li>The else branch is optionall;</li>
 </ol>
 
 <h2><a id="ladder"></a>Ladder</h2>
@@ -154,7 +159,7 @@ else if condition_3 then
 [else]
   ** alternative branch
   ...
-done;
+done; -- you can't use if after done
 </code></pre>
 
 <p><b>Notes:&nbsp;</b>Previous pattern show a complex situation having several conditions in cascade. Cases should be exclusive and most probable case should be evaluated first. Last block, after else is optional. Also, the local scope is optional.</p>
@@ -162,7 +167,7 @@ done;
 <h2><a id="match"></a>Match Selector</h2>
 
 <p>
-This is a multi-path selector similar to switch also named: jump table. It two variants: "all" or "one". That is optional keyword. If used, ALL will evaluate all "when" values it may be matching multiple when blocks. If "one" is used (this is the default), only first block that has a matching value will be executed and the rest are ignored even if a second match exist. The second match should not be present though and is probably a mistake!
+This is a multi-path selector similar to switch also named: jump table. It two variants: "all" or "one". That is optional keyword. If used, ALL will evaluate all values it may be matching multiple cases. If "one" is used (this is the default), only first case that has a matching value will be executed and the rest are ignored, even if a second match exist. The second match should not be present though and is probably a mistake!
 </p>
 
 <div align="center">
@@ -175,7 +180,7 @@ This is a multi-path selector similar to switch also named: jump table. It two v
 
 <pre><code class="language-eve">
 # Define a selector variable
-class Type = {V1, V2, V3, V4} <: Ordinal;
+class Type = {V1, V2, V3, V4} &lt;: Ordinal;
 ...
 process
   new s := V1; 
@@ -193,24 +198,23 @@ process
   when [any | other] then
     ** V3 or V4 found
     ...
-  done;
+  done; -- you can't use if after done
 return;
 </code></pre>
 
 <h4>Notes:</h4>
 <ul>
 <li>options: all or one are exclusive (one) is the default;</li>
-<li>default block (last) is optional: "any" or "other";</li>
-<li>when you use the Type, the default block becomes mandatory;</li>
+<li>default block (last) uses optional: "any" or "other";</li>
+<li>match statement do not have a [label] and is anonymous;</li>
+<li>match statement have a local scope (before when).</li>
 </ul>
 
-<p>The compiler will generate a warning message if not all cases are covered and you do not have use the default block. That is maybe an error but not necesarly. Maybe the type was modified.</p>
-
-<p>Match can be used with any data type not only ordinal. When you use other data type, the Type do not have to be specified. It can be inferred from the variable type.</p>
+<p>The compiler will generate a warning message if not all cases are covered when you do not create the default block. It may be an error but not necesarly. Is better to have information to prevent wrong doing.</p>
 
 <h2><a id="loop"></a>Unconditional Loop</h2>
 
-<p>This is a repetitive block statement. The loop is executed until a "stop" statement is encounter. The stop can be conditioned by "if". This is called an "interruption". You can use keyword "repeat"with conditional "if" to restart the loop early and skip several statements. This is called a "shortcut".</p>
+<p>This is a repetitive block statement. The loop is executed until a "stop" statement is encounter. The stop can be conditioned by "if" or "match". This is called an "interruption". You can use keyword "skip" with conditional "if" to restart the loop early. This is called a "shortcut" statement.</p>
 
 <div align="center">
   <img src="img/loop.svg" alt="loop"
@@ -240,10 +244,11 @@ repeat [label] [if condition];
 <li>Unconditional loop is executed at least one time;</li>
 <li>The label is optional, that's why is in square brackets;</li>
 <li>The label is used, for nested loops otherwise is not necessary.</li>
+<li>Some other languages use {break & continue} we use {stop & skip}</li>
 </ul>
 
 <h2><a id="while"></a>While Loop</h2>
-<p>Execute a block of code as long as one condition is true. When the condition become false the repetitive block stops and block "else" is executed. If the condition is never true only the "else" block is executed.</p>
+<p>Execute a block of code as long as one condition is true. When the condition become false the repetitive block ends. If the condition is never true only the "else" block is executed. If the condition was true for a while, the else block is not executed.</p>
 
 <div align="center">
   <img src="../images/while.svg" alt="while-loop"
@@ -266,7 +271,7 @@ while condition loop
 else
   ** alternative path
   ...
-repeat [label]; -- you can't use again "if" for ths repeat
+repeat [label]; -- you can't use "if" here
 </code></pre>
 
 <h4>Example:</h4>
@@ -289,7 +294,7 @@ process
     if e  &gt;= "c" then
         write e;
         write ',' if e is not this.tail;
-    end if;
+    done;
   else
     panic; -- in canse of length() == 0
   repeat; 
@@ -328,7 +333,7 @@ for var in (min..max) loop
     ** early interruption
     stop if condition;
     ...
-repeat [label]; -- you can't use "if" for this repeat
+repeat [label]; -- you can't use "if" here
 </code></pre>
 
 <h4>Notes:</h4>

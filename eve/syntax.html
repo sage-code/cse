@@ -370,7 +370,7 @@ return;
   expect object is not original;
 </code></pre>
 
-<p><b>Note: </b>For native type, the operator "is" do not work at all. Attempting to use "is" or "is not" with a native type will always return false even if the values are equal. For native types you have to use "==" to compare the values. For objects, "==" will execute deep comparison, and will return "true" if all object attributes or data elements have also equal values.</p> 
+<p><b>Note: </b>For native type, the operator "is" do not work at all. Attempting to use "is" or "is not" with a native type will always return false even if the values are equal. For native types you have to use "==" to compare the values. For objects, "==" will execute deep comparison, and will return "True" if all object attributes or data elements have also equal values.</p> 
 
 <h3>Ternary expression</h3>
 
@@ -481,7 +481,7 @@ return;</code></pre>
 <tr><td>commit   </td><td>constant </td><td>create    </td><td>cursor   </td></tr>
 <tr><td>begin    </td><td>delete   </td><td>descend   </td><td>discard  </td></tr>
 <tr><td>else     </td><td>end      </td><td>error     </td><td>exit     </td></tr>
-<tr><td>expect   </td><td>fail     </td><td>feature   </td><td>fetch    </td></tr>
+<tr><td>expect   </td><td>break    </td><td>feature   </td><td>fetch    </td></tr>
 <tr><td>for      </td><td>from     </td><td>function  </td><td>group    </td></tr>
 <tr><td>halt     </td><td>if       </td><td>import    </td><td>initialize</td></tr>
 <tr><td>insert   </td><td>into     </td><td>item      </td><td>constant  </td></tr>
@@ -498,7 +498,7 @@ return;</code></pre>
 <tr><td>update   </td><td>use      </td><td>labe      </td><td>view     </td></tr>
 <tr><td>where    </td><td>while    </td><td>with      </td><td>write    </td></tr>
 <tr><td>call     </td><td>panic    </td><td>any       </td><td>other    </td></tr>
-<tr><td>          </td><td>         </td><td>          </td><td>         </td></tr>
+<tr><td>resolve  </td><td>         </td><td>          </td><td>         </td></tr>
 </table>
 
 <h3>Definition regions</h3>
@@ -651,6 +651,22 @@ return;</code></pre>
 <td>done</td>
 <td>close a control statement</td>
 </tr>
+<tr>
+  <td>job</td>
+  <td>start a scope block with error handlers</td>
+</tr>
+<tr>
+  <td>try</td>
+  <td>start job block region</td>
+  </tr>
+<tr>
+  <td>catch</td>
+  <td>handle a specified error type or other</td>
+  </tr>  
+<tr>
+  <td>resolve</td>
+  <td>conclude a job, cleanup and resolute</td>
+</tr>
 </tbody>
 </table>
 
@@ -736,10 +752,6 @@ return;</code></pre>
 <td>interrupt current cycle and continue after the "repeat" keyword.</td>
 </tr>
 <tr>
-<td>catch</td>
-<td>handle an error immediately to avoid logic fragmentation.</td>
-</tr>
-<tr>
 <td>raise</td>
 <td>create exception with error code > 0 (recoverable).</td>
 </tr>
@@ -748,12 +760,8 @@ return;</code></pre>
 <td>end a repetitive block and continue program.</td>
 </tr>
 <tr>
-<td>fail</td>
-<td>create a fail status and skip the rest of the job.</td>
-</tr>
-<tr>
 <td>pass</td>
-<td>create a pass status and skip the rest of the job.</td>
+<td>does absolutely nothing, is just a dummy statement</td>
 </tr>
 <tr>
 <td>retry</td>
@@ -781,8 +789,8 @@ return;</code></pre>
   </tr>
 <tr>
 <tr>
-  <td>wait all</td>
-  <td>stop main process and wait for all coroutines to finish</td>
+  <td>wait</td>
+  <td>intrerupt the main process for specified time</td>
   </tr>
 <td>run</td>
 <td>execute an aspect in asynchronous mode</td>
@@ -797,11 +805,11 @@ return;</code></pre>
 </tr>
 <tr>
 <td>exit</td>
-<td>interrupt execution of a process or sub-program</td>
+<td>interrupt execution of a process or sub-program without raising an error</td>
 </tr>
 <tr>
 <td>over</td>
-<td>interrupt current process and terminate application</td>
+<td>interrupt all processes and terminate application</td>
 </tr>
 </tbody>
 </table>
@@ -1201,7 +1209,7 @@ return;</code></pre>
 <td>equivalence  "&equiv;" (compare value & type)</td>
 </tr>
 <tr>
-<td>not eq</td>
+<td>!eq</td>
 <td>non equivalence "!&equiv;" (compare value & type)</td>
 </tr>
 <tr>

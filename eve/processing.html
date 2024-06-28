@@ -41,13 +41,13 @@
 <hr>
 <ul>
   <li><a href="#main-process">Main process</a></li>
-  <li><a href="#main-process">Aspect execution</a></li>
+  <li><a href="#execution">Aspect execution</a></li>
   <li><a href="#parallel">Parallel processes</a></li>
   <li><a href="#exceptions">Exception handling</a></li>
 </ul>
 <hr>
 
-<a><a id="main-process"></a>Process</h2>
+<h2><a id="main-process"></a>Process Structure</h2>
 
 <p>A process can do one or more jobs. Each job is a try block. Jobs are sequential. Any job can pass or fail. User can force a job to pass or fail. Also user can decide if process can continue with next job. When an exception is raised a process is interrupted.</p>
 
@@ -269,7 +269,7 @@ return;
 
 <hr>
 
-<h2><a id="exceptions"></a>Exceptions</h2>
+<h2><a id="exceptions"></a>Exception Handlers</h2>
 
 <p>An exception is an object that has methods. The EVE system defines several system variables and system objects used to handle exceptions. In Eve, all exceptions are considered errors. We can monitor jobs using a log and record exceptions in this log. Exceptions from one aspect process can propagate to the main process.</p> 
 

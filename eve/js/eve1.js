@@ -23,11 +23,9 @@ function apply_style(str) {
     str = str.replace(/\binitialize\b/,keyword("initialize"))  
 
     // mandatory 2 space intentation
-    str = str.replace(/\breturn\b/,keytab("return"))
     str = str.replace(/\bmethod\b/,keytab("method"))
     str = str.replace(/\bcreate\b/,keytab("create"))
     str = str.replace(/\brelease\b/,keytab("release"))
-    str = str.replace(/\bfunction\b/,keytab("function"))
     str = str.replace(/\bshell\b/,keytab("shell"))
 
     // keywords in statement     
@@ -63,7 +61,8 @@ function apply_style(str) {
     str = str.replace(/\bwhen\b/,control("when"))
     str = str.replace(/\bjob\b/,control("job"))
     str = str.replace(/\btry\b/,control("try"))
-    str = str.replace(/\bcatch\b/,control("catch"))   
+    str = str.replace(/\bcatch\b/,control("catch")) 
+    str = str.replace(/\bresolve\b/,control("resolve"))   
     str = str.replace(/\bcase\b/,control("case"))  
     str = str.replace(/\bon\b/,control("on"))    
     str = str.replace(/\bloop\b/,control("loop"))
@@ -133,7 +132,6 @@ function apply_style(str) {
     str = str.replace(/\balter\b/,keytab("alter"))
     str = str.replace(/\bmake\b/,keytab("make"))
     str = str.replace(/\bstore\b/,keytab("store"))
-    str = str.replace(/\bapply\b/,keytab("apply"))
     str = str.replace(/\bstart\b/,keytab("start"))
     str = str.replace(/\byield\b/,keytab("yield"))
     str = str.replace(/\brun\b/,keytab("run"))
