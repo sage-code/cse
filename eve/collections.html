@@ -14,7 +14,7 @@
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="../images/favicon.ico">
   <!-- Eve code highlighter -->
-  <script src="js/eve.js"></script>
+  <script src="js/eve1.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="../sage.css">
   </head>
@@ -499,11 +499,11 @@ process
   print nec == []; -- True
 
   ** extend symbol array;
-  apply vec.extend(10);
+  vec.extend(10);
   print vec; -- expect ['','','','','','','','','','']
  
   ** extend numeric array;
-  apply nec.extend(10);
+  nec.extend(10);
   print nec; -- expect [0,0,0,0,0,0,0,0,0,0];
 return;
 </code></pre>
@@ -739,7 +739,7 @@ process
   expect mat[#,#]; -- 16 = last element
 
   ** nice output using array print method
-  apply mat.print;
+  mat.print;
 return;
 </code></pre>
 

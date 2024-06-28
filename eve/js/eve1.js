@@ -57,26 +57,28 @@ function apply_style(str) {
     str = str.replace(/\bscrub\b/g,keytab("scrub"))
     str = str.replace(/\bdelete\b/g,keytab("delete"))
 
-    //  creat control flow
-    str = str.replace(/\bbegin\b/,control("begin"))   
+    //  creat control flow 
     str = str.replace(/\bcycle\b/,control("cycle"))
     str = str.replace(/\brepeat\b/,control("repeat"))    
     str = str.replace(/\bwhen\b/,control("when"))
     str = str.replace(/\bjob\b/,control("job"))
+    str = str.replace(/\btry\b/,control("try"))
+    str = str.replace(/\bcatch\b/,control("catch"))   
     str = str.replace(/\bcase\b/,control("case"))  
     str = str.replace(/\bon\b/,control("on"))    
     str = str.replace(/\bloop\b/,control("loop"))
     str = str.replace(/\bwhile\b/,control("while"))
     str = str.replace(/\bfor\b/,control("for"))
     str = str.replace(/\btask\b/,control("task"))
-    str = str.replace(/\btry\b/,control("try"))
     str = str.replace(/\bmiss\b/,control("miss"))
     str = str.replace(/\bmatch\b/,control("match"))
     str = str.replace(/\bif\b/g,control("if"))
-    str = str.replace(/\bthen\b/,control("then"))
-    str = str.replace(/\bcatch\b/,control("catch"))    
+    str = str.replace(/\bthen\b/,control("then"))    
     str = str.replace(/\belse\b/g,control("else"))
     str = str.replace(/\bdone\b/g,control("done"))
+    str = str.replace(/\bbegin\b/,control("begin"))  
+    str = str.replace(/\bsplit\b/,control("split"))  
+    str = str.replace(/\bjoin\b/,control("join"))      
 
     // colorize data types keywords
     str = str.replace(/\bByte\b/g,types("Byte"))

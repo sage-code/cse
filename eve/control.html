@@ -14,7 +14,7 @@
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="../images/favicon.ico">
   <!-- Eve code highlighter -->
-  <script src="js/eve.js"></script>
+  <script src="js/eve1.js"></script>
   <!-- Custom css -->
   <link rel="stylesheet" href="../sage.css">
   </head>
@@ -49,6 +49,38 @@ Most languages have similar flow control statements. These are block statements 
 <tr><th>6</th><th><a href="#for"    >for    </a></th> <td>range controlled repetition </td></tr>
 </table>
 
+<h2><a id="job"></a>The job</h2>
+
+<p>Job block is one of most powerful Eve feature. It enable creation of protected blocks that can handle exceptions. This block can be used in processes, routines, functions or methods to avoid runtime errors.</p>
+
+<h4>Syntax pattern</h4>
+
+<pre><code class="language-eve">
+**job description or notes 
+  job job_name try
+    ** some job statements or test use-case
+    ...
+    raise "error" if condition; -- intrerupt job with error
+    ...
+    break if condition; -- intrerupt job without error
+    ...
+  catch error1:
+    ** handle error
+  catch error2:
+    ** handle error
+  catch other:
+    ** handle all errors
+  resolve:
+    ** close resources, tear-down test cases, other things
+    ...
+    let job_name.status = "pass" if condition; -- job status 
+  done [name];
+</code></pre>
+
+<p><b>Notes:</b>Job statement also use keywords: {raise, catch, other, break and done}, but it can use also: {exit, over, panic} to intrerupt a program prematurly. A job can fail but the program will continue with next job. A job status is recorded for reporting. Job status is handled automaticly by the system. If a job raise an error, automaticly is considered failed.</p>
+
+<p>Job block is similar with try block in java, except it does not have a final clause instead we use "resolve" that is more relevant for purose of job. A job can be rezolved in a flexible way. The most common is to set-up job "status". A job is an object in Eve, so the job has methods.</p>
+
 <h2><a id="if"></a>Conditional</h2>
 
 <p>Keyword "if" establish a conditional statement. Also it can be used in expressions. A conditional statement can be a simple statement or a block statement. You can use "if" after a simple statement or before a block statement.</p>
@@ -82,23 +114,19 @@ print "a is odd"  if (a % 2 != 0);
 </div>
 
 <pre><code class="language-eve"># dual path decision
-begin [label]:
-  ** local scope
-  ...
 if expression then
   ** true branch
   ...
 else
   ** false branch
   ...
-done [label];
+done;
 </code></pre>
 
 <h4>Notes:</h4>
 <ol>
-    <li>The else branch is optional;</li>
-    <li>The label is optional;</li>
-    <li>The local scope is optional;</li>
+    <li>The if block dont have a local scope;</li>
+    <li>The if block if closed with "done;";</li>
 </ol>
 
 <h2><a id="ladder"></a>Ladder</h2>
@@ -114,9 +142,6 @@ done [label];
 <h4>Example:</h4>
 
 <pre><code class="language-eve">#selection ladder
-begin [label]:
-  ** local variables
-  ...
 if condition_1 then
   ** first branch
   ...
@@ -129,7 +154,7 @@ else if condition_3 then
 [else]
   ** alternative branch
   ...
-done [label];
+done;
 </code></pre>
 
 <p><b>Notes:&nbsp;</b>Previous pattern show a complex situation having several conditions in cascade. Cases should be exclusive and most probable case should be evaluated first. Last block, after else is optional. Also, the local scope is optional.</p>
@@ -162,14 +187,13 @@ process
   when V1 then
     ** first path
     ...
-    [break];
   when V1, V2 then
     ** second path
     ...
   when [any | other] then
     ** V3 or V4 found
     ...
-  done [Type];
+  done;
 return;
 </code></pre>
 
@@ -177,8 +201,6 @@ return;
 <ul>
 <li>options: all or one are exclusive (one) is the default;</li>
 <li>default block (last) is optional: "any" or "other";</li>
-<li>break is necessary to avoid "fall-trough" with "all" option;
-<li>break is optional with "one" option. First match is executed;</li>
 <li>when you use the Type, the default block becomes mandatory;</li>
 </ul>
 
@@ -188,7 +210,7 @@ return;
 
 <h2><a id="loop"></a>Unconditional Loop</h2>
 
-<p>This is a repetitive block statement. The loop is executed until a "break" statement is encounter. The break can be conditioned by "if". This is called an "interruption". You can use keyword "repeat"with conditional "if" to restart the loop early and skip several statements. This is called a "shortcut".</p>
+<p>This is a repetitive block statement. The loop is executed until a "stop" statement is encounter. The stop can be conditioned by "if". This is called an "interruption". You can use keyword "repeat"with conditional "if" to restart the loop early and skip several statements. This is called a "shortcut".</p>
 
 <div align="center">
   <img src="img/loop.svg" alt="loop"
@@ -244,7 +266,7 @@ while condition loop
 else
   ** alternative path
   ...
-repeat [label];
+repeat [label]; -- you can't use again "if" for ths repeat
 </code></pre>
 
 <h4>Example:</h4>
@@ -267,7 +289,7 @@ process
     if e  &gt;= "c" then
         write e;
         write ',' if e is not this.tail;
-    done;
+    end if;
   else
     panic; -- in canse of length() == 0
   repeat; 
@@ -306,7 +328,7 @@ for var in (min..max) loop
     ** early interruption
     stop if condition;
     ...
-repeat [label];
+repeat [label]; -- you can't use "if" for this repeat
 </code></pre>
 
 <h4>Notes:</h4>

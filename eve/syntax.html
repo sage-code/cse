@@ -14,7 +14,7 @@
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="../images/favicon.ico">
   <!-- Eve code highlighter -->
-  <script src="js/eve.js"></script>
+  <script src="js/eve1.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="../sage.css">
   </head>
@@ -475,7 +475,7 @@ return;</code></pre>
 
 <table class="table table-bordered table-dark table-hover table-sm shadow">
 <tr><td>catch    </td><td>alias    </td><td>alter     </td><td>analyze</td></tr>
-<tr><td>append   </td><td>apply    </td><td>ascend    </td><td>augment</td></tr>
+<tr><td>append   </td><td>join     </td><td>ascend    </td><td>augment</td></tr>
 <tr><td>start    </td><td>method   </td><td>stop      </td><td>by       </td></tr>
 <tr><td>case     </td><td>class    </td><td>clone     </td><td>close    </td></tr>
 <tr><td>commit   </td><td>constant </td><td>create    </td><td>cursor   </td></tr>
@@ -484,7 +484,7 @@ return;</code></pre>
 <tr><td>expect   </td><td>fail     </td><td>feature   </td><td>fetch    </td></tr>
 <tr><td>for      </td><td>from     </td><td>function  </td><td>group    </td></tr>
 <tr><td>halt     </td><td>if       </td><td>import    </td><td>initialize</td></tr>
-<tr><td>insert   </td><td>into     </td><td>item      </td><td>join     </td></tr>
+<tr><td>insert   </td><td>into     </td><td>item      </td><td>constant  </td></tr>
 <tr><td>limit    </td><td>loop     </td><td>method    </td><td>object   </td></tr>
 <tr><td>offset   </td><td>open     </td><td>order     </td><td>one      </td></tr>
 <tr><td>over     </td><td>package  </td><td>pass      </td><td>print    </td></tr>
@@ -498,7 +498,7 @@ return;</code></pre>
 <tr><td>update   </td><td>use      </td><td>labe      </td><td>view     </td></tr>
 <tr><td>where    </td><td>while    </td><td>with      </td><td>write    </td></tr>
 <tr><td>call     </td><td>panic    </td><td>any       </td><td>other    </td></tr>
-<tr><td>constant </td><td>         </td><td>          </td><td>         </td></tr>
+<tr><td>          </td><td>         </td><td>          </td><td>         </td></tr>
 </table>
 
 <h3>Definition regions</h3>
@@ -764,24 +764,32 @@ return;</code></pre>
   <td>jump to next job from the recovery block.</td>
   </tr>
 <tr>
-<td>apply</td>
-<td>execute a process or aspect in synchronous mode</td>
-</tr>
-<tr>
 <td>start</td>
-<td>execute asynchronously an aspect</td>
+<td>start a coroutine in asynchronous mode</td>
 </tr>
 <tr>
 <td>yield</td>
-<td>interrupt current process and wait for other processes</td>
+<td>unused (replaced by suspend/resume/wait)</td>
 </tr>
 <tr>
+  <td>suspend</td>
+  <td>intrerupt a coroutine and wait for resume</td>
+  </tr>
+<tr>
+  <td>resume</td>
+  <td>resume a suspended coroutine specified</td>
+  </tr>
+<tr>
+<tr>
+  <td>wait all</td>
+  <td>stop main process and wait for all coroutines to finish</td>
+  </tr>
 <td>run</td>
-<td>execute a routine in asynchronous mode</td>
+<td>execute an aspect in asynchronous mode</td>
 </tr>
 <tr>
 <td>call</td>
-<td>execute a routine in synchronous mode</td>
+<td>execute a shell command in synchronous mode</td>
 </tr>
 <tr>
 <td>halt</td>

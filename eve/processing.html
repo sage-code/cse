@@ -14,7 +14,7 @@
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="../images/favicon.ico">
   <!-- Eve code highlighter -->
-  <script src="js/eve.js"></script>
+  <script src="js/eve1.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="../sage.css">
   </head>
@@ -41,6 +41,7 @@
 <hr>
 <ul>
   <li><a href="#main-process">Main process</a></li>
+  <li><a href="#main-process">Aspect execution</a></li>
   <li><a href="#parallel">Parallel processes</a></li>
   <li><a href="#exceptions">Exception handling</a></li>
 </ul>
@@ -67,84 +68,77 @@
 <p>Next design pattern show how to create several jobs in a process. Having a process with jobs will enhance your ability to crate robust code that can handle errors and prevent catastrophic defects.</p>
 
 <pre><code class="language-eve">
-# define process with label
+# define process with jobs
 process | initialize:
   ** local declarations
   ....
-  ** preconditions
-  exit if condition;
-job (c1,"description") try
-  ...
-  raise "error" if condition; -- recoverable
-  ...
-  exit if condition; -- execute finalization
-  ...
-  pass if condition; -- continue next job
-  ...
-  fail if condition; -- continue next job
-  ...
-job (c2,"description") try
-  ...
-job (c3,"description") try
-  ...
+  ** preconditions (end prematurly the  process)
+  ** silent stop process and do not execute finalization or recovery
+  abort if condition;
+
+  ** description of c1 job 
+  job c1 try
+    ...
+  done c1;
+
+  ** description of c2 job
+  job c2 try
+    ...
+  done c2;
+
+  ** description of c3 job
+  job c3 try
+    ...
+  done c3;
+
+  ** other statements after jobs are succesfully executed
+  ** post condition checks for the entire process
+  expect condition, "error message";
+  ....
+
 recover
-  ** check if a resume is required
-  resume if condition1; 
-  resume if condition2;
-  ...
-  ** exception handlers
-  case error1 then
-    ** exception handler
-    ...
-  case error2 then   
-    ...
-    retry | panic;
-  else
-    ...
-    retry } panic; 
+  ** decide what to do next in case of error
+  [exit] | [raise] | [panic]; 
 finalize
-    ** close resources
+    ** close resources or channels
     ...
-    ** report the errors
+    ** print debug messages 
+    ...
+    ** report the errors (or not)
     ...
 return;
 </code></pre>
 
+<p><b>Notes:</b>For this design pattern we have demonstrate a sequential process that is more likely used by an aspect. We think this process structure provides a robust framework for error handling and flow control. It allows for:</p>
+
+<ul>
+  <li>Fine-grained error handling within each job</li>
+  <li>Process-level error recovery</li>
+  <li>Guaranteed execution of cleanup code</li>
+  <li>Clear separation of concerns between different jobs in the process</li>
+</ul>
+
 <h3>Process Keywords</h3>
-
-<p>The process is created and controlled by many keywords. Mastering these keywords is important to use the process effective. We have chosen keyword careful to be easy to memorize.</p>
-
-<table class="table table-sm table-bordered">
-<tr><th>job</th><td>create one step in the process</td></tr>
-<tr><th>try</th><td>begin job executable block</td></tr>
-<tr><th>catch</th><td>handle an error in current job</td></tr>
-<tr><th>pass</th><td>record success, and skip to next job</td></tr>
-<tr><th>fail</th><td>record failure, and execute next job</td></tr>
-<tr><th>retry</th><td>redo the task that raise a recoverable error</td></tr>
-<tr><th>exit</th><td>ignore next jobs and execute the finalization</td></tr>
-<tr><th>resume</th><td>return in the process and execute next job</td></tr>
-<tr><th>raise</th><td>create a recoverable error, jump to recovery</td></tr>
-<tr><th>panic</th><td>jump to finalize and stop the application</td></tr>
-</table>
 
 <h4>Notes</h4>
 
 <ul>
-<li>Any driver or aspect, must implement one process;</li>
+<li>Any driver or aspect, can and must implement one single process;</li>
 <li>A process create a local scope, but also has access to a global context;</li>
 <li>Before first job there is a region for preparation/preconditions</li>
-<li>Preconditions can stop the process and do not trigger finalization region</li>
-<li>You should not call exit from recover, the exit is automatic</li>
-<li>Jobs can't be nested, they are all on same level with process</li>
-<li>Process local variables are allocated dynamic when process starts;</li>
-<li>All tasks of a single process are execute sequential from top down;</li>
-<li>When the last task is finished the local variables are removed;</li>
-<li>You can create local lambda expressions and objects;</li>
-<li>You can't define classes, in processes but you can initialize objects;</li>
-<li>Alternative to jobs, a process can call aspects using the "run" command;</li>
+<li>Preconditions can abort the process and do not trigger finalization region</li>
+<li>Jobs can't be nested, they are all on same level with the process</li>
+<li>All jobs of a single process are execute sequential from top down;</li>
+<li>When the project finish the local variables are released from memory;</li>
+<li>You can create local variables, lambda expressions and new objects;</li>
+<li>You can't define local functions, classes or routines in processes;</li>
 </ul>
 
-<p><b>Process execution</b>&nbsp; A processis executed using "run" command with aspect name and list of arguments, from a driver. For one single argument, or no argument the parentheses are not required in the aspect call. For a list of arguments you use parenthesis;</p>
+<h2><a id="execution"></a>Aspect execution</h2>
+
+<p>An aspect is executed using "run" command with aspect name and list of arguments. For one single argument, or no argument the parentheses are not required in the aspect call. For a list of arguments you should use parenthesis;</p>
+
+<h4>Examples:</h4>
 
 <pre><code class="language-eve">#these are all valid process calls
 run aspect_name; -- call process without arguments
@@ -178,7 +172,7 @@ process:
   cycle:
     new arg: String;
   for arg in args loop;
-    apply print_this(arg);
+    run print_this(arg);
   repeat;
 return;
 </code></pre>
@@ -187,9 +181,7 @@ return;
 
 <p>One aspect is executed from a driver. You can not execute an aspect from itself. Recursive aspects are not supported. The compiler will detect a recursive aspect and will fail at runtime.</p>
 
-<h4>Synchronously</h4>
-
-<p>Aspects can be executed in serial mode one after another. Let's consider we have 3 aspects: {one, two, three}. Main process can execute each aspect using keyword: "run" and can block the main process uwing wait. This will interrupt the driver process and will execute aspect process one by one:</p>
+<p>Aspects can be executed in serial mode one after another. Let's consider we have 3 aspects: {one, two, three}. Main process can execute each aspect using keyword: "run" and can block the main process waiting for each aspect to finish. This will interrupt the driver main process and will execute aspect process one by one:</p>
 
 <pre><code class="language-eve">
 driver test_apply:
@@ -197,9 +189,9 @@ driver test_apply:
 # synchronous call
 process:
   ** apply each aspect
-  run [folder/]aspect_one(arguments);   wait;
-  run [folder/]aspect_two(arguments);   wait;
-  run [folder/]aspect_three(arguments); wait;
+  run [folder/]aspect_one(arguments);
+  run [folder/]aspect_two(arguments);
+  run [folder/]aspect_three(arguments);
   ...
 return;
 </code></pre>
@@ -209,7 +201,7 @@ return;
 
 <h2><a id="parallel"></a>Parallel processes</h2>
 
-<p>You can create parallel processes using multiple aspects. Processes ca be executed on multi-core processors one for each core. Not all processes have same duration. You can wait in the driver for a process to finish. </p>
+<p>You can create parallel processes using multiple aspects. Processes ca be executed on multi-core processors one for each core. Not all processes have same duration. You can wait in the driver for a group of process to finish. </p>
 
 <!-- a regular diagram -->
 <div class="text-center">
@@ -218,37 +210,62 @@ return;
   <p>Parallel System</p>
 </div>
 
-<p>Aspects can be executed asynchronously using keywords "run" and "wait all". This is not blocking the main process and you can start multiple aspects in parallel. Each aspect will start it's own process in this case.</p>
+<p>Aspects can be executed asynchronously using a special block of code that can group aspects. The main process can execute group by group. Each group can have an optional name. Groups are sequential.</p>
 
 <pre><code class="language-eve">
 # asynchronous call demo
 driver async_demo:
 process:
-  ** enqueue aspects to be resolved
-  run [folder/]aspect_one(arguments);
-  run [folder/]aspect_two(arguments);
-  run [folder/]aspect_three(arguments);
+  ** main process is a series of sequential groups 
 
-  ** wait for all aspects to finish
-  wait all;
+  begin group1:
+    ** local variables for group1
+  split:
+    run aspect1;
+    run aspect2;
+  join group1;
+
+  ** group1 is now complete, group2 starts
+
+  begin group2:
+    ** local variables for group2
+  split:
+    run aspect3;
+    run aspect4;
+  join group2;
+
+  ** Both groups are now complete
+
 return;
 </code></pre>
 
-<p>One driver can start same aspect multiple times with different parameters and compute different data sets. Next example show how to execute one aspect using a loop. After the aspect start several times, the main process must wait for all to finish.</p>
+<h4>Notes:</h4>
+<ul>
+  <li>Each group executes sequentially.</li>
+  <li>Within each group, aspects can run concurrently.</li>
+  <li>The join statement is always for a sigle group;</li>
+  <li>Recover and finalize regions are optional in drivers;</li>
+</ul>
+
+<p>One driver can start same aspect multiple times with different parameters and compute different data sets. Next example show how to execute one aspect using a loop in a demo group. After the aspect start several times, the main process must wait for group demo to finish.</p>
 
 <pre><code class="language-eve">
 ## create parallel processes
 driver async_loop:
 process:
   ** enqueue same aspect 4 times
-  cycle
+  begin demo:
     new i: Integer;
-  for i in (1..4) loop
-    run demo(i);
-  repeat;
-  wait all;
+  split
+    for i in (1..4) loop
+      run demo(i); -- start demo aspect asynchronously
+    repeat;
+  join demo;
+  ** all demo processes have finished
 return;
 </code></pre>
+
+<p><b>Note: </b>Groups are bringing back the driver process in synchronous mode. That is good for error handling. If any process in the group propagate out an exception, the othe groups will not begin. THerefore a recovery region, can catch all errors in any sub-process.</p>
 
 <hr>
 
@@ -256,9 +273,9 @@ return;
 
 <p>An exception is an object that has methods. The EVE system defines several system variables and system objects used to handle exceptions. In Eve, all exceptions are considered errors. We can monitor jobs using a log and record exceptions in this log. Exceptions from one aspect process can propagate to the main process.</p> 
 
-<p>The "error" is a variable of type Exception.Error that is created when an exception is raised. The system variable $error contains several elements that are errors. These are filled in by the Eve program when an exception is raised.</p> 
+<p>The "$error" is a variable of type Exception.Error that is created when an exception is raised. It alwais point to last error of a process. The system variable $trace contains several elements that are errors. These are filled in by the Eve program when an exception is raised. If an error is raised from a recover region it will propagate in the main process.</p> 
 
-<p>Error handling in Eve is done at the process level. A process can be interrupted by a system exception or it can create user-defined exceptions. We use special keywords to signal an exception from inside a job.</p>
+<p>Error handling in Eve is done at the job level or process level. A process can be interrupted by a system exception or it can create user-defined exceptions. We use special keywords to signal an exception from inside a job: {raise, expect}.</p>
 
 <h4>Pseudocode</h4>
 
@@ -305,11 +322,13 @@ return;
 
 <p>Runtime errors can be system exceptions or user defined exceptions. System exceptions are predefined in the Exception package. Every system module can define system errors. User errors can be defined in project library.</p>
 
-<p>Error instances are created during the program execution when program can not continue. An error can be raised by application modules, aspects or drivers or by the system modules.</p>
-
 <h3>Raising exception</h3>
 
-<p>There are two alternative statements to create user defined exceptions: "raise", "expect". These methods are static methods defined in  Exception module. You can raise exception from processes, coroutines, methods and functions.</p>
+<p>Error instances are created during the process execution when a process can not continue. An error can be raised by application modules, aspects or drivers or by the system modules. Developer can create errors. These are called "runtime errors" because they are not "syntax errors".</p>
+
+<p>There are two alternative statements to create user defined exceptions: {raise, expect}. These are public/static routines defined in  Exception module. You can raise exception from jobs, routines, methods and functions.</p>
+
+<b>Syntax:</b>
 
 <pre><code class="language-eve">
 ** system exception
@@ -327,21 +346,23 @@ raise (code,"message") if condition;
 
 <pre><code class="language-eve">** runtime expectations
 expect condition1;
-expect condition2 else "user defined message";
+expect condition2, "user defined message";
 </code></pre>
 
 <h4>Nots:</h4>
 <ul>
-<li>can be used as pre-condition</li>
-<li>can be used as post-condition</li>
-<li>unexpected error has code = 0</li>
+<li>can be used as inside any block statement inlcuding jons, loops or decision blocks</li>
+<li>can be used as post-condition after jobs before the recover region in any process</li>
+<li>Exception create one single type of error: implicit error is AssertError</li>
 </ul>
 
 <h3>Recover from exception</h3>
 
-<p>The <b>recover</b> region define an "exception handling region" for a processes. Coroutines, methods and functions can't handle exceptions. Recover region is a optional. If this region do not exist in a process, all exceptions propagate into the main process. If the main process to not have a recover region, exception can stop/crash the application.</p>
+<p>Jobs can handle exceptions. Jobs can be used in routines, methods, functions or processes. This enable developers to create robust code and handle the errors immediatly, close to the point where they are created. If exceptions/errors are not handled in jobs, they propagate automaticly to the process.</p>
 
-<p>In recover region developer can decide to abort the program, print a message, resume the execution or wait and tray again. Maybe a second time will work. Aspect processes should handle as much as possible to keep the concerns separated. Main process will handle the general case just in case.</p>
+<p>The <b>recover</b> region define an "exception handling region" for a processes. Recover region is a optional/backup. If this region do not exist in a process, all exceptions propagate into the main process. If the driver main process to not have a recover region, exception can stop/crash the application.</p>
+
+<p>In recover region developer can decide using the control statements and $error system variable what to do next. He can abort the program, print a message, raise anothe error, propagate current error or silently exit the process. Aspect processes should handle as much as possible to keep the concerns local. Main process can handle the general case just in case but can also just not have a recover or finalize region.</p>
 
 
 <h4>Example:</h4>
@@ -359,6 +380,11 @@ return;
 
 <pre class="output">error: numeric division by zero.</pre>
 
+<h3>Finalize</h3>
+
+<p>The finalize region is optional. It will be executed for almost all cases with the exception of {abort | over}. The {exit, raise, expect} will cause process intreruption but will execute the fialization region before control is given back to parent process.</p>
+
+<p>In finalization region developer can close resources, tear down data of test cases, archive the logs, send signals, prepare output parameters or just print debug messages. Whatever is required after all code is execute just before process termination.</p>
 
 <!-- work in progress-->
 
