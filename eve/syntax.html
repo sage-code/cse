@@ -498,10 +498,10 @@ return;</code></pre>
 <tr><td>update   </td><td>use      </td><td>labe      </td><td>view     </td></tr>
 <tr><td>where    </td><td>while    </td><td>with      </td><td>write    </td></tr>
 <tr><td>call     </td><td>panic    </td><td>any       </td><td>other    </td></tr>
-<tr><td>resolve  </td><td>         </td><td>          </td><td>         </td></tr>
+<tr><td>resolve  </td><td>add      </td><td>del       </td><td>pop      </td></tr>
 </table>
 
-<h3>Definition regions</h3>
+<h3>Script regions</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -519,13 +519,33 @@ return;</code></pre>
 <td>define identifier for some imported module members</td>
 </tr>
 <tr>
-<td>class</td>
-<td>define region for user defined composite types</td>
+  <td>constant</td>
+  <td>define region for user defined constants</td>
+  </tr>  
+<tr>
+  <td>global</td>
+  <td>define a region for global states</td>
 </tr>
 <tr>
-<td>global</td>
-<td>define a region for state variables and constants</td>
-</tr>
+  <td>process</td>
+  <td>define an executable region for driver and aspect</td>
+</tr>  
+<tr>
+  <td>initialize</td>
+  <td>define initialization region for modules</td>
+</tr>  
+<tr>
+  <td>initialize</td>
+  <td>define initialization region for modules</td>
+</tr>  
+<tr>
+  <td>recover</td>
+  <td>define error protection region after process</td>
+</tr>  
+<tr>
+  <td>finalize</td>
+  <td>define final/tear-down region after process</td>
+</tr>  
 </tbody>
 </table>
 
@@ -568,28 +588,11 @@ return;</code></pre>
 <td>define behavior for user defined data types</td>
 </tr>
 <tr>
-<td>recover</td>
-<td>define a recover region for a method</td>
-</tr>
-<tr>
 <td>release</td>
 <td>define a object clear region for a class</td>
 </tr>
-<tr>
-<td>process</td>
-<td>define an executable region for driver or aspect</td>
-</tr>
-<tr>
-  <td>initialize</td>
-  <td>define an executable region of a module</td>
-  </tr>
-<tr>
 <td>return</td>
 <td>terminate a process/function or a class declaration</td>
-</tr>
-<tr>
-<td>reset</td>
-<td>create the "initialization" region for a module</td>
 </tr>
 </tbody>
 </table>
@@ -607,6 +610,14 @@ return;</code></pre>
 <td>begin</td>
 <td>used before a block of code to create a local scope</td>
 </tr>
+<tr>
+<td>split</td>
+<td>used to run several aspects asynchronously in a group</td>
+</tr>
+<tr>
+<td>join</td>
+<td>end begin block. used to synchronize several aspects</td>
+</tr>      
 <tr>
 <td>match</td>
 <td>multi-path conditional selector</td>
@@ -649,7 +660,7 @@ return;</code></pre>
 </tr>
 <tr>
 <td>done</td>
-<td>close a control statement</td>
+<td>close a control statement or a match selector</td>
 </tr>
 <tr>
   <td>job</td>
@@ -731,6 +742,10 @@ return;</code></pre>
 <td>Alter existing variable or attribute</td>
 </tr>
 <tr>
+<td>pop</td>
+<td>Can create a new local variable from element of a collection</td>
+</tr>
+<tr>
 </tbody>
 </table>
 
@@ -761,33 +776,28 @@ return;</code></pre>
 </tr>
 <tr>
 <td>pass</td>
-<td>does absolutely nothing, is just a dummy statement</td>
+<td>does absolutely nothing, is just an empty statement</td>
 </tr>
 <tr>
 <td>retry</td>
 <td>jump back to the same job and try again.</td>
 </tr>
-<tr>
-  <td>resume</td>
-  <td>jump to next job from the recovery block.</td>
-  </tr>
-<tr>
 <td>start</td>
 <td>start a coroutine in asynchronous mode</td>
 </tr>
 <tr>
+  <td>suspend</td>
+  <td>intrerupt a coroutine and wait for resume</td>
+</tr>
+<tr>
+  <td>resume</td>
+  <td>continue execution of a suspended coroutine</td>
+  </tr>
+<tr>
+<tr>
 <td>yield</td>
 <td>unused (replaced by suspend/resume/wait)</td>
 </tr>
-<tr>
-  <td>suspend</td>
-  <td>intrerupt a coroutine and wait for resume</td>
-  </tr>
-<tr>
-  <td>resume</td>
-  <td>resume a suspended coroutine specified</td>
-  </tr>
-<tr>
 <tr>
   <td>wait</td>
   <td>intrerupt the main process for specified time</td>
@@ -898,7 +908,7 @@ return;</code></pre>
 <pre class="fixed"># , : . ; = ~ ? % ^ * - + / &lt; &gt; &amp; | ! @ $</pre>
 
 <p><b>Two symbols:</b></p>
-<pre class="fixed">== !=  => <= >= :> <: .. !. !~ && ||</pre>
+<pre class="fixed">== !=  => <= >= :> <: .. !. !~ && || &=</pre>
 
 <p><b>Three symbols:</b></p>
 <pre class="fixed">.|. .&. .+. </pre>
@@ -1172,6 +1182,10 @@ return;</code></pre>
   <td>&lt;+</td>
   <td>Feed right | append element in last position or at the right side</td>
 </tr>
+<tr>
+  <td>&=</td>
+  <td>Set operator used to add elements into an existing set from another set</td>
+</tr>
 </tbody>
 </table>
 
@@ -1209,7 +1223,7 @@ return;</code></pre>
 <td>equivalence  "&equiv;" (compare value & type)</td>
 </tr>
 <tr>
-<td>!eq</td>
+<td>!eq (not eq)</td>
 <td>non equivalence "!&equiv;" (compare value & type)</td>
 </tr>
 <tr>
@@ -1217,20 +1231,20 @@ return;</code></pre>
 <td>logic belong to: instead of "&isin;"</td>
 </tr>
 <tr>
-<td>not in</td>
+<td>!in (not in)</td>
 <td>logic not belong to: instead of "!&isin;"</td>
 </tr>
 <tr>
-<td>not</td>
+<td>!(not)</td>
 <td>logic NOT (negation)</td>
 </tr>
 <tr>
 <td>and</td>
-<td>logic AND (intersection)</td>
+<td>logic AND (&& = intersection)</td>
 </tr>
 <tr>
 <td>or</td>
-<td>logic OR (union)</td>
+<td>logic OR (}} = union)</td>
 </tr>
 <tr>
 <td>xor</td>
