@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+eturn; -- end of class declaration<!DOCTYPE html>
 <html lang="en" data-bs-theme="dark"><head>
    <meta charset="utf-8">
    <meta name="description" content="Sage-Code Eve OOP programming paradigm implementation. Classes, Objects and Methods. ">
@@ -105,43 +105,7 @@ process test:
 return;
 </code></pre>
 
-<p><b>Note:&nbsp;</b>Object constructor can receive argument names like (attribute1, attribute2) that are not declared initially, these bind values to new attributes using (key:value) pairs. This is possible in Eve due to a gradual typing system. This is a minor feature in Eve.</p>
-
-<h3><a id="object-methods"></a>Object methods</h3>
-
-<p>Methods are related to an object or a class. The methods can have parameters and can return results. You must define all methods in the same module as the class declaration. Class methods can be declared inside the class body, while object methods are defined outside of class body but in the same script.</p>
-
-<h4>Example</h4>
-
-<pre><code class="language-eve">
-# define a "Point" class:
-driver test_point:
-
-** declare a private class "Point"
-class Point = {x, y :Real} <: Object; 
-
-** this method is declared outside of class body
-method(@self:Point) move(a, b: Real):
-  let self.x += a;
-  let self.y += b;
-return;
-
-** this method also is declared outside of class body
-method(@self:Point) string() => (string:String):
-  let string := "# = (#:#)" ? (self.id, self.a, self.b);
-return;
-
-process:
-  ** initialize the points using Point constructor
-  new p := Point(x:1, y:2);
-
-  ** move the point
-  p.move(2,1);
-  print p.string(); -- (3:3)
-return;
-</code></pre>
-
-<p><b>Note: </b>To call a method, you do not use any keyword. Just specify the method name with arguments using dot notation. Methods can be part of expression id the respective methid has a result. Methods that have no result will return Null if used in expressions and will cause a compilation method.</p>
+<p><b>Note:&nbsp;</b>Default object constructor can receive argument names like (attribute1, attribute2) that are not declared initially, these bind values to new attributes using (key:value) pairs. This is possible in Eve due to a gradual typing system. This is a minor feature in Eve.</p>
 
 <h3><a id="object-attributes"></a>Object Attributes</h3>
 
@@ -154,7 +118,7 @@ return;
 <li>There is no need to use (.) prefix when declare attributes.</li>
 </ul>
 
-<p>To access public attributes you must use dot notation lole: </p>
+<p>To access public attributes you must use dot notation: </p>
 
 <pre class="output">object_instance.public_attribute;</pre>
 
@@ -166,29 +130,29 @@ return;
 
 <h2><a id="class-members"></a>Class members</h2>
 
-<p>A class can have properties and methods. Class properties and metods are static members and must be defined inside the class declaration region. In contrast, methods that are defined outside of the class body are public and depend on the object instance not on the class.</p>
+<p>A class can have properties and methods. Class properties and metods are static members and must be defined inside the class declaration. Some classes do not have a class declaration body. These classes can have properties defined in the signature between brackets {} but can't have methods.</p>
 
-<p>An object can have attributes and methods. Attributes are defined by the constructor. Object methods are defined later in the same module, outside of the class body. Object attributes and methods are dynamic.</p>
+<p>A class instance can have attributes and methods. Class instances are objects. Object members are encapsulated in the constructor body. Constructors are defined later in the same module, outside of the class body. Object methods are in fact closures and constructor is in fact a higher order function that create @self object.</p>
 
 <h3><a id="class-properties"></a>Class Properties</h3>
 
-<p>A class can alsp have properties.  We declare class properties after symbol ":" before any class methods or constructor. Public properties are created with "." prefix. Otherwise the properties are private (by default).</p>
+<p>A class can have properties.  We declare class properties after symbol ":" before any class methods in the class body. Class properties are by default private. Public properties are created with "." prefix. Usually a class use private properties, getters and setters if necesary.</p>
 
 <ul>
 <li>Properties are defined using keyword "set" ;</li>
 <li>A class is a singleton Object of type Class;</li>
 <li>Class properties are visible in all class methods;</li> 
 <li>Public class members start with "." prefix;</li>
-<li>Private class members start with a letter;</li>
+<li>Private class members start with a lowercase letter;</li>
 </ul>
 
 <h3><a id="class-methods">Class Methods</h2>
 
-<p>You can define methods inside of a class body. These are "class methods". Class methods have access to all class members, without using any qualifier but have no access to object instance. @self object is not available in class methods, unless explicit injected.:</p>
+<p>You can define methods inside of a class body. These are "class methods". Class methods have access to all class members, without using any qualifier but have no access to object instance. @self object is not available in the class methods, unless explicit injected as input/output parameter.:</p>
 
 <h4>Example:</h4>
 
-<p>Next example demonstrate a class that has no attributes and no constructor. This kind of class can't be instantiated. Is an abstract class, but it can be inherited by other classes.</p>
+<p>Next example demonstrate a class that has no attributes and no constructor. This kind of class can't be instantiated. Is a prototype class. The purpose of a prototype class is to create a singleton object.</p>
 
 <pre><code class="language-eve">
 driver test_method:
@@ -244,20 +208,22 @@ return;
 class NewType = {attributes} <: Object:
   ** declaration
   ... 
-create(parameters) => (@self :NewType):
-  ** constructor
-  ...    
 release
   ** cleanup
   ...
 return;
+
+** constructor is a special subprogram
+constructor NewType(parameters) => (@self :NewType):
+  ...    
+return;
 </code></pre>
 
-<p><b>Notes:&nbsp;</b>A class has a declaration region where you can define static members, and an initialization region "create". This region is called contructor. A class can have one single constructor. The constructor is optional and it looks like a method except.</p>
+<p><b>Notes:&nbsp;</b>A class can have many constructors, overloaded. The constructor is optional and it looks like a method except it uses "constructor" keyword and the name of constructor is the same as the name of the class.</p>
 
-<h4>Parameters:</h4>
+<h3>Variadic constructor</h3>
 
-<p>Constructors can have one or more parameters, some may be optonal. You can use a decision statements to initialize the object attributes in different ways based on parameter values.</p>
+<p>Constructors can have one or more parameters, some may be optonal. It can also have vararg parameters and input/output parameters like any routine. You can use a decision statements to initialize the object attributes in different ways based on parameter values.</p>
 
 <pre><code class="language-eve">
 # define a class
@@ -271,8 +237,11 @@ class ClassName = {attributes} <: Object:
       ...
       let result := expression;
    return;
-create(parameters) => (@self: ClassName):
-  ** conditional initialization
+return;
+
+** comstructor with default and vararg parameter, that is a list of integers
+constructor ClassName(param1:=value1, *param2:()Integer) => (@self: ClassName):
+  ** conditional initialization (flexible constructor)
   if condition then
     let self.attribute = value;
     ...
@@ -283,60 +252,66 @@ create(parameters) => (@self: ClassName):
 return;
 </code></pre>
 
-<h3>Variadic constructor</h3>
-
-<p>A constructor can have parameters with an initial value that are optional. Parameters with no initial values are mandatory. It is possible to have a variable number of arguments, received as a HashMap for a vararg based constructor.</p>
-
-<h4>Example:</h4>
-
-<pre><code class="language-eve">
-# define a class derived from root Object
-class ClassName += {attribute:Type, ....} <: Object;
-  ** class body
-  ...
-create(*parameters: HashMap) => (@self:NewName):
-  ...
-return;
-
-process:
-  ** instantiate a local object using constructor
-  new object := ClassName(param:value,...);
-  ...
-return;
-</code></pre>
-
-<p><b>Note:</b>The <em>object</em> in the previous example, has type: NewName. So you can use the class name as a data type. The data type defined by the class is dynamicly created by the compiler.</p>
 
 <h4>@self object</h4>
 
-<p>Object named "self" is the current object name. This is the result of the class constructor. It uses prefix "@" to show that it is a reference. The "self" parameter is used for declaring object methods. In Java this is an implicit parameter. In Eve you must declare @self explicitly.</p>
+<p>Object named "self" is the current object name. This is the result of the constructor. It uses prefix "@" to show that it is a reference. The "self". In Eve you must declare @self explicitly, it repesents a pointer to the new object.</p>
 
 <h4>Example:</h4>
 
 <p>This example defines a "Point" class with two parameters. The parameters have default values so they are optional when you create a point. Read the example and the notes to understand how to use a user defined class constructor.</p>
 
 <pre><code class="language-eve">
-# demonstrate a class
-driver point_demo:
-
-** define class Point, from root Object
+# define a "Point" class with multiple constructors:
+driver test_point:
+  
+** declare a class "Point"
 class Point = {x, y :Real} <: Object:
-   ** no members
-create(x = 0, y = 0 :Real) => (@self: Point):
-  ** constructor 
-  let self.x := x;
-  let self.y := y;
+  ** class method to calculate distance between two points
+  method .distance(p1, p2: Point) => (@result: Real):
+    let dx := p2.x - p1.x;
+    let dy := p2.y - p1.y;
+    let result := sqrt(dx*dx + dy*dy);
+  return;
 return;
 
-# using the class
-process:
-  ** initialize the points
-  new p1 := Point(x:1, y:2);
-  new p2 := Point(x:2, y:2);
+** primary constructor 
+constructor Point(x = 0, y = 0 :Real) => (@self:Point):
+  let self.x := x;
+  let self.y := y;
+  
+  ** instance method to move the point
+  method move(a, b: Real):
+    let self.x += a;
+    let self.y += b;
+  return;
 
-  ** use string patterns to print attributes
-  print "p1 = (x:#n, y:#n)" ? (p1.x,p1.y);
-  print "p2 = (x:#n, y:#n)" ? (p2.x,p2.y);
+  ** instance method to convert point to string
+  method string() => (string:String):
+    let string := "(#:#)" ? (self.x, self.y);
+  return;
+return;
+
+** second constructor
+constructor Point(other: Point) => (@self:Point):
+    ** call primary constructor
+    let self = Point(other.x, other.y);
+return;    
+
+process:
+    ** use different constructors
+    new p1 := Point(1, 2);        -- two-parameter constructor
+    new p2 := Point();            -- no-parameter constructor (uses defaults)
+    new p3 := Point(p1);          -- copy constructor
+  
+    ** print results
+    print "p1: #" ? p1.string();
+    print "p2: #" ? p2.string();
+    print "p3: #" ? p3.string();
+  
+    ** demonstrate distance calculation
+    new distance := Point.distance(p1, p3);
+    print "Distance between p1 and p3: #" ? distance;
 return;
 </code></pre>
 
@@ -357,23 +332,24 @@ driver self_track:
 
 ** define class Point, from root Object
 class Point = {x, y :Real} <: Object:
-
 ** tracking information (private class properties)
   set instances: Integer;
   set items: ()Point;  -- list of points
+release(@self: Point):
+  ** remove the object from list
+  let items -= @self;
+  let instances -= 1;
+return;
+
 
 ** constructor receive 2 parameters
-create(x = 0, y = 0 :Real) => (@self: Point):
+constructor Point(x = 0, y = 0 :Real) => (@self: Point):
   ** alter attribute values
   let self.x := x;
   let self.y := y;
   ** add object to list of items
   let items += @self;
   let instances += 1;  
-release(@self: Point):
-  ** remove the object from list
-  let items -= @self;
-  let instances -= 1;
 return;
 
 process:
@@ -445,16 +421,19 @@ class BaseType = {attributes} <: Object;
 class NewType += {new_attributes} <: BaseType:
   ** class members
   ...
-  ** overwriten method
-  method (@self:NewType) demo(parameters) => (result:Type):
+  ** create new method
+  method demo(parameters) => (result:Type):
     ...
   return;
-create(parameters) =>(@self: NewType):
-  ** call base class constructor
-  let self := super(parameters);
+return;
 
-  ** create new object attribute
-  let self.new_attribute := value;
+** define constructor for the new class
+constructor NewType(param) =>(@self: NewType):
+  ** call base class constructor
+  let self := BaseType(parameters); -- delegate super constructor
+
+  ** initialize new object attribute
+  let self.new_attribute := param;
 
   ...
 return;
@@ -513,7 +492,7 @@ return;
 
 <h4>Type Inference</h4>
 
-<p>Using a  constant literal you can shortcut the design and create more simpe code. This is possible due to type inference. Eve create the types for you. After collection is created you can add new elements.</p>
+<p>Using a  constant literal you can shortcut the design and create more simpe code. This is possible due to type inference. Eve create the types for you. After a collection is created you can add new elements.</p>
 
 <pre><code class="language-eve">
 ** define object using type inference
@@ -524,6 +503,8 @@ return;
    print Type(myList[1]);    -- DataSet
    print Type(myList[1][1]); -- Integer
 </code></pre>
+
+<p><p>Note: </p> We will explain how to use generics in next chapter. There is more to left unexplained about classes. We need to enable operator kind of method to be able to extend the language. Also we need to define traits, abstract classes and method chaining. These things are very important.</p>
 
 <h4>JSON literals</h4>
 

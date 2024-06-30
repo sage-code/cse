@@ -1,35 +1,32 @@
 function apply_style(str) {
  
+    //special case must be fist to avoid overlapp with css class
+    str = str.replace(/^class\b/,keyword("class"))    
+
     // global declarations, at beginning of line
+    str = str.replace(/^driver\b/,keyword("driver"))
+    str = str.replace(/^module\b/,keyword("module"))
+    str = str.replace(/^aspect\b/,keyword("aspect"))
     str = str.replace(/^import\b/,keyword("import"))
     str = str.replace(/^alias\b/,keyword("alias")) 
-    str = str.replace(/^class\b/,keyword("class"))    
     str = str.replace(/^global\b/,keyword("global"))   
     str = str.replace(/^constant\b/,keyword("constant")) 
-    str = str.replace(/^return\b/,keyword("return"))
-    str = str.replace(/^method\b/,keyword("method"))
-    str = str.replace(/^create\b/,keyword("create"))
-    str = str.replace(/^release\b/,keyword("release"))
-    str = str.replace(/^function\b/,keyword("function"))
+    str = str.replace(/^process\b/,keyword("process")) 
+    str = str.replace(/^initialize\b/,keyword("initialize")) 
+    str = str.replace(/^recover\b/,keyword("recover"))
+    str = str.replace(/^finalize\b/,keyword("finalize")) 
 
     // optional keywords
-    str = str.replace(/\broutine\b/,keyword("routine"))  
-    str = str.replace(/\bdriver\b/,keyword("driver"))
-    str = str.replace(/\bmodule\b/,keyword("module"))
-    str = str.replace(/\baspect\b/,keyword("aspect"))
-    str = str.replace(/\brecover\b/,keyword("recover"))
-    str = str.replace(/\bfinalize\b/,keyword("finalize"))
-    str = str.replace(/\bprocess\b/,keyword("process"))  
-    str = str.replace(/\binitialize\b/,keyword("initialize"))  
-
+    str = str.replace(/^constructor\b/,keyword("constructor"))
+    str = str.replace(/^function\b/,keyword("function"))
+    str = str.replace(/^routine\b/,keyword("routine")) 
+    str = str.replace(/^release\b/,keyword("release"))
 
     // mandatory 2 space intentation
-    str = str.replace(/\bcreate\b/,keyword("create"))
-    str = str.replace(/\brelease\b/,keyword("release"))
     str = str.replace(/\bshell\b/,keyword("shell"))
     str = str.replace(/\bmethod\b/,keyword("method"))  
-    str = str.replace(/\breturn\b/,keyword("return"))  
-    
+    str = str.replace(/\breturn\b/,keyword("return"))   
+
     // keywords in statement     
     str = str.replace(/\bsession\b/,keyword("session"))
     str = str.replace(/\bupdate\b/,keyword("update"))
