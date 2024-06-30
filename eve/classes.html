@@ -40,7 +40,7 @@ Eve is an object oriented language. We define objects and classes. A class is a 
 
 <p><b>Objects </b>are&nbsp;<em>state machines</em>&nbsp;that are instantiated on demand and released from memory when they are no longer needed. You can create global objects using "set", or local objects using "new" keyword.</p>
 
-<p><b>Classes </b>are objects themselves. Also, classes can be used to generate object instances. All object instances generated from a class, will inherite class structure and behaviour. The most important characteristics of objects are:</p>
+<p><b>Classes </b>are objects themselves, singleton objects actually. Also, classes can be used to create object instances. All object instances created from a class, will inherite class structure and behaviour. The most important characteristics of objects are:</p>
 
 <ul>
 <li>Encapsulation: each object has its own states;</li>
@@ -86,9 +86,9 @@ class MyClass = {a, b: Integer} <: Object;
 <h4>Notes:</h4>
 
 <ul>
-<li>Drivers and Aspects can define private classes;</li>
-<li>Only modules can define public classes; </li>
-<li>Classes defined in modules use a dot prefix to become public;</li>
+<li>Modules can define public classes and private classes;</li>
+<li>Drivers and Aspects can define only private classes;</li>
+<li>Classes defined in modules thatuse a dot prefix are public;</li>
 </ul>
 
 <h2><a id="object">Object type</h2>
@@ -105,11 +105,11 @@ process test:
 return;
 </code></pre>
 
-<p><b>Note:&nbsp;</b>Object constructor can receive argument names that do not exist, and bind values to new attributes using (key:value) pairs. This is possible in Eve due to a gradual typing system.</p>
+<p><b>Note:&nbsp;</b>Object constructor can receive argument names like (attribute1, attribute2) that are not declared initially, these bind values to new attributes using (key:value) pairs. This is possible in Eve due to a gradual typing system. This is a minor feature in Eve.</p>
 
 <h3><a id="object-methods"></a>Object methods</h3>
 
-<p>Methods are related to an object or a class. The methods can have parameters and can return results. You must define all methods in the same module as the class declaration.</p>
+<p>Methods are related to an object or a class. The methods can have parameters and can return results. You must define all methods in the same module as the class declaration. Class methods can be declared inside the class body, while object methods are defined outside of class body but in the same script.</p>
 
 <h4>Example</h4>
 
@@ -120,11 +120,13 @@ driver test_point:
 ** declare a private class "Point"
 class Point = {x, y :Real} <: Object; 
 
+** this method is declared outside of class body
 method(@self:Point) move(a, b: Real):
   let self.x += a;
   let self.y += b;
 return;
 
+** this method also is declared outside of class body
 method(@self:Point) string() => (string:String):
   let string := "# = (#:#)" ? (self.id, self.a, self.b);
 return;
@@ -139,27 +141,28 @@ process:
 return;
 </code></pre>
 
-<p><b>Note: </b>To call a method, you do not use any keyword. Just specify the method name with arguments. Methods can be created in packages to extend the Eve language with domain specific actions.</p>
+<p><b>Note: </b>To call a method, you do not use any keyword. Just specify the method name with arguments using dot notation. Methods can be part of expression id the respective methid has a result. Methods that have no result will return Null if used in expressions and will cause a compilation method.</p>
 
 <h3><a id="object-attributes"></a>Object Attributes</h3>
 
-<p>A class can define attributes for future object instances. The class constructor must set initial values for object attributes and can create new private attributes.</p>
+<p>A class can define attributes, with types in the class signature. The class constructor will set initial values for the object attributes just created, and can create additional attributes explicit in the constructor using "new" statement.</p>
 
 <ul>
 <li>We declare public attributes using = {...}  or += {...n} after class name;</li>
 <li>Public attributes must be initialized using "let" in constructor;</li>
 <li>Private attributes can be created with keyword "new" in constructor;</li>
+<li>There is no need to use (.) prefix when declare attributes.</li>
 </ul>
 
-<p>To access public attributes you must use dot notation like:</p>
+<p>To access public attributes you must use dot notation lole: </p>
 
 <pre class="output">object_instance.public_attribute;</pre>
 
-<p>To access private attributes you must use "self." qualifier. Private attributes are available in constructor and inside of object methods but are not available with object name as qualifier. That is, private attributes are encapsulated.</p>
+<p>To access private attributes you must use "self." qualifier available in methods. Private attributes are available in constructor and methods but are not available with object name as qualifier. That is, private attributes are protected so that developer will not modify them by mistake from outside.</p>
 
 <pre class="output">self.private_attribute;</pre>
 
-<p><b>Note </b>A class does not know anything about its objects. You can not ask the class anything about its instances, except if you create a special logic using class properties.</p>
+<p><b>Note </b>A class body does not know anything about its objects or object attributes. You can not ask the class anything about its instances, except if you create a special logic using class properties. Also, class methods, do not receive @self parameter so there is no way to access by mistake an attribute in a class method.</p>
 
 <h2><a id="class-members"></a>Class members</h2>
 
@@ -169,20 +172,19 @@ return;
 
 <h3><a id="class-properties"></a>Class Properties</h3>
 
-<p>A class can have public or private properties. Each property is defined in the class context. We declare class properties after symbol ":" before any class method.</p>
+<p>A class can alsp have properties.  We declare class properties after symbol ":" before any class methods or constructor. Public properties are created with "." prefix. Otherwise the properties are private (by default).</p>
 
 <ul>
 <li>Properties are defined using keyword "set" ;</li>
 <li>A class is a singleton Object of type Class;</li>
-<li>A class that have no attributes is abstract;</li>
-<li>A abstract class can't be instantiated;</li>
 <li>Class properties are visible in all class methods;</li> 
-<li>Private class members by start with "_" sigil;</li>
+<li>Public class members start with "." prefix;</li>
+<li>Private class members start with a letter;</li>
 </ul>
 
 <h3><a id="class-methods">Class Methods</h2>
 
-<p>You can define methods inside of a class body. Class methods have access to all class members, without using any qualifier but have no access to object instance. @self object is not available in class methods, unless explicit injected.:</p>
+<p>You can define methods inside of a class body. These are "class methods". Class methods have access to all class members, without using any qualifier but have no access to object instance. @self object is not available in class methods, unless explicit injected.:</p>
 
 <h4>Example:</h4>
 
@@ -194,18 +196,18 @@ driver test_method:
 # define a class that has no constructor
 class ClassName <: Object:
   ** class propetyes
-  set _sum: Integer;  -- protected
-  set last: Integer;  -- public
+  set sum:  Integer;   -- private property 
+  set .last: Integer;  -- public property
 
-  ** class method (change state) 
-  method change(param:Type):
+  ** method (change state) 
+  method .change(param:Type):
     let last := param;
-    let _sum += param;
+    let sum  += param;
   return;
 
-  ** create a getter for _sum
-  method sum() => (@result:Integer):
-    let result := _sum;
+  ** getter method
+  method .sum() => (@result:Integer):
+    let result := sum;
   return;
 return;
 
@@ -265,7 +267,7 @@ class ClassName = {attributes} <: Object:
    ....
 
    ** define class method
-   method test() => (result:Type):
+   method .test() => (@result:Type):
       ...
       let result := expression;
    return;
@@ -289,7 +291,7 @@ return;
 
 <pre><code class="language-eve">
 # define a class derived from root Object
-class NewName += {attribute:Type, ....} <: Object;
+class ClassName += {attribute:Type, ....} <: Object;
   ** class body
   ...
 create(*parameters: HashMap) => (@self:NewName):
@@ -298,7 +300,7 @@ return;
 
 process:
   ** instantiate a local object using constructor
-  new object := NewName(param:value,...);
+  new object := ClassName(param:value,...);
   ...
 return;
 </code></pre>
@@ -356,7 +358,7 @@ driver self_track:
 ** define class Point, from root Object
 class Point = {x, y :Real} <: Object:
 
-** tracking information
+** tracking information (private class properties)
   set instances: Integer;
   set items: ()Point;  -- list of points
 
@@ -439,28 +441,22 @@ return;
 # define a class with inheritance
 class BaseType = {attributes} <: Object;
 
-** object method
-method (@self:BaseType) demo(param:Type, ...):
-   ...
-return;
-
 ** create a descendent of BaseType
 class NewType += {new_attributes} <: BaseType:
   ** class members
   ...
+  ** overwriten method
+  method (@self:NewType) demo(parameters) => (result:Type):
+    ...
+  return;
 create(parameters) =>(@self: NewType):
   ** call base class constructor
   let self := super(parameters);
 
-  ** create new attributes
-  new self.new_attribute := value;
+  ** create new object attribute
+  let self.new_attribute := value;
 
   ...
-return;
-
-** overwriten method
-method (@self:NewType) demo(parameters) => (result:Type):
-   ...
 return;
 </code></pre>
 <hr>
