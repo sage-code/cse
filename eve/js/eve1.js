@@ -15,6 +15,7 @@ function apply_style(str) {
     str = str.replace(/^initialize\b/,keyword("initialize")) 
     str = str.replace(/^recover\b/,keyword("recover"))
     str = str.replace(/^finalize\b/,keyword("finalize")) 
+    str = str.replace(/^trait\b/,keyword("trait")) 
 
     // optional keywords
     str = str.replace(/^constructor\b/,keyword("constructor"))
@@ -23,8 +24,9 @@ function apply_style(str) {
     str = str.replace(/^release\b/,keyword("release"))
 
     // mandatory 2 space intentation
-    str = str.replace(/\bshell\b/,keyword("shell"))
+    str = str.replace(/\bobject\b/,keyword("object")) 
     str = str.replace(/\bmethod\b/,keyword("method"))  
+    str = str.replace(/\bshell\b/,keyword("shell"))
     str = str.replace(/\breturn\b/,keyword("return"))   
 
     // keywords in statement     
@@ -193,8 +195,6 @@ function apply_style(str) {
 
     // fix encoded symbols
     str = str.replace(/\b=\&gt;\b/g,operator("=&gt;"))
-    str = str.replace(/\b\&lt;\:\b/g,operator("&lt;:")) 
-    str = str.replace(/\b\:\&gt;\b/g,operator(":&gt;"))  
     str = str.replace(/\b\.&\.\b/g,operator(".&."))
     str = str.replace(/\b\.\|\.\b/g,operator(".|."))
     str = str.replace(/\b\.\+\.\b/g,operator(".+."))
