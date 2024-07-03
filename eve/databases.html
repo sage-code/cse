@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark"><head>
   <meta charset="utf-8">
-  <meta name="description" content="Introduction to Eve Database api.">
+  <meta name="description" content="Introduction to Eve Database API. A new programming language for Databases.">
   <meta name="author" content="Elucian Moise">
-  <meta name="keywords" content="sage, code, EVE, SQL, database, API">
+  <meta name="keywords" content="sage, code, EVE, SQL, database, API, CRUD, Insert, Update,Delete, Create">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Website title -->
-  <title>Eve Databases</title>
+  <title>Eve Databases/SQL</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <!-- Icon -->
@@ -31,15 +31,16 @@
 
 <h1>Eve Database/SQL</h1>
 <div class="alert alert-secondary shadow-sm">
-Eve has basic interaction with relational databases. We design Eve to connect to different third party databases. This is the purpose of Eve to be versatile. It enables query and data transfers using embeded SQL within Eve scripts.</div>
+Eve has basic interaction with relational databases. We design Eve to connect to different third party databases. The purpose of Eve to be versatile. It enables query, customized transformation and data transfers using embeded SQL and user defined functions (UDF).</div>
 
 <p><b>Goals:</b></p>
 <ul>
-<li>Resolve impedance mismatch using ORM;</li>
+<li>Resolve impedance mismatch using scripts;</li>
 <li>Read and update tables in a database;</li>
 <li>Provide easy way to map data in ETL;</li>
-<li>Provide data reporting in file format;</li>
+<li>Provide data reporting in file formating;</li>
 <li>Backup and archive data using compression;</li>
+<li>Transfer data & upload data in the cloud;</li>
 </ul>
 
 <p><b>Page bookmarks:</b></p>
@@ -55,7 +56,7 @@ Eve has basic interaction with relational databases. We design Eve to connect to
 </ul>
 
 <h2><a id="models"></a>Models</h2>
-<p>Eve must read and update a database structure using an internal <em>data model</em>. A model is a map between Eve a relational data model and an object oriented model. This is called&nbsp; ORM = <em>Object Relational Model</em>. An ORM model is connecting to one or multiple databases using vendor specific database library.</p>
+<p>Eve must read and update a database structure using an internal <em>data model</em>. A model is a map between Eve a relational data model and an object oriented model. This is called&nbsp; ORM = <em>Object Relational Model</em>. An ORM model is connecting to one or multiple databases using vendor specific database modules.</p>
 
 <h4>Importing</h4>
 
@@ -63,35 +64,40 @@ Eve has basic interaction with relational databases. We design Eve to connect to
 
 <pre><code class="language-eve"># using Oracle library
 import
-   $EVE_lib.db.core:(*);
-   Oracle: $EVE_lib.db.oracle;
+   db $evelib/db/core;
+   orcl: $evelib/db/oracle;
 </code></pre>
 
 <h4>Connection</h4>
-<p>One application can connect to multiple databases simultaneously. A specific kind of application called&nbsp;<em>pipeline</em>&nbsp;can pull data from multiple sources to update one target database.</p>
+<p>One application can connect to multiple databases simultaneously. A specific kind of application called&nbsp;<em>pipeline</em>&nbsp;can pull data from multiple sources to update one target database or, spread data from one database and push data into multiple other databases.</p>
 
 <p><b>pattern:</b></p>
 <pre><code class="language-eve">
 ** create a database session
-class Session(String user,password,name) &lt;: Oracle.Database:
+class OracleSession(String user,password,name) &lt;: orcl.Database:
   new _credentials: String;
-create
-  let self = Oracle.Database(location);
+release
+  orcl.disconnect();
+return
+
+constructor OracleSession(location,user,password:String) => (@self db.Session): 
   ** prepare credentials
-  let self._credentials := user + '/' + password + '@'+ dbname;
-  ** connect to database
+  let self.location = location;
+  let self.user = user;
+  let self.password = password;
+  ** prepare credentials
   let self.connect(self._credentials);
+  orcl.connect();
 return;
 
-** create database connection
-global
-  set db := Session(user:'test',password:'password',name:'demo');
-process
+process:
+  ** create database connection
+  new demoDB =  set db := OracleSession(user:$user,password:$password,location:$location);
   ...
 return;
 </code></pre>
 
-<p><b>Note:</b>&nbsp;Usually a database has a security protocol based on user-name and password. These credentials can not be encoded in the Eve scripts, they need to be received as input parameters by the driver. Once a connection is established it can be used to manipulate data, using Eve statements.</p>
+<p><b>Note:</b>&nbsp;Usually a database has a security protocol based on user-name and password. These credentials can not be encoded in the Eve scripts, they need to be received as input parameters by the driver or set using configuration files that are secret, safly stored on the server. Once a connection is established it can be used to manipulate data, using Eve statements.</p>
 
 <h2><a id="databases"></a>Database API</h2>
 
@@ -182,7 +188,7 @@ class Record(Integer id) &lt;: Object;
 </ul>
 
 <h2><a id="sessions"></a>Sessions</h2>
-<p>Data model can work with sessions. A session can be anonymous or can have a name. A session can involve one or more databases. After a set of modifications is done you can commit changes. If transaction fail all the modifications are reset. You can customize the actions in case of error. After session you can create a report.</p>
+<p>Data model can work with sessions. A session have a name. A session can involve one or more databases. After a set of modifications is done you can commit changes in a session. If transaction fail all the modifications in session are reset. You can customize the actions in case of error. After session end you can create a report.</p>
 
 <p><b>Operations</b></p>
 
@@ -195,32 +201,26 @@ class Record(Integer id) &lt;: Object;
 </ul>
 
 <h3><a id="append"></a>Append</h3>
-<p>Eve can add new data records into one table using <em>append()</em>.</p>
+<p>Eve can add new data records into one table using <em>insert</em> keyword.</p>
 
 <pre><code class="language-eve">
-routine update_tables():
+routine update_tables(value1,value2 ...):
   ** create empty records
   new record1 := table_name.append();
   new record2 := table_name.append();
-  update record1:
-    let field_name := value;
+  ** populate records with values 
+  insert record1:
+    let field_name := value1;
     ...
-  update record2:
-    let field_name := value;
+  insert record2:
+    let field_name := value2;
     ... 
   commit; 
-recover
-  case $error.code == error1 then
-    ...
-  case $error.code == error2 then
-    ... 
-  else
-    rollback;
 return;
 </code></pre>
 
 <h3><a id="update"/>Update</h3>
-<p>Eve can do single or multiple row updates in one transaction using update.</p>
+<p>Eve can do single or multiple row updates in one transaction. The Update need to find the record to update before is able to modify these records.</p>
 
 <h4>Single record:</h4>
 
@@ -235,13 +235,6 @@ process
     let field_name := value;
     ...
   commit;
-recover
-  case error1 then
-  ...
-  case error2 then
-  ...
-  else
-    rollback;
 return;
 </code></pre>
 
@@ -258,13 +251,6 @@ process
   new deleted1 := table_name1.delete(field:value,...);
   new deleted2 := table_name2.delete(field:value,...);
   commit;
-recover
-  case $error == code then:
-    ** handle exceptions
-    rollback;
-    print ("failed")
-  else:
-    rollback;
 finalize
   ** check status
   expect deleted1 >  0;
@@ -281,29 +267,23 @@ return;
 
 <pre><code class="language-eve">
 ** using a loop to create a single session  
-routine name:
+routine delete_records(value):
   ** delete current record using: loop
-  cycle: for record in table_name loop
-    record.delete() if field_name == value;
+  for record in table_name loop
+    record.delete() if record.field_name == value;
   repeat;  
   commit;
-recover
-  rollback;
 return;
 </code></pre>
 
 <h3><a id="scrub"></a>Scrub</h3>
 
-<p>Remove all records from a table in bulk is very fast but there are technical problems. Triggers are deactivated for these kind of operations.</p>
+<p>We have design "scrub" opperation a little bit different than "delete" to gain performance. Scrub remove all records from a table in bulk using "truncate". This is very fast but there are technical problems. Triggers are deactivated for these kind of operations. Scrub is irreversible and dangerous because do not use a transaction and it can't be rollback.</p>
 
 <pre><code class="language-eve">
 process
   scrub db1.table1;
   scrub db2.table1;
-  commit;
-recover
-  ** revert session
-  rollback;
 return;
 </code></pre>
 
@@ -316,10 +296,12 @@ return;
   new query_result := db.query(query_template ? source)
 </code></pre>
 
+<p>Working with Direct SQL is not our purpose. Eve has enaugh power to enable developers handle processes. Using direct SQL is a backup, offered for special opperations Eve is not capable of. Examples will be provided for testing this feature when a compiler will be available for EVE.</p>
+
 
 <h2><a id="procedures"/>Procedures</h2>
 
-<p>Some databases have support for stored procedures. It will be a challenge to engage these procedures from EVE. Since not all databases have stored procedures, these are extra features that we can implement in Eve but not necessary for our purpose.</p>
+<p>Some databases have support for stored procedures. It will be a challenge to engage these procedures from EVE. Since not all databases have stored procedures, these are extra features that we can implement in Eve. Most of the time, Eve scripts are self contained and depend only on database row data and do not use extra layers like views, snapshots or stored procedures to read data. However just in case data is not available in any other way we can call stored procedures to retrive data.</p>
 
 <pre><code class="language-eve">
 driver main:
@@ -334,7 +316,7 @@ class Result = {
 global
   new buffer: ()Result; -- collection
 process
-  ** execute stored procedure and collect
+  ** execute stored procedure and collect records in the buffer
   let buffer <+ db.procedure_name(arguments);
   ...
 return;
