@@ -32,7 +32,7 @@ function apply_style(str) {
     // keywords in statement     
     str = str.replace(/\bsession\b/,keyword("session"))
     str = str.replace(/\bupdate\b/,keyword("update"))
-    str = str.replace(/\bappend\b/,keyword("append"))
+    str = str.replace(/\insert\b/,keyword("insert"))
     str = str.replace(/\bcommit\b/,keyword("commit")) 
     str = str.replace(/\bfrom\b/,keyword("from"))
     str = str.replace(/\buse\b/,keyword("use"))
