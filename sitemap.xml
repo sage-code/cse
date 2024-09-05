@@ -1,70 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
- xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
- xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
- http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-<!-- Starting Pages -->
-<url><loc>../index.html</loc></url>
-<url><loc>../projects.html</loc></url>
-<url><loc>../services.html</loc></url>
-<url><loc>../programming.html</loc></url>
-<url><loc>../engineering.html</loc></url>
+  <url><loc>https://sagecode.pro/index.html</loc></url>
+  <url><loc>https://sagecode.pro/projects.html</loc></url>
+  <url><loc>https://sagecode.pro/services.html</loc></url>
+  <url><loc>https://sagecode.pro/programming.html</loc></url>
+  <url><loc>https://sagecode.pro/engineering.html</loc></url>
 
-
-<!-- Index Pages -->
-<url><loc>../../ada/index.html</loc></url>
-<url><loc>../fortran/index.html</loc></url>
-<url><loc>../go/index.html</loc></url>
-<url><loc>../python/index.html</loc></url>
-<url><loc>../react/index.html</loc></url>
-<url><loc>../assembly/index.html</loc></url>
-<url><loc>../hw/index.html</loc></url>
-<url><loc>../bash/index.html</loc></url>
-<url><loc>../c/index.html</loc></url>
-<url><loc>../ruby/index.html</loc></url>
-<url><loc>../carbon/index.html</loc></url>
-<url><loc>../java/index.html</loc></url>
-<url><loc>../rust/index.html</loc></url>
-<url><loc>../julia/index.html</loc></url>
-<url><loc>../scala/index.html</loc></url>
-<url><loc>../script/index.html</loc></url>
-<url><loc>../cpp/index.html</loc></url>
-<url><loc>../nim/index.html</loc></url>
-<url><loc>../cshfortran/index.html</loc></url>
-<url><loc>../go/index.html</loc></url>
-<url><loc>../python/index.html</loc></url>
-<url><loc>../react/index.html</loc></url>
-<url><loc>../assembly/index.html</loc></url>
-<url><loc>../hw/index.html</loc></url>
-<url><loc>../bash/index.html</loc></url>
-<url><loc>../c/index.html</loc></url>
-<url><loc>../ruby/index.html</loc></url>
-<url><loc>../carbon/index.html</loc></url>
-<url><loc>../java/index.html</loc></url>
-<url><loc>../rust/index.html</loc></url>
-<url><loc>../julia/index.html</loc></url>
-<url><loc>../scala/index.html</loc></url>
-<url><loc>../script/index.html</loc></url>
-<url><loc>../cpp/index.html</loc></url>
-<url><loc>../nim/index.html</loc></url>
-<url><loc>../csharp/index.html</loc></url>
-<url><loc>../css/index.html</loc></url>
-<url><loc>../swift/index.html</loc></url>
-<url><loc>../dart/index.html</loc></url>
-<url><loc>../php/index.html</loc></url>
-<url><loc>../plsql/index.html</loc></url>
-<url><loc>../draw/index.html</loc></url>
-<url><loc>../ds/index.html</loc></url>
-<url><loc>../arp/index.html</loc></url>
-<url><loc>../css/index.html</loc></url>
-<url><loc>../swift/index.html</loc></url>
-<url><loc>../dart/index.html</loc></url>
-<url><loc>../php/index.html</loc></url>
-<url><loc>../plsql/index.html</loc></url>
-<url><loc>../draw/index.html</loc></url>
-<url><loc>../ds/index.html</loc></url>
-<url><loc>../zig/index.html</loc></url>
-
-</urlset>
+  <url><loc>https://sagecode.pro/ada/index.html</loc></url>
+  <url><loc>https://sagecode.pro/fortran/index.html</loc></url>
+  <url><loc>https://sagecode.pro/go/index.html</loc></url>
+  <url><loc>https://sagecode.pro/python/index.html</loc></url>
+  <url><loc>https://sagecode.pro/react/index.html</loc></url>
+  <url><loc>https://sagecode.pro/assembly/index.html</loc></url>
+  <url><loc>https://sagecode.pro/hw/index.html</loc></url>
+  <url><loc>https://sagecode.pro/bash/index.html</loc></url>
+  <url><loc>https://sagecode.pro/c/index.html</loc></url>
+  <url><loc>https://sagecode.pro/ruby/index.html</loc></url>
+  <url><loc>https://sagecode.pro/carbon/index.html</loc></url>
+  <url><loc>https://sagecode.pro/java/index.html</loc></url>
+  <url><loc>https://sagecode.pro/rust/index.html</loc></url>
+  <url><loc>https://sagecode.pro/julia/index.html</loc></url>
+  <url><loc>https://sagecode.pro/scala/index.html</loc></url>  
+  <url><loc>https://sagecode.pro/script/index.html</loc></url>
+  <url><loc>https://sagecode.pro/cpp/index.html</loc></url>
+  <url><loc>https://sagecode.pro/nim/index.html</loc></url>
+  <url><loc>https://sagecode.pro/csharp/index.html</loc></url>
+  <url><loc>https://sagecode.pro/css/index.html</loc></url>
+  <url><loc>https://sagecode.pro/swift/index.html</loc></url>
+  <url><loc>https://sagecode.pro/dart/index.html</loc></url>
+  <url><loc>https://sagecode.pro/php/index.html</loc></url>
+  <url
