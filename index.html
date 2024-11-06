@@ -24,12 +24,14 @@
   <meta name="google-site-verification" content="r9nXcjqEwOFXLChtgVh3dU1T-m4HjzdeQ7n5ESOiRHA" >
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="../images/favicon.ico">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="sage.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="canonical" href="https://sagecode.pro/index.html" />
+  <link rel="stylesheet" href="carousel.css">
   </head>
 <body data-bs-theme="dark">
 
@@ -47,24 +49,42 @@
 
 <div class="alert alert-info"> <b>About Us:</b> Sage-Code is an independent freelance bootcamp. We study software engineering and programming languages. Join us for tech-transition, gain work experience, improve your skills, innovate and contribute back with your skills to teach others. We learn and work together on disruptive and useful software applications. </div> 
 
-<p>Sage-Code Laboratory (SCL) was founded in 2010 by a group of software engineers who wanted to create a high quality platform for learning computer science and software engineering. We host various resource for students, professionals, enterpreneurs and anyone who wants to learn more about these topics. We offer on-line training courses, 101 on demand mentoring and SaaS applications.</p> 
+<p>Sage-Code Laboratory (SCL) was founded in 2010 by a group of software engineers who wanted to create a high quality platform for learning computer science and software engineering. We host various resource for students, professionals, enterpreneurs and anyone who wants to learn more about these topics. We offer digital books, on-line training courses, 101 on demand mentoring and SaaS applications.</p> 
 
-<div class="text-center">
-<a href="https://eluchn.hashnode.dev/tech-transition" target="_blank">
-    <img id="main-img" src="images/printer3d.jpeg"
-    class="rounded mx-auto img-fluid protect shadow"
-    style="width:70%"
-    alt="Discovering Programming"></a>
-<details>
-  <summary>What is programming?</summary>
-  <div class="alert alert-secondary">
-    In the digital realm, where ones and zeros dance,<br>
-    Programming weaves a tapestry, a magical trance.<br>
-    With each keystroke, a world takes shape,<br>
-    A masterpiece crafted, no mistakes to escape.
+<hr> 
+
+<!-- A large carousel with books covers -->
+<section>
+  <div id="bookCarousel" class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="images/Career Development.jpg" alt="Career Development">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Begin Coding.jpg" alt="Begin Coding">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Enterprise Coding.jpg" alt="Enterprise Coding">
+      </div>
+      <div class="carousel-item">
+        <img src="images/Future Coding.jpg" alt="Future Coding">
+      </div>
+      <div class="carousel-item">
+        <img src="images/FoundationOfUnderstanding.jpg" alt="Foundation of Understanding">
+      </div>      
+    </div>
+    <button class="carousel-control-prev" type="button">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-</details> 
-</div>
+  <p class="text-center"><a href="https://www.amazon.com/author/elucian" class="text-center">Kindel Books</a></p>
+</section>
+
 
 <hr> 
 <section>
@@ -110,7 +130,7 @@
 
   <h2>Freelance Program</h2> <p>This program goes beyond just coding. You'll learn how to work effectively in a freelance team, manage projects from start to finish, and understand key market trends. Benefit from 101 mentoring and pair programming to accelerate your learning and gain practical experience. Network with other like-minded individuals and build the business acumen needed for a successful freelance or entrepreneurial career. This is your opportunity to turn your technical skills into a thriving business.</p> 
 
-  <div class="alert alert-info">Ready to be part of our community? Visit our Ko-fi shop today to donate, subscribe, or purchase digital products. As a subscriber, enjoy exclusive discounts on all our books and help us keep our content accessible to everyone. Pay what you can, and let's build something amazing together.</div>
+  <div class="alert alert-info">Are you ready to join our community? Visit our Ko-fi shop, where you can purchase digital products, order a commission, or subscribe. Your support will help fund our activities and enable us to provide services for those who cannot afford an expensive boot-camp.</div>
 
   <!-- subscription button on ko-fi -->
   <div class="text-center">
@@ -215,8 +235,64 @@
 <footer class="footer">
   <div class="footer-copyright text-center"></div>
 </footer>
-
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.querySelector('#bookCarousel');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const prevButton = carousel.querySelector('.carousel-control-prev');
+  const nextButton = carousel.querySelector('.carousel-control-next');
+  let currentIndex = 0;
+  let interval;
+
+  function showSlide(index) {
+    items[currentIndex].classList.remove('active');
+    items[index].classList.add('active');
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    let nextIndex = (currentIndex + 1) % items.length;
+    showSlide(nextIndex);
+  }
+
+  function prevSlide() {
+    let prevIndex = (currentIndex - 1 + items.length) % items.length;
+    showSlide(prevIndex);
+  }
+
+  function startCarousel() {
+    interval = setInterval(nextSlide, 7000);
+  }
+
+  function stopCarousel() {
+    clearInterval(interval);
+  }
+
+  prevButton.addEventListener('click', () => {
+    prevSlide();
+    stopCarousel();
+    startCarousel();
+  });
+
+  nextButton.addEventListener('click', () => {
+    nextSlide();
+    stopCarousel();
+    startCarousel();
+  });
+
+  // Wait for all images to load before starting the carousel
+  Promise.all(Array.from(carousel.querySelectorAll('img')).map(img => {
+    if (img.complete) return Promise.resolve();
+    return new Promise(resolve => { img.onload = img.onerror = resolve; });
+  })).then(() => {
+    startCarousel();
+  });
+});
+</script>
+
+
 </body>
 
 </html>
