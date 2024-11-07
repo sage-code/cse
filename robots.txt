@@ -1,4 +1,6 @@
 User-agent: *
-allow: /
-# disallow: /admin/
-# disallow: /private/
+Disallow: /node_modules/
+Disallow: /admin/
+Disallow: /search/
+
+Sitemap: https://sagecode.pro/sitemap.xml

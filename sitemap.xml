@@ -5,7 +5,14 @@
   xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <url><loc>https://sagecode.pro/index.html</loc></url>
+<url>
+  <loc>https://sagecode.pro/index.html</loc>
+  <lastmod>2024-11-07</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+
   <url><loc>https://sagecode.pro/projects.html</loc></url>
   <url><loc>https://sagecode.pro/services.html</loc></url>
   <url><loc>https://sagecode.pro/programming.html</loc></url>
