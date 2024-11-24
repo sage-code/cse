@@ -109,12 +109,12 @@ return;
 
 <p><b>Note:&nbsp;</b>There is a smarter way of doing this sum using a formula: (1+100)*50 = 5050. But of course we pretend we don't know this and do it in the hard way. The point is we have done it in parallel on a multithread application.</p>
 
-<h1>Bee Coroutines</h1>
+<h2>Bee Coroutines</h2>
 <div class="alert alert-secondary shadow-sm">
 Bee is designed for high performance computing using multi-core processors. There is a second resource for concurency: high performance video cards or add-in cards that enable parallel processing. After we finish the design, we will research hardware sollutions to optimize de compiler.
 </div>
 
-<h2><a id="coroutines"></a>Coroutines</h2>
+<h3><a id="coroutines"></a>Coroutines</h3>
 
 <p>Coroutines are rules that can be suspended with all states ready then resumed on demand multiple times. Each time we resume a coroutine this can produce one result that we capture. So a coroutine can produce multiple results until finishes.</p>
 
