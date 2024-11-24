@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<url>
+  <loc>https://sagecode.pro/index.html</loc>
+  <lastmod>2024-11-07</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.0</priority>
+</url>
+
+
+  <url><loc>https://sagecode.pro/projects.html</loc></url>
+  <url><loc>https://sagecode.pro/services.html</loc></url>
+  <url><loc>https://sagecode.pro/programming.html</loc></url>
+  <url><loc>https://sagecode.pro/engineering.html</loc></url>
+
+  <url><loc>https://sagecode.pro/ada/index.html</loc></url>
+  <url><loc>https://sagecode.pro/fortran/index.html</loc></url>
+  <url><loc>https://sagecode.pro/go/index.html</loc></url>
+  <url><loc>https://sagecode.pro/python/index.html</loc></url>
+  <url><loc>https://sagecode.pro/react/index.html</loc></url>
+  <url><loc>https://sagecode.pro/assembly/index.html</loc></url>
+  <url><loc>https://sagecode.pro/hw/index.html</loc></url>
+  <url><loc>https://sagecode.pro/bash/index.html</loc></url>
+  <url><loc>https://sagecode.pro/c/index.html</loc></url>
+  <url><loc>https://sagecode.pro/ruby/index.html</loc></url>
+  <url><loc>https://sagecode.pro/carbon/index.html</loc></url>
+  <url><loc>https://sagecode.pro/java/index.html</loc></url>
+  <url><loc>https://sagecode.pro/rust/index.html</loc></url>
+  <url><loc>https://sagecode.pro/julia/index.html</loc></url>
+  <url><loc>https://sagecode.pro/scala/index.html</loc></url>  
+  <url><loc>https://sagecode.pro/script/index.html</loc></url>
+  <url><loc>https://sagecode.pro/cpp/index.html</loc></url>
+  <url><loc>https://sagecode.pro/nim/index.html</loc></url>
+  <url><loc>https://sagecode.pro/csharp/index.html</loc></url>
+  <url><loc>https://sagecode.pro/css/index.html</loc></url>
+  <url><loc>https://sagecode.pro/swift/index.html</loc></url>
+  <url><loc>https://sagecode.pro/dart/index.html</loc></url>
+  <url><loc>https://sagecode.pro/php/index.html</loc></url>
+  </urlset>
