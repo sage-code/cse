@@ -56,7 +56,7 @@ Rectangle r = new Rectangle(4,5);
 <li>For each component in the header, the following two members:</li>
 <li>A private final field with the same name and declared type as the record component. This field is sometimes referred to as a component field.</li>
 <li>A public accessor method with the same name and type of the component; in the Rectangle record class example, these methods are Rectangle::length() and Rectangle::width().</li>
-<li>A canonical constructor whose signature is the same as the header. This constructor assigns each argument from the new expression that instantiates the record class to the corresponding component field.</li>
+<li>A constructor whose signature is the same as the header. This constructor assigns each argument from the new expression that instantiates the record class to the corresponding component field.</li>
 <li>Implementations of the equals and hashCode methods, which specify that two record classes are equal if they are of the same type and contain equal component values.</li>
 <li>An implementation of the toString method that includes the string representation of all the record class's components, with their names.</li>
 </ol>
