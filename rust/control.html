@@ -12,7 +12,7 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <!-- Icon -->
-  <link rel="icon" type="image/png"  href="../images/favicon.ico">
+  <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Prism Highlighter -->
   <link rel="stylesheet" href="../prism.css">
   <script src="../prism.js"></script>
@@ -26,7 +26,7 @@
 <!-- header -->
 <header class="row">
     <div class="col">
-        <a href="https://sagecode.pro"><img src="../images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
+        <a href="https://sagecode.pro"><img src="/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"></a>
     </div>
     <div class="col  bottom-right">
         <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
@@ -58,7 +58,7 @@ Control flow statements make a language Turing Complete. Control statements are 
 <p>Conditional statement is based on {<em>if, else</em>} keywords. You can create two program branches. When a condition is true then first branch is executed. When the condition is false the other branch is executed. The <em>else</em> branch is optional but the first is mandatory.</p>
 
 <div class="center">
-  <img src="../images/decision.svg" alt="decision"
+  <img src="/images/decision.svg" alt="decision"
        width="460" class="img-fluid protect rounded shadow border" >
   <p>Conditional Execution</p>
 </div>
@@ -108,7 +108,7 @@ fn main() {
 <p>In Python we use <em>elsif</em> keyword and in Julia we use <em>elseif</em> keyword to create a multi-deck decision. Here in Rust we do not have a such keywords. Instead you can use <em>else if</em>  that are two keywords. This is possible in Rust due to lack of any symbol required after the "else". In Python after <em>else</em> you must use ":" but in Rust you can use a block { ... } or another <em>if</em> statement to for a multi-path decision block.</p>
 
 <div class="center">
-  <img src="../images/ladder.svg" alt="decision ladder"
+  <img src="/images/ladder.svg" alt="decision ladder"
        width="640" class="img-fluid protect rounded shadow border" >
   <p>Decision Ladder</p>
 </div>
@@ -191,7 +191,7 @@ fn main() {
     <p>This is the most simple repetition statement. We use only keyword "loop" and { ... } to create a repetitive block. This will be repeated forever and the program will get stack in the loop. You can stop using CTRL+C. This is actually a logical error. Good programmers must avoid infinite loops at all cost.</p>
     
     <div class="center">
-      <img src="../images/loop.svg" alt="loop"
+      <img src="/images/loop.svg" alt="loop"
            width="320" class="img-fluid protect rounded shadow border" >
       <p>Loop Diagram</p>
     </div>
@@ -214,7 +214,7 @@ fn main() {
     <p>To avoid an infinite loop you must create a <em>break </em>using a conditional  stop.In the next example we create a control variable "i" that is declared outside of the loop and start with 1. Then you can increment this variable with +1 every iteration. You can use the relation operator "i &gt; 3". This loop will execute 3 times then will stop and program will terminate.</p>
     
     <div class="center">
-      <img src="../images/break.svg" alt="loop break"
+      <img src="/images/break.svg" alt="loop break"
            width="400" class="img-fluid protect rounded shadow border" >
       <p>Loop Break</p>
     </div>
@@ -241,7 +241,7 @@ fn main() {
     <p>You can use <code>continue</code>  keyword to start over. This will create a kind of shortcut that will skip all other statements and restart the loop. You can continue a loop from inside a nested block.</p>
     
     <div class="center">
-      <img src="../images/continue.svg" alt="loop continue"
+      <img src="/images/continue.svg" alt="loop continue"
            width="400" class="img-fluid protect rounded shadow border" >
       <p>Loop Continue</p>
     </div>
@@ -265,7 +265,7 @@ fn main() {
     <p>This is a repetitive block of code that is executed as long as one condition is true. When the condition become false the program continue with next statement after the loop block end. Now the problem is to create a condition expression that will become false. If the condition never become false we again can have an infinite loop.</p>
     
     <div class="center">
-      <img src="../images/while.svg" alt="while loop"
+      <img src="/images/while.svg" alt="while loop"
            width="520" class="img-fluid protect rounded shadow border" >
       <p>While Loop</p>
     </div>
@@ -290,7 +290,7 @@ fn main() {
     <p>This kind of loop is created using keyword "for" and it has two usages: One is to iterate a specific number of times over a range of numbers. Second is to iterate over a collection of items: array, vector, string or map/dictionary. The range in Rust is created using a range expression with .. operator. (1..10) will create one number and will assign it to "i" to create the control variable.</p>
     
     <div class="center">
-      <img src="../images/for-loop.svg" alt="for loop"
+      <img src="/images/for-loop.svg" alt="for loop"
            width="520" class="img-fluid protect rounded shadow border" >
       <p>For Loop <br> with continue &amp; break</p>
     </div>

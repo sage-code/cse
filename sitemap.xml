@@ -6,15 +6,45 @@
   http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://sagecode.pro/index.html</loc>
-  <lastmod>2025-04-04</lastmod>
+  <loc>https://sagecode.pro/</loc>
+  <lastmod>2025-04-08</lastmod>
   <changefreq>monthly</changefreq>
   <priority>1.0</priority>
 </url>
 
 
-  <url><loc>https://sagecode.pro/projects.html</loc></url>
-  <url><loc>https://sagecode.pro/services.html</loc></url>
-  <url><loc>https://sagecode.pro/programming.html</loc></url>
-  <url><loc>https://sagecode.pro/engineering.html</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/projects/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/services/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/programming/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/engineering/</loc></url>
+
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/ada/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/assembly/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/bash/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/bee/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/c/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/carbon/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/csharp/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/css/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/dart/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/ds/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/eve/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/fortran/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/go/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/html/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/hw/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/java/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/julia/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/maj/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/nim/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/php/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/plsql/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/python/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/react/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/ruby/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/rust/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/scala/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/script/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/swift/</loc></url>
+<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/zig/</loc></url>
 </urlset>
