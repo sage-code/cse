@@ -12,11 +12,11 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
   <!-- Icon -->
-  <link rel="icon" type="image/png"  href="../images/favicon.ico">
+  <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Eve code highlighter -->
   <script src="js/eve1.js"></script>
   <!-- Custom css -->
-  <link rel="stylesheet" href="../sage.css">
+  <link rel="stylesheet" href="/sage.css">
   </head>
 <body onload="eve_render();">
 
@@ -25,10 +25,10 @@
 <!-- header -->
 <header class="row">
     <div class="col">
-        <a href="https://sagecode.pro"><img src="../images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
+        <a href="https://sagecode.pro"><img src="/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
     </div>
     <div class="col  bottom-right">
-        <a href="index.html#lang-index" rel="nofollow">index</a>&lt;--
+        <a href="/eve/index.html#lang-index" rel="nofollow">index</a>&lt;--
     </div>
 </header><hr>
 
@@ -111,7 +111,7 @@ print "a is odd"  if (a % 2 != 0);
 <p>In next pattern we use "if/else" keywords to create a decision branch/fork.</p>
 
 <div align="center">
-  <img src="../images/decision.svg" alt="decision" 
+  <img src="/images/decision.svg" alt="decision" 
   width="520" class="img-fluid protect rounded shadow border" >
   <p>decision diagram</p>
 </div>
@@ -139,7 +139,7 @@ done; -- you can't use if after done
 <p>A ladder is a conditional multi-path selector based on exclusive conditions. Only one branch is executed. If no condition is satisfied the alternative branch is executed. Alternative branch is optional.</p>
 
 <div align="center">
-  <img src="../images/ladder.svg" alt="decision" 
+  <img src="/images/ladder.svg" alt="decision" 
   width="640" class="img-fluid protect rounded shadow border" >
   <p>decision ladder</p>
 </div>
@@ -171,7 +171,7 @@ This is a multi-path selector similar to switch also named: jump table. It two v
 </p>
 
 <div align="center">
-    <img src="img/eve-match.svg" alt="match"
+    <img src="/eve/img/eve-match.svg" alt="match"
     width="320" class="img-fluid protect rounded shadow border" >
     <p>Match Diagram</p>
   </div>
@@ -217,7 +217,7 @@ return;
 <p>This is a repetitive block statement. The loop is executed until a "stop" statement is encounter. The stop can be conditioned by "if" or "match". This is called an "interruption". You can use keyword "skip" with conditional "if" to restart the loop early. This is called a "shortcut" statement.</p>
 
 <div align="center">
-  <img src="img/loop.svg" alt="loop"
+  <img src="/eve/img/loop.svg" alt="loop"
   width="580" class="img-fluid protect rounded shadow border" >
   <p>infinite loop </p>
 </div>
@@ -251,7 +251,7 @@ repeat [label] [if condition];
 <p>Execute a block of code as long as one condition is true. When the condition become false the repetitive block ends. If the condition is never true only the "else" block is executed. If the condition was true for a while, the else block is not executed.</p>
 
 <div align="center">
-  <img src="../images/while.svg" alt="while-loop"
+  <img src="/images/while.svg" alt="while-loop"
   width="520" class="img-fluid protect rounded shadow border" >
   <p>while loop</p>
 </div>
@@ -314,7 +314,7 @@ i = 5
 <p>This statement use one control variables to visit elements in a collection or domain. First use-case of this is to iterate over a range of numbers. In Eve the range is represented as (min..nax).</p>
 
 <div align="center">
-  <img src="img/for-loop.svg" alt="for-loop"
+  <img src="/eve/img/for-loop.svg" alt="for-loop"
   width="580" class="img-fluid protect rounded shadow border" >
   <p>for ... loop</p>
 </div>
@@ -365,7 +365,7 @@ print;
 
 <hr>
 <p><b>Read next:</b>
-<a href="processing.html">Processing</a></p>
+<a href="/eve/processing/">Processing</a></p>
 
 <!-- Footer -->
 <footer class="footer">
