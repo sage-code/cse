@@ -418,3 +418,40 @@ a:hover {
 .round {
   border-radius: 50%;
 }
+
+ 
+  /* Custom styles for Dark Theme button hovers */
+body[data-bs-theme="dark"] .btn-secondary:hover,
+body[data-bs-theme="dark"] .btn-secondary:focus,
+body[data-bs-theme="dark"] .btn-secondary:active {
+    /* Adjust these colors to your preferred dark theme hover state */
+    background-color: #565e64; /* A slightly darker shade for secondary hover */
+    border-color: #565e64;     /* Match border to background */
+    color: #ffffff;           /* Keep text white or a very light color */
+}
+
+body[data-bs-theme="dark"] .btn-danger:hover,
+body[data-bs-theme="dark"] .btn-danger:focus,
+body[data-bs-theme="dark"] .btn-danger:active {
+    /* Adjust these colors to your preferred dark theme hover state */
+    background-color: #bb2d3b; /* A slightly darker red for danger hover */
+    border-color: #bb2d3b;     /* Match border to background */
+    color: #ffffff;           /* Keep text white or a very light color */
+}
+
+/* Optional: If you want to refine outline buttons in dark mode too */
+body[data-bs-theme="dark"] .btn-outline-secondary:hover,
+body[data-bs-theme="dark"] .btn-outline-secondary:focus,
+body[data-bs-theme="dark"] .btn-outline-secondary:active {
+    background-color: #565e64;
+    border-color: #565e64;
+    color: #ffffff;
+}
+
+body[data-bs-theme="dark"] .btn-outline-danger:hover,
+body[data-bs-theme="dark"] .btn-outline-danger:focus,
+body[data-bs-theme="dark"] .btn-outline-danger:active {
+    background-color: #bb2d3b;
+    border-color: #bb2d3b;
+    color: #ffffff;
+}
