@@ -455,3 +455,27 @@ a:hover {
     border-color: #ffffff;
     color: #ffffff;
 }
+
+/* Responsive video container for in-flow video (like an image) */
+.responsive-video-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 28%; /* Adjusted for 21:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.responsive-video-container video {
+    position: absolute; /* Position the video *within* the container */
+    top: 0;
+    left: 0;
+    width: 100%; /* Make video fill the container's width */
+    height: 100%; /* Make video fill the container's height */
+    object-fit: contain; /* How the video content fits: 'cover' crops to fill, 'contain' shows entire video with letterbox */
+    display: block; /* Removes any default extra space below inline elements */
+    filter: brightness(0.8); /* Optional: Adjust brightness if needed */
+    margin-top: 0;
+    margin-bottom: 0;
+}
