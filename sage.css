@@ -487,3 +487,7 @@ a:hover {
 .card-body {
     margin-bottom: 8px;
 }
+
+.card-text {
+  font-size:1rem;
+}
