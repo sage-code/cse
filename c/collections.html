@@ -30,154 +30,18 @@
 Collections in C are data structures that group multiple values together. Unlike some higher-level languages, C doesn't have built-in "collections" but relies on fundamental types like arrays and structs, along with pointers, to build more complex data structures.
 </div>
 
-<p>This page explores the foundational building blocks of data collections in C, from simple arrays to complex structures like linked lists.</p>
-
 <ul> 
-  <li><a href="#arrays">Arrays</a></li>
-  <li><a href="#structs">Structs</a></li>
-  <li><a href="#pointers">Pointers</a></li>
   <li><a href="#linked-lists">Linked Lists</a></li>
   <li><a href="#dynamic-arrays">Dynamic Arrays</a></li>
 </ul>
 
-<hr>
-<h2><a id="arrays"></a>Arrays</h2>
-<p>An array is a collection of elements of the same data type, stored in contiguous memory locations. You access individual elements using an index, which starts at <code>0</code>.</p>
-
-<h4>Syntax:</h4>
-<pre><code class="language-c">
-// Declaration with a fixed size
-int numbers[5];
-
-// Declaration and initialization
-int primes[] = {2, 3, 5, 7, 11};
-
-// Accessing an element
-int first_prime = primes[0];
-</code></pre>
-
-<h4>Example:</h4>
-<p>This example declares an array of integers, initializes it, and then iterates through it to print each element.</p>
-<pre><code class="language-c">
-#include &lt;stdio.h&gt;
-
-int main() {
-    int scores[3] = {95, 88, 92};
-    printf("Scores:\n");
-    for (int i = 0; i < 3; i++) {
-        printf("Score at index %d: %d\n", i, scores[i]);
-    }
-    return 0;
-}
-</code></pre>
-
-<h4>Expected Output:</h4>
-<pre class="language-output">
-Scores:
-Score at index 0: 95
-Score at index 1: 88
-Score at index 2: 92
-</pre>
-
-<h4>Notes:</h4>
-<ul>
-  <li>Arrays in C have a fixed size after declaration.</li>
-  <li>Accessing an element outside the array's bounds (e.g., <code>scores[3]</code>) leads to undefined behavior.</li>
-</ul>
-
-<hr>
-<h2><a id="structs"></a>Structs</h2>
-<p>A struct (structure) is a composite data type that groups variables of different data types under a single name. Structs are fundamental for creating complex data types in C.</p>
-
-<h4>Syntax:</h4>
-<pre><code class="language-c">
-// Struct definition
-struct Person {
-    char name[50];
-    int age;
-    float height;
-};
-
-// Declaring a struct variable
-struct Person p1;
-
-// Accessing struct members
-strcpy(p1.name, "Alice");
-p1.age = 30;
-p1.height = 1.65;
-</code></pre>
-
-<h4>Example:</h4>
-<p>Here, we define a <code>Car</code> struct and create two instances of it, accessing and printing their members.</p>
-<pre><code class="language-c">
-#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-
-struct Car {
-    char brand[20];
-    int year;
-    float price;
-};
-
-int main() {
-    struct Car car1;
-    strcpy(car1.brand, "Toyota");
-    car1.year = 2020;
-    car1.price = 25000.00;
-
-    struct Car car2 = {"Honda", 2022, 30000.50};
-
-    printf("Car 1: %s, %d, $%.2f\n", car1.brand, car1.year, car1.price);
-    printf("Car 2: %s, %d, $%.2f\n", car2.brand, car2.year, car2.price);
-    
-    return 0;
-}
-</code></pre>
-
-<h4>Expected Output:</h4>
-<pre class="language-output">
-Car 1: Toyota, 2020, $25000.00
-Car 2: Honda, 2022, $30000.50
-</pre>
-
-<hr>
-<h2><a id="pointers"></a>Pointers</h2>
-<p>Pointers are variables that store memory addresses. They are crucial for creating dynamic data structures and for efficient memory management in C. Pointers "point" to the location of other variables.</p>
-
-<h4>Syntax:</h4>
-<pre><code class="language-c">
-int num = 10;
-int *p;      // Pointer declaration
-p = &num;    // Assigning the address of 'num' to 'p'
-
-// Dereferencing the pointer to get the value
-printf("Value: %d\n", *p); // Prints 10
-</code></pre>
-
-<h4>Pointers and Structs:</h4>
-<p>When working with pointers to structs, you use the <code>-></code> operator to access members.</p>
-<pre><code class="language-c">
-#include &lt;stdio.h&gt;
-
-struct Point {
-    int x;
-    int y;
-};
-
-int main() {
-    struct Point p = {10, 20};
-    struct Point *ptr = &p;
-
-    // Accessing members using the pointer
-    printf("x: %d, y: %d\n", ptr->x, ptr->y);
-    
-    return 0;
-}
-</code></pre>
-
-<hr>
 <h2><a id="linked-lists"></a>Linked Lists</h2>
 <p>A linked list is a fundamental dynamic data structure where elements are not stored in contiguous memory locations. Instead, each element (a "node") contains a value and a pointer to the next node in the sequence.  </p>
+
+<div align="center">
+  <img src="/images/linked list.svg" alt="list" width="520" class="img-fluid protect rounded shadow border" >    
+  <p>Linked List</p>
+</div>  
 
 <h4>Anatomy of a Node:</h4>
 <pre><code class="language-c">
