@@ -36,7 +36,7 @@ Collections in C are data structures that group multiple values together. Unlike
 </ul>
 
 <h2><a id="linked-lists"></a>Linked Lists</h2>
-<p>A linked list is a fundamental dynamic data structure where elements are not stored in contiguous memory locations. Instead, each element (a "node") contains a value and a pointer to the next node in the sequence.  </p>
+<p>A linked list is a fundamental dynamic data structure where elements are not stored in contiguous memory locations. Instead, each element (a "node") contains a value and a pointer to the next node in the sequence. Some lists have also a pointer to previous element. A list has first element (head) and last element (tail). You can add elements at the beginning, at the end or insert new elements with the same speed.</p>
 
 <div align="center">
   <img src="/images/linked list.svg" alt="list" width="520" class="img-fluid protect rounded shadow border" >    
@@ -99,9 +99,16 @@ int main() {
 1 -> 2 -> 3 -> NULL
 </pre>
 
+<p><p>Note: </p>Access of the element is in sequence, from tail to head or from head to tail. Therefore access of elements in large lists is considered slow. For better performance developers preffer binary tree, that has better performance.</p>
+
 <hr>
 <h2><a id="dynamic-arrays"></a>Dynamic Arrays</h2>
 <p>Unlike C's built-in static arrays, you can create dynamic arrays using pointers and memory allocation functions like <code>malloc()</code> and <code>realloc()</code>. This allows the array's size to be determined at runtime and resized as needed.</p>
+
+<div align="center">
+  <img src="/images/array.jpg" alt="array" srcset="/images/array.svg" width="520" class="img-fluid protect rounded shadow border" >    
+  <p>Array Elements</p>
+</div>  
 
 <h4>Example:</h4>
 <p>We'll create a dynamic array, add elements, and then resize it using <code>realloc()</code>.</p>
@@ -155,6 +162,8 @@ int main() {
     return 0;
 }
 </code></pre>
+
+<div class="alert alert-info">Access to array elements is faster than the access of linked-list elements. The oroblem is you need the element index for this, and if you want to search by value stored for element, you have to access all elements from the beginning until you find the value you are looking for.</div>
 
 <h4>Expected Output:</h4>
 <pre class="language-output">
