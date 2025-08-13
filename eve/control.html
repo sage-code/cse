@@ -110,7 +110,7 @@ print "a is odd"  if (a % 2 != 0);
 
 <p>In next pattern we use "if/else" keywords to create a decision branch/fork.</p>
 
-<div align="center">
+<div class="text-center">
   <img src="/images/decision.svg" alt="decision" 
   width="520" class="img-fluid protect rounded shadow border" >
   <p>decision diagram</p>
@@ -138,7 +138,7 @@ done; -- you can't use if after done
 
 <p>A ladder is a conditional multi-path selector based on exclusive conditions. Only one branch is executed. If no condition is satisfied the alternative branch is executed. Alternative branch is optional.</p>
 
-<div align="center">
+<div class="text-center">
   <img src="/images/ladder.svg" alt="decision" 
   width="640" class="img-fluid protect rounded shadow border" >
   <p>decision ladder</p>
@@ -170,7 +170,7 @@ done; -- you can't use if after done
 This is a multi-path selector similar to switch also named: jump table. It two variants: "all" or "one". That is optional keyword. If used, ALL will evaluate all values it may be matching multiple cases. If "one" is used (this is the default), only first case that has a matching value will be executed and the rest are ignored, even if a second match exist. The second match should not be present though and is probably a mistake!
 </p>
 
-<div align="center">
+<div class="text-center">
     <img src="/eve/img/eve-match.svg" alt="match"
     width="320" class="img-fluid protect rounded shadow border" >
     <p>Match Diagram</p>
@@ -216,7 +216,7 @@ return;
 
 <p>This is a repetitive block statement. The loop is executed until a "stop" statement is encounter. The stop can be conditioned by "if" or "match". This is called an "interruption". You can use keyword "skip" with conditional "if" to restart the loop early. This is called a "shortcut" statement.</p>
 
-<div align="center">
+<div class="text-center">
   <img src="/eve/img/loop.svg" alt="loop"
   width="580" class="img-fluid protect rounded shadow border" >
   <p>infinite loop </p>
@@ -250,7 +250,7 @@ repeat [label] [if condition];
 <h2><a id="while"></a>While Loop</h2>
 <p>Execute a block of code as long as one condition is true. When the condition become false the repetitive block ends. If the condition is never true only the "else" block is executed. If the condition was true for a while, the else block is not executed.</p>
 
-<div align="center">
+<div class="text-center">
   <img src="/images/while.svg" alt="while-loop"
   width="520" class="img-fluid protect rounded shadow border" >
   <p>while loop</p>
@@ -313,7 +313,7 @@ i = 5
 <h2><a id="for"></a>For Loop</h2>
 <p>This statement use one control variables to visit elements in a collection or domain. First use-case of this is to iterate over a range of numbers. In Eve the range is represented as (min..nax).</p>
 
-<div align="center">
+<div class="text-center">
   <img src="/eve/img/for-loop.svg" alt="for-loop"
   width="580" class="img-fluid protect rounded shadow border" >
   <p>for ... loop</p>

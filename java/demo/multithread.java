@@ -42,7 +42,7 @@ Work in progress!
 </div>
 
 
-<div align="center">
+<div class="text-center">
   <img src="/images/ladder.svg" alt="decision ladder"
        width="640" class="img-fluid protect rounded shadow border" >
   <p>Decision Ladder</p>
