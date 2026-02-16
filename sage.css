@@ -1,611 +1,226 @@
+/* ==========================================================================
+   1. CORE LAYOUT & TYPOGRAPHY
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courgette&display=swap');
+
+@font-face {
+    font-family: "Dejavu Sans Mono";
+    src: url("DejaVuSansMono.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Share Tech Mono";
+    src: url("ShareTechMono.ttf") format("truetype");
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
 .container {
-  background-color: black;
-  max-width: 1000px;
+    background-color: black;
+    max-width: 1000px;
 }
 
-@font-face {
-  font-family: "Dejavu Sans Mono";
-  src: url("DejaVuSansMono.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Share Tech Mono";
-  src: url("ShareTechMono.ttf") format("truetype");
-}
-
-h1, h2, h3, h4, h5  {
-   font-family: Roboto, Helvetica, Arial;
-}
-
-h2, h3, h4, h5 {
-   padding-top: 0.35em;
-}
-
-h1 { color: #8f00b3; font-size: 2.2rem;    }
-h2 { color: #cc6600; font-size: 1.8rem;  }
-h3 { color: #2cba77; font-size: 1.4rem;  font-weight: 600;}
-h4 { color: rgb(39, 168, 149);  font-size: 1.2rem;  font-weight: 600;}
-h5 { color: silver;  font-size: 1rem;  font-weight: 600;}
+h1, h2, h3, h4, h5 { font-family: Roboto, Helvetica, Arial; padding-top: 0.35em; }
+h1 { color: #8f00b3; font-size: 2.2rem; }
+h2 { color: #cc6600; font-size: 1.8rem; }
+h3 { color: #2cba77; font-size: 1.4rem; font-weight: 600; }
+h4 { color: rgb(39, 168, 149); font-size: 1.2rem; font-weight: 600; }
+h5 { color: silver; font-size: 1rem; font-weight: 600; }
 
 p, div, tr, th, td {
-  font-size: 1.1rem;
-  font-family: Tahoma, Verdana, Arial;
+    font-size: 1.1rem;
+    font-family: Tahoma, Verdana, Arial;
 }
 
-th {
-    color: #e60073;
-    background-color: #19334d !important;
-    font-weight:500;
-    font-size: 1.2rem;
-}
+a { text-decoration: none; transition: color 0.3s ease; }
+a:hover { color: hotpink; }
+a:active { color: purple; }
 
-img {
-    border-radius: 8px;
-}
+img { border-radius: 8px; }
 
-a {
-  text-decoration: none;
-}
-
-/* mouse over link */
-a:hover {
-  color: hotpink;
-}
-
-/* selected link */
-a:active {
-  color: purple;
-}
-
+/* ==========================================================================
+   2. CODE & DATA DISPLAY
+   ========================================================================== */
 pre {
-  border-radius:5px;
-  padding: 10px 4px 4px 4px; 
-  color: lightgreen;
-  background-color: #241f31; //blakish
+    border-radius: 5px;
+    padding: 10px 4px 4px 4px; 
+    color: lightgreen;
+    background-color: #241f31;
 }
 
 code[class*="language-"], pre[class*="language-"] {
-  color: darkseagreen;
-  font-family: "Dejavu Sans Mono", "Share Tech Mono", "Roboto Mono","Arial Monospace", monospace;
-  line-height:1.2rem;
-  letter-spacing: -1px; 
-  font-size: 0.95rem;     
-}
-
-/* languages and output */
-pre[class*="language-"] {
-  counter-reset: linenumber;
-  data-start: "0";
-  margin: 0px;
-  margin-top: 0px;
-  margin-bottom: 4px;
-  line-height:1.2rem;  
-  color:lightgreen;   
+    color: darkseagreen;
+    font-family: "Dejavu Sans Mono", "Share Tech Mono", "Roboto Mono", monospace;
+    line-height: 1.2rem;
+    letter-spacing: -1px; 
+    font-size: 0.95rem;     
 }
 
 pre[class*="language-"].line-numbers {
     position: relative;
     padding-left: 3.2rem;
-    padding-top: 10px;
     counter-reset: linenumber;
-    line-height: 1.2rem;    
 }
 
-pre span.line {
-  display: block;
-  line-height: 1.2rem;
-  font-size: 0.95rem;  
-  counter-increment: line;
-}
-
-.language-out, .output {
-  padding: 8px 8px 8px 8px;
-}
+pre span.line { display: block; counter-increment: line; }
 
 pre span.line:before {
-  content: counter(line);
-  display: inline-block;
-  border-right: 1px solid gray;
-  padding: 0 .1rem;
-  margin-right: .1rem;
-  color: #777;
-  width: 2rem;
-  text-align: right;
-  font-size: 0.95rem;  
+    content: counter(line);
+    display: inline-block;
+    border-right: 1px solid gray;
+    padding: 0 .1rem;
+    margin-right: .1rem;
+    color: #777;
+    width: 2rem;
+    text-align: right;
 }
 
-#main-img {
-    border-radius:5px;
-    max-width:640px;
+th {
+    color: #e60073;
+    background-color: #19334d !important;
+    font-weight: 500;
+    font-size: 1.2rem;
 }
 
-
-.star, .table-striped > tbody > tr:nth-of-type(odd) > td.star {
-  color:gold;
-}
-
-.top-video {
-   position: absolute;
-   top: 0;
-   height:100%;"
-}
-
-.frame-host {
-   padding:50% 0 0 0; 
-   position:relative;
-}
-
-.split-panel {
-    hyphens: auto;
-}
-
-.panel-heading {
-    background-color:#19334d; 
-    color: silver;
-    padding-left: 10px;
-    margin-top: 10px !important;
-    border-radius: 5px 5px 0px 0px;
-}
-
-.panel-body {
-    border-radius: 0px;     
-}
-
-.code-panel {
-    height: 100%;    
-    color: lightgreen;
-    border-radius: 0px 0px 5px 5px;          
-}
-
-@media screen and (max-width:640px) {
-  .top-video {
-     left: 0%;
-     width:100%;
-  }
-
-  .frame-host {
-     padding: 100% 0 0 0; 
-     position:relative;
-  }
-
-  #main-img {
-     width:100%;
-  }
-}
-
-@media screen and (min-width: 640px) {
-    .split-panel {
-        height: calc( 100% - 120px );
-    }
-
-    .panel-body {
-       height: calc( 100% - 35px );    
-    }
-
-    #main-img {
-        width:100%;
-    }
-
-    .top-video {
-        position: absolute;
-        top: 0;
-        left:  15%;
-        width: 70%;
-    }
-
-    .frame-host {
-      padding:50% 0 0 0; 
-    }
-
-    #main-img {
-      width:70%;
-    }
-
-}
-
-.fixed  {
-  font-family: "Share Tech Mono", "Roboto Mono", "Consolas", "Droid Sans Mono", "Arial Monospace", 
-               "Lucida Console";
-  font-size: 1.2em;
-}
-
-.info {
-  color : yellow;
-  background : darkgreen;
-}
-
-/* Protect for SVG */
-.protect {
-    pointer-events: none;
-}
-
-.bottom-right {
-  display:flex;
-  align-self:flex-end;
-  justify-content: flex-end;
-}
-
-.footer {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  background-color: black;
-  color: white;
-  width: 100%;
-  text-align: center;
-}
-
-
-.footer-copyright {
-  background-color: #009999;
-}
-
-.footer-copyright::before {
-  content: "Copyright (c) Sage-Code 2026";
-  padding-right: 8px;
-  color: black; /* Or a color you prefer */
-}
-
-/* Improve contrast on black theme */
-.fix-social {
-  filter: invert(1);
-}
-
-a:hover {
-  text-decoration:none;
-}
-
-.btn {
-  transition: background-color 0.5s ease-in-out;
-}
-
-.btn:focus,
-.btn:hover {
-  border: 2px;
-  outline: unset;  
-  transition: border-color 0.2s ease-in-out;
-}
-
-
-.btn-primary {
-  /* Existing styles */
-  outline-color: white;
-  background-color: rgba(0, 110, 255, 0.651);
-  border: 2px solid #006eff; /* Define the base border color */
-
-  /* Transition for hover and focus */
-  transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-.btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #0d6efd;
-  --bs-btn-border-color: #0d6efd;
-  --bs-btn-hover-color: #ffa;
-  --bs-btn-hover-bg: rgba(247, 0, 255, 0.597);
-  --bs-btn-hover-border-color: white;
-  --bs-btn-focus-shadow-rgb: 49,132,253;
-  --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: rgba(247, 0, 255, 0.597);
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  /* Change border color to white on hover and focus */
-  border-color: white;
-  border: 2px solid white;
-  /* Optionally, change background color on hover and focus */
-  background-color: rgba(247, 0, 255, 0.597);
-}
-
-
-
-/* youtube play button */
-.center {
-  text-align:center;
-}
-
-.youtube {
-  color:white;
-  background:red;
-  border-radius:6px;
-  font-family: "Droid Sans Mono", "Lucida Console", "Arial Monospace", monospace, Courier;
-  font-size: 1.1em;
-}
-
-.round-img {
-  border-radius: 50%;
-}
-
-.directive-hash {
-  color: palevioletred;
-}
-
-/* languages */
-.keyword {
-  color:orange;
-}
-
-/* languages */
-.keytab {
-  color:gold;
-}
-
-.impera {
-  color: palevioletred;
-}
-
-.control {
-    color:deepskyblue;
- }
-
-.interrupt {
-   color:lightcoral;
- }
-
-.operator {
-   color:lightcoral;
- }
-
-.type {
-  color:cyan;
-}
-
-.constant {
-  color:cyan;
-}
-
-.title {
-  color:springgreen;
-}
-
-.subtitle {
-  color:silver;
-}
-
-.comment {
-  color:lightseagreen;
-}
-
-.string {
-  color:yellow;
-}
-
-.builtin {
-  color:cyan;
-}
-
-/* the project page has a hidden dialog */
-.private_dlg.hidden {
-  display: none;
-}
-
-#closeButton {
-   background-color: #006eff;
-   border-radius: 5px;
-}
-
-.private_dlg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color:#ffa;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 5px;
-}
-
-/* style used by social buttons on first page */
-.icon-lg {
-  width:auto;
-  height:auto;
-  font-size: 2rem;
-  margin: 6px;
-  background-color: rgb(58, 42, 42);
-}
-
-.icon-lg:hover {
-  background-color: rgb(159, 132, 122);
-  opacity: 0.7;
-}
-
-/* style used by social image */
-.fix-social {
-  position: relative;
-  border-style: solid 2px;
-}
-
-.round {
-  border-radius: 50%;
-}
-
- 
-  /* Custom styles for Dark Theme button hovers */
-.btn-secondary:hover,
-.btn-secondary:focus,
-.btn-secondary:active {
-    /* Adjust these colors to your preferred dark theme hover state */
-    background-color: #565e64; /* A slightly darker shade for secondary hover */
-    border-color: #565e64;     /* Match border to background */
-    color: #ffffff;           /* Keep text white or a very light color */
-}
-
-.btn-danger:hover,
-.btn-danger:focus,
-.btn-danger:active {
-    /* Adjust these colors to your preferred dark theme hover state */
-    background-color: #bb2d3b; /* A slightly darker red for danger hover */
-    border-color:  #ffffff;     /* Match border to background */
-    color: #ffffff;           /* Keep text white or a very light color */
-}
-
-/* Optional: If you want to refine outline buttons in dark mode too */
-.btn-outline-secondary:hover,
-.btn-outline-secondary:focus,
-.btn-outline-secondary:active {
-    background-color: #565e64;
-    border-color:  #ffffff;
-    color: #ffffff;
-}
-
-.btn-outline-danger:hover,
-.btn-outline-danger:focus,
-.btn-outline-danger:active {
-    background-color: #bb2d3b;
-    border-color: #ffffff;
-    color: #ffffff;
-}
-
-/* Responsive video container for in-flow video (like an image) */
-.responsive-video-container {
-    max-width: 50vw;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 28%; /* Adjusted for 21:9 aspect ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.responsive-video-container video {
-    position: absolute; /* Position the video *within* the container */
-    top: 0;
-    left: 0;
-    width: 100%; /* Make video fill the container's width */
-    height: 100%; /* Make video fill the container's height */
-    object-fit: contain; /* How the video content fits: 'cover' crops to fill, 'contain' shows entire video with letterbox */
-    display: block; /* Removes any default extra space below inline elements */
-    filter: brightness(0.8); /* Optional: Adjust brightness if needed */
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.card {
-  margin-bottom: 8px;
-}
-
-.card-body {
-    margin-bottom: 8px;
-}
-
-.card-text {
-  font-size:.8rem;
-}
-
-/* Typography tweaks for that Spartan feel */
-.tracking-tight {
-    letter-spacing: -0.05rem;
-}
-
-/* Gradient Text Effect */
-.text-gradient {
-    background: linear-gradient(45deg, #0d6efd, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Spartan Buttons: Clean borders, no heavy shadows */
-.btn-spartan-primary {
-    background-color: #0d6efd;
-    color: white;
-    border: 1px solid #0d6efd;
-    border-radius: 4px; /* Slightly sharper corners for a pro look */
-    transition: all 0.3s ease;
-}
-
-.btn-spartan-primary:hover {
-    background-color: transparent;
-    color: #0d6efd;
-}
-
-.btn-spartan-outline {
-    background-color: transparent;
-    color: #f8f9fa;
-    border: 1px solid #444;
-    border-radius: 4px;
-}
-
-.btn-spartan-outline:hover {
-    border-color: #f8f9fa;
-    color: #fff;
-}
-
-/* Import Google Fonts: Caveat (Handwriting) and Courgette (Elegant Cursive) */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courgette&display=swap');
-
+.star { color: gold; }
+
+/* ==========================================================================
+   3. HERO & BLACKBOARD SYSTEM
+   ========================================================================== */
 .hero-blackboard {
     width: 100%;
-    /* Responsive height: Adjusts based on screen size */
-    min-height: 400px; 
+    min-height: 550px; 
     padding: 40px 20px;
-    
+    overflow: hidden;
     background: url('images/blackboard.jpg') no-repeat center center;
     background-size: cover;
     border-radius: 8px;
     position: relative;
-    
-    /* Subtle inner glow to make it look like a real slate board */
     box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
-    
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Chalky Font Style (Handwritten) */
 .chalk-text {
     color: rgba(250, 99, 91, 0.971);
     font-family: 'Caveat', cursive;
-    font-size: 2.5rem; /* Larger for the main title */
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 5px rgba(255,255,255,0.2);
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     letter-spacing: 1px;
 }
 
 .chalk-body {
     color: rgba(240, 240, 240, 0.9);
     font-family: 'Caveat', cursive;
-    font-size: 1.6rem;
+    font-size: 2rem;
     white-space: pre-wrap;
     line-height: 1.4;
-    /* This makes the text look slightly "dusty" like real chalk */
     filter: drop-shadow(0px 0px 1px rgba(255,255,255,0.3));
 }
 
-
-/* Responsive adjustments for mobile */
-@media (max-width: 768px) {
-    .chalk-text { font-size: 2.2rem; }
-    .chalk-body { font-size: 1.2rem; }
-    .hero-blackboard { padding: 40px 10px; min-height: 350px; }
+/* ==========================================================================
+   4. SPARTAN CARDS & SLATE
+   ========================================================================== */
+.card-slate {
+    background-color: #1a1a1a;
+    background-image: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 100%);
+    border: 1px solid #333;
+    border-radius: 12px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    transition: all 0.3s ease-in-out;
 }
 
-.transition-fade {
-    transition: opacity 1.2s ease-in-out;
-}
-
-.opacity-100 {
-    opacity: 1 !important;
-}
-
-.opacity-0 {
-    opacity: 0;
-}
-
-/* Card Hover Effect */
-.transition-hover {
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.transition-hover:hover {
+.card-slate:hover {
+    border-color: #5d4037;
     transform: translateY(-5px);
-    border-color: #0d6efd !important;
-    box-shadow: 0 10px 30px rgba(13, 110, 253, 0.1) !important;
 }
 
-/* Ensure the text gradient is visible on these headings */
+.slate-title {
+    font-family: 'Caveat', cursive;
+    font-size: 2.2rem;
+    color: #f8f9fa;
+}
+
 .text-gradient {
     background: linear-gradient(45deg, #0d6efd, #00d4ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   5. BUTTONS & ACTIONS
+   ========================================================================== */
+.btn { transition: all 0.3s ease-in-out; }
+
+/* Main Spartan Style */
+.btn-outline-light, .card-slate .btn-outline-light {
+    border-color: rgba(255, 255, 255, 0.4);
+    font-family: 'Share Tech Mono', monospace;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn-outline-light:hover {
+    background-color: #f8f9fa;
+    color: #000;
+    border-color: #f8f9fa;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border: 1px solid #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: rgba(247, 0, 255, 0.6);
+    border-color: white;
+}
+
+/* ==========================================================================
+   6. FOOTER & UTILITIES
+   ========================================================================== */
+footer.border-top {
+    border-top: 2px solid rgba(118, 111, 111, 0.1) !important;
+}
+
+.social-link {
+    color: #6c757d;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-link:hover { color: #0d6efd; }
+
+.x-small {
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.footer-copyright::before {
+    content: "Copyright (c) Sage-Code 2026";
+    padding-right: 8px;
+    color: #777;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+    .chalk-text { font-size: 2.2rem; }
+    .chalk-body { font-size: 1.5rem; }
+    .hero-blackboard { min-height: 450px; }
+    .responsive-video-container { max-width: 90vw; padding-bottom: 56.25%; }
+}
+
+@media (min-width: 640px) {
+    .top-video { position: absolute; top: 0; left: 15%; width: 70%; height: 100%; }
+    .frame-host { padding: 50% 0 0 0; position: relative; }
+    #main-img { width: 70%; }
 }

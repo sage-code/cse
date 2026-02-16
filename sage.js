@@ -3,8 +3,8 @@ const text = "Welcome to the Laboratory.\n" +
              "Study for free at your own pace.\n" +
              "Master Engineering through open-source roadmaps.\n" +
              "42-day free mentorship trial available.\n" +
-             "Zero ads. Zero tracking. Pure focus.\n" +
-             "For those ready to step into the future.";
+             "Zero ads, no tracking, pure focus...\n" +
+             "for those ready to step into the future!";
 
     const container = document.getElementById("typewriter");
     const actions = document.getElementById("hero-actions");
