@@ -41,7 +41,7 @@ img { border-radius: 8px; }
    ========================================================================== */
 .hero-blackboard {
     width: 100%;
-    min-height: 580px;
+    min-height: 420px;
     background: url('images/blackboard.jpg') no-repeat center center;
     background-size: cover;
     border-radius: 8px;
