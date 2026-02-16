@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const text = `Welcome to Sage-Code Laboratory.
-Where you can Study for free at your own pace.
-Using our resources.
-Professional mentor available (42-day free trial).
-No ads, no distractions, pure learning.
-Professional premium services for VIP members.`;
+const text = "Welcome to the Laboratory.\n" +
+             "Study for free at your own pace.\n" +
+             "Master Engineering through open-source roadmaps.\n" +
+             "42-day free mentorship trial available.\n" +
+             "Zero ads. Zero tracking. Pure focus.\n" +
+             "For those ready to step into the future.";
 
     const container = document.getElementById("typewriter");
     const actions = document.getElementById("hero-actions");
@@ -12,14 +12,21 @@ Professional premium services for VIP members.`;
 
     function typeWriter() {
         if (i < text.length) {
-            container.innerHTML += text.charAt(i);
+            if (text.charAt(i) === "\n") {
+                container.innerHTML += "<br>";
+            } else {
+                container.innerHTML += text.charAt(i);
+            }
             i++;
-            setTimeout(typeWriter, 40); // Speed of typing in milliseconds
+            // Slightly varied speed for a more "human" writing feel
+            let speed = text.charAt(i-1) === "." ? 400 : 45; 
+            setTimeout(typeWriter, speed);
         } else {
-            // Show buttons once typing is done
+            actions.classList.remove("opacity-0");
             actions.classList.add("opacity-100");
         }
     }
 
-    typeWriter();
+    // Delay start until the font is likely loaded and user has looked at the board
+    setTimeout(typeWriter, 800);
 });
