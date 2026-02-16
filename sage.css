@@ -1,81 +1,119 @@
 /* ==========================================================================
-   1. CORE LAYOUT & TYPOGRAPHY
+   1. GLOBAL UI & TYPOGRAPHY
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Caveat:wght@400..700&family=Share+Tech+Mono&display=swap');
 
 @font-face {
     font-family: "Dejavu Sans Mono";
     src: url("DejaVuSansMono.ttf") format("truetype");
 }
 
-@font-face {
-    font-family: "Share Tech Mono";
-    src: url("ShareTechMono.ttf") format("truetype");
-}
-
 body {
     background-color: black;
-    color: white;
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 .container {
     background-color: black;
     max-width: 1000px;
+    margin: 0 auto;
 }
 
-h1, h2, h3, h4, h5 { font-family: Roboto, Helvetica, Arial; padding-top: 0.35em; }
+h1, h2, h3, h4, h5 { font-family: 'Roboto', sans-serif; padding-top: 0.35em; }
 h1 { color: #8f00b3; font-size: 2.2rem; }
 h2 { color: #cc6600; font-size: 1.8rem; }
 h3 { color: #2cba77; font-size: 1.4rem; font-weight: 600; }
 h4 { color: rgb(39, 168, 149); font-size: 1.2rem; font-weight: 600; }
 h5 { color: silver; font-size: 1rem; font-weight: 600; }
 
-p, div, tr, th, td {
-    font-size: 1.1rem;
-    font-family: Tahoma, Verdana, Arial;
-}
+p, div, tr, th, td { font-size: 1.1rem; }
 
-a { text-decoration: none; transition: color 0.3s ease; }
-a:hover { color: hotpink; }
+a { text-decoration: none; transition: 0.3s; }
+a:hover { color: hotpink; text-decoration: underline; }
 a:active { color: purple; }
 
 img { border-radius: 8px; }
 
 /* ==========================================================================
-   2. CODE & DATA DISPLAY
+   2. THE BLACKBOARD (Strictly Cursive Intro)
+   ========================================================================== */
+.hero-blackboard {
+    width: 100%;
+    min-height: 580px;
+    background: url('images/blackboard.jpg') no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start; /* Fixed Top-Alignment */
+    justify-content: center;
+    padding-top: 60px;
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
+}
+
+.blackboard-content {
+    width: 90%;
+    max-width: 800px;
+    text-align: left; /* Fix: No horizontal jitter */
+}
+
+.typewriter-area {
+    min-height: 280px; /* Reserved space to prevent board resizing */
+    margin-bottom: 20px;
+}
+
+.chalk-text { font-family: 'Caveat', cursive; color: rgba(250, 99, 91, 0.95); font-size: 3.2rem; margin: 0; }
+.chalk-body { font-family: 'Caveat', cursive; color: rgba(240, 240, 240, 0.9); font-size: 2rem; white-space: pre-wrap; line-height: 1.4; }
+.chalk-link { font-family: 'Caveat', cursive; font-size: 1.8rem; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.4); display: inline-block; padding-bottom: 2px; }
+.chalk-link:hover { color: rgba(250, 99, 91, 1); border-bottom-style: solid; transform: scale(1.02); }
+
+/* ==========================================================================
+   3. SYNTAX HIGHLIGHTING & CODE
    ========================================================================== */
 pre {
     border-radius: 5px;
-    padding: 10px 4px 4px 4px; 
+    padding: 10px; 
     color: lightgreen;
     background-color: #241f31;
 }
 
 code[class*="language-"], pre[class*="language-"] {
     color: darkseagreen;
-    font-family: "Dejavu Sans Mono", "Share Tech Mono", "Roboto Mono", monospace;
+    font-family: "Dejavu Sans Mono", "Share Tech Mono", monospace;
     line-height: 1.2rem;
-    letter-spacing: -1px; 
     font-size: 0.95rem;     
 }
 
-pre[class*="language-"].line-numbers {
-    position: relative;
-    padding-left: 3.2rem;
-    counter-reset: linenumber;
+/* Syntax Tokens */
+.keyword { color: orange; }
+.keytab { color: gold; }
+.impera, .directive-hash { color: palevioletred; }
+.control { color: deepskyblue; }
+.interrupt, .operator { color: lightcoral; }
+.type, .constant, .builtin { color: cyan; }
+.title { color: springgreen; }
+.subtitle { color: silver; }
+.comment { color: lightseagreen; }
+.string { color: yellow; }
+
+/* ==========================================================================
+   4. COMPLEX PAGE LAYOUTS (Panels, Split, Tables)
+   ========================================================================== */
+.split-panel { hyphens: auto; }
+
+.panel-heading {
+    background-color: #19334d; 
+    color: silver;
+    padding: 10px;
+    margin-top: 10px !important;
+    border-radius: 5px 5px 0px 0px;
 }
 
-pre span.line { display: block; counter-increment: line; }
-
-pre span.line:before {
-    content: counter(line);
-    display: inline-block;
-    border-right: 1px solid gray;
-    padding: 0 .1rem;
-    margin-right: .1rem;
-    color: #777;
-    width: 2rem;
-    text-align: right;
+.code-panel {
+    height: 100%;    
+    color: lightgreen;
+    border-radius: 0px 0px 5px 5px;          
 }
 
 th {
@@ -83,128 +121,25 @@ th {
     background-color: #19334d !important;
     font-weight: 500;
     font-size: 1.2rem;
+    padding: 10px;
 }
 
-.star { color: gold; }
-/* ==========================================================================
-   3. HERO & BLACKBOARD SYSTEM (Stabilized Left-to-Right)
-   ========================================================================== */
-.hero-blackboard {
-    width: 100%;
-    min-height: 600px; 
-    background: url('images/blackboard.jpg') no-repeat center center;
-    background-size: cover;
-    border-radius: 8px;
-    box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
-    display: flex;
-    align-items: flex-start; 
-    justify-content: center; /* Keeps the content block in the middle of the board */
-    padding-top: 60px;
-}
-
-.blackboard-content {
-    width: 90%;
-    max-width: 850px;
-    /* Removed text-align: center; */
-    text-align: left; /* LOCKS the text starting position */
-}
-
-.typewriter-area {
-    min-height: 280px; 
-    margin-bottom: 20px;
-    display: block;
-    /* Ensures the area doesn't collapse horizontally */
-    width: 100%; 
-}
-
-.chalk-text {
-    color: rgba(250, 99, 91, 0.971);
-    font-family: 'Caveat', cursive;
-    font-size: 3.2rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    letter-spacing: 1px;
-    margin-bottom: 1rem;
-    display: block;
-}
-
-.chalk-body {
-    color: rgba(240, 240, 240, 0.95);
-    font-family: 'Caveat', cursive;
-    font-size: 2rem;
-    white-space: pre-wrap; /* Essential for keeping manual line breaks */
-    line-height: 1.4;
-    filter: drop-shadow(0px 0px 1px rgba(255,255,255,0.3));
-    text-align: left; /* Explicitly lock the typewriter text */
-}
-
-.chalk-link {
-    font-family: 'Caveat', cursive;
-    font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
-    padding-bottom: 2px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.chalk-link:hover {
-    color: rgba(250, 99, 91, 1);
-    border-bottom: 2px solid rgba(250, 99, 91, 0.8);
-    transform: scale(1.05) rotate(-1deg);
-}
-
-/* ==========================================================================
-   4. SPARTAN CARDS & SLATE
-   ========================================================================== */
 .card-slate {
     background-color: #1a1a1a;
-    background-image: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 100%);
     border: 1px solid #333;
     border-radius: 12px;
-    box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-    transition: all 0.3s ease-in-out;
-}
-
-.card-slate:hover {
-    border-color: #5d4037;
-    transform: translateY(-5px);
-}
-
-.slate-title {
-    font-family: 'Caveat', cursive;
-    font-size: 2.2rem;
-    color: #f8f9fa;
-}
-
-.text-gradient {
-    background: linear-gradient(45deg, #0d6efd, #00d4ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
 }
 
 /* ==========================================================================
-   5. BUTTONS & ACTIONS
+   5. INTERACTIVE & BUTTONS
    ========================================================================== */
-.btn { transition: all 0.3s ease-in-out; }
-
-.btn-outline-light, .card-slate .btn-outline-light {
-    border-color: rgba(255, 255, 255, 0.4);
-    font-family: 'Share Tech Mono', monospace;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-}
-
-.btn-outline-light:hover {
-    background-color: #f8f9fa;
-    color: #000;
-}
-
 .btn-primary {
     background-color: #0d6efd;
     border: 1px solid #0d6efd;
+    color: white;
+    padding: 10px 20px;
+    transition: 0.2s ease-in-out;
 }
 
 .btn-primary:hover {
@@ -212,38 +147,65 @@ th {
     border-color: white;
 }
 
-/* ==========================================================================
-   6. FOOTER & UTILITIES
-   ========================================================================== */
-footer.border-top { border-top: 2px solid rgba(118, 111, 111, 0.1) !important; }
-
-.social-link {
-    color: #6c757d;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.social-link:hover { color: #0d6efd; }
-
-.footer-copyright::before {
-    content: "Copyright (c) Sage-Code 2026";
-    padding-right: 8px;
-    color: #777;
+.youtube {
+    color: white;
+    background: red;
+    border-radius: 6px;
+    padding: 5px 10px;
+    font-family: "Share Tech Mono", monospace;
 }
 
 /* ==========================================================================
-   7. RESPONSIVE DESIGN
+   6. RESPONSIVE & VIDEO
    ========================================================================== */
-@media (max-width: 768px) {
+.responsive-video-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 28%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
     .chalk-text { font-size: 2.2rem; }
     .chalk-body { font-size: 1.5rem; }
     .typewriter-area { min-height: 350px; }
-    .hero-blackboard { min-height: 500px; padding-top: 30px; }
-    .responsive-video-container { max-width: 90vw; padding-bottom: 56.25%; }
+    .responsive-video-container { max-width: 90vw; padding-bottom: 56%; }
+    #main-img { width: 100%; }
 }
 
-@media (min-width: 640px) {
+@media screen and (min-width: 640px) {
     .top-video { position: absolute; top: 0; left: 15%; width: 70%; height: 100%; }
     .frame-host { padding: 50% 0 0 0; position: relative; }
     #main-img { width: 70%; }
 }
+
+/* ==========================================================================
+   7. FOOTER & UTILS
+   ========================================================================== */
+.footer {
+    position: relative;
+    padding: 40px 0;
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.footer-copyright::before {
+    content: "Copyright (c) Sage-Code 2026";
+    padding-right: 8px;
+    color: #555;
+}
+
+.fix-social { filter: invert(1); position: relative; }
