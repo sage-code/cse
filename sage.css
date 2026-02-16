@@ -494,20 +494,18 @@ a:hover {
 }
 
 .hero-launch {
-    /* Stretch to full width of parent */
+    display: grid;
+    place-items: center;
     width: 100%;
-    /* Ensure the image doesn't look squashed */
-    background-size: cover !important;
-    background-position: center center !important;
+    /* Replace 16/9 with the actual ratio of your image */
+    aspect-ratio: 16 / 9; 
+    
+    background-image: url('/images/large-bootcamp.jpg');
+    background-size: contain; /* Shows full image without cropping */
     background-repeat: no-repeat;
+    background-position: center;
     
-    /* Rounded corners and "Safe Padding" from screen edges */
     border-radius: 15px;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    
-    /* Smooth contrast for text */
-    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Optional: Add a slight glow to the "Launch" section */
