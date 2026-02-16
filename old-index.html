@@ -56,23 +56,26 @@
           </span>   
     </div>
 </header><hr>
-
-<!-- Hero Section -->
-<section class="hero-blackboard d-flex align-items-center justify-content-center text-center">
-    <div class="blackboard-content px-3">
-        <h1 class="display-4 fw-bold mb-4 chalk-text">Prepare to Reinvent Yourself</h1>
+<section class="py-5 text-center border-bottom border-secondary mb-5">
+    <div class="container py-5">
+        <h1 class="display-3 fw-bold mb-4 tracking-tight">
+            Prepare to <span class="text-gradient">Reinvent</span> Yourself
+        </h1>
         
-        <div id="typewriter" class="lead mb-5 chalk-body mx-auto" style="max-width: 700px; min-height: 200px;"></div>
+        <p class="lead mb-5 mx-auto text-secondary" style="max-width: 800px; font-weight: 300; line-height: 1.6;">
+            Sage-Code is an independent laboratory for mastering software engineering. 
+            We offer a distraction-free, anonymity-first environment to transform from beginner to expert. 
+            Follow our structured roadmaps, access open-source resources, and join a community of innovators.
+        </p>
 
-        <div id="hero-actions" class="d-grid gap-3 d-sm-flex justify-content-sm-center opacity-0 transition-fade">
-            <a href="roadmap.html" class="btn btn-outline-light btn-lg px-5">Choose Your Roadmap</a>
-            <button class="btn btn-link text-white text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#aboutUsCollapse">
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+            <a href="/engineering/" id="cta-main" class="btn btn-spartan-primary btn-lg px-5">START ROADMAP</a>
+            <button class="btn btn-spartan-outline btn-lg px-5" type="button" data-bs-toggle="collapse" data-bs-target="#aboutUsCollapse">
                 About Us
             </button>
         </div>
     </div>
 </section>
-
 
 <div class="collapse mb-4" id="aboutUsCollapse">
     <h4 class="alert-heading">About Sage-Code Laboratory</h4>
@@ -81,23 +84,25 @@
     </div>
 </div>
 
-<!-- Roadmap Section -->
-<div class="container my-5 text-center">
-    <h2 class="mb-4">Choose Your Path</h2>
-    <div class="row g-4">
-        <div class="col-md-6">
-            <div class="p-5 border border-secondary rounded-3 bg-dark h-100 shadow-sm">
-                <h3>Open CSE</h3>
-                <p class="text-secondary small">Computer Science & Engineering Roadmap</p>
-                <a href="/engineering/" class="btn btn-primary">Enter Lab</a>
-            </div>
+<div class="row g-4 mb-5">
+    <div class="col-md-7">
+        <div class="p-4 rounded-3 border border-secondary h-100 bg-dark bg-opacity-25 shadow-sm">
+            <h3 class="h4 mb-3 text-gradient">CSE: Software Engineering</h3>
+            <p class="text-secondary small">
+                Master the architecture of digital worlds. From programming paradigms and system design to cybersecurity and networks. 
+                This track is designed for those who want to build robust, scalable systems.
+            </p>
+            <a href="/engineering/" class="btn btn-sm btn-outline-primary mt-2">Explore Roadmap</a>
         </div>
-        <div class="col-md-6">
-            <div class="p-5 border border-secondary rounded-3 bg-dark h-100 shadow-sm">
-                <h3>Open CSP</h3>
-                <p class="text-secondary small">Computer Science Programming Roadmap</p>
-                <a href="/programming/" class="btn btn-primary">Enter Lab</a>
-            </div>
+    </div>
+
+    <div class="col-md-5">
+        <div class="p-4 rounded-3 border border-secondary h-100 bg-dark bg-opacity-25 shadow-sm">
+            <h3 class="h4 mb-3 text-gradient">CSP: Programming</h3>
+            <p class="text-secondary small">
+                Learn the language of machines. Focus on reading, writing, and debugging software with a hands-on, interactive approach.
+            </p>
+            <a href="/programming/" class="btn btn-sm btn-outline-primary mt-2">Start Coding</a>
         </div>
     </div>
 </div>

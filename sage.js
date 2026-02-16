@@ -1,24 +1,25 @@
-/**
- * Sage-Code Logic: Handles Hero CTA state and Privacy-friendly tracking
- */
 document.addEventListener("DOMContentLoaded", function() {
-    const ctaBtn = document.getElementById('cta-main');
-    
-    if (ctaBtn) {
-        // 1. Check if the user has a 'returning' flag in their local browser storage
-        const isReturning = localStorage.getItem('returning_student');
+    const text = `Welcome to Sage-Code Laboratory.
+Where you can Study for free at your own pace.
+Using our resources.
+Professional mentor available (42-day free trial).
+No ads, no distractions, pure learning.
+Professional premium services for VIP members.`;
 
-        if (isReturning) {
-            // Update the button for a returning user
-            ctaBtn.innerText = "CONTINUE STUDY";
-            ctaBtn.classList.replace('btn-primary', 'btn-success');
-            // Change destination to where they left off, or a general 'learning' hub
-            // ctaBtn.setAttribute('href', '/engineering/dashboard.html'); 
+    const container = document.getElementById("typewriter");
+    const actions = document.getElementById("hero-actions");
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            container.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 40); // Speed of typing in milliseconds
+        } else {
+            // Show buttons once typing is done
+            actions.classList.add("opacity-100");
         }
-
-        // 2. Mark as returning when they click the button
-        ctaBtn.addEventListener('click', function() {
-            localStorage.setItem('returning_student', 'true');
-        });
     }
+
+    typeWriter();
 });
