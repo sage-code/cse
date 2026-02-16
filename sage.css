@@ -86,40 +86,73 @@ th {
 }
 
 .star { color: gold; }
-
 /* ==========================================================================
-   3. HERO & BLACKBOARD SYSTEM
+   3. HERO & BLACKBOARD SYSTEM (Stabilized Left-to-Right)
    ========================================================================== */
 .hero-blackboard {
     width: 100%;
-    min-height: 550px; 
-    padding: 40px 20px;
-    overflow: hidden;
+    min-height: 600px; 
     background: url('images/blackboard.jpg') no-repeat center center;
     background-size: cover;
     border-radius: 8px;
-    position: relative;
     box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start; 
+    justify-content: center; /* Keeps the content block in the middle of the board */
+    padding-top: 60px;
+}
+
+.blackboard-content {
+    width: 90%;
+    max-width: 850px;
+    /* Removed text-align: center; */
+    text-align: left; /* LOCKS the text starting position */
+}
+
+.typewriter-area {
+    min-height: 280px; 
+    margin-bottom: 20px;
+    display: block;
+    /* Ensures the area doesn't collapse horizontally */
+    width: 100%; 
 }
 
 .chalk-text {
     color: rgba(250, 99, 91, 0.971);
     font-family: 'Caveat', cursive;
-    font-size: 3rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 3.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: block;
 }
 
 .chalk-body {
-    color: rgba(240, 240, 240, 0.9);
+    color: rgba(240, 240, 240, 0.95);
     font-family: 'Caveat', cursive;
     font-size: 2rem;
-    white-space: pre-wrap;
+    white-space: pre-wrap; /* Essential for keeping manual line breaks */
     line-height: 1.4;
     filter: drop-shadow(0px 0px 1px rgba(255,255,255,0.3));
+    text-align: left; /* Explicitly lock the typewriter text */
+}
+
+.chalk-link {
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.5);
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.chalk-link:hover {
+    color: rgba(250, 99, 91, 1);
+    border-bottom: 2px solid rgba(250, 99, 91, 0.8);
+    transform: scale(1.05) rotate(-1deg);
 }
 
 /* ==========================================================================
@@ -156,7 +189,6 @@ th {
    ========================================================================== */
 .btn { transition: all 0.3s ease-in-out; }
 
-/* Main Spartan Style */
 .btn-outline-light, .card-slate .btn-outline-light {
     border-color: rgba(255, 255, 255, 0.4);
     font-family: 'Share Tech Mono', monospace;
@@ -168,7 +200,6 @@ th {
 .btn-outline-light:hover {
     background-color: #f8f9fa;
     color: #000;
-    border-color: #f8f9fa;
 }
 
 .btn-primary {
@@ -184,9 +215,7 @@ th {
 /* ==========================================================================
    6. FOOTER & UTILITIES
    ========================================================================== */
-footer.border-top {
-    border-top: 2px solid rgba(118, 111, 111, 0.1) !important;
-}
+footer.border-top { border-top: 2px solid rgba(118, 111, 111, 0.1) !important; }
 
 .social-link {
     color: #6c757d;
@@ -195,13 +224,6 @@ footer.border-top {
 }
 
 .social-link:hover { color: #0d6efd; }
-
-.x-small {
-    font-size: 0.7rem;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
 
 .footer-copyright::before {
     content: "Copyright (c) Sage-Code 2026";
@@ -215,7 +237,8 @@ footer.border-top {
 @media (max-width: 768px) {
     .chalk-text { font-size: 2.2rem; }
     .chalk-body { font-size: 1.5rem; }
-    .hero-blackboard { min-height: 450px; }
+    .typewriter-area { min-height: 350px; }
+    .hero-blackboard { min-height: 500px; padding-top: 30px; }
     .responsive-video-container { max-width: 90vw; padding-bottom: 56.25%; }
 }
 

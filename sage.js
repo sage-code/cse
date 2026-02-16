@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-const text = "Welcome to the Laboratory.\n" +
-             "Study for free at your own pace.\n" +
+const text = "Study for free at your own pace.\n" +
              "Master Engineering through open-source roadmaps.\n" +
              "42-day free mentorship trial available.\n" +
              "Zero ads, no tracking, pure focus...\n" +
