@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 const text = "Study for free at your own pace.\n" +
-             "Master Engineering through open-source roadmaps.\n" +
-             "42-day free mentorship trial available.\n" +
+             "With comprehensive open-source roadmaps.\n" +
+             "42-day free trial mentorship available.\n" +
              "Zero ads, no tracking, pure focus!";
 
     const container = document.getElementById("typewriter");
