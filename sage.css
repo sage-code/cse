@@ -243,3 +243,21 @@ th {
 }
 
 .fix-social { filter: invert(1); position: relative; }
+
+/* Force constant background for Group Headers */
+.table-group-header th {
+    background-color: #000000 !important; /* Constant solid black */
+    color: #8f00b3 !important;            /* Sage-Code Purple */
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    border-top: 2px solid #333 !important;
+    border-bottom: 1px solid #333 !important;
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+}
+
+/* Optional: Make the text easier to read against the constant black */
+.table-group-header th::after {
+    content: " —";
+    opacity: 0.5;
+}
