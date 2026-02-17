@@ -74,138 +74,182 @@
 </li>
 </ul>
 
+<div class="progress mb-3" style="height: 25px;">
+  <div id="roadmap-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%;">0% Complete</div>
+</div>
 
-<table class="table table-bordered table-striped table-dark">
+<table class="table table-bordered table-striped table-dark" id="roadmap-table">
 <thead>
 <tr>
-  <th>CSE</th>
+  <th>Status</th> <th>CSE</th>
   <th>Topic</th>
   <th>Description</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-  <td>01</td>  
-  <td><a href="/concepts/">Programming Concepts</a></td>
-  <td>Fundamental concepts of computer programming</td>
+<tr class="table-group-header">
+    <th colspan="4" class="text-uppercase small fw-bold text-muted bg-black py-2">Phase 1: Computing Foundations</th>
 </tr>
-<tr>
-  <td>02</td>
-  <td><a href="/algebra/">Numerc Algebra</a></td>
-  <td>Numeric algebra and type systems used in programming</td>
+<tr data-topic="concepts">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>01</td>
+    <td><a href="/concepts/" class="fw-bold">Programming Concepts</a></td>
+    <td class="small text-secondary">Core logic: variables, flow control, and memory basics.</td>
 </tr>
-<tr>
-  <td>03</td>
-  <td><a href="/paradigms/">Programming Paradigms</a></td>
-  <td>Logical approach for describing and solving problems</td>
+<tr data-topic="algebra">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>02</td>
+    <td><a href="/algebra/">Numeric Algebra</a></td>
+    <td class="small text-secondary">Binary, hex, and the discrete math behind type systems.</td>
 </tr>
-<tr>
-  <td>04</td>
-  <td><a href="/languages/">Programming Languages</a></td>
-  <td>History and evolution of programming languages</td>
+<tr data-topic="structures">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>03</td>
+    <td><a href="/data-struct/">Data Structures</a></td>
+    <td class="small text-secondary">Organizing data for efficiency: arrays, linked lists, and trees.</td>
 </tr>
-<tr>
-  <td>05</td>
-  <td><a href="/prompt-engineering/">Prompt Engineering</a></td>
-  <td>Introduction to AI internet services</td>
+<tr data-topic="algorithms">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>04</td>
+    <td><a href="/algorithms/">Algorithms</a></td>
+    <td class="small text-secondary">The logic of processing: sorting, searching, and complexity (Big O).</td>
 </tr>
-<tr>
-  <td>06</td>
-  <td><a href="/ds/index/">Data Science</a></td>
-  <td>Introduction to statistics, and machine learning</td>
+<tr data-topic="paradigms">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>05</td>
+    <td><a href="/paradigms/">Programming Paradigms</a></td>
+    <td class="small text-secondary">Structural, Functional, and Object-Oriented approaches.</td>
 </tr>
-<tr>
-  <td>07</td>
-  <td><a href="/web-dsgn/" rel="nofollow">Web Design</a></td>
-  <td>How to create static web pages using HTML & CSS</td>
+<tr data-topic="languages">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>06</td>
+    <td><a href="/languages/">Programming Languages</a></td>
+    <td class="small text-secondary">Evolution of syntax from Assembly to high-level abstractions.</td>
 </tr>
-<tr>
-  <td>08</td>
-  <td><a href="/platforms/">Operating Systems</a></td>
-  <td>Explain usability of different platforms</td>
+
+<tr class="table-group-header">
+    <th colspan="4" class="text-uppercase small fw-bold text-muted bg-black py-2">Phase 2: Environment & Hardware</th>
 </tr>
-<tr>
-  <td>09</td>
-  <td><a href="/tools/">Developer Tools</a></td>
-  <td>Integrated development environments and code editors for software development.</td>
+<tr data-topic="os">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>07</td>
+    <td><a href="/platforms/">Operating Systems</a></td>
+    <td class="small text-secondary">Kernel logic, process management, and file systems.</td>
 </tr>
-<tr>
-  <td>10</td>
-  <td><a href="/data-struct/">Data Structures</a></td>
-  <td>The way we can organizing data in memory so that it can be  manipulated.</td>
+<tr data-topic="hardware">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>08</td>
+    <td><a href="/hw/index/">Hardware Fundamentals</a></td>
+    <td class="small text-secondary">Silicon, CPU architecture, and basic electronics.</td>
 </tr>
-<tr>
-  <td>11</td>
-  <td><a href="/algorithms/">Algorithms</a></td>
-  <td>Integrated development environments and code editors for software development.</td>
+<tr data-topic="web">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>09</td>
+    <td><a href="/web-dsgn/">Web Design</a></td>
+    <td class="small text-secondary">The presentation layer: Semantic HTML and CSS architecture.</td>
 </tr>
-<tr>
-  <td>12</td>
-  <td><a href="/systems/">System Design</a></td>
-  <td>Explain system design concepts and principles</td>
+<tr data-topic="tools">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>10</td>
+    <td><a href="/tools/">Developer Tools</a></td>
+    <td class="small text-secondary">Tooling proficiency: IDEs, debuggers, and terminal environments.</td>
 </tr>
-<tr>
-  <td>13</td>
-  <td><a href="/architecture/">Software Architecture</a></td>
-  <td>Higher level design principles of software design</td>
+<tr data-topic="git">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>11</td>
+    <td><a href="/version/">Version Control</a></td>
+    <td class="small text-secondary">Managing code history and collaboration via Git workflows.</td>
 </tr>
-<tr>
-  <td>14</td>
-  <td><a href="/patterns/">Design patterns</a></td>
-  <td>These are reusable solutions to common software problems.</td>
+<tr data-topic="ai-prompt">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>12</td>
+    <td><a href="/prompt-engineering/">Prompt Engineering</a></td>
+    <td class="small text-secondary">Leveraging LLMs as a technical multiplier and co-pilot.</td>
 </tr>
-<tr>
-  <td>15</td>
-  <td><a href="/tech/">Tech Stack</a></td>
-  <td>Explain features and purpose for a web tech stack and alternative stacks for APPs</td>
+
+<tr class="table-group-header">
+    <th colspan="4" class="text-uppercase small fw-bold text-muted bg-black py-2">Phase 3: Architecture & Design</th>
 </tr>
-<tr>
-  <td>16</td>
-  <td><a href="/promag/">Project Management</a></td>
-  <td>Explain project management methodology</td>
+<tr data-topic="system-design">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>13</td>
+    <td><a href="/systems/">System Design</a></td>
+    <td class="small text-secondary">Reliability, scalability, and maintainability of large systems.</td>
 </tr>
-<tr>
-  <td>17</td>
-  <td><a href="/version/">Version Control</a></td>
-  <td>Explain how to save &amp; maintain code</td>
+<tr data-topic="architecture">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>14</td>
+    <td><a href="/architecture/">Software Architecture</a></td>
+    <td class="small text-secondary">High-level patterns: Monoliths, Microservices, and Hexagonal.</td>
 </tr>
-<tr>
-  <td>18</td>
-  <td><a href="/opensource/">Open Source</a></td>
-  <td>How to contribute to open source projects</td>
+<tr data-topic="patterns">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>15</td>
+    <td><a href="/patterns/">Design Patterns</a></td>
+    <td class="small text-secondary">Reusable solutions for common object-oriented challenges.</td>
 </tr>
-<tr>
-  <td>19</td>
-  <td><a href="/testing/">Software Testing</a></td>
-  <td>Explain software testing methods and terminology</td>
+<tr data-topic="stack">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>16</td>
+    <td><a href="/tech/">Tech Stack</a></td>
+    <td class="small text-secondary">Integrating components: Frontend, Backend, and Middleware.</td>
 </tr>
-<tr>
-  <td>20</td>
-  <td><a href="/databases/">Database Systems</a></td>
-  <td>Introduction to database systems</td>
+<tr data-topic="db-sys">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>17</td>
+    <td><a href="/databases/">Database Systems</a></td>
+    <td class="small text-secondary">SQL vs NoSQL: Storage engines and data persistence.</td>
 </tr>
-<tr>
-  <td>21</td>
-  <td><a href="/design/">Database Design</a></td>
-  <td>How to design a relational database</td>
+<tr data-topic="db-design">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>18</td>
+    <td><a href="/design/">Database Design</a></td>
+    <td class="small text-secondary">Normalization, indexing, and relational modeling.</td>
 </tr>
-<tr>
-  <td>22</td>
-  <td><a href="/cybersec/">Cybersecurity</a></td>
-  <td>Introduction to encription, networks and firewals</td>
+
+<tr class="table-group-header">
+    <th colspan="4" class="text-uppercase small fw-bold text-muted bg-black py-2">Phase 4: Advanced Specialties</th>
 </tr>
-<tr>
-  <td>23</td>
-  <td><a href="/cloud/">Cloud Computing</a></td>
-  <td>Introduction to cloud computing</td>
+<tr data-topic="data-science">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>19</td>
+    <td><a href="/ds/index/">Data Science</a></td>
+    <td class="small text-secondary">Statistical analysis and the foundations of Machine Learning.</td>
 </tr>
-<tr>
-  <td>24</td>
-  <td><a href="/compilers/">Crafting Compilers</a></td>
-  <td>Explain how to create a programming language</td>
+<tr data-topic="management">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>20</td>
+    <td><a href="/promag/">Project Management</a></td>
+    <td class="small text-secondary">SDLC, Agile methodologies, and engineering workflows.</td>
+</tr>
+<tr data-topic="testing">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>21</td>
+    <td><a href="/testing/">Software Testing</a></td>
+    <td class="small text-secondary">QA strategies: Unit, Integration, and End-to-End testing.</td>
+</tr>
+<tr data-topic="security">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>22</td>
+    <td><a href="/cybersec/">Cybersecurity</a></td>
+    <td class="small text-secondary">Encryption, network security, and defensive programming.</td>
+</tr>
+<tr data-topic="cloud">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>23</td>
+    <td><a href="/cloud/">Cloud Computing</a></td>
+    <td class="small text-secondary">Virtualization, containers (Docker), and serverless infra.</td>
+</tr>
+<tr data-topic="compilers">
+    <td class="text-center"><input type="checkbox" class="topic-check form-check-input"></td>
+    <td>24</td>
+    <td><a href="/compilers/">Crafting Compilers</a></td>
+    <td class="small text-secondary">Lexical analysis and the transformation to machine instructions.</td>
 </tr>
 </tbody>
 </table>
+
+<script src="/sage-roadmap.js"></script>
 
 <h2 id="hw">Hardware fundamentals</h2>
 
