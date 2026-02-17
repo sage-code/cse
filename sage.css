@@ -270,3 +270,16 @@ th {
     font-size: 0.7rem;
     padding: 0.4em 0.7em;
 }
+
+.book-card {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;    /* Center elements horizontally */
+    justify-content: center;/* Center elements vertically (if card has fixed height) */
+    text-align: center;     /* Ensure text lines are centered */
+    padding: 20px;          /* Optional: add some breathing room */
+}
+
+.book-card button {
+    margin-top: 15px;       /* Optional: space between text and button */
+}
