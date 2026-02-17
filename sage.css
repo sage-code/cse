@@ -249,30 +249,24 @@ th {
     padding-bottom: 10px !important;
 }
 
-/* Label styling */
-.card-label {
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #6c757d;
-    margin-bottom: 2px;
-    display: block;
-}
-
-/* Star Rating System */
-.star-rating {
-    color: #fd7e14; /* Orange */
-    font-size: 0.85rem;
-}
-.star-off {
-    color: #444444; /* Gray for inactive stars */
-}
-
-/* Aligning the top row of the card */
 .card-meta-top {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
+.star-rating {
+    font-size: 0.7rem; /* Smaller stars */
+    cursor: help;
+    white-space: nowrap;
+}
+
+.stars-on { color: #fd7e14; }
+.stars-off { color: #444; }
+
+.badge-hint {
+    cursor: help;
+    font-size: 0.7rem;
+    padding: 0.4em 0.7em;
+}
