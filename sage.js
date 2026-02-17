@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-const text = "Study for free at your own pace.\n" +
-             "With comprehensive open-source roadmaps.\n" +
-             "42-day free trial mentorship available.\n" +
-             "Zero ads, no tracking, pure focus!";
+const text = `Study for free at your own pace.
+With comprehensive open-source roadmaps and examples.
+Optional 42-day free trial mentorship included.
+Zero ads, no tracking, pure focus...
+For those who wish to reinvent themselves!`;
 
     const container = document.getElementById("typewriter");
     const actions = document.getElementById("hero-actions");
