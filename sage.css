@@ -40,17 +40,36 @@ img { border-radius: 8px; }
    2. HERO & BLACKBOARD
    ========================================================================== */
 
+/* ==========================================================================
+   2. HERO & BLACKBOARD - PINNED VERSION
+   ========================================================================== */
+
 .hero-blackboard {
     width: 100%;
-    height: 320px; 
+    /* Changed height to min-height so it doesn't "snap" or overflow */
+    min-height: 320px; 
     background: url('images/blackboard.jpg') no-repeat center center;
-    background-size: stretch;
+    /* Fixed typo: 'stretch' is now 'cover' */
+    background-size: cover; 
     display: flex;
     justify-content: flex-start;
     align-items: flex-start; 
     padding-left: 20px;
     padding-top: 20px; 
     box-shadow: inset 0 0 80px rgba(0,0,0,0.8);    
+    /* Ensure the blackboard doesn't jump around */
+    overflow: hidden; 
+}
+
+.blackboard-content {
+    width: 90%;
+    max-width: 800px;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    margin-left: 0;
 }
 
 .typewriter-area {
@@ -83,46 +102,22 @@ img { border-radius: 8px; }
     margin-top: 0; /* Ensures no gap starts here */
 }
 
-/* 3. Control the container height */
-.blackboard-content {
-    width: 90%;
-    max-width: 800px;
-    /* Remove the fixed height if you want the board to shrink-wrap the text */
-    /* Or keep it and ensure items don't spread out */
-    height: auto; 
-    min-height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Keeps everything at the top */
-    text-align: left;
-    margin-left: 0;
-}
 
 @media screen and (max-width: 768px) {
-    /* 1. Make the blackboard grow with the text height */
     .hero-blackboard {
-        min-height: auto !important; 
-        height: auto !important;
-        padding-left: 10px;
-        padding-top: 10px; 
+        /* Maintain the background look on mobile */
+        padding-top: 20px; 
+        padding-left: 15px;
     }
 
-    /* 2. Ensure the content doesn't have a restricted height */
-    .blackboard-content {
-        height: auto !important;
-        width: 95%;
-        min-height: 300px;
-    }
-
-    /* 3. Scale down font sizes so they don't force the box to explode */
     .chalk-text {
         font-size: 1.6rem;
-        line-height: 1.2;
     }
 
     .chalk-body {
         font-size: 1.2rem;
-        line-height: 1;
+        /* Prevent long words from pushing the board wide */
+        word-break: break-word; 
     }
 }
 
