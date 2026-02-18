@@ -112,6 +112,7 @@ img { border-radius: 8px; }
     .blackboard-content {
         height: auto !important;
         width: 95%;
+        min-height: auto !important; 
     }
 
     /* 3. Scale down font sizes so they don't force the box to explode */
