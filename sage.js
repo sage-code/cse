@@ -8,9 +8,9 @@ function initDynamicHeader() {
 
     // 1. Top Row: Logo and Menu
     let headerHTML = `
-        <div class="row align-items-center">
+        <div class="row">
             <div class="col">
-                <a href="/"><img src="/images/sage-logo.svg" alt="Sage-Code" height="50"></a>
+                <a href="/"><img src="/images/sage-logo.svg" alt="Sage-Code" height="70"></a>
             </div>
             <div class="col-auto">
                 <nav class="main-nav">
