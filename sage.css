@@ -318,7 +318,7 @@ th {
   padding: 0;
   display: flex;
   gap: 20px;
-  background: rgb(53, 53, 53); /* Or transparent */
+  background: transparent;
   padding: 10px;
   border-radius: 8px;
 }
@@ -331,7 +331,7 @@ th {
 }
 
 .nav-links li a:hover {
-  color: #ff00ee; /* Highlight color */
+  color: #fc7f18d9; /* Highlight color */
 }
 
 /* Mobile Adjustments (Breakpoint: 768px) */
@@ -348,7 +348,8 @@ th {
     position: absolute;
     top: 50px;
     right: 20px;
-    box-shadow: 0 4px 10px rgba(36, 22, 22, 0.1);
+    background:  rgba(5, 5, 5, 0.1);
+    box-shadow: 0 4px 10px rgba(60, 35, 35, 0.1);
     width: 200px;
     text-align: right;
   }
