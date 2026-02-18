@@ -1,18 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    initDynamicHeader();
-});
-
 function initDynamicHeader() {
     const header = document.getElementById('dynamic-header');
     if (!header) return;
 
-    // 1. Top Row: Logo and Menu
+    // 1. Top Row: Logo (Left) and Menu (Right)
+    // ps-0 on the first col ensures the logo hits the left container boundary
     let headerHTML = `
-        <div class="row">
-            <div class="col">
-                <a href="/"><img src="/images/sage-logo.svg" alt="Sage-Code" height="70"></a>
+        <div class="row align-items-center g-0">
+            <div class="col ps-0">
+                <a href="/">
+                    <img src="/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
+                </a>
             </div>
-            <div class="col-auto">
+            <div class="col-auto pe-0">
                 <nav class="main-nav">
                     <div class="hamburger" id="hamburger-btn">
                         <span></span><span></span><span></span>
@@ -28,45 +27,20 @@ function initDynamicHeader() {
         </div>`;
 
     // 2. Permanent Breadcrumb Row
+    // ps-0 here keeps the House icon aligned vertically with the logo above
     headerHTML += `
-        <div class="row mt-1">
-            <div class="col">
+        <div class="row mt-2 g-0">
+            <div class="col ps-0">
                 <nav class="breadcrumb-nav">${generateBreadcrumbs()}</nav>
             </div>
         </div>`;
 
     header.innerHTML = headerHTML;
 
-    // Hamburger Toggle Event
+    // Re-attach Hamburger Event
     const btn = document.getElementById('hamburger-btn');
     const menu = document.getElementById('nav-menu');
     if (btn && menu) {
         btn.addEventListener('click', () => menu.classList.toggle('active'));
     }
-}
-
-function generateBreadcrumbs() {
-    const path = window.location.pathname;
-    const pathArray = path.split('/').filter(p => p && p !== "index.html");
-    
-    // Always start with the House icon and Laboratory text
-    let html = `<a href="/"><i class="bi bi-house-door"></i> Home</a>`;
-    
-    let currentPath = "";
-    pathArray.forEach((segment, index) => {
-        currentPath += `/${segment}`;
-        let name = segment.replace(/-/g, ' ');
-        
-        // Add separator
-        html += ` <span class="sep">/</span> `;
-        
-        // If last segment, make it a span, otherwise a link
-        if (index === pathArray.length - 1) {
-            html += `<span class="current">${name}</span>`;
-        } else {
-            html += `<a href="${currentPath}">${name}</a>`;
-        }
-    });
-
-    return html;
 }
