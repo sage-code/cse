@@ -13,7 +13,7 @@ function initDynamicHeader() {
     // 1. Top Row: Logo (Left) and Menu (Right)
     let headerHTML = `
         <div class="row g-0">
-            <div class="col">
+            <div class="col-auto ps-0">
                 <a href="/">
                     <img src="/images/sage-logo.svg" alt="Sage-Code" height="62" style="display: block;">
                 </a>

@@ -356,19 +356,29 @@ th {
 
 /* Override Bootstrap's container padding for the header */
 /* Strip Bootstrap's default padding from the header grid */
+/* Remove gutters from the header rows */
 #dynamic-header .row {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
+/* Remove padding from the columns holding the logo and breadcrumbs */
 #dynamic-header .col, 
-#dynamic-header .col-auto {
+#dynamic-header .col-auto,
+#dynamic-header .ps-0 {
     padding-left: 0 !important;
-    padding-right: 0 !important;
 }
 
-/* If the logo image itself has margin, reset it */
+/* Specifically target the breadcrumb list to remove internal browser padding */
+.breadcrumb-nav {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+/* Ensure the image doesn't have internal alignment offsets */
+#dynamic-header a, 
 #dynamic-header img {
-    margin-left: 0;
-    display: block; /* Removes baseline spacing */
+    display: inline-block;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
 }
