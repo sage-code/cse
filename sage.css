@@ -283,3 +283,93 @@ th {
 .book-card button {
     margin-top: 10px;       /* Optional: space between text and button */
 }
+
+/* Header & Container */
+.site-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Nav Trigger (Keyword/Hamburger) */
+.nav-trigger {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.desktop-label {
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hamburger {
+  display: none; /* Hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #333; /* Adjust to match SageCode colors */
+  transition: 0.3s;
+}
+
+/* Links List */
+.nav-links {
+  list-style: none;
+  margin-top: 15px;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  background: white; /* Or transparent */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #007bff; /* Highlight color */
+}
+
+/* Mobile Adjustments (Breakpoint: 768px) */
+@media (max-width: 768px) {
+  .desktop-label {
+    display: none; /* Hide keyword on mobile */
+  }
+
+  .hamburger {
+    display: flex; /* Show hamburger on mobile */
+  }
+
+  .nav-links {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    width: 200px;
+    text-align: right;
+  }
+
+  .nav-links.active {
+    display: flex; /* Toggle via JS */
+  }
+}
