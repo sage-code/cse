@@ -29,3 +29,12 @@ For those who wish to reinvent themselves!`;
     // Delay start until the font is likely loaded and user has looked at the board
     setTimeout(typeWriter, 800);
 });
+
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('active');
+  
+  // Optional: Animate hamburger to X
+  const hamburger = document.querySelector('.hamburger');
+  hamburger.classList.toggle('open');
+}
