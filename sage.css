@@ -383,3 +383,9 @@ th {
     padding-left: 0 !important;
     margin-left: 0 !important;
 }
+
+.top-hr {
+    margin-top:0;
+    margin-bottom:0;
+    border-color: rgb(136, 46, 204)
+}
