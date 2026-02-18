@@ -347,38 +347,26 @@ th {
     margin-right: 5px;
     vertical-align: middle;
 }
-
-/* Ensure the container itself isn't adding unwanted side padding */
-#dynamic-header.container {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-/* Override Bootstrap's container padding for the header */
-/* Strip Bootstrap's default padding from the header grid */
-/* Remove gutters from the header rows */
+/* Hard-reset for the Dynamic Header Alignment */
 #dynamic-header .row {
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
 
-/* Remove padding from the columns holding the logo and breadcrumbs */
 #dynamic-header .col, 
-#dynamic-header .col-auto,
-#dynamic-header .ps-0 {
+#dynamic-header .col-auto {
     padding-left: 0 !important;
 }
 
-/* Specifically target the breadcrumb list to remove internal browser padding */
+/* Ensure the breadcrumb nav doesn't have internal padding */
 .breadcrumb-nav {
     padding-left: 0 !important;
     margin-left: 0 !important;
 }
 
-/* Ensure the image doesn't have internal alignment offsets */
-#dynamic-header a, 
-#dynamic-header img {
+/* Ensure the breadcrumb list is flush */
+.breadcrumb-nav a, 
+.breadcrumb-nav span {
     display: inline-block;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+    vertical-align: middle;
 }

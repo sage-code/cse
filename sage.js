@@ -1,16 +1,26 @@
+/**
+ * sage.js - Global Logic for sagecode.pro
+ * Handles the Dynamic Header and Alignment
+ */
+
+document.addEventListener("DOMContentLoaded", function () {
+    initDynamicHeader();
+});
+
 function initDynamicHeader() {
     const header = document.getElementById('dynamic-header');
     if (!header) return;
 
-    // Use g-0 to remove row gutters
+    // g-0 removes row gutters (margins)
+    // ps-0 on the columns removes the 12px-15px left padding
     let headerHTML = `
         <div class="row align-items-center g-0">
-            <div class="col-auto">
+            <div class="col-auto ps-0">
                 <a href="/">
-                    <img src="/images/sage-logo.svg" alt="Sage-Code" height="50">
+                    <img src="/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
                 </a>
             </div>
-            <div class="col text-end">
+            <div class="col text-end pe-0">
                 <nav class="main-nav">
                     <div class="hamburger" id="hamburger-btn">
                         <span></span><span></span><span></span>
@@ -24,30 +34,33 @@ function initDynamicHeader() {
                 </nav>
             </div>
         </div>
-        <div class="row g-0">
-            <div class="col">
+        <div class="row g-0 mt-2">
+            <div class="col ps-0">
                 <nav class="breadcrumb-nav">${generateBreadcrumbs()}</nav>
             </div>
         </div>`;
 
     header.innerHTML = headerHTML;
 
-    // Hamburger Event
+    // Attach Toggle Event
     const btn = document.getElementById('hamburger-btn');
     const menu = document.getElementById('nav-menu');
     if (btn && menu) {
-        btn.addEventListener('click', () => menu.classList.toggle('active'));
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
     }
 }
 
-// THIS FUNCTION MUST BE PRESENT
+/**
+ * Generates the breadcrumb path automatically
+ */
 function generateBreadcrumbs() {
     try {
         const path = window.location.pathname;
-        // Clean segments: remove empty strings and "index.html"
         const pathArray = path.split('/').filter(p => p && p !== "index.html");
         
-        // Permanent Home Anchor
+        // Permanent Home Link
         let html = `<a href="/"><i class="bi bi-house-door"></i> HOME</a>`;
         
         let currentPath = "";
