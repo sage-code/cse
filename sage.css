@@ -38,9 +38,9 @@ img { border-radius: 8px; }
 
 .hero-blackboard {
     width: 100%;
-    min-height: 420px; 
+    min-height: 320px; 
     background: url('images/blackboard.jpg') no-repeat center center;
-    background-size: cover;
+    background-size: fill;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start; 
@@ -55,7 +55,7 @@ img { border-radius: 8px; }
 .blackboard-content {
     width: 90%;
     max-width: 800px;
-    height: 340px; /* Slightly less than 420 to account for board padding */
+    height: 300px; /* Slightly less than 420 to account for board padding */
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -84,7 +84,7 @@ img { border-radius: 8px; }
 .chalk-text {
     font-family: 'Caveat', cursive;
     color: rgba(250, 99, 91, 0.95);
-    font-size: 3rem;
+    font-size: 2rem;
     
     /* ALSO CHECK THIS: Ensure no extra top margin is pushing it down */
     margin-top: 0; 
@@ -389,5 +389,5 @@ th {
 }
 
 hr {
-    color: solid rgb(136, 46, 204);
+    color: rgb(136, 46, 204);
 }

@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = ""; // Clear initial state
 
         const text = `Study for free at your own pace.
-With comprehensive open-source roadmaps and examples.
-Optional 42-day free trial mentorship included.
-Zero ads, no tracking, pure focus...
+With comprehensive open-source roadmaps.
+Optional 42-day free trial mentorship.
 For those who wish to reinvent themselves!`;
 
         let i = 0;
