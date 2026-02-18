@@ -44,8 +44,7 @@ img { border-radius: 8px; }
     display: flex;
     justify-content: flex-start;
     align-items: flex-start; 
-    padding-left: 0px;
-    /* CHANGE THIS VALUE: Lowering it moves the title UP */
+    padding-left: 20px;
     padding-top: 20px; 
     
     box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
@@ -319,6 +318,8 @@ th {
     font-size: 0.75rem;
     text-transform: uppercase;
     color: #444; /* Very subtle */
+    padding-left: 0;
+    margin-left: 0;
 }
 
 .breadcrumb-nav a { color: #666; }
@@ -365,12 +366,6 @@ th {
 #dynamic-header .col-auto {
     padding-left: 0 !important;
     padding-right: 0 !important;
-}
-
-/* Ensure the breadcrumb nav also starts at the absolute pixel 0 */
-.breadcrumb-nav {
-    padding-left: 0;
-    margin-left: 0;
 }
 
 /* If the logo image itself has margin, reset it */
