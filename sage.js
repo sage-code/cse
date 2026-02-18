@@ -39,7 +39,8 @@ function initDynamicHeader() {
             <div class="col ps-0">
                 <nav class="breadcrumb-nav">${generateBreadcrumbs()}</nav>
             </div>
-        </div>`;
+        </div>
+        <hr class="mt-3 mb-0">`;
 
     header.innerHTML = headerHTML;
 
