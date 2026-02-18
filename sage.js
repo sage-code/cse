@@ -39,7 +39,7 @@ function initDynamicHeader() {
             <div class="col ps-0">
                 <hr class="mt-3 mb-0 top-hr">
                 <nav class="breadcrumb-nav">${generateBreadcrumbs()}</nav>
-                <hr class="mt-3 mb-0 top-hr>
+                <hr class="mt-3 mb-0 top-hr">
             </div>
         </div>`;
 
