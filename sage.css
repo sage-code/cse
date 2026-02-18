@@ -91,7 +91,7 @@ img { border-radius: 8px; }
     /* Remove the fixed height if you want the board to shrink-wrap the text */
     /* Or keep it and ensure items don't spread out */
     height: auto; 
-    min-height: 250px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start; /* Keeps everything at the top */
@@ -110,7 +110,7 @@ img { border-radius: 8px; }
     .blackboard-content {
         height: auto !important;
         width: 95%;
-        min-height: auto !important; 
+        min-height: 300px;
     }
 
     /* 3. Scale down font sizes so they don't force the box to explode */
