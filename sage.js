@@ -11,16 +11,16 @@ function initDynamicHeader() {
     const header = document.getElementById('dynamic-header');
     if (!header) return;
 
-    // g-0 removes row gutters (margins)
-    // ps-0 on the columns removes the 12px-15px left padding
+    // justify-content-between pushes the two columns to the opposite edges
     let headerHTML = `
-        <div class="row align-items-center g-0">
+        <div class="row align-items-center g-0 justify-content-between">
             <div class="col-auto ps-0">
                 <a href="/">
                     <img src="/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
                 </a>
             </div>
-            <div class="col text-end pe-0">
+            
+            <div class="col-auto pe-0">
                 <nav class="main-nav">
                     <div class="hamburger" id="hamburger-btn">
                         <span></span><span></span><span></span>
@@ -34,6 +34,7 @@ function initDynamicHeader() {
                 </nav>
             </div>
         </div>
+        
         <div class="row g-0 mt-2">
             <div class="col ps-0">
                 <nav class="breadcrumb-nav">${generateBreadcrumbs()}</nav>
@@ -42,13 +43,10 @@ function initDynamicHeader() {
 
     header.innerHTML = headerHTML;
 
-    // Attach Toggle Event
     const btn = document.getElementById('hamburger-btn');
     const menu = document.getElementById('nav-menu');
     if (btn && menu) {
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-        });
+        btn.addEventListener('click', () => menu.classList.toggle('active'));
     }
 }
 
