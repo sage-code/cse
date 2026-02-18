@@ -42,13 +42,14 @@ img { border-radius: 8px; }
     background: url('images/blackboard.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start; 
-    
+    padding-left: 0px;
     /* CHANGE THIS VALUE: Lowering it moves the title UP */
     padding-top: 20px; 
     
     box-shadow: inset 0 0 80px rgba(0,0,0,0.8);
+    
 }
 
 
@@ -60,6 +61,7 @@ img { border-radius: 8px; }
     display: flex;
     flex-direction: column;
     text-align: left;
+    margin-left: 0;
 }
 
 .typewriter-area {
@@ -350,4 +352,29 @@ th {
 #dynamic-header.container {
     padding-left: 0;
     padding-right: 0;
+}
+
+/* Override Bootstrap's container padding for the header */
+/* Strip Bootstrap's default padding from the header grid */
+#dynamic-header .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#dynamic-header .col, 
+#dynamic-header .col-auto {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Ensure the breadcrumb nav also starts at the absolute pixel 0 */
+.breadcrumb-nav {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+/* If the logo image itself has margin, reset it */
+#dynamic-header img {
+    margin-left: 0;
+    display: block; /* Removes baseline spacing */
 }
