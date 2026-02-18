@@ -42,8 +42,8 @@ img { border-radius: 8px; }
 .hero-blackboard {
     width: 100%;
     /* Changed height to min-height so it doesn't "snap" or overflow */
-    height: auto; 
-    min-height: 200px;
+    height: 320px; 
+    min-height: 320px;
     background: url('images/blackboard.jpg') no-repeat center center;
     /* Fixed typo: 'stretch' is now 'cover' */
     background-size: cover; 
