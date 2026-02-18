@@ -39,11 +39,11 @@ img { border-radius: 8px; }
 /* ==========================================================================
    2. HERO & BLACKBOARD - PINNED VERSION
    ========================================================================== */
-
 .hero-blackboard {
     width: 100%;
     /* Changed height to min-height so it doesn't "snap" or overflow */
-    min-height: 320px; 
+    height: auto; 
+    min-height: 200px;
     background: url('images/blackboard.jpg') no-repeat center center;
     /* Fixed typo: 'stretch' is now 'cover' */
     background-size: cover; 
@@ -74,7 +74,6 @@ img { border-radius: 8px; }
     font-family: 'Caveat', cursive; 
     color: rgba(240, 240, 240, 0.9); 
     font-size: 1.6rem; 
-    /* Change pre-wrap to normal if you don't have intentional manual line breaks */
     white-space: normal; 
     line-height: 1.2; 
     margin-top: 0;
@@ -350,7 +349,7 @@ th {
 .breadcrumb-nav .current { color: #fc7f18; }
 
 /* Mobile Hamburger */
-@media (max-width: 992px) {
+@media (max-width: 640px) {
     .nav-links {
         display: none;
         position: absolute;
