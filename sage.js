@@ -39,3 +39,34 @@ function initDynamicHeader() {
         btn.addEventListener('click', () => menu.classList.toggle('active'));
     }
 }
+
+// THIS FUNCTION MUST BE PRESENT
+function generateBreadcrumbs() {
+    try {
+        const path = window.location.pathname;
+        // Clean segments: remove empty strings and "index.html"
+        const pathArray = path.split('/').filter(p => p && p !== "index.html");
+        
+        // Permanent Home Anchor
+        let html = `<a href="/"><i class="bi bi-house-door"></i> HOME</a>`;
+        
+        let currentPath = "";
+        pathArray.forEach((segment, index) => {
+            currentPath += `/${segment}`;
+            let name = segment.replace(/-/g, ' ').toUpperCase();
+            
+            html += ` <span class="sep">/</span> `;
+            
+            if (index === pathArray.length - 1) {
+                html += `<span class="current">${name}</span>`;
+            } else {
+                html += `<a href="${currentPath}">${name}</a>`;
+            }
+        });
+
+        return html;
+    } catch (e) {
+        console.error("Breadcrumb error:", e);
+        return `<a href="/"><i class="bi bi-house-door"></i> HOME</a>`;
+    }
+}
