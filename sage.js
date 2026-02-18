@@ -15,7 +15,7 @@ function initDynamicHeader() {
         <div class="row align-items-center g-0">
             <div class="col ps-0">
                 <a href="/">
-                    <img src="/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
+                    <img src="/images/sage-logo.svg" alt="Sage-Code" height="62" style="display: block;">
                 </a>
             </div>
             <div class="col-auto pe-0">
