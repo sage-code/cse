@@ -336,12 +336,10 @@ th {
 
 /* Mobile Adjustments (Breakpoint: 768px) */
 @media (max-width: 768px) {
-  .desktop-label {
-    display: none; /* Hide keyword on mobile */
-  }
 
   .hamburger {
     display: flex; /* Show hamburger on mobile */
+    margin-top: 10px;
   }
 
   .nav-links {
