@@ -50,7 +50,7 @@ function generateBreadcrumbs() {
     const pathArray = path.split('/').filter(p => p && p !== "index.html");
     
     // Always start with the House icon and Laboratory text
-    let html = `<a href="/"><i class="bi bi-house-door"></i> Laboratory</a>`;
+    let html = `<a href="/"><i class="bi bi-house-door"></i> Home</a>`;
     
     let currentPath = "";
     pathArray.forEach((segment, index) => {
