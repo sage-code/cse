@@ -37,12 +37,12 @@ a:active { color: purple; }
 img { border-radius: 8px; }
 
 .hero-blackboard {
-    width: 90%;
+    width: 100%;
     min-height: 420px; 
     background: url('images/blackboard.jpg') no-repeat center center;
     background-size: cover;
     display: flex;
-    justify-content: flex-center;
+    justify-content: flex-start;
     align-items: flex-start; 
     padding-left: 20px;
     padding-top: 20px; 
