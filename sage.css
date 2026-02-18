@@ -340,3 +340,14 @@ th {
     .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
     .hamburger span { width: 22px; height: 2px; background: #fc7f18; }
 }
+
+.breadcrumb-nav i {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+/* Ensure the container itself isn't adding unwanted side padding */
+#dynamic-header.container {
+    padding-left: 0;
+    padding-right: 0;
+}

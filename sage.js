@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+    initDynamicHeader();
+});
+
 function initDynamicHeader() {
     const header = document.getElementById('dynamic-header');
     if (!header) return;
