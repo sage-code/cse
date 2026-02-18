@@ -385,7 +385,16 @@ th {
 }
 
 .top-hr {
-    margin-top:0;
-    margin-bottom:0;
-    border-color: rgb(136, 46, 204)
+    /* Remove all spacing */
+    margin: 0;
+    padding: 0;
+    
+    /* Define the line */
+    border: none;               /* Remove default browser borders */
+    height: 2px;                /* This is your line thickness */
+    background-color: rgb(136, 46, 204);
+    
+    /* Ensure no extra height from block behavior */
+    display: block;
+    opacity: 1;                 /* Some browsers dim <hr> by default */
 }
