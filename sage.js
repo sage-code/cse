@@ -1,40 +1,71 @@
-document.addEventListener("DOMContentLoaded", function() {
-const text = `Study for free at your own pace.
-With comprehensive open-source roadmaps and examples.
-Optional 42-day free trial mentorship included.
-Zero ads, no tracking, pure focus...
-For those who wish to reinvent themselves!`;
+/**
+ * sage.js - Global Navigation and UI Logic
+ * Included on every page of sagecode.pro
+ */
 
-    const container = document.getElementById("typewriter");
-    const actions = document.getElementById("hero-actions");
-    let i = 0;
-
-    function typeWriter() {
-        if (i < text.length) {
-            if (text.charAt(i) === "\n") {
-                container.innerHTML += "<br>";
-            } else {
-                container.innerHTML += text.charAt(i);
-            }
-            i++;
-            // Slightly varied speed for a more "human" writing feel
-            let speed = text.charAt(i-1) === "." ? 400 : 45; 
-            setTimeout(typeWriter, speed);
-        } else {
-            actions.classList.remove("opacity-0");
-            actions.classList.add("opacity-100");
-        }
-    }
-
-    // Delay start until the font is likely loaded and user has looked at the board
-    setTimeout(typeWriter, 800);
+document.addEventListener("DOMContentLoaded", function () {
+    initDynamicHeader();
 });
 
-function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('active');
-  
-  // Optional: Animate hamburger to X
-  const hamburger = document.querySelector('.hamburger');
-  hamburger.classList.toggle('open');
+function initDynamicHeader() {
+    const header = document.getElementById('dynamic-header');
+    if (!header) return;
+
+    const path = window.location.pathname;
+    const isHome = path === "/" || path.endsWith("index.html") || path === "";
+
+    // Generate Header Content
+    let headerHTML = `
+        <div class="row align-items-center">
+            <div class="col">
+                <a href="/"><img src="/images/sage-logo.svg" alt="Sage-Code" height="50"></a>
+            </div>
+            <div class="col-auto">
+                <nav class="main-nav">
+                    <div class="hamburger" id="hamburger-btn">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <ul class="nav-links" id="nav-menu">
+                        <li><a href="/engineering">Engineering</a></li>
+                        <li><a href="/programming">Programming</a></li>
+                        <li><a href="/projects">Projects</a></li>
+                        <li><a href="/community">Community</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>`;
+
+    // Only add breadcrumbs row if we are NOT on the index page
+    if (!isHome) {
+        headerHTML += `
+            <div class="row mt-1">
+                <div class="col">
+                    <nav class="breadcrumb-nav">${generateBreadcrumbs()}</nav>
+                </div>
+            </div>`;
+    }
+
+    header.innerHTML = headerHTML;
+
+    // Attach Hamburger Toggle
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('nav-menu');
+    if (btn && menu) {
+        btn.addEventListener('click', () => menu.classList.toggle('active'));
+    }
+}
+
+function generateBreadcrumbs() {
+    const pathArray = window.location.pathname.split('/').filter(p => p);
+    let html = `<a href="/">Laboratory</a>`;
+    let currentPath = "";
+
+    pathArray.forEach((segment, index) => {
+        currentPath += `/${segment}`;
+        let name = segment.replace(/-/g, ' ');
+        html += ` <span class="sep">/</span> ` + (index === pathArray.length - 1 
+            ? `<span class="current">${name}</span>` 
+            : `<a href="${currentPath}">${name}</a>`);
+    });
+    return html;
 }

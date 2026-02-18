@@ -285,76 +285,57 @@ th {
 }
 
 /* Header & Container */
-.nav-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+/* Container spacing */
+.site-header {
+    background: transparent;
+    padding-top: 15px;
+    padding-bottom: 10px;
 }
 
-/* Nav Trigger (Keyword/Hamburger) */
-.nav-trigger {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.hamburger {
-  display: none; /* Hidden on desktop */
-  flex-direction: column;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: #333; /* Adjust to match SageCode colors */
-  transition: 0.3s;
-}
-
-/* Links List */
+/* Nav Menu */
 .nav-links {
-  list-style: none;
-  margin-top: 15px;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-  background: transparent;
-  padding: 10px;
-  border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #d6d6d8;
-  font-weight: 500;
-  transition: color 0.3s;
+.nav-links a {
+    font-family: 'Share Tech Mono', monospace;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: 0.3s;
 }
 
-.nav-links li a:hover {
-  color: #fc7f18d9; /* Highlight color */
+.nav-links a:hover { color: #fc7f18; }
+
+/* Breadcrumbs (Second Row) */
+.breadcrumb-nav {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #444; /* Very subtle */
 }
 
-/* Mobile Adjustments (Breakpoint: 768px) */
-@media (max-width: 768px) {
+.breadcrumb-nav a { color: #666; }
+.breadcrumb-nav .sep { color: #333; }
+.breadcrumb-nav .current { color: #fc7f18; }
 
-  .hamburger {
-    display: flex; /* Show hamburger on mobile */
-    margin-top: 10px;
-  }
-
-  .nav-links {
-    display: none; /* Hide menu by default */
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    background:  rgba(5, 5, 5, 0.1);
-    box-shadow: 0 4px 10px rgba(60, 35, 35, 0.1);
-    width: 200px;
-    text-align: right;
-  }
-
-  .nav-links.active {
-    display: flex; /* Toggle via JS */
-  }
+/* Mobile Hamburger */
+@media (max-width: 992px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; right: 20px;
+        background: #0a0a0a;
+        border: 1px solid #333;
+        flex-direction: column;
+        width: 180px;
+        padding: 10px;
+        z-index: 100;
+    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 2px; background: #fc7f18; }
 }

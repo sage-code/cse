@@ -69,4 +69,5 @@ Work in progress!
 </footer>
 </div>
 </body>
+<script src="sage.js"></script>
 </html>
