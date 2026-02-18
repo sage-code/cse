@@ -72,15 +72,6 @@ img { border-radius: 8px; }
     padding-bottom: 10px;
 }
 
-.chalk-link {
-    font-family: 'Caveat', cursive;
-    font-size: 1.6rem;
-    color: rgba(255, 255, 255, 0.85);
-    text-decoration: none;
-    border-bottom: 2px dashed rgba(255, 255, 255, 0.4);
-    display: inline-block;
-}
-
 .chalk-text {
     font-family: 'Caveat', cursive;
     color: rgba(250, 99, 91, 0.95);
@@ -90,8 +81,8 @@ img { border-radius: 8px; }
     margin-top: 0; 
     margin-bottom: 0.5rem;
 }
-.chalk-body { font-family: 'Caveat', cursive; color: rgba(240, 240, 240, 0.9); font-size: 2rem; white-space: pre-wrap; line-height: 1.4; }
-.chalk-link { font-family: 'Caveat', cursive; font-size: 1.8rem; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.4); display: inline-block; padding-bottom: 2px; }
+.chalk-body { font-family: 'Caveat', cursive; color: rgba(240, 240, 240, 0.9); font-size: 1.6rem; white-space: pre-wrap; line-height: 1.2; }
+.chalk-link { font-family: 'Caveat', cursive; font-size: 1.6rem; color: #fff; border-bottom: 2px dashed rgba(255,255,255,0.4); display: inline-block; padding-bottom: 2px; }
 .chalk-link:hover { color: rgba(250, 99, 91, 1); border-bottom-style: solid; transform: scale(1.02); }
 
 /* ==========================================================================
