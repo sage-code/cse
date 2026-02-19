@@ -22,7 +22,7 @@ body {
     margin: 0 auto;
 }
 
-.text-secondary .alert-secondary {
+.text-secondary, .alert-secondary {
     color: #e2dfd1 !important;
     font-family: 'Roboto', sans-serif;
 }
