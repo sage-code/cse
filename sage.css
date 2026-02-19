@@ -92,15 +92,6 @@ img { border-radius: 8px; }
     padding-bottom: 10px;
 }
 
-/* 1. Remove the inherited padding from the title */
-.chalk-text {
-    font-family: 'Caveat', cursive;
-    color: rgba(250, 99, 91, 0.95);
-    font-size: 2rem;
-    margin-top: 0; 
-    margin-bottom: 5px; /* Reduced from 0.5rem to 5px */
-    padding-top: 0 !important; /* Forces the global h1 padding to zero */
-}
 
 @media screen and (max-width: 768px) {
     .hero-blackboard {
@@ -115,7 +106,6 @@ img { border-radius: 8px; }
 
     .chalk-body {
         font-size: 1.2rem;
-        /* Prevent long words from pushing the board wide */
         word-break: break-word; 
     }
 }
