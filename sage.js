@@ -53,16 +53,22 @@ function initDynamicHeader() {
 
 /**
  * Generates the breadcrumb path automatically
+ * Fixed for cross-domain support between sagecode.pro and savecode.vip
  */
 function generateBreadcrumbs() {
     try {
+        const MAIN_HUB = "https://sagecode.pro";
         const path = window.location.pathname;
         const pathArray = path.split('/').filter(p => p && p !== "index.html");
         
-        // Permanent Home Link
-        let html = `<a href="/"><i class="bi bi-house-door"></i> HOME</a>`;
+        // 1. Permanent Absolute Home Link
+        let html = `<a href="${MAIN_HUB}"><i class="bi bi-house-door"></i> HOME</a>`;
         
-        let currentPath = "";
+        // 2. Determine the Base URL for middle segments
+        // If we are on VIP, middle segments should ideally point back to the PRO hub 
+        // UNLESS the specific sub-folder exists on the VIP site.
+        let currentPath = MAIN_HUB; 
+
         pathArray.forEach((segment, index) => {
             currentPath += `/${segment}`;
             let name = segment.replace(/-/g, ' ').toUpperCase();
@@ -70,8 +76,10 @@ function generateBreadcrumbs() {
             html += ` <span class="sep">/</span> `;
             
             if (index === pathArray.length - 1) {
+                // Final segment is just text
                 html += `<span class="current">${name}</span>`;
             } else {
+                // Middle segments point back to the main hub
                 html += `<a href="${currentPath}">${name}</a>`;
             }
         });
@@ -79,6 +87,6 @@ function generateBreadcrumbs() {
         return html;
     } catch (e) {
         console.error("Breadcrumb error:", e);
-        return `<a href="/"><i class="bi bi-house-door"></i> HOME</a>`;
+        return `<a href="https://sagecode.pro"><i class="bi bi-house-door"></i> HOME</a>`;
     }
 }
