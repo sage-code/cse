@@ -64,7 +64,7 @@ Work in progress!
 <a href="template.html">Page Name</a></p>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
 </div>
