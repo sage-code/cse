@@ -96,16 +96,18 @@ img { border-radius: 8px; }
 @media screen and (max-width: 768px) {
     .hero-blackboard {
         /* Maintain the background look on mobile */
-        padding-top: 20px; 
+        padding-top: 10px; 
         padding-left: 15px;
     }
 
     .chalk-text {
         font-size: 1.4rem;
+        line-height: 1.4;
     }
 
     .chalk-body {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.1;
         word-break: break-word; 
     }
 }
