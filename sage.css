@@ -43,7 +43,7 @@ img { border-radius: 8px; }
 
 .card-title {
     font-family: Roboto, Tahoma, Verdana, Sans-Serif;
-    color: #e600de;
+    color: #e600de !important;
     font-size: 1.2rem;
     margin-top: 0;
     margin-bottom: 10px;
