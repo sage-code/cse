@@ -447,3 +447,36 @@ hr {
     color: rgb(136, 46, 204);
 }
 
+/* Card Grid Layout */
+.card-grid-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Specific styling for Step Cards */
+.step-card {
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 25px !important;
+}
+
+.step-number {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5rem;
+    color: rgb(136, 46, 204); /* Sage Purple */
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.card-text-justified {
+    font-size: 0.95rem;
+    color: #e2dfd1;
+    text-align: justify;
+    margin: 0;
+}
+
+.highlight-discord {
+    color: #fc7f18; /* Sage Orange */
+    font-weight: bold;
+}
