@@ -11,7 +11,7 @@
 
 body {
     background-color: black;
-    color: #e0e0e0;
+    color: #efeeee;
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
@@ -20,6 +20,11 @@ body {
     background-color: black;
     max-width: 1000px;
     margin: 0 auto;
+}
+
+.text-secondary {
+    color: #e7e1c2 !important;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5 { font-family: 'Roboto', sans-serif; padding-top: 0.35em; }
@@ -242,14 +247,15 @@ th {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: black;
-    color: white;
+    color: rgba(255, 255, 255, 0.784);
     width: 100%;
     border-top: 1px solid #800568;
 }
 
-.copyright {
-    text-align: center;
-    color: #555;
+.footer.copyright p {
+    text-align:   center;
+    margin-left:  auto;
+    margin-right: auto;
 }
 
 .fix-social { filter: invert(1); position: relative; }
