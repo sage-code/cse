@@ -11,7 +11,7 @@
 
 body {
     background-color: black;
-    color: #e7e1c2 !important;
+    color: #e2dfd1 !important;
     font-family: 'Roboto', sans-serif;
     margin: 0;
 }
@@ -22,8 +22,8 @@ body {
     margin: 0 auto;
 }
 
-.text-secondary {
-    color: #e7e1c2 !important;
+.text-secondary .alert-secondary {
+    color: #e2dfd1 !important;
     font-family: 'Roboto', sans-serif;
 }
 
