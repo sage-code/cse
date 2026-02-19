@@ -72,7 +72,7 @@ img { border-radius: 8px; }
 .chalk-body { 
     font-family: 'Architects Daughter', cursive; 
     color: rgba(230, 230, 230, 0.85); 
-    font-size: 1.2rem; 
+    font-size: 1.4rem; 
     white-space: normal; 
     line-height: 1.4; 
     margin-top: 0;
@@ -85,6 +85,7 @@ img { border-radius: 8px; }
 .typewriter-area {
     flex-grow: 1; /* This takes up all available middle space */
     margin-top: 10px;
+    min-height: 300px; 
 }
 
 .manifesto-wrapper {
@@ -107,7 +108,7 @@ img { border-radius: 8px; }
 
     .chalk-body {
         font-size: 1.1rem;
-        line-height: 1.1;
+        line-height: 1.2;
         word-break: break-word; 
     }
 }
@@ -220,9 +221,6 @@ th {
 }
 
 @media screen and (max-width: 768px) {
-    .chalk-text { font-size: 2.2rem; }
-    .chalk-body { font-size: 1.5rem; }
-    .typewriter-area { min-height: 350px; }
     .responsive-video-container { max-width: 90vw; padding-bottom: 56%; }
     #main-img { width: 100%; }
 }
