@@ -297,7 +297,7 @@ th {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5px; /* More breathing room */
+    padding: 10px; /* More breathing room */
     transition: transform 0.3s ease;
 }
 
@@ -307,8 +307,9 @@ th {
 }
 
 .book-card img {
-    max-width: 180px; /* Keep covers consistent */
+    max-width: 200px; /* Keep covers consistent */
     margin-bottom: 10px;
+    border-radius: 0px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Makes the book "pop" off the slate */
 }
 
