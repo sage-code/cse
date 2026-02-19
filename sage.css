@@ -239,17 +239,16 @@ th {
    ========================================================================== */
 .footer {
     position: relative;
-    padding: 40px 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: black;
     color: white;
     width: 100%;
-    text-align: center;
-    border-top: 1px solid #333;
+    border-top: 1px solid #800568;
 }
 
-.footer-copyright::before {
-    content: "Copyright (c) Sage-Code 2026";
-    padding-right: 8px;
+.copyright {
+    text-align: center;
     color: #555;
 }
 

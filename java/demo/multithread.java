@@ -65,9 +65,9 @@ Work in progress!
 
 <!-- Footer -->
 <footer class="footer">
-  <div class="footer-copyright text-center"></div>
+  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
 </div>
-</body>
 <script src="/sage.js"></script>
+</body>
 </html>
