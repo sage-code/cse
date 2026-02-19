@@ -15,8 +15,8 @@ function initDynamicHeader() {
     let headerHTML = `
         <div class="row align-items-center g-0 justify-content-between">
             <div class="col-auto ps-0">
-                <a href="/">
-                    <img src="/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
+                <a href="https://sagecode.pro">
+                    <img src="https://sagecode.pro/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
                 </a>
             </div>
             
@@ -26,10 +26,10 @@ function initDynamicHeader() {
                         <span></span><span></span><span></span>
                     </div>
                     <ul class="nav-links" id="nav-menu">
-                        <li><a href="/engineering">Engineering</a></li>
-                        <li><a href="/programming">Programming</a></li>
-                        <li><a href="/projects">Projects</a></li>
-                        <li><a href="/community">Community</a></li>
+                        <li><a href="https://sagecode.pro/engineering">Engineering</a></li>
+                        <li><a href="https://sagecode.pro/programming">Programming</a></li>
+                        <li><a href="https://sagecode.pro/projects">Projects</a></li>
+                        <li><a href="https://sagecode.pro/community">Community</a></li>
                     </ul>
                 </nav>
             </div>
