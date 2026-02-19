@@ -58,8 +58,8 @@ img { border-radius: 8px; }
 
 .chalk-text {
     font-family: 'Architects Daughter', cursive;
-    color: rgba(255, 255, 255, 0.95); /* Off-white for real chalk look */
-    font-size: 2.4rem;
+    color: rgba(227, 98, 98, 0.95); /* Off-white for real chalk look */
+    font-size: 2rem;
     margin-top: 0; 
     margin-bottom: 15px;
     padding-top: 0 !important;
@@ -72,7 +72,7 @@ img { border-radius: 8px; }
 .chalk-body { 
     font-family: 'Architects Daughter', cursive; 
     color: rgba(230, 230, 230, 0.85); 
-    font-size: 1.4rem; 
+    font-size: 1.2rem; 
     white-space: normal; 
     line-height: 1.4; 
     margin-top: 0;
@@ -101,11 +101,11 @@ img { border-radius: 8px; }
     }
 
     .chalk-text {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
 
     .chalk-body {
-        font-size: 1.2rem;
+        font-size: 1rem;
         word-break: break-word; 
     }
 }
