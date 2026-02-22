@@ -21,6 +21,19 @@ html { scroll-behavior: smooth; }
 /* Offset for sticky header so title isn't hidden */
 h2, h3 { scroll-margin-top: 80px; }
 
+
+/* Hard reset for the container to remove any remaining inner padding */
+#dynamic-header {
+    position: sticky;     /* Makes it stay at the top */
+    top: 0;               /* Pins it to the very top */
+    z-index: 1020;        /* Higher than content, lower than mobile sidebar */
+    background-color: black; /* Matches your body background */
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    min-height: 80px;
+    border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
+}
+
 .container {
     background-color: black;
     max-width: 1000px;
@@ -436,17 +449,6 @@ th {
     vertical-align: middle;
 }
 
-/* Hard reset for the container to remove any remaining inner padding */
-#dynamic-header {
-    position: sticky;      /* Makes it stay at the top */
-    top: 0;               /* Pins it to the very top */
-    z-index: 1020;        /* Higher than content, lower than mobile sidebar */
-    background-color: #1b201d; /* Matches your body background */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    min-height: 60px;
-    border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
-}
 
 /* Ensure the breadcrumb icon is perfectly aligned with the logo image */
 .breadcrumb-nav {
