@@ -21,6 +21,8 @@ body {
     margin: 0 auto;
 }
 
+.center { text-align: center; }
+
 .text-secondary, .alert-secondary {
     color: #e2dfd1 !important;
     font-family: 'Roboto', sans-serif;
