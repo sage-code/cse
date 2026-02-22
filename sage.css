@@ -489,3 +489,22 @@ hr {
     color: #fc7f18; /* Sage Orange */
     font-weight: bold;
 }
+
+@media (max-width: 991px) {
+  #study-sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Hidden off-screen to the left */
+    width: 80%;  /* Or 100% depending on preference */
+    height: 100%;
+    z-index: 2000;
+    background-color: #212529; /* Dark background */
+    transition: left 0.3s ease; /* Smooth sliding animation */
+    display: block; 
+  }
+
+  /* When this class is added via JS, the sidebar slides in */
+  #study-sidebar.active {
+    left: 0;
+  }
+}

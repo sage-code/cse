@@ -55,5 +55,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Add this inside your DOMContentLoaded block in sidebar.js
+    const closeBtn = document.getElementById('close-sidebar');
+    const sidebar = document.getElementById('study-sidebar');
+
+    if (closeBtn && sidebar) {
+        closeBtn.addEventListener('click', () => {
+            // This removes the 'active' class that shows the mobile overlay
+            sidebar.classList.remove('active');
+        });
+    }
+
+    // Also, close the sidebar when a link is clicked on mobile
+    const links = document.querySelectorAll('#bookmark-list a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 992) {
+                sidebar.classList.remove('active');
+            }
+        });
+    });
+
     loadProgress();
 });
