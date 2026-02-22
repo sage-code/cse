@@ -11,7 +11,7 @@
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Bee Highlighter -->
-  <script src="/bee/js/bee.js"></script>
+  <script src="/projects/bee/js/bee.js"></script>
   <!-- Sage-Code CSS -->
   <link rel="stylesheet" href="/sage.css">
   </head>
@@ -19,14 +19,7 @@
 <div class="container">
 
 <!-- header -->
-<header class="row">
-    <div class="col">
-        <a href="https://sagecode.pro"><img src="/images/sage-logo.svg" alt="Sage-Code Laboratory" height="80"/></a>
-    </div>
-       <div class="col text-end align-self-center">
-        <a href="/bee/index.html#lang-index" rel="nofollow" rel="nofollow">index</a>
-    </div>
-</header><hr>
+<header id="dynamic-header" class="site-header container-fluid px-4 py-3"></header>
 
 <h1>Bee Concurrence</h1>
 <div class="alert alert-secondary shadow-sm">
@@ -73,7 +66,7 @@ return;
 <p>A big problem in asynchronous call is to capture the results of a rule that run in parallel mode. In the next example we use map-reduce design pattern to create sum of numbers in parallel. The results are captured into a list. Then we reduce the results by making sum of sums and create the output. </p>
 
 <div class="text-center">
-  <img src="/bee/img/map-reduce.svg" alt="bee rule" width="360" class="img-fluid protect rounded shadow border" >
+  <img src="/projects/bee/img/map-reduce.svg" alt="bee rule" width="360" class="img-fluid protect rounded shadow border" >
   <p>Map-Reduce Pattern</p>
 </div>
 
@@ -164,7 +157,7 @@ return
 <p>If you do not know how this works, take a look to the diagram below. We have one rule called "producer" one list that act as queue and a routine called "consumer". The queue has a limited capacity. We can use same consumer twice, if we do then the application is also multi-threading.</p>.
 
 <div class="text-center">
-  <img src="/bee/img/producer-consumer.svg" alt="producer-consumer" width="520" class="img-fluid protect rounded shadow border" >
+  <img src="/projects/bee/img/producer-consumer.svg" alt="producer-consumer" width="520" class="img-fluid protect rounded shadow border" >
   <p>Producer Consumer <br/>Diagram</p>
 </div>
 
@@ -184,7 +177,7 @@ return
 <div class="alert alert-warning"><span style="color:brown">Info:&nbsp;</span>This example is complex so we have chosen to keep it on GitHub with the Bee project. If you want to visualize it you need Notepad++ and color syntax highlighter. Go back to index page and follow the instructions at the bottom of the page.</div>
 
 <p><b>Read more:</b>
-<a href="/bee/graphics/">Graphics</a></p>
+<a href="/projects/bee/graphics/">Graphics</a></p>
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
