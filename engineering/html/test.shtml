@@ -5,6 +5,5 @@
 </head>
 <body>
     <!--#echo var="DATE_LOCAL" -->
-<script src="/sage.js"></script>
 </body>
 </html>
