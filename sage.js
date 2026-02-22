@@ -20,7 +20,7 @@ function initDynamicHeader() {
                 </a>
             </div>
             
-            <div class="col-auto pe-0">
+            <div class="col-auto pe-0">     
                 <nav class="main-nav">
                     <div class="hamburger" id="hamburger-btn">
                         <span></span><span></span><span></span>
