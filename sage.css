@@ -15,6 +15,12 @@ body {
     margin: 0;
 }
 
+
+/* Smooth scrolling for in-page links */
+html { scroll-behavior: smooth; }
+/* Offset for sticky header so title isn't hidden */
+h2, h3 { scroll-margin-top: 80px; }
+
 .container {
     background-color: black;
     max-width: 1000px;
@@ -433,6 +439,7 @@ th {
 #dynamic-header {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    min-height: 60px;
 }
 
 /* Ensure the breadcrumb icon is perfectly aligned with the logo image */
