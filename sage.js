@@ -58,41 +58,38 @@ function initDynamicHeader() {
 function generateBreadcrumbs() {
     try {
         const MAIN_HUB = "https://sagecode.pro";
+        const VIP_HUB = "https://sagecode.vip";
         const isVIP = window.location.hostname.includes('sagecode.vip');
         
         const path = window.location.pathname;
-        // Filter out empty strings and index.html
         const pathArray = path.split('/').filter(p => p && !p.includes("index.html"));
         
-        // 1. Permanent Absolute Home Link
+        // 1. Permanent Home Link
         let html = `<a href="${MAIN_HUB}"><i class="bi bi-house-door"></i> HOME</a>`;
         
-        // 2. The VIP Hack: Inject "COMMUNITY / VIP" if on the vip domain
+        // 2. Inject Virtual Path for VIP pages
         if (isVIP) {
+            // Community link points to .pro
             html += ` <span class="sep">/</span> <a href="${MAIN_HUB}/community">COMMUNITY</a>`;
-            html += ` <span class="sep">/</span> <a href="${MAIN_HUB}/community/vip">VIP</a>`;
+            // VIP link points to the root of .vip (since /vip folder doesn't exist on .pro)
+            html += ` <span class="sep">/</span> <a href="${VIP_HUB}">VIP</a>`;
         }
 
-        let currentPath = MAIN_HUB; 
+        // 3. Process current site's segments
+        let currentPath = isVIP ? VIP_HUB : MAIN_HUB; 
 
         pathArray.forEach((segment, index) => {
-            // Remove .html extension for the display name
+            // Remove extension and format text
             let name = segment.replace('.html', '').replace(/-/g, ' ').toUpperCase();
             
-            // If on VIP, the pathing for middle segments needs to point to the virtual subfolder
-            if (isVIP) {
-                currentPath = `${MAIN_HUB}/community/vip/${segment}`;
-            } else {
-                currentPath += `/${segment}`;
-            }
+            // Build the URL based on which domain we are currently on
+            currentPath += `/${segment}`;
             
             html += ` <span class="sep">/</span> `;
             
             if (index === pathArray.length - 1) {
-                // Final segment is the current page title
                 html += `<span class="current">${name}</span>`;
             } else {
-                // Middle segments (if any exist inside the VIP repo subfolders)
                 html += `<a href="${currentPath}">${name}</a>`;
             }
         });
