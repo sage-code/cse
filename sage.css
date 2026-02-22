@@ -25,6 +25,7 @@ h2, h3 { scroll-margin-top: 80px; }
     background-color: black;
     max-width: 1000px;
     margin: 0 auto;
+    padding-top: 5px !important;
 }
 
 .center { text-align: center; }
@@ -437,9 +438,14 @@ th {
 
 /* Hard reset for the container to remove any remaining inner padding */
 #dynamic-header {
+    position: sticky;      /* Makes it stay at the top */
+    top: 0;               /* Pins it to the very top */
+    z-index: 1020;        /* Higher than content, lower than mobile sidebar */
+    background-color: #1b201d; /* Matches your body background */
     padding-left: 0 !important;
     padding-right: 0 !important;
     min-height: 60px;
+    border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
 }
 
 /* Ensure the breadcrumb icon is perfectly aligned with the logo image */
@@ -491,7 +497,7 @@ hr {
 }
 
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   #study-sidebar {
     position: fixed;
     top: 0;
@@ -510,4 +516,10 @@ hr {
     left: 0;
     box-shadow: 5px 0 15px rgba(0,0,0,0.5);
   }
-}
+
+  .sidebar-content {
+        position: sticky;
+        top: 80px; /* Header height (~60px) + some breathing room (20px) */
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+  }}
