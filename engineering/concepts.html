@@ -26,37 +26,95 @@
 <!-- header -->
 <header id="dynamic-header" class="site-header container-fluid px-4 py-3"></header>
 
-<h1>Programming Concepts</h1>
+<div class="container-fluid">
+  <div class="row">
+    
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+       <h1>Programming Concepts</h1>
+       </main>
+
+    <aside class="col-lg-3 col-12 order-1 order-lg-2">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3">
+        
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+
+        <hr>
+        
+        <ul id="bookmark-list" class="list-unstyled">
+          <li>
+            <input type="checkbox" class="topic-check" data-target="programs"> 
+            <a href="#programs">Computer programs</a>
+          </li>
+          <li>
+            <input type="checkbox" class="topic-check" data-target="symbols"> 
+            <a href="#symbols">Programming symbols</a>
+          </li>
+          </ul>
+
+        <button data-toggle="sidebar" class="btn btn-sm btn-outline-light d-lg-none w-100 mt-3">Close Map</button>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
 
 <div class="alert alert-secondary shadow-sm">
 This article is designed for beginners in computer science. We start with basic concepts used in computer science. All programming languages are based on these concepts. Some of these are used to make new software and some others  for resolving problems or running a business.</div>
 
 
-<aside class="col-lg-3 col-12 order-1 order-lg-2">
-  <div id="study-sidebar" class="sidebar-content shadow-sm p-3">
-    
-    <h5>Study Progress</h5>
-    <div class="progress mb-3" style="height: 8px;">
-      <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+<hr>
+
+
+<div class="sticky-top bg-dark py-2 border-bottom">
+    <div class="progress" style="height: 10px;">
+        <div id="main-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%;"></div>
     </div>
+</div>
 
-    <hr>
-    
-    <ul id="bookmark-list" class="list-unstyled">
-      <li>
-        <input type="checkbox" class="topic-check" data-target="programs"> 
-        <a href="#programs">Computer programs</a>
-      </li>
-      <li>
-        <input type="checkbox" class="topic-check" data-target="symbols"> 
-        <a href="#symbols">Programming symbols</a>
-      </li>
-      </ul>
+<hr>
+<h4>Page bookmarks:</h4>
+<ul id="bookmark-list" class="list-unstyled">
+  <li>
+    <input type="checkbox" class="topic-check" data-target="programs"> 
+    <a href="#programs">Computer programs</a>
+  </li>
+  <li>
+    <input type="checkbox" class="topic-check" data-target="symbols"> 
+    <a href="#symbols">Programming symbols</a>
+  </li>
+  <li>
+    <input type="checkbox" class="topic-check" data-target="logic"> 
+    <a href="#logic">Logic science</a>
+    <ul class="list-unstyled ms-4">
+      <li><input type="checkbox" class="topic-check" data-target="prop-logic"> <a href="#prop-logic">Propositional Logic</a></li>
+      <li><input type="checkbox" class="topic-check" data-target="boolean"> <a href="#boolean">Boolean algebra</a></li>
+      <li><input type="checkbox" class="topic-check" data-target="predicate-logic"> <a href="#predicate-logic">Predicate Logic</a></li>
+    </ul>
+  </li>
+  <li> <input type="checkbox" class="topic-check" data-target="list-sets"> <a href="#list-sets">Lists & Sets</a></li>
+  <li> <input type="checkbox" class="topic-check" data-target="machines"> <a href="#machines">State Machines</a></li>
+  <li> <input type="checkbox" class="topic-check" data-target="inteligence"> <a href="#inteligence">Artificial Intelligence</a></li>
+  </ul>
 
-    <button data-toggle="sidebar" class="btn btn-sm btn-outline-light d-lg-none w-100 mt-3">Close Map</button>
-  </div>
-</aside>
+<hr>
 
+<!-- sidebar -->
+<ul id="bookmark-list">
+  <li>
+    <input type="checkbox" class="topic-check" data-target="programs">
+    <a href="#programs">Computer programs</a>
+  </li>
+  <li>
+    <input type="checkbox" class="topic-check" data-target="symbols">
+    <a href="#symbols">Symbols</a>
+  </li>
+</ul>
+
+<script src="/sage-study.js" defer></script>
 
 <h2><a id="programs">Computer programs</a></h2>
 
