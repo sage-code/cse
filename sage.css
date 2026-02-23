@@ -609,8 +609,8 @@ hr {
 
 /* Ensure the main content doesn't feel cramped against the sidebar */
 main {
-    padding-left: 5px !important;
-    padding-right: 5px !important;
+    padding-left: 10px !important;
+    padding-right: 0px !important;
 }
 
 .side-bar {
@@ -634,31 +634,32 @@ main {
     }
 }
 
-/* --- Mobile: Slide-out Overlay (Screens smaller than 992px) --- */
+/* --- Mobile: Slide-out Overlay (Corrected) --- */
 @media (max-width: 991px) {
     #study-sidebar {
         position: fixed;
         top: 0;
-        left: -100%;    /* Hidden off-screen */
+        left: -100%;
         width: 280px;
         height: 100vh;
-        z-index: 2000;  /* High z-index to cover everything */
-        background-color: #1a1a1a;
+        z-index: 2000;
+        /* CHANGE: Use a solid color, no transparency */
+        background-color: #1a1a1a !important; 
         transition: 0.3s ease-all;
         overflow-y: auto;
-        padding: 10px;
+        padding: 20px;
         display: block !important;
     }
 
-    .sidebar-content {
-        background-color: rgba(0, 0, 0, 0.2) !important; /* Darker than body for depth */
-        padding-right: 10px !important;
-        padding-left: 5px !important;
-        margin-left: 5px !important;
+    /* CHANGE: Force the internal content to be solid on mobile too */
+    #study-sidebar .sidebar-content {
+        background-color: #1a1a1a !important;
+        padding-left: 0 !important;
+        margin-left: 0 !important;
     }
 
     #study-sidebar.active {
-        left: 0;        /* Slides in */
-        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+        left: 0;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.8); /* Stronger shadow to pop from background */
     }
 }
