@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Fundamental concepts of computer programming.">
   <meta name="author" content="Elucian Moise">
-  <meta name="keywords" content="programming, fundamental, concepts, basic, beginners. logic, numeric, expressions">
+  <meta name="keywords" content="programming, fundamental, concepts, basic, beginners, logic, numeric, expressions">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Website title -->
@@ -30,7 +30,7 @@
   <div class="row g-0">
     <!-- sidebar menu -->    
     <aside class="side-bar col-lg-3 col-12">
-        <div id="study-sidebar" class="sidebar-content shadow-sm p-1 sticky-top" style="top: 80px;">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-1 sticky-top">
         <h5>Study Progress</h5>
         <div class="progress mb-3" style="height: 8px;">
           <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
@@ -60,8 +60,7 @@
         <li> <input type="checkbox" class="topic-check" data-target="machines"> <a href="#machines">State Machines</a></li>
         <li> <input type="checkbox" class="topic-check" data-target="inteligence"> <a href="#inteligence">Artificial Intelligence</a></li>
         </ul>
-        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg" 
-                style="width: 60px; height: 60px; z-index: 1050; right: 0;">
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
           <span style="font-size: 24px;">☰</span>
         </button>
       </div>
@@ -73,32 +72,34 @@
 <h1>Programming Concepts</h1>
 
 <div class="alert alert-secondary shadow-sm">
-This article is designed for beginners in computer science. We start with basic concepts used in computer science. All programming languages are based on these concepts. Some of these are used to make new software and some others  for resolving problems or running a business.</div>
+This article is intended for those new to computer science. We begin by exploring the fundamental concepts that form the foundation of programming and software engineering. These concepts are essential for creating new software, solving problems, and supporting business operations. Understanding them will help you build a strong base for further study and creation of practical applications.</div>
 
 <hr>
 
 <h2><a id="programs">Computer programs</a></h2>
 
-<div class="alert alert-secondary shadow-sm">Computer programs are step by step instructions that a computer can execute. These are grouped in statements that are stored into a modules or package. A program can have many packages. Sometimes programs are also called applications.</div>
+<div class="alert alert-secondary shadow-sm">
+Computer programs, often called applications, are fundamentally a series of step-by-step instructions executed by a computer. These instructions are organized into statements, which are then grouped into modules or packages. A single program can consist of numerous packages and may include embedded data or rely on external files for data storage.
+</div>
 
-<h3>Application purpose</h3>
+<h3>Application Purpose</h3>
 
-<p>Applications can be created using one or more programming languages. Usually an application is designed to resolve a specific problem. Most applications have multiple features that you can use to send or receive information to and from the application using input/output devices like a console (display window) or a printer.</p>
+<p>Applications are built using one or more programming languages and are typically designed to solve a specific problem. They often include multiple features that allow users to interact with the system, sending or receiving information through input/output devices such as a console display or a printer.</p>
 
-<h3>Application execution</h3>
+<h3>Application Execution</h3>
 
-<p>Program execution will resolve a problem and communicate the result or will have a physical effect: for example printing a message to the computer monitor or moving the arm of a robot. A program can be executed one or multiple times.</p>
+<p>The execution of a program aims to resolve a problem and communicate the result, or it can produce a physical effect, such as displaying a message on a monitor or controlling a robotic arm. A program can be designed to be executed a single time or multiple times as needed.</p>
 
 <h3>Code base</h3>
 
-<p>Computer programs consist of files, stored in folders. We call this a "project" or <em>code base</em> or <em>code source</em>. A project contains text files having language specific extension, data files and perhaps images, audio and video files. Usually one file is the main file that uses the other files. A project should contain also documentation files.</p>
+<p>Computer programs consist of files stored in folders, which we call a "project" or <em>code base</em>. A project contains text files with language-specific extensions (source code), and may also include data files, images, audio, and video. Usually, one file is designated as the main entry point that utilizes the other files. A project should also contain documentation.</p>
 
 
 <h3>Sub-programs</h3>
 
-<div class="alert alert-secondary shadow-sm">Sub-programs have the role: "separation of concerns". It means one sub-program does only one small thing. The main program combine the effects of multiple sub-programs to implement the end-to-end functionality of the system. Sub-programs are contained in programs or delivered as components or libraries to be re-used in many applications.</div>
+<div class="alert alert-secondary shadow-sm">Sub-programs serve the principle of "separation of concerns," meaning each sub-program is designed to do one small task. The main program then combines the effects of multiple sub-programs to implement the system's end-to-end functionality. Sub-programs can be contained within a larger program or delivered as reusable components or libraries.</div>
 
-<p>Depending on the computer language sub-programs are called: sub-routines, procedures, functions, methods or rules. Common is that all encapsulate a specific functionality. The main program is orchestrating the execution of sub-programs by transferring the execution main process into sub-processes that can be executed synchronously or asynchronously (sometimes in parallel).</p>
+<p>Depending on the computer language, sub-programs are called sub-routines, procedures, functions, methods, or rules. What they have in common is that they all encapsulate specific functionality. The main program orchestrates the execution of sub-programs by transferring control to sub-processes, which can be executed synchronously or asynchronously (sometimes in parallel).</p>
 
 <h3>Formal parameters</h3>
 
@@ -106,7 +107,9 @@ This article is designed for beginners in computer science. We start with basic 
 
 <p>Parameters are similar to local variables. They are known only inside the sub-routine. Once the subroutine is finished, the value of the parameters is lost or can be propagated back to the caller. This depends on the declaration syntax and purpose of the parameter.</p>
 
-<p>Believe it or not in Fortran, parameters are not the same thing as in other languages. In fortran, parameters are actually constants. In most other languages parameters are variables.</p>
+<h3>Subprogram Results</h3>
+
+<p>A subprogram can produce one or more results, which are returned to the part of the program that initiated the call. This is often accomplished using a <code>return</code> statement. The data type of the result must match the type declared in the subprogram's signature. Some subprograms, known as procedures or void functions, do not return a value and are executed only for their side effects, such as printing to a console or modifying a file.</p>
 
 
 <h2><a id="symbols">Programming Symbols</a></h2>
@@ -123,62 +126,62 @@ This article is designed for beginners in computer science. We start with basic 
 
 <h4>Binary</h4>
 
-<p>Computer is using binary representations of "1" and "0" for encoding symbols. The "1" is usually a positive electrical charge while "0" represents no charge. It is similar to a light bulb. When light is on we can consider it logic = "1". When lights is off we consider logic="0&Prime;.</p>
+<p>A computer uses binary representations of "1" and "0" for encoding symbols. The "1" typically represents a positive electrical charge, while "0" represents no charge. It is similar to a light bulb: when the light is on, we can consider it to represent the logical value "1"; when the light is off, we consider it to represent "0".</p>
 
 <h4>Storage</h4>
 
-<p>Electronic devices can store data using specialized devices to store data. There are several physical methods: "electro-static", "electro-magnetic", "optic" or "magneto-optic" and of course "solid state - electronics". The point is, all computation is digital, and is based on a binary system.</p>
+<p>Electronic devices store data using specialized components. There are several physical methods, including "electro-static," "electro-magnetic," "optic," "magneto-optic," and "solid-state electronics." The fundamental point is that all modern computation is digital and based on a binary system.</p>
 
 <h2><a id="logic">Logic Science</a></h2>
 
 <div class="alert alert-secondary shadow-sm">
-<p>The logic was discovered by Greeks and formalized by Aristotle. Logic means thought or reason. Initially the logic was described only by philosophy. However in time a new mathematical branch was developed. Logic is the science of truth. The purpose of logic is wisdom.</p>
+<p>Logic was discovered by the ancient Greeks and formalized by Aristotle. The word itself means "thought" or "reason." Initially a branch of philosophy, it has since evolved into a formal branch of mathematics. Logic is the science of truth, and its purpose is to provide a framework for reasoning.</p>
 </div>
 
 <h3>Fundamental Concepts</h3>
 
-<p>Before you can understand logic we must define some words and rules that are well established and can’t be invented by yourself. Many software developers do not understand the definitions and therefore can’t have meaningful conversations and arguments. Read the entire article slowly to learn these things before you can say you know logic.</p>
+<p>To understand logic, we must first define some foundational words and rules. A firm grasp of these definitions is essential for having meaningful conversations and making sound arguments in computer science. This section provides an introduction to these core concepts.</p>
 
 <h4>Inference</h4>
 
-<p>Inference is the most important concept in logic. It is also known as  <em>deduction</em> or <em>implication</em>. This is a conclusion we reach after we study the arguments or premises into a sentence. Inference is a way of thinking and reasoning.</p>
+<p>Inference, also known as <em>deduction</em> or <em>implication</em>, is a core concept in logic. It is the conclusion reached after studying the arguments or premises within a sentence. Inference is a fundamental method of thinking and reasoning.</p>
 
-<div class="alert alert-info shadow-sm"><span style="color:brown">Logical inference:&nbsp;</span>Using valid arguments into a sentence we can derive a logical conclusion. Sound arguments will produce the same conclusion no matter who makes the arguments or who derive the conclusion.</div>
+<div class="alert alert-info shadow-sm"><span class="text-brown">Logical Inference:&nbsp;</span>Using valid arguments in a sentence allows us to derive a logical conclusion. Sound arguments will produce the same conclusion regardless of who makes the arguments or derives the conclusion.</div>
 
-<p>The inference and reason do not work the same in all cultures. For example a Christian will not reach the same conclusion from a religious sentence as another person that is Buddhist or Muslim. The words may be interpreted in different ways and lead to different conclusions.</p>
+<p>Inference and reason may not operate the same way in all contexts. For example, individuals from different philosophical or religious backgrounds might interpret a sentence in different ways, leading to different conclusions.</p>
 
 <h4>Sentences</h4> 
 
-<p>Sentences are enumerations of words that together express an idea, describe a situation or fact, give a command or inquiry about a fact, status or situation. Sentences can be classified in four categories</p>
+<p>Sentences are sequences of words that together express an idea, describe a situation, give a command, or make an inquiry. Sentences can be classified into four main categories:</p>
 
 <ul>
 <li>Imperative sentences (orders/commands)</li>
 <li>Interrogative sentences (inquiries)</li>
 <li>Declarative sentences (statements)</li>
-<li>Exclamation sentences (surprise)</li>
+<li>Exclamatory sentences (expressing surprise)</li>
 </ul>
 
 <h4>Elements</h4> 
 
-<p>A sentence can have 5 elements: { subject, verb, object, complement, and adjunct } (SVOCA). The subject is the performer of an action or the agent of the verb. It is usually at the beginning of a sentence, and it is generated by a noun or any of its equivalents, such as a pronoun, a noun phrase, or a noun clause. Sentences are studied by the grammar of a language.</p>
+<p>A sentence can have five elements: { subject, verb, object, complement, and adjunct } (SVOCA). The subject is the performer of an action. It usually appears at the beginning of a sentence and is represented by a noun or its equivalent (e.g., a pronoun, a noun phrase). The study of sentence structure is known as grammar.</p>
 
 <h4>Statements</h4> 
 
-<p><em>Statements: </em>are declarative sentences that express a fact, idea or opinion. Statements do not make requests, give commands or express a surprise. A statement usually end with dot (.)</p>
+<p><em>Statements</em> are declarative sentences that express a fact, idea, or opinion. Statements do not make requests, give commands, or express surprise. A statement usually ends with a period (.).</p>
 
-<p>Some statements are neither true neither false but have an undetermined value that can be “maybe” or “probable”. There is a special logic for this kind of statements.</p>
+<p>Some statements are neither true nor false but have an undetermined value, such as “maybe” or “probable.” There is a special branch of logic for handling such statements.</p>
 
 <h4>Propositions</h4> 
 
-<p><em>Propositions: </em>are statements that can be true or false. A proposition has a single value, is either true, either false but not both in the same time. Propositions are used in propositional logic.</p>
+<p><em>Propositions</em> are statements that can be either true or false, but not both at the same time. Propositions are the building blocks of propositional logic.</p>
 
-<p>There are examples of declarative sentences that are not propositions. For example, “This sentence is false” is not a proposition, since it can’t be true. For instance, if we assign it the truth value True, then we are saying that “This sentence is false” is in fact true but the sentence is false by definition so it can’t be sometimes true.</p>
+<p>There are examples of declarative sentences that are not propositions. For example, the sentence “This sentence is false” is a well-known paradox. If we assign it the truth value 'True,' we imply the sentence is false. If we assign it 'False,' we imply the sentence is not false, creating a contradiction.</p>
 
 <h4>Fundamental principle</h4>
 
-<p>It is important to know that logic can't create good inference from imperative or interrogative sentences but only from declarative sentences. Imperative sentence is also a command from a superior entity or authority like Emperor, Queen, Fuhrer, President or God.</p>
+<p>It is important to know that formal logic derives valid inferences from declarative sentences, not from imperative or interrogative ones. An imperative sentence is a command from an authority, such as a ruler, government, or deity.</p>
 
-<div class="alert alert-danger shadow-sm"><span style="color:brown">Info:&nbsp;</span>By making inference from imperative sentences one culture can fall into irrational believes, wrong lows and social injustice. Logic can only work based on facts and solid arguments not on irrational commands.</div>
+<div class="alert alert-danger shadow-sm"><span class="text-brown">Info:&nbsp;</span>Drawing inferences from imperative sentences can lead to irrational beliefs, unjust laws, and social injustice. Logic must be based on facts and solid arguments, not on commands that bypass reason.</div>
 
 <h4>Composition rules</h4>
 
@@ -199,45 +202,45 @@ This article is designed for beginners in computer science. We start with basic 
 
 <h2><a id="prop-logic"></a>Propositional Logic</h2>
 
-<div class="alert alert-secondary shadow-sm">The propositional logic study the relation between arguments and sentences. Deductive arguments can be propositions or sentences that can have Boolean values: True or False. This logic do not deal with the content of propositions but only with the relation between propositions.</div>
+<div class="alert alert-secondary shadow-sm">Propositional logic studies the relationships between declarative sentences (propositions). These propositions can have Boolean values of True or False. This branch of logic does not concern itself with the content of the propositions, but only with the logical relationships between them.</div>
 
-<p>In this rules we use A and B and P to represent logical propositions. Part of propositional logic are relations: IS, AND, OR, NOT. This relations have very precise rules that makes propositional logic a reliable theory.</p>
+<p>In these rules, we use variables like A, B, and P to represent logical propositions. The core of propositional logic involves operators like AND, OR, and NOT, which have precise rules that make it a reliable and foundational theory in computer science.</p>
 
 <h4>Fundamental rules:</h4>
 
-<p>There are several Logical rules that are universal and can't be broken. Nobody can contradict them in any culture or language. If you understand propositional logic rules you have done your first step toward understanding computer science.</p>
+<p>Several logical rules are universal and cannot be broken, regardless of culture or language. Understanding these rules is a crucial first step toward understanding computer science.</p>
 
 <ul>
-<li>If A and B are true then P = A and B is true.</li>
-<li>If A and B are false then P = A and B is false.</li>
-<li>If A or B is false then P = A and B is false.</li>
-<li>If A or B is true then P = A or B is true.</li>
-<li>If A is true then P = not A is false.</li>
-<li>If B is false then P = not B is true.</li>
+<li>If A and B are both true, then P = A and B is true.</li>
+<li>If either A or B (or both) are false, then P = A and B is false.</li>
+<li>If either A or B (or both) are true, then P = A or B is true.</li>
+<li>If both A and B are false, then P = A or B is false.</li>
+<li>If A is true, then P = not A is false.</li>
+<li>If A is false, then P = not A is true.</li>
 </ul>
 
-<p>In addition operators "or" "and" are commutative. That means:</p>
+<p>Additionally, the "or" and "and" operators are commutative, meaning the order of the propositions does not affect the result:</p>
 
 <ul>
-<li>A and B == B and A</li>
-<li>A or  B == B or  A</li>
+<li>(A and B) is equivalent to (B and A)</li>
+<li>(A or B) is equivalent to (B or A)</li>
 </ul>
 
-<h4>Morgan's laws:</h4>
+<h4>De Morgan's laws:</h4>
 
-<p>Sometimes you can transform one logical expression into another equivalent expression without knowing the value of the arguments. These rules are very useful in Computer Science to optimize Boolean expressions.</p>
+<p>Sometimes, you can transform one logical expression into an equivalent one without knowing the value of the arguments. These rules, known as De Morgan's laws, are very useful in computer science for optimizing Boolean expressions.</p>
 
 <ul>
-<li>the negation of a disjunction is the conjunction of the negations;</li>
-<li>the negation of a conjunction is the disjunction of the negations;</li>
+<li>The negation of a disjunction is the conjunction of the negations.</li>
+<li>The negation of a conjunction is the disjunction of the negations.</li>
 </ul>
 
-<p>Let's explain what it means in terms of expressions:</p>
+<p>In terms of expressions, this means:</p>
 
 <ul>
-<li>not ( not A)  == A </li>
-<li>not (A or B)  == (not A) and (not B)</li>
-<li>not (A and B) == (not A) or  (not B)</li>
+<li>not (not A) == A (Double Negation)</li>
+<li>not (A or B) == (not A) and (not B)</li>
+<li>not (A and B) == (not A) or (not B)</li>
 </ul>
 
 
@@ -434,13 +437,21 @@ R = A x N = {(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)}
 <p>Identity is an equivalence relation. We have seen this symbol before, used for propositional logic: { “=” , “≡”}. This symbol is polymorphic. It can be used with any kind of elements not only propositions but also predicates or terms. It’s because identity relation is symmetric, transitive and reflexive.</p>
 
 <h4>Properties</h4>
-<p>Understanding relations, assume to know the symbol definition, and the properties of specific relations. Next 3 properties are very important:</p>
+<p>Understanding relations requires knowing their properties. The following three properties are especially important in logic and mathematics:</p>
 
 <ul>
-<li>relation ”∼” is symmetric: ∀(a,b) ∈ R*(a* ∼ b) \=> (b ∼ a)</li>
-<li>relation ”∼” is transitive: ∀(a) ∈ R*(a* ∼ a)</li>
-<li>relation ”∼” is reflexive: **∀(a, b, c) ∈ R((a∼b) ∧ (b∼c)) => (a ∼ c)</li>
+    <li><b>Reflexive:</b> A relation '∼' on a set A is reflexive if every element is related to itself.
+        <br><em>∀a ∈ A, a ∼ a</em>
+    </li>
+    <li><b>Symmetric:</b> A relation '∼' on a set A is symmetric if the order of the elements does not matter. If a is related to b, then b is related to a.
+        <br><em>∀a, b ∈ A, (a ∼ b) → (b ∼ a)</em>
+    </li>
+    <li><b>Transitive:</b> A relation '∼' on a set A is transitive if a direct relationship between the first and second element and the second and third element implies a relationship between the first and third.
+        <br><em>∀a, b, c ∈ A, ((a ∼ b) ∧ (b ∼ c)) → (a ∼ c)</em>
+    </li>
 </ul>
+
+<p>An "equivalence relation" is a relation that is reflexive, symmetric, and transitive. The equality (=) operator is a common example of an equivalence relation.</p>
 
 <h4>Order</h4>
 
@@ -658,9 +669,11 @@ R = A x N = {(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)}
 
 <h2>Turing Machine</h2>
 
-<div class="alert alert-secondary shadow-sm">A Turing Machine was invented by Alan Turing to break the German encryption machine Enigma. Enigma code was broken using the first universal computation machine that was named later computer.</div>
+<div class="alert alert-secondary shadow-sm">The Turing Machine is a theoretical model of computation invented by Alan Turing in 1936, predating modern computers. It was not a physical machine for code-breaking, but rather an abstract concept that defines the limits of what is computable. This model was fundamental to the development of computer science.</div>
 
-<p>Today we use term: Turing Complete to classify a computer language that can do what a Turing Machine can do. Theoretical it can resolve any finite logical problem, by splitting it into simple operations. A Turing machine can be represented as a finite state machine but we show instead a conceptual diagram that is more easy to grasp:</p>
+<p>Separately, during World War II, Alan Turing designed an electro-mechanical machine called the Bombe, which was instrumental in breaking the German Enigma code. However, the Bombe and the theoretical Turing Machine are not the same thing.</p>
+
+<p>Today, we use the term "Turing Complete" to classify a programming language or system that has a computational power equivalent to a universal Turing machine. Theoretically, such a system can solve any problem that a computer can solve, given enough time and memory. A Turing machine can be represented as a finite state machine, but a conceptual diagram is often easier to grasp:</p>
 
 
 <div class="text-center">
@@ -676,21 +689,21 @@ R = A x N = {(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)}
 
 <h3>Machine Learning</h3>
 
-<p>We have not yet achieved <em>artificial intelligence</em> per se but we have created instead something called <em>machine learning</em> that is a fancy word for statistic. It is build on the idea that we can analyze data and predict new data by detecting a "trend". This can be potentially used to predict the future data or to recognize "patterns" therefore simulate a primitive <em>intelligence</em>.</p>
+<p>While true <em>artificial intelligence</em> has not yet been achieved, we have created <em>machine learning</em>, a field of AI that uses statistical techniques to enable computer systems to "learn" from data. It is built on the idea that by analyzing vast amounts of data, a system can identify trends and patterns, which can be used to make predictions or recognize new patterns, thereby simulating a form of intelligence.</p>
 
 <h4>Example:</h4>
 
 <div class="text-center">
   <img src="/images/statistic-trend.svg" alt="Statistic Trend"
        width="600" class="img-fluid protect rounded shadow border" >
-  <p>statistic chart<br>Linear Trend</p>
+  <p>Statistic Chart<br>Linear Trend</p>
 </div>
 
 <h3>Neural Network</h3>
 
-<p>Neural nets are a means of doing machine learning, in which a computer learns to perform some task by analyzing training examples. Usually, the examples have been hand-labeled in advance.</p>
+<p>Neural networks are a key component of machine learning, in which a computer learns to perform a task by analyzing training examples. Typically, these examples have been hand-labeled in advance.</p>
 
-<p>Most of today neural nets are organized into layers of nodes, and they use <em>feed-forward</em>, meaning that data moves through them in only one direction. An individual node might be connected to several nodes, in layer from which it receives data, and several nodes in the layer to which it sends data.</p>
+<p>Most modern neural networks are organized into layers of nodes and are "feed-forward," meaning data moves through them in only one direction. An individual node might be connected to several nodes in the layer from which it receives data and several nodes in the layer to which it sends data.</p>
 
 <div class="text-center">
   <img src="/images/neural-network.svg" alt="Neural Network"
@@ -698,7 +711,7 @@ R = A x N = {(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)}
   <p>Neural Network <br> Conceptual Representation</p>
 </div>
 
-<p>Neural networks were first proposed in 1944 by Warren McCullough and Walter Pitts, two University of Chicago researchers who moved to MIT in 1952 as founding members of what's sometimes called the <em>first cognitive science department.</em></p>
+<p>The concept of neural networks was first proposed in 1944 by Warren McCullough and Walter Pitts, two University of Chicago researchers who later moved to MIT in 1952 as founding members of what is sometimes called the first cognitive science department.</p>
 
 <h3>DEI in AI</h3>
 <p>DEI in AI stands for diversity, equity, and inclusion. It is the practice of ensuring that AI systems are fair and inclusive, and that they do not discriminate against people based on their race, gender, religion, or other protected characteristics.</p>
@@ -743,13 +756,13 @@ R = A x N = {(a,1), (a,2), (a,3), (b,1), (b,2), (b,3), (c,1), (c,2), (c,3)}
 <p>
   Generative AI is a branch of artificial intelligence (AI) that focuses on creating new content, such as text, images, audio, and code. It is able to learn the patterns and structures of existing data and then use this knowledge to generate new data that is similar in style or form. This makes it a powerful tool for a variety of applications, including art, design, and product development.</p>
   
-<h3>Disclaim</h3>
+<h3>Disclaimer</h3>
 
-<p>This website was improved using AI. You can use AI for free using Google web application. All you need is a Google account. This service is in beta. It can not be used for programming, but if you ask the right questions you will get good responses.</p>
+<p>This website was improved using AI. You can use AI for free using Google's web application. All you need is a Google account. This service is in public beta. While AI can assist with programming, its suggestions should be carefully reviewed for correctness and security.</p>
 
-<p>Google AI: <a href="https://bard.google.com" target="_blank" rel="nofollow nooppener">bard (experimental)</a></p>
+<p>Google AI: <a href="https://gemini.google.com" target="_blank" rel="nofollow noopener">Gemini</a></p>
 
-<div class="alert alert-warning"><b>Warning: </b>AI can do mistakes. It generate 3 responses. You can select and vote which one is better. AI pretend to learn from you. If you use AI generated content, you should verify and validate the response. </div>
+<div class="alert alert-warning"><b>Warning: </b>AI can make mistakes. It may generate multiple responses, and you can select and vote on which is better. AI learns from user feedback. If you use AI-generated content, you must verify and validate the response.</div>
 
 </main>
 </div>

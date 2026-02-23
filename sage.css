@@ -733,3 +733,8 @@ tr:has(input:checked):hover td {
     opacity: 1;
     text-shadow: 0 0 8px rgba(255, 105, 180, 0.4); /* Subtle "Laboratory" glow */
 }
+
+/* Custom utility class for specific text coloring */
+.text-brown {
+    color: brown !important;
+}
