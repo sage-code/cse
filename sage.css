@@ -560,7 +560,7 @@ hr {
 /* 3. The Checked State (The "Magic" Fix) */
 /* This changes the link text to a muted purple when the checkbox is checked */
 #bookmark-list li:has(input:checked) a {
-    color: #1593c9; /* Sage Purple - much easier on the eyes than the green wall */
+    color: #0869e09d; /* Sage Purple - much easier on the eyes than the green wall */
     font-weight: 500;
     opacity: 0.8;   /* Slightly dimmed to show it's "visited/done" */
 }
