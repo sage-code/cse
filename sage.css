@@ -26,7 +26,7 @@ main {
 /* Smooth scrolling for in-page links */
 html { scroll-behavior: smooth; }
 /* Offset for sticky header so title isn't hidden */
-h2, h3 { scroll-margin-top: 60px; }
+h2, h3 { scroll-margin-top: 100px; }
 
 
 /* Hard reset for the container to remove any remaining inner padding */
