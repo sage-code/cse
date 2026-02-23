@@ -532,3 +532,96 @@ hr {
         box-shadow: 5px 0 15px rgba(0,0,0,0.5);
     }
 }
+
+/* --- Sidebar Laboratory Index Style --- */
+#bookmark-list {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem; /* Smaller, professional font size */
+    color: #b0af9e;    /* Slightly dimmed text */
+}
+
+#bookmark-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.2;
+}
+
+/* Style the links inside the index */
+#bookmark-list a {
+    color: #e2dfd1; 
+    transition: color 0.2s ease;
+}
+
+#bookmark-list a:hover {
+    color: #2cba77; /* Laboratory Green on hover */
+    text-decoration: none;
+}
+
+/* Nested lists (Sub-topics) */
+#bookmark-list ul {
+    margin-top: 6px;
+    border-left: 1px solid #333; /* Vertical line for hierarchy */
+    padding-left: 15px !important;
+}
+
+/* Checkbox Styling - Laboratory Look */
+.topic-check {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #555;
+    border-radius: 2px;
+    background-color: #111;
+    cursor: pointer;
+    position: relative;
+    top: 2px;
+    flex-shrink: 0;
+}
+
+.topic-check:checked {
+    background-color: #2cba77; /* Sage Green */
+    border-color: #2cba77;
+}
+
+/* The "Check" mark */
+.topic-check:checked::after {
+    content: '✔';
+    font-size: 10px;
+    color: #000;
+    position: absolute;
+    top: -1px;
+    left: 2px;
+}
+
+/* Highlight the active/current topic */
+#bookmark-list li:has(input:checked) a {
+    color: #2cba77;
+    font-weight: 500;
+}
+
+.sidebar-content {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker than body for depth */
+    border-right: 1px solid rgba(136, 46, 204, 0.2); /* Very subtle purple edge */
+    padding-right: 10px !important;
+}
+
+/* Custom Scrollbar for the sidebar */
+.sidebar-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.sidebar-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb:hover {
+    background: #8f00b3; /* Purple hover */
+}
