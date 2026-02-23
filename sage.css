@@ -38,7 +38,7 @@ h2, h3 { scroll-margin-top: 60px; }
     padding-left: 0 !important;
     padding-right: 0 !important;
     padding-top: 2px;
-    min-height: 60px;
+    min-height: 48px;
     /* border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
 }
 
