@@ -647,7 +647,7 @@ main {
     }
 
     .sidebar-content {
-        background-color: rgba(0, 0, 0, 0.2); /* Darker than body for depth */
+        background-color: rgba(0, 0, 0, 0.2) !important; /* Darker than body for depth */
         padding-right: 10px !important;
         padding-left: 5px !important;
         margin-left: 5px !important;
