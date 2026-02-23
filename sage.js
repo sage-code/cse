@@ -14,7 +14,7 @@ function initDynamicHeader() {
     // justify-content-between pushes the two columns to the opposite edges
     let headerHTML = `
         <div class="row align-items-center g-0 justify-content-between">
-            <div class="col-auto ps-0">
+            <div class="col-auto ps-0 pt-0 mt-0" style="margin-top: -5px;">
                 <a href="https://sagecode.pro">
                     <img src="https://sagecode.pro/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
                 </a>
