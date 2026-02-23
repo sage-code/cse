@@ -1,13 +1,29 @@
 <!-- sidebar -->
-<ul id="bookmark-list">
-  <li>
-    <input type="checkbox" class="topic-check" data-target="programs">
-    <a href="#programs">Computer programs</a>
-  </li>
-  <li>
-    <input type="checkbox" class="topic-check" data-target="symbols">
-    <a href="#symbols">Symbols</a>
+ 
+<ul id="bookmark-list" class="list-unstyled">
+  <li class="nav-item">
+    <div class="d-flex align-items-center">
+      <input type="checkbox" class="topic-check me-2" data-target="programs">
+      <a href="#programs" class="nav-link level-1">Computer programs</a>
+    </div>
+    
+    <ul class="list-unstyled ms-4"> <li class="nav-item">
+        <div class="d-flex align-items-center">
+          <input type="checkbox" class="topic-check me-2" data-target="app-purpose">
+          <a href="#app-purpose" class="nav-link level-2">Application purpose</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <div class="d-flex align-items-center">
+          <input type="checkbox" class="topic-check me-2" data-target="app-execution">
+          <a href="#app-execution" class="nav-link level-2">Application execution</a>
+        </div>
+      </li>
+    </ul>
   </li>
 </ul>
+
+
+
 
 <script src="/sage-study.js" defer></script>
