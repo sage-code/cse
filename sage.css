@@ -29,13 +29,13 @@ html { scroll-behavior: smooth; }
 
 /* This targets any element with an ID when it is reached via a link */
 [id] {
-    scroll-margin-top: 110px !important; /* Header height + breadcrumbs + 25px gap */
+    scroll-margin-top: 100px !important; /* Header height + breadcrumbs + 25px gap */
 }
 
 /* 2. Specific Heading Fix */
 /* Sometimes browsers need the specific tag targeted to override Bootstrap defaults */
 h1, h2, h3, h4, h5, section, .card-slate {
-    scroll-margin-top: 110px !important;
+    scroll-margin-top: 100px !important;
 }
 
 /* Hard reset for the container to remove any remaining inner padding */
