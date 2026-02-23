@@ -548,7 +548,7 @@ hr {
     margin-bottom: 8px;
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 4px; /* Reduced for space */
     line-height: 1.2;
 }
 
@@ -592,21 +592,21 @@ hr {
 #bookmark-list ul {
     margin-top: 6px;
     border-left: 1px solid #333; /* Vertical line for hierarchy */
-    padding-left: 15px !important;
+    padding-left: 10px !important; /* Reduced for space */
 }
 
 /* Checkbox Styling - Laboratory Look */
 .topic-check {
     appearance: none;
     -webkit-appearance: none;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     border: 1px solid #555;
     border-radius: 2px;
     background-color: #111;
     cursor: pointer;
     position: relative;
-    top: 2px;
+    top: 3px;
     flex-shrink: 0;
 }
 
@@ -618,10 +618,10 @@ hr {
 /* The "Check" mark */
 .topic-check:checked::after {
     content: '✔';
-    font-size: 10px;
+    font-size: 9px;
     color: #000;
     position: absolute;
-    top:  -1px;
+    top: 0px;
     left: 2px;
 }
 
