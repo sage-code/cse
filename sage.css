@@ -625,7 +625,7 @@ hr {
 
 /* Remove horizontal scroll issues when margins are 0 */
 .row {
-    --bs-gutter-x: 0; 
+    --bs-gutter-x: 10px; 
     margin-right: 0;
     margin-left: 0;
 }
