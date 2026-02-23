@@ -499,29 +499,36 @@ hr {
 }
 
 
-@media (max-width: 992px) {
-  #study-sidebar {
-    position: fixed;
-    top: 0;
-    left: -100%; /* Completely hidden to the left */
-    width: 280px;
-    height: 100vh;
-    z-index: 2000;
-    background-color: #1a1a1a; /* Match your dark theme */
-    transition: 0.3s ease-all;
-    overflow-y: auto;
-    display: block !important; /* Ensure it's not 'display: none' */
-  }
-
-  /* When the 'active' class is added via JS */
-  #study-sidebar.active {
-    left: 0;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
-  }
-
-  .sidebar-content {
+/* --- Desktop: Sticky Sidebar (Screens larger than 992px) --- */
+@media (min-width: 992px) {
+    .sidebar-content {
         position: sticky;
-        top: 80px; /* Header height (~60px) + some breathing room (20px) */
-        max-height: calc(100vh - 100px);
+        top: 80px;      /* Sits below your 60px header with 20px gap */
+        z-index: 1010;  /* Below the header (1020) */
+        max-height: calc(100vh - 100px); 
         overflow-y: auto;
-  }}
+        display: block;
+    }
+}
+
+/* --- Mobile: Slide-out Overlay (Screens smaller than 992px) --- */
+@media (max-width: 991px) {
+    #study-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;    /* Hidden off-screen */
+        width: 280px;
+        height: 100vh;
+        z-index: 2000;  /* High z-index to cover everything */
+        background-color: #1a1a1a;
+        transition: 0.3s ease-all;
+        overflow-y: auto;
+        padding: 20px;
+        display: block !important;
+    }
+
+    #study-sidebar.active {
+        left: 0;        /* Slides in */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+    }
+}
