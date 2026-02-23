@@ -1,197 +1,246 @@
 /* ==========================================================================
    1. GLOBAL UI & TYPOGRAPHY
+   - This section defines the core look and feel of the site, including
+     fonts, background colors, default text styles, and link behavior.
    ========================================================================== */
+
+/* Imports the 'Architects Daughter', 'Roboto', and 'Share Tech Mono' fonts from Google Fonts. */
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Roboto:wght@300;400;500;700&family=Share+Tech+Mono&display=swap');
 
+/* Defines a local font 'Dejavu Sans Mono' for code blocks. */
 @font-face {
     font-family: "Dejavu Sans Mono";
     src: url("DejaVuSansMono.ttf") format("truetype");
 }
 
+/* Base styles for the entire page. */
 body {
-    background-color: #1b201d;  /* Dark Slate Background for a "Sage" feel */
-    color: #e2dfd1 !important;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
+    background-color: #1b201d;  /* Dark slate background for a consistent, professional theme. */
+    color: #e2dfd1 !important;  /* A soft, off-white for readability on the dark background. */
+    font-family: 'Roboto', sans-serif; /* Sets the default font for all text. */
+    margin: 0; /* Removes default browser margin. */
 }
 
-/* Ensure the main content doesn't feel cramped against the sidebar */
+/* Provides consistent padding for the main content area. */
 main {
-    padding-left: 10px !important;  /* Increased breathing room from sidebar */
-    padding-right: 10px !important; /* Symmetry for the laptop view */
-    padding-top: 5px;
+    padding-left: 10px !important;  /* Creates space from the left edge or sidebar. */
+    padding-right: 10px !important; /* Creates space from the right edge. */
+    padding-top: 5px; /* Adds a little space at the top. */
 }
 
-
-/* Smooth scrolling for in-page links */
-html { scroll-behavior: smooth; }
-/* Offset for sticky header so title isn't hidden */
-
-/* This targets any element with an ID when it is reached via a link */
-[id] {
-    scroll-margin-top: 100px !important; /* Header height + breadcrumbs + 25px gap */
+/* Enables smooth scrolling when navigating to an anchor link (e.g., #section). */
+html {
+    scroll-behavior: smooth;
 }
 
-/* 2. Specific Heading Fix */
-/* Sometimes browsers need the specific tag targeted to override Bootstrap defaults */
-h1, h2, h3, h4, h5, section, .card-slate {
-    scroll-margin-top: 100px !important;
+/*
+ * OFFSETS FOR STICKY HEADER
+ * These rules prevent content from being hidden behind the sticky header when jumping to an anchor link.
+ * The `scroll-margin-top` property adds space above the element when it's scrolled to.
+ */
+[id], h1, h2, h3, h4, h5, section, .card-slate {
+    scroll-margin-top: 100px !important; /* Value should be roughly the height of the sticky header. */
 }
 
-/* Hard reset for the container to remove any remaining inner padding */
+/*
+ * STICKY HEADER
+ * This section styles the main header container that stays at the top of the viewport during scroll.
+ */
 #dynamic-header {
-    position: sticky;     /* Makes it stay at the top */
-    top: 0;               /* Pins it to the very top */
-    z-index: 1020;        /* Higher than content, lower than mobile sidebar */
-    background-color: black; /* Matches your body background */
+    position: sticky;     /* Makes the header stay at the top. */
+    top: 0;               /* Pins it to the very top of the viewport. */
+    z-index: 1020;        /* Ensures it stays above most page content. */
+    background-color: black; /* Matches the main container background. */
     padding-left: 0 !important;
     padding-right: 0 !important;
     padding-top: 2px;
-    min-height: 85px;
-    /* border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
+    min-height: 85px; /* Reserves a minimum height for the header area. */
 }
 
-/* Remove any default padding from the header rows */
+/* Resets spacing for rows inside the sticky header to prevent unwanted gaps. */
 #dynamic-header .row {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    padding-top:0 !important;
-    padding-bottom: 0 !important;
-    --bs-gutter-y: 0px  !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    --bs-gutter-y: 0px !important; /* Removes vertical gutter spacing for Bootstrap rows. */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
 }
 
+/* Hard reset for column padding within the header to ensure alignment. */
+#dynamic-header .col,
+#dynamic-header .col-auto {
+    padding-left: 0 !important;
+}
+
+/* Defines a max-width for the main content container and centers it. */
 .container {
     background-color: black;
     max-width: 1020px;
-    margin: 0 auto;
+    margin: 0 auto; /* Centers the container horizontally. */
 }
 
-.center { text-align: center; }
+/* Remove the forced padding on fluid containers used for full-width elements. */
+.container-fluid {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
 
+/* Utility class to center text. */
+.center {
+    text-align: center;
+}
+
+/* Overrides Bootstrap's default secondary text and alert colors to match the site's theme. */
 .text-secondary, .alert-secondary {
     color: #e2dfd1 !important;
     font-family: 'Roboto', sans-serif;
 }
 
-h1, h2, h3, h4, h5 { font-family: 'Roboto', sans-serif; padding-top: 0.1rem; padding-bottom: 0.1rem;}
-h1 { color: #8f00b3; font-size: 2.0rem; padding-top: 0.3rem;}
-h2 { color: #cc6600; font-size: 1.8rem; padding-top: 0.2rem;}
-h3 { color: #2cba77; font-size: 1.4rem; font-weight: 600; }
-h4 { color: rgb(39, 168, 149); font-size: 1.2rem; font-weight: 600; }
-h5 { color: rgb(232, 157, 251); font-size: 1.1rem; font-weight: 600; }
+/*
+ * TYPOGRAPHY
+ * Defines styles for headings, paragraphs, and links.
+ */
 
-p, div, tr, th, td { font-size: 1rem; }
+/* Base styles for all heading levels. */
+h1, h2, h3, h4, h5 {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+}
 
-a { text-decoration: none; transition: 0.3s; color: rgb(77, 210, 247) }
-a:hover { color: hotpink; text-decoration: underline; }
-a:active { color: purple; }
+/* Specific styles for each heading level. */
+h1 { color: #8f00b3; font-size: 2.0rem; padding-top: 0.3rem; } /* Main page title - purple */
+h2 { color: #cc6600; font-size: 1.8rem; padding-top: 0.2rem; } /* Section title - orange */
+h3 { color: #2cba77; font-size: 1.4rem; font-weight: 600; }   /* Sub-section title - green */
+h4 { color: rgb(39, 168, 149); font-size: 1.2rem; font-weight: 600; } /* Card/item title - teal */
+h5 { color: rgb(232, 157, 251); font-size: 1.1rem; font-weight: 600; } /* Minor heading - light purple */
 
-img { border-radius: 8px; }
+/* Default font size for common text elements. */
+p, div, tr, th, td {
+    font-size: 1rem;
+}
 
-.card-title {
-    font-family: Roboto, Tahoma, Verdana, Sans-Serif;
-    color: rgb(117, 204, 241) !important;
-    font-size: 1.2rem;
-    margin-top: 0;
-    margin-bottom: 10px;
+/* Link styling. */
+a {
+    text-decoration: none; /* Removes the default underline. */
+    transition: color 0.3s; /* Smooth color transition on hover. */
+    color: rgb(77, 210, 247); /* Default link color - cyan. */
+}
+a:hover {
+    color: hotpink; /* Changes color on hover. */
+    text-decoration: underline; /* Adds underline on hover for clarity. */
+}
+a:active {
+    color: purple; /* Color when a link is being clicked. */
+}
+
+/* Styles images with rounded corners. */
+img {
+    border-radius: 8px;
 }
 
 /* ==========================================================================
-   2. HERO & BLACKBOARD - PINNED VERSION
+   2. HERO & BLACKBOARD
+   - This section styles the large "blackboard" banner at the top of some pages.
    ========================================================================== */
 
 .hero-blackboard {
     width: 100%;
-    height: 320px; /* Fixed height to prevent snapping */ 
-    min-height: 320px;
+    height: 320px; /* Fixed height to ensure consistent layout. */
     background: url('https://sagecode.pro/images/blackboard.jpg') no-repeat center center;
-    background-size: cover; 
+    background-size: cover; /* Ensures the background image covers the whole area. */
     display: flex;
     justify-content: flex-start;
-    align-items: flex-start; 
-    padding: 30px; /* Even padding for a centered feel */
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.9);    
-    overflow: hidden; 
-    margin-bottom: 20px;
+    align-items: flex-start;
+    padding: 30px; /* Provides inner spacing. */
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.9); /* Creates a vignette effect. */
+    overflow: hidden; /* Prevents content from spilling out. */
+    margin-bottom: 20px; /* Adds space below the hero. */
 }
 
+/* "Chalk" style text for headings on the blackboard. */
 .chalk-text {
     font-family: 'Architects Daughter', cursive;
-    color: rgba(227, 98, 98, 0.95); /* Off-white for real chalk look */
+    color: rgba(227, 98, 98, 0.95); /* Off-white for a realistic chalk look. */
     font-size: 2rem;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 15px;
     padding-top: 0 !important;
-    /* Chalk "Glow" Effect */
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.1);
-    /* Slight rotation makes it look hand-written */
-    transform: rotate(-0.5deg);
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.1); /* Glow effect. */
+    transform: rotate(-0.5deg); /* Slight rotation for a hand-written feel. */
 }
 
-.chalk-body { 
-    font-family: 'Architects Daughter', cursive; 
-    color: rgba(230, 230, 230, 0.85); 
-    font-size: 1.4rem; 
-    white-space: normal; 
-    line-height: 1.4; 
+/* "Chalk" style for body text on the blackboard. */
+.chalk-body {
+    font-family: 'Architects Daughter', cursive;
+    color: rgba(230, 230, 230, 0.85);
+    font-size: 1.4rem;
+    white-space: normal;
+    line-height: 1.4;
     margin-top: 0;
     max-width: 860px;
     text-shadow: 1px 1px 1px rgba(255,255,255,0.2);
-    /* Keeps the paragraph clean but human */
     letter-spacing: 0.5px;
 }
 
+/* Area for the typewriter effect in the hero section. */
 .typewriter-area {
-    flex-grow: 1; /* This takes up all available middle space */
+    flex-grow: 1; /* Takes up all available middle space. */
     margin-top: 10px;
-    min-height: 300px; 
+    min-height: 300px;
 }
 
 .manifesto-wrapper {
-    margin-top: auto; /* The "Spring": pushes the link to the bottom of the 340px area */
+    margin-top: auto; /* Pushes the link to the bottom of the hero area. */
     padding-bottom: 10px;
 }
 
-
+/* Responsive adjustments for the blackboard on smaller screens. */
 @media screen and (max-width: 768px) {
     .hero-blackboard {
-        /* Maintain the background look on mobile */
-        padding-top: 10px; 
+        padding-top: 10px;
         padding-left: 15px;
     }
 
     .chalk-text {
         font-size: 1.4rem;
         line-height: 1.2;
-        padding-top: 0px; 
+        padding-top: 0px;
     }
 
     .chalk-body {
         font-size: 1.2rem;
         line-height: 1.2;
         max-width: 820px;
-        word-break: break-word; 
+        word-break: break-word; /* Prevents text overflow. */
     }
 }
 
 /* ==========================================================================
    3. SYNTAX HIGHLIGHTING & CODE
+   - Styles for code blocks and inline code, creating a custom theme.
    ========================================================================== */
+
+/* Styles the <pre> tag, which contains code blocks. */
 pre {
     border-radius: 5px;
-    padding: 10px; 
-    color: lightgreen;
-    background-color: #241f31;
+    padding: 10px;
+    color: lightgreen; /* Default text color for code. */
+    background-color: #241f31; /* Dark purple/blue background. */
 }
 
+/* Sets the font and base styles for code. */
 code[class*="language-"], pre[class*="language-"] {
     color: darkseagreen;
     font-family: "Dejavu Sans Mono", "Share Tech Mono", monospace;
     line-height: 1.2rem;
-    font-size: 0.95rem;     
+    font-size: 0.95rem;
 }
 
-/* Syntax Tokens */
+/*
+ * SYNTAX TOKENS
+ * Defines colors for different parts of the code (keywords, strings, comments, etc.).
+ */
 .keyword { color: orange; }
 .keytab { color: gold; }
 .impera, .directive-hash { color: palevioletred; }
@@ -204,53 +253,114 @@ code[class*="language-"], pre[class*="language-"] {
 .string { color: yellow; }
 
 /* ==========================================================================
-   4. COMPLEX PAGE LAYOUTS (Panels, Split, Tables)
+   4. CARDS, PANELS, AND TABLES
+   - Layout and styling for structured content containers.
    ========================================================================== */
-.split-panel { hyphens: auto; }
 
+/* Utility class for a generic panel heading. */
 .panel-heading {
-    background-color: #19334d; 
+    background-color: #19334d; /* Dark blue background. */
     color: silver;
     padding: 10px;
     margin-top: 10px !important;
-    border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px; /* Rounded top corners. */
 }
 
+/* A panel used specifically for displaying code. */
 .code-panel {
-    height: 100%;    
+    height: 100%;
     color: lightgreen;
-    border-radius: 0px 0px 5px 5px;          
+    border-radius: 0px 0px 5px 5px; /* Rounded bottom corners. */
 }
 
+/* Table header cells. */
 th {
-    color: #e60073;
-    background-color: #19334d !important;
+    color: #e60073; /* Pink text color. */
+    background-color: #19334d !important; /* Dark blue background. */
     font-weight: 500;
     font-size: 1.2rem;
     padding: 10px;
 }
 
-/* Add this below your .card-slate definition */
-.card-slate {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 12px;
-    transition: 0.3s;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* Added this: Ensures the card never expands into the gap */
-    margin: 0; 
-    box-sizing: border-box; 
+/* Styling for header rows within tables, used to group related items. */
+.table-group-header th {
+    background-color: #242424 !important; /* Constant solid black. */
+    color: #8f00b3 !important;            /* Sage-Code Purple. */
+    font-size: 0.85rem;
+    letter-spacing: 1.5px; /* Wider spacing for a "header" feel. */
+    border-top: 2px solid #333 !important;
+    border-bottom: 1px solid #333 !important;
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
 }
 
+/*
+ * CARD STYLES
+ * A "slate" is a custom card component.
+ */
+.card-slate {
+    background-color: #1a1a1a; /* Very dark gray, almost black. */
+    border: 1px solid #333; /* Subtle border. */
+    border-radius: 12px;
+    transition: 0.3s;
+    height: 100%; /* Ensures cards in a row have the same height. */
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Standard padding for the body of a card. */
 .card-body {
-    padding: 1rem !important; /* Standard laboratory spacing */
+    padding: 1rem !important;
+}
+
+/* Card titles, overriding Bootstrap defaults. */
+.card-title {
+    font-family: Roboto, Tahoma, Verdana, Sans-Serif;
+    color: rgb(117, 204, 241) !important; /* Light blue color. */
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Justified text alignment for card content. */
+.card-text-justified {
+    font-size: 0.95rem;
+    color: #e2dfd1;
+    text-align: justify;
+    margin: 0;
+}
+
+/*
+ * ROW CHECK HIGHLIGHTING
+ * Styles for table rows that contain a checkbox, indicating a "completed" state.
+ */
+
+/* Removes any background color when a checkbox in a row is checked. */
+tr:has(input:checked) {
+    background-color: transparent !important;
+}
+
+/* Instead of a background, the text color is changed to indicate a checked state. */
+tr:has(input:checked) td {
+    color: #d0cfd0ec !important; /* Muted text color. */
+    opacity: 0.9;                /* Slightly dims the row. */
+}
+
+/* Adds a glow effect when hovering over a checked row. */
+tr:has(input:checked):hover td {
+    color: hotpink !important;  /* Bright hover color for feedback. */
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.4); /* Subtle pink glow. */
 }
 
 /* ==========================================================================
-   5. INTERACTIVE & BUTTONS
+   5. INTERACTIVE ELEMENTS
+   - Buttons, links, and other interactive components.
    ========================================================================== */
+
+/* Overrides Bootstrap's primary button style. */
 .btn-primary {
     background-color: #0d6efd;
     border: 1px solid #0d6efd;
@@ -260,10 +370,11 @@ th {
 }
 
 .btn-primary:hover {
-    background-color: rgba(247, 0, 255, 0.6);
+    background-color: rgba(247, 0, 255, 0.6); /* Purple/pink on hover. */
     border-color: white;
 }
 
+/* A custom class for YouTube links to make them look like buttons. */
 .youtube {
     color: white;
     background: red;
@@ -272,133 +383,22 @@ th {
     font-family: "Share Tech Mono", monospace;
 }
 
-/* ==========================================================================
-   6. RESPONSIVE & VIDEO
-   ========================================================================== */
-.responsive-video-container {
-    max-width: 50vw;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 28%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
+/* Horizontal rule color. */
+hr {
+    color: rgb(136, 46, 204); /* Sage Purple */
 }
 
-.responsive-video-container video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: contain;
+/* Special text color utility. */
+.highlight-discord {
+    color: #fc7f18; /* Sage Orange */
+    font-weight: bold;
 }
-
-@media screen and (max-width: 768px) {
-    .responsive-video-container { max-width: 90vw; padding-bottom: 56%; }
-    #main-img { width: 100%; }
-}
-
-@media screen and (min-width: 640px) {
-    .top-video { position: absolute; top: 0; left: 15%; width: 70%; height: 100%; }
-    .frame-host { padding: 50% 0 0 0; position: relative; }
-    #main-img { width: 70%; }
-}
-
 
 /* ==========================================================================
-   7. FOOTER & UTILS
+   6. HEADER & NAVIGATION
+   - Styles for the site header, main navigation, and breadcrumbs.
    ========================================================================== */
-.footer {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: black;
-    color: rgba(255, 255, 255, 0.784);
-    width: 100%;
-    border-top: 1px solid #800568;
-}
 
-.footer.copyright p {
-    text-align:   center;
-    margin-left:  auto;
-    margin-right: auto;
-}
-
-.fix-social { filter: invert(1); position: relative; }
-
-/* Force constant background for Group Headers */
-.table-group-header th {
-    background-color: #242424 !important; /* Constant solid black */
-    color: #8f00b3 !important;            /* Sage-Code Purple */
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    border-top: 2px solid #333 !important;
-    border-bottom: 1px solid #333 !important;
-    padding-top: 15px !important;
-    padding-bottom: 10px !important;
-}
-
-.card-meta-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.star-rating {
-    font-size: 0.7rem; /* Smaller stars */
-    cursor: help;
-    white-space: nowrap;
-}
-
-.stars-on { color: #fd7e14; }
-.stars-off { color: #444; }
-
-.badge-hint {
-    cursor: help;
-    font-size: 0.7rem;
-    padding: 0.4em 0.7em;
-}
-
-.book-card {
-    background-color: #1a1a1a; /* Match your card-slate */
-    border: 1px solid #333;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px; /* More breathing room */
-    transition: transform 0.3s ease;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-    border-color: rgb(136, 46, 204); /* Subtle purple glow on hover */
-}
-
-.book-card img {
-    max-width: 200px; /* Keep covers consistent */
-    margin-bottom: 10px;
-    border-radius: 0px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Makes the book "pop" off the slate */
-}
-
-.book-resource {
-    background: #111;
-    border: 1px solid #333;
-    border-left: 4px solid rgb(136, 46, 204); /* Match your HR color */
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.book-card button {
-    margin-top: 10px;       /* Optional: space between text and button */
-}
-
-/* Header & Container */
-/* Container spacing */
 .site-header {
     background: transparent;
     padding-top: 15px;
@@ -406,46 +406,68 @@ th {
     padding-left: 0px;
 }
 
-/* Ensure the nav list itself doesn't have default padding pushing it left */
+/* Main navigation link container. */
 .nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
+    display: flex; /* Aligns nav items in a row. */
+    gap: 25px; /* Space between nav items. */
+    list-style: none; /* Removes bullet points. */
     margin: 0;
-    padding: 0; /* Critical for right alignment */
+    padding: 0; /* Critical for right-alignment. */
 }
 
+/* Individual navigation links. */
 .nav-links a {
     font-family: 'Share Tech Mono', monospace;
-    color: #888;
+    color: #888; /* Muted color for unselected links. */
     text-transform: uppercase;
     font-size: 0.9rem;
     transition: 0.3s;
 }
 
-.nav-links a:hover { color: #fc7f18; }
+.nav-links a:hover {
+    color: #fc7f18; /* Sage Orange on hover. */
+}
 
-/* Breadcrumbs (Second Row) */
+/* Breadcrumb navigation bar (e.g., Home > Engineering > Concepts). */
 .breadcrumb-nav {
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.75rem;
     text-transform: uppercase;
-    color: #444; /* Very subtle */
-    padding-left: 0;
-    margin-left: 0;
-    margin-top:0px;
+    color: #444; /* Very subtle text color. */
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    border-top: 1px solid rgb(136, 46, 204);
+    border-bottom: 1px solid rgb(136, 46, 204);
 }
 
 .breadcrumb-nav a { color: #666; }
-.breadcrumb-nav .sep { color: #333; }
-.breadcrumb-nav .current { color: #fc7f18; }
+.breadcrumb-nav .sep { color: #333; } /* Separator character (e.g., '>'). */
+.breadcrumb-nav .current { color: #fc7f18; } /* Color for the current page. */
+.breadcrumb-nav i {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.breadcrumb-nav a,
+.breadcrumb-nav span {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-/* Mobile Hamburger */
+/* Hamburger menu for mobile. Initially hidden on larger screens. */
+.hamburger {
+    display: none;
+}
+
+/* Mobile navigation styles. */
 @media (max-width: 640px) {
+    /* Hides the desktop nav links and shows the hamburger icon. */
     .nav-links {
         display: none;
         position: absolute;
-        top: 60px; right: 20px;
+        top: 60px;
+        right: 20px;
         background: #0a0a0a;
         border: 1px solid #333;
         flex-direction: column;
@@ -453,178 +475,192 @@ th {
         padding: 10px;
         z-index: 100;
     }
-    .nav-links.active { display: flex; }
-    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 22px; height: 2px; background: #fc7f18; }
+    /* When active, the mobile nav menu is shown. */
+    .nav-links.active {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+    }
+    /* The three lines of the hamburger icon. */
+    .hamburger span {
+        width: 22px;
+        height: 2px;
+        background: #fc7f18;
+    }
 }
 
-.breadcrumb-nav i {
-    margin-right: 5px;
-    vertical-align: middle;
-}
-/* Hard-reset for the Dynamic Header Alignment */
-#dynamic-header .row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
+/* ==========================================================================
+   7. SIDEBAR & BOOKMARKS
+   - Styles for the left sidebar, including the collapsible study checklist.
+   ========================================================================== */
 
-#dynamic-header .col, 
-#dynamic-header .col-auto {
-    padding-left: 0 !important;
+/* The main container for the sidebar on desktop. */
+.side-bar {
+    border-right: 2px solid rgba(216, 26, 216, 0.2); /* Very subtle purple edge. */
+    margin-left: 0px !important;
+    padding-left: 0px !important;
 }
 
+/* The content area within the sidebar that becomes scrollable. */
+.sidebar-content {
+    background-color: rgba(0, 0, 0, 0.2); /* Darker than body for depth. */
+    padding-right: 10px !important;
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+}
+
+/* Custom Scrollbar for the sidebar (WebKit browsers like Chrome/Safari). */
+.sidebar-content::-webkit-scrollbar { width: 4px; }
+.sidebar-content::-webkit-scrollbar-track { background: transparent; }
+.sidebar-content::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+.sidebar-content::-webkit-scrollbar-thumb:hover { background: #8f00b3; } /* Purple hover on scrollbar. */
 
 
-/* Ensure the breadcrumb list is flush */
-.breadcrumb-nav a, 
-.breadcrumb-nav span {
-    display: inline-block;
-    vertical-align: middle;
+/* --- DESKTOP: STICKY SIDEBAR --- */
+@media (min-width: 992px) {
+    .sidebar-content {
+        position: sticky; /* Makes sidebar stick during scroll. */
+        top: 95px;      /* Sits below the 85px header with a 10px gap. */
+        z-index: 1010;  /* Below the header (1020). */
+        max-height: calc(100vh - 100px); /* Max height is the viewport height minus header. */
+        overflow-y: auto; /* Enables scrolling only when content overflows. */
+        display: block;
+        margin-left: 5px !important;
+        padding-left: 5px !important;
+    }
+}
+
+/* --- MOBILE: SLIDE-OUT OVERLAY --- */
+@media (max-width: 991px) {
+    /* Styles the sidebar container, positioned off-screen to the left. */
+    #study-sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Initially hidden off-screen. */
+        width: 280px;
+        height: 100vh;
+        z-index: 2000;
+        background-color: #1a1a1a !important;
+        transition: left 0.3s ease; /* Smooth slide-in animation. */
+        overflow-y: auto;
+        padding: 20px 25px !important;
+        display: block !important;
+    }
+
+    /* When active, the sidebar slides into view. */
+    #study-sidebar.active {
+        left: 0;
+        box-shadow: 10px 0 30px rgba(0,0,0,0.8); /* Adds depth. */
+    }
+
+    #study-sidebar .sidebar-content {
+        background-color: #1a1a1a !important;
+        padding-left: 15px !important;
+        margin-left: 0 !important;
+    }
+    
+    /* Ensure sub-items indent properly on mobile */
+    #study-sidebar #bookmark-list ul {
+        padding-left: 15px !important; 
+        margin-left: 12px !important;
+        border-left: 2px solid #756e6e;
+    }
+
+    #study-sidebar #bookmark-list {
+        padding-left: 5px !important;
+    }
+
+    /* Adds padding to the bottom of the main content to prevent it from being hidden by the mobile sidebar toggle button. */
+    main, .content-area {
+        padding-bottom: 100px !important;
+    }
+
+    /* The button to open the mobile sidebar. */
+    #open-sidebar {
+        position: fixed; /* Stays in place during scroll. */
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50% !important; /* Makes it a circle. */
+        z-index: 2500;
+    }
 }
 
 
-/* Ensure the breadcrumb icon is perfectly aligned with the logo image */
-.breadcrumb-nav {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-    border-top: 1px solid rgb(136, 46, 204);
-    border-bottom: 1px solid rgb(136, 46, 204);
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
+/* --- BOOKMARK LIST (CHECKLIST) --- */
 
-hr {
-    color: rgb(136, 46, 204);
-}
-
-/* Card Grid Layout */
-/* Locate this section near line 310 and update it: */
-.card-grid-steps {
-    display: grid;
-    /* Changed auto-fit to auto-fill for better gap preservation on laptop screens */
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    row-gap: 5px;         /* Increased to 30px for a more "Laboratory" feel */
-    column-gap: 10px;     /* Explicitly forcing horizontal breathing room */
-    padding: 5px 0;
-    width: 100%;
-}
-
-/* Specific styling for Step Cards */
-.step-card {
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding: 10px !important;
-}
-
-.step-number {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 2.5rem;
-    color: rgb(136, 46, 204); /* Sage Purple */
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.card-text-justified {
-    font-size: 0.95rem;
-    color: #e2dfd1;
-    text-align: justify;
-    margin: 0;
-}
-
-.highlight-discord {
-    color: #fc7f18; /* Sage Orange */
-    font-weight: bold;
-}
-
-
-/* --- Sidebar Laboratory Index Style --- */
+/* Base styles for the list container. */
 #bookmark-list {
+    list-style: none; /* Removes default bullets. */
+    padding-left: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 0.85rem; /* Smaller, professional font size */
-    color: #b0af9e;    /* Slightly dimmed text */
+    font-size: 0.85rem;
+    color: #b0af9e;
 }
 
+/* Styles for each list item. */
 #bookmark-list li {
+    display: block;
     margin-bottom: 8px;
-    display: flex;
-    align-items: flex-start;
-    gap: 4px; /* Reduced for space */
     line-height: 1.2;
 }
 
-/* --- Sidebar Laboratory Index Style --- */
-
-/* 1. The Link Base State (Unchecked) */
-#bookmark-list a {
-    color: #e2dfd1; 
-    transition: 0.3s;
+/* Nested lists (sub-topics) are indented and have a guide line. */
+#bookmark-list ul {
+    list-style: none;
+    padding-left: 15px; /* Creates space between the line and the text. */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 22px;  /* Positions the line away from the parent checkbox. */
+    border-left: 1px solid #444; /* Vertical guide line for the "tree" view. */
 }
 
-/* 2. The Link Hover State (Always Purple/Pink) */
+/* Default link state in the bookmark list. */
+#bookmark-list a {
+    text-decoration: none;
+    color: #e2dfd1;
+    transition: color 0.3s, opacity 0.3s;
+    margin-left: 5px; /* Space between checkbox and link text. */
+}
+
+/* Hover state for links. */
 #bookmark-list a:hover {
-    color: hotpink !important; 
+    color: hotpink !important;
     text-decoration: none;
 }
 
-/* 3. The Checked State (The "Magic" Fix) */
-/* This changes the link text to a muted purple when the checkbox is checked */
+/*
+ * CHECKED STATE STYLING
+ * Uses the :has() pseudo-class to style the link when its sibling checkbox is checked.
+ */
 #bookmark-list li:has(input:checked) a {
-    color: #87b9d49d; /* Sage Purple - much easier on the eyes than the green wall */
+    color: #87b9d49d; /* Muted blue color. */
     font-weight: 500;
-    opacity: 0.8;   /* Slightly dimmed to show it's "visited/done" */
+    opacity: 0.8;   /* Dims the text to indicate completion. */
 }
 
-/* 4. Ensure Checked + Hover still pops */
+/* Hovering over a link that is already checked. */
 #bookmark-list li:has(input:checked) a:hover {
-    color: hotpink !important;
+    color: hotpink !important; /* Still pops with the bright hover color. */
     opacity: 1;
     text-decoration: underline;
 }
 
-/* 5. Keep the Checkbox itself Green */
-.topic-check:checked,
-.form-check-input:checked {
-    background-color: #2cba77 !important; 
-    border-color: #2cba77 !important;
-}
 
-/* Nested lists (Sub-topics) */
-/* Sidebar Tree Styling */
-#bookmark-list ul {
-    margin-top: 5px;
-    margin-bottom: 10px;
-    margin-left: 22px;  /* Positions the line away from the parent */
-    padding-left: 15px; /* Creates space between the line and the checkboxes */
-    border-left: 2px solid #837d80; /* Optional: adds a vertical guide line like a folder tree */
-}
+/* --- CUSTOM CHECKBOX --- */
 
-
-/* Remove bullets and reset padding */
-#bookmark-list, #bookmark-list ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-/* Add indentation to the nested list */
-#bookmark-list ul {
-    padding-left: 20px; /* This creates the 'tree' alignment */
-    margin-top: 5px;
-}
-
-/* Keep the checkbox and link on one line */
-#bookmark-list li {
-    display: block;
-    margin-bottom: 8px;
-}
-
-#bookmark-list a {
-    text-decoration: none;
-    color: inherit;
-    margin-left: 5px;
-}
-
-/* Checkbox Styling - Laboratory Look */
-.topic-check {
+/* Hides the default browser checkbox. */
+.topic-check,
+.form-check-input {
     appearance: none;
     -webkit-appearance: none;
     width: 12px;
@@ -638,12 +674,14 @@ hr {
     flex-shrink: 0;
 }
 
-.topic-check:checked {
-    background-color: #2cba77; /* Sage Green */
-    border-color: #2cba77;
+/* Styles the checkbox when it is checked. */
+.topic-check:checked,
+.form-check-input:checked {
+    background-color: #2cba77 !important; /* Sage Green */
+    border-color: #2cba77 !important;
 }
 
-/* The "Check" mark */
+/* Creates the "check" mark using a pseudo-element. */
 .topic-check:checked::after {
     content: '✔';
     font-size: 9px;
@@ -653,151 +691,161 @@ hr {
     left: 2px;
 }
 
-.sidebar-content {
-    background-color: rgba(0, 0, 0, 0.2); /* Darker than body for depth */
-    padding-right: 10px !important;
-    padding-left: 0px !important;
-    margin-left: 0px !important;
+/* ==========================================================================
+   8. MISCELLANEOUS & UTILITIES
+   - Various helper classes and styles for specific components.
+   ========================================================================== */
+
+/* Inverts the color of social media icons, useful for dark mode. */
+.fix-social {
+    filter: invert(1);
+    position: relative;
 }
 
-/* Custom Scrollbar for the sidebar */
-.sidebar-content::-webkit-scrollbar {
-    width: 4px;
+/* A grid layout for step-by-step guides or feature lists. */
+.card-grid-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    row-gap: 5px;
+    column-gap: 10px;
+    padding: 5px 0;
+    width: 100%;
 }
 
-.sidebar-content::-webkit-scrollbar-track {
-    background: transparent;
+/* Styles for individual cards within the step grid. */
+.step-card {
+    align-items: flex-start !important;
+    text-align: left !important;
+    padding: 10px !important;
 }
 
-.sidebar-content::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 10px;
-}
-
-.sidebar-content::-webkit-scrollbar-thumb:hover {
-    background: #8f00b3; /* Purple hover */
-}
-
-
-/* Remove the forced padding on fluid containers */
-.container-fluid {
-    padding-left: 5px !important;  /* Minimal breathing room */
-    padding-right: 5px !important;
-}
-
-/* Remove horizontal scroll issues when margins are 0 */
-.row {
-    --bs-gutter-x: 10px; /* Optional: adds horizontal spacing between columns */    
-    --bs-gutter-y: 10px; /* Optional: adds vertical spacing between rows */  
-    margin-right: 0;
-    margin-left: 0;
-}
-
-
-.side-bar {
-    border-right: 2px solid rgba(216, 26, 216, 0.2); /* Very subtle purple edge */
-    margin-left: 0px !important;
-    padding-left: 0px !important;
-}
-
-
-/* --- Desktop: Sticky Sidebar (Screens larger than 992px) --- */
-@media (min-width: 992px) {
-    .sidebar-content {
-        position: sticky;
-        top: 95px;      /* Sits below your 85px header with 10px gap */
-        z-index: 1010;  /* Below the header (1020) */
-        max-height: calc(100vh - 100px); 
-        overflow-y: auto;
-        display: block;
-        margin-left: 5px !important; /* Small gap from the edge */
-        padding-left: 5px !important; /* Small padding for content */
-    }
-}
-
-/* --- Mobile: Slide-out Overlay (Corrected) --- */
-@media (max-width: 991px) {
-    #study-sidebar {
-        position: fixed;
-        top: 0;
-        left: -100%;
-        width: 280px;
-        height: 100vh;
-        z-index: 2000;
-        background-color: #1a1a1a !important; 
-        transition: left 0.3s ease; /* Transition only 'left' for better performance */
-        overflow-y: auto;
-        padding: 20px 25px !important; /* Increases room on left and right */
-        display: block !important;
-    }
-
-    #study-sidebar .sidebar-content {
-        background-color: #1a1a1a !important;
-        padding-left: 15px !important; /* Fixes the missing 'px' to give breathing room */
-        margin-left: 0 !important;
-    }
-    #study-sidebar.active {
-        left: 0;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.8);
-    }
-
-    /* Fix: Ensure sub-items indent properly on mobile */
-    #bookmark-list ul {
-        padding-left: 15px !important; 
-        margin-left: 12px !important;
-        border-left: 2px solid #756e6e; /* Helpful vertical line for tree view */
-    }
-
-    /* Adjust nested list to ensure checkboxes aren't cut off */
-    #bookmark-list {
-        padding-left: 5px !important;
-    }
-    
-    /* Prevent text from going under the button at the bottom of the page */
-    main, .content-area { 
-        padding-bottom: 100px !important; 
-    }
-}
-
-/* 1. Base logic: Remove any solid "Checked" background that causes the wall of gray */
-tr:has(input:checked) {
-    background-color: transparent !important;
-}
-
-/* 3. Use Text Color and Opacity to indicate 'Checked' status instead */
-tr:has(input:checked) td {
-    color: #d0cfd0ec !important; /* Muted Sage Purple text */
-    opacity: 0.9;                /* Dims the row without hiding the background */
-}
-
-/* 4. The Hover Effect: Purple Glow */
-tr:has(input:checked):hover td {
-    color: hotpink !important;  /* Your requested hover color */
-    opacity: 1;
-    text-shadow: 0 0 8px rgba(255, 105, 180, 0.4); /* Subtle "Laboratory" glow */
-}
-
-/* Custom utility class for specific text coloring */
-.text-brown {
-    color: brown !important;
-}
-
-/* Sidebar Tree Styling */
-#bookmark-list ul {
-    margin-top: 5px;
+/* Large number for the step indicator. */
+.step-number {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 2.5rem;
+    color: rgb(136, 46, 204); /* Sage Purple */
+    line-height: 1;
     margin-bottom: 10px;
-    border-left: 1px solid #dee2e6; /* Optional: adds a vertical guide line like a folder tree */
-    padding-left: 15px;
+}
+
+/* Layout for metadata at the top of a card (e.g., star rating, badges). */
+.card-meta-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Star rating display. */
+.star-rating {
+    font-size: 0.7rem;
+    cursor: help;
+    white-space: nowrap;
+}
+.stars-on { color: #fd7e14; } /* Orange for filled stars. */
+.stars-off { color: #444; }  /* Gray for empty stars. */
+
+/* Hint badges with a help cursor. */
+.badge-hint {
+    cursor: help;
+    font-size: 0.7rem;
+    padding: 0.4em 0.7em;
+}
+
+/*
+ * BOOK & RESOURCE STYLES
+ * Cards specifically for displaying book recommendations.
+ */
+.book-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px); /* Lifts the card on hover. */
+    border-color: rgb(136, 46, 204); /* Adds a purple glow on hover. */
+}
+
+.book-card img {
+    max-width: 200px; /* Constrains book cover size. */
+    margin-bottom: 10px;
+    border-radius: 0px; /* Book covers shouldn't have rounded corners. */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Adds depth to the book cover. */
+}
+
+.book-card button {
+    margin-top: 10px;
+}
+
+/* Styling for a resource link, often associated with a book. */
+.book-resource {
+    background: #111;
+    border: 1px solid #333;
+    border-left: 4px solid rgb(136, 46, 204); /* Purple accent line. */
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 
-#open-sidebar {
-    width: 60px;           /* Fixed width */
-    height: 60px;          /* Fixed height */
-    padding: 0;            /* Remove default padding that causes stretching */
-    display: flex;         /* Use flex to center the icon */
-    align-items: center;
-    justify-content: center;
-    border-radius: 50% !important; /* Force a perfect circle */
-    z-index: 2500;         /* Ensure it stays above everything */
+/* ==========================================================================
+   9. RESPONSIVE VIDEO & FOOTER
+   ========================================================================== */
+.responsive-video-container {
+    max-width: 50vw;
+    margin: 0 auto;
+    position: relative;
+    padding-bottom: 28%; /* Aspect ratio hack. */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.responsive-video-container video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+/* Adjusts video container for mobile. */
+@media screen and (max-width: 768px) {
+    .responsive-video-container {
+        max-width: 90vw;
+        padding-bottom: 56%;
+    }
+    #main-img {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .top-video { position: absolute; top: 0; left: 15%; width: 70%; height: 100%; }
+    .frame-host { padding: 50% 0 0 0; position: relative; }
+    #main-img { width: 70%; }
+}
+
+/* Footer styling. */
+.footer {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: black;
+    color: rgba(255, 255, 255, 0.784);
+    width: 100%;
+    border-top: 1px solid #800568;
+}
+
+.footer.copyright p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
