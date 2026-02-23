@@ -717,12 +717,12 @@ tr:has(input:checked) {
 
 /* Odd Rows when checked */
 .table-striped tbody tr:nth-of-type(odd):has(input:checked) {
-    background-color: rgba(32, 29, 29, 0.278) !important; /* Keep the subtle odd stripe */
+    background-color: rgba(141, 101, 101, 0.152) !important; /* Keep the subtle odd stripe */
 }
 
 /* Even Rows when checked */
 .table-striped tbody tr:nth-of-type(even):has(input:checked) {
-    background-color: #202a24 !important; /* Match your body background for even rows */
+    background-color: #131514 !important; /* Match your body background for even rows */
 }
 
 /* 3. Use Text Color and Opacity to indicate 'Checked' status instead */
