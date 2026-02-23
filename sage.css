@@ -488,9 +488,9 @@ hr {
     display: grid;
     /* Changed auto-fit to auto-fill for better gap preservation on laptop screens */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    gap: 30px;            /* Increased to 30px for a more "Laboratory" feel */
-    column-gap: 30px;     /* Explicitly forcing horizontal breathing room */
-    padding: 20px 0;
+    gap: 10px;            /* Increased to 30px for a more "Laboratory" feel */
+    column-gap: 10px;     /* Explicitly forcing horizontal breathing room */
+    padding: 5px 0;
     width: 100%;
 }
 
@@ -498,7 +498,7 @@ hr {
 .step-card {
     align-items: flex-start !important;
     text-align: left !important;
-    padding: 25px !important;
+    padding: 10px !important;
 }
 
 .step-number {
