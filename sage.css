@@ -17,9 +17,9 @@ body {
 
 /* Ensure the main content doesn't feel cramped against the sidebar */
 main {
-    padding-left: 25px !important;  /* Increased breathing room from sidebar */
-    padding-right: 25px !important; /* Symmetry for the laptop view */
-    padding-top: 20px;
+    padding-left: 10px !important;  /* Increased breathing room from sidebar */
+    padding-right: 10px !important; /* Symmetry for the laptop view */
+    padding-top: 5px;
 }
 
 
