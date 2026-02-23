@@ -707,30 +707,33 @@ hr {
         box-shadow: 10px 0 30px rgba(0,0,0,0.8); /* Stronger shadow to pop from background */
     }
 }
-
-/* 1. Prevent the "Gray Wall" - Remove solid background from checked rows */
-.table tr:has(input:checked),
-.form-check:has(input:checked) {
-    background-color: rgba(143, 0, 179, 0.1) !important; /* Very subtle Sage Purple tint */
+/* 1. Base logic: Remove any solid "Checked" background that causes the wall of gray */
+tr:has(input:checked) {
+    background-color: transparent !important;
 }
 
-/* 2. Maintain Zebra Striping */
-/* This ensures your alternative row colors remain visible underneath the tint */
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(255, 255, 255, 0.03); 
+/* 2. Redefine Zebra Stripes for Checked Rows specifically */
+/* This ensures the 'Magic' alternating colors stay visible */
+
+/* Odd Rows when checked */
+.table-striped tbody tr:nth-of-type(odd):has(input:checked) {
+    background-color: rgba(255, 255, 255, 0.03) !important; /* Keep the subtle odd stripe */
 }
 
-/* 3. Style the Content, not the Container */
-/* When checked, we dim the text and change color, but keep the row readable */
-tr:has(input:checked) td,
-.form-check:has(input:checked) label {
+/* Even Rows when checked */
+.table-striped tbody tr:nth-of-type(even):has(input:checked) {
+    background-color: #1b201d !important; /* Match your body background for even rows */
+}
+
+/* 3. Use Text Color and Opacity to indicate 'Checked' status instead */
+tr:has(input:checked) td {
     /* color: #8f00b3 !important; /* Muted Sage Purple text */
-    opacity: 0.7;
+    opacity: 0.9;               /* Dims the row without hiding the background */
 }
 
-/* 4. The Hover Magic */
-/* Ensure that even if checked, hovering makes the row "glow" or highlights the link */
+/* 4. The Hover Effect: Purple Glow */
 tr:has(input:checked):hover td {
-    color: hotpink !important;
+    color: hotpink !important;  /* Your requested hover color */
     opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 105, 180, 0.4); /* Subtle "Laboratory" glow */
 }
