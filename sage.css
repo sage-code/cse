@@ -543,16 +543,29 @@ hr {
     line-height: 1.2;
 }
 
-/* Style the links inside the index */
+/* Style the links inside the index - Base State */
 #bookmark-list a {
     color: #e2dfd1; 
     transition: color 0.2s ease;
 }
 
+/* Global Sidebar Hover (Laboratory Purple) */
 #bookmark-list a:hover {
-    color: #2cba77; /* Laboratory Green on hover */
+    color: #8f00b3 !important; /* Sage Purple */
     text-decoration: none;
 }
+
+/* State: Checked (Green) */
+#bookmark-list li:has(input:checked) a {
+    color: #2cba77; /* Laboratory Green */
+    font-weight: 500;
+}
+
+/* State: Checked AND Hovered (Purple Override) */
+#bookmark-list li:has(input:checked) a:hover {
+    color: #8f00b3 !important; /* Forces purple even when checked */
+}
+
 
 /* Nested lists (Sub-topics) */
 #bookmark-list ul {
@@ -591,10 +604,10 @@ hr {
     left: 2px;
 }
 
-/* Highlight the active/current topic */
-#bookmark-list li:has(input:checked) a {
-    color: #2cba77;
-    font-weight: 500;
+/* If your Engineering items follow the same structure */
+.form-check:has(input:checked) label:hover,
+.form-check:has(input:checked) a:hover {
+    color: #8f00b3 !important;
 }
 
 .sidebar-content {
