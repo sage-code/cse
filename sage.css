@@ -227,7 +227,7 @@ th {
 }
 
 .card-body {
-    padding: 1.5rem !important; /* Standard laboratory spacing */
+    padding: 1rem !important; /* Standard laboratory spacing */
 }
 
 /* ==========================================================================
@@ -488,7 +488,7 @@ hr {
     display: grid;
     /* Changed auto-fit to auto-fill for better gap preservation on laptop screens */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    row-gap: 5px;            /* Increased to 30px for a more "Laboratory" feel */
+    row-gap: 5px;         /* Increased to 30px for a more "Laboratory" feel */
     column-gap: 10px;     /* Explicitly forcing horizontal breathing room */
     padding: 5px 0;
     width: 100%;
@@ -625,7 +625,8 @@ hr {
 
 /* Remove horizontal scroll issues when margins are 0 */
 .row {
-    --bs-gutter-x: 10px; 
+    --bs-gutter-x: 10px; /* Optional: adds horizontal spacing between columns */    
+    --bs-gutter-y: 10px; /* Optional: adds vertical spacing between rows */  
     margin-right: 0;
     margin-left: 0;
 }
