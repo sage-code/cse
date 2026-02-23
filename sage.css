@@ -725,10 +725,15 @@ hr {
         background-color: #1a1a1a !important; 
         transition: left 0.3s ease; /* Transition only 'left' for better performance */
         overflow-y: auto;
-        padding: 20px;
+        padding: 20px 25px !important; /* Increases room on left and right */
         display: block !important;
     }
 
+    #study-sidebar .sidebar-content {
+        background-color: #1a1a1a !important;
+        padding-left: 15px !important; /* Fixes the missing 'px' to give breathing room */
+        margin-left: 0 !important;
+    }
     #study-sidebar.active {
         left: 0;
         box-shadow: 10px 0 30px rgba(0,0,0,0.8);
@@ -741,6 +746,11 @@ hr {
         border-left: 1px solid #444; /* Helpful vertical line for tree view */
     }
 
+    /* Adjust nested list to ensure checkboxes aren't cut off */
+    #bookmark-list {
+        padding-left: 5px !important;
+    }
+    
     /* Prevent text from going under the button at the bottom of the page */
     main, .content-area { 
         padding-bottom: 100px !important; 
