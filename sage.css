@@ -560,7 +560,7 @@ hr {
 /* 3. The Checked State (The "Magic" Fix) */
 /* This changes the link text to a muted purple when the checkbox is checked */
 #bookmark-list li:has(input:checked) a {
-    color: #0869e09d; /* Sage Purple - much easier on the eyes than the green wall */
+    color: #87b9d49d; /* Sage Purple - much easier on the eyes than the green wall */
     font-weight: 500;
     opacity: 0.8;   /* Slightly dimmed to show it's "visited/done" */
 }
@@ -712,23 +712,10 @@ tr:has(input:checked) {
     background-color: transparent !important;
 }
 
-/* 2. Redefine Zebra Stripes for Checked Rows specifically */
-/* This ensures the 'Magic' alternating colors stay visible */
-
-/* Odd Rows when checked */
-.table-striped tbody tr:nth-of-type(odd):has(input:checked) {
-    background-color: rgba(141, 101, 101, 0.152) !important; /* Keep the subtle odd stripe */
-}
-
-/* Even Rows when checked */
-.table-striped tbody tr:nth-of-type(even):has(input:checked) {
-    background-color: #131514 !important; /* Match your body background for even rows */
-}
-
 /* 3. Use Text Color and Opacity to indicate 'Checked' status instead */
 tr:has(input:checked) td {
-    /* color: #8f00b3 !important; /* Muted Sage Purple text */
-    opacity: 0.9;               /* Dims the row without hiding the background */
+    color: #d0cfd0ec !important; /* Muted Sage Purple text */
+    opacity: 0.9;                /* Dims the row without hiding the background */
 }
 
 /* 4. The Hover Effect: Purple Glow */
