@@ -724,7 +724,7 @@ hr {
 /* When checked, we dim the text and change color, but keep the row readable */
 tr:has(input:checked) td,
 .form-check:has(input:checked) label {
-    color: #8f00b3 !important; /* Muted Sage Purple text */
+    /* color: #8f00b3 !important; /* Muted Sage Purple text */
     opacity: 0.7;
 }
 
