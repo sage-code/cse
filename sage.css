@@ -629,8 +629,8 @@ hr {
 
 /* Remove the forced padding on fluid containers */
 .container-fluid {
-    padding-left: 10px !important;  /* Minimal breathing room */
-    padding-right: 10px !important;
+    padding-left: 5px !important;  /* Minimal breathing room */
+    padding-right: 5px !important;
 }
 
 /* Remove horizontal scroll issues when margins are 0 */
@@ -642,7 +642,7 @@ hr {
 
 /* Ensure the main content doesn't feel cramped against the sidebar */
 main {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
 }
 
