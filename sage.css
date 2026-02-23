@@ -604,7 +604,7 @@ hr {
 
 .sidebar-content {
     background-color: rgba(0, 0, 0, 0.2); /* Darker than body for depth */
-    border-right: 1px solid rgba(136, 46, 204, 0.2); /* Very subtle purple edge */
+    border-right: 1px solid rgba(145, 38, 226, 0.2); /* Very subtle purple edge */
     padding-right: 10px !important;
 }
 
