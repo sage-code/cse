@@ -654,8 +654,8 @@ main {
     /* CHANGE: Force the internal content to be solid on mobile too */
     #study-sidebar .sidebar-content {
         background-color: #1a1a1a !important;
-        padding-left: 0 !important;
-        margin-left: 0 !important;
+        padding-left: 10 !important;
+        margin-left: 5 !important;
     }
 
     #study-sidebar.active {
