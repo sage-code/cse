@@ -38,7 +38,7 @@ h2, h3 { scroll-margin-top: 60px; }
     padding-left: 0 !important;
     padding-right: 0 !important;
     padding-top: 2px;
-    min-height: 60px;
+    min-height: 95px;
     /* border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
 }
 
@@ -643,7 +643,7 @@ hr {
 @media (min-width: 992px) {
     .sidebar-content {
         position: sticky;
-        top: 80px;      /* Sits below your 60px header with 20px gap */
+        top: 95px;      /* Sits below your 60px header with 20px gap */
         z-index: 1010;  /* Below the header (1020) */
         max-height: calc(100vh - 100px); 
         overflow-y: auto;
