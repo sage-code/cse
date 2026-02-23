@@ -593,9 +593,11 @@ hr {
 #bookmark-list ul {
     margin-top: 5px;
     margin-bottom: 10px;
-    border-left: 1px solid #dee2e6; /* Optional: adds a vertical guide line like a folder tree */
-    padding-left: 15px;
+    margin-left: 25px !important; /* Positions the line away from the parent */
+    border-left: 2px solid #dee2e6; /* Optional: adds a vertical guide line like a folder tree */
+    padding-left: 15px; /* Creates space between the line and the checkboxes */
 }
+
 
 /* Remove bullets and reset padding */
 #bookmark-list, #bookmark-list ul {
