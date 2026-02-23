@@ -9,44 +9,17 @@
 }
 
 body {
-    background-color: #1b201d;  /* Dark Slate Background for a "Sage" feel */
+    background-color: #1b201d;
     color: #e2dfd1 !important;
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    overflow-x: hidden;
 }
 
-
-/* Smooth scrolling for in-page links */
 html { scroll-behavior: smooth; }
-/* Offset for sticky header so title isn't hidden */
-h2, h3 { scroll-margin-top: 60px; }
 
-
-/* Hard reset for the container to remove any remaining inner padding */
-#dynamic-header {
-    position: sticky;     /* Makes it stay at the top */
-    top: 0;               /* Pins it to the very top */
-    z-index: 1020;        /* Higher than content, lower than mobile sidebar */
-    background-color: black; /* Matches your body background */
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    padding-top: 2px;
-    min-height: 60px;
-    /* border-bottom: 1px solid rgba(136, 46, 204, 0.3); /* Optional: adds definition */
-}
-
-.container {
-    background-color: black;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.center { text-align: center; }
-
-.text-secondary, .alert-secondary {
-    color: #e2dfd1 !important;
-    font-family: 'Roboto', sans-serif;
-}
+/* Offset for sticky header so anchor links don't hide titles */
+h2, h3 { scroll-margin-top: 80px; }
 
 h1, h2, h3, h4, h5 { font-family: 'Roboto', sans-serif; padding-top: 0.35em; }
 h1 { color: #8f00b3; font-size: 2.2rem; }
@@ -56,454 +29,50 @@ h4 { color: rgb(39, 168, 149); font-size: 1.2rem; font-weight: 600; }
 h5 { color: rgb(232, 157, 251); font-size: 1.1rem; font-weight: 600; }
 
 p, div, tr, th, td { font-size: 1.1rem; }
-
-a { text-decoration: none; transition: 0.3s; }
+a { text-decoration: none; transition: 0.3s; color: #fc7f18; }
 a:hover { color: hotpink; text-decoration: underline; }
-a:active { color: purple; }
-
-img { border-radius: 8px; }
-
-.card-title {
-    font-family: Roboto, Tahoma, Verdana, Sans-Serif;
-    color: rgb(117, 204, 241) !important;
-    font-size: 1.2rem;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
 
 /* ==========================================================================
-   2. HERO & BLACKBOARD - PINNED VERSION
+   2. LAYOUT CONTAINERS & HEADER
    ========================================================================== */
-
-.hero-blackboard {
-    width: 100%;
-    height: 320px; /* Fixed height to prevent snapping */ 
-    min-height: 320px;
-    background: url('https://sagecode.pro/images/blackboard.jpg') no-repeat center center;
-    background-size: cover; 
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start; 
-    padding: 30px; /* Even padding for a centered feel */
-    box-shadow: inset 0 0 100px rgba(0,0,0,0.9);    
-    overflow: hidden; 
-    margin-bottom: 20px;
-}
-
-.chalk-text {
-    font-family: 'Architects Daughter', cursive;
-    color: rgba(227, 98, 98, 0.95); /* Off-white for real chalk look */
-    font-size: 2rem;
-    margin-top: 0; 
-    margin-bottom: 15px;
-    padding-top: 0 !important;
-    /* Chalk "Glow" Effect */
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.1);
-    /* Slight rotation makes it look hand-written */
-    transform: rotate(-0.5deg);
-}
-
-.chalk-body { 
-    font-family: 'Architects Daughter', cursive; 
-    color: rgba(230, 230, 230, 0.85); 
-    font-size: 1.4rem; 
-    white-space: normal; 
-    line-height: 1.4; 
-    margin-top: 0;
-    max-width: 860px;
-    text-shadow: 1px 1px 1px rgba(255,255,255,0.2);
-    /* Keeps the paragraph clean but human */
-    letter-spacing: 0.5px;
-}
-
-.typewriter-area {
-    flex-grow: 1; /* This takes up all available middle space */
-    margin-top: 10px;
-    min-height: 300px; 
-}
-
-.manifesto-wrapper {
-    margin-top: auto; /* The "Spring": pushes the link to the bottom of the 340px area */
-    padding-bottom: 10px;
-}
-
-
-@media screen and (max-width: 768px) {
-    .hero-blackboard {
-        /* Maintain the background look on mobile */
-        padding-top: 10px; 
-        padding-left: 15px;
-    }
-
-    .chalk-text {
-        font-size: 1.4rem;
-        line-height: 1.2;
-        padding-top: 0px; 
-    }
-
-    .chalk-body {
-        font-size: 1.2rem;
-        line-height: 1.2;
-        max-width: 820px;
-        word-break: break-word; 
-    }
-}
-
-/* ==========================================================================
-   3. SYNTAX HIGHLIGHTING & CODE
-   ========================================================================== */
-pre {
-    border-radius: 5px;
-    padding: 10px; 
-    color: lightgreen;
-    background-color: #241f31;
-}
-
-code[class*="language-"], pre[class*="language-"] {
-    color: darkseagreen;
-    font-family: "Dejavu Sans Mono", "Share Tech Mono", monospace;
-    line-height: 1.2rem;
-    font-size: 0.95rem;     
-}
-
-/* Syntax Tokens */
-.keyword { color: orange; }
-.keytab { color: gold; }
-.impera, .directive-hash { color: palevioletred; }
-.control { color: deepskyblue; }
-.interrupt, .operator { color: lightcoral; }
-.type, .constant, .builtin { color: cyan; }
-.title { color: springgreen; }
-.subtitle { color: silver; }
-.comment { color: lightseagreen; }
-.string { color: yellow; }
-
-/* ==========================================================================
-   4. COMPLEX PAGE LAYOUTS (Panels, Split, Tables)
-   ========================================================================== */
-.split-panel { hyphens: auto; }
-
-.panel-heading {
-    background-color: #19334d; 
-    color: silver;
-    padding: 10px;
-    margin-top: 10px !important;
-    border-radius: 5px 5px 0px 0px;
-}
-
-.code-panel {
-    height: 100%;    
-    color: lightgreen;
-    border-radius: 0px 0px 5px 5px;          
-}
-
-th {
-    color: #e60073;
-    background-color: #19334d !important;
-    font-weight: 500;
-    font-size: 1.2rem;
-    padding: 10px;
-}
-
-.card-slate {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-/* ==========================================================================
-   5. INTERACTIVE & BUTTONS
-   ========================================================================== */
-.btn-primary {
-    background-color: #0d6efd;
-    border: 1px solid #0d6efd;
-    color: white;
-    padding: 10px 20px;
-    transition: 0.2s ease-in-out;
-}
-
-.btn-primary:hover {
-    background-color: rgba(247, 0, 255, 0.6);
-    border-color: white;
-}
-
-.youtube {
-    color: white;
-    background: red;
-    border-radius: 6px;
-    padding: 5px 10px;
-    font-family: "Share Tech Mono", monospace;
-}
-
-/* ==========================================================================
-   6. RESPONSIVE & VIDEO
-   ========================================================================== */
-.responsive-video-container {
-    max-width: 50vw;
-    margin: 0 auto;
-    position: relative;
-    padding-bottom: 28%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-}
-
-.responsive-video-container video {
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    object-fit: contain;
-}
-
-@media screen and (max-width: 768px) {
-    .responsive-video-container { max-width: 90vw; padding-bottom: 56%; }
-    #main-img { width: 100%; }
-}
-
-@media screen and (min-width: 640px) {
-    .top-video { position: absolute; top: 0; left: 15%; width: 70%; height: 100%; }
-    .frame-host { padding: 50% 0 0 0; position: relative; }
-    #main-img { width: 70%; }
-}
-
-
-/* ==========================================================================
-   7. FOOTER & UTILS
-   ========================================================================== */
-.footer {
-    position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
+#dynamic-header {
+    position: sticky;
+    top: 0;
+    z-index: 1020; 
     background-color: black;
-    color: rgba(255, 255, 255, 0.784);
-    width: 100%;
-    border-top: 1px solid #800568;
+    padding: 2px 10px;
+    min-height: 60px;
 }
 
-.footer.copyright p {
-    text-align:   center;
-    margin-left:  auto;
-    margin-right: auto;
+.container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
-.fix-social { filter: invert(1); position: relative; }
-
-/* Force constant background for Group Headers */
-.table-group-header th {
-    background-color: #242424 !important; /* Constant solid black */
-    color: #8f00b3 !important;            /* Sage-Code Purple */
-    font-size: 0.85rem;
-    letter-spacing: 1.5px;
-    border-top: 2px solid #333 !important;
-    border-bottom: 1px solid #333 !important;
-    padding-top: 15px !important;
-    padding-bottom: 10px !important;
-}
-
-.card-meta-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.star-rating {
-    font-size: 0.7rem; /* Smaller stars */
-    cursor: help;
-    white-space: nowrap;
-}
-
-.stars-on { color: #fd7e14; }
-.stars-off { color: #444; }
-
-.badge-hint {
-    cursor: help;
-    font-size: 0.7rem;
-    padding: 0.4em 0.7em;
-}
-
-.book-card {
-    background-color: #1a1a1a; /* Match your card-slate */
-    border: 1px solid #333;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 10px; /* More breathing room */
-    transition: transform 0.3s ease;
-}
-
-.book-card:hover {
-    transform: translateY(-5px);
-    border-color: rgb(136, 46, 204); /* Subtle purple glow on hover */
-}
-
-.book-card img {
-    max-width: 200px; /* Keep covers consistent */
-    margin-bottom: 10px;
-    border-radius: 0px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Makes the book "pop" off the slate */
-}
-
-.book-resource {
-    background: #111;
-    border: 1px solid #333;
-    border-left: 4px solid rgb(136, 46, 204); /* Match your HR color */
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.book-card button {
-    margin-top: 10px;       /* Optional: space between text and button */
-}
-
-/* Header & Container */
-/* Container spacing */
-.site-header {
-    background: transparent;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    padding-left: 0px;
-}
-
-/* Ensure the nav list itself doesn't have default padding pushing it left */
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    margin: 0;
-    padding: 0; /* Critical for right alignment */
-}
-
-.nav-links a {
-    font-family: 'Share Tech Mono', monospace;
-    color: #888;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    transition: 0.3s;
-}
-
-.nav-links a:hover { color: #fc7f18; }
-
-/* Breadcrumbs (Second Row) */
-.breadcrumb-nav {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    color: #444; /* Very subtle */
-    padding-left: 0;
+/* Remove horizontal scroll issues from row margins */
+.row {
+    --bs-gutter-x: 0;
+    margin-right: 0;
     margin-left: 0;
 }
 
-.breadcrumb-nav a { color: #666; }
-.breadcrumb-nav .sep { color: #333; }
-.breadcrumb-nav .current { color: #fc7f18; }
-
-/* Mobile Hamburger */
-@media (max-width: 640px) {
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 60px; right: 20px;
-        background: #0a0a0a;
-        border: 1px solid #333;
-        flex-direction: column;
-        width: 180px;
-        padding: 10px;
-        z-index: 100;
-    }
-    .nav-links.active { display: flex; }
-    .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; }
-    .hamburger span { width: 22px; height: 2px; background: #fc7f18; }
+main {
+    padding: 20px !important; /* Breathing room for content */
 }
 
-.breadcrumb-nav i {
-    margin-right: 5px;
-    vertical-align: middle;
-}
-/* Hard-reset for the Dynamic Header Alignment */
-#dynamic-header .row {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-}
+.center { text-align: center; }
 
-#dynamic-header .col, 
-#dynamic-header .col-auto {
-    padding-left: 0 !important;
-}
+/* ==========================================================================
+   3. SIDEBAR - LABORATORY INDEX
+   ========================================================================== */
 
-/* Ensure the breadcrumb nav doesn't have internal padding */
-.breadcrumb-nav {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-}
-
-/* Ensure the breadcrumb list is flush */
-.breadcrumb-nav a, 
-.breadcrumb-nav span {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-
-/* Ensure the breadcrumb icon is perfectly aligned with the logo image */
-.breadcrumb-nav {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-    border-top: 1px solid rgb(136, 46, 204);
-    border-bottom: 1px solid rgb(136, 46, 204);
-    padding-top: 2px;
-    padding-bottom: 2px;
-}
-
-hr {
-    color: rgb(136, 46, 204);
-}
-
-/* Card Grid Layout */
-.card-grid-steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-/* Specific styling for Step Cards */
-.step-card {
-    align-items: flex-start !important;
-    text-align: left !important;
-    padding: 25px !important;
-}
-
-.step-number {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 2.5rem;
-    color: rgb(136, 46, 204); /* Sage Purple */
-    line-height: 1;
-    margin-bottom: 10px;
-}
-
-.card-text-justified {
-    font-size: 0.95rem;
-    color: #e2dfd1;
-    text-align: justify;
-    margin: 0;
-}
-
-.highlight-discord {
-    color: #fc7f18; /* Sage Orange */
-    font-weight: bold;
-}
-
-
-/* --- Sidebar Laboratory Index Style --- */
+/* Shared Desktop/Mobile styling for list items */
 #bookmark-list {
     font-family: 'Roboto', sans-serif;
-    font-size: 0.85rem; /* Smaller, professional font size */
-    color: #b0af9e;    /* Slightly dimmed text */
+    font-size: 0.85rem;
+    color: #b0af9e;
+    list-style: none;
+    padding-left: 0;
 }
 
 #bookmark-list li {
@@ -514,127 +83,55 @@ hr {
     line-height: 1.2;
 }
 
-/* Style the links inside the index */
-#bookmark-list a {
-    color: #e2dfd1; 
-    transition: color 0.2s ease;
-}
+#bookmark-list a { color: #e2dfd1; }
+#bookmark-list a:hover { color: #2cba77; text-decoration: none; }
 
-#bookmark-list a:hover {
-    color: #2cba77; /* Laboratory Green on hover */
-    text-decoration: none;
-}
-
-/* Nested lists (Sub-topics) */
 #bookmark-list ul {
     margin-top: 6px;
-    border-left: 1px solid #333; /* Vertical line for hierarchy */
+    border-left: 1px solid #333;
     padding-left: 15px !important;
+    list-style: none;
 }
 
-/* Checkbox Styling - Laboratory Look */
+/* Checkbox Style */
 .topic-check {
     appearance: none;
     -webkit-appearance: none;
     width: 14px;
     height: 14px;
     border: 1px solid #555;
-    border-radius: 2px;
     background-color: #111;
     cursor: pointer;
+    flex-shrink: 0;
     position: relative;
     top: 2px;
-    flex-shrink: 0;
 }
 
-.topic-check:checked {
-    background-color: #2cba77; /* Sage Green */
-    border-color: #2cba77;
-}
-
-/* The "Check" mark */
+.topic-check:checked { background-color: #2cba77; border-color: #2cba77; }
 .topic-check:checked::after {
     content: '✔';
     font-size: 10px;
     color: #000;
     position: absolute;
-    top: -1px;
     left: 2px;
+    top: -1px;
 }
 
-/* Highlight the active/current topic */
-#bookmark-list li:has(input:checked) a {
-    color: #2cba77;
-    font-weight: 500;
-}
-
-.sidebar-content {
-    background-color: rgba(0, 0, 0, 0.2); /* Darker than body for depth */
-    padding-right: 10px !important;
-    padding-left: 0px !important;
-    margin-left: 0px !important;
-}
-
-/* Custom Scrollbar for the sidebar */
-.sidebar-content::-webkit-scrollbar {
-    width: 4px;
-}
-
-.sidebar-content::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-.sidebar-content::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 10px;
-}
-
-.sidebar-content::-webkit-scrollbar-thumb:hover {
-    background: #8f00b3; /* Purple hover */
-}
-
-
-/* Remove the forced padding on fluid containers */
-.container-fluid {
-    padding-left: 5px !important;  /* Minimal breathing room */
-    padding-right: 5px !important;
-}
-
-/* Remove horizontal scroll issues when margins are 0 */
-.row {
-    --bs-gutter-x: 0; 
-    margin-right: 0;
-    margin-left: 0;
-}
-
-/* Ensure the main content doesn't feel cramped against the sidebar */
-main {
-    padding-left: 10px !important;
-    padding-right: 0px !important;
-}
-
-.side-bar {
-    border-right: 2px solid rgba(216, 26, 216, 0.2); /* Very subtle purple edge */
-    margin-left: 0px !important;
-    padding-left: 0px !important;
-}
-
-
-/* --- Desktop: Sticky Sidebar (Screens larger than 992px) --- */
+/* --- DESKTOP STICKY --- */
 @media (min-width: 992px) {
     .sidebar-content {
         position: sticky;
-        top: 80px;      /* Sits below your 60px header with 20px gap */
-        z-index: 1010;  /* Below the header (1020) */
-        max-height: calc(100vh - 100px); 
+        top: 80px;
+        z-index: 1010;
+        max-height: calc(100vh - 100px);
         overflow-y: auto;
-        display: block;
-        margin-left: 5px !important; /* Small gap from the edge */
-        padding-left: 5px !important; /* Small padding for content */
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(136, 46, 204, 0.2);
     }
 }
 
-/* --- Mobile: Slide-out Overlay (Corrected) --- */
+/* --- MOBILE OVERLAY --- */
 @media (max-width: 991px) {
     #study-sidebar {
         position: fixed;
@@ -643,23 +140,107 @@ main {
         width: 280px;
         height: 100vh;
         z-index: 2000;
-        /* CHANGE: Use a solid color, no transparency */
-        background-color: #1a1a1a !important; 
+        background-color: #1a1a1a !important; /* Solid Background */
         transition: 0.3s ease-all;
         overflow-y: auto;
         padding: 20px;
-        display: block !important;
-    }
-
-    /* CHANGE: Force the internal content to be solid on mobile too */
-    #study-sidebar .sidebar-content {
-        background-color: #1a1a1a !important;
-        padding-left: 10 !important;
-        margin-left: 5 !important;
     }
 
     #study-sidebar.active {
         left: 0;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.8); /* Stronger shadow to pop from background */
+        box-shadow: 10px 0 30px rgba(0,0,0,0.8);
     }
+
+    .sidebar-content { background-color: transparent !important; }
 }
+
+/* ==========================================================================
+   4. CARDS & GRID (The "Breathing Room" Fix)
+   ========================================================================== */
+.card-grid-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px; /* Restores space between cards */
+    padding: 10px 0;
+}
+
+.card-slate {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    transition: 0.3s;
+    height: 100%;
+}
+
+.card-slate:hover {
+    border-color: #8f00b3;
+    transform: translateY(-3px);
+}
+
+.card-body { padding: 1.25rem !important; }
+
+/* ==========================================================================
+   5. HERO & BLACKBOARD
+   ========================================================================== */
+.hero-blackboard {
+    width: 100%;
+    height: 320px;
+    background: url('https://sagecode.pro/images/blackboard.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+    margin-bottom: 20px;
+}
+
+.chalk-text {
+    font-family: 'Architects Daughter', cursive;
+    color: rgba(227, 98, 98, 0.95);
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+    transform: rotate(-0.5deg);
+}
+
+.chalk-body {
+    font-family: 'Architects Daughter', cursive;
+    color: rgba(230, 230, 230, 0.85);
+    font-size: 1.4rem;
+}
+
+/* ==========================================================================
+   6. CODE & SYNTAX
+   ========================================================================== */
+pre {
+    border-radius: 5px;
+    padding: 15px;
+    background-color: #241f31;
+    overflow-x: auto;
+}
+
+code[class*="language-"], pre[class*="language-"] {
+    color: darkseagreen;
+    font-family: "Dejavu Sans Mono", monospace;
+    font-size: 0.95rem;
+}
+
+.keyword { color: orange; }
+.keytab { color: gold; }
+.comment { color: lightseagreen; }
+.string { color: yellow; }
+
+/* ==========================================================================
+   7. FOOTER & MISC
+   ========================================================================== */
+.footer {
+    padding: 40px 20px;
+    background-color: black;
+    border-top: 1px solid #800568;
+    text-align: center;
+}
+
+/* Scrollbar Style */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #8f00b3; }
