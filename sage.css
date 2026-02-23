@@ -625,3 +625,24 @@ hr {
 .sidebar-content::-webkit-scrollbar-thumb:hover {
     background: #8f00b3; /* Purple hover */
 }
+
+
+/* Remove the forced padding on fluid containers */
+.container-fluid {
+    padding-left: 10px !important;  /* Minimal breathing room */
+    padding-right: 10px !important;
+}
+
+/* Remove horizontal scroll issues when margins are 0 */
+.row {
+    --bs-gutter-x: 0; 
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* Ensure the main content doesn't feel cramped against the sidebar */
+main {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
