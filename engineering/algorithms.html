@@ -2,9 +2,9 @@
 <html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Introduction of software common algorithms. Overview and references.">
+  <meta name="description" content="An introduction to common software algorithms, their properties, and efficiency.">
   <meta name="author" content="Elucian Moise">
-  <meta name="keywords" content="software, engineering, algorithms, overview">
+  <meta name="keywords" content="software, engineering, algorithms, sorting, searching, complexity, big o">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Website title -->
@@ -12,6 +12,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="/images/favicon.ico">  
   <!-- Prism Highlighter -->
@@ -19,233 +20,174 @@
   <script src="/prism.js"></script>
   <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+</head>
 <body>
 
 <div class="container">
         
- <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h2>Programming Algorithms</h2>
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-1 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li><input type="checkbox" class="topic-check" data-target="intro"><a href="#intro">Introduction</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="properties"><a href="#properties">Properties</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="quality"><a href="#quality">Quality Attributes</a></li>
+          <li>
+            <input type="checkbox" class="topic-check" data-target="categories"><a href="#categories">Algorithm Categories</a>
+            <ul class="list-unstyled ms-4">
+              <li><input type="checkbox" class="topic-check" data-target="sorting"><a href="#sorting">Sorting</a></li>
+              <li><input type="checkbox" class="topic-check" data-target="searching"><a href="#searching">Searching</a></li>
+              <li><input type="checkbox" class="topic-check" data-target="graph"><a href="#graph">Graph</a></li>
+              <li><input type="checkbox" class="topic-check" data-target="dynamic"><a href="#dynamic">Dynamic Programming</a></li>
+              <li><input type="checkbox" class="topic-check" data-target="greedy"><a href="#greedy">Greedy</a></li>
+              <li><input type="checkbox" class="topic-check" data-target="divide"><a href="#divide">Divide & Conquer</a></li>
+            </ul>
+          </li>
+          <li><input type="checkbox" class="topic-check" data-target="efficiency"><a href="#efficiency">Efficiency</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="future"><a href="#future">Future of Algorithms</a></li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
 
+<main class="col-lg-9 col-12 order-2 order-lg-1">
+
+<h1>Programming Algorithms</h1>
+
+<h2><a id="intro">Introduction</a></h2>
 <div class="alert alert-secondary shadow-sm">
-An algorithm is a set of instructions or rules that are designed to solve a specific problem. It is a step-by-step procedure that takes a defined input, performs some operations on it, and produces a desired output. 
+An algorithm is a finite set of well-defined instructions or rules designed to solve a specific problem. It is a step-by-step procedure that takes a defined input, performs a sequence of operations, and produces a desired output.
 </div>
+<p>Algorithms are the backbone of computer science and are used in a vast range of applications, including data analysis, sorting, searching, cryptography, and artificial intelligence. Understanding algorithms is essential for developing efficient and effective software.</p>
 
+<h2><a id="properties">Algorithm Properties</a></h2>
+<p>A valid algorithm must exhibit several key properties. It must accept a well-defined input, which can be provided explicitly or generated automatically. It must also produce a clear output. Beyond input and output, a well-designed algorithm must be:</p>
+<ul>
+    <li><strong>Correct:</strong> It must produce the correct output for all valid inputs.</li>
+    <li><strong>Finite:</strong> It must terminate after a finite number of steps.</li>
+    <li><strong>Well-Defined:</strong> Each step must be precisely defined and unambiguous.</li>
+    <li><strong>Efficient:</strong> It should solve the problem without using excessive time or memory resources.</li>
+</ul>
 
-<p>Algorithms are an essential part of computer science and are used in a wide range of applications, such as data analysis, sorting, searching, cryptography, and artificial intelligence.</p>
-
-<h2>Algorithm Properties</h2>
-
-<p>Any algorithm must have an input which can be defined or generated automaticly. Also an algorithm must produce some output, which can be defined, null or undefined.</p>
-
-<p>Algorithms must be well defined, comprehensible, finite, correct and efficient. We study algorithms in Computer Science. When you study algorithms you must pay atention to quality aspects, usability and performance.</p>
-
-<h2>Algorithm Quality</h2>
-
-<p>Quality refers to the degree to which a product or service meets the needs and expectations of the customer. For algorithms, quality refers to how well the algorithm performs in terms of efficiency, accuracy, maintainability, and robustness.</p>
-
-<table class="table table-bordered table-striped table-dark" >
-  <thead class="thead-light">
+<h2><a id="quality">Algorithm Quality</a></h2>
+<p>The quality of an algorithm is measured by how well it performs across several key attributes. These attributes determine its suitability for real-world scenarios and are crucial for building reliable and maintainable software systems.</p>
+<table class="table table-bordered table-striped table-dark">
+  <thead>
     <tr>
       <th>Attribute</th>
       <th>Description</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Efficiency</td>
-      <td>Measures the speed and resource usage of an algorithm, such as time complexity and space complexity.</td>
-    </tr>
-    <tr>
-      <td>Accuracy</td>
-      <td>Refers to how precise or correct the algorithm's output is, often measured with metrics such as error rate and deviation.</td>
-    </tr>
-    <tr>
-      <td>Maintainability</td>
-      <td>Refers to how easy it is to modify or adapt the algorithm, such as having clean and well-documented code.</td>
-    </tr>
-    <tr>
-      <td>Robustness</td>
-      <td>Refers to how well the algorithm handles unexpected or erroneous inputs, such as invalid or missing data.</td>
-    </tr>
-    <tr>
-      <td>Scalability</td>
-      <td>Refers to how well the algorithm performs as the input size grows or the system load increases, such as having constant or logarithmic complexity.</td>
-    </tr>
-    <tr>
-      <td>Security</td>
-      <td>Refers to how well the algorithm ensures the confidentiality, integrity, and availability of sensitive data, such as encryption and access control.</td>
-    </tr>
-    <tr>
-      <td>Usability</td>
-      <td>Refers to how user-friendly and intuitive the algorithm is for non-technical users, such as having clear instructions and feedback.</td>
-    </tr>
-    <tr>
-      <td>Portability</td>
-      <td>Refers to how easily the algorithm can be used in different environments or platforms, such as being compatible with multiple programming languages and operating systems.</td>
-    </tr>
+    <tr><td>Efficiency</td><td>Measures resource usage, primarily time (CPU) and space (memory), often expressed with Big O notation.</td></tr>
+    <tr><td>Accuracy</td><td>Refers to how precise or correct the algorithm's output is, crucial in numerical and machine learning algorithms.</td></tr>
+    <tr><td>Maintainability</td><td>The ease with which an algorithm can be modified or adapted, often a result of clean, well-documented code.</td></tr>
+    <tr><td>Robustness</td><td>The ability to handle unexpected or erroneous inputs gracefully without crashing.</td></tr>
+    <tr><td>Scalability</td><td>How well the algorithm performs as the input size or system load increases.</td></tr>
+    <tr><td>Security</td><td>The ability to protect data confidentiality, integrity, and availability from malicious actions.</td></tr>
+    <tr><td>Usability</td><td>How easily the algorithm can be understood and used by developers.</td></tr>
+    <tr><td>Portability</td><td>How easily the algorithm can be used in different environments or programming languages.</td></tr>
   </tbody>
 </table>
 
-<p>By focusing on these quality attributes, algorithm designers and developers can ensure that the final product meets the needs and expectations of the customer and performs well in real-world scenarios</p>
+<h2><a id="categories">Common Algorithm Categories</a></h2>
+<p>When choosing an algorithm, developers consider problem constraints, required speed, and available resources. Often, a simple algorithm is implemented first and then optimized. Alternatively, a well-established algorithm known to work for similar problems can be adapted. Understanding the trade-offs between different approaches is key.</p> 
 
-
-<h2>Well known algorithms</h2>
-
-<p>
-When choosing an algorithm, there are several factors that should be considered, including the problem constraints, the required speed and accuracy, the available resources, and the complexity of the problem. One common approach is to start with a simple algorithm that solves the problem but may not be very efficient, and then optimize it as needed to improve its performance.</p> 
-
-<p>Another approach is to choose a well-established algorithm that is known to work well for similar problems, and then modify it as needed to fit the specific problem requirements. It's also important to consider the trade-offs between different algorithms, such as performance vs. accuracy, and to choose the algorithm that best meets the specific problem requirements.
-</p>
-
-<h3>Sorting Algorithms</h3>
-<p>Sorting algorithms are used to arrange data in a specific order. There are several sorting algorithms, such as:</p>
+<h3 id="sorting">Sorting Algorithms</h3>
+<p>Sorting algorithms are used to arrange elements of a list or array in a specific order (e.g., numerical or lexicographical). Examples include:</p>
 <ul>
-  <li>Bubble sort</li>
-  <li>Insertion sort</li>
-  <li>Merge sort</li>
-  <li>Quick sort</li>
-  <li>Selection sort</li>
+  <li><strong>Bubble Sort:</strong> A simple algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</li>
+  <li><strong>Merge Sort:</strong> A divide-and-conquer algorithm that divides the list into halves, sorts them, and then merges them back together.</li>
+  <li><strong>Quick Sort:</strong> A highly efficient divide-and-conquer algorithm that picks an element as a pivot and partitions the array around the pivot.</li>
 </ul>
 
-<h3>Searching Algorithms</h3>
-<p>Searching algorithms are used to find specific data in a collection. There are several searching algorithms, such as:</p>
+<h3 id="searching">Searching Algorithms</h3>
+<p>Searching algorithms are designed to retrieve a specific element from a data structure. Common examples include:</p>
 <ul>
-  <li>Binary search</li>
-  <li>Depth-first search</li>
-  <li>Breadth-first search</li>
+  <li><strong>Linear Search:</strong> Scans each item in a collection one by one until a match is found or the whole collection has been searched.</li>
+  <li><strong>Binary Search:</strong> An efficient algorithm for finding an item from a <strong>sorted</strong> list by repeatedly dividing the search interval in half.</li>
 </ul>
 
-<h3>Graph Algorithms</h3>
-<p>Graph algorithms are used to traverse and manipulate graphs. There are several graph algorithms, such as:</p>
+<h3 id="graph">Graph Algorithms</h3>
+<p>Graph algorithms are designed to operate on graph data structures, which consist of vertices (nodes) and edges. They are used to solve problems related to networks.</p>
 <ul>
-  <li>Depth-first search</li>
-  <li>Breadth-first search</li>
-  <li>Dijkstra's algorithm</li>
-  <li>Prim's algorithm</li>
-  <li>Kruskal's algorithm</li>
+  <li><strong>Depth-First Search (DFS):</strong> Traverses a graph by exploring as far as possible along each branch before backtracking.</li>
+  <li><strong>Breadth-First Search (BFS):</strong> Traverses a graph by exploring all the neighbor nodes at the present depth prior to moving on to the nodes at the next depth level.</li>
+  <li><strong>Dijkstra's Algorithm:</strong> Finds the shortest path between nodes in a weighted graph.</li>
 </ul>
 
-<h3>Dynamic Programming</h3>
-<p>Dynamic programming algorithms are used to solve problems by breaking them down into smaller sub-problems. There are several dynamic programming algorithms, such as:</p>
+<h3 id="dynamic">Dynamic Programming</h3>
+<p>Dynamic programming solves complex problems by breaking them down into simpler, overlapping sub-problems. It stores the solution to each sub-problem so it does not have to be recomputed, making it very efficient.</p>
 <ul>
-  <li>Fibonacci series</li>
-  <li>Knapsack problem</li>
-  <li>Longest common subsequence</li>
-  <li>Matrix chain multiplication</li>
+  <li><strong>Fibonacci Sequence:</strong> Can be efficiently computed by storing previously calculated numbers.</li>
+  <li><strong>Knapsack Problem:</strong> A classic optimization problem to select items with the most value within a weight limit.</li>
 </ul>
 
-<h3>Greedy Algorithms</h3>
-<p>Greedy algorithms are used to solve problems by making the locally optimal choice at each stage. There are several greedy algorithms, such as:</p>
+<h3 id="greedy">Greedy Algorithms</h3>
+<p>A greedy algorithm makes the locally optimal choice at each step with the hope of finding a global optimum. It's a simpler approach that works well for many optimization problems, but does not guarantee the best solution for all problems.</p>
 <ul>
-  <li>Activity selection problem</li>
-  <li>Huffman encoding</li>
-  <li>Minimum spanning tree problem</li>
+  <li><strong>Huffman Coding:</strong> Used for creating efficient prefix codes for data compression.</li>
+  <li><strong>Minimum Spanning Tree (e.g., Prim's, Kruskal's):</strong> Finds the lowest-cost way to connect all vertices in a graph.</li>
 </ul>
 
-<h3>Divide and Conquer</h3>
-<p>Divide and conquer algorithms are used to solve problems by dividing them into smaller sub-problems, solving each sub-problem recursively, and then combining the solutions. There are several divide and conquer algorithms, such as:</p>
+<h3 id="divide">Divide and Conquer</h3>
+<p>This paradigm involves breaking a problem into smaller sub-problems, solving each sub-problem recursively, and then combining the solutions to solve the original problem.</p>
 <ul>
-  <li>Binary search</li>
-  <li>Merge sort</li>
-  <li>Quick sort</li>
-  <li>Strassen's algorithm for matrix multiplication</li>
+  <li><strong>Merge Sort & Quick Sort:</strong> Classic examples from sorting.</li>
+  <li><strong>Binary Search:</strong> Works by repeatedly dividing the search space in half.</li>
 </ul>
 
-
-<h2>Algorithm Efficiency</h2>
-
-<p>Efficiency is a key attribute of algorithms, as it measures how fast and how much resources an algorithm consumes to solve a problem. There are two main aspects of algorithm efficiency:</p>
-
+<h2><a id="efficiency">Algorithm Efficiency</a></h2>
+<p>Efficiency is a critical measure of an algorithm's performance, typically analyzed in two main aspects:</p>
 <ul>
-  <li><strong>Time Complexity:</strong> Measures how many operations an algorithm takes to complete, as a function of the input size (n). Common notations for time complexity include O(1), O(log n), O(n), O(n log n), O(nÂ²), and O(2^n).</li>
-  <li><strong>Space Complexity:</strong> Measures how much memory an algorithm uses to store data and intermediate results, as a function of the input size (n). Common notations for space complexity include O(1), O(log n), O(n), O(n log n), O(nÂ²), and O(2^n).</li>
+  <li><strong>Time Complexity:</strong> The number of operations an algorithm takes to complete as a function of the input size (n). It describes how the runtime grows as 'n' grows.</li>
+  <li><strong>Space Complexity:</strong> The amount of memory an algorithm uses, including input values and auxiliary space, as a function of the input size (n).</li>
 </ul>
-
-<p>Efficient algorithms aim to have low time and space complexities, as they can handle larger input sizes and run faster with limited resources. However, improving one aspect of efficiency may come at the cost of the other. Therefore, finding the optimal balance between time and space complexity can be a trade-off that depends on the specific problem and the available resources.</p>
-
-<p>For example, a sorting algorithm with O(n log n) time complexity and O(1) space complexity may be preferred over another sorting algorithm with O(nÂ²) time complexity and O(n) space complexity for small input sizes, but the latter may be preferred for large input sizes where memory is not a constraint.</p>
-
+<p>Complexities are expressed using <strong>Big O notation</strong>, which describes the upper bound. Common complexities include O(1) [constant], O(log n) [logarithmic], O(n) [linear], O(n log n), O(n<sup>2</sup>) [quadratic], and O(2<sup>n</sup>) [exponential]. Efficient algorithms aim for low time and space complexities. However, optimizing one aspect can sometimes negatively impact the other, requiring a trade-off based on the specific problem and available resources.</p>
 
 <table class="table table-bordered table-hover">
-<thead>
-<tr>
-    <th>Algorithm</th>
-    <th>Time Complexity</th>
-    <th>Space Complexity</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-    <td>Bubble Sort</td>
-    <td>O(n^2)</td>
-    <td>O(1)</td>
-</tr>
-<tr>
-    <td>Selection Sort</td>
-    <td>O(n^2)</td>
-    <td>O(1)</td>
-</tr>
-<tr>
-    <td>Merge Sort</td>
-    <td>O(nlogn)</td>
-    <td>O(n)</td>
-</tr>
-<tr>
-    <td>Quick Sort</td>
-    <td>O(nlogn)</td>
-    <td>O(logn) - O(n)</td>
-</tr>
-<tr>
-    <td>Binary Search</td>
-    <td>O(logn)</td>
-    <td>O(1)</td>
-</tr>
-<tr>
-    <td>Breadth-First Search</td>
-    <td>O(V+E)</td>
-    <td>O(V)</td>
-</tr>
-<tr>
-    <td>Depth-First Search</td>
-    <td>O(V+E)</td>
-    <td>O(V)</td>
-</tr>
-</tbody>
+  <thead>
+    <tr><th>Algorithm</th><th>Time Complexity (Avg)</th><th>Space Complexity (Worst)</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Bubble Sort</td><td>O(n<sup>2</sup>)</td><td>O(1)</td></tr>
+    <tr><td>Selection Sort</td><td>O(n<sup>2</sup>)</td><td>O(1)</td></tr>
+    <tr><td>Merge Sort</td><td>O(n log n)</td><td>O(n)</td></tr>
+    <tr><td>Quick Sort</td><td>O(n log n)</td><td>O(log n) - O(n)</td></tr>
+    <tr><td>Binary Search</td><td>O(log n)</td><td>O(1)</td></tr>
+    <tr><td>Breadth-First Search (BFS)</td><td>O(V+E)</td><td>O(V)</td></tr>
+    <tr><td>Depth-First Search (DFS)</td><td>O(V+E)</td><td>O(V)</td></tr>
+  </tbody>
 </table>
 
-
-<h2>Artificial intelligence</h2>
-
-<p>Artificial intelligence (AI) heavily relies on algorithms to perform tasks such as decision-making, pattern recognition, natural language processing, and computer vision. Some of the most popular AI algorithms include:</p>
-
-<ul>
-  <li>Artificial intelligence (AI) heavily relies on different algorithms to perform a variety of tasks such as decision-making, pattern recognition, natural language processing, and computer vision.</li>
-  <li>Some of the most popular AI algorithms include Neural Networks, Reinforcement Learning, Genetic Algorithms, and Decision Trees.</li>
-  <li>The future of algorithms development is likely to involve advances in areas such as quantum computing, deep learning, and natural language processing.</li>
-  <li>We can expect more complex algorithms and new paradigms such as quantum computing to tackle even more challenging computational problems and achieve breakthroughs in fields like drug discovery, climate modeling, and space exploration.</li>
-  <li>The role of algorithms in our daily lives will continue to grow, influencing everything from social media feeds to healthcare diagnostics.</li>
-</ul>
-
-<h2>Future research</h2>
-
-<p>In the future, we can expect advances in areas such as quantum computing, deep learning, and natural language processing. With more complex algorithms and new paradigms, we may be able to tackle even more challenging computational problems and achieve breakthroughs in fields like drug discovery, climate modeling, and space exploration.</p>
-
-
-<p>As AI continues to become more widespread, the role of algorithms in our daily lives will continue to grow, influencing everything from social media feeds to healthcare diagnostics.</p>
-
-
+<h2><a id="future">The Future of Algorithms</a></h2>
+<p>Algorithms are at the heart of modern computing, and their importance continues to grow, especially with the rise of <strong>Artificial Intelligence (AI)</strong>. AI heavily relies on algorithms for tasks like decision-making, pattern recognition, and natural language processing. Popular AI algorithms include Neural Networks, Reinforcement Learning, and Decision Trees.</p>
+<p>Future advancements are expected in areas like quantum computing, deep learning, and advanced AI. New algorithmic paradigms will be required to tackle even more challenging problems in fields like drug discovery, climate modeling, and space exploration. As algorithms become more integrated into our lives, their responsible design and ethical implications will become increasingly critical.</p>
 <hr>
-<p><b>Read next:</b>
-<a href="/engineering/paradigms/">Programming Paradigms</a></p>
+
+<p><b>Read next:</b> <a href="/engineering/paradigms/">Programming Paradigms</a></p>
+
+</main>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
 </div>
-<script src="/sage.js"></script>
+<script src="/sage.js" defer></script>
+<script src="/sidebar.js" defer></script>
+<script src="/progress.js" defer></script>
 </body>
 </html>
