@@ -708,3 +708,29 @@ hr {
     }
 }
 
+/* 1. Prevent the "Gray Wall" - Remove solid background from checked rows */
+.table tr:has(input:checked),
+.form-check:has(input:checked) {
+    background-color: rgba(143, 0, 179, 0.1) !important; /* Very subtle Sage Purple tint */
+}
+
+/* 2. Maintain Zebra Striping */
+/* This ensures your alternative row colors remain visible underneath the tint */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.03); 
+}
+
+/* 3. Style the Content, not the Container */
+/* When checked, we dim the text and change color, but keep the row readable */
+tr:has(input:checked) td,
+.form-check:has(input:checked) label {
+    color: #8f00b3 !important; /* Muted Sage Purple text */
+    opacity: 0.7;
+}
+
+/* 4. The Hover Magic */
+/* Ensure that even if checked, hovering makes the row "glow" or highlights the link */
+tr:has(input:checked):hover td {
+    color: hotpink !important;
+    opacity: 1;
+}
