@@ -722,26 +722,31 @@ hr {
         width: 280px;
         height: 100vh;
         z-index: 2000;
-        /* CHANGE: Use a solid color, no transparency */
         background-color: #1a1a1a !important; 
-        transition: 0.3s ease-all;
+        transition: left 0.3s ease; /* Transition only 'left' for better performance */
         overflow-y: auto;
         padding: 20px;
         display: block !important;
     }
 
-    /* CHANGE: Force the internal content to be solid on mobile too */
-    #study-sidebar .sidebar-content {
-        background-color: #1a1a1a !important;
-        padding-left: 10 !important;
-        margin-left: 5 !important;
-    }
-
     #study-sidebar.active {
         left: 0;
-        box-shadow: 10px 0 30px rgba(0,0,0,0.8); /* Stronger shadow to pop from background */
+        box-shadow: 10px 0 30px rgba(0,0,0,0.8);
+    }
+
+    /* Fix: Ensure sub-items indent properly on mobile */
+    #bookmark-list ul {
+        padding-left: 20px !important; 
+        margin-left: 10px !important;
+        border-left: 1px solid #444; /* Helpful vertical line for tree view */
+    }
+
+    /* Prevent text from going under the button at the bottom of the page */
+    main, .content-area { 
+        padding-bottom: 100px !important; 
     }
 }
+
 /* 1. Base logic: Remove any solid "Checked" background that causes the wall of gray */
 tr:has(input:checked) {
     background-color: transparent !important;
@@ -774,3 +779,13 @@ tr:has(input:checked):hover td {
 }
 
 
+#open-sidebar {
+    width: 60px;           /* Fixed width */
+    height: 60px;          /* Fixed height */
+    padding: 0;            /* Remove default padding that causes stretching */
+    display: flex;         /* Use flex to center the icon */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50% !important; /* Force a perfect circle */
+    z-index: 2500;         /* Ensure it stays above everything */
+}
