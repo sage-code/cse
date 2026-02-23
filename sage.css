@@ -73,7 +73,7 @@ h5 { color: rgb(232, 157, 251); font-size: 1.1rem; font-weight: 600; }
 
 p, div, tr, th, td { font-size: 1rem; }
 
-a { text-decoration: none; transition: 0.3s; color: rgb(17, 126, 173) }
+a { text-decoration: none; transition: 0.3s; color: rgb(37, 175, 235) }
 a:hover { color: hotpink; text-decoration: underline; }
 a:active { color: purple; }
 
