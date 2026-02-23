@@ -73,7 +73,7 @@ h5 { color: rgb(232, 157, 251); font-size: 1.1rem; font-weight: 600; }
 
 p, div, tr, th, td { font-size: 1rem; }
 
-a { text-decoration: none; transition: 0.3s; }
+a { text-decoration: none; transition: 0.3s; color: rgb(32, 173, 168) }
 a:hover { color: hotpink; text-decoration: underline; }
 a:active { color: purple; }
 
@@ -560,7 +560,7 @@ hr {
 /* 3. The Checked State (The "Magic" Fix) */
 /* This changes the link text to a muted purple when the checkbox is checked */
 #bookmark-list li:has(input:checked) a {
-    color: #8f00b3; /* Sage Purple - much easier on the eyes than the green wall */
+    color: #1593c9; /* Sage Purple - much easier on the eyes than the green wall */
     font-weight: 500;
     opacity: 0.8;   /* Slightly dimmed to show it's "visited/done" */
 }
