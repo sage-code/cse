@@ -589,10 +589,32 @@ hr {
 }
 
 /* Nested lists (Sub-topics) */
+/* Sidebar Tree Styling */
 #bookmark-list ul {
-    margin-top: 6px;
-    border-left: 1px solid #333; /* Vertical line for hierarchy */
-    padding-left: 10px !important; /* Reduced for space */
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-left: 1px solid #dee2e6; /* Optional: adds a vertical guide line like a folder tree */
+    padding-left: 15px;
+}
+
+.nav-link.level-1 {
+    font-weight: 600;
+    color: #2d2a2a;
+    padding: 5px 0;
+}
+
+.nav-link.level-2 {
+    font-size: 0.9rem;
+    color: #686464;
+    padding: 2px 0;
+}
+
+
+/* Ensure the checkbox and text stay on one line, but the list stays vertical */
+.nav-item div {
+    display: flex;
+    align-items: center;
+    white-space: nowrap; 
 }
 
 /* Checkbox Styling - Laboratory Look */
@@ -747,21 +769,4 @@ tr:has(input:checked):hover td {
     padding-left: 15px;
 }
 
-.nav-link.level-1 {
-    font-weight: 600;
-    color: #333;
-    padding: 5px 0;
-}
 
-.nav-link.level-2 {
-    font-size: 0.9rem;
-    color: #666;
-    padding: 2px 0;
-}
-
-/* Ensure the checkbox and text stay on one line, but the list stays vertical */
-.nav-item div {
-    display: flex;
-    align-items: center;
-    white-space: nowrap; 
-}
