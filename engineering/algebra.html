@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="description" content="Software Engineering: Introduction to numeric algebra and type systems.">
   <meta name="author" content="Elucian Moise">
-  <meta name="keywords" content="software, engineering">
+  <meta name="keywords" content="software, engineering, algebra, numeric, types, systems, computer, science">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Website title -->
@@ -12,6 +12,7 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="/images/favicon.ico">  
   <!-- Prism Highlighter -->
@@ -19,7 +20,7 @@
   <script src="/prism.js"></script>
   <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+</head>
 <body>
 
 <div class="container">
@@ -27,397 +28,316 @@
  <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h2>Numeric Algebra</h2>
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <!-- sidebar menu -->    
+    <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-1 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li><input type="checkbox" class="topic-check" data-target="decimal"><a href="#decimal">Decimal System</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="roman"><a href="#roman">Roman System</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="binary"><a href="#binary">Binary System</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="octal"><a href="#octal">Octal System</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="hex"><a href="#hex">Hexadecimal System</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="types"><a href="#types">Type Systems</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="identifiers"><a href="#identifiers">Identifiers</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="literals"><a href="#literals">Data Literals</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="expressions"><a href="#expressions">Expressions</a></li>
+          <li><input type="checkbox" class="topic-check" data-target="namespace"><a href="#namespace">Namespaces & Scope</a></li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
 
-<div class="alert alert-secondary shadow-sm">A numeric algebra is the science of numbers. In computer science a number can be represented by different systems and you have to learn this in order to understand code and be able to produce new code.</div>
+<main class="col-lg-9 col-12 order-2 order-lg-1">
 
-<h4>Page bookmarks:</h4>
+<h1>Numeric Algebra</h1>
+
+<div class="alert alert-secondary shadow-sm">A numeric algebra is the science of numbers. In computer science, a number can be represented in different systems. You have to learn these concepts to understand and produce code effectively.</div>
 
 <hr>
-<ul>
-<li><a href="#decimal">Decimal System</a></li>
-<li><a href="#roman">Roman System</a></li>
-<li><a href="#binary">Binary System</a></li>
-<li><a href="#hex">Hexadecimal System</a></li>
-<li><a href="#identifiers">Identifiers</a></li>
-<li><a href="#types">Type systems</a></li>
-<li><a href="#literals">Data literals</a></li>
-<li><a href="#expressions">Expressions</a></li>
-<li><a href="#namespace">Namespace & scope</a></li>
-</ul>
 
-<hr>
+<h2><a id="decimal">Decimal System</a></h2>
 
-<h2><a id="decimal"></a>Decimal System</h2>
-
-<p>You learn in school Arithmetic using decimal system. This is based on old Arabic symbols now considered the best numeric representation. It uses one single symbol for each digit except 10 that is using two symbols. </p>
+<p>In school, we learn arithmetic using the decimal system. This is based on ancient Arabic symbols, now considered the standard for numeric representation. It uses a unique symbol for each of the ten digits (0-9).</p>
 
 <h4>Digit Names</h4>
 
-<p>We have a "name" for each digit. Funny though, numbers are translated different in different languages.</p>
+<p>Interestingly, the names for numbers differ across languages. Here is a comparison of digits and their names in several Romance languages.</p>
 
 <table class="table table-sm table-bordered table-dark">
-<tr>
-    <th>Decimal</th>
-    <th>English</th>
-    <th>Romanian</th>
-    <th>Italian</th>
-    <th>Spanish</th>
-    <th>French</th>
-</tr>
-<tr><th>0 </th><td>zero <td>zero </td><td>zero   </td><td>cero  </td><td>zéro  </td></tr>
-<tr><th>1 </th><td>one  <td>unu  </td><td>uno    </td><td>uno   </td><td>une   </td></tr>
-<tr><th>2 </th><td>two  <td>doi  </td><td>due    </td><td>dos   </td><td>deux  </td></tr>
-<tr><th>3 </th><td>three<td>trei </td><td>tre    </td><td>Tres  </td><td>trois </td></tr>
-<tr><th>4 </th><td>four <td>patru</td><td>quattro</td><td>cuatro</td><td>quatre</td></tr>
-<tr><th>5 </th><td>five <td>cinci</td><td>cinque </td><td>cinco </td><td>cinq  </td></tr>
-<tr><th>6 </th><td>six  <td>şase </td><td>sei    </td><td>seis  </td><td>six   </td></tr>
-<tr><th>7 </th><td>seven<td>şapte</td><td>sette  </td><td>siete </td><td>sept  </td></tr>
-<tr><th>8 </th><td>eight<td>opt  </td><td>otto   </td><td>ocho  </td><td>huit  </td></tr>
-<tr><th>9 </th><td>nine <td>nouă </td><td>nove   </td><td>nueve </td><td>neuf  </td></tr>
-<tr><th>10</th><td>ten  <td>zece </td><td>dieci  </td><td>diez  </td><td>dix   </td></tr>
+  <thead>
+    <tr>
+      <th>Decimal</th>
+      <th>English</th>
+      <th>Romanian</th>
+      <th>Italian</th>
+      <th>Spanish</th>
+      <th>French</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><th>0</th><td>zero</td><td>zero</td><td>zero</td><td>cero</td><td>zéro</td></tr>
+    <tr><th>1</th><td>one</td><td>unu</td><td>uno</td><td>uno</td><td>une</td></tr>
+    <tr><th>2</th><td>two</td><td>doi</td><td>due</td><td>dos</td><td>deux</td></tr>
+    <tr><th>3</th><td>three</td><td>trei</td><td>tre</td><td>tres</td><td>trois</td></tr>
+    <tr><th>4</th><td>four</td><td>patru</td><td>quattro</td><td>cuatro</td><td>quatre</td></tr>
+    <tr><th>5</th><td>five</td><td>cinci</td><td>cinque</td><td>cinco</td><td>cinq</td></tr>
+    <tr><th>6</th><td>six</td><td>şase</td><td>sei</td><td>seis</td><td>six</td></tr>
+    <tr><th>7</th><td>seven</td><td>şapte</td><td>sette</td><td>siete</td><td>sept</td></tr>
+    <tr><th>8</th><td>eight</td><td>opt</td><td>otto</td><td>ocho</td><td>huit</td></tr>
+    <tr><th>9</th><td>nine</td><td>nouă</td><td>nove</td><td>nueve</td><td>neuf</td></tr>
+    <tr><th>10</th><td>ten</td><td>zece</td><td>dieci</td><td>diez</td><td>dix</td></tr>
+  </tbody>
 </table>
 
 <h4>Large Numbers</h4>
 
-<p>For large numbers we use addition. We separate group of 3 large numbers using a dot or a comma separator. This is tricky business because Europeans are using dot separator Americans are using comma separator.</p>
+<p>For large numbers, we group digits for readability. This can be tricky, as the convention for the thousands separator varies geographically. Europeans typically use a dot, while Americans use a comma.</p>
 
 <ul>
-<li>European number: 24.220.421 = 24000000 + 220000 + 421</li>
-<li>American number: 24,220,421 = 24000000 + 220000 + 421</li>
+<li>European number: 24.220.421</li>
+<li>American number: 24,220,421</li>
 </ul>
 
-<div class="alert alert-danger">First digit in a large number can not be 0. First zeros are not significant. Therefore number 024.220.421 is not a correct decimal number.</div>
+<div class="alert alert-warning">In standard decimal notation, leading zeros are not significant and are typically omitted. For example, the number 024.220.421 is understood as 24.220.421.</div>
 
-<h4>Small Numbers</h4>
+<h4>Small Numbers (Decimals)</h4>
 
-<p>For small numbers we use decimals. These are numbers that follow "." (dot) - but this is American notation. In Europe we use "," (comma) to create small numbers. So now you can be totally confused because we are so divided even if we all live on the same planet.</p>
+<p>For fractional numbers, we use a decimal separator. This convention also varies by region. Americans use a dot (.), while Europeans often use a comma (,).</p>
 
 <ul>
 <li>European small number: 0,22</li>
 <li>American small number: 0.22</li>
 </ul>
 
-<div class="alert alert-danger">Last digit in a small number can not be 0. Last zeros are not significant. Therefore number 0.220 is not a correct decimal number.</div>
-
+<div class="alert alert-info">In many contexts, trailing zeros after the decimal point do not change a number's value (e.g., 0.22 is the same as 0.220). However, in scientific and engineering fields, trailing zeros are often used to indicate a specific level of precision.</div>
 
 <h4>Scientific Notation</h4>
 
-<p>We are using multiplication of a small number "m" between (0..1) with 10 at power of "n" (m × 10ⁿ). This notation is used to display very large numbers in scientific papers. Some examples of large numbers:</p>
+<p>This notation is used to represent very large or very small numbers concisely. It takes the form of <em>m</em> × 10<sup>n</sup>, where 'm' is a number between 1 and 10. Examples:</p>
 
 <ul>
-<li>European large number: 1,22 × 10¹² = 1.220.000.000.000</li>
-<li>American large number: 1.22 × 10¹² = 1,220,000,000,000</li>
+<li>1.22 × 10¹² = 1,220,000,000,000</li>
 </ul>
 
 <h4>Engineering Notation</h4>
 
-<p>We are using multiplication of any number "m" with 10 at power of "n" (m × 10ⁿ). This notation is used to display very large numbers in scientific papers. Some examples of large numbers:</p>
+<p>Similar to scientific notation, but 'n' is always a multiple of 3. The mantissa 'm' is typically between 1 and 1000.</p>
 
 <ul>
-<li>European large number: 12,12 × 10¹² = 12,120,000,000,000</li>
-<li>American large number: 12.12 × 10¹² = 12.120.000.000.000</li>
+<li>12.12 × 10¹² = 12,120,000,000,000</li>
 </ul>
 
 <h4>Exponential Notation</h4>
 
-<p>We are using "E" notation in Computer Science because we are using ASCII symbols and there is no support for superscript. So we use letter "e" and "E" to express power of 10 without explicit using number 10. This notation looks like: "###E##" or "###e##" where "#" is a digit. Fractions are using negative exponent: "###E-##".</p>
+<p>Computer science uses "E" notation as a substitute for × 10<sup>n</sup>, as it only uses ASCII characters. The format is "mEn" or "men". Fractions use a negative exponent: "mE-n".</p>
 
 <ul>
-<li>Earth mass: 5.9724E24 = 5972400000000000000000000 kg.</li>
-<li>An inch is: 2.54E1 mm  = 25.4 mm</li>
+<li>Earth mass: 5.9724E24 kg</li>
+<li>One inch is: 2.54E1 mm (or 25.4 mm)</li>
 </ul>
 
-<h2><a id="roman"></a>Roman System</h2>
+<h2><a id="roman">Roman System</a></h2>
 
-<p>Believe or not but Romans ware very bad at mathematics. They knew how to count only up to 5000, using sticks. They do not have a representation for Null. So this numeric system is actually not used in Computer Science.</p>
+<p>The Roman numeral system is historically interesting but is not used in computer science for computation because it lacks a representation for zero and is inefficient for arithmetic.</p>
 
-<p>In this system, numbers are represented using sticks. It is very fun to make a program that convert an decimal number into a Roman number. Later, we will use this exercise to learn programming languages. Here are some of Roman numbers:</p>
+<p>In this system, numbers are represented by combinations of letters from the Latin alphabet. It can be a fun exercise to write a program that converts a decimal number into a Roman numeral. Here are the basic symbols:</p>
 
 <h4>Symbols used:</h4>
-
-<table class="table table-sm table-dark table-bordered table-dark">
-<tr><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td><td>500</td><td>1000</td></tr>
-<tr><td>I</td><td>V</td><td>X </td><td>L </td><td>C  </td><td>D  </td><td>M   </td></tr>
+<table class="table table-sm table-dark table-bordered">
+  <tr><td>1</td><td>5</td><td>10</td><td>50</td><td>100</td><td>500</td><td>1000</td></tr>
+  <tr><td>I</td><td>V</td><td>X</td><td>L</td><td>C</td><td>D</td><td>M</td></tr>
 </table>
 
 <h4>Count to 10:</h4>
-
-<table class="table table-sm table-dark table-bordered table-dark">
-<tr><td>I  </td><td>II </td><td>III </td><td>IV </td><td>V</td>
-    <td>VI </td><td>VII</td><td>VIII</td><td>IX </td><td>X</td></tr>
-<tr><td>1  </td><td>2  </td><td>3   </td><td>4  </td><td>5  </td>
-    <td>6  </td><td>7  </td><td>8   </td><td>9  </td><td>10 </td></tr>
+<table class="table table-sm table-dark table-bordered">
+  <tr><td>I</td><td>II</td><td>III</td><td>IV</td><td>V</td><td>VI</td><td>VII</td><td>VIII</td><td>IX</td><td>X</td></tr>
+  <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td></tr>
 </table>
 
-<p>To create numbers you can use additions or subtraction. Therefore you can create correct and incorrect numbers. Sometimes this can be very difficult so you need a lot of practice to read large Roman numbers.</p>
-
-<p>Numerals can be added together to form new numbers (e.g., III = I + I + I = 3), but no more than three of the same numeral can be added together.</p>
-
-<p>In addition, to form any numbers ending with 4 or 9 or the numbers 40, 90, 400, and 900, you must subtract from the larger unit because you cannot add more than three of the same numeral. For example, IV = V − I = 5 − 1 = 4.</p>
+<p>Numbers are formed by combining symbols and adding their values. A symbol can be repeated up to three times. To avoid repeating a symbol four times (e.g., IIII for 4), a subtractive principle is used: a smaller symbol placed before a larger one is subtracted.</p>
 
 <table class="table table-sm table-bordered table-dark">
-<tbody>
-<tr>
-<th>Correct:(Using Subtraction)</th>
-<th>Incorrect:(Using Addition) </th>
-<th>Decimal</th>
-</tr>
-<tr><td>IV</td><td>IIII  </td><td>4  </td></tr>
-<tr><td>IX</td><td>VIIII </td><td>9  </td></tr>
-<tr><td>XL</td><td>XXXX  </td><td>40 </td></tr>
-<tr><td>XC</td><td>LXXXX </td><td>90 </td></tr>
-<tr><td>CD</td><td>CCCC  </td><td>400</td></tr>
-<tr><td>CM</td><td>DCCCC </td><td>900</td></tr>
-</tbody>
+  <thead>
+    <tr><th>Correct (Subtraction)</th><th>Incorrect (Addition)</th><th>Decimal</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>IV</td><td>IIII</td><td>4</td></tr>
+    <tr><td>IX</td><td>VIIII</td><td>9</td></tr>
+    <tr><td>XL</td><td>XXXX</td><td>40</td></tr>
+    <tr><td>XC</td><td>LXXXX</td><td>90</td></tr>
+    <tr><td>CD</td><td>CCCC</td><td>400</td></tr>
+    <tr><td>CM</td><td>DCCCC</td><td>900</td></tr>
+  </tbody>
 </table>
 
-<h2><a id="binary"></a>Binary System</h2>
+<h2><a id="binary">Binary System</a></h2>
 
-<p>A single storage unit is called bit. It can store exclusive: 0 or 1. Using multiple storage units grouped together we can store combinations of 0 and 1. For example on two bit we can represent 4 combinations: {00, 01, 10, 11}. This is called "binary" system. It has two digits: {0,1}.</p>
+<p>The fundamental storage unit in a computer is a <b>bit</b>, which can hold a value of either 0 or 1. By grouping bits, we can represent larger numbers. A system with two digits {0, 1} is called a "binary" system.</p>
 
 <h4>Counting from 1 to 10</h4>
-
-<p>It takes 4 bits to be able to count from 0 to 10. This is one of the reason computers have memory organized in multiple of 4. Now let's learn how to count using binary:</p>
-
+<p>Representing the numbers 0 through 10 in binary requires 4 bits.</p>
 <ul>
-<li>0000 = 0</li>
-<li>0001 = 1</li>
-<li>0010 = 2</li>
-<li>0011 = 3</li>
-<li>0100 = 4</li>
-<li>0101 = 5</li>
-<li>0110 = 6</li>
-<li>0111 = 7</li>
-<li>1000 = 8</li>
-<li>1001 = 9</li>
-<li>1010 = 10</li>
+  <li>0000 = 0</li>
+  <li>0001 = 1</li>
+  <li>0010 = 2</li>
+  <li>0011 = 3</li>
+  <li>0100 = 4</li>
+  <li>0101 = 5</li>
+  <li>0110 = 6</li>
+  <li>0111 = 7</li>
+  <li>1000 = 8</li>
+  <li>1001 = 9</li>
+  <li>1010 = 10</li>
 </ul>
 
-<h2>Octal System</h2>
+<h2><a id="octal">Octal System</a></h2>
+<p>If we group 3 bits, we can represent 8 distinct values {0,1,2,3,4,5,6,7}. This base-8 representation is called the "octal" system and is rarely used in modern computing.</p>
 
-<p>If we pair up 3 bits we can represent more digits: {0,1,2,3,4,5,6,7} this kind of representation is called "octal" system, and is very rarely used.</p>
-
-<h2><a id="hex"></a>Hexadecimal System</h2>
-
-<p>We can use 4 bits and increase the number of combinations to 16 digits: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ,A ,B ,C ,D ,E ,F}. The first {0001 = 1} the last {1111 = F}. This representation is called "hexadecimal". One hexadecimal digit occupy 4 bits, so it matches very well with binary system.</p>
-
-<p>As you can see there is not an exact match between the number of possible combinations and 10 digits. Therefore we have invented new digits: {A, B, C, D, E, F} sometimes these digits are represented using lowercase characters: { a, b, c, d, e, f }.</p>
+<h2><a id="hex">Hexadecimal System</a></h2>
+<p>Using 4 bits allows for 16 combinations. To represent these values, we use the 10 decimal digits plus the first 6 letters of the alphabet: {0, 1, ..., 9, A, B, C, D, E, F}. This base-16 representation is called "hexadecimal". Since one hexadecimal digit corresponds directly to 4 bits (a nibble), it provides a human-friendly way to represent binary-coded values.</p>
 
 <h4>Memory Addresses</h4>
-
-<p>Computer science is using groups of 8 bits to represent memory addresses between (0..255) &equiv; (00..FF). This is called "1 byte"= 8 bit.</p>
-
-<p>Two bytes used to represent a "1 word" = 16 bit  &equiv; (0000..FFFF). On 16 bit we can represent  2¹⁶ = 65536 addresses that is numbers from 0 to 65,535.
+<p>A group of 8 bits is called a <b>byte</b>. A byte can represent 2⁸ = 256 different values, from 0 to 255 in decimal, or 00 to FF in hexadecimal.</p>
+<p>A <b>word</b> is a common unit of data, though its size can vary by architecture. For a 16-bit word, we can represent 2¹⁶ = 65,536 values (0 to 65,535).</p>
 
 <h4>Memory Capacity</h4>
-
-<p>In computer science we measure memory using Bytes (B), Kilo Bytes (KB) and Mega Bytes (MB), then Giga Bytes (GB) and Tera Bytes (TB) and Penta Bytes (PB) and Exa Bytes (EB).
-
+<p>Memory is measured in bytes and its multiples:</p>
 <ol>
-<li>1 B  = 1 Byte = 8 bit </li>
-<li>1 KB = 1024 B </li>
-<li>1 MB = 1024 KB</li>
-<li>1 GB = 1024 MB</li>
-<li>1 TB = 1024 GB</li>
+  <li>1 B = 1 Byte = 8 bits</li>
+  <li>1 KB (Kilobyte) = 1024 B</li>
+  <li>1 MB (Megabyte) = 1024 KB</li>
+  <li>1 GB (Gigabyte) = 1024 MB</li>
+  <li>1 TB (Terabyte) = 1024 GB</li>
+  <li>1 PB (Petabyte) = 1024 TB</li>
+  <li>1 EB (Exabyte) = 1024 PB</li>
 </ol>
-
-<p>On 32 bit we can represent 2³² =  4294967296 addresses.  That is numbers from 0 to 4,294,967,295. Therefore operating systems on 32 bits have a limited memory capacity less than 4 GB of RAM.</p>
-
-<p>On 64 bit we can represent 2⁶⁴ = 8,446,744,073,709,551,616 bytes. This is a very large number representing 16 exabytes RAM capacity. Of course in practical applications, the maximum numbers is much lower, for example AMD64 standard allows 256 TB of RAM. </p>
-
+<p>A 32-bit system can address 2³² = 4,294,967,296 unique memory locations. This is why 32-bit operating systems are limited to using less than 4 GB of RAM.</p>
+<p>A 64-bit system can theoretically address 2⁶⁴ bytes, which is over 16 exabytes. In practice, current hardware and operating systems have lower limits; for example, the AMD64 architecture currently supports up to 256 TB of RAM.</p>
 
 <h3>Endian Encoding</h3>
+<p>The order in which bytes are arranged to form a larger numerical value in memory is called endianness. For now, it is sufficient to know that this ordering can differ between computer architectures (e.g., PC vs. older Mac systems).</p>
+<p><b>BE (Big-Endian):</b> Stores the most significant byte at the smallest memory address.</p>
+<p><b>LE (Little-Endian):</b> Stores the least significant byte at the smallest memory address.</p>
+<p>Endianness also applies to the order of bits transmitted over a communication channel.</p>
 
-<p>Internal representation of numbers and symbols is different depending on the computer type, operating system and device. For now is suffice to know that "PC" encoding for example is different than "MAC" encoding.</p>
+<h2><a id="types">Type Systems</a></h2>
+<p>Programming languages must deal with data. To do this, data is classified by category. This classification and its associated rules are known as a "type system" in computer science.</p>
 
-<p>In computing, endianness is the order or sequence of bytes of a word of digital data in computer memory. Endianness is primarily expressed as big-endian (BE) or little-endian (LE). </p>
+<h4>Immutable vs. Mutable Data</h4>
+<p>Data can be constant (immutable) or changeable (mutable). Data embedded directly in a program's source code is typically immutable. External data, stored on a read/write device like a Hard Disk (HDD), is usually mutable. Data on a Read-Only Memory (ROM) chip is immutable.</p>
 
-<p><b>BE:&nbsp;</b>A big-endian system stores the most significant byte of a word at the smallest memory address and the least significant byte at the largest. </p>
+<h4>Variables</h4>
+<p>A variable is a name that refers to data stored in RAM (Random-Access Memory). The value of a variable can be altered easily. While at a low level data is stored as bits, high-level languages allow us to work with abstract data types like "numeric," "string," "boolean," "date," and "time."</p>
 
-<p><b>LE:&nbsp;</b>A little-endian system, in contrast, stores the least-significant byte at the smallest address.</p>
+<h4>Measurement Units</h4>
+<p>Most computer languages do not have a built-in notion of physical measurement units. A number can represent anything—width, height, weight, etc. Date and time types are a notable exception. Adding a full measurement unit system is often considered to add too much complexity to a general-purpose language.</p>
 
-<p>Endianness may also be used to describe the order in which the bits are transmitted over a communication channel, e.g., big-endian in a communications channel transmits the most significant bits first.</p>
+<h3>Static vs. Dynamic Typing</h3>
+<p><b>Static Typing:</b> A language uses static typing when the data type of a variable is fixed when it is declared and cannot be changed during runtime. The type is checked at compile-time.</p>
+<p><b>Dynamic Typing:</b> A language uses dynamic typing when a variable's type is determined at runtime and can change as different values are assigned to it. This does not mean the variable lacks a type, only that the type is flexible.</p>
 
 <h2><a id="identifiers">Identifiers</a></h2>
-
-<p>When you create a program, you give names to program elements. These names are symbolic representations for data elements, structures, group of statements or sub-programs. You need a name so you can refer to data elements more easily, without repeating the data symbols themselves.</p>
+<p>When you create a program, you give names to program elements like variables, data structures, and sub-programs. These names are symbolic representations that allow you to refer to data and logic easily.</p>
 
 <h4>Example:</h4>
-<p>In this example we define a vector "v" using a Python single dimension list and then check if an element is member of this list. "v" and "x" are both identifiers.</p>
-
-<pre><code class="language-python">v = [1,4,6,12,32]
-x = input("check this number")
+<p>In this Python example, we define a list of numbers and check if a given number is a member of the list. Here, <code>v</code> and <code>x</code> are both identifiers.</p>
+<pre><code class="language-python">v = [1, 4, 6, 12, 32]
+x = int(input("check this number: "))
 if x in v:
  print("found")
 else:
  print("not found")
 </code></pre>
 
-<h4>Sigil:</h4>
-
-<p>Sometimes a language uses some kind of prefix for variable names. This is called "sigil" and has the purpose to differentiate identifiers by purpose. For example in Ruby, the global variables use sigil "$". That means all variables that start with "$" will be global variables while sigil "@" represent an object attribute.</p>
-
-<p>In PHP all variables start with "$", global or not global. Some developers find this rule annoying. In my languages Bee and EVE I use sigil "$" for global system constants and "@" for global system variables.</p>
+<h4>Sigil</h4>
+<p>Some languages use a special prefix character, called a "sigil," to indicate the type or scope of an identifier. For example, in Ruby, a global variable starts with <code>$</code>, while an instance variable starts with <code>@</code>. In PHP, all variables start with <code>$</code>.</p>
 
 <h2><a id="literals">Data Literals</a></h2>
-
-<p>Data literals are symbols or group of symbols that represent constant data. For example: 100 represent the number 100 written in decimal. There are numerous other notations for numbers, representing different data types.</p>
-
-<p>A group of multiple data elements like a list or a data set can have a special literal created with alphanumeric symbols, delimiters and separators. Once you have learned these conventions, most languages will be easier to grasp since all are using same conventions.</p>
+<p>Data literals are notations for representing fixed values in source code. For example, <code>100</code> is the literal for the decimal number 100. There are various notations for different data types.</p>
 <table class="table table-striped table-bordered table-dark">
-<thead>
-<tr>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>'a'</td>
-<td>Single quoted string</td>
-</tr>
-<tr>
-<td>"string"</td>
-<td>Double quoted string</td>
-</tr>
-<tr>
-<td>0b10110</td>
-<td>Binary number</td>
-</tr>
-<tr>
-<td>1234</td>
-<td>Integer number</td>
-</tr>
-<tr>
-<td>OxFFFF</td>
-<td>Hexadecimal number</td>
-</tr>
-<tr>
-<td>U+FFFF</td>
-<td>Unicode code-point</td>
-</tr>
-<tr>
-<td>0.05</td>
-<td>Decimal number</td>
-</tr>
-<tr>
-<td>1E10</td>
-<td>Scientific notation float numbers</td>
-</tr>
-</tbody>
+  <thead><tr><th>Example</th><th>Description</th></tr></thead>
+  <tbody>
+    <tr><td>'a'</td><td>Single-quoted character or string</td></tr>
+    <tr><td>"string"</td><td>Double-quoted string</td></tr>
+    <tr><td>0b10110</td><td>Binary integer literal</td></tr>
+    <tr><td>1234</td><td>Decimal integer literal</td></tr>
+    <tr><td>0xFFFF</td><td>Hexadecimal integer literal</td></tr>
+    <tr><td>U+FFFF</td><td>Unicode code-point</td></tr>
+    <tr><td>0.05</td><td>Floating-point literal</td></tr>
+    <tr><td>1E10</td><td>Scientific notation for floats</td></tr>
+  </tbody>
 </table>
 
 <h2><a id="expressions">Expressions</a></h2>
+<p>An expression is a combination of values, variables, operators, and functions that a language interprets and computes to produce another value. There are three common notations for expressions:</p>
 
-<p>You should be familiar with this concept from mathematics. In computer science there are 3 kind of expressions: Infix, Postfix and Prefix. It is easiest to demonstrate the differences by looking at examples of operators that take two operands:</p>
-
-<h3>Expressions types:</h3>
-
-<pre><code class="language-python">+ x y : Prefix
-x + y : Infix
-x y + : Postfix
+<pre><code class="language-text">+ x y  # Prefix
+x + y  # Infix
+x y +  # Postfix
 </code></pre>
-<p>In these expressions x, y are operands while "+" is an operator. The most simple expressions are using one single operator and one operand. For example "-4" is an expression while "4" is not an expression but a single constant literal. "2 + 4" however is an expression even if there is no variable involved.</p>
-<p>Expressions can be combined in larger expressions using operators. Order of execution can be controlled using operator precedence and also round parenthesis (x+y). We will investigate this in our next examples:</p>
+<p>In these examples, <code>x</code> and <code>y</code> are operands and <code>+</code> is the operator. Expressions can be as simple as a single literal (e.g., <code>4</code>) or a combination of many elements (e.g., <code>(a + b) / 2</code>).</p>
 
-<h3>Infix Expressions:</h3>
-<pre><code class="language-python">x+y+z
+<h3>Infix Expressions</h3>
+<p>Most programming languages use infix notation, where operators are written between their operands.</p>
+<pre><code class="language-python">x + y + z
 a + b / 2 + c * 2
 (a + b) / (a * b)
-x &ne; y
-a &le; 5
+x != y
+a <= 5
 </code></pre>
 
-<p>Most computer languages are using infix expressions. You will learn details about literals and expressions in next course: CSP: Programming. Usually we describe literals and expressions as basic language concepts in first or second tutorial article about every computer language.</p>
-
-
-<h2><a id="types">Type systems</a></h2>
-
-<p>Programming languages must deal with data. To do this, data is classified by category. For each category there are rules of representation and manipulation. This classification and the rules are called in computer science: "type system".</p>
-
-<h4>Immutable Data</h4>
-<p>Data can be embedded into the program itself or it can be external. When embedded in the program, data is immutable. That means it is constant. You can change this kind of data only if you change the program.</p>
-
-<h4>Mutable Data</h4>
-
-<p>External data is usually mutable. If is stored on a device that has R/W (Read &amp; Write) capability like HDD (Hard Disk), or RW-CD (Read Write &ndash; Compact Disk). Sometimes a device can store external data in read only mode. For example optical disk or ROM (Read Only Memory) can store data that becomes immutable.</p>
-
-
-<h4>Variables</h4>
-
-<p>A variable represents data stored in RAM (Random Access Memory). We can alter value of this kind of data very easy, many times without wearing off the storage. In low level computation data is stored as bit: "0" or "1", but a high level language you can store and manipulate abstract data types, for example: "numeric", "string", "boolean", "date", "time".</p>
-
-<h4>Measurement Units</h4>
-
-<p>Most computer languages do not have notion of measurement units. So a number can represent any kind of physical or abstract concept. For example: width, height, weight. Only "date" and "time" have measurement units. Computer scientists believe that a computer language becomes too complex if is dealing with measurement units.</p>
-
-
-<h3>Static typing</h3>
-
-<p>In Computer Science we say a programming language is using "static typing" when the data type for a variable or a parameter must be defined in the same time with the variable and can not be changed during run-time. You can of course change the declaration in source code and then a variable will have a new type but this is a permanent change.</p>
-
-<h3>Dynamic typing</h3>
-
-<p>In Computer Science we say a programming language is using "dynamic typing" when the data type for a variable or a parameter is not defined and can be changed. This do not means a variable do not have a type. It means the type can change when you change the value dynamically at run-time.</p>
-
 <h2><a id="namespace">Namespaces & Scope</a></h2>
+<div class="alert alert-secondary shadow-sm">The "scope" of an identifier is the region of the code where it is visible and can be used. Each sub-program usually defines its own "local scope."</div>
 
-<div class="alert alert-secondary shadow-sm">Each sub-program usually has its own "local scope". Sometimes in the local scope you can define nested sub-programs. Most languages will enable creation of variables and constants in local scope.</div>
-
-<p>When you define identifiers you must know where this identifier is visible. If an identifier is visible in all your program, it is called "global" identifier. The area of visibility is called "scope". For example a program can have a single "global scope" or many "module scopes" or "package scope".</p>
+<p>If an identifier is visible throughout the entire program, it is called a "global" identifier. A program can have a single global scope or multiple module-level scopes.</p>
 
 <h3>Scope Model</h3>
-
-<p>Older programming languages have "Dynamic Scoping". By the time this scpe model was created, people do not knew any better so this terminology was introduce later after we have descover "Static Scope". New programming languages use a "Static Scope" that is considered superior to "Dynamic Scope".</p>
+<p>Early programming languages often used "Dynamic Scoping." Modern languages predominantly use "Static Scoping" (also called Lexical Scoping), which is considered superior for code readability and maintainability.</p>
 
 <h4>Dynamic Scope</h4>
-<p>Is used by structured programming and imperative programming languages. For this model you can design global variables that can be used in many functions and can be modified anywhere in the program. Therefore function results can be influenced and can produce different results for same arguments.
-</p>
-<p>
-Dynamic scope is created on the stack. Every time a function is called, the local variables are created and push on the stack. When a function end execution, all vriables defined in function local scope are removed from memory.
-</p>
+<p>In dynamic scoping, the scope of an identifier is determined by the execution path of the program. A function can access the variables of the function that called it. This can make code difficult to reason about, as function behavior can change depending on where it is called from.</p>
 
-<h4>Static Scope</h4>
-<p>In this model, the scope is created on the heap. A function has a unique scope that is resilient in memory. When a function is called, variables are already initialized. Only parameters are pushed on the stack. Therefore a function is behaving like a first class object. This is how functions can have states. This was known in imperative programming as "static variables".</p>
-
-<h4>Execution Context</h4>
-
-<p>In local scopping there is a concept of "Execution Context". That is the outer scope of function. In Static Scopped languages, the outer scope variables are bound to the inner functions. This feature enable functional programming languages to create "closures".</p>
-
-<p>Later mutation of values for external variables will not influence function result. The function is going to use the initial value that was given before the function was created. All other next modifications will be ignored. This reenforce encapsulation concept and makes functions more independent.</p>
+<h4>Static (Lexical) Scope</h4>
+<p>In static scoping, the scope of an identifier is determined by its position in the source code. An inner function can access variables from its outer (enclosing) functions. This allows for powerful features like "closures," where a function remembers the environment in which it was created.</p>
 
 <h3>Shadowing Effect</h3>
-
-<p>Shadowing is a secondary effect of most programming languages that support local scope. If you define a variable in local scope having the same name as a variable defined in outer scope the two names will collide. To avoid collision, the languages usually hide the external variable and enable access only to local variable. This effect is called "shadowing". Parameters also have a shadowing effect over outer variables or parameters.</p>
-
+<p>If you declare a variable in a local scope with the same name as a variable in an outer scope, the local variable "shadows" the outer one. Within the local scope, the name will refer to the local variable, effectively hiding the outer one.</p>
 
 <h3>Dot notation</h3>
-<p>When you define a data structure, the elements in data structure can be public or private. If elements are public, usual notation called "dot notation", enable you to access a member of a collection by name.</p>
+<p>When you define a data structure (like a class or object), its members (attributes or methods) can be accessed using "dot notation".</p>
 
 <h4>Example:</h4>
-
 <pre><code class="language-python">class Person:
     name = "Barbu"
     age = 22
-pass #end class
-# using dot notation
+
+# using dot notation to access class attributes
 print(Person.name) # Barbu
-print(Person.age) # 22</code>
-</pre>
+print(Person.age) # 22
+</code></pre>
 
-
-<p><b>Note:</b>&nbsp;In previous example we define a "structure class" in Python that is also known as "data class". This kind of class do not need to be instantiated and it behaves like a singleton. It is like an object that has a single instance also known as "static class".
-</p>
+<p><b>Note:</b>&nbsp;The example above defines a class with class attributes. These attributes are shared by all instances of the class. They can be accessed directly on the class itself without creating an instance.</p>
 
 <!-- work in progress-->
-
 <hr>
 <p><b>Read next:</b>
 <a href="/engineering/structures/">Data Structures</a></p>
 
+</main>
+</div>
+</div>
+
 <!-- Footer -->
-<footer class="footer copyrhight">
+<footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
 </div>
