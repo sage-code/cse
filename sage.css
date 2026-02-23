@@ -593,9 +593,9 @@ hr {
 #bookmark-list ul {
     margin-top: 5px;
     margin-bottom: 10px;
-    margin-left: 25px !important; /* Positions the line away from the parent */
-    border-left: 2px solid #dee2e6; /* Optional: adds a vertical guide line like a folder tree */
+    margin-left: 22px;  /* Positions the line away from the parent */
     padding-left: 15px; /* Creates space between the line and the checkboxes */
+    border-left: 2px solid #837d80; /* Optional: adds a vertical guide line like a folder tree */
 }
 
 
@@ -743,9 +743,9 @@ hr {
 
     /* Fix: Ensure sub-items indent properly on mobile */
     #bookmark-list ul {
-        padding-left: 20px !important; 
-        margin-left: 10px !important;
-        border-left: 1px solid #444; /* Helpful vertical line for tree view */
+        padding-left: 15px !important; 
+        margin-left: 12px !important;
+        border-left: 2px solid #756e6e; /* Helpful vertical line for tree view */
     }
 
     /* Adjust nested list to ensure checkboxes aren't cut off */
