@@ -488,7 +488,7 @@ hr {
     display: grid;
     /* Changed auto-fit to auto-fill for better gap preservation on laptop screens */
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    gap: 10px;            /* Increased to 30px for a more "Laboratory" feel */
+    row-gap: 5px;            /* Increased to 30px for a more "Laboratory" feel */
     column-gap: 10px;     /* Explicitly forcing horizontal breathing room */
     padding: 5px 0;
     width: 100%;
