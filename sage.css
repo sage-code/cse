@@ -543,29 +543,41 @@ hr {
     line-height: 1.2;
 }
 
-/* Style the links inside the index - Base State */
+/* --- Sidebar Laboratory Index Style --- */
+
+/* 1. The Link Base State (Unchecked) */
 #bookmark-list a {
     color: #e2dfd1; 
-    transition: color 0.2s ease;
+    transition: 0.3s;
 }
 
-/* Global Sidebar Hover (Laboratory Purple) */
+/* 2. The Link Hover State (Always Purple/Pink) */
 #bookmark-list a:hover {
-    color: #8f00b3 !important; /* Sage Purple */
+    color: hotpink !important; 
     text-decoration: none;
 }
 
-/* State: Checked (Green) */
+/* 3. The Checked State (The "Magic" Fix) */
+/* This changes the link text to a muted purple when the checkbox is checked */
 #bookmark-list li:has(input:checked) a {
-    color: #2cba77; /* Laboratory Green */
+    color: #8f00b3; /* Sage Purple - much easier on the eyes than the green wall */
     font-weight: 500;
+    opacity: 0.8;   /* Slightly dimmed to show it's "visited/done" */
 }
 
-/* State: Checked AND Hovered (Purple Override) */
+/* 4. Ensure Checked + Hover still pops */
 #bookmark-list li:has(input:checked) a:hover {
-    color: #8f00b3 !important; /* Forces purple even when checked */
+    color: hotpink !important;
+    opacity: 1;
+    text-decoration: underline;
 }
 
+/* 5. Keep the Checkbox itself Green */
+.topic-check:checked,
+.form-check-input:checked {
+    background-color: #2cba77 !important; 
+    border-color: #2cba77 !important;
+}
 
 /* Nested lists (Sub-topics) */
 #bookmark-list ul {
@@ -602,12 +614,6 @@ hr {
     position: absolute;
     top:  -1px;
     left: 2px;
-}
-
-/* If your Engineering items follow the same structure */
-.form-check:has(input:checked) label:hover,
-.form-check:has(input:checked) a:hover {
-    color: #8f00b3 !important;
 }
 
 .sidebar-content {
