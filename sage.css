@@ -597,24 +597,28 @@ hr {
     padding-left: 15px;
 }
 
-.nav-link.level-1 {
-    font-weight: 600;
-    color: #2d2a2a;
-    padding: 5px 0;
+/* Remove bullets and reset padding */
+#bookmark-list, #bookmark-list ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-.nav-link.level-2 {
-    font-size: 0.9rem;
-    color: #686464;
-    padding: 2px 0;
+/* Add indentation to the nested list */
+#bookmark-list ul {
+    padding-left: 20px; /* This creates the 'tree' alignment */
+    margin-top: 5px;
 }
 
+/* Keep the checkbox and link on one line */
+#bookmark-list li {
+    display: block;
+    margin-bottom: 8px;
+}
 
-/* Ensure the checkbox and text stay on one line, but the list stays vertical */
-.nav-item div {
-    display: flex;
-    align-items: center;
-    white-space: nowrap; 
+#bookmark-list a {
+    text-decoration: none;
+    color: inherit;
+    margin-left: 5px;
 }
 
 /* Checkbox Styling - Laboratory Look */
