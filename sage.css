@@ -46,6 +46,8 @@ h2, h3 { scroll-margin-top: 60px; }
 #dynamic-header .row {
     margin-bottom: 0 !important;
     margin-top: 0 !important;
+    padding-top:0 !important;
+    padding-bottom: 0 !important;
 }
 
 .container {
