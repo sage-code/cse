@@ -29,6 +29,51 @@
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
 
+<h1>Design Patterns</h1>
+
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="history"> 
+            <a href="#history" class="fw-bold">History</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="common-patterns"> 
+            <a href="#common-patterns" class="fw-bold">Common Patterns</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="web-development"> 
+            <a href="#web-development" class="fw-bold">Web Development</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="mvc"> <a href="#mvc">Model-View-Controller</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="spa"> <a href="#spa">Single Page Application</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="front-controller"> <a href="#front-controller">Front Controller</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="decorator"> <a href="#decorator">Decorator</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="repository"> <a href="#repository">Repository</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="parallel-computing"> 
+            <a href="#parallel-computing" class="fw-bold">Parallel Computing</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
 <h2>Design Patterns</h2>
 
 
@@ -38,13 +83,13 @@ Design patterns are reusable solutions to common problems that arise when design
 
 <p>Design patterns are not strict rules or formulas; rather, they are guidelines that help developers to structure code in a particular way. Applying design patterns can streamline software development, making it more scalable, maintainable, and flexible.</p>
 
-<h2>History</h2>
+<h2 id="history">History</h2>
 
 <p>Design patterns emerged in the field of computer science in the 1990s with the publication of the book "Design Patterns: Elements of Reusable Object-Oriented Software" by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides - sometimes referred to as the "Gang of Four". This book identified 23 commonly occurring patterns in object-oriented software development, such as the Singleton pattern, the Factory pattern, and the Observer pattern.</p>
 
 <p>Since then, many more design patterns have been developed and applied across various programming languages and paradigms, including functional programming and reactive programming. Some common design patterns include creational patterns (e.g., Factory Method, Builder, and Abstract Factory), structural patterns (e.g., Adapter, Decorator, and Facade), and behavioral patterns (e.g., Observer, Strategy, and Visitor).</p>
 
-<h2>Common Patterns</h4>
+<h2 id="common-patterns">Common Patterns</h2>
 
 <p>Design paterns can be very specific for a particular programming paradigm. We study design patterns to avoid reinventing the weel. If you know about common patterns you can search for code snipets or you can use AI to generate code for a specific language.</p>
 
@@ -129,7 +174,7 @@ Design patterns are reusable solutions to common problems that arise when design
   </table>
   
 
-<h2>Web Development</h2>
+<h2 id="web-development">Web Development</h2>
 
 <p>Design patterns are widely used in web development to solve common problems that occur when building web applications. These patterns provide proven solutions to common design problems and help developers avoid reinventing the wheel.</p>
 
@@ -139,7 +184,7 @@ Design patterns are reusable solutions to common problems that arise when design
 
 <section>
   <article>
-    <h3>Model-View-Controller</h3>
+    <h3 id="mvc">Model-View-Controller</h3>
     <p>The Model-View-Controller (MVC) pattern separates an application into three components:</p>
     <ul>
       <li>The <strong>Model</strong> represents the data and business logic</li>
@@ -150,29 +195,29 @@ Design patterns are reusable solutions to common problems that arise when design
   </article>
 
   <article>
-    <h3>Single Page Application</h3>
+    <h3 id="spa">Single Page Application</h3>
     <p>The Single Page Application (SPA) pattern allows for faster and more responsive user experiences by loading content dynamically within a single web page. This avoids the traditional approach of loading a new page every time the user interacts with the application.</p>
   </article>
 
   <article>
-    <h3>Front Controller</h3>
+    <h3 id="front-controller">Front Controller</h3>
     <p>The Front Controller pattern consolidates all HTTP requests to a single point of control. This ensures that all requests go through a single component that can handle authentication, session management, and other common tasks.</p>
   </article>
 
   <article>
-    <h3>Decorator</h3>
+    <h3 id="decorator">Decorator</h3>
     <p>The Decorator pattern allows for dynamic modification of an object's behavior at runtime by wrapping it with additional code. In HTML, this could be used to modify the behavior of an element by adding attributes or classes.</p>
   </article>
 
   <article>
-    <h3>Repository</h3>
+    <h3 id="repository">Repository</h3>
     <p>The Repository pattern provides a centralized location for accessing data in an application. In HTML, this could be implemented as a JavaScript object or array that holds data for the entire application.</p>
   </article>
 </section>
 
 <p>Using design patterns in web development can lead to more structured, modular, and maintainable code, helping developers build high-quality applications with ease.</p>
 
-<h2>Parallel Computing</h2>
+<h2 id="parallel-computing">Parallel Computing</h2>
 
 <p>A design pattern for parallel computing is a repeatable solution to a common problem that arises when designing parallel applications. These patterns help designers structure their code to make the most of parallelism by identifying and exploiting the available parallelism in a computation.</p>
 
@@ -212,6 +257,10 @@ Design patterns are reusable solutions to common problems that arise when design
 </table>
 
 <p>By using patterns, designers can improve the efficiency, scalability, and maintainability of their parallel programs. By understanding and applying these patterns, programmers can create faster, more efficient, and more scalable parallel programs.</p>
+
+    </main>
+  </div>
+</div>
 
 <!-- work in progress-->
 

@@ -29,6 +29,64 @@
 
 <h1>Database Systems</h1>
 
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="db-applications"> 
+            <a href="#db-applications" class="fw-bold">Database applications</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="data-manipulation"> 
+            <a href="#data-manipulation" class="fw-bold">Data Manipulation</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="data-oriented-languages"> 
+            <a href="#data-oriented-languages" class="fw-bold">Data Oriented Languages</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="impedance-mismatch"> 
+            <a href="#impedance-mismatch" class="fw-bold">Impedance Mismatch</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="data-communication"> 
+            <a href="#data-communication" class="fw-bold">Data communication</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="db-features"> 
+            <a href="#db-features" class="fw-bold">Database Features</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="data-types"> <a href="#data-types">Data Types</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="query-language"> <a href="#query-language">Query Language (SQL)</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="json"> <a href="#json">JSON</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="triggers"> <a href="#triggers">Triggers</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="stored-procedures"> <a href="#stored-procedures">Stored procedures</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="spatial-layer"> <a href="#spatial-layer">Spatial layer</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="multi-user"> <a href="#multi-user">Multi-User</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="replication"> <a href="#replication">Replication</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="db-engines"> 
+            <a href="#db-engines" class="fw-bold">Database engines</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
 <div class="alert alert-secondary shadow-sm">A database is a special software that run on servers as daemon or service. A database is the key ingredient to create: dynamic websites, single page APPs, digital maps or distributed APPs. Database developers are highly appreciated in any software team.</div>
 
 
@@ -749,6 +807,11 @@ rel="nofollow noopener noreferrer">Data-centric Architecture</a></p>
 <hr>
 <p><b>Read next:</b>
 <a href="/engineering/design/">Database Design</a></p>
+
+    </main>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer copyright">

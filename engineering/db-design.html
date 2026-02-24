@@ -30,6 +30,56 @@
 
 <h2>Database Design</h2>
 
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="requirements"> 
+            <a href="#requirements" class="fw-bold">Requirements</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="db-models"> 
+            <a href="#db-models" class="fw-bold">Database Models</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="drawing-tools"> 
+            <a href="#drawing-tools" class="fw-bold">Drawing Tools</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="conceptual-symbols"> 
+            <a href="#conceptual-symbols" class="fw-bold">Conceptual Symbols</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="normalization"> 
+            <a href="#normalization" class="fw-bold">Normalization</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="conceptual-models"> 
+            <a href="#conceptual-models" class="fw-bold">Conceptual Models</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="detail-design"> 
+            <a href="#detail-design" class="fw-bold">Detail Design</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
+<h2 id="database-design">Database Design</h2>
+
 <div class="alert alert-secondary shadow-sm">
 When a designer start a new project it can start with the user interface (UI) or with Database Design (DB). Most of the time this is done using a <em>design document</em> that describe the database. After the document is approved a development team build the scripts to implement the database, and the applications around it.
 </div>
@@ -380,12 +430,15 @@ I have used <a href="https://app.diagrams.net/">drawio app</a> to make this diag
 
 <p><b>Read next:</b><a href="/engineering/cybersec/">Cybersecurity</a></p>
 
+    </main>
+    </div>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
-
-</div>
 
 
 <script src="/sage.js" defer></script>

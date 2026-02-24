@@ -30,10 +30,56 @@
 
 <h2>System Design</h2>
 
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="system-design"> 
+            <a href="#system-design" class="fw-bold">System Design</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="purpose"> 
+            <a href="#purpose" class="fw-bold">Purpose</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="quality-concerns"> 
+            <a href="#quality-concerns" class="fw-bold">Quality Concerns</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="economic-concerns"> 
+            <a href="#economic-concerns" class="fw-bold">Economic concerns</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="principles"> 
+            <a href="#principles" class="fw-bold">Principles</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="best-practices"> 
+            <a href="#best-practices" class="fw-bold">Best Practices</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
+<h2 id="system-design">System Design</h2>
+
 <div class="alert alert-secondary shadow-sm">System design is the process of defining the architecture, components, modules, interfaces, and data for a system that satisfies specific requirements. It is a critical part of software engineering, as it ensures that the system is well-structured, efficient, and scalable.
 </div>
 
-<h2>Purpose</h2>
+<h2 id="purpose">Purpose</h2>
 
 <p>System design is the process of defining the architecture, components, modules, interfaces, and data for a system that satisfies specific requirements. It is a critical part of software engineering, as it ensures that the system is well-structured, efficient, and scalable.</p>
 
@@ -46,7 +92,7 @@
 <li><strong>Define the system data</strong>: The system data is the information that is stored and processed by the system.</li>
 </ul>
 
-<h2>Quality Concerns</h2>
+<h2 id="quality-concerns">Quality Concerns</h2>
 
 <p>The concerns in system design are the factors that need to be considered when designing a system. These concerns include:</p>
 <ul>
@@ -60,7 +106,7 @@
 </ul>
 <p>System design is a complex and challenging task. However, it is an essential part of software engineering. By understanding the concerns in system design, software engineers can create systems that meet the needs of their users and are reliable, scalable, and secure.</p>
 
-<h2>Echonomical concerns</h2>
+<h2 id="economic-concerns">Economic concerns</h2>
 
 <p>Here are some additional concerns that may be relevant to specific systems:</p>
 
@@ -72,7 +118,7 @@
 
 <p>The specific concerns that need to be considered will vary depending on the specific system. However, the concerns listed above are some of the most common ones that need to be considered in system design.</p>
 
-<h2>Principles</h2>
+<h2 id="principles">Principles</h2>
 <p>Here are some of the most important system design principles:</p>
 <ul>
 <li><strong>Abstraction</strong>: Abstraction is the process of hiding irrelevant details from the user. This makes the system easier to understand and use.</li>
@@ -87,7 +133,7 @@
 </ul>
 <p>These are just some of the most important system design principles. The specific principles that need to be considered will vary depending on the specific system. However, the principles listed above are some of the most common ones that need to be considered in system design.</p>
 
-<h2>Best Practices</h2>
+<h2 id="best-practices">Best Practices</h2>
 
 <p>Here are some system design best practices:</p>
 <ul>
@@ -115,6 +161,11 @@
 <hr>
 <p><b>Read next:</b>
 <a href="/engineering/architecture/">Software Architecture</a></p>
+
+    </main>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer copyright">

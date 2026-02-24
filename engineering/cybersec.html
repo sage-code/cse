@@ -28,13 +28,59 @@
  <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h2>What is Cybersecurity?</h2>
+<h1>Cybersecurity</h1>
+
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="what-cybersecurity"> 
+            <a href="#what-cybersecurity" class="fw-bold">What is Cybersecurity?</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="importance"> 
+            <a href="#importance" class="fw-bold">Importance</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="cybersec-concepts"> 
+            <a href="#cybersec-concepts" class="fw-bold">Cybersecurity Concepts</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="cybersec-policy"> 
+            <a href="#cybersec-policy" class="fw-bold">Cybersecurity Policy</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="gdpr"> 
+            <a href="#gdpr" class="fw-bold">General Data Protection Regulation (GDPR)</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="other-resources"> 
+            <a href="#other-resources" class="fw-bold">Other Resources</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
+<h2 id="what-cybersecurity">What is Cybersecurity?</h2>
 
 <div class="alert alert-secondary shadow-sm">
 Cybersecurity is the practice of protecting computer systems, networks, and data from unauthorized access, use, disclosure, disruption, modification, or destruction. It is a broad field that encompasses a wide range of technologies, policies, and procedures.
 </div>
 
-<h2>Importance</h2>
+<h2 id="importance">Importance</h2>
 
 <p>Cybersecurity is important because our reliance on technology is increasing. We use computers and the internet for everything from banking to shopping to communicating with friends and family. This means that our personal and financial information is increasingly at risk of being stolen or compromised.</p>
 
@@ -59,7 +105,7 @@ Cybersecurity is the practice of protecting computer systems, networks, and data
 
 <p>As a Software Engineer you need to get familiar with cybersecurity concepts and best practice, to be able to lead your developement team implementing the secirity features required for your applications and security prolicy required by your organization.</p>
 
-<h2>Cybersecurity Concepts</h2>
+<h2 id="cybersec-concepts">Cybersecurity Concepts</h2>
 
 <p>Here are some of the important concepts of cybersecurity:</p>
 
@@ -76,7 +122,7 @@ Cybersecurity is the practice of protecting computer systems, networks, and data
 
 <p>These are just some of the important concepts of cybersecurity. As the field continues to evolve, new concepts and technologies will emerge. It is important for cybersecurity professionals to stay up-to-date on the latest threats and trends in order to protect organizations and individuals from cyber attacks.</p>
 
-<h2>Cybersecurity Policy</h2>
+<h2 id="cybersec-policy">Cybersecurity Policy</h2>
 
 <p>A cybersecurity policy is a set of rules and procedures that are designed to protect an organization's computer systems, networks, and data from unauthorized access, use, disclosure, disruption, modification, or destruction.</p>
 
@@ -104,7 +150,7 @@ Cybersecurity is the practice of protecting computer systems, networks, and data
 
 <p>By following these guidelines, organizations can develop and implement a cybersecurity policy that will help to protect their data from cyber threats.</p>
 
-<h2>General Data Protection Regulation (GDPR)</h2>
+<h2 id="gdpr">General Data Protection Regulation (GDPR)</h2>
 
 <p>The General Data Protection Regulation (GDPR) is a regulation in European Union (EU) law on data protection and privacy for all individuals within the European Union (EU) and the European Economic Area (EEA). The GDPR aims primarily to give control back to citizens and residents over their personal data and to simplify the regulatory environment for international business by unifying the regulation within the EU.</p>
 
@@ -137,7 +183,7 @@ Cybersecurity is the practice of protecting computer systems, networks, and data
 <li><a href="https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/">Information Commissioner's Office (ICO) guide to the GDPR</a>.</p>
 </ul></li>
 
-<h2>Other Resources</h2>
+<h2 id="other-resources">Other Resources</h2>
 
 <ul>
 <li><a href="https://www.coursera.org/specializations/cybersecurity">Coursera</a>: Coursera offers a number of free cybersecurity specializations, which include a series of courses that cover a specific area of cybersecurity.</li>

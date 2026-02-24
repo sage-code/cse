@@ -31,6 +31,55 @@
 
 <h1>Tech stack</h1>
 
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="tech-stack"> 
+            <a href="#tech-stack" class="fw-bold">Tech stack</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="web-stacks"> 
+            <a href="#web-stacks" class="fw-bold">Web stacks</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="old-stacks"> <a href="#old-stacks">Old tech stacks</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="new-stacks"> <a href="#new-stacks">New tech stacks</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="hybrid-stacks"> 
+            <a href="#hybrid-stacks" class="fw-bold">Hybrid stacks</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="alternative-stacks"> 
+            <a href="#alternative-stacks" class="fw-bold">Alternative stacks</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="native-app"> <a href="#native-app">Native app development</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="hybrid-app"> <a href="#hybrid-app">Hybrid app development</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="cross-platform-app"> <a href="#cross-platform-app">Cross-platform app development</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="design-patterns"> 
+            <a href="#design-patterns" class="fw-bold">Design Patterns</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
 <div class="alert alert-secondary shadow-sm">A tech stack is a set of software and programming languages that are used to build a website or application. It can also include hardware, such as servers and databases. The specific technologies used in a tech stack will vary depending on the type of website or application being built.</div>
 
 <h3>Components</h3>
@@ -59,11 +108,11 @@
 
 <p>If you are planning to build a website or application, it is important to choose the right tech stack. The right tech stack can help to ensure that your website or application is successful.</p>
 
-<h2>Web stacks</h2>
+<h2 id="web-stacks">Web stacks</h2>
 
 <p>Here is a list of the most popular tech stacks from old to new, along with an explanation of the advantages of new stack platforms for web development:</p>
 
-<h3>Old tech stacks:</h3>
+<h3 id="old-stacks">Old tech stacks:</h3>
 <ul>
     <li>LAMP stack: This is one of the oldest and most popular tech stacks. It consists of Linux, Apache, MySQL, and PHP.</li>
     <li>MEAN stack: This is a newer tech stack that is based on JavaScript. It consists of MongoDB, Express, Angular, and Node.js.</li>
@@ -71,7 +120,7 @@
     <li>Django stack: This is a popular tech stack for web development that is based on Python. It consists of Python, Django, MySQL, and PostgreSQL.</li>
 </ul>
 
-<h3>New tech stacks:</h3>
+<h3 id="new-stacks">New tech stacks:</h3>
   <ul>
     <li>React stack: This is a popular tech stack for web development that is based on React. It consists of React, Node.js, Express, and MongoDB.</li>
     <li>Vue.js stack: This is a popular tech stack for web development that is based on Vue.js. It consists of Vue.js, Node.js, Express, and MongoDB.</li>
@@ -95,7 +144,7 @@
 <p>Overall, new stack platforms offer a number of advantages over older tech stacks. If you are looking for a tech stack that is scalable, efficient, secure, and easy to use, then a new stack platform is a good option.</p>
 
 <!-- work in progress-->
-<h2>Hybrid stacks</h2>
+<h2 id="hybrid-stacks">Hybrid stacks</h2>
 
 <p>Tech Stack for Rust, Go, Julia, and Java in Web Development. These languages are not specific design for Web developeent and require many components to create comprehensive n-tire web applications.</p>
 
@@ -150,7 +199,7 @@
    </table>
 </div>
 
-<h2>Alternative stacks</h2>
+<h2 id="alternative-stacks">Alternative stacks</h2>
 
 <p>Here are some tech stacks unrelated to web development but specific to apps:</p>
 
@@ -164,7 +213,7 @@
 </ul>
 
 
-<h3>Native app developement</h3>
+<h3 id="native-app">Native app developement</h3>
 
 <p>Here are some of the most popular tech stacks for native app development:</p>
 
@@ -173,7 +222,7 @@
   <li>Android app development: Kotlin and Java are the two most popular programming languages for Android app development.</li>
 </ul>
 
-<h3>Hybrid app development</h3>
+<h3 id="hybrid-app">Hybrid app development</h3>
 
 <ul>
   <li>React Native: React Native is a popular JavaScript framework for developing hybrid apps.</li>
@@ -181,7 +230,7 @@
   <li>Cordova: Cordova is a popular open-source framework for developing hybrid apps.</li>
 </ul>
 
-<h3>Cross-platform app development</h3>
+<h3 id="cross-platform-app">Cross-platform app development</h3>
 
 <ul>
   <li>Flutter: Flutter is a popular open-source framework for developing cross-platform apps.</li>
@@ -190,7 +239,7 @@
   <li>NativeScript: NativeScript is a popular open-source framework for developing cross-platform apps.</li>
 </ul>
 
-<h2><a id="design"></a>Design Patterns</h2>
+<h2 id="design-patterns">Design Patterns</h2>
 
 <p>Apart from HTML+CSS static websites, there are different ways of building a dynamic website. It may be difficult to chose the architecture and the design. You must consider the programming language and the components you need. Here are some common design patterns:</p>
 
@@ -464,6 +513,10 @@
 <p>Each type of app development has its own advantages and disadvantages. Native apps are typically the fastest and most responsive, but they can be more difficult to develop and maintain. Hybrid apps are easier to develop and maintain, but they can be slower and less responsive than native apps. Cross-platform apps are the easiest to develop and maintain, but they can be slower and less responsive than native apps.</p>
 
 <p>The best type of app development for you will depend on your specific needs and requirements. If you need an app that is fast, responsive, and has the best possible user experience, then native app development is the best option. If you need an app that is easy to develop and maintain, then hybrid or cross-platform app development is the best option.</p>
+
+    </main>
+  </div>
+</div>
 
 <hr>
 <p><b>Read next:</b>
