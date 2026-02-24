@@ -144,7 +144,7 @@ a:active {
 
 /* Styles images with rounded corners. */
 img {
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 /* ==========================================================================
@@ -309,7 +309,7 @@ th {
 .card-slate {
     background-color: #1a1a1a; /* Very dark gray, almost black. */
     border: 1px solid #333; /* Subtle border. */
-    border-radius: 12px;
+    border-radius: 5px;
     transition: 0.3s;
     height: 100%; /* Ensures cards in a row have the same height. */
     display: flex;
@@ -524,7 +524,7 @@ hr {
 /* Custom Scrollbar for the sidebar (WebKit browsers like Chrome/Safari). */
 .sidebar-content::-webkit-scrollbar { width: 4px; }
 .sidebar-content::-webkit-scrollbar-track { background: transparent; }
-.sidebar-content::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+.sidebar-content::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
 .sidebar-content::-webkit-scrollbar-thumb:hover { background: #8f00b3; } /* Purple hover on scrollbar. */
 
 
@@ -767,7 +767,7 @@ hr {
 .book-card {
     background-color: #1a1a1a;
     border: 1px solid #333;
-    border-radius: 8px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -784,7 +784,7 @@ hr {
 .book-card img {
     max-width: 200px; /* Constrains book cover size. */
     margin-bottom: 10px;
-    border-radius: 0px; /* Book covers shouldn't have rounded corners. */
+    border-radius: 2px; /* Book covers shouldn't have rounded corners. */
     box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Adds depth to the book cover. */
 }
 
@@ -814,7 +814,7 @@ hr {
     padding-bottom: 28%; /* Aspect ratio hack. */
     height: 0;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .responsive-video-container video {
