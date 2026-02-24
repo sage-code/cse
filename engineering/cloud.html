@@ -27,6 +27,85 @@
         
  <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
+</div>
+
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="services"> 
+            <a href="#services" class="fw-bold">Services</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="iaas"> <a href="#iaas">Infrastructure as a Service (IaaS)</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="paas"> <a href="#paas">Platform as a Service (PaaS)</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="saas"> <a href="#saas">Software as a Service (SaaS)</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="benefits"> 
+            <a href="#benefits" class="fw-bold">Benefits</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="challenges"> 
+            <a href="#challenges" class="fw-bold">Challenges</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="use-cases"> 
+            <a href="#use-cases" class="fw-bold">Use Cases</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="docker"> 
+            <a href="#docker" class="fw-bold">Docker</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="kubernetes"> 
+            <a href="#kubernetes" class="fw-bold">Kubernetes</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="cloud-providers"> 
+            <a href="#cloud-providers" class="fw-bold">Cloud Providers</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="big-players"> <a href="#big-players">Big players</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="service-names"> <a href="#service-names">Service Names</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="competition"> <a href="#competition">Competition</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="data-centers"> 
+            <a href="#data-centers" class="fw-bold">Data Centers</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="cloud-roles"> 
+            <a href="#cloud-roles" class="fw-bold">Cloud Roles</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="platform-engineer"> <a href="#platform-engineer">Platform Engineer</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="techops-engineer"> <a href="#techops-engineer">Techops Engineer</a></li>
+            </ul>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="other-roles"> 
+            <a href="#other-roles" class="fw-bold">Other Roles</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="future-cloud"> 
+            <a href="#future-cloud" class="fw-bold">Future of Cloud Computing</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
 
 <h2>Cloud Computing</h2>
 
@@ -40,29 +119,29 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
     alt="Cloud"><p>Cloud Services</p>
 </div>
 
-<h2>Services</h2>
+<h2 id="services">Services</h2>
 
 <p>There are three main cloud computing service models: Infrastructure as a Service (IaaS), Platform as a Service (PaaS), and Software as a Service (SaaS).</p>
 
-<h3>Infrastructure as a Service (IaaS)</h3>
+<h3 id="iaas">Infrastructure as a Service (IaaS)</h3>
 
 <p>IaaS provides businesses with access to the basic building blocks of cloud computing, such as virtual machines, storage, and networking. Businesses can use IaaS to build and run their own applications and services.</p>
 
 <p>For example, a business might use IaaS to create a virtual machine to run a web server. The business would then be responsible for installing and configuring the web server software.</p>
 
-<h3>Platform as a Service (PaaS)</h3>
+<h3 id="paas">Platform as a Service (PaaS)</h3>
 
 <p>PaaS provides businesses with a platform to develop, deploy, and manage applications. PaaS providers typically provide a set of pre-configured tools and services that businesses can use to build their applications.</p>
 
 <p>For example, a business might use PaaS to create a web application. The business would not need to worry about the underlying infrastructure, such as virtual machines and storage. The PaaS provider would handle all of that.</p>
 
-<h3>Software as a Service (SaaS)</h3>
+<h3 id="saas">Software as a Service (SaaS)</h3>
 
 <p>SaaS provides businesses with access to ready-made applications that are hosted in the cloud. SaaS providers typically charge businesses a monthly subscription fee to use their applications.</p>
 
 <p>For example, a business might use SaaS to use an email application. The business would not need to install and maintain the email application on its own servers. The SaaS provider would handle all of that.</p>
 
-<h2>Benefits</h2>
+<h2 id="benefits">Benefits</h2>
 
 <ul>
 <li>Scalability: Cloud computing services can be easily scaled up or down to meet the needs of businesses. This means that businesses can avoid over-provisioning or under-provisioning their resources.</li>
@@ -70,7 +149,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 <li>Security: Cloud computing services are typically secure. Cloud service providers use a variety of security measures to protect their data centers and the data that they store.</li>
 </ul>
 
-<h2>Challenges</h2>
+<h2 id="challenges">Challenges</h2>
 
 <ul>
 <li>Security: Despite the security measures that cloud service providers use, there is always a risk of data breaches.</li>
@@ -80,7 +159,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 
 <p>Overall, cloud computing service models offer a number of benefits for businesses. However, there are also some challenges that businesses need to be aware of.</p>
 
-<h2>Use Cases</h2>
+<h2 id="use-cases">Use Cases</h2>
 
 <p>If you are a software engineer, it is important to learn about cloud computing. Cloud computing can help you to improve the scalability, reliability, security, and cost-effectiveness of your applications.</p>
 
@@ -95,7 +174,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 <p>Overall, cloud computing is a powerful tool that can be used to improve the development, deployment, and management of software applications. If you are a software engineer, it is important to learn about cloud computing and to consider how it can be used to improve your work.</p>
 
 
-<h2>Docker</h2>
+<h2 id="docker">Docker</h2>
 
 <p>Docker is a containerization platform. It allows developers to package applications into containers that include all dependencies.</p>
 
@@ -109,7 +188,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 
 <p>Docker is widely used in cloud environments to package and deploy applications. Docker containers can be deployed to VMs, servers or cloud providers.</p>
 
-<h2>Kubernetes</h2> 
+<h2 id="kubernetes">Kubernetes</h2> 
 
 <p>Kubernetes is an open-source platform for automating the management of containerized applications.</p>
 
@@ -133,11 +212,11 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 <div class="alert alert-info">This combination of Docker and Kubernetes is widely used in cloud native applications to achieve scalability, availability and easy deployment. A patform engineer must understand how to configure software on these platforms to design and deplou cloud sollutions.</div>
 
 
-<h2>Cloud Providers</h2>
+<h2 id="cloud-providers">Cloud Providers</h2>
 
 <p>There are a number of popular cloud computing companies, including:</p>
 
-<h3>Big players</h3>
+<h3 id="big-players">Big players</h3>
 
 <ul>
     <li><a href="https://aws.amazon.com/"
@@ -152,7 +231,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
         target="_blank">Oracle Cloud</a></li>        
 </ul>
 
-<h3>Service Names</h3>
+<h3 id="service-names">Service Names</h3>
 
 <p>Different companies use different service names. Therefore learning specific cloud computing for one company is not necesarly useful when you migrate to a different company. A software architect has to be familiar with the specific names before establish the architecture to use in a specific application.</p>
 
@@ -188,7 +267,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 </table>
 
 
-<h3>Competition</h3>
+<h3 id="competition">Competition</h3>
 
 <p>There are new companies, smaller and more agile who provide more affordable cloud services. If you are a startup or an individual you can investigate and use one of these platforms to manage your costs.</p>
 
@@ -223,7 +302,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 </tbody>    
 </table>
 
-<h2>Data Centers</h1>
+<h2 id="data-centers">Data Centers</h2>
 
 <p>A data center is a physical location where computer systems and associated components, such as telecommunications and storage systems, are concentrated.</p>
 
@@ -235,13 +314,13 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 
 <p>Overall, data centers are an essential part of the cloud computing infrastructure. They provide the physical resources that cloud service providers need to deliver their services to customers.</p>
 
-<h2>Cloud Roles</h2>
+<h2 id="cloud-roles">Cloud Roles</h2>
 
-<h3>Platform Engineer</h3>
+<h3 id="platform-engineer">Platform Engineer</h3>
 
 <p>A platform engineer is responsible for the design, development, and maintenance of the platform that supports an organization's applications and systems. This includes the underlying infrastructure, such as servers, storage, and networking, as well as the middleware and tools that are used to develop and deploy applications.</p>
 
-<h3>Techops Engineer</h3>
+<h3 id="techops-engineer">Techops Engineer</h3>
 
 <p>A techops engineer, on the other hand, is responsible for the operational aspects of the platform. This includes tasks such as monitoring the platform for performance and availability issues, troubleshooting problems, and deploying new features.</p>
 
@@ -270,7 +349,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 
 <p>Both roles are essential for the success of a cloud platform. Platform engineers provide the foundation for the platform, while techops engineers ensure that the platform is reliable and scalable.</p>
 
-<h2>Other Roles</h2>
+<h2 id="other-roles">Other Roles</h2>
 
 <table class="table table-bordered table-striped table-dark">
 <thead>
@@ -318,7 +397,7 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 <p>These are just a few of the many resources where you can learn cloud computing for free. With a little effort, you can learn the basics of cloud computing and get started with your cloud computing journey.</p>
 
 
-<h2>Future of Cloud Computing</h2>
+<h2 id="future-cloud">Future of Cloud Computing</h2>
 
 <p>Cloud computing is a rapidly growing industry, and the future of the industry looks very bright. There are a number of factors that are driving the growth of the cloud computing industry. These factors include:
 
@@ -343,6 +422,10 @@ The term "cloud" for the internet was first used in the 1960s, when network diag
 <hr>
 <p><b>Read next:</b>
 <a href="/engineering/compilers/">Crafting Compilers</a></p>
+
+    </main>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer copyright">

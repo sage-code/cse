@@ -27,11 +27,46 @@
 
 <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
+</div>
+
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="principles"> 
+            <a href="#principles" class="fw-bold">Architectural principles</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="quality"> 
+            <a href="#quality" class="fw-bold">System quality</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="code"> 
+            <a href="#code" class="fw-bold">Code Quality</a>
+            <ul class="list-unstyled ms-4 mt-1">
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="code-attributes"> <a href="#code-attributes">Code attributes</a></li>
+              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="making-documentation"> <a href="#making-documentation">Making Documentation</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
 
 <h1>Software Architecture</h1>
 
-<div class="alert alert-secondary shadow-sm">
-Software architecture is a comprehensible way of describing the components and functions of a software system. The purpose of this discipline is to get an abstract level of understanding for the reasons and values of the design choices.</div>
 
 
 <h4>Motivation</h4>
@@ -45,27 +80,7 @@ Software architecture is a comprehensible way of describing the components and f
 
 <hr>
 
-<h4>Page bookmarks</h4>
-
-<hr>
-
-<p>Use these bookmarks to read your favorite topic.</p>
-
-<ul>
-<li><a href="#principles">Architectural principles</a></li>
-<li><a href="#quality">System quality</a></li>
-<li><a href="#quality">Code quality</a></li>
-<li><a href="#patterns">Design Patterns</a></li>
-<li><a href="#tiers">Application Tiers</a></li>
-<li><a href="#website">Building a Website</a></li>
-<li><a href="#solid">SOLID in Web Development</a></li>
-<li><a href="#project">Setting-up the project</a></li>
-<li><a href="#SC">Supercomputer Centers</a></li>
-</ul>
-
-<hr>
-
-<h2><a id="principles"></a>Architectural principles</h2>
+<h2 id="principles">Architectural principles</h2>
 
 <p>When you design an architecture you must consider several aspects.</p>
 <ol>
@@ -76,7 +91,7 @@ Software architecture is a comprehensible way of describing the components and f
 <li>Foolproof safety: means infallible, or so simple or well-made that nothing can go wrong. It's synonyms are reliable, guaranteed, flawless. There's no such word as foolproof. If a fool is lacking in good sense, the opposite is someone shrewd.</li>
 </ol>
 
-<h2><a id="quality"></a>System quality</h2>
+<h2 id="quality">System quality</h2>
 
 <p>In the past the focus of designers was to resolve multiple requirements and implement features for the system as fast as possible. This approach can lead to accumulation of technical dept and poor quality. Any project who do not focus on higher quality is doomed to failure.</p>
 
@@ -147,11 +162,11 @@ Software architecture is a comprehensible way of describing the components and f
 
 <p>Your project should address and monitor all these aspects of quality. Identification of quality issues is a profession. There are quality specialists that can perform code review and quality assessment. These persons are very expensive and difficult to have in a company, therefore Software Developers must cover some of these skills.</p>
 
-<h2><a id="code"></a>Code Quality</h2>
+<h2 id="code">Code Quality</h2>
 
 <p>One of most important concerns of Software Architecture is to establish rules and guidelines for making code of higher quality. After many years of practice we have come to appreciate for some design patterns that can be used to create better code. Next we explain the attributes and considerations for making your code <em>sage</em>.</p>
 
-<h4>Code attributes</h4>
+<h3 id="code-attributes">Code attributes</h3>
 
 <div class="alert alert-secondary">To achieve greater software quality, you start with the source code. If this is not clean then the entire codebase suffer and the final software product will have lower quality. We are pointing out top quality attributes, so that you and your team can learn how to write better code.</div>
 
@@ -194,7 +209,7 @@ Software architecture is a comprehensible way of describing the components and f
 
 <p><b>Note:</b> Source code quality do not imply "performance" or "reliability", nor "efficiency" or "business value". Indeed these are also attributes to consider for software quality but they are related to final product not the source code. First think how developers write code and next be concerned about other quality aspects. We believe that code must be beautiful then correct then fast then efficient, in this order.</p>
 
-<h3>Making Documentation</h3>
+<h3 id="making-documentation">Making Documentation</h3>
 
 <p>Most languages are capable of self documented source code, using comments and annotations. It is important to know, some annotations can be parsed by a special program and converted in HTML pages automatically.</p>
 <p>In our articles we use examples and comments to explain the essentials. Once you grasp the basics and start codding you will need more. There is nothing better or more complete than a good reference manual. Find it and read it!</p>
@@ -582,6 +597,9 @@ pass # end if</code></pre>
 <p><b>Read next:</b>
 <a href="/engineering/patterns/">Design Patterns</a></p>
 
+    </main>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="footer copyright">

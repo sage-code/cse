@@ -26,6 +26,67 @@
 
 <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
+</div>
+
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="formal-grammar"> 
+            <a href="#formal-grammar" class="fw-bold">Formal grammar</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="grammar-description"> 
+            <a href="#grammar-description" class="fw-bold">Grammar description</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="math-expressions"> 
+            <a href="#math-expressions" class="fw-bold">Mathematical Expressions</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="expression-form"> 
+            <a href="#expression-form" class="fw-bold">Expression form (semantic)</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="scanner"> 
+            <a href="#scanner" class="fw-bold">Scanner</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="lexer"> 
+            <a href="#lexer" class="fw-bold">Lexer</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="parser"> 
+            <a href="#parser" class="fw-bold">Parser</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="code-generator"> 
+            <a href="#code-generator" class="fw-bold">Code Generator</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="main-program"> 
+            <a href="#main-program" class="fw-bold">Main program</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="practice-projects"> 
+            <a href="#practice-projects" class="fw-bold">Practice Projects</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
 
 <h1>Crafting Compilers</h1>
 
@@ -33,11 +94,11 @@
 Compilers are special software applications that can read source code in a specific programming language and translate this into <em>code machine</em> to be executed. Interpreters are similar to compilers but work differently. Interpreters are interactive applications that execute expressions and statements immediately or can load a script in memory and run it without compilation.
 </div>
 
-<h2>Formal grammar</h2>
+<h2 id="formal-grammar">Formal grammar</h2>
 
 <p>In computer science a language is defined by formal grammar. In formal language theory, a grammar is a set of production rules for strings that form a language. The rules describe how to form strings from the language alphabet that are valid according to the language syntax.</p>
 
-<h2>Grammar description</h2>
+<h2 id="grammar-description">Grammar description</h2>
 
 <p>To explain language grammar we can use specific notation:</p>
 <ul>
@@ -50,7 +111,7 @@ Compilers are special software applications that can read source code in a speci
 
 <div class="alert alert-warning"><b>Warning:</b> I think creation of new computer languages by individual developers is a really bad idea. You need a team of developers well motivated and an unlimited budget to make a new language work. This is for elite software developers and leading companies. However in this article I will present the basic concepts for new languages. Learning this may be helpful for understanding better how a programming language is actually working.</div>
 
-<h2>Mathematical Expressions</h2>
+<h2 id="math-expressions">Mathematical Expressions</h2>
 
 <p>Is a finite combination of symbols that is well-formed according to rules that depend on the context. Mathematical symbols can designate numbers elements, operators or tokens: {constants, variables, operations, functions, punctuation, grouping}, and some other aspects of logical syntax. Well-formed (syntax)</p>
 <p>A well-formed expression is a syntactic concept. A syntax is a set of rules, principles, and processes that govern the structure of a given language.</p>
@@ -59,7 +120,7 @@ Compilers are special software applications that can read source code in a speci
 
 <pre><code class="language-python"> * 4 ) x+,/y.</code></pre>
 
-<h2>Expression form (semantic)</h2>
+<h2 id="expression-form">Expression form (semantic)</h2>
 
 <p>Mathematical expressions include multiple forms of expressions: {arithmetic, polynomial, algebraic, closed-form, and analytical}. The form of an expression is a semantics concept.Semantics is the study of meaning. Formal semantics is about attaching meaning to expressions. Expression evaluation</p>
 <p>An expression may be used to designate a value, which might depend on variables occurring in the expression. The determination of this value depends on the semantics attached to the symbols of the expression.</p>
@@ -71,7 +132,7 @@ Compilers are special software applications that can read source code in a speci
 <pre><code class="language-python">Source File -&gt; Scanner -&gt; Lexer -&gt; Parser -&gt; Code Generator -&gt; Output File
 </code></pre>
 
-<h2>Scanner</h2>
+<h2 id="scanner">Scanner</h2>
 
 <p>A scanner read the source file one character at a time. It also keep track of line number and character position in the line. A scanner usually read forward one character but sometimes scanner can read backwards or can read one character ahead.</p>
 <p><b>For example:</b></p>
@@ -144,13 +205,13 @@ program
 <p>Some compilers/interpreters are able to execute code from memory using AST and symbolic table without generating any intermediate code. This method can be used for scripting languages.</p>
 <p>In the past compiler engineers use to be concerned about computer memory. Compilers use to create intermediate files and multiple passes of source code, to optimize the code as much as possible. This is not one of my concerns. This days the computer memory is plentiful and there should be space for most programs.</p>
 
-<h2>Main program</h2>
+<h2 id="main-program">Main program</h2>
 
 <p>The parser use the lexer which is using the scanner. Therefore the main program can call only the parser. The parser will have a "driver function" that will initialize the lexer and the lexer will have a "driver function" to will initialize the scanner. Symbols and categories</p>
 <p>It is a good design to create resources for your language before start parsing. That are collections of symbols and tokens organized by category. For every category you created a set. During parsing process you can check if a token belong to a particular category and store the token in the symbol table with category information. Further reading</p>
 <p>After you design a new syntax, you should create a compiler or interpreter. There are free books and resources on internet to learn how to parse a language and generate code. Once you have learned this technique you are a "compiler engineer"</p>
 
-<h2>Practice Projects</h2>
+<h2 id="practice-projects">Practice Projects</h2>
 
 <p>For this course we are preparing design for several alternative programming languages. Visit the project page to read details about these projects. If you want to contribute you can contact us on Discord where we chat about our work.</p>
 <hr>
