@@ -1,50 +1,470 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-  <loc>https://sagecode.pro/</loc>
-  <lastmod>2025-04-08</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>1.0</priority>
-</url>
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://sagecode.pro/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
+  <!-- Main Navigation Pages -->
+  <url>
+    <loc>https://sagecode.pro/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/projects/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/community/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/programming/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/engineering/</loc></url>
+  <url>
+    <loc>https://sagecode.pro/projects/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
 
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/ada/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/assembly/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/bash/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/bee/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/c/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/carbon/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/csharp/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/css/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/dart/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/ds/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/eve/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/fortran/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/go/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/html/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/hw/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/java/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/julia/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/maj/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/nim/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/php/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/plsql/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/python/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/react/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/ruby/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/rust/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/scala/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/script/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/swift/</loc></url>
-<url><lastmod>2025-04-08</lastmod><loc>https://sagecode.pro/zig/</loc></url>
+  <url>
+    <loc>https://sagecode.pro/community/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Core Engineering Tutorials -->
+  <url>
+    <loc>https://sagecode.pro/engineering/concepts.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/paradigms.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/languages.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/patterns.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/architecture.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/algebra.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/algorithms.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/structures.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/databases.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/db-design.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/web-dsgn.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/testing.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/cybersec.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/cloud.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/platforms.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/systems.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/tech.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/tools.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/version.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- CSS Section -->
+  <url>
+    <loc>https://sagecode.pro/engineering/css/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/css/syntax.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/css/box-model.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/css/typography.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/css/responsive.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/css/animation.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/css/frameworks.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- HTML Section -->
+  <url>
+    <loc>https://sagecode.pro/engineering/html/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/html/syntax.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/html/semantic.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/html/forms.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/html/tables.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/html/performance.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Data Science Section -->
+  <url>
+    <loc>https://sagecode.pro/engineering/ds/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/ds/basic-concepts.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/ds/analysis.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/ds/machine-learning.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/ds/deep-learning.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/ds/visualization.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Hardware Section -->
+  <url>
+    <loc>https://sagecode.pro/engineering/hw/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/hw/computers.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/engineering/hw/networks.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Programming Languages -->
+  <url>
+    <loc>https://sagecode.pro/programming/python/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/rust/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/java/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/javascript/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/go/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/c/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/cpp/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/ruby/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/dart/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Additional Popular Languages -->
+  <url>
+    <loc>https://sagecode.pro/programming/julia/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/nim/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/swift/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/programming/zig/index.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>quarterly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Projects Section -->
+  <url>
+    <loc>https://sagecode.pro/projects/bee/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/projects/eve/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/projects/maj/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Utility and Legal Pages -->
+  <url>
+    <loc>https://sagecode.pro/legal.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://sagecode.pro/manifesto.html</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
