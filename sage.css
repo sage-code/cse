@@ -28,6 +28,14 @@ main {
     padding-top: 5px; /* Adds a little space at the top. */
 }
 
+/* Utility class for larger, highlighted text sections. */
+.lead {
+    font-family: 'Roboto', sans-serif;
+    border-left: 3px solid #8f00b3;
+    padding-left: 20px;
+    font-style: italic;
+}
+
 /* Enables smooth scrolling when navigating to an anchor link (e.g., #section). */
 html {
     scroll-behavior: smooth;
