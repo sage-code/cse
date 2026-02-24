@@ -31,6 +31,58 @@
 
 <h1>Prompt Engineering</h1>
 
+<!-- sidebar -->
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <h5>Study Progress</h5>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="prompts"> 
+            <a href="#prompts" class="fw-bold">Prompts</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="tips"> 
+            <a href="#tips" class="fw-bold">Tips</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="use-cases"> 
+            <a href="#use-cases" class="fw-bold">Use Cases</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="examples"> 
+            <a href="#examples" class="fw-bold">Examples</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="generative-programming"> 
+            <a href="#generative-programming" class="fw-bold">Generative Programming</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="content-creation"> 
+            <a href="#content-creation" class="fw-bold">Content Creation</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="ethical-considerations"> 
+            <a href="#ethical-considerations" class="fw-bold">Ethical Considerations</a>
+          </li>
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="external-resources"> 
+            <a href="#external-resources" class="fw-bold">External Resources</a>
+          </li>
+        </ul>
+        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
+          <span style="font-size: 24px;">☰</span>
+        </button>
+      </div>
+    </aside>
+<!-- main content -->
+    <main class="col-lg-9 col-12 order-2 order-lg-1">
+
 <div class="alert alert-secondary shadow-sm">
 Prompt engineering is a process of designing and refining input prompts for AI models to generate a desired output. In prompt engineering you use English to create a request and the AI agent will respond relative fast to your request with a response.
 </div>
@@ -138,11 +190,15 @@ Prompt engineering is a process of designing and refining input prompts for AI m
 <hr>
 <p><b>Read next:</b><a href="/engineering/systems/">System Design</a></p>
 
+    </main>
+    </div>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
-</div>
 <script src="/sage.js" defer></script>
 <script src="/sidebar.js" defer></script>
 <script src="/progress.js" defer></script>
