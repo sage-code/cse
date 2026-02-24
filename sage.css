@@ -566,8 +566,8 @@ hr {
     /* Ensure sub-items indent properly on mobile */
     #study-sidebar #bookmark-list ul {
         padding-left: 15px !important; 
-        margin-left: 12px !important;
-        border-left: 2px solid #756e6e;
+        margin-left: 14px !important;
+        border-left: 1px solid #756e6e;
     }
 
     #study-sidebar #bookmark-list {
