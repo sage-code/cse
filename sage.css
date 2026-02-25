@@ -221,10 +221,10 @@ img {
     .chalk-body {
         font-size: 1rem;
         line-height: 1.2;
-        max-width: 820px;
         word-break: break-word; /* Prevents text overflow. */
         padding-top: 0;
-        padding-left: 0px;
+        padding-left: 0;
+        hyphens: auto; /* Allows for better word breaking on small screens. */
     }
 }
 
