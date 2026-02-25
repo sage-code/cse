@@ -13,7 +13,7 @@
     {
       "file": "engineering/dsc/index.html",
       "line_number": 41,
-      "current_src": "/dsc/img/ds-domain.jpeg",
+      "current_src": "/engineering/dsc/img/ds-domain.jpeg",
       "issue_type": "wrong_path",
       "expected_src": "/engineering/dsc/img/ds-domain.jpeg",
       "reason": "Path missing '/engineering/' prefix"
@@ -21,7 +21,7 @@
     {
       "file": "engineering/dsc/life-cycle.html",
       "line_number": 43,
-      "current_src": "/dsc/img/data-lifecycle-graphic.png",
+      "current_src": "/engineering/dsc/img/data-lifecycle-graphic.png",
       "issue_type": "wrong_path",
       "expected_src": "/engineering/dsc/img/data-lifecycle-graphic.png",
       "reason": "Path missing '/engineering/' prefix"
