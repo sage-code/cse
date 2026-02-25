@@ -48,13 +48,13 @@ URL_PATTERNS = {
     # CSS and HTML sections
     "/css/": {"priority": 0.7, "changefreq": "quarterly"},
     "/html/": {"priority": 0.7, "changefreq": "quarterly"},
-    "/ds/": {"priority": 0.7, "changefreq": "quarterly"},
+    "/dsc/": {"priority": 0.7, "changefreq": "quarterly"},
     
     # Detailed pages - medium-low priority
     "/css/syntax": {"priority": 0.6, "changefreq": "quarterly"},
     "/css/box-model": {"priority": 0.6, "changefreq": "quarterly"},
     "/html/forms": {"priority": 0.6, "changefreq": "quarterly"},
-    "/hw/": {"priority": 0.6, "changefreq": "quarterly"},
+    "/hdw/": {"priority": 0.6, "changefreq": "quarterly"},
     
     # Projects - lower priority
     "/projects/bee/": {"priority": 0.6, "changefreq": "yearly"},

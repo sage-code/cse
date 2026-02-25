@@ -48,17 +48,17 @@ def get_similar_file(base_path):
 def categorize_issue(src, html_file, resolved_path):
     """Categorize the issue type and suggest fix"""
     
-    # Pattern 1: /hw/img/* should be /engineering/hw/img/*
-    if src.startswith('/hw/img/'):
-        corrected_src = src.replace('/hw/img/', '/engineering/hw/img/')
+    # Pattern 1: /hdw/img/* should be /engineering/hdw/img/*
+    if src.startswith('/hdw/img/'):
+        corrected_src = src.replace('/hdw/img/', '/engineering/hdw/img/')
         corrected_path = os.path.join(BASE_DIR, corrected_src.lstrip('/'))
         if file_exists(corrected_path):
             return "wrong_path_missing_prefix", corrected_src, f"Should be '{corrected_src}'"
         return "missing_engineering_hw_file", src, f"File not found (also tried '{corrected_src}')"
     
-    # Pattern 2: /ds/img/* should be /engineering/ds/img/*
-    if src.startswith('/ds/img/'):
-        corrected_src = src.replace('/ds/img/', '/engineering/ds/img/')
+    # Pattern 2: /dsc/img/* should be /engineering/dsc/img/*
+    if src.startswith('/dsc/img/'):
+        corrected_src = src.replace('/dsc/img/', '/engineering/dsc/img/')
         corrected_path = os.path.join(BASE_DIR, corrected_src.lstrip('/'))
         if file_exists(corrected_path):
             return "wrong_path_missing_prefix", corrected_src, f"Should be '{corrected_src}'"

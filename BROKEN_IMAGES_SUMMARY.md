@@ -7,27 +7,27 @@
 ## Issues by Category
 
 ### 1. Wrong Path Missing Prefix (71 issues)
-**Problem**: Image paths reference `/hw/img/*` and `/ds/img/*` but should reference `/engineering/hw/img/*` and `/engineering/ds/img/*`
+**Problem**: Image paths reference `/hdw/img/*` and `/dsc/img/*` but should reference `/engineering/hdw/img/*` and `/engineering/dsc/img/*`
 
 **Affected areas**:
-- `/hw/img/*` paths (engineering/hw files)
-- `/ds/img/*` paths (engineering/ds files)
+- `/hdw/img/*` paths (engineering/hw files)
+- `/dsc/img/*` paths (engineering/ds files)
 
 **Example issues**:
-- `engineering/hw/backup.html` line 54: `/hw/img/hdd-backup.webp` → should be `/engineering/hw/img/hdd-backup.webp`
-- `engineering/ds/index.html` line 41: `/ds/img/ds-domain.jpeg` → should be `/engineering/ds/img/ds-domain.jpeg`
+- `engineering/hdw/backup.html` line 54: `/hdw/img/hdd-backup.webp` → should be `/engineering/hdw/img/hdd-backup.webp`
+- `engineering/dsc/index.html` line 41: `/dsc/img/ds-domain.jpeg` → should be `/engineering/dsc/img/ds-domain.jpeg`
 
 **Files affected** (by count):
-- engineering/hw/backup.html - 21 instances
-- engineering/hw/computers.html - 5 instances
-- engineering/hw/connectors.html - 11 instances
-- engineering/hw/disk.html - 6 instances
-- engineering/hw/gpu.html - 7 instances
-- engineering/hw/networks.html - 5 instances
-- engineering/hw/power.html - 11 instances
-- engineering/ds/index.html - 1 instance
-- engineering/ds/life-cycle.html - 1 instance
-- engineering/ds/index.html - 1 instance
+- engineering/hdw/backup.html - 21 instances
+- engineering/hdw/computers.html - 5 instances
+- engineering/hdw/connectors.html - 11 instances
+- engineering/hdw/disk.html - 6 instances
+- engineering/hdw/gpu.html - 7 instances
+- engineering/hdw/networks.html - 5 instances
+- engineering/hdw/power.html - 11 instances
+- engineering/dsc/index.html - 1 instance
+- engineering/dsc/life-cycle.html - 1 instance
+- engineering/dsc/index.html - 1 instance
 
 ---
 
@@ -86,9 +86,9 @@
 ## Recommended Actions
 
 ### Priority 1: Fix Wrong Paths (71 issues)
-Bulk replace in all engineering/hw/*.html and engineering/ds/*.html files:
-- Replace `/hw/img/` → `/engineering/hw/img/`
-- Replace `/ds/img/` → `/engineering/ds/img/`
+Bulk replace in all engineering/hdw/*.html and engineering/dsc/*.html files:
+- Replace `/hdw/img/` → `/engineering/hdw/img/`
+- Replace `/dsc/img/` → `/engineering/dsc/img/`
 
 ### Priority 2: Fix File Extensions (74 issues)
 Replace `.jpg` with `.svg` for these diagrams in all affected files:
@@ -111,9 +111,9 @@ Replace `.jpg` with `.svg` for these diagrams in all affected files:
 ## File Processing Notes
 
 ### Most problematic files:
-1. `engineering/hw/backup.html` - 21 broken references
-2. `engineering/hw/connectors.html` - 11 broken references
-3. `engineering/hw/power.html` - 11 broken references
+1. `engineering/hdw/backup.html` - 21 broken references
+2. `engineering/hdw/connectors.html` - 11 broken references
+3. `engineering/hdw/power.html` - 11 broken references
 4. `programming/dart/flutter -all.html` - Multiple missing images
 5. `programming/dart/layouts.html` - Multiple missing images
 

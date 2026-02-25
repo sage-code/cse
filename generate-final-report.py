@@ -28,13 +28,13 @@ def file_exists(path):
 def get_suggestion(src, html_file, resolved_path):
     """Generate expected_src suggestion"""
     
-    # Pattern 1: /hw/img/* should be /engineering/hw/img/*
-    if src.startswith('/hw/img/'):
-        return src.replace('/hw/img/', '/engineering/hw/img/')
+    # Pattern 1: /hdw/img/* should be /engineering/hdw/img/*
+    if src.startswith('/hdw/img/'):
+        return src.replace('/hdw/img/', '/engineering/hdw/img/')
     
-    # Pattern 2: /ds/img/* should be /engineering/ds/img/*
-    if src.startswith('/ds/img/'):
-        return src.replace('/ds/img/', '/engineering/ds/img/')
+    # Pattern 2: /dsc/img/* should be /engineering/dsc/img/*
+    if src.startswith('/dsc/img/'):
+        return src.replace('/dsc/img/', '/engineering/dsc/img/')
     
     # Pattern 3: Relative path without leading slash
     if not src.startswith('/') and not src.startswith('http'):
@@ -49,7 +49,7 @@ def get_suggestion(src, html_file, resolved_path):
 def categorize_issue(src):
     """Categorize the issue"""
     
-    if src.startswith('/hw/img/') or src.startswith('/ds/img/'):
+    if src.startswith('/hdw/img/') or src.startswith('/dsc/img/'):
         return "wrong_path"
     
     if src.endswith('.jpg') and '/images/' in src:

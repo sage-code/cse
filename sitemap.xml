@@ -274,42 +274,42 @@
 
   <!-- Data Science Section -->
   <url>
-    <loc>https://sagecode.pro/engineering/ds/index.html</loc>
+    <loc>https://sagecode.pro/engineering/dsc/index.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/ds/basic-concepts.html</loc>
+    <loc>https://sagecode.pro/engineering/dsc/basic-concepts.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/ds/analysis.html</loc>
+    <loc>https://sagecode.pro/engineering/dsc/analysis.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/ds/machine-learning.html</loc>
+    <loc>https://sagecode.pro/engineering/dsc/machine-learning.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/ds/deep-learning.html</loc>
+    <loc>https://sagecode.pro/engineering/dsc/deep-learning.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/ds/visualization.html</loc>
+    <loc>https://sagecode.pro/engineering/dsc/visualization.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
@@ -317,21 +317,21 @@
 
   <!-- Hardware Section -->
   <url>
-    <loc>https://sagecode.pro/engineering/hw/index.html</loc>
+    <loc>https://sagecode.pro/engineering/hdw/index.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/hw/computers.html</loc>
+    <loc>https://sagecode.pro/engineering/hdw/computers.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://sagecode.pro/engineering/hw/networks.html</loc>
+    <loc>https://sagecode.pro/engineering/hdw/networks.html</loc>
     <lastmod>2026-02-24</lastmod>
     <changefreq>quarterly</changefreq>
     <priority>0.6</priority>
