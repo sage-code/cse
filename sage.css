@@ -41,6 +41,15 @@ html {
     scroll-behavior: smooth;
 }
 
+/* repair the scrill bounce and layout shifting on mobile when using anchor links */
+html, body {
+    /* Prevents the 'pull-to-refresh' bounce and layout shifting */
+    overscroll-behavior-y: none; 
+    /* Ensures the body takes up exactly the viewport height without shifting */
+    height: 100%;
+    overflow-x: hidden;
+}
+
 /*
  * OFFSETS FOR STICKY HEADER
  * These rules prevent content from being hidden behind the sticky header when jumping to an anchor link.
