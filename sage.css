@@ -532,7 +532,7 @@ hr {
 @media (min-width: 992px) {
     .sidebar-content {
         position: sticky; /* Makes sidebar stick during scroll. */
-        top: 95px;      /* Sits below the 85px header with a 10px gap. */
+        top: 85px;      /* Sits below the 85px header with a 10px gap. */
         z-index: 1010;  /* Below the header (1020). */
         max-height: calc(100vh - 100px); /* Max height is the viewport height minus header. */
         overflow-y: auto; /* Enables scrolling only when content overflows. */
