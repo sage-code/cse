@@ -220,7 +220,7 @@ img {
     }
 
     .chalk-body {
-        font-size: 1rem;
+        font-size: 1.2rem;
         line-height: 1.2;
         word-break: break-word; /* Prevents text overflow. */
         padding-top: 0;
