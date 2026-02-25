@@ -27,8 +27,6 @@
 <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h1>Version Control Systems</h1>
-
 <!-- sidebar -->
 <div class="container-fluid px-0">
   <div class="row g-0">
@@ -40,6 +38,10 @@
         </div>
         <hr>
         <ul id="bookmark-list" class="list-unstyled">
+          <li class="nav-item mb-2">
+            <input type="checkbox" class="topic-check" data-target="cases"> 
+            <a href="#version-control" class="fw-bold">Version Control</a>
+          </li>            
           <li class="nav-item mb-2">
             <input type="checkbox" class="topic-check" data-target="cases"> 
             <a href="#cases" class="fw-bold">Use-Cases</a>
@@ -111,7 +113,9 @@
       </div>
     </aside>
 <!-- main content -->
-    <main class="col-lg-9 col-12 order-2 order-lg-1">
+<main class="col-lg-9 col-12 order-2 order-lg-1">
+
+<h1 id="version-control">Version Control</h1>
 
 <div class="alert alert-secondary shadow-sm">Source code is difficult to make and subject to change. Sometimes your changes are not good and you have to revert changes and try something else. When you work in a team this becomes a significant problem. To track software changes professional developers are using a special software called <em>"Version Control System"</em> (VCS).</div>
 
