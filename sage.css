@@ -207,20 +207,22 @@ img {
 @media screen and (max-width: 768px) {
     .hero-blackboard {
         padding-top: 10px;
-        padding-left: 15px;
+        padding-left: 10px;
     }
 
     .chalk-text {
         font-size: 1.4rem;
         line-height: 1.2;
         padding-top: 0px;
+        padding-bottom: 8px;
     }
 
     .chalk-body {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         line-height: 1.2;
         max-width: 820px;
         word-break: break-word; /* Prevents text overflow. */
+        padding-top: 0.2rem;
     }
 }
 
@@ -584,7 +586,7 @@ hr {
 
     /* Adds padding to the bottom of the main content to prevent it from being hidden by the mobile sidebar toggle button. */
     main, .content-area {
-        padding-bottom: 100px !important;
+        padding-bottom: 80px !important;
     }
 
     /* The button to open the mobile sidebar. */
