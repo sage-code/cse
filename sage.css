@@ -550,6 +550,14 @@ hr {
 
 /* --- MOBILE: SLIDE-OUT OVERLAY --- */
 @media (max-width: 991px) {
+    /* The header becomes fixed to ensure it stays visible while the sidebar slides over the content. */
+    #dynamic-header {
+        position: fixed !important; /* Force it to stay at the top */
+        top: 0;
+        width: 100%;
+        z-index: 1020;
+    }
+
     /* Styles the sidebar container, positioned off-screen to the left. */
     #study-sidebar {
         position: fixed;
