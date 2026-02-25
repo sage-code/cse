@@ -44,19 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { rootMargin: '0px 0px -85% 0px' });
 
-    // --- 3. Interaction & Mobile Toggle ---
     
-    // Open Sidebar
+    // --- 3. Interaction & Mobile Toggle ---
     if (openBtn && sidebar) {
         openBtn.addEventListener('click', () => {
-            sidebar.classList.add('active');
-        });
-    }
+            // Toggle the 'active' class on the sidebar
+            sidebar.classList.toggle('active');
 
-    // Close Sidebar
-    if (closeBtn && sidebar) {
-        closeBtn.addEventListener('click', () => {
-            sidebar.classList.remove('active');
+            // Optional: Change the button icon for better UX
+            const icon = openBtn.querySelector('span');
+            if (sidebar.classList.contains('active')) {
+                icon.textContent = '✕'; // Change to "X"
+            } else {
+                icon.textContent = '☰'; // Change back to Hamburger
+            }
         });
     }
 
