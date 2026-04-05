@@ -6,36 +6,65 @@
   <meta name="author" content="Elucian Moise">
   <meta name="keywords" content="go, syntax, loop, for, while, do, if, else, switch, case">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
   <title>Go Control</title>
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
 
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
 
-<h2>Go: Control Flow</h2>
-
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Control Flow</h1>
 
 <div class="alert alert-secondary shadow-sm">Control flow is a group of statements used to control execution of statements. Normally a program is linear. That is statements are executed in order top down, step by step until the end of file. Using control statements we can make code branches, loops and selections.
 </div>
 
+<h2 id="structures">Control Flow Structures</h2>
 
-<h2>Decision Statement</h2>
+<p>Go provides several control flow mechanisms: conditionals (if/else), loops (for), and multi-way selections (switch).</p>
+
+<h2 id="if">Decision Statement (If/Else)</h2>
 
 <p>Go like any other languages has the "if" statement. This is using a <em>conditional expression</em> to create a fork in the program. When the conditional value is true the next statement or a group of statements is executed, otherwise is not executed and skipped.</p>
 
@@ -103,7 +132,7 @@ func main() {
 }
 </code></pre>
 
-<h2>Two branches</h2>
+<h3>Two Branches with Else</h3>
 
 <p>For creation of two blocks of code in decision statement we use the <em>"else"</em> keyword. This is also known as two ways conditional statement. Local variables declared using "if" statement are available in both branches, as expected.</p>
 
@@ -144,10 +173,11 @@ func main() {
 }
 </code></pre>
 
-<h2>Iteration</h2>
+<h2 id="for">Iteration (For Loops)</h2>
 
-<p>Go use only one keyword for all iterations: the "for" keyword. This can define a finite or infinite loop.</p>
-<h3>Basic loop</h3>
+<p>Go uses only one keyword for all iterations: the "for" keyword. This can define a finite or infinite loop.</p>
+
+<h3 id="basics">Basic Loop</h3>
 <p>The basic "for loop"<em><b> </b></em>has three components separated by semicolons:</p>
 <ol>
 <li>the <b><em>init statement</em></b>: executed before the first iteration</li>
@@ -232,7 +262,7 @@ func main() {
 }
 </code></pre>
 
-<h2>Switch</h2>
+<h2 id="switch">Switch Statement</h2>
 
 <p>The switch statement is a multi-path conditional selection statement. This allow program to execute on different logical path depending on value of one variable. A switch statement use 2 multiple keywords to create a multi-case construct. The keywords are: {switch, case, default, fallthrough}</p>
 
@@ -294,18 +324,38 @@ func main() {
 }
 </code></pre>
 
-<!-- todo: break and continue -->
+<h2 id="break">Break, Continue, and Loop Control</h2>
 
+<p>Go provides the <code>break</code> and <code>continue</code> statements to control loop execution. Use <code>break</code> to exit a loop prematurely and <code>continue</code> to skip to the next iteration.</p>
+      </main>
+    </div>
+  </div>
 
-<hr>
-<p><b>Read next:</b>
-<a href="/programming/go/functions/">Functions</a></p>
+  <hr>
 
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
+
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'control',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>

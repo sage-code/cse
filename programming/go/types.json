@@ -1,0 +1,10 @@
+[
+  {"title": "Types", "link": "#title"},
+  {"title": "Basic Types", "link": "#basics"},
+  {"title": "Integers", "link": "#integers"},
+  {"title": "Floats", "link": "#floats"},
+  {"title": "Strings", "link": "#strings"},
+  {"title": "Booleans", "link": "#booleans"},
+  {"title": "Type Conversion", "link": "#conversion"},
+  {"title": "Next: Arrays", "link": "./arrays.html"}
+]

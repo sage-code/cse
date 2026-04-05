@@ -1,0 +1,10 @@
+[
+  {"title": "Arrays & Slices", "link": "#title"},
+  {"title": "Arrays", "link": "#arrays"},
+  {"title": "Array Declaration", "link": "#declaration"},
+  {"title": "Slices", "link": "#slices"},
+  {"title": "Slice Operations", "link": "#slice-ops"},
+  {"title": "Dynamic Growth", "link": "#growth"},
+  {"title": "Range", "link": "#range"},
+  {"title": "Next: Maps", "link": "./maps.html"}
+]

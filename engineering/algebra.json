@@ -1,0 +1,53 @@
+  [
+  {
+    "target": "decimal",
+    "title": "Decimal System",
+    "link": "#decimal"
+  },
+  {
+    "target": "roman",
+    "title": "Roman System",
+    "link": "#roman"
+  },
+  {
+    "target": "binary",
+    "title": "Binary System",
+    "link": "#binary"
+  },
+  {
+    "target": "octal",
+    "title": "Octal System",
+    "link": "#octal"
+  },
+  {
+    "target": "hex",
+    "title": "Hexadecimal System",
+    "link": "#hex"
+  },
+  {
+    "target": "types",
+    "title": "Type Systems",
+    "link": "#types"
+  },
+  {
+    "target": "identifiers",
+    "title": "Identifiers",
+    "link": "#identifiers"
+  },
+  {
+    "target": "literals",
+    "title": "Data Literals",
+    "link": "#literals"
+  },
+  {
+    "target": "expressions",
+    "title": "Expressions",
+    "link": "#expressions"
+  },
+  {
+    "target": "namespace",
+    "title": "Namespaces & Scope",
+    "link": "#namespace"
+  },
+  {"title": "Next: Data Structures", "link": "./structures.html"}
+]

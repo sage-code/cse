@@ -6,33 +6,62 @@
   <meta name="author" content="Elucian Moise">
   <meta name="keywords" content="go, golang, language, syntax, programming, tutorial, error, errors">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
-  <title>Go Errors</title>  
-
-  <!-- Bootstrap CSS -->
+  <title>Go Errors</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">  
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
-        
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h2>Go Errors</h2>
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
+
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Error Handling</h1>
 
 <div class="alert alert-secondary shadow-sm">
 One Go program can execute normally or can have errors. Go programs create error state with "error" values. Functions often return a value of type "error". Calling code that may fail should handle errors by testing whether the "error" is <em>nil</em>.
 </div>
+
+<h2 id="basics">Error Interface Basics</h2>
 
 <p>
 The <em>error</em> type is a built-in interface similar to fmt.Stringer. You can implement any struct that implements this interface and you have a kind of error.</p>
@@ -50,9 +79,9 @@ if err != nil {
 }
 fmt.Println("Converted integer:", i)</code></pre>
 
-<h4>Example:</h4>
+<h2 id="handling">Error Handling Patterns</h2>
 
-<p>A nil error denotes success; a non-nil  error denotes failure. In next example we define a user error and we customize the error function:</p>
+<p>A nil error denotes success; a non-nil error denotes failure. In next example we define a user error and customize the error function:</p>
 
 <pre><code class="language-go line-numbers">//file error_hnd.go
 package main
@@ -85,9 +114,9 @@ func main() {
     }
 }</code></pre>
 
-<h2>Panic statement</h2>
+<h2 id="panic">Panic Statement</h2>
 
-<p>We use "panic" keyword to intrerupt the program. Typically it means something went unexpectedly wrong. Mostly we use it to fail fast on errors that shouldn't occur during normal operation.</p>
+<p>We use "panic" keyword to interrupt the program. Typically it means something went unexpectedly wrong. Mostly we use it to fail fast on errors that shouldn't occur during normal operation.</p>
 
 <pre><code class="language-go line-numbers">
 package main
@@ -106,9 +135,9 @@ func main() {
 }
 </code></pre>
 
-<h2>Recovering</h2>
+<h2 id="recover">Recover from Panic</h2>
 
-<p>Function recover() is provided for error handling. It must be called within a <em>a defer function</em>. When the enclosing function panics, the defer will activate and a recover() call within it will catch the panic error message and report it.</p>
+<p>Function recover() is provided for error handling. It must be called within a <em>defer function</em>. When the enclosing function panics, the defer will activate and a recover() call within it will catch the panic error message and report it.</p>
 
 <pre><code class="language-go line-numbers">
 package funcs
@@ -137,7 +166,7 @@ func TestRecover() {
 }
 </code></pre>
 
-<h2>Exit status</h2>
+<h2 id="exit">Exit Status</h2>
 
 <p>Go exit with return 0 from main() function. You can use os.Exit() in main() or in any other function to exit from application with a different status.</p>
 
@@ -167,18 +196,35 @@ exiting ...
 make: *** [Makefile:3: run] Error 3
 exit status 2
 </pre>
+      </main>
+    </div>
+  </div>
 
-<!-- work in progress-->
+  <hr>
 
-<hr>
-<p><b>Read next:</b>
-<a href="/programming/go/files/">Files & Folders</a></p>
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
 
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'errors',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>

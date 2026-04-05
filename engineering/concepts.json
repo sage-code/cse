@@ -1,0 +1,73 @@
+
+[
+  {
+    "target": "programs",
+    "title": "Computer programs",
+    "link": "#programs",
+    "children": [
+      {
+        "target": "app-purpose",
+        "title": "Application purpose",
+        "link": "#app-purpose"
+      },
+      {
+        "target": "app-execution",
+        "title": "Application execution",
+        "link": "#app-execution"
+      },
+      {
+        "target": "code-base",
+        "title": "Code base",
+        "link": "#code-base"
+      }
+    ]
+  },
+  {
+    "target": "symbols",
+    "title": "Programming symbols",
+    "link": "#symbols"
+  },
+  {
+    "target": "logic",
+    "title": "Logic science",
+    "link": "#logic",
+    "children": [
+      {
+        "target": "prop-logic",
+        "title": "Propositional Logic",
+        "link": "#prop-logic"
+      },
+      {
+        "target": "boolean",
+        "title": "Boolean algebra",
+        "link": "#boolean"
+      },
+      {
+        "target": "predicate-logic",
+        "title": "Predicate Logic",
+        "link": "#predicate-logic"
+      }
+    ]
+  },
+  {
+    "target": "list-sets",
+    "title": "Lists & Sets",
+    "link": "#list-sets"
+  },
+  {
+    "target": "machines",
+    "title": "State Machines",
+    "link": "#machines"
+  },
+  {
+    "target": "turing-machine",
+    "title": "Turing Machine",
+    "link": "#turing-machine"
+  },
+  {
+    "target": "inteligence",
+    "title": "Artificial Intelligence",
+    "link": "#inteligence"
+  },
+  {"title": "Next: Algebra", "link": "./algebra.html"}
+]

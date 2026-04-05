@@ -1,81 +1,31 @@
-// sidebar.js
-document.addEventListener('DOMContentLoaded', () => {
-    const pageKey = window.location.pathname; 
-    const progressBar = document.getElementById('main-progress');
-    const checkboxes = document.querySelectorAll('.topic-check');
-    const sidebar = document.getElementById('study-sidebar');
-    const openBtn = document.getElementById('open-sidebar');
-    const closeBtn = document.getElementById('close-sidebar');
 
-    // --- 1. Progress & Storage ---
-    const updateProgressBar = () => {
-        if (!progressBar) return;
-        const total = checkboxes.length;
-        const checked = document.querySelectorAll('.topic-check:checked').length;
-        progressBar.style.width = total > 0 ? `${(checked / total) * 100}%` : '0%';
-    };
+function populateSidebar() {
+  const mainContent = document.querySelector('main');
+  const topics = mainContent.querySelectorAll('h2, h3');
+  const sidebarList = document.getElementById('sidebar-list');
 
-    const saveProgress = () => {
-        const state = {};
-        checkboxes.forEach(cb => state[cb.dataset.target] = cb.checked);
-        localStorage.setItem(pageKey, JSON.stringify(state));
-        updateProgressBar();
-    };
+  topics.forEach(topic => {
+    const listItem = document.createElement('li');
+    const link = document.createElement('a');
+    const checkbox = document.createElement('input');
+    const topicId = topic.querySelector('a')?.id || topic.id;
 
-    const loadProgress = () => {
-        const saved = JSON.parse(localStorage.getItem(pageKey) || '{}');
-        checkboxes.forEach(cb => {
-            if (saved[cb.dataset.target]) cb.checked = true;
-        });
-        updateProgressBar();
-    };
+    if (!topicId) return;
 
-    // --- 2. Auto-Check on Scroll ---
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                const cb = document.querySelector(`.topic-check[data-target="${id}"]`);
-                if (cb && !cb.checked) {
-                    cb.checked = true;
-                    saveProgress();
-                }
-            }
-        });
-    }, { rootMargin: '0px 0px -85% 0px' });
+    // Checkbox setup
+    checkbox.type = 'checkbox';
+    checkbox.className = 'topic-check';
+    checkbox.dataset.target = topicId;
 
-    
-    // --- 3. Interaction & Mobile Toggle ---
-    if (openBtn && sidebar) {
-        openBtn.addEventListener('click', () => {
-            // Toggle the 'active' class on the sidebar
-            sidebar.classList.toggle('active');
+    // Link setup
+    link.href = `#${topicId}`;
+    link.textContent = topic.textContent;
 
-            // Optional: Change the button icon for better UX
-            const icon = openBtn.querySelector('span');
-            if (sidebar.classList.contains('active')) {
-                icon.textContent = '✕'; // Change to "X"
-            } else {
-                icon.textContent = '☰'; // Change back to Hamburger
-            }
-        });
-    }
+    // Append to list item
+    listItem.appendChild(checkbox);
+    listItem.appendChild(link);
+    sidebarList.appendChild(listItem);
+  });
+}
 
-    // Close when clicking a link on mobile
-    document.querySelectorAll('#bookmark-list a').forEach(link => {
-        link.addEventListener('click', () => {
-            if (window.innerWidth < 992 && sidebar) {
-                sidebar.classList.remove('active');
-            }
-        });
-    });
-
-    // Initialize Checkboxes & Observers
-    checkboxes.forEach(cb => {
-        const targetSection = document.getElementById(cb.dataset.target);
-        if (targetSection) observer.observe(targetSection);
-        cb.addEventListener('change', saveProgress);
-    });
-
-    loadProgress();
-});
+document.addEventListener('DOMContentLoaded', populateSidebar);

@@ -1,0 +1,8 @@
+[
+  {"title": "Objects", "link": "#title"},
+  {"title": "Structs", "link": "#structs"},
+  {"title": "Constructor Functions", "link": "#constructor"},
+  {"title": "Methods and Receivers", "link": "#methods"},
+  {"title": "Interfaces", "link": "#interfaces"},
+  {"title": "Next: Error Handling", "link": "./errors.html"}
+]

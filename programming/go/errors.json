@@ -1,0 +1,9 @@
+[
+  {"title": "Errors", "link": "#title"},
+  {"title": "Error Interface Basics", "link": "#basics"},
+  {"title": "Error Handling Patterns", "link": "#handling"},
+  {"title": "Panic Statement", "link": "#panic"},
+  {"title": "Recover from Panic", "link": "#recover"},
+  {"title": "Exit Status", "link": "#exit"},
+  {"title": "Next: Files & I/O", "link": "./files.html"}
+]

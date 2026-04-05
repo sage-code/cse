@@ -82,13 +82,30 @@ function generateBreadcrumbs() {
             // Remove extension and format text
             let name = segment.replace('.html', '').replace(/-/g, ' ').toUpperCase();
             
+            // Special handling for topic.html - extract topic parameter
+            const isTopicPage = segment.includes('topic.html') || segment === 'topic';
+            let topicId = null;
+            if (isTopicPage) {
+                const params = new URLSearchParams(window.location.search);
+                topicId = params.get('topic');
+                if (topicId) {
+                    name = topicId.replace(/-/g, ' ').toUpperCase();
+                }
+            }
+            
             // Build the URL based on which domain we are currently on
             currentPath += `/${segment}`;
             
             html += ` <span class="sep">/</span> `;
             
             if (index === pathArray.length - 1) {
-                html += `<span class="current">${name}</span>`;
+                // If on topic.html, make the topic name clickable to reload the page
+                if (isTopicPage && topicId) {
+                    const topicUrl = `${currentPath}?topic=${topicId}`;
+                    html += `<a href="${topicUrl}">${name}</a>`;
+                } else {
+                    html += `<span class="current">${name}</span>`;
+                }
             } else {
                 html += `<a href="${currentPath}">${name}</a>`;
             }

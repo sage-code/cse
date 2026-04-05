@@ -1,0 +1,10 @@
+[
+  {"title": "Functions", "link": "#title"},
+  {"title": "Function Basics", "link": "#basics"},
+  {"title": "Declaration and Results", "link": "#declaration"},
+  {"title": "Multiple Return Values", "link": "#multiple"},
+  {"title": "Parameters and Receivers", "link": "#parameters"},
+  {"title": "Variadic Functions", "link": "#variadic"},
+  {"title": "Defer & Closures", "link": "#defer"},
+  {"title": "Next: Objects", "link": "./objects.html"}
+]

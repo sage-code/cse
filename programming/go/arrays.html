@@ -2,398 +2,289 @@
 <html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Go tutorial: types, array and slices.">
+  <meta name="description" content="">
   <meta name="author" content="Elucian Moise">
-  <meta name="keywords" content="go, types, array, slice">
+  <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
-  <title>Go Tutorial</title>
-
-  <!-- Bootstrap CSS -->
+  <title>Topic</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
 
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
 
-<h2>Go Arrays</h2>
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Arrays and Slices</h1>
 
-<div class="alert alert-secondary shadow-sm">
-In Go arrays are collection of several elements of the same type. Arrays are user defined data types. Notice we do not use keyword array to define an array type instead we define the type  [n]T as an array of n values of type T.
-</div>
+  <div class="alert alert-secondary shadow-sm">
+    In Go, arrays are collections of several elements of the same type. Arrays are user-defined data types. Notice we do not use the keyword <code>array</code> to define an array type; instead, we define the type <code>[n]T</code> as an array of <code>n</code> values of type <code>T</code>.
+  </div>
 
-<div class="text-center">
-  <img src="/images/array.jpg" alt="array" srcset="/images/array.svg" width="520" class="img-fluid protect rounded shadow border" >
-  <p>Array Elements</p>
-</div>
+  <h2 id="arrays">Arrays</h2>
 
-<hr>
+  <div class="text-center">
+    <img src="/images/array.jpg" alt="array" srcset="/images/array.svg" width="520" class="img-fluid protect rounded shadow border">
+    <p>Array Elements</p>
+  </div>
 
-<p><b>Simple declaration:</b></p>
+  <hr>
 
-<p>Next expression declares a variable "numbers" as an array of ten (10) integers.</p>
+  <p><b>Simple declaration:</b></p>
+  <p>Next expression declares a variable "numbers" as an array of ten (10) integers.</p>
+  <pre><code class="language-go">var numbers [10]int</code></pre>
 
-<pre><code class="language-go">var numbers [10]int</code></pre>
+  <p><b>Note:</b> An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.</p>
 
-<p><b>Note: </b>An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.</p>
+  <h3 id="declaration">Array Declaration & Initializers</h3>
 
-<p><b>Array initializers:</b></p>
-
-<pre><code class="language-go line-numbers">//file array_init.go
+  <pre><code class="language-go line-numbers">//file array_init.go
 package main
-
 import "fmt"
 
 func main() {
     // declare an array with two elements
-	var a [2]string
+    var a [2]string
 
-	a[0] = "Hello" // first element
-	a[1] = "World" // second element
+    a[0] = "Hello" // first element
+    a[1] = "World" // second element
 
-	fmt.Println(a[0], a[1])
-	fmt.Println(a)
+    fmt.Println(a[0], a[1])
+    fmt.Println(a)
 
     // declare array with initializers
-	primes := [6]int{2, 3, 5, 7, 11, 13}
-	fmt.Println(primes)
-}
-</code></pre>
+    primes := [6]int{2, 3, 5, 7, 11, 13}
+    fmt.Println(primes)
+}</code></pre>
 
-<h2>Range</h2>
+  <h2 id="slices">Slices</h2>
 
-<div>
-<p>The <em><b>range</b></em> is used to create a form of the loop iteration over a slice or a map. When ranging over a slice, two values are returned for each iteration. The first is the index, and the second is a copy of the element at that index.</p>
-</div>
+  <p>A <b><em>slice</em></b> is a dynamically-sized, flexible view into the elements of an array. In practice, slices are much more common than arrays.</p>
+  <p>The type <code>[]T</code> is a slice with elements of type <code>T</code>.</p>
+  
+  
+  
+  <p>In the next example, we define an array "primes" then we create a slice "s" from element 1 (inclusive) to element 4 (exclusive).</p>
 
-<pre><code class="language-go line-numbers">//file range_scan.go
+  <pre><code class="language-go line-numbers">//file array_slice.go
 package main
-
-import "fmt"
-
-var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
-
-func main() {
-	for i, v := range pow {
-		fmt.Printf("2**%d = %d\n", i, v)
-	}
-}
-</code></pre>
-<p>Output:</p>
-
-<pre><code class="language-output">2**0 = 1
-2**1 = 2
-2**2 = 4
-2**3 = 8
-2**4 = 16
-2**5 = 32
-2**6 = 64
-2**7 = 128</code></pre>
-<p> </p>
-<p>You can skip the index or value by assigning to "_" If you only want the index, drop the ", value" entirely.</p>
-
-<pre><code class="language-go line-numbers">//file range_values.go
-package main
-
 import "fmt"
 
 func main() {
-	pow := make([]int, 10)
-	for i := range pow {
-		pow[i] = 1 &lt;&lt; uint(i) // == 2**i
-	}
-	for _, value := range pow {
-		fmt.Printf("%d\n", value)
-	}
-}
-</code></pre>
+    primes := [6]int{2, 3, 5, 7, 11, 13}
 
-<p><b>Output:</b></p>
+    var s []int = primes[1:4]
+    fmt.Println(s) // [3 5 7]
+}</code></pre>
+  <p><b>Note:</b> Remember the element count starts from 0 in Go.</p>
 
-<pre><code class="language-output">2
-4
-8
-16
-32
-64
-128
-256
-512</code></pre>
+  <h2 id="slice-ops">Slice Operations</h2>
 
-<h2>Slices</h2>
+  <h3>References</h3>
+  <p>A slice does not store any data, it just describes a section of an underlying array. Changing the elements of a slice modifies the corresponding elements of its underlying array. Other slices that share the same underlying array will see those changes.</p>
 
-<p>A <b><em>slice</em></b> is a dynamically-sized, flexible view into the elements of an array. In practice, slices are much more common than arrays.</p>
-<p>The type []T is a slice with elements of type T.</p>
-<p>In the next example we define an array "primes" then we create a slice "s" from element 1 (inclusive) to element 4 (inclusive).</p>
-
-<pre><code class="language-go line-numbers">//file array_slice.go
+  <pre><code class="language-go line-numbers">//file array_references.go
 package main
-
 import "fmt"
 
 func main() {
-	primes := [6]int{2, 3, 5, 7, 11, 13}
+    names := [4]string{"John", "Paul", "George", "Ringo"}
+    fmt.Println(names)
 
-	var s []int = primes[1:4]
-	fmt.Println(s) // [3 5 7]
-}
-</code></pre>
-<p><b>Note:</b> Remember the element count start from 0 in Go.</p>
+    b := names[1:3]
+    b[0] = "XXX"
+    fmt.Println(b)    
+    fmt.Println(names)
+}</code></pre>
 
-<h2>References</h2>
-
-<p>A slice does not store any data, it just describes a section of an underlying array.</p>
-<p>Changing the elements of a slice modifies the corresponding elements of its underlying array.</p>
-<p>Other slices that share the same underlying array will see those changes.</p>
-
-<pre><code class="language-go line-numbers">//file array_references.go
-package main
-
-import "fmt"
-
-func main() {
-	names := [4]string{
-		"John",
-		"Paul",
-		"George",
-		"Ringo",
-	}
-	fmt.Println(names)
-
-	b := names[1:3]
-	b[0] = "XXX"
-	fmt.Println(b)    
-	fmt.Println(names)
-}
-</code></pre>
-<div>
-
-<h2>Default boundery</h2>
-
-<p>When slicing, you may omit the high or low bounds to use their defaults instead.</p>
-<p>The default is zero for the low bound and the length of the slice for the high bound.</p>
-<p>For the array: <code class="language-go line-numbers">var a [10]int</code>, next slice expressions are equivalent:</p>
-
-<pre><code class="language-output">a[0:10]
+  <h3>Default Boundary</h3>
+  <p>When slicing, you may omit the high or low bounds to use their defaults instead. The default is zero for the low bound and the length of the slice for the high bound.</p>
+  <p>For the array: <code>var a [10]int</code>, the following slice expressions are equivalent:</p>
+  <pre><code class="language-output">a[0:10]
 a[:10]
 a[0:]
 a[:]</code></pre>
-</div>
-<p>In the next example we use slice defaults to create 3 slices from the same array:</p>
 
+  <p>In the next example, we use slice defaults to create 3 slices from the same array:</p>
 
-<pre><code class="language-go line-numbers">//fille default_boundery.go
+  <pre><code class="language-go line-numbers">//file default_boundary.go
 package main
-
 import "fmt"
 
 func main() {
-	s := []int{2, 3, 5, 7, 11, 13}
+    s := []int{2, 3, 5, 7, 11, 13}
 
-	s = s[1:4]
-	fmt.Println(s)
+    s = s[1:4]
+    fmt.Println(s) // [3 5 7]
 
-	s = s[:2]
-	fmt.Println(s)
+    s = s[:2]
+    fmt.Println(s) // [3 5]
 
-	s = s[1:]
-	fmt.Println(s)
-}
-</code></pre>
+    s = s[1:]
+    fmt.Println(s) // [5]
+}</code></pre>
 
-<p><b>Output:</b></p>
+  <h3>Slice Length and Capacity</h3>
+  <p>A slice has both a <em>length</em> and a <em>capacity</em>. The length is the number of elements it contains. The <em>capacity</em> is the number of elements in the underlying array, counting from the first element in the slice.</p>
 
-<pre><code class="language-output">[3 5 7]
-[3 5]
-[5]
-</code></pre>
-<div>
-
-<h2>Slice length and capacity</h2>
-
-<p>A slice has both a <em>length</em> and a <em>capacity</em>. The length of a slice is the number of elements it contains.</p>
-<p>The <em>capacity</em> of a slice is the number of elements in the underlying array, counting from the first element in the slice.</p>
-<p>The length and capacity of a slice s can be obtained using the expressions len(s) and cap(s).</p>
-<p>You can extend a slice's length by re-slicing it, provided it has sufficient capacity.</p>
-
-<pre><code class="language-go line-numbers">//file slice_cap.go
+  <pre><code class="language-go line-numbers">//file slice_cap.go
 package main
-
 import "fmt"
 
 func main() {
-	s := []int{2, 3, 5, 7, 11, 13}
-	printSlice(s)
+    s := []int{2, 3, 5, 7, 11, 13}
+    printSlice(s)
 
-	// Slice the slice to give it zero length.
-	s = s[:0]
-	printSlice(s)
+    s = s[:0] // Slice to zero length
+    printSlice(s)
 
-	// Extend its length.
-	s = s[:4]
-	printSlice(s)
+    s = s[:4] // Extend length
+    printSlice(s)
 
-	// Drop its first two values.
-	s = s[2:]
-	printSlice(s)
+    s = s[2:] // Drop first two values
+    printSlice(s)
 }
 
 func printSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
-}
-</code></pre>
-</div>
+    fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+}</code></pre>
 
-
-<pre><code class="language-output">len=6 cap=6 [2 3 5 7 11 13]
+  <pre><code class="language-output">len=6 cap=6 [2 3 5 7 11 13]
 len=0 cap=6 []
 len=4 cap=6 [2 3 5 7]
 len=2 cap=4 [5 7]</code></pre>
 
-<h2>Nil slices</h2>
+  <h2 id="growth">Dynamic Growth</h2>
 
-<p>The zero value of a slice is nil. A nil slice has a length and capacity of 0 and has no underlying array.</p>
+  <h3>Nil Slices</h3>
+  <p>The zero value of a slice is <code>nil</code>. A nil slice has a length and capacity of 0 and has no underlying array.</p>
 
-<pre><code class="language-go line-numbers">//file nil_slice.go
+  <pre><code class="language-go line-numbers">//file nil_slice.go
 package main
-
 import "fmt"
 
 func main() {
-	var s []int
-	fmt.Println(s, len(s), cap(s))
-	if s == nil {
-		fmt.Println("nil!")
-	}
+    var s []int
+    fmt.Println(s, len(s), cap(s))
+    if s == nil {
+        fmt.Println("nil!")
+    }
 }</code></pre>
 
-<p><b>Output:</b></p>
+  <h3>Make Function</h3>
+  <p>Slices can be created with the built-in <em>make()</em> function; this is how you create dynamically-sized arrays. It allocates a zeroed array and returns a slice that refers to it.</p>
 
-<pre><code class="language-output">[] 0 0
-nil!</code></pre>
-
-<h2>Make</h2>
-
-<p>Slices can be created with the built-in <em>make()</em> function; this is how you create dynamically-sized arrays.</p>
-<p>The <em>make()</em> function allocates a zeroed array and returns a slice that refers to that array:</p>
-
-<pre><code class="language-go line-numbers">a := make([]int, 5)  // len(a)=5</code></pre>
-
-<p>To specify a capacity, pass a third argument to <code>make</code>:</p>
-
-<pre><code class="language-output">b := make([]int, 0, 5) // len(b)=0, cap(b)=5
-
-b = b[:cap(b)] // len(b)=5, cap(b)=5
-b = b[1:]      // len(b)=4, cap(b)=4</code></pre>
-<h4>Example:</h4>
-
-<pre><code class="language-go line-numbers">//file slice_make.go
+  <pre><code class="language-go line-numbers">//file slice_make.go
 package main
-
 import "fmt"
 
 func main() {
-	a := make([]int, 5)
-	printSlice("a", a)
+    a := make([]int, 5) // len=5
+    b := make([]int, 0, 5) // len=0, cap=5
+    c := b[:2]
+    d := c[2:5]
+    
+    fmt.Printf("a len=%d cap=%d %v\n", len(a), cap(a), a)
+}</code></pre>
 
-	b := make([]int, 0, 5)
-	printSlice("b", b)
+  <h3>Append Function</h3>
+  <p>Go provides a built-in <em>append</em> function to add new elements to a slice.</p>
+  <pre><code class="language-go">func append(s []T, vs ...T) []T</code></pre>
 
-	c := b[:2]
-	printSlice("c", c)
-
-	d := c[2:5]
-	printSlice("d", d)
-}
-
-func printSlice(s string, x []int) {
-	fmt.Printf("%s len=%d cap=%d %v\n",
-		s, len(x), cap(x), x)
-}
-</code></pre>
-
-<p><b>Output:</b></p>
-
-<pre><code class="language-output">a len=5 cap=5 [0 0 0 0 0]
-b len=0 cap=5 []
-c len=2 cap=5 [0 0]
-d len=3 cap=3 [0 0 0]</code></pre>
-
-<h2>Append</h2>
-
-<p>It is common to append new elements to a slice. Go provides a built-in<em>append</em>  function.</p>
-
-<pre><code class="language-go line-numbers">func append(s []T, vs ...T) []T</code></pre>
-
-
-<p><b>Examples:</b><p>
-
-<pre><code class="language-go line-numbers">//file slice_append.go
+  <pre><code class="language-go line-numbers">//file slice_append.go
 package main
-
 import "fmt"
 
 func main() {
-	var s []int
-	printSlice(s)
+    var s []int
+    s = append(s, 0)
+    s = append(s, 1)
+    s = append(s, 2, 3, 4)
+    fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+}</code></pre>
 
-	// append works on nil slices.
-	s = append(s, 0)
-	printSlice(s)
+  <h2 id="range">Range</h2>
+  <p>The <em>range</em> is used to iterate over a slice. The first value is the index, and the second is a copy of the element.</p>
 
-	// The slice grows as needed.
-	s = append(s, 1)
-	printSlice(s)
+  <pre><code class="language-go line-numbers">//file range_scan.go
+package main
+import "fmt"
 
-	// We can add more than one element at a time.
-	s = append(s, 2, 3, 4)
-	printSlice(s)
-}
+func main() {
+    pow := []int{1, 2, 4, 8, 16, 32, 64, 128}
+    for i, v := range pow {
+        fmt.Printf("2**%d = %d\n", i, v)
+    }
+}</code></pre>
+      </main>
+    </div>
+  </div>
 
-func printSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
-}
-</code></pre>
+  <hr>
 
-<h4>Notes:</h4>
-<ul>
-<li>The first parameter "s" of <em>append()</em> is a slice of type T, and the rest are also T values to append to the slice.</li>
-<li>The resulting value of <em>append()</em> is a slice with all the elements of the original slice plus the provided values.</li>
-<li>If the backing array of "s" is too small to fit all the given values, a bigger array will be allocated.</li>
-</ul>
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
 
-<p><b>Output:</b></p>
-
-<pre><code class="language-output">len=0 cap=0 []
-len=1 cap=2 [0]
-len=2 cap=2 [0 1]
-len=5 cap=8 [0 1 2 3 4]</code></pre>
-
-
-
-<!-- work in progress-->
-
-<hr>
-<p><b>Read next:</b>
-<a href="/programming/go/maps/">Maps</a></p>
-
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'arrays',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>

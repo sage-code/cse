@@ -1,0 +1,9 @@
+[
+  {"title": "Syntax", "link": "#title"},
+  {"title": "Go Syntax Basics", "link": "#basics"},
+  {"title": "Comments", "link": "#comments"},
+  {"title": "Statements", "link": "#statements"},
+  {"title": "Packages & Imports", "link": "#packages"},
+  {"title": "Hello World", "link": "#hello"},
+  {"title": "Next: Data Types", "link": "./types.html"}
+]

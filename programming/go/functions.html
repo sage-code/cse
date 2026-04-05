@@ -6,32 +6,62 @@
   <meta name="author" content="Elucian Moise">
   <meta name="keywords" content="go, language, function, func">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
   <title>Go Tutorial</title>
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
 
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h2>Go Functions</h2>
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
+
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Functions</h1>
 
 <div class="alert alert-secondary shadow-sm">
-Go functions are defined using keyword <em>"func"</em>. Usually a function has a name and can have zero or more <em>"receivers"</em> declared in enclosed parenthesis after the function name. When a function is called, we can send values to the function receivers using <em>"arguments".</em> Functions can produce zero, one or more results. Let's study more about this.
+Go functions are defined using keyword <em>"func"</em>. Usually a function has a name and can have zero or more <em>"receivers"</em> declared in enclosed parenthesis after the function name. When a function is called, we can send values to the function receivers using <em>"arguments."</em> Functions can produce zero, one or more results. Let's study more about this.
 </div>
+
+<h2 id="basics">Function Basics</h2>
 
 <div class="text-center">
   <img src="/images/function.svg" alt="function"
@@ -73,7 +103,7 @@ func main() {
 </code></pre>
 
 
-<h2>Function result</h2>
+<h2 id="declaration">Function Declaration and Results</h2>
 
 <p>Notice a function can return a result of a particular type. The result type is specified after the list of arguments. In the example above the function add has the result type int. The result can be created using the "return" statement. This is the normal exit point from a function.</p>
 
@@ -86,7 +116,7 @@ func main() {
 	return x + y
 }</code></pre>
 
-<p><b>Multiple results:</b></p>
+<h3 id="multiple">Multiple Return Values</h3>
 
 <p>A function can return one or multiple results.
 In next example we use <em>"return"</em> with two expressions separated by coma.
@@ -109,7 +139,9 @@ func main() {
 }
 </code></pre>
 
-<h2>Value Receivers</h2>
+<h2 id="parameters">Parameters and Receivers</h2>
+
+<h3>Value Receivers</h3>
 
 <p>You can declare methods with value receivers. This means you can have a function that accept values when it is called.  Value receivers have role of <em>input parameters</em>. One function can have multiple receivers, defined in round parenthesis after function name.</p>
 
@@ -122,10 +154,9 @@ func main() {
 <li>Go do not support function overloading;</li>
 </ul>
 
-<h2>Variadic Receiver</h2>
+<h2 id="variadic">Variadic Functions</h2>
 
-<p> By using 3 dots in front of type (...), we can declare a <em>variadic parameter</em> that can receive multiple values. This is the only way a function can receive optional arguments. When a function have several receivers only the last receiver can be variadic.
-</p>
+<p>By using 3 dots in front of type (...), we can declare a <em>variadic parameter</em> that can receive multiple values. This is the only way a function can receive optional arguments. When a function have several receivers only the last receiver can be variadic.</p>
 
 <p><b>Example:</b><p>
 
@@ -150,7 +181,7 @@ func variadicExample(s ...string) {
 
 <!-- todo: more examples: https://www.golangprograms.com/go-language/variadic-functions.html -->
 
-<h2>Pointer Receivers</h2>
+<h3>Pointer Receivers</h3>
 
 <p>You can declare methods with pointer receivers. This means the receiver type has the literal syntax *T for some type T. (Where T cannot itself be a pointer such as *int.). Pointer receivers have role of <em>input output</em> parameters.</p>
 
@@ -187,7 +218,9 @@ func main() {
 
 <p>If we do not use "*" we have a value receiver. In this case the Scale method operates on a copy of the originalVertex value. (This is the same behavior as for any other function argument.) The Scale method must have a pointer receiver to change the Vertex value declared in the main function.</p>
 
-<h2>Function values</h2>
+<h2 id="defer">Function Values, Closures, and Deferred Execution</h2>
+
+<h3>Function Values</h3>
 
 <p>In Go functions can be values and can be assigned to variables. They can be passed around just like other values. Function values may be used as arguments to call other functuins and can be returned as results from other functions.</p>
 
@@ -215,7 +248,7 @@ func main() {
 }
 </code></pre>
 
-<h2>Closures</h2>
+<h3>Closures</h3>
 
 <p>A closure is a function value that references variables from outside its body. The function may access and assign to the referenced variables; in this sense the function is "bound" to the variable.</p>
 <p>For example, the "adder" function returns a closure. Each closure is bound to its own "sum" variable:</p>
@@ -244,7 +277,7 @@ func main() {
 }</code></pre>
 
 
-<h2>Readers</h2>
+<h3>Readers Interface</h3>
 
 <p>The io package specifies the io.Reader interface, which represents the read end of a stream of data.</p>
 <p>The Go standard library contains many implementations of these interfaces, including files, network connections, compressors, ciphers, and others. The io.Reader interface has a Read method:</p>
@@ -274,18 +307,35 @@ func main() {
 		}
 	}
 }</code></pre>
+      </main>
+    </div>
+  </div>
 
-<!-- work in progress-->
+  <hr>
 
-<hr>
-<p><b>Read next:</b>
-<a href="/programming/go/objects/">Go Objects</a></p>
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
 
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'functions',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>

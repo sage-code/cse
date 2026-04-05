@@ -6,37 +6,70 @@
   <meta name="author" content="Elucian Moise">
   <meta name="keywords" content="go, paradigm, golang, features, go vs java, go vs rust">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
-  <title>Go Overview</title>  
-
-  <!-- Bootstrap CSS -->
+  <title>Go Overview</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">  
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
-        
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
-<h1>Go Overview</h1>
+
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
+
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
+
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Overview</h1>
 
 <div class="alert alert-secondary shadow-sm">
 Go is a multi-paradigm programming language that supports procedural, object-oriented, and functional programming. It  designed to be simple, efficient, and reliable. In this article you can learn about Go features, usability and performance.
 </div>
 
-<h2>Execution</h2>
+<h2 id="intro">What is Go?</h2>
+
+<h3>Execution</h3>
 
 <p>Go is a compiled language, but it has a number of features that make it feel like an interpreted language, such as garbage collection and run-time reflection. These features make Go a very easy language to use, even for developers who are not familiar with compiled languages.</p>
 
-<h2>Paradigms</h2>
+<h2 id="history">History & Design</h2>
+
+<h3>Paradigms</h3>
 
 <p>Go is a structured programming language, which means that it uses a set of structured programming techniques to organize code. These techniques include:</p>
 
@@ -107,7 +140,9 @@ There are a number of third-party libraries that provide support for classes. Th
 <li>Both Go and Java have a garbage-collector. However Java is using a virtual machine while Go creates optimized stand alone executable files. Java create byte-code that is interpreted by JVM.</li>
 </ul>
 
-<p>Overall, Go is faster than Java and more easy to use. Also Go programs are standalone, more reliable and convenient for distribution. Both Java & Go are enterprise level and professional languages.</p>
+<h2 id="uses">Use Cases &amp; Comparisons</h2>
+
+<p>Go is faster than Java and easier to use in many workflows. Go programs are standalone binaries, more reliable and convenient for distribution. Both Java and Go are enterprise-level, professional languages.</p>
 
 <h2>Go vs Rust</h2>
 
@@ -153,6 +188,8 @@ Go is a more mature language with a larger community of developers. It is also a
 
 <h2>References</h2>
 
+<h3 id="started">Getting Started</h3>
+
 <p>Learning Go is going to be challenging if you do not know programming paradigms in details. We introduce you to general concepts in Software Engineering course. If you have skip this course you should go back and study:</p>
 
 <p><b>Software Engineering: </b>
@@ -163,16 +200,35 @@ Go is a more mature language with a larger community of developers. It is also a
 </ul>
 
 <p>We will use functional programming terminology in our course. If you feel confident, you can continue study with the next page and start learning Go syntax. </p>
+      </main>
+    </div>
+  </div>
 
-<hr>
-<p><b>Read next:</b>
-<a href="/programming/go/syntax/">Go syntax</a></p>
+  <hr>
 
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
+
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'overview',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>

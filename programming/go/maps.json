@@ -1,0 +1,8 @@
+[
+  {"title": "Maps", "link": "#title"},
+  {"title": "Maps Basics", "link": "#basics"},
+  {"title": "Declaration & Initialization", "link": "#declare"},
+  {"title": "Deleting Elements", "link": "#deleting"},
+  {"title": "Iterating Over Maps", "link": "#iterating"},
+  {"title": "Next: Control Flow", "link": "./control.html"}
+]

@@ -1,0 +1,8 @@
+[
+  {"title": "Overview", "link": "#title"},
+  {"title": "What is Go?", "link": "#intro"},
+  {"title": "History & Design", "link": "#history"},
+  {"title": "Use Cases", "link": "#uses"},
+  {"title": "Getting Started", "link": "#started"},
+  {"title": "Next: Syntax", "link": "./syntax.html"}
+]

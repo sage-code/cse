@@ -6,34 +6,62 @@
   <meta name="author" content="Elucian Moise">
   <meta name="keywords" content="go, language, syntax">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
   <title>Go Syntax</title>
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
 
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
 
-<h2>Go Syntax</h2>
-
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Syntax</h1>
 
 <div class="alert alert-secondary shadow-sm">
 Go syntax is derived from C. It is a curly braced language. The symbols, operators and punctuation are similar to C. Go is using static types with type inference. That means we can create variables without declaring an explicit type.
 </div>
+
+<h2 id="basics">Go Syntax Basics</h2>
 
 
 <p><b>Example: </b>"hello world" program.</p>
@@ -54,7 +82,14 @@ func main() {
        rel="noopener" target="_blank">go.dev/play</a>
 </p>
 
-<h2>Statements</h2>
+<h2 id="comments">Comments</h2>
+
+<p>Comments are lines of text that explain code and are ignored by the Go compiler.</p>
+
+<p><b>Single line comment:</b> starts with two backslash symbols <code>//</code></p>
+<p><b>Multiple line comments:</b> start with <code>/*</code> and end with <code>*/</code></p>
+
+<h2 id="statements">Statements</h2>
 <ul>
 <li>A statement is on a single line of code;</li>
 <li>The blocks of code are enclosed in curly brackets: {...};</li>
@@ -175,7 +210,7 @@ func main() {
        rel="noopener" target="_blank">go.dev/play</a>
 </p>
 
-<h2 id="Keywords">Keywords</h2>
+<h2 id="keywords">Keywords</h2>
 <p>The following keywords are reserved and may not be used as identifiers.</p>
 
 <table class="table table-striped table-bordered table-dark">
@@ -391,7 +426,7 @@ func main() {
 <li><a href="https://golang.org/ref/spec#assign_op">assignment</a></li>
 </ul>
 
-<h2>Packages</h2>
+<h2 id="packages">Packages & Imports</h2>
 
 <p>Every Go program is made up of packages. Programs start running in package "main". The main package also contains the function main(). Using the import statement one package can be used into another package. By convention, the package name is the same as the last element of the import path.</p>
 
@@ -425,17 +460,49 @@ For example the "println()" function is using capital P so is fmt.Println() inst
 
 <p><b>Note: </b>This convention is a bit strange but you get use to it.</p>
 
-<!-- work in progress-->
+<h2 id="hello">Hello World Example</h2>
 
-<hr>
-<p><b>Read next:</b>
-<a href="/programming/go/types/">Data Types</a></p>
+<p>The classic "Hello World" program demonstrates the basic structure of a Go program:</p>
 
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
+<pre><code class="language-go line-numbers">package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("Hello, World!")
+}
+</code></pre>
+
+<p>This is the simplest complete Go program you can write.</p>
+      </main>
+    </div>
+  </div>
+
+  <hr>
+
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
+
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'syntax',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>

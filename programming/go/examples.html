@@ -6,48 +6,80 @@
   <meta name="author" content="Elucian Moise">
   <meta name="keywords" content="golan, tutorial, programming, examples, playground, opensource, learning">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-  <!-- Website title -->
-  <title>Go Examples</title>  
-
-  <!-- Bootstrap CSS -->
+  <title>Go Examples</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">  
-  <!-- Prism Highlighter -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
   <link rel="stylesheet" href="/prism.css">
   <script src="/prism.js"></script>
-  <!-- custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+
+  </style>
+</head>
 <body>
 
 <div class="container">
-        
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h2>Go Examples</h2>
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
+  <div class="container-fluid px-0">
+    <div class="row g-0">
+      <aside class="side-bar col-lg-3 col-12">
+        <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5 class="mb-0">Learning Path</h5>
+            <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+          </div>
+          <div class="progress mb-3" style="height: 8px;">
+            <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+          </div>
+          <hr>
+          <ul id="bookmark-list" class="list-unstyled">
+          </ul>
+        </div>
+      </aside>
+
+      <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
+<h1 id="title">Go Examples</h1>
 
 <div class="alert alert-secondary shadow-sm">
 Next examples are ready for study on Go Playground website. You can run them on-line and check the output. You can create new examples or modify these ones and re-share. All these examples are open sources created by volunteers.
 </div>
 
+<h2 id="intro">Introduction to Go Examples</h2>
+
 <h4>Page bookmarks</h4>
 <hr>
 <ul>
-    <li><a href="#control">control flow</a></li>
-    <li><a href="#functions">functions</a></li>
-    <li><a href="#collections">collections</a></li>
-    <li><a href="#objects">objects</a></li>
-    <li><a href="#errors">error handling</a></li>
-    <li><a href="#processing">data processing</a></li>
-    <li><a href="#concurrency">concurrency</a></li>  
-    <li><a href="#files">working with files</a></li>      
+    <li><a href="#control">Control flow</a></li>
+    <li><a href="#functions">Functions</a></li>
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#objects">Objects</a></li>
+    <li><a href="#errors">Error handling</a></li>
+    <li><a href="#processing">Data processing</a></li>
+    <li><a href="#concurrency">Concurrency</a></li>  
+    <li><a href="#files">Working with files</a></li>      
 </ul>
 <hr>
 <p>Links to: <a href="https://go.dev/play" target="_blank">Go Playground</a></p>
+
+<h2 id="syntax-basic">Syntax Basics</h2>
+
 <table class="table table-bordered table-hover table-dark">
 <thead>
 <tr>
@@ -75,10 +107,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">constants</a></td>
     <td>How to declare constants</td>
 </tr>
-<tr>
-    <th><a id="control"></a>01</th>
-    <th colspan="2">Control flow</th>
-</tr> 
+</tbody>
+</table>
+
+<h2 id="control">Control Flow Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/2-4H-ArwHHS" 
@@ -97,10 +132,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">conditional</a></td>
     <td>Conditional branching, if statement</td>
 </tr>
-<tr>
-    <th><a id="functions"></a>02</th>
-    <th colspan="2">Functions</th>    
-</tr>  
+</tbody>
+</table>
+
+<h2 id="functions">Functions Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/-o49-dQfGbK" 
@@ -137,10 +175,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">pointers</a></td>
     <td>How to define and use pointers in functions</td>
 </tr>
-<tr>
-    <th><a id="collections"></a>03</th>
-    <th colspan="2">Collections</th>
-</tr>    
+</tbody>
+</table>
+
+<h2 id="collections">Collections Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/bBVikSoZ1Z7" 
@@ -183,10 +224,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">custom sort</a></td>
     <td>Using a callback function to sort()</td>
 </tr>
-<tr>
-    <th><a id="objects"></a>04</th>
-    <th colspan="2">Objects</th> 
-</tr> 
+</tbody>
+</table>
+
+<h2 id="objects">Objects Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/n7jt1x3iw4Z" 
@@ -217,10 +261,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">generics</a></td>
     <td>How to define generic struct</td>
 </tr>
-<tr>
-    <th><a id="errors"></a>05</th>
-    <th colspan="2">Error Handling</th>
-</tr>  
+</tbody>
+</table>
+
+<h2 id="errors">Error Handling Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/NiJOpCPO3L0" 
@@ -245,10 +292,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">recover</a></td>
     <td>How to handle errors and avoid crash</td>
 </tr>
-<tr>
-    <th><a id="processing"></a>06</th>
-    <th colspan="2">Data processing</th>
-</tr>
+</tbody>
+</table>
+
+<h2 id="processing">Data Processing Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/DSKkoyx9Rcy" 
@@ -285,17 +335,18 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">XML</a></td>
     <td>How to work with XML format</td>
 </tr>
+</tbody>
+</table>
 
+<h2 id="concurrency">Concurrency Examples</h2>
 
-<tr>
-    <th><a id="concurrency"></a>05</th>
-    <th colspan="2">Concurrency</th>
-</tr>  
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/I7scqRijEJt" 
         target="_blank" rel="noopener">goroutines</a></td>
-    <td>Learn how to use "go" to start a concurent function</td>
+    <td>Learn how to use "go" to start a concurrent function</td>
 </tr>
 <tr>
     <td> </td>
@@ -400,11 +451,13 @@ Next examples are ready for study on Go Playground website. You can run them on-
         target="_blank" rel="noopener">stateful goroutines</a></td>
     <td>How to manage state using channels</td>
 </tr>
+</tbody>
+</table>
 
-<tr>
-    <th><a id="files"></a>07</th>
-    <th colspan="2">Working with files</th>
-</tr>
+<h2 id="files">Working with Files Examples</h2>
+
+<table class="table table-bordered table-hover table-dark">
+<tbody>
 <tr>
     <td> </td>
     <td><a href="https://go.dev/play/p/DF2Wo8nDKaF" 
@@ -469,18 +522,35 @@ Next examples are ready for study on Go Playground website. You can run them on-
 
 </tbody>
 </table>
+      </main>
+    </div>
+  </div>
 
-<!-- work in progress-->
+  <hr>
 
-<hr>
-<p><b>Homework:</b>
-<a href="/programming/go/index.html#quiz" rel="nofollow">Take the Quiz</a></p>
+  <footer class="footer copyright">
+    <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
+  </footer>
 
-<!-- Footer -->
-<footer class="footer copyright">
-  <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
-</footer>
 </div>
-<script src="/sage.js"></script>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'go',
+    topicId: 'examples',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
+
 </body>
 </html>
