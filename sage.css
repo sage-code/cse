@@ -164,7 +164,7 @@ img {
 .hero-blackboard {
     width: 100%;
     height: 320px; /* Fixed height to ensure consistent layout. */
-    background: url('https://sagecode.pro/images/blackboard.jpg') no-repeat center center;
+    background: url('https://sagecode.org/images/blackboard.jpg') no-repeat center center;
     background-size: cover; /* Ensures the background image covers the whole area. */
     display: flex;
     justify-content: flex-start;

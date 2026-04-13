@@ -1,5 +1,5 @@
 /**
- * sage.js - Global Logic for sagecode.pro
+ * sage.js - Global Logic for sagecode.org
  * Handles the Dynamic Header and Alignment
  */
 
@@ -15,8 +15,8 @@ function initDynamicHeader() {
     let headerHTML = `
         <div class="row align-items-center g-0 justify-content-between">
             <div class="col-auto ps-0 p-0 m-0">
-                <a href="https://sagecode.pro">
-                    <img src="https://sagecode.pro/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
+                <a href="https://sagecode.org">
+                    <img src="https://sagecode.org/images/sage-logo.svg" alt="Sage-Code" height="50" style="display: block;">
                 </a>
             </div>
             
@@ -26,10 +26,10 @@ function initDynamicHeader() {
                         <span></span><span></span><span></span>
                     </div>
                     <ul class="nav-links" id="nav-menu">
-                        <li><a href="https://sagecode.pro/engineering">Engineering</a></li>
-                        <li><a href="https://sagecode.pro/programming">Programming</a></li>
-                        <li><a href="https://sagecode.pro/projects">Projects</a></li>
-                        <li><a href="https://sagecode.pro/community">Community</a></li>
+                        <li><a href="https://sagecode.org/engineering">Engineering</a></li>
+                        <li><a href="https://sagecode.org/programming">Programming</a></li>
+                        <li><a href="https://sagecode.org/projects">Projects</a></li>
+                        <li><a href="https://sagecode.org/community">Community</a></li>
                     </ul>
                 </nav>
             </div>
@@ -53,11 +53,11 @@ function initDynamicHeader() {
 
 /**
  * Generates the breadcrumb path automatically
- * Fixed for cross-domain support between sagecode.pro and savecode.vip
+ * Fixed for cross-domain support between sagecode.org and savecode.vip
  */
 function generateBreadcrumbs() {
     try {
-        const MAIN_HUB = "https://sagecode.pro";
+        const MAIN_HUB = "https://sagecode.org";
         const VIP_HUB = "https://sagecode.vip";
         const isVIP = window.location.hostname.includes('sagecode.vip');
         
@@ -114,6 +114,6 @@ function generateBreadcrumbs() {
         return html;
     } catch (e) {
         console.error("Breadcrumb error:", e);
-        return `<a href="https://sagecode.pro"><i class="bi bi-house-door"></i> HOME</a>`;
+        return `<a href="https://sagecode.org"><i class="bi bi-house-door"></i> HOME</a>`;
     }
 }

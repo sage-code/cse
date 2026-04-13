@@ -3,4 +3,4 @@ Disallow: /node_modules/
 Disallow: /admin/
 Disallow: /search/
 
-Sitemap: https://sagecode.pro/sitemap.xml
+Sitemap: https://sagecode.org/sitemap.xml

@@ -9,7 +9,7 @@ from datetime import datetime
 from urllib.parse import urljoin
 
 # Configuration
-BASE_URL = "https://sagecode.pro"
+BASE_URL = "https://sagecode.org"
 OUTPUT_FILE = "sitemap.xml"
 SOURCE_DIR = "./"
 

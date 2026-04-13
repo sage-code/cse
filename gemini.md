@@ -1,4 +1,4 @@
-# Project: SageCode.pro (Static / Bootstrap 5 / Vercel)
+# Project: sagecode.org (Static / Bootstrap 5 / Vercel)
 
 ## 🎯 Current Engineering Goals
 - **Content Style:** Align all pages with the technical/academic standard in `/engineering.html`.

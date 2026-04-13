@@ -266,12 +266,12 @@ URL format remains: `https://domain/engineering/index.html#section-name`
 
 ### Current URL (Old):
 ```
-https://sagecode.pro/engineering/concepts.html
+https://sagecode.org/engineering/concepts.html
 ```
 
 ### New URL (New):
 ```
-https://sagecode.pro/engineering/index.html
+https://sagecode.org/engineering/index.html
 ```
 
 ### Options:
