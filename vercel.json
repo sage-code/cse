@@ -1,5 +1,11 @@
 {
     "cleanUrls": true,
-    "trailingSlash": true
-
+    "trailingSlash": true,
+    "redirects": [
+        {
+            "source": "/maj/:path*",
+            "destination": "https://sagecode.org/projects/maj/:path*",
+            "permanent": true
+        }
+    ]
 }
