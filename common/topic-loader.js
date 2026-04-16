@@ -39,12 +39,22 @@ class TopicLoader {
    */
   async loadSidebar() {
     try {
-      // Build the absolute path from the current page's directory
-      const currentPath = window.location.pathname;
-      const pageDir = currentPath.endsWith('/') 
-        ? currentPath 
-        : currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-      const jsonFile = `${pageDir}${this.topicId}.json`;
+      // Build the correct path accounting for Vercel's cleanUrls and trailingSlash
+      // On Vercel: /engineering/concepts/ (no .html, with trailing slash)
+      // On local: /engineering/concepts.html (with .html extension)
+      let basePath = window.location.pathname;
+      
+      // Remove trailing slash (added by trailingSlash: true on Vercel)
+      if (basePath.endsWith('/')) {
+        basePath = basePath.slice(0, -1);
+      }
+      
+      // Remove .html extension if present (removed by cleanUrls on Vercel)
+      if (basePath.endsWith('.html')) {
+        basePath = basePath.slice(0, -5);
+      }
+      
+      const jsonFile = `${basePath}.json`;
       
       const response = await fetch(jsonFile);
       if (!response.ok) throw new Error(`Failed to load ${jsonFile} (status: ${response.status})`);
@@ -142,12 +152,22 @@ class TopicLoader {
    */
   async loadContent() {
     try {
-      // Build the absolute path from the current page's directory
-      const currentPath = window.location.pathname;
-      const pageDir = currentPath.endsWith('/') 
-        ? currentPath 
-        : currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-      const contentFile = `${pageDir}${this.topicId}.html`;
+      // Build the correct path accounting for Vercel's cleanUrls and trailingSlash
+      // On Vercel: /engineering/concepts/ (no .html, with trailing slash)
+      // On local: /engineering/concepts.html (with .html extension)
+      let basePath = window.location.pathname;
+      
+      // Remove trailing slash (added by trailingSlash: true on Vercel)
+      if (basePath.endsWith('/')) {
+        basePath = basePath.slice(0, -1);
+      }
+      
+      // Remove .html extension if present (removed by cleanUrls on Vercel)
+      if (basePath.endsWith('.html')) {
+        basePath = basePath.slice(0, -5);
+      }
+      
+      const contentFile = `${basePath}.html`;
       
       const response = await fetch(contentFile);
       if (!response.ok) throw new Error(`Failed to load ${contentFile}`);
