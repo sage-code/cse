@@ -58,8 +58,8 @@ function initDynamicHeader() {
 function generateBreadcrumbs() {
     try {
         const MAIN_HUB = "https://sagecode.org";
-        const VIP_HUB = "https://sagecode.vip";
-        const isVIP = window.location.hostname.includes('sagecode.vip');
+        const VIP_HUB = "https://vip.sagecode.org";
+        const isVIP = window.location.hostname.includes('vip.sagecode.org');
         
         const path = window.location.pathname;
         const pathArray = path.split('/').filter(p => p && !p.includes("index.html"));
