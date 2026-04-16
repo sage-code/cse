@@ -39,9 +39,15 @@ class TopicLoader {
    */
   async loadSidebar() {
     try {
-      const jsonFile = `./${this.topicId}.json`;
+      // Build the absolute path from the current page's directory
+      const currentPath = window.location.pathname;
+      const pageDir = currentPath.endsWith('/') 
+        ? currentPath 
+        : currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      const jsonFile = `${pageDir}${this.topicId}.json`;
+      
       const response = await fetch(jsonFile);
-      if (!response.ok) throw new Error(`Failed to load ${jsonFile}`);
+      if (!response.ok) throw new Error(`Failed to load ${jsonFile} (status: ${response.status})`);
       
       const navItems = await response.json();
       const bookmarkList = document.getElementById('bookmark-list');
@@ -136,7 +142,13 @@ class TopicLoader {
    */
   async loadContent() {
     try {
-      const contentFile = `./${this.topicId}.html`;
+      // Build the absolute path from the current page's directory
+      const currentPath = window.location.pathname;
+      const pageDir = currentPath.endsWith('/') 
+        ? currentPath 
+        : currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      const contentFile = `${pageDir}${this.topicId}.html`;
+      
       const response = await fetch(contentFile);
       if (!response.ok) throw new Error(`Failed to load ${contentFile}`);
       
