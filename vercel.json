@@ -1,11 +1,19 @@
 {
     "cleanUrls": true,
     "trailingSlash": true,
-    "redirects": [
+}
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/projects/maj",
+      "permanent": true,
+      "has": [
         {
-            "source": "/maj/:path*",
-            "destination": "https://sagecode.org/projects/maj/:path*",
-            "permanent": true
+          "type": "host",
+          "value": "maj.sagecode.org"
         }
-    ]
+      ]
+    }
+  ]
 }
