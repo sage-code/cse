@@ -217,7 +217,7 @@ function bee_render() {
 
 function line_span(str) {
     var span = document.createElement("span");
-    return "<span class=\"line\">"+ str + "</span>"
+    return "<span class=\"line\">"+ str + "</span>\n"
 }
 
 function title(str) {
