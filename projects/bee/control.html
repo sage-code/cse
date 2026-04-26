@@ -43,7 +43,7 @@ Control flow statements are used to modify the linear program workflow. In Bee e
 
 <h2><a id="start">Start</h2>
 
-<p>We use ocasionaly a block of code that has a local scope by using "start" keyword follow by a label. The label is optional and can be numeric or alphanumeric. </p>
+<p>We use occasionally a block of code that has a local scope by using "start" keyword follow by a label. The label is optional and can be numeric or alphanumeric. </p>
 
 <h4>Syntax:</h4>
 
@@ -113,7 +113,7 @@ done;
 
 <h4>Example:</h4>
 
-<p>In this example we use "begin" to create a local scope and a new variable (a) inside this scope. Then we use nested anonymous if statement.</p>
+<p>In this example we use "start" to create a local scope and a new variable (a) inside this scope. Then we use nested anonymous if statement. After start, a do or an if ... do is expected. If you start a scope and another control is found it will not accept.</p>
 
 <pre><code class="language-bee"># fragment
 start test:
@@ -127,7 +127,7 @@ done test;
 
 <h3>Pattern 2: two-ways conditional</h3>
 
-<p>By using "else" keyword we can split the conditional branch into two branches:</p>
+<p>Keyword "start" is optional. By using "else" keyword we can split the conditional branch into two branches:</p>
 
 <div class="text-center">
   <img src="/images/decision.svg" alt="decision"
@@ -651,6 +651,7 @@ done [name];
 <li>You can not use <em>retry</em> in <em>final</em> region,
 <li>There may be several errors recorded in a $trial.messages,</li>
 <li>It is up to you to log the messages in the final block,</li>
+<li>Trials can be on single level, can't be nested.</li>
 </ul>
 
 <hr>

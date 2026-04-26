@@ -266,6 +266,7 @@ Bee has a modular architecture. A source file represents a module. A project can
 
 <h4>Example:</h4>
 <pre><code class="language-bee"># main rule
+** *params accepts a variable-length list of strings
 rule main(*params &isin; S):
    ** read the number of parameters
    new c := params.count;
