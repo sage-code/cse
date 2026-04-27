@@ -265,44 +265,44 @@ return;
 <h4>Example</h4>
 
 <pre><code class="language-eve">
-    routine producer(@pipeline: ()Integer, count = 1000: Integer):
-    for i in (1..count) loop
-      let pipeline += random(100);
-      if (i % 100) == 0 then
-        resume consumer;
-        suspend;
-      done;
-    repeat;
-  return;
-  
-  routine consumer(@pipeline, @partials: ()Integer):
-    loop
-      for element in pipeline loop
-        let pipeline := pipeline -> element;
-        wait 10ms;
-        let partials += element; 
-      repeat;
-      resume producer;
+routine producer(@pipeline: ()Integer, count = 1000: Integer):
+  for i in (1..count) loop
+    let pipeline += random(100);
+    if (i % 100) == 0 then
+      resume consumer;
       suspend;
-    repeat if pipeline.count() > 0;
-  return;
-  
-  routine:
-    new pipeline: ()Integer;
-    new partials: ()Integer; 
-  
-    start producer(pipeline, 10000);
-    for i in (1..32) loop
-      start consumer(pipeline, partials);
-      wait 3ms;
+    done;
+  repeat;
+return;
+
+routine consumer(@pipeline, @partials: ()Integer):
+  loop
+    for element in pipeline loop
+      let pipeline := pipeline -> element;
+      wait 10ms;
+      let partials += element; 
     repeat;
+    resume producer;
+    suspend;
+  repeat if pipeline.count() > 0;
+return;
+
+routine:
+  new pipeline: ()Integer;
+  new partials: ()Integer; 
+
+  start producer(pipeline, 10000);
+  for i in (1..32) loop
+    start consumer(pipeline, partials);
+    wait 3ms;
+  repeat;
+
+  wait all;  -- Wait for all routines to finish
   
-    wait all;  -- Wait for all routines to finish
-    
-    ** prepare the final result from partials
-    new result := sum(partials);
-    print result;
-  return;
+  ** prepare the final result from partials
+  new result := sum(partials);
+  print result;
+return;
 </code></pre>
 
 <p><b>Notes: </b>a suspended routine is waiting for a wake-up signal. Another routine must send a signal for it to wake-up. If the coroutine receiving the signal and is not running, then it can't wake-up. In this case, the control is given back to the main process. If the main process is waiting it will resume.</p>
