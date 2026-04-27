@@ -115,7 +115,7 @@ return;
 
 <p>Object scope is dynamic in contrast to the constructor scope that is static. The "self" scope is pass to public methods as a pointer. Object scope is created by the object constructor rule using keyword "new:.</p>
 
-<div class="alert alert-info"><b>Note:</b>You can use "apply" or "begin" to enhance an existing object by runing a constructor. This will enable you to apply traits and realize multiple inhheritance. We will analyze this feature later.</div>
+<div class="alert alert-info"><b>Note:</b>You can use "apply" or "begin" to enhance an existing object by ruining a constructor. This will enable you to apply traits and realize multiple inheritance. We will analyze this feature later.</div>
 
 <h4>Example</h4>
 
@@ -296,7 +296,7 @@ return;
 <p>An object, can be augmented using traits. The trits are specified using symbol + follow by a comma separated list of traits. The traits can be local or imported from other module.</p>
 
 <pre><code class="language-bee">
-type TName {attribute Type, ...} <: Object+(trait_list):
+type TName {attribute Type, ...} <: Object with (trait_list):
 </code></pre>
 
 <h4>Example</h4>
@@ -315,7 +315,7 @@ rule augment(self &isin; O):
 return;
 
 ** use trait augment to define Foo
-rule Foo(a, b &isin; N) => (self:Foo &lt;: Foo+):
+rule Foo(a, b &isin; N) => (self:Foo &lt;: Foo):
    ** apply the augmentation
    apply augment(self);
 return;
