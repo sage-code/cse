@@ -1,0 +1,11 @@
+[
+  {"title": "Data Types", "link": "#title"},
+  {"title": "Primitive Types", "link": "#primitive"},
+  {"title": "Integer Types", "link": "#integers"},
+  {"title": "Floating Point", "link": "#float"},
+  {"title": "String Type", "link": "#string"},
+  {"title": "Boolean Type", "link": "#boolean"},
+  {"title": "Type Conversion", "link": "#conversion"},
+  {"title": "Type Inference", "link": "#inference"},
+  {"title": "Next: Topology", "link": "./topology.html"}
+]

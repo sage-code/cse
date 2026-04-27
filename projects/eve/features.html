@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark"><head>
+<html lang="en" data-bs-theme="dark">
+<head>
   <meta charset="utf-8">
   <meta name="description" content="Sage-Code Eve programming language features.">
   <meta name="author" content="Elucian Moise">
@@ -9,20 +10,58 @@
   <title>Eve Features</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Eve code highlighter -->
   <script src="/projects/eve/js/eve1.js"></script>
+  <!-- Prism for syntax highlighting -->
+  <link rel="stylesheet" href="/prism.css">
+  <script src="/prism.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
-<body onload="eve_render();">
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+  </style>
+</head>
+<body>
 <div class="container">
 
 <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h1>Eve Language</h1>
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+        </ul>
+      </div>
+    </aside>
+
+    <main id="main-content" class="col-lg-9 col-12 p-3">
+<h1 id="title">Eve Language Features</h1>
 
 <div class="alert alert-info shadow-sm">
   Eve empowers developers with a domain-specific, modular programming language. Designed for improved productivity and ease of learning. Eve fosters a safe, versatile, and effective environment for data manipulation tasks across various domains.  This includes working with text data, binary data (like images and video streams), and database connectivity.
@@ -131,12 +170,48 @@ return;
 <p>Ready to dive deeper into Eve? This brief demo has only scratched the surface of its capabilities. Explore the detailed explanations we've prepared to unlock the full potential of Eve for your data manipulation needs.  As you delve into Eve's design, you'll gain valuable insights into programming language principles. Who knows, maybe one day you'll be inspired to create your own language or even contribute to the ongoing evolution of Eve!</p>
 
 <p><b>Read next:</b>
-<a href="/projects/eve/syntax/">Eve Syntax</a></p>
+<a href="./syntax.html">Eve Syntax</a></p>
+
+    </main>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
+
 </div>
+
+<!-- Scripts -->
+<script src="/common/sidebar-generator.js"></script>
+<script src="/common/progress-legacy.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load sidebar from JSON
+    fetch('./features.json')
+      .then(response => response.json())
+      .then(data => {
+        const bookmarkList = document.getElementById('bookmark-list');
+        bookmarkList.innerHTML = '';
+        data.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.className = 'nav-item mb-2';
+          li.innerHTML = `
+            <input type="checkbox" class="form-check-input me-2" id="nav-${index}" data-isTrackable="true" data-link="${item.link}">
+            <a href="${item.link}" class="text-info text-decoration-none">${item.title}</a>
+          `;
+          bookmarkList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
+    
+    // Run Eve syntax highlighting
+    if (typeof eve_render === 'function') {
+      eve_render();
+    }
+  });
+</script>
 <script src="/sage.js"></script>
 </body>
 </html>

@@ -1,42 +1,158 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark"><head>
+<html lang="en" data-bs-theme="dark">
+<head>
   <meta charset="utf-8">
-  <meta name="description" content="Sage-Code Eve programming language. Design documentation, homepage.">
+  <meta name="description" content="Learn Eve programming language with free comprehensive tutorials. Master declarative scripting, data manipulation, and database connectivity.">
+  <meta name="keywords" content="Eve language, Eve tutorial, learn Eve, EVE programming, scripting language, data manipulation, Sage-Code">
   <meta name="author" content="Elucian Moise">
-  <meta name="keywords" content="SageCode, EVE, EveLang, programming, language, requirement, specification, homepage">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
+  
   <!-- Website title -->
-  <title>Eve Language</title>
-
+  <title>Eve Programming Language - Learn EVE for Data Manipulation & Scripting</title>
+  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Icon -->
-  <link rel="icon" type="image/png"  href="/images/favicon.ico">
-  <!-- Sage-Code custom CSS -->
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
-<body onload="eve_render();">
-
+</head>
+<body>
 <div class="container">
+  <!-- Header -->
+  <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<!-- header -->
-<header id="dynamic-header" class="container-fluid pb-2"></header>
+  <!-- Hero Section -->
+<section class="hero-blackboard">
+    <div class="blackboard-content">
+        <h1 class="chalk-text">✨ Eve Programming Laboratory</h1>
+        <p class="chalk-body">
+           Master Eve - a modern, declarative 4th generation scripting language designed for efficient data manipulation, database connectivity, and automation. This laboratory guides you through 14 essential topics to become proficient in Eve programming. Track your progress and build robust data handling solutions!
+        </p> 
+    </div>
+</section>
 
-<h1>What is EVE?</h1>
+  <!-- Topics Table -->
+  <h3 id="topics" class="mb-3">📚 Laboratory Topics</h3>
 
-<div class="alert alert-secondary shadow-sm">Eve is a modern, declarative 4th generation scripting language designed as the successor to an earlier language called Level, which was developed in 2002. While the Level project has been discontinued, Eve aims to build upon the lessons learned and provide a more feature-rich, comprehensible, and accessible language. With a focus on improved developer productivity, Eve combines a familiar yet explicit syntax with modular design principles, making it well-suited for data manipulation tasks across various domains, including text, binary data, and database connectivity. </div>
+  <!-- Progress Overview -->
+  <div class="progress mb-3" style="height: 25px;">
+      <div id="roadmap-progress" class="progress-bar bg-success" role="progressbar" style="width: 0%;">0% Complete</div>
+  </div>
 
-<p>My inspiration for the name Eve comes from the heartwarming movie WALL-E.  In the film, Eve is a sleek, high-tech robot who can soar through the air.  She forms an unlikely bond with WALL-E, a kind-hearted but older trash compactor robot.  Together, this adorable pair embarks on exciting adventures in space, ultimately playing a crucial role in humanity's future.  If you search "WALL-E robots" on YouTube, you'll find plenty of clips showcasing their journey.  While Eve possesses impressive speed and advanced technology, she's also driven by a strong sense of purpose and harbors a surprising depth of emotion.</p>
+  <div class="table-responsive lab-table">
+    <table class="table table-bordered table-striped table-dark" id="roadmap-table" data-sage-roadmap="eve" data-lab-id="eve">
+      <thead>
+        <tr>
+          <th style="width: 50px;">✓</th>
+          <th style="width: 60px;">#</th>
+          <th>Topic</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody id="topics-tbody">
+        <tr data-topic="features">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">01</td>
+            <td><a href="./features.html">Features</a></td>
+            <td class="small text-secondary">Explore Eve's powerful features including data compression, encryption, and database synchronization</td>
+        </tr>
+        <tr data-topic="syntax">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">02</td>
+            <td><a href="./syntax.html">Syntax</a></td>
+            <td class="small text-secondary">Learn Eve syntax fundamentals, statements, and program structure</td>
+        </tr>
+        <tr data-topic="types">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">03</td>
+            <td><a href="./types.html">Data Types</a></td>
+            <td class="small text-secondary">Understand primitive types, type declarations, and conversions in Eve</td>
+        </tr>
+        <tr data-topic="topology">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">04</td>
+            <td><a href="./topology.html">Topology</a></td>
+            <td class="small text-secondary">Master Eve program structure, modules, and organization</td>
+        </tr>
+        <tr data-topic="concurrency">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">05</td>
+            <td><a href="./concurrency.html">Concurrency</a></td>
+            <td class="small text-secondary">Explore parallel execution and concurrent programming in Eve</td>
+        </tr>
+        <tr data-topic="functions">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">06</td>
+            <td><a href="./functions.html">Functions</a></td>
+            <td class="small text-secondary">Learn function declaration, parameters, return values, and scoping</td>
+        </tr>
+        <tr data-topic="classes">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">07</td>
+            <td><a href="./classes.html">Classes</a></td>
+            <td class="small text-secondary">Master object-oriented programming with Eve classes and inheritance</td>
+        </tr>
+        <tr data-topic="collections">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">08</td>
+            <td><a href="./collections.html">Collections</a></td>
+            <td class="small text-secondary">Work with arrays, lists, maps, and other collection types</td>
+        </tr>
+        <tr data-topic="control">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">09</td>
+            <td><a href="./control.html">Control Flow</a></td>
+            <td class="small text-secondary">Master conditional statements, loops, and flow control structures</td>
+        </tr>
+        <tr data-topic="processing">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">10</td>
+            <td><a href="./processing.html">Processing</a></td>
+            <td class="small text-secondary">Learn data processing, transformation, and batch operations</td>
+        </tr>
+        <tr data-topic="algorithms">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">11</td>
+            <td><a href="./algorithms.html">Algorithms</a></td>
+            <td class="small text-secondary">Implement common algorithms and optimize code performance</td>
+        </tr>
+        <tr data-topic="library">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">12</td>
+            <td><a href="./library.html">Standard Library</a></td>
+            <td class="small text-secondary">Explore Eve's built-in functions and standard library modules</td>
+        </tr>
+        <tr data-topic="command">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">13</td>
+            <td><a href="./command.html">Shell Commands</a></td>
+            <td class="small text-secondary">Use Eve for command-line scripting and system administration</td>
+        </tr>
+        <tr data-topic="databases">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">14</td>
+            <td><a href="./databases.html">Databases</a></td>
+            <td class="small text-secondary">Connect to databases, execute queries, and manage data persistence</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+<hr>
+
+<h2>About Eve</h2>
+
+<p>Eve is a modern, declarative 4th generation scripting language designed as the successor to an earlier language called Level, which was developed in 2002. Eve aims to build upon the lessons learned and provide a more feature-rich, comprehensible, and accessible language. With a focus on improved developer productivity, Eve combines a familiar yet explicit syntax with modular design principles, making it well-suited for data manipulation tasks across various domains, including text, binary data, and database connectivity.</p>
+
+<p>My inspiration for the name Eve comes from the heartwarming movie WALL-E. In the film, Eve is a sleek, high-tech robot who can soar through the air. She forms an unlikely bond with WALL-E, a kind-hearted but older trash compactor robot. Together, this adorable pair embarks on exciting adventures in space, ultimately playing a crucial role in humanity's future.</p>
 
 <div class="text-center">
-  <a href="https://www.youtube.com/watch?v=7EcGtd8qtPs" target="_blank" rel="noopener noreferrer">
-  <img src="/projects/eve/img/eve-walle.png" width="300" alt="EVE" class="border shadow"/><p>EVE & Wall-E</p>
-  </a>
+  <img src="img/eve-walle.png" width="300" alt="EVE" class="border shadow"/><p>EVE & Wall-E</p>
 </div>
 
-
-<h2>EVE Features</h2>
+<h2>Eve Features</h2>
 
 <p>Eve empowers efficient data handling within the EVE environment. It excels at seamlessly transferring data between internal databases and external files. This includes both importing data from external sources and exporting data from databases for external use.</p>
 <p>Eve offers a range of advanced features to optimize your data management experience:</p>
@@ -49,70 +165,34 @@
 </ul>
 
 <div class="text-center">
-  <img src="/projects/eve/img/eve-logo.svg" alt="EVE" width="180" class="img-fluid protect" >
+  <img src="img/eve-logo.svg" alt="EVE" width="180" class="img-fluid protect" >
   <p>Effective Virtual Environment</p>
 </div>
 
-<h2>Eve Scripting</h2>
-
-<p>EVE enable it's users to tailor business processes using a scripting language called Eve. Next we describe Eve syntax in details using examples. We organize the pages in logical order from basic to advanced. Each page has top bookmarks for most important titles. You can use them to jump to a specific topic. We are working hard to improve the design of this language.</p>
-
-<div class="alert alert-warning"><span style="color:brown">Disclaim:&nbsp;</span> In this documentation sometimes we refer to Eve using perfect tense like it is already realized, but EVE is not yet available. This reference document can serve as a high level design and initial tutorial to learn the language syntax and semantics. It will be improved over time and we will fix the grammar using AI.</div>
-
-<p><a id="lang-index"></a><b>Tutorial Index</b></p>
-<hr>
-<ol>
-<li><a href="/projects/eve/features/">Features</a></li>
-<li><a href="/projects/eve/syntax/">Syntax</a></li>
-<li><a href="/projects/eve/types/">Data Types</a></li>
-<li><a href="/projects/eve/topology/">Topology</a></li>
-<li><a href="/projects/eve/concurrency/">Concurrency</a></li>
-<li><a href="/projects/eve/functions/">Functions</a></li>
-<li><a href="/projects/eve/classes/">Classes</a></li>
-<li><a href="/projects/eve/collections/">Collections</a></li>
-<li><a href="/projects/eve/control/">Control Flow</a></li>
-<li><a href="/projects/eve/processing/">Processing</a></li>
-<li><a href="/projects/eve/algorithms/">Algorithms</a></li>
-<li><a href="/projects/eve/library/">Standard Library</a></li>
-<li><a href="/projects/eve/command/">Shell command</a></li>
-<li><a href="/projects/eve/databases/">Databases</a></li>
-</ol>
-<hr>
-
-
-<h2>Eve Execution</h2>
-
-<p>Is a tradition in computer science to create BNF for a new language. This tutorial has described the language but is not a specification for the compiler, interpreter or virtual machine. To create an execution environment for Eve we will design BNF specification. We will create BNF using AI to be perfect.</p>
-
-<div class="alert alert-info">BNF: or Backus-Naur Form, is a notation technique used to describe the syntax of programming languages, computer file formats, and other formal language specifications. It provides a formal way to define the grammar rules that govern the structure of valid statements or expressions in a language.</div>
-
-<p>Eve BNF is not yet available. We have started a project on GitHub that will host BNF specification, code examples, test cases and code required to build EVE. For this effort we need sponsors to incentivize our core team. Until we have a sponsor, we can work on open source compiler in our free time. We are looking for volunteers.</p>
-
-<h2>Prep Quiz</h2>
+<h2>Quiz</h2>
 
 <div class="alert alert-secondary shadow-sm">
   We have a quiz of 100 questions for beginners to check on Eve syntax. You can scan the code using a mobile or tablet. If you are already on mobile device, tap the code below to start the quiz. It requires you to sign-in using your Google account. Good luck!
-  </div>
+</div>
   
-  <div class="text-center">
+<div class="text-center">
   <a href="https://forms.gle/wYVhNbGKahUm9tk67" target="_blank" rel="noopener noreferrer">
-  <img src="/projects/eve/img/quiz.png" width="200" alt="QR Code" class="border shadow"/><p>EVE - Quiz</p>
+  <img src="img/quiz.png" width="200" alt="QR Code" class="border shadow"/><p>EVE - Quiz</p>
   </a>
-  </div>
-  
-  <p><b>Certificate: </b>If you take the quiz with 80% or more we recognize you as Sage-Code developer. You can claim a certificate of completion. Wen the EVE virtual machine is available you will be able to contribute with EVE code snippets and teach other people the EVE language. Then you can tell your friends about your new skill and join our core team for further collaboration.</p>
+</div>
 
-<hr>
-<p><b>Read next:</b>
-<a href="/projects/eve/features/">Eve Features</a></p>
+<p><b>Certificate:</b> If you take the quiz with 80% or more, we recognize you as a Sage-Code developer. You can claim a certificate of completion. When the EVE virtual machine is available, you will be able to contribute with EVE code snippets and teach other people the EVE language.</p>
 
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
 
-
 </div>
+
+<!-- Roadmap and Progress Scripts -->
+<script src="/common/roadmap.js"></script>
 <script src="/sage.js"></script>
+
 </body>
 </html>

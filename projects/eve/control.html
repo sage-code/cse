@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark"><head>
+<html lang="en" data-bs-theme="dark">
+<head>
   <meta charset="utf-8">
   <meta name="description" content="Sage-Code Eve control flow statements.">
   <meta name="author" content="Elucian Moise">
@@ -11,21 +12,59 @@
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Icon -->
   <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Eve code highlighter -->
   <script src="/projects/eve/js/eve1.js"></script>
+  <!-- Prism for syntax highlighting -->
+  <link rel="stylesheet" href="/prism.css">
+  <script src="/prism.js"></script>
   <!-- Custom css -->
   <link rel="stylesheet" href="/sage.css">
-  </head>
-<body onload="eve_render();">
+  <style>
+    .side-bar { order: 1; }
+    #main-content { order: 2; }
+    @media (max-width: 991px) {
+      .side-bar { display: none; }
+      .side-bar.active {
+        display: block;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(0,0,0,0.95);
+      }
+    }
+  </style>
+</head>
+<body>
 
 <div class="container">
 
 <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h1>Eve Control Flow</h1>
+<div class="container-fluid px-0">
+  <div class="row g-0">
+    <aside class="side-bar col-lg-3 col-12">
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
+        <div class="progress mb-3" style="height: 8px;">
+          <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
+        </div>
+        <hr>
+        <ul id="bookmark-list" class="list-unstyled">
+        </ul>
+      </div>
+    </aside>
+
+    <main id="main-content" class="col-lg-9 col-12 p-3">
+<h1 id="title">Eve Control Flow</h1>
 
 <div class="alert alert-secondary shadow-sm">
 Most languages have similar flow control statements. These are block statements that can execute or no depending on one or more conditions. A control flow statement can be a decision statement a repetitive statement or a selection statement.</div>
@@ -97,7 +136,7 @@ print "a is even" if (a % 2  = 0);
 print "a is odd"  if (a % 2 != 0);
 </code></pre>
 
-<p><b>>Note: </b> The "if" is restricted for some statements. It can't be used after expect, done or next, but it can be used sometimes after "repeat" to terminate a loop. We will explain syntax for each block statement.</p>
+<p><b>Note:</b> The "if" is restricted for some statements. It can't be used after expect, done or next, but it can be used sometimes after "repeat" to terminate a loop. We will explain syntax for each block statement.</p>
 
 <h2><a id="else"></a>Decision block</h2>
 
@@ -360,11 +399,46 @@ print;
 <p><b>Read next:</b>
 <a href="/projects/eve/processing/">Processing</a></p>
 
+    </main>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
+
 </div>
+
+<!-- Scripts -->
+<script src="/common/sidebar-generator.js"></script>
+<script src="/common/progress-legacy.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Load sidebar from JSON
+    fetch('./control.json')
+      .then(response => response.json())
+      .then(data => {
+        const bookmarkList = document.getElementById('bookmark-list');
+        bookmarkList.innerHTML = '';
+        data.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.className = 'nav-item mb-2';
+          li.innerHTML = `
+            <input type="checkbox" class="form-check-input me-2" id="nav-${index}" data-isTrackable="true" data-link="${item.link}">
+            <a href="${item.link}" class="text-info text-decoration-none">${item.title}</a>
+          `;
+          bookmarkList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading sidebar:', error));
+    
+    // Run Eve syntax highlighting
+    if (typeof eve_render === 'function') {
+      eve_render();
+    }
+  });
+</script>
 <script src="/sage.js"></script>
 </body>
 </html>

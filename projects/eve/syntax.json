@@ -1,0 +1,10 @@
+[
+  {"title": "Syntax", "link": "#title"},
+  {"title": "Syntax Basics", "link": "#basics"},
+  {"title": "Statements", "link": "#statements"},
+  {"title": "Comments", "link": "#comments"},
+  {"title": "Keywords", "link": "#keywords"},
+  {"title": "Operators", "link": "#operators"},
+  {"title": "Expressions", "link": "#expressions"},
+  {"title": "Next: Data Types", "link": "./types.html"}
+]

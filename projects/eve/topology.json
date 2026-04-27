@@ -1,0 +1,10 @@
+[
+  {"title": "Topology", "link": "#title"},
+  {"title": "Program Structure", "link": "#structure"},
+  {"title": "Modules", "link": "#modules"},
+  {"title": "Packages", "link": "#packages"},
+  {"title": "Namespaces", "link": "#namespaces"},
+  {"title": "Import System", "link": "#imports"},
+  {"title": "Organization", "link": "#organization"},
+  {"title": "Next: Concurrency", "link": "./concurrency.html"}
+]

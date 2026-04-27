@@ -1,0 +1,10 @@
+[
+  {"title": "Features", "link": "#title"},
+  {"title": "Eve Capabilities", "link": "#capabilities"},
+  {"title": "Data Compression", "link": "#compression"},
+  {"title": "Database Sync", "link": "#db-sync"},
+  {"title": "Data Curation", "link": "#curation"},
+  {"title": "Encryption", "link": "#encryption"},
+  {"title": "Archiving", "link": "#archiving"},
+  {"title": "Next: Syntax", "link": "./syntax.html"}
+]
