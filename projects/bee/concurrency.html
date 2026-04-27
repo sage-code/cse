@@ -104,7 +104,7 @@ return;
 
 <h2>Bee Coroutines</h2>
 <div class="alert alert-secondary shadow-sm">
-Bee is designed for high performance computing using multi-core processors. There is a second resource for concurency: high performance video cards or add-in cards that enable parallel processing. After we finish the design, we will research hardware sollutions to optimize de compiler.
+Bee is designed for high performance computing using multi-core processors. There is a second resource for concurrency: high performance video cards or add-in cards that enable parallel processing. After we finish the design, we will research hardware solutions to optimize de compiler.
 </div>
 
 <h3><a id="coroutines"></a>Coroutines</h3>
@@ -152,7 +152,7 @@ return
 
 <h2><a id="producer-consumer">Producer consumer</h4>
 
-<p>Producer consumer patern is using coroutines that can work in palallel in asynchronous mode. That means we start coroutines and do not wait to finish but let the main thread to continue. A producer is preparing the work and the consumer is doing the work.</p>
+<p>Producer consumer pattern is using coroutines that can work in parallel in asynchronous mode. That means we start coroutines and do not wait to finish but let the main thread to continue. A producer is preparing the work and the consumer is doing the work.</p>
 
 <p>If you do not know how this works, take a look to the diagram below. We have one rule called "producer" one list that act as queue and a routine called "consumer". The queue has a limited capacity. We can use same consumer twice, if we do then the application is also multi-threading.</p>.
 

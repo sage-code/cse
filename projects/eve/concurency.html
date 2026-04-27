@@ -28,23 +28,24 @@
 <!-- header -->
 <header id="dynamic-header" class="container-fluid pb-2"></header>
 
-<h1>Eve Cocurency</h1>
+<h1>Eve Concurrency</h1>
 
 <div class="alert alert-secondary shadow-sm">
 Eve can execute one or more routines in synchronous or asynchronous mode. We will define in this chapter the routine and the coroutine. A routine can be suspended in memory, and later resumed. Using this system we can create light weight multi-treding applications.
 </div>
 
-<h2><a id="routines"><a>Routines</a></h2>
+<h2 id="routines">Routines</h2>
 
 <p>Before we can create coroutines we must understand the concept of simple routine. In Eve we create a subprogram that can receive parameters and can have side-effects. You can call a routine by name, with or without arguments enumerated in a list. A routine is created with keyword "routine" and is ending with keyword "return". Routine do not have to be follow by empty paranthesis when it has no arguments.</p>
 
 <h4>Syntax:</h4>
 
 <pre><code class="language-eve">
-  routine name(parameter_list):
-     ** routine statements
-     ...
-  return;
+# define a routine
+routine name(parameter_list):
+    ** routine statements
+    ...
+return;
 </code></pre>  
 
 <h4>Example</h4>
@@ -82,7 +83,7 @@ return;
 
 <h2><a id="side-effects"></a>Side Effects</h2>
 
-<p>A process can use process states and can have side-effects. When a global state is changed by a routine or method this is called side-effect. This may be useful but potential unsafe. Some side effects may be harder to debug. It is safer to use input/output parametters than side effects.</p>
+<p>A process can use process states and can have side-effects. When a global state is changed by a routine or method this is called side-effect. This may be useful but potential unsafe. Some side effects may be harder to debug. It is safer to use input/output parameters than side effects.</p>
 
 <p>these are side effects...</p>
 
@@ -116,7 +117,7 @@ process:
 return;
 </code></pre>
 
-<p>Note: In Eve it is not required to use empty paranthesis() to call a routine. Only functions require empty brackets. We will talk about functions later. This feature enable us to extend Eve using Eve scripts.</p>
+<p>Note: In Eve it is not required to use empty parenthesis() to call a routine. Only functions require empty brackets. We will talk about functions later. This feature enable us to extend Eve using Eve scripts.</p>
 
 <h2><a id="parameters"></a>Parameters</h2>
 
@@ -177,7 +178,7 @@ eve:>start test.eve 1 2 3
 </code></pre>
 
 <h4>Output Parameters</h4>
-<p>To avoid overuse of global variables you must use input/output parameters. We prefix output parameters using symbol "@". Output parameters require a variable as argument, otherwise you will not be able to capture the output value. Compiler will complain if you do not send a valid refference to an output parameter.</p>
+<p>To avoid overuse of global variables you must use input/output parameters. We prefix output parameters using symbol "@". Output parameters require a variable as argument, otherwise you will not be able to capture the output value. Compiler will complain if you do not send a valid reference to an output parameter.</p>
 
 <pre><code class="language-eve">
 #demo output parameters
@@ -207,7 +208,7 @@ return;
 <li>Routine invocation is done using name of routine as a statement;</li>
 </ul>
 
-<h2><a id="coroutines"><a>Coroutines</a></h2>
+<h2><a id="coroutines">Coroutines</a></h2>
 
 <p>A coroutine is a special routine that has a name and can start a secondary thread. A coroutine can be suspended in memory for a while and later can wake-up with a signal and  continue processing. The main thread will conntrol the coroutine life cycle.</p>
 
@@ -310,7 +311,6 @@ return;
 
 <p>Control over number of threads can be dynamic. You can use configuration files and establish convention to calculate the number of threads depending on data size. It can be also hard coded using constants inside the driver. This give you flexibility to tune your process.</p>
 
-</p>
 
 <!-- work in progress-->
 
