@@ -26,15 +26,21 @@
   <!-- Hero Section -->
 <section class="hero-blackboard">
     <div class="blackboard-content">
-        <h1 class="chalk-text">✨ Eve Programming Laboratory</h1>
+        <h1 class="chalk-text">EVE Programming</h1>
         <p class="chalk-body">
-           Master Eve - a modern, declarative 4th generation scripting language designed for efficient data manipulation, database connectivity, and automation. This laboratory guides you through 14 essential topics to become proficient in Eve programming. Track your progress and build robust data handling solutions!
+           Master Eve - a modern, declarative 4th generation scripting language designed for efficient data manipulation, database connectivity, and automation. This laboratory guides you through 14 essential topics to become proficient in Eve language fundamentals!
         </p> 
     </div>
 </section>
 
+<div class="text-center">
+  <img src="img/eve-logo.svg" alt="EVE" width="180" class="img-fluid protect" >
+  <p>Effective Virtual Environment</p>
+</div>
+
+
   <!-- Topics Table -->
-  <h3 id="topics" class="mb-3">📚 Laboratory Topics</h3>
+  <h3 id="topics" class="mb-3">📚 EVE Topics</h3>
 
   <!-- Progress Overview -->
   <div class="progress mb-3" style="height: 25px;">
@@ -51,7 +57,13 @@
           <th>Description</th>
         </tr>
       </thead>
-      <tbody id="topics-tbody">
+      <tbody id="topics-tbody">        
+        <tr data-topic="about">
+            <td class="text-center"><input type="checkbox" class="topic-check"></td>
+            <td class="text-center text-secondary">01</td>
+            <td><a href="#about">About Eve</a></td>
+            <td class="small text-secondary">Discover EVE architecture runway, environment metaphor and purpose</td>
+        </tr>     
         <tr data-topic="features">
             <td class="text-center"><input type="checkbox" class="topic-check"></td>
             <td class="text-center text-secondary">01</td>
@@ -142,37 +154,38 @@
 
 <hr>
 
-<h2>About Eve</h2>
+<h2 ID="about">The EVE Ecosystem</h2>
 
-<p>Eve is a modern, declarative 4th generation scripting language designed as the successor to an earlier language called Level, which was developed in 2002. Eve aims to build upon the lessons learned and provide a more feature-rich, comprehensible, and accessible language. With a focus on improved developer productivity, Eve combines a familiar yet explicit syntax with modular design principles, making it well-suited for data manipulation tasks across various domains, including text, binary data, and database connectivity.</p>
+<p>The EVE architecture is built upon a biological model of systemic efficiency, composed of three distinct yet symbiotic elements designed to handle data at scale. EVE environment include two languages Eve and Bee designed to work together to solve large scale distributed data processes.</p>
 
-<p>My inspiration for the name Eve comes from the heartwarming movie WALL-E. In the film, Eve is a sleek, high-tech robot who can soar through the air. She forms an unlikely bond with WALL-E, a kind-hearted but older trash compactor robot. Together, this adorable pair embarks on exciting adventures in space, ultimately playing a crucial role in humanity's future.</p>
-
-<div class="text-center">
-  <img src="img/eve-walle.png" width="300" alt="EVE" class="border shadow"/><p>EVE & Wall-E</p>
+<div class="row">
+    <div class="col-md-6">
+        <h3>The Hive (The Infrastructure)</h3>
+        <p>The Hive represents the environment—our persistent storage, the database nodes, and the distributed systems where data resides. It is the static ground truth that requires constant maintenance and synchronization.</p>
+    </div>
+    <div class="col-md-6">
+        <h3>The Bee (The Worker)</h3>
+        <p>Bee is our execution unit. These are small, autonomous, and high-velocity modules or agents designed to perform specific, granular tasks. Like bees in a colony, they are purpose-built to search, extract, process, and return data efficiently.</p>
+    </div>
 </div>
 
-<h2>Eve Features</h2>
+<h3>EVE (The Intelligence)</h3>
+<p>Eve is the orchestrator—a declarative 4th-generation language designed to control the Bees within the Hive. EVE parses the landscape, directs the workers, and ensures that data manipulation is both secure and precise. Eve is a scripting language inspired from Ruby, Python, Go and Java.</p>
 
-<p>Eve empowers efficient data handling within the EVE environment. It excels at seamlessly transferring data between internal databases and external files. This includes both importing data from external sources and exporting data from databases for external use.</p>
-<p>Eve offers a range of advanced features to optimize your data management experience:</p>
+<h2>Operational Capabilities</h2>
+<p>By leveraging the EVE-Bee-Hive hierarchy, we achieve seamless data movement between internal databases and external interfaces. Our architecture aim to optimizes for high-signal processing and low-overhead maintenance. We target following goals:</p>
 <ul>
-  <li><strong>Data compression:</strong> Reduces file sizes for efficient storage and transmission.</li>
-  <li><strong>Database synchronization:</strong> Establishes bi-directional connections to keep multiple databases in sync.</li>
-  <li><strong>Data curation:</strong> Cleanses and organizes data to ensure its accuracy and consistency.</li>
-  <li><strong>Data encryption:</strong> Safeguards sensitive information during transfers and storage.</li>
-  <li><strong>Database archiving and restoration:</strong> Enables efficient backups and recovery of large databases.</li>
+  <li><strong>Data Compression:</strong> Streamlines Hive resources for transmission.</li>
+  <li><strong>Database Synchronization:</strong> Ensures bidirectional consistency across the Hive.</li>
+  <li><strong>Data Curation:</strong> Automates the cleansing of raw data packets.</li>
+  <li><strong>Data Encryption:</strong> Maintains the integrity of payloads during transit.</li>
+  <li><strong>Archiving & Restoration:</strong> Provides a robust recovery path for Hive integrity.</li>
 </ul>
 
-<div class="text-center">
-  <img src="img/eve-logo.svg" alt="EVE" width="180" class="img-fluid protect" >
-  <p>Effective Virtual Environment</p>
-</div>
-
-<h2>Quiz</h2>
+<h2>EVE Quiz</h2>
 
 <div class="alert alert-secondary shadow-sm">
-  We have a quiz of 100 questions for beginners to check on Eve syntax. You can scan the code using a mobile or tablet. If you are already on mobile device, tap the code below to start the quiz. It requires you to sign-in using your Google account. Good luck!
+  After you follow this laboratory, take a quiz. This quiz of 100 questions is for beginners to check on Eve syntax. You can scan the code using a mobile or tablet. If you are already on mobile device, tap the code below to start the quiz. It requires you to sign-in using your Google account. Good luck!
 </div>
   
 <div class="text-center">
@@ -181,7 +194,9 @@
   </a>
 </div>
 
-<p><b>Certificate:</b> If you take the quiz with 80% or more, we recognize you as a Sage-Code developer. You can claim a certificate of completion. When the EVE virtual machine is available, you will be able to contribute with EVE code snippets and teach other people the EVE language.</p>
+<p><b>Certificate:</b> If you take the quiz with 80% or more, we recognize you as a Sage-Code EVE developer. You can claim a certificate of completion. When the EVE virtual machine is available, you will be able to contribute with EVE code snippets and teach other people the EVE language.</p>
+
+<p>Continue learning: <a href="#topics">Laboratory Topics</a></p>
 
 <!-- Footer -->
 <footer class="footer copyright">
