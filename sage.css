@@ -532,6 +532,7 @@ hr {
     border-right: 2px solid rgba(216, 26, 216, 0.2); /* Very subtle purple edge. */
     margin-left: 0px !important;
     padding-left: 0px !important;
+    order: 1; 
 }
 
 /* The content area within the sidebar that becomes scrollable. */
@@ -540,6 +541,21 @@ hr {
     padding-right: 10px !important;
     padding-left: 0px !important;
     margin-left: 0px !important;
+}
+
+#main-content { order: 2; }
+
+@media (max-width: 991px) {
+    .side-bar { display: none; }
+    .side-bar.active {
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.95);
+    }
 }
 
 /* Custom Scrollbar for the sidebar (WebKit browsers like Chrome/Safari). */

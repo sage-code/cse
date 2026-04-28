@@ -435,3 +435,8 @@ function constant(str) {
 function builtin(str) {
     return "<span class=\"builtin\">"+ str + "</span>"
 }
+
+// Add this to the bottom of eve1.js
+document.addEventListener('DOMContentLoaded', () => {
+    eve_render();
+});
