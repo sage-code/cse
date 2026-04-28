@@ -199,10 +199,26 @@ return;
 
 </div>
 
-<!-- Scripts -->
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'eve',
+    topicId: 'features',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+
 <script src="/sage.js" defer></script>
 <script src="/common/progress.js" defer></script>
 <script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
+
+
 </body>
 </html>
