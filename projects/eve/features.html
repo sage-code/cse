@@ -68,28 +68,28 @@
 </div>
 
 <section>
-  <h3>Key Features</h3>
+  <h3 id="key-features">Key Features</h3>
   <ul>
     <li>
-      <h4>Readable Syntax</h4>
+      <h4 id="readable">Readable Syntax</h4>
       <p>
         Eve leverages familiar keywords and syntax inspired by established languages like Java, C++, Ada, Pascal, and Ruby. It employs an explicit, consistent, and verbose style for enhanced code readability and learning by example. Additionally, Eve supports syntax highlighting and colorization for improved code comprehension.
       </p>
     </li>
     <li>
-      <h4>Effective and Productive</h4>
+      <h4 id="effective">Effective and Productive</h4>
       <p>
         Eve is tailored towards domain-specific jobs, prioritizing developer productivity. It focuses on effectiveness over extreme efficiency or high-performance computing.
       </p>
     </li>
     <li>
-      <h4>Safe and Type-Safe</h4>
+      <h4 id="safe">Safe and Type-Safe</h4>
       <p>
         Eve utilizes a static type system to ensure type safety. It mitigates null pointer exceptions by employing boxed values and initializing basic types with zero values.
       </p>
     </li>
     <li>
-      <h4>Modular Design</h4>
+      <h4 id="modular">Modular Design</h4>
       <p>
         Eve encourages code reusability through scripts and modules, promoting separation of concerns in larger projects. It offers three module types:
         <ul>
@@ -100,7 +100,7 @@
       </p>
     </li>
     <li>
-      <h4>Versatile Data Handling</h4>
+      <h4 id="versatile">Versatile Data Handling</h4>
       <p>
         Eve will be able to connect and manipulates data from various databases. It reads and writes diverse data formats, including text, images, and video streams. We will create specific drivers for each database we interact with and optimize data access for reliability and performance.
       </p>
@@ -108,7 +108,7 @@
   </ul>
 </section>
 
-<h2>Code Example</h2>
+<h2 id="code-example">Code Example</h2>
 
 
 <p>This Eve program calculates the 5th number in the Fibonacci sequence. Here's a breakdown:</p>
@@ -138,7 +138,7 @@ return;
 </code></pre>
 
 
-<h3>Explanation</h3>
+<h3 id="explanation">Explanation</h3>
 
 <ul>
   <li>
@@ -169,6 +169,22 @@ return;
 
 <p>Ready to dive deeper into Eve? This brief demo has only scratched the surface of its capabilities. Explore the detailed explanations we've prepared to unlock the full potential of Eve for your data manipulation needs.  As you delve into Eve's design, you'll gain valuable insights into programming language principles. Who knows, maybe one day you'll be inspired to create your own language or even contribute to the ongoing evolution of Eve!</p>
 
+<!-- Next Page Navigation -->
+<nav class="mt-5 pt-4 border-top">
+  <div class="row mt-4">
+    <div class="col-12">
+      <div class="card bg-dark border-info shadow-lg">
+        <div class="card-body">
+          <h6 class="text-secondary mb-3">📖 CONTINUE YOUR LEARNING</h6>
+          <h4 class="card-title text-info mb-3">Eve Syntax</h4>
+          <p class="card-text text-secondary mb-3">Master the fundamentals of Eve's syntax, including keywords, operators, and expressions essential for writing Eve programs.</p>
+          <a href="./syntax.html" class="btn btn-info btn-lg">Continue to Syntax →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
 <p><b>Read next:</b>
 <a href="./syntax.html">Eve Syntax</a></p>
 
@@ -184,34 +200,9 @@ return;
 </div>
 
 <!-- Scripts -->
-<script src="/common/sidebar-generator.js"></script>
-<script src="/common/progress-legacy.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Load sidebar from JSON
-    fetch('./features.json')
-      .then(response => response.json())
-      .then(data => {
-        const bookmarkList = document.getElementById('bookmark-list');
-        bookmarkList.innerHTML = '';
-        data.forEach((item, index) => {
-          const li = document.createElement('li');
-          li.className = 'nav-item mb-2';
-          li.innerHTML = `
-            <input type="checkbox" class="form-check-input me-2" id="nav-${index}" data-isTrackable="true" data-link="${item.link}">
-            <a href="${item.link}" class="text-info text-decoration-none">${item.title}</a>
-          `;
-          bookmarkList.appendChild(li);
-        });
-      })
-      .catch(error => console.error('Error loading sidebar:', error));
-    
-    // Run Eve syntax highlighting
-    if (typeof eve_render === 'function') {
-      eve_render();
-    }
-  });
-</script>
-<script src="/sage.js"></script>
+<script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/sidebar.js" defer></script>
 </body>
 </html>

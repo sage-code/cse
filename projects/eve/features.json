@@ -1,10 +1,50 @@
 [
-  {"title": "Features", "link": "#title"},
-  {"title": "Eve Capabilities", "link": "#capabilities"},
-  {"title": "Data Compression", "link": "#compression"},
-  {"title": "Database Sync", "link": "#db-sync"},
-  {"title": "Data Curation", "link": "#curation"},
-  {"title": "Encryption", "link": "#encryption"},
-  {"title": "Archiving", "link": "#archiving"},
+  {
+    "target": "features",
+    "title": "Eve Features",
+    "link": "#title",
+  },
+  {
+    "target": "key-features",
+    "title": "Key Features",
+    "link": "#key-features",
+    "children": [
+      {
+        "target": "readable",
+        "title": "Readable Syntax",
+        "link": "#readable"
+      },
+      {
+        "target": "effective",
+        "title": "Effective and Productive",
+        "link": "#effective"
+      },
+      {
+        "target": "safe",
+        "title": "Safe and Type-Safe",
+        "link": "#safe"
+      },
+      {
+        "target": "modular",
+        "title": "Modular Design",
+        "link": "#modular"
+      },
+      {
+        "target": "versatile",
+        "title": "Versatile Data Handling",
+        "link": "#versatile"
+      }
+    ]
+  },
+  {
+    "target": "code-example",
+    "title": "Code Example",
+    "link": "#code-example"
+  },
+  {
+    "target": "explanation",
+    "title": "Explanation",
+    "link": "#explanation"
+  },
   {"title": "Next: Syntax", "link": "./syntax.html"}
 ]
