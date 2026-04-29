@@ -68,7 +68,7 @@ With:
 
 Replace:
 ```html
-<body onload="eve_render();">
+<body>
 ```
 
 With:
