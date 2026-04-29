@@ -2,12 +2,7 @@
   {
     "target": "features",
     "title": "Eve Features",
-    "link": "#title"
-  },
-  {
-    "target": "key-features",
-    "title": "Key Features",
-    "link": "#key-features",
+    "link": "#title",
     "children": [
       {
         "target": "readable",
@@ -46,5 +41,6 @@
     "title": "Explanation",
     "link": "#explanation"
   },
-  {"title": "Next: Syntax", "link": "./syntax.html"}
+  {"title": "Next: Syntax", 
+   "link": "./syntax.html"}
 ]

@@ -22,22 +22,6 @@
   <script src="/prism.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="/sage.css">
-  <style>
-    .side-bar { order: 1; }
-    #main-content { order: 2; }
-    @media (max-width: 991px) {
-      .side-bar { display: none; }
-      .side-bar.active {
-        display: block;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-        background: rgba(0,0,0,0.95);
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -68,30 +52,13 @@
 
 <div class="alert alert-secondary shadow-sm">Eve's syntax draws inspiration from a variety of programming languages. We leverage short English keywords without resorting to abbreviations. Notably, languages like Ada, Ruby, Fortran, and Python have influenced Eve's design. Unlike some languages, Eve doesn't rely on curly braces for code blocks. We believe you'll find Eve enjoyable to learn.</div>
 
-<h4>Page bookmarks</h4>
 
-<p>In this article you will learn about:</p>
 
-<hr>
-<ul>
-<li><a href="#elements">elements</a></li>
-<li><a href="#punctuation">punctuation</a></li>
-<li><a href="#comments">comments</a></li>
-<li><a href="#identifiers">identifiers</a></li>
-<li><a href="#globals">globals</a></li>
-<li><a href="#expressions">expressions</a></li>
-<li><a href="#statements">statements</a></li>
-<li><a href="#keywords">keywords</a></li>
-<li><a href="#delimiters">delimiters</a></li>
-<li><a href="#operators">operators</a></li>
-</ul>
-<hr>
-
-<h2>Design Strategy</h2>
+<h2 id="design">Design Strategy</h2>
 
 <p>Eve aims to strike a balance between a verbose, explicit syntax for learning purposes and a concise, intuitive syntax for ease of use. The goal is to design a syntax that is both descriptive and readable for beginners, while also being concise and "looking right" for experienced users.</p>
 
-<h2>Hello World</h2>
+<h3 id="hello">Hello World</h3>
 
 <div>One of the best ways to get started with a new programming language is through the classic "Hello World" example. In Eve, printing "Hello World!" to the console is straightforward and highlights some key aspects of the language's syntax:.</div>
 
@@ -108,7 +75,7 @@ return;
 
 <p>In example above we have a script, the file name must be hello.eve. It consist of driver with name "hello". Inside we have a single main process that print to console "Hello World!". This is basicly a small Eve program.</p>
 
-<h2><a id="elements">Syntax Elements</h2>
+<h3 id="elements">Syntax Elements</h3>
 
 <p>To better understand Eve's syntax, let's examine a another program and identify its key syntactic elements and punctuation symbols. While we will describe the role of each symbol and keyword, you don't need to memorize them all at once. We'll create detailed explanations for the language's semantics later on.</p>
 
@@ -139,16 +106,13 @@ process:
 return;
 </code></pre>
 
-<h2><a id="punctuation"/>Punctuation:</h2>
+<h3 id="punctuation">Punctuation</h3>
 
 <ul>
 <li>Eve is using infix expressions like Java and other popular languages,</li>
 <li>Multiple expressions can be separated with comma,</li>
 <li>Each statement start with a keyword and is ending in semicolon,</li>
 <li>Statement regions and nested blocks use mandatory indentation.</li>
-</ul>
-ments"></a>Comments</h2>
-<ul>
 <li>Hash sign "#" is used for title comments,</li>
 <li>Subtitle comments are using two stars:&nbsp;"**";</li>
 <li>Single line comments start with two dashes :&nbsp;"--"</li>
@@ -201,7 +165,7 @@ of code that already have some comments.
 <li>Single line comment like "//" is not valid in Eve;</li>
 </ul>
 
-<h2><a id="identifiers"></a>Identifiers</h2>
+<h2 id="identifiers">Identifiers</h2>
 
 <p>The name of identifiers in Eve can have a length of 30 characters. A name starts with lowercase letters (a..z) or capital letters (A..Z) followed by one or more characters or numbers. No special characters or spaces are permitted in the name except underscore ("_"). An identifier can contain underscore and can start with underscore but it can not end with underscore and can not use two consecutive underscores.</p>
 
@@ -225,7 +189,7 @@ _not_valid_
 
 <p>To summarize, Eve identifiers follow a conventional naming style similar to many programming languages, with some additional restrictions on the use of underscores at the beginning, end, and consecutive positions within the identifier name.</p>
 
-<h3>Prefix & Sigil</h3>
+<h3 id="prefix">Prefix & Sigil</h3>
 
 <p>Identifier prefix is used to declare a variable, but is not required when using the variable. A sigil is part of variable name and it must be used when you use the variable. </p>
 
@@ -243,7 +207,7 @@ _not_valid_
 
 <p>So in summary, Eve uses specific prefixes like * and @ to denote special parameter types, and sigils like _ and $ as part of variable names to indicate their scope and accessibility (protected or system-wide). This convention helps differentiate various types of identifiers and variables within the Eve programming language.</p>
 
-<h3>System Variables</h3>
+<h3 id="variables">System Variables</h3>
 
 <p>System variables start with sigil: "$", that is making a "system state". System states are static and public, shared in a a process.</p>
 
@@ -277,7 +241,7 @@ _not_valid_
 <li>A system variable can be an object with attributes or a base type.</li>
 </ul>
 
-<h2><a id="globals"></a>Globals</h2>
+<h2 id="globals">Globals</h2>
 <p>In any Eve script you can define global variables. These are primitive values or references to objects. A global variable is represented by an identifier and value. Type is optional hint. Global variables do not use a sigil.</p>
 
 <p>Global variables can be declared using "set" statement. Initial value is establish with operator "=" follow by a type hint. Globals can be modified during the program execution using "let" statement with <em>modifier operators</em>&nbsp;like: { :=, ::, +=, -= ... }.</p>
@@ -327,7 +291,7 @@ process:
 return;
 </code></pre>
 
-<h2><a id="expressions"></a>Expressions</h2>
+<h2 id="expressions">Expressions</h2>
 <p>An expression is a syntax element that can be evaluated using mathematical rules and principles. Expressions are created using identifiers, operators, functions and constant literals. Expressions can be grouped using round paranthesis (). Multiple expressions can be used in a statement.</p>
 
 <p>expressions...</p>
@@ -373,7 +337,7 @@ return;
 <li>print is used to flush the buffer, after several writes,</li>
 </ul>
 
-<h3>Assign Expression</h3>
+<h3 id="assign">Assign Expression</h3>
 
 <p>In Eve, you can assign the result of an expression to a variable using the assignment operator <code>:=</code>. However, this operator exhibits a behavior that you must understand to avoid unintended side effects. When assigning a non-primitive (boxed) variable as an expression, the operator transfers the value by sharing a reference, rather than copying the value itself. This means that the new variable will reference the same underlying object as the original variable. In contrast, when assigning a primitive (native) type, the operator transfers the actual value, creating a separate copy of the data.</p>
 
@@ -403,7 +367,7 @@ return;
 
 <p><b>Note: </b>For native type, the operator "is" do not work at all. Attempting to use "is" or "is not" with a native type will always return false even if the values are equal. For native types you have to use "==" to compare the values. For objects, "==" will execute deep comparison, and will return "True" if all object attributes or data elements have also equal values.</p> 
 
-<h3>Ternary expression</h3>
+<h3 id="ternary">Ternary expression</h3>
 
 <p>The ternary operator in Eve is the "if" keyword. This keyword has actually two roles in EVE. It can be used to create a conditional statement or an expression. It can be used to return a value or other depending on one or several logical expressions. In other languages we use ternary operator "?" and ":" but in Eve these two symbols are used for more important other purposes.</p>
 
@@ -437,10 +401,10 @@ return;
 </code></pre>
 
 
-<b><b>Note: </b>While the traditional ternary operator syntax with "?" and ":" is widely adopted in many programming languages, Eve's approach with the "if" keyword prioritize readability, consistency, and scalability. This design choice aligns with Eve's goals of being a comprehensible and accessible language, especially for beginners.</p>
+<p><b>Note: </b>While the traditional ternary operator syntax with "?" and ":" is widely adopted in many programming languages, Eve's approach with the "if" keyword prioritize readability, consistency, and scalability. This design choice aligns with Eve's goals of being a comprehensible and accessible language, especially for beginners.</p>
 
 
-<h2><a id="statements"></a>Statements</h2>
+<h2 id="statements">Statements</h2>
 <p>One statement can be declarative or imperative. We use both in our language. Therefore Eve is an imperative & declarstive language in the same time. Also Eve has support for OOP and Functional Programming paradigms.  This makes Eve a modern hybrid language that can be used by developers for small or large projects.</p>
 
 <ul>
@@ -452,7 +416,7 @@ return;
 <li>A block of code is usually indented using equal number of spaces;</li>
 </ul>
 
-<h3>Single line statement</h3>
+<h3 id="single">Single line statement</h3>
 
 <p>The most simple statements are definitely single line statements. In next example we demonstrate 5 simple statements. Every statement start with a keyword (new, let, expect) and end with semicolumn ";". First line is not a statement but a declaration. Last keyword "return" is actually the end of declaration and not a statement. </p>
 
@@ -473,7 +437,7 @@ process:
 return;
 </code></pre>
 
-<h3>Multi-line statements</h3>
+<h3 id="multi">Multi-line statements</h3>
 
 <p>One expression can span multiple lines.</p>
 <ul>
@@ -500,7 +464,7 @@ process:
   };
 return;</code></pre>
 
-<h2><a id="keywords"></a>Reserved keywords</h2>
+<h2 id="keywords">Reserved Keywords</h2>
 
 <p>Computer was invented in England during WW2, so we prefer English keywords, even though a computer language could be created using keywords from other spoken languages. Eve is using about 100 reserved keywords. In next table we collect all keywords reserved for Eve. Some keywords may not yet be used. If we reserve new keywords they should be added here later. Please signal keywords that are not here to help us improve this inventory.</p>
 
@@ -533,7 +497,7 @@ return;</code></pre>
 <tr><td>constructor</td><td>add    </td><td>del       </td><td>pop      </td></tr>
 </table>
 
-<h3>Script regions</h3>
+<h2 id="regions">Script regions</h2>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -581,7 +545,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h3>Semantic keywords</h3>
+<h3 id="semantic">Semantic Keywords</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -615,7 +579,6 @@ return;</code></pre>
 <td>define an augment for an existing class</td>
 </tr>
 <tr>
-<tr>
 <td>method</td>
 <td>define behavior for user defined data types</td>
 </tr>
@@ -623,13 +586,14 @@ return;</code></pre>
 <td>release</td>
 <td>define a object clear region for a class</td>
 </tr>
+<tr>
 <td>return</td>
 <td>terminate a process/function or a class declaration</td>
 </tr>
 </tbody>
 </table>
 
-<h3>Blocks of code/sections</h3>
+<h3 id="block">Blocks of code/sections</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -713,7 +677,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h3>Operator keywords</h3>
+<h3 id="operator-keyboard">Operator keywords</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -749,7 +713,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h3>Assign keywords</h3>
+<h3 id="assign-keywords">Assign keywords</h3>
 
 <p>For any kind of assignment or modification you must us a specific keyword. This is why we use keywords like: {set, new, let}. User must read what's going on and will understand much better the code by using keywords.</p>
 
@@ -777,11 +741,10 @@ return;</code></pre>
 <td>pop</td>
 <td>Can create a new local variable from element of a collection</td>
 </tr>
-<tr>
 </tbody>
 </table>
 
-<h3>Interruption statements</h3>
+<h3 id="interruption-statements">Interruption statements</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -814,18 +777,18 @@ return;</code></pre>
 <td>retry</td>
 <td>jump back to the same job and try again.</td>
 </tr>
+<tr>
 <td>start</td>
 <td>start a coroutine in asynchronous mode</td>
 </tr>
 <tr>
   <td>suspend</td>
-  <td>intrerupt a coroutine and wait for resume</td>
+  <td>interrupt a coroutine and wait for resume</td>
 </tr>
 <tr>
   <td>resume</td>
   <td>continue execution of a suspended coroutine</td>
   </tr>
-<tr>
 <tr>
 <td>yield</td>
 <td>unused (replaced by suspend/resume/wait)</td>
@@ -833,7 +796,8 @@ return;</code></pre>
 <tr>
   <td>wait</td>
   <td>intrerupt the main process for specified time</td>
-  </tr>
+</tr>
+<tr>
 <td>run</td>
 <td>execute an aspect in asynchronous mode</td>
 </tr>
@@ -856,10 +820,10 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h2><a id = "delimiters"/>Delimiters</h2>
+<h2 id="delimiters">Delimiters</h2>
 <p>In the syntax description "..." represent content and "_,_,_," represents a sequence of elements. "_" represent one of the elements. In descriptions vertical bar "|" represents second alternative. Some operators can have multiple purposes depending on the context and data types.</p>
 
-<h3>Comments</h3>
+<h3 id="delimiters-comments">Comments Delimiters</h3>
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -885,11 +849,10 @@ return;</code></pre>
 <td>"/.../g"</td>
 <td>Regular expression search pattern</td>
 </tr>
-<tr>
 </tbody>
 </table>
 
-<h3>Collections</h3>
+<h3 id="collections">Collection Delimiters</h3>
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -899,6 +862,7 @@ return;</code></pre>
 </tr>
 </thead>
 <tbody>
+<tr>
 <td>(_,_,_)</td>
 <td>List literal | parameters | arguments</td>
 </tr>
@@ -913,7 +877,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h3>Strings</h3>
+<h3 id="strings">String Delimiters</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -922,6 +886,7 @@ return;</code></pre>
 </tr>
 </thead>
 <tbody>
+<tr>
 <td>'...'</td>
 <td>Symbol = Unicode UTF8 codepoint (4 Bytes).</td>
 </tr>
@@ -933,7 +898,7 @@ return;</code></pre>
 </table>
 
 
-<h2><a id="operators"></a>Operators</h2>
+<h2 id="operators">Operators</h2>
 <p>Eve us ASCII symbols for operators. One operator can be single character or  two characters with no space between tem. Sometimes we use the same character twice for example "==" or ">>". This convention is well known in many other computer languages.</p>
 
 <p><b>Single symbol:</b></p>
@@ -952,7 +917,7 @@ return;</code></pre>
 <p><b>Delimiters:</b></p>
 <pre class="fixed">"_" '_' (...) [...] {...} #(...)</code></pre>
 
-<h3>Single symbols</h3>
+<h3 id="singles">Single symbols</h3>
 
 <p>Eve use almost al single special characters found on a standard keyboard, but this is not good enaugh. So like anu other language out there we have used 2 or 3 characters to create New symbols. </p>
 
@@ -1016,6 +981,7 @@ return;</code></pre>
 <td>*</td>
 <td>Variable arguments | Multiplication | All elements</td>
 </tr>
+<tr>
 <td>*</td>
 <td>Usable in import to create a file pattern/search</td>
 </tr>
@@ -1030,7 +996,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h3>Composite symbols</h3>
+<h3 id="composite">Composite symbols</h3>
 <p>Eve use two symbols to create supplementary operators.</p>
 <table class="table table-bordered table-striped">
 <thead>
@@ -1085,7 +1051,7 @@ return;</code></pre>
 </table>
 
 
-<h2>Numeric operators</h2>
+<h3 id="numeric-operators">Numeric operators</h3>
 <table class="table table-bordered table-striped">
 <thead>
 <tr>
@@ -1125,7 +1091,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h2>Relation Operators</h2>
+<h3 id="relation">Relation Operators</h3>
 <p>Eve use two symbols to create a additional operators.</p>
 <table class="table table-bordered table-striped">
 <thead>
@@ -1162,7 +1128,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h2>Modifiers</h2>
+<h3 id="modifiers">Modifier Operators</h3>
 
 <p>Each modifier is created with pattern "?=", where "?" is one of these: {:, +, -, *, /, %, ^}. Also the symbol "::" is a modifier.</p>
 
@@ -1222,7 +1188,7 @@ return;</code></pre>
 </table>
 
 
-<h2>Logical operators</h2>
+<h3 id="logicop">Logical operators</h3>
 <p>These operators are expected logical values T = True, F = False</p>
 <table class="table table-bordered table-striped">
 <thead>
@@ -1244,11 +1210,9 @@ return;</code></pre>
 <td>is not</td>
 <td>check elements are different. (compare locations)</td>
 </tr>
-</tr>
 <tr>
   <td>as</td>
   <td>quick conversion  using format constants for date/time</td>
-  </tr>
   </tr>
 <tr>
 <td>eq</td>
@@ -1291,7 +1255,7 @@ return;</code></pre>
 <li>not True  = False</li>
 </ul>
 
-<h4>Table of truth</h4>
+<h2 id="truth">Table of truth</h2>
 
 <table class="table table-bordered table-striped">
 <thead>
@@ -1335,7 +1299,7 @@ return;</code></pre>
 </tbody>
 </table>
 
-<h2>Bitwise operators</h2>
+<h2 id="bitwise">Bitwise operators</h2>
 <p>These operators are working for natural numbers &ge; 0</p>
 <table class="table table-bordered table-striped">
 <thead>
@@ -1462,10 +1426,6 @@ return;</code></pre>
 
 
 
-<hr>
-<p><b>Read next:</b>
-<a href="./types.html">Data Types</a></p>
-
     </main>
   </div>
 </div>
@@ -1478,9 +1438,21 @@ return;</code></pre>
 </div>
 
 <!-- Scripts -->
-<script src="/sage.js" defer></script>
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'eve',
+    topicId: 'syntax',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+
+<script src="/sage.js"></script>
 <script src="/common/progress.js" defer></script>
 <script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
+
 </body>
 </html>
