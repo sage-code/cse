@@ -17,12 +17,8 @@
   <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Eve code highlighter -->
   <script src="/projects/eve/js/eve1.js"></script>
-  <!-- Prism for syntax highlighting -->
-  <link rel="stylesheet" href="/prism.css">
-  <script src="/prism.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="/sage.css">
-  <script src="/projects/eve/js/eve1.js"></script>
 </head>
 <body>
 
@@ -906,10 +902,8 @@ return;</code></pre>
 <pre class="fixed"># , : . ; = ~ ? % ^ * - + / &lt; &gt; &amp; | ! @ $</pre>
 
 <p><b>Two symbols:</b></p>
-<pre class="fixed">== !=  => <= >= :> <: .. !. !~ && || &=</pre>
+<pre class="fixed">== <>  => <= >= :> <: .. !.</pre>
 
-<p><b>Three symbols:</b></p>
-<pre class="fixed">.|. .&. .+. </pre>
 
 <p><b>Modifiers:</b></p>
 
@@ -1107,7 +1101,7 @@ return;</code></pre>
 <td>Equal | deep comparison</td>
 </tr>
 <tr>
-<td>!=</td>
+<td>&lt;&gt;</td>
 <td>Different value | (deep comparison)</td>
 </tr>
 <tr>
@@ -1220,7 +1214,7 @@ return;</code></pre>
 <td>equivalence  "&equiv;" (compare value & type)</td>
 </tr>
 <tr>
-<td>!eq (not eq)</td>
+<td>not eq</td>
 <td>non equivalence "!&equiv;" (compare value & type)</td>
 </tr>
 <tr>
@@ -1228,11 +1222,11 @@ return;</code></pre>
 <td>logic belong to: instead of "&isin;"</td>
 </tr>
 <tr>
-<td>!in (not in)</td>
+<td>not in</td>
 <td>logic not belong to: instead of "!&isin;"</td>
 </tr>
 <tr>
-<td>!(not)</td>
+<td>not</td>
 <td>logic NOT (negation)</td>
 </tr>
 <tr>
@@ -1296,131 +1290,6 @@ return;</code></pre>
 <td>False</td>
 <td>False</td>
 <td>False</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="bitwise">Bitwise operators</h2>
-<p>These operators are working for natural numbers &ge; 0</p>
-<table class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>symbol</th>
-<th>description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td> !.</td>
-<td>bitwise NOT (unary)</td>
-</tr>
-<tr>
-<td>.&.</td>
-<td>bitwise AND</td>
-</tr>
-<tr>
-<td>.|.</td>
-<td>bitwise OR</td>
-</tr>
-<tr>
-<td>.+.</td>
-<td>bitwise XOR</td>
-</tr>
-<tr>
-<td>&lt;&lt;</td>
-<td>shift bits to left</td>
-</tr>
-<tr>
-<td>&gt;&gt;</td>
-<td>shift bits to right</td>
-</tr>
-</tbody>
-</table>
-
-<p><b>Binary operators</b></p>
-<table class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>A</th>
-<th>B</th>
-<th>A.&.B</th>
-<th>A.|.B</th>
-<th>A.+.B</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-</tr>
-<tr>
-<td>01</td>
-<td>00</td>
-<td>00</td>
-<td>01</td>
-<td>01</td>
-</tr>
-<tr>
-<td>11</td>
-<td>01</td>
-<td>01</td>
-<td>11</td>
-<td>10</td>
-</tr>
-<tr>
-<td>10</td>
-<td>11</td>
-<td>10</td>
-<td>11</td>
-<td>01</td>
-</tr>
-<tr>
-<td>11</td>
-<td>11</td>
-<td>11</td>
-<td>11</td>
-<td>00</td>
-</tr>
-</tbody>
-</table>
-
-<p><b>Unary operators</b></p>
-<table class="table table-bordered table-striped">
-<thead>
-<tr>
-<th>A</th>
-<th>!.A</th>
-<th>A &lt;&lt; 1</th>
-<th>A &gt;&gt; 1</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0000</td>
-<td>1111</td>
-<td>0000</td>
-<td>0000</td>
-</tr>
-<tr>
-<td>1111</td>
-<td>0000</td>
-<td>1110</td>
-<td>0111</td>
-</tr>
-<tr>
-<td>0111</td>
-<td>1000</td>
-<td>1110</td>
-<td>0011</td>
-</tr>
-<tr>
-<td>0110</td>
-<td>1001</td>
-<td>1100</td>
-<td>0011</td>
 </tr>
 </tbody>
 </table>

@@ -148,10 +148,6 @@
     "link": "#truth"
   },
   {
-    "title": "Bitwise Operators",
-    "link": "#bitwise"
-  },
-  {
     "title": "Next: Data Types",
     "link": "./types.html"
   }
