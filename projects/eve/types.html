@@ -17,9 +17,6 @@
   <link rel="icon" type="image/png"  href="/images/favicon.ico">
   <!-- Eve code highlighter -->
   <script src="/projects/eve/js/eve1.js"></script>
-  <!-- Prism for syntax highlighting -->
-  <link rel="stylesheet" href="/prism.css">
-  <script src="/prism.js"></script>
   <!-- Sage-Code custom CSS -->
   <link rel="stylesheet" href="/sage.css">
   <style>
@@ -70,26 +67,9 @@
 The purpose of any programming language is to manipulate data. On the lowest level, data is basically 0 and 1 signals. Eve is a high level language. It has complex data types. Eve has a gradual-typing system that will be explained below.
 </div>
 
-<h4>Page bookmarks</h4>
 
-<hr>
-<ul>
-<li><a href="#native-types">Native Types</a></li>
-<li><a href="#primitive-types">Primitive Types</a></li>
-<li><a href="#symbol">Single symbol</a></li>
-<li><a href="#composite-types">Composite Types</a></li>
-<li><a href="#data-coercion">Data coercion</a></li>
-<li><a href="#type-inference">Type inference</a></li>
-<li><a href="#default-types">Default types</a></li>
-<li><a href="#logical-type">Logical type</a></li>
-<li><a href="#gradual-typing">Gradual typing</a></li>
-<li><a href="#calendar-date">Calendar date</a></li>
-<li><a href="#time-duration">Time duration</a></li>
-<li><a href="#format">Quick format</a></li>
-</ul>
-<hr>
 
-<h2><a id="native-types"></a>Native Types</h2>
+<h2 id="native-types">Native Types</h2>
 
 <p>Native types are implemented by operating system. We name native types using a single lowercase letter followed by the number of bytes used: {8, 16, 32, 64}. In next table we show the convetion of notation for these types.</p>
 
@@ -116,12 +96,12 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 <td>8</td>
 <td>64</td>
 </tr>
+<tr>
 <td>f</td>
 <td>Float</td>
 <td>32</td>
 <td>64</td>
 </tr>
-<tr>
 </tbody>
 </table>
 
@@ -135,7 +115,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 
 <p>Native types are used by low level EVE core libraries and not usually necessary in Eve scripts. The system library is using these types to create Primitive Types and communicate with other languages. A native type can be boxed using a primitive type. We will define next the <i>primitive types</i>.</p>
 
-<h2><a id="primitive-types"></a>Primitive Types</h2>
+<h2 id="primitive-types">Primitive Types</h2>
 
 <p>Primitive types are predefined in Eve core library. They have an equivalent native type. Primitive types are slower than equivalent native types, ocupy more memory but they have more features. Primitive types are created using OOP so tey are actually classes.</p>
 
@@ -173,6 +153,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 <td>0</td>
 <td>2^64-1</td>
 </tr>
+<tr>
 <td>Real</td>
 <td>Float precision number on 8 bytes</td>
 <td>-n</td>
@@ -216,7 +197,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 <div class="alert alert-success"><b>Note:</b>&nbsp;Native and primitive types are automaticly inititialized to zero value unless specified otherwise using a data literal. Symbols have initial value NIL equivalent to ''.</div>
 
 
-<h2><a id="numeric-types"></a>Numeric Types</h2>
+<h2 id="numeric-types">Numeric Types</h2>
 <p>In Eve we can have two categories of numbers:</p>
 <table class="table table-bordered table-striped">
 <thead>
@@ -237,7 +218,7 @@ The purpose of any programming language is to manipulate data. On the lowest lev
 </tbody>
 </table>
 
-<h3><a id="discrete-numbers" class="anchor" href="#discrete-numbers"></a>
+<h3 id="discrete-numbers">
 Discrete numbers:</h3>
 
 <p>Discrete numbers have a range from negative to positive number that can be calculate easly by the number of bytes. We have equivalent native numbers for every number of bytes from 1 to 64.</p>
@@ -284,8 +265,8 @@ Discrete numbers:</h3>
 </ul>
 
 
-<h3><a id="Real-numbers"></a>Continuous numbers</h3>
-<p>The type&nbsp;<em>Real</em>&nbsp;is represented using floating precision numbers.<br />Floating decimal numbers are most simply described by 3 Integers:</p>
+<h3 id="continuous-numbers">Continuous Numbers</h3>
+<p>The type&nbsp;<em>Real</em>&nbsp;is represented using floating precision numbers.<br/>Floating decimal numbers are most simply described by 3 Integers:</p>
 <ul>
 <li>s: a sign (0 or 1)</li>
 <li>c: a coefficient</li>
@@ -382,9 +363,9 @@ return;
 </code></pre>
 <p><b>See also:</b>&nbsp;<a href="https://en.wikipedia.org/wiki/Scientific_notation#Other_bases" rel="nofollow">scientific notation</a></p>
 
-<h2><a id="symbol"></a>Type "Symbol"</h2>
+<h2 id="symbol">Type "Symbol"</h2>
 
-<p>We name Symbol type a single UNICODE UTF32 encoded sumbol. You can use single quoted string to encapsulare a single symbol. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes unlike C that has 1 byte for char. This type is called "rune" in Go language but we call it Symbol. Though we know that some people reffer to many characters together to create a single symbol.</p>
+<p>We name Symbol type a single UNICODE UTF32 encoded symbol. You can use single quoted string to encapsulate a single symbol. Single quoted strings can store a single UTF8 code point but it has a fixed size of 4 bytes unlike C that has 1 byte for char. This type is called "rune" in Go language but we call it Symbol. Though we know that some people refer to many characters together to create a single symbol.</p>
 
 <h4>Examples</h4>
 
@@ -394,8 +375,8 @@ process:
   new letter   := 'a';
   new capital  := 'B';
   new number   := '5';
-  new unicode  := '&beta';
-  new operator := '&not';
+  new unicode  := '&beta;';
+  new operator := '&not;';
   ...
 return;
 </code></pre>
@@ -431,7 +412,7 @@ return;
 
 <p>In Eve, "boxing" and "unboxing" are crucial concepts that describe the conversion between native types and their corresponding primitive types.</p>
 
-<h3>Boxing</h3>
+<h3 id="boxing">Boxing</h3>
 
 <p>Boxing is the process of wrapping a native type value within a primitive type object. This allows native types to be treated as objects, giving them access to methods and properties defined in the primitive type classes.</p>
 
@@ -440,7 +421,7 @@ return;
 new x :Integer = 5;  -- 5 (native i64) is boxed into an Integer object
 </code></pre>
 
-<h3>Unboxing</h3>
+<h3 id="unboxing">Unboxing</h3>
 
 <p>Unboxing is the reverse process of extracting the native type value from a primitive type object. This is typically done when you need to perform low-level operations or interface with system libraries that expect native types.</p>
 
@@ -449,7 +430,7 @@ new x :Integer = 5;  -- 5 (native i64) is boxed into an Integer object
 let native_value :i64 = x.value();  -- Extracts the i64 value from the Integer object
 </code></pre>
 
-<h3>Key Points</h3>
+<h3 id="key-points">Key Points</h3>
 
 <ul>
     <li>Boxing is often implicit in Eve, happening automatically when you use a native value where a primitive type is expected.</li>
@@ -463,9 +444,9 @@ let native_value :i64 = x.value();  -- Extracts the i64 value from the Integer o
     <strong>Note:</strong> While boxing provides additional features, it comes with a small performance overhead. Use native types for performance-critical operations where the additional features of primitive types are not needed.
 </div>
 
-<h3>Example: Boxing and Unboxing in Action</h3>
-
+<h3 id="boxing-unboxing-example">Example</h3>
 <pre><code class="language-eve">
+# Boxing and Unboxing in action
 process boxing_demo:
     ** Boxing
     new boxed_integer :Integer = 42;  -- 42 is boxed into an Integer object
@@ -487,7 +468,7 @@ return;
 <p>Understanding boxing and unboxing is essential for efficient memory management and performance optimization in Eve programs, especially when working with large datasets or in performance-critical sections of code.</p>
 
 
-<h2><a id="composite-ypes"></a>Composite Types</h2>
+<h2 id="composite-types">Composite Types</h2>
 
 <div class="alert alert-info">Composite data types, also called structured types or user-defined types, group multiple primitive data types (like integers, strings) into a single unit. They define a structure to hold this data and often include ways to access and manipulate it. </div> 
 
@@ -568,7 +549,7 @@ return;
 </tbody>
 </table>
 
-<h3><a id="range"></a>Range</h3>
+<h3 id="range">Range</h3>
 
 <p>A range is a notation that describe a set of discrete elements. Range is not expanded in memory. Ranges enable creation of efficient and comprehensive statements in a declarative way.</p>
 
@@ -578,7 +559,7 @@ return;
 
 <h4>Syntax:</h4>
 
-<p>In next example we creste a range class. The new range is actually a subclsdd of Range. We will learn later how to use ranges in different cases. We use .. and : to define the range.</p>
+<p>In next example we create a range class. The new range is actually a sub-class of Range. We will learn later how to use ranges in different cases. We use .. and : to define the range.</p>
 
 <pre class="language-out">
 class range = (min..max:ratio) <: Range;
@@ -587,7 +568,7 @@ class range = (min..max:ratio) <: Range;
 <h4>Notes:</h4>
 <ul>
 <li>Limits are included by default,</li>
-<li>Ratio is defaul 1 and optional,</li>
+<li>Ratio is default 1 and optional,</li>
 <li>Limits can be inverted,</li>
 <li>Ratio can be negative,</li>
 <li>Compiler should verify a range declaration to make sens.</li>
@@ -597,7 +578,7 @@ class range = (min..max:ratio) <: Range;
 
 <p>Numeric ranges:</p>
 
-<pre lass="no-line-numbers"><code class="language-eve">
+<pre class="no-line-numbers"><code class="language-eve">
 #numeric range demo
 driver numeric_range:
 
@@ -654,7 +635,7 @@ process:
 return;
 </code></pre>
 
-<h2><a id="random-method"></a>Random method</h2>
+<h2 id="random-method">Random Method</h2>
 
 <p>The range and domain are iterable and have a number of methods that are useful for data processing but these are not collections but generators. One method is very useful and is going to be used in many examples: random(). It is implemented for all collections.</p>
 
@@ -676,7 +657,7 @@ process:
 return;
 </code></pre>
 
-<h2><a id="data-coercion"></a>Data Coercion</h2>
+<h2 id="data-coercion">Data Coercion</h2>
 
 <p>In computer science coercion is used to implicitly or explicitly change an entity of one data type into another of different type. This is ready to take advantage of type hierarchies and type representations. If not designed properly the coercion can be a fatal mistake. Eve is a safe language so we do only safe coercion.</p>
 
@@ -760,7 +741,7 @@ return;
 
 <p><b>Note:</b>&nbsp;Build-in functions that are located in EVE&nbsp;<em>default</em>&nbsp;library: { parse(), format(), ceiling(), floor() round()}.  This module is one of the standard modules that are automatically included in any Eve program.</p>
 
-<h2><a id="default-types"></a>Default types</h2>
+<h2 id="default-types">Default Types</h2>
 
 <p>Literals are representations of specific particular data type in source code. We connect data literals to default types for every literal to be able to use type inference in declarations and expressions. In next table we show this association.</p>
 
@@ -890,7 +871,7 @@ return;
 </tbody>
 </table>
 
-<h2><a id="type-inference"></a>Type Inference</h2>
+<h2 id="type-inference">Type Inference</h2>
 
 <p>Type inference is a logical association of data type from a constant literal or expression. Type inference can be used in declarations of new variables with the specific assign operators capable to infer data types.</p>
 
@@ -929,7 +910,7 @@ process:
 return;
 </code></pre>
 
-<h3>Type verification</h3>
+<h3 id="type-verification">Type Verification</h3>
 
 <p>We can verify the type using "is" operator:</p>
 <pre><code class="language-eve"># using operator "is" to check type
@@ -949,7 +930,7 @@ return;
 </code></pre>
 
 
-<h3><a id="printing-type"></a>Printing type()</h3>
+<h3 id="printing-type">Printing type()</h3>
 
 <p>For type introspection we can use type() built-in function:</p>
 <pre><code class="language-eve"># introspection demo
@@ -961,13 +942,13 @@ return;
 </code></pre>
 
 
-<h2><a id="polymorphic-operators"</a>Polymorphic operators</h2>
+<h2 id="polymorphic-operators">Polymorphic Operators</h2>
 
 <p>In mathematics there are very few operators: {+, -, &divide; , * } that can operate with any kind of numbers: negative, positive, rational or real. Operators are not bound to specific data types. Therefore these operators are called&nbsp;<em>"polymorphic"</em>.</p>
 
 <p>In EVE, operators are functions. To design polymorphic operators we overload the function signature using type dispatch. The dispatch is using left side operand first, this is the leading operand. For unary operators there is only right side operand so this becomes the leading operand.</p>
 
-<h2><a id="logical-type" class="anchor" href="#logical-type"></a>Logical type</h2>
+<h2 id="logical-type">Logical Type</h2>
 
 <p>In Latin the "falsus" and "verum" are translated in English to "false" and "true". In many languages False and True are two constants. In Fortran we use to have .T. and .F. while in C we use to have {0, 1}. Two values.</p>
 
@@ -1022,13 +1003,13 @@ class Logic = {False:0 , True} &lt;: Ordinal;
 <p>Result of logical expressions can be used into a conditional statement to make a decision. Also results of logical expressions can be stored in logical variables to be used later in other conditions.</p>
 
 
-<h2><a id="gradual-typing"></a>Gradual typing</h2>
+<h2 id="gradual-typing">Gradual Typing</h2>
 
 <p>Gradual typing is a type system in which some variables may be given a type. Some variables or members may be left un-typed. Therefore some type errors are reported at compile-time some other at run-time.</p>
 
 <p>Gradual typing is different than type inference. On type inference the type specification is missing but default type is determined by logic deduction from literals and expressions.</p>
 
-<h3>Variant Types</h3>
+<h3 id="variant-types">Variant Types</h3>
 <p>A Variant is a polymorphic variable that can have one of a list of types but only one at a time. When the value is established, one type to hold that value is created.</p>
 
 <h4>Syntax:</h4>
@@ -1074,7 +1055,7 @@ process:
 return;
 </code></pre>
 
-<h3>Usability</h3>
+<h3 id="usability">Usability</h3>
 <p>A variant can establish its data type at runtime:</p>
 
 <h4>Example 1:</h4>
@@ -1139,11 +1120,11 @@ return;
 </code></pre>
 
 
-<h2><a id="calendar-date"></a>Calendar date</h2>
+<h2 id="calendar-date">Calendar Date</h2>
 
 <p>In Eve, we represent calendar dates using a Date object that contains four fields: year, month, day.</p>
 
-<h3>Date Structure</h3>
+<h3 id="date-structure">Date Structure</h3>
 <p>The Date type is defined as an object with the following fields:</p>
 <ul>
     <li><code>year</code>: Integer representing the year</li>
@@ -1153,7 +1134,7 @@ return;
 
 <p><b>Note:</b> Years before the Common Era/Anno Domini are represented with negative numbers.</p>
 
-<h3>Date Literals</h3>
+<h3 id="date-literals">Date Literals</h3>
 <p>We can create a date literal using the following format functions:</p>
 <ul>
     <li><code>ymd()</code> format: "YYYY/MM/DD"</li>
@@ -1163,7 +1144,7 @@ return;
 
 <p><b>Note:</b> The era_label (CE or AD) is optional for positive years. If omitted, the system default (configurable) is used.</p>
 
-<h3>Example Usage:</h3>
+<h3 id="date-example">Example Usage</h3>
 
 <pre><code class="language-eve">
 #date format demo
@@ -1192,7 +1173,7 @@ process:
 return;
 </code></pre>
 
-<h3>Additional Methods</h3>
+<h3 id="date-methods">Additional Methods</h3>
 <p>The Date object provides various methods for manipulation and querying:</p>
 <ul>
     <li><code>is_bce()</code>: Returns true if the year is negative (before Common Era), false otherwise</li>
@@ -1207,12 +1188,12 @@ return;
     <strong>Note:</strong> All dates are internally represented using the same numerical system, with negative years for BCE/BC.
 </div>
 
-<h2><a id="time-duration"></a>Time & Duration</h2>
+<h2 id="time-duration">Time & Duration</h2>
 
 <p>We use Time or Duration data types. These are primitive types not nullable.</p>
 
 
-<h3>Time</h3>
+<h3 id="time">Time</h3>
 
 <p>Time format is created from string literals using two reversible functions: t12() and t24(). These functions are using constants T12 and T24 that represent standard time format.</p>
 <ul>
@@ -1244,7 +1225,7 @@ process:
 return;
 </code></pre>
 
-<h3>Duration</h3>
+<h3 id="duration">Duration</h3>
 
 <p>Duration is represented as a number on 32 bits. Internally is stored as milissecond. It can hold almost 20 days. For longer duration, you must use Time object.</p>
 
@@ -1274,11 +1255,11 @@ process:
 return;
 </code></pre>
 
-<h2><a id = "format"></a>Quick Format</h2>
+<h2 id="format">Quick Format</h2>
 
 <p>For printing output using a format we use operator <em>as</em> that is the "quick format" operator. We can use system constant templates that are available for making different formats for different data types. This operator is a bit smarter than the "?" operator that we can use for "string templates".</p>
 
-<h4>Date Format</h4>
+<h3 id="date-format">Date Format</h3>
 
 
 <p>Eve can constants to define date format. These constants are important</p>
@@ -1292,7 +1273,7 @@ return;
 
 </table>
 
-<h4>Time Format</h4>
+<h3 id="time-format">Time Format</h3>
 
 <p>Eve can constants to define time format. These constants are important</p>
 
@@ -1303,7 +1284,7 @@ return;
 
 </table>
 
-<h4>Numeric Format</h4>
+<h3 id="numeric-format">Numeric Format</h3>
 
 <p>Eve can print comma "," for decimal numbers but also can print  dot.</p>
 
@@ -1314,10 +1295,6 @@ return;
 <tr><td>USA</td><td>.,</td></tr>
 
 </table>
-
-<hr>
-<p><b>Read next:</b>
-<a href="./topology.html">Topology</a></p>
 
     </main>
   </div>
@@ -1330,10 +1307,21 @@ return;
 
 </div>
 
-<!-- Scripts -->
-<script src="/sage.js" defer></script>
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'eve',
+    topicId: 'types',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
+
+<script src="/sage.js"></script>
 <script src="/common/progress.js" defer></script>
 <script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
+
 </body>
 </html>
