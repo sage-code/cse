@@ -1,5 +1,15 @@
 [
   {
+    "target": "manifest",
+    "title": "Eve Manifest",
+    "link": "#manifest"
+  },
+  {
+    "target": "architecture",
+    "title": "Eve architecture",
+    "link": "#architecture"
+  },
+  {
     "target": "features",
     "title": "Eve Features",
     "link": "#title",
