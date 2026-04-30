@@ -1,3105 +1,2661 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://sagecode.org/community.html</loc>
+    <loc>https://sagecode.org/community</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/components/topic-template.html</loc>
+    <loc>https://sagecode.org/components/topic-template</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/algebra.html</loc>
+    <loc>https://sagecode.org/engineering/algebra</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/algorithms.html</loc>
+    <loc>https://sagecode.org/engineering/algorithms</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/architecture.html</loc>
+    <loc>https://sagecode.org/engineering/architecture</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/cloud.html</loc>
+    <loc>https://sagecode.org/engineering/cloud</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/compilers.html</loc>
+    <loc>https://sagecode.org/engineering/compilers</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/concepts.html</loc>
+    <loc>https://sagecode.org/engineering/concepts</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/animation.html</loc>
+    <loc>https://sagecode.org/engineering/css/animation</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/bootstrap.html</loc>
+    <loc>https://sagecode.org/engineering/css/bootstrap</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/box-model.html</loc>
+    <loc>https://sagecode.org/engineering/css/box-model</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/frameworks.html</loc>
+    <loc>https://sagecode.org/engineering/css/frameworks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/index.html</loc>
+    <loc>https://sagecode.org/engineering/css/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/responsive.html</loc>
+    <loc>https://sagecode.org/engineering/css/responsive</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/syntax.html</loc>
+    <loc>https://sagecode.org/engineering/css/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/css/typography.html</loc>
+    <loc>https://sagecode.org/engineering/css/typography</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/cybersec.html</loc>
+    <loc>https://sagecode.org/engineering/cybersec</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/databases.html</loc>
+    <loc>https://sagecode.org/engineering/databases</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/db-design.html</loc>
+    <loc>https://sagecode.org/engineering/db-design</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/analysis.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/analysis</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/basic-concepts.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/basic-concepts</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/cleaning.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/cleaning</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/collection.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/collection</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/deep-learning.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/deep-learning</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/ethical-issues.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/ethical-issues</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/index.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/life-cycle.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/life-cycle</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/machine-learning.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/machine-learning</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/storage.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/storage</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/dsc/visualization.html</loc>
+    <loc>https://sagecode.org/engineering/dsc/visualization</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/backup.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/backup</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/cloud.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/cloud</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/computers.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/computers</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/connectors.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/connectors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/disk.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/disk</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/gpu.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/gpu</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/index.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/infrastructure.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/infrastructure</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/networks.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/networks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/power.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/power</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/template.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/hdw/tools.html</loc>
+    <loc>https://sagecode.org/engineering/hdw/tools</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/about-tags.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/about-tags</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/data_handling.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/data_handling</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/div-element.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/div-element</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/dynamic-web-pages.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/dynamic-web-pages</loc>
     <lastmod>2026-02-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/external-css.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/external-css</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/form-widgets.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/form-widgets</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/form_organize.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/form_organize</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/hello-world.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/hello-world</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/html-form.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/html-form</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/html-lists.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/html-lists</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/html-tags.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/html-tags</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/html-text.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/html-text</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/important.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/important</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/include.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/include</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/rich-media.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/rich-media</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/select-by-class.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/select-by-class</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/select-by-id.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/select-by-id</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/span-element.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/span-element</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/text-decoration.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/text-decoration</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/demo/what-css.html</loc>
+    <loc>https://sagecode.org/engineering/html/demo/what-css</loc>
     <lastmod>2026-02-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/forms.html</loc>
+    <loc>https://sagecode.org/engineering/html/forms</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/index.html</loc>
+    <loc>https://sagecode.org/engineering/html/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/performance.html</loc>
+    <loc>https://sagecode.org/engineering/html/performance</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/semantic.html</loc>
+    <loc>https://sagecode.org/engineering/html/semantic</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/syntax.html</loc>
+    <loc>https://sagecode.org/engineering/html/syntax</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/tables.html</loc>
+    <loc>https://sagecode.org/engineering/html/tables</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/tags.html</loc>
+    <loc>https://sagecode.org/engineering/html/tags</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/html/template.html</loc>
+    <loc>https://sagecode.org/engineering/html/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/index.html</loc>
+    <loc>https://sagecode.org/engineering/</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/languages.html</loc>
+    <loc>https://sagecode.org/engineering/languages</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/opensource.html</loc>
+    <loc>https://sagecode.org/engineering/opensource</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/paradigms.html</loc>
+    <loc>https://sagecode.org/engineering/paradigms</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/patterns.html</loc>
+    <loc>https://sagecode.org/engineering/patterns</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/platforms.html</loc>
+    <loc>https://sagecode.org/engineering/platforms</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/promag.html</loc>
+    <loc>https://sagecode.org/engineering/promag</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/prompt-engineering.html</loc>
+    <loc>https://sagecode.org/engineering/prompt-engineering</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/structures.html</loc>
+    <loc>https://sagecode.org/engineering/structures</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/systems.html</loc>
+    <loc>https://sagecode.org/engineering/systems</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/tech.html</loc>
+    <loc>https://sagecode.org/engineering/tech</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/testing.html</loc>
+    <loc>https://sagecode.org/engineering/testing</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/tools.html</loc>
+    <loc>https://sagecode.org/engineering/tools</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/topic.html</loc>
+    <loc>https://sagecode.org/engineering/topic</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/version.html</loc>
+    <loc>https://sagecode.org/engineering/version</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/engineering/web-dsgn.html</loc>
+    <loc>https://sagecode.org/engineering/web-dsgn</loc>
     <lastmod>2026-02-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/index.html</loc>
+    <loc>https://sagecode.org/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/legal.html</loc>
+    <loc>https://sagecode.org/legal</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/manifesto.html</loc>
+    <loc>https://sagecode.org/manifesto</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/old-engineering.html</loc>
+    <loc>https://sagecode.org/old-engineering</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/old-index.html</loc>
+    <loc>https://sagecode.org/old-/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ada/index.html</loc>
+    <loc>https://sagecode.org/programming/ada/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ada/template.html</loc>
+    <loc>https://sagecode.org/programming/ada/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/arithmetic.html</loc>
+    <loc>https://sagecode.org/programming/assembly/arithmetic</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/control.html</loc>
+    <loc>https://sagecode.org/programming/assembly/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/data.html</loc>
+    <loc>https://sagecode.org/programming/assembly/data</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/debug.html</loc>
+    <loc>https://sagecode.org/programming/assembly/debug</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/index.html</loc>
+    <loc>https://sagecode.org/programming/assembly/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/instructions.html</loc>
+    <loc>https://sagecode.org/programming/assembly/instructions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/intro.html</loc>
+    <loc>https://sagecode.org/programming/assembly/intro</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/io.html</loc>
+    <loc>https://sagecode.org/programming/assembly/io</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/macros.html</loc>
+    <loc>https://sagecode.org/programming/assembly/macros</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/registers.html</loc>
+    <loc>https://sagecode.org/programming/assembly/registers</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/subprograms.html</loc>
+    <loc>https://sagecode.org/programming/assembly/subprograms</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/assembly/template.html</loc>
+    <loc>https://sagecode.org/programming/assembly/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/arrays.html</loc>
+    <loc>https://sagecode.org/programming/bash/arrays</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/braces.html</loc>
+    <loc>https://sagecode.org/programming/bash/braces</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/commands.html</loc>
+    <loc>https://sagecode.org/programming/bash/commands</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/conditionals.html</loc>
+    <loc>https://sagecode.org/programming/bash/conditionals</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/control.html</loc>
+    <loc>https://sagecode.org/programming/bash/control</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/directory.html</loc>
+    <loc>https://sagecode.org/programming/bash/directory</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/external.html</loc>
+    <loc>https://sagecode.org/programming/bash/external</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/files.html</loc>
+    <loc>https://sagecode.org/programming/bash/files</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/functions.html</loc>
+    <loc>https://sagecode.org/programming/bash/functions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/groups.html</loc>
+    <loc>https://sagecode.org/programming/bash/groups</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/index.html</loc>
+    <loc>https://sagecode.org/programming/bash/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/math.html</loc>
+    <loc>https://sagecode.org/programming/bash/math</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/processes.html</loc>
+    <loc>https://sagecode.org/programming/bash/processes</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/regex.html</loc>
+    <loc>https://sagecode.org/programming/bash/regex</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/shell.html</loc>
+    <loc>https://sagecode.org/programming/bash/shell</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/startup.html</loc>
+    <loc>https://sagecode.org/programming/bash/startup</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/syntax.html</loc>
+    <loc>https://sagecode.org/programming/bash/syntax</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/template.html</loc>
+    <loc>https://sagecode.org/programming/bash/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/types.html</loc>
+    <loc>https://sagecode.org/programming/bash/types</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/bash/variables.html</loc>
+    <loc>https://sagecode.org/programming/bash/variables</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/bbsort.html</loc>
+    <loc>https://sagecode.org/programming/c/bbsort</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/casting.html</loc>
+    <loc>https://sagecode.org/programming/c/casting</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/collections.html</loc>
+    <loc>https://sagecode.org/programming/c/collections</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/composite.html</loc>
+    <loc>https://sagecode.org/programming/c/composite</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/control.html</loc>
+    <loc>https://sagecode.org/programming/c/control</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/directives.html</loc>
+    <loc>https://sagecode.org/programming/c/directives</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/errors.html</loc>
+    <loc>https://sagecode.org/programming/c/errors</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/functions.html</loc>
+    <loc>https://sagecode.org/programming/c/functions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/index.html</loc>
+    <loc>https://sagecode.org/programming/c/</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/input.html</loc>
+    <loc>https://sagecode.org/programming/c/input</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/linux_errors.html</loc>
+    <loc>https://sagecode.org/programming/c/linux_errors</loc>
     <lastmod>2025-02-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/memory.html</loc>
+    <loc>https://sagecode.org/programming/c/memory</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/pointers.html</loc>
+    <loc>https://sagecode.org/programming/c/pointers</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/strings.html</loc>
+    <loc>https://sagecode.org/programming/c/strings</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/syntax.html</loc>
+    <loc>https://sagecode.org/programming/c/syntax</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/template.html</loc>
+    <loc>https://sagecode.org/programming/c/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/c/types.html</loc>
+    <loc>https://sagecode.org/programming/c/types</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/decision.html</loc>
+    <loc>https://sagecode.org/programming/carbon/decision</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/errors.html</loc>
+    <loc>https://sagecode.org/programming/carbon/errors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/functions.html</loc>
+    <loc>https://sagecode.org/programming/carbon/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/index.html</loc>
+    <loc>https://sagecode.org/programming/carbon/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/methods.html</loc>
+    <loc>https://sagecode.org/programming/carbon/methods</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/modules.html</loc>
+    <loc>https://sagecode.org/programming/carbon/modules</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/repetition.html</loc>
+    <loc>https://sagecode.org/programming/carbon/repetition</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/syntax.html</loc>
+    <loc>https://sagecode.org/programming/carbon/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/template.html</loc>
+    <loc>https://sagecode.org/programming/carbon/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/carbon/types.html</loc>
+    <loc>https://sagecode.org/programming/carbon/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/classes.html</loc>
+    <loc>https://sagecode.org/programming/cpp/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/control.html</loc>
+    <loc>https://sagecode.org/programming/cpp/control</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/exceptions.html</loc>
+    <loc>https://sagecode.org/programming/cpp/exceptions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/functions.html</loc>
+    <loc>https://sagecode.org/programming/cpp/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/index.html</loc>
+    <loc>https://sagecode.org/programming/cpp/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/syntax.html</loc>
+    <loc>https://sagecode.org/programming/cpp/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/template.html</loc>
+    <loc>https://sagecode.org/programming/cpp/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/cpp/types.html</loc>
+    <loc>https://sagecode.org/programming/cpp/types</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/csharp/index.html</loc>
+    <loc>https://sagecode.org/programming/csharp/</loc>
     <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/csharp/template.html</loc>
+    <loc>https://sagecode.org/programming/csharp/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/classes.html</loc>
+    <loc>https://sagecode.org/programming/dart/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/collections.html</loc>
+    <loc>https://sagecode.org/programming/dart/collections</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/control.html</loc>
+    <loc>https://sagecode.org/programming/dart/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/features.html</loc>
+    <loc>https://sagecode.org/programming/dart/features</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/animation.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/animation</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/basics.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/basics</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/buttons.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/buttons</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/drawing.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/drawing</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/forms.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/forms</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/images.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/images</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/layouts.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/layouts</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/navigation.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/navigation</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/quiz.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/quiz</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/radio.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/radio</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/simple-quiz.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/simple-quiz</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/state.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/state</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/svg.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/svg</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/files/text.html</loc>
+    <loc>https://sagecode.org/programming/dart/files/text</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/flutter -all.html</loc>
+    <loc>https://sagecode.org/programming/dart/flutter -all</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/flutter.html</loc>
+    <loc>https://sagecode.org/programming/dart/flutter</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/functions.html</loc>
+    <loc>https://sagecode.org/programming/dart/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/index.html</loc>
+    <loc>https://sagecode.org/programming/dart/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/layouts.html</loc>
+    <loc>https://sagecode.org/programming/dart/layouts</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/libraries.html</loc>
+    <loc>https://sagecode.org/programming/dart/libraries</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/syntax.html</loc>
+    <loc>https://sagecode.org/programming/dart/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/tech-stack.html</loc>
+    <loc>https://sagecode.org/programming/dart/tech-stack</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/template.html</loc>
+    <loc>https://sagecode.org/programming/dart/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/dart/types.html</loc>
+    <loc>https://sagecode.org/programming/dart/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/control.html</loc>
+    <loc>https://sagecode.org/programming/fortran/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/data.html</loc>
+    <loc>https://sagecode.org/programming/fortran/data</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/errors.html</loc>
+    <loc>https://sagecode.org/programming/fortran/errors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/files.html</loc>
+    <loc>https://sagecode.org/programming/fortran/files</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/index.html</loc>
+    <loc>https://sagecode.org/programming/fortran/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/modules.html</loc>
+    <loc>https://sagecode.org/programming/fortran/modules</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/parallel.html</loc>
+    <loc>https://sagecode.org/programming/fortran/parallel</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/structure.html</loc>
+    <loc>https://sagecode.org/programming/fortran/structure</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/syntax.html</loc>
+    <loc>https://sagecode.org/programming/fortran/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/template.html</loc>
+    <loc>https://sagecode.org/programming/fortran/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/fortran/types.html</loc>
+    <loc>https://sagecode.org/programming/fortran/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/arrays.html</loc>
+    <loc>https://sagecode.org/programming/go/arrays</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/concurrency.html</loc>
+    <loc>https://sagecode.org/programming/go/concurrency</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/control.html</loc>
+    <loc>https://sagecode.org/programming/go/control</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/errors.html</loc>
+    <loc>https://sagecode.org/programming/go/errors</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/examples.html</loc>
+    <loc>https://sagecode.org/programming/go/examples</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/files.html</loc>
+    <loc>https://sagecode.org/programming/go/files</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/functions.html</loc>
+    <loc>https://sagecode.org/programming/go/functions</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/index.html</loc>
+    <loc>https://sagecode.org/programming/go/</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/maps.html</loc>
+    <loc>https://sagecode.org/programming/go/maps</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/objects.html</loc>
+    <loc>https://sagecode.org/programming/go/objects</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/overview.html</loc>
+    <loc>https://sagecode.org/programming/go/overview</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/syntax.html</loc>
+    <loc>https://sagecode.org/programming/go/syntax</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/topic.html</loc>
+    <loc>https://sagecode.org/programming/go/topic</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/types.html</loc>
+    <loc>https://sagecode.org/programming/go/types</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/go/web-stack.html</loc>
+    <loc>https://sagecode.org/programming/go/web-stack</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/index.html</loc>
+    <loc>https://sagecode.org/programming/</loc>
     <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/abstraction.html</loc>
+    <loc>https://sagecode.org/programming/java/abstraction</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/annotations.html</loc>
+    <loc>https://sagecode.org/programming/java/annotations</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/arrays.html</loc>
+    <loc>https://sagecode.org/programming/java/arrays</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/classes.html</loc>
+    <loc>https://sagecode.org/programming/java/classes</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/collections.html</loc>
+    <loc>https://sagecode.org/programming/java/collections</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/control.html</loc>
+    <loc>https://sagecode.org/programming/java/control</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/generics.html</loc>
+    <loc>https://sagecode.org/programming/java/generics</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/index.html</loc>
+    <loc>https://sagecode.org/programming/java/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/inference.html</loc>
+    <loc>https://sagecode.org/programming/java/inference</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/inheritance.html</loc>
+    <loc>https://sagecode.org/programming/java/inheritance</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/interfaces.html</loc>
+    <loc>https://sagecode.org/programming/java/interfaces</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/keywords.html</loc>
+    <loc>https://sagecode.org/programming/java/keywords</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/lambda.html</loc>
+    <loc>https://sagecode.org/programming/java/lambda</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/objects.html</loc>
+    <loc>https://sagecode.org/programming/java/objects</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/packages.html</loc>
+    <loc>https://sagecode.org/programming/java/packages</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/paradigm.html</loc>
+    <loc>https://sagecode.org/programming/java/paradigm</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/performance.html</loc>
+    <loc>https://sagecode.org/programming/java/performance</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/records.html</loc>
+    <loc>https://sagecode.org/programming/java/records</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/regex.html</loc>
+    <loc>https://sagecode.org/programming/java/regex</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/sealed.html</loc>
+    <loc>https://sagecode.org/programming/java/sealed</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/strings.html</loc>
+    <loc>https://sagecode.org/programming/java/strings</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/switch.html</loc>
+    <loc>https://sagecode.org/programming/java/switch</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/syntax.html</loc>
+    <loc>https://sagecode.org/programming/java/syntax</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/template.html</loc>
+    <loc>https://sagecode.org/programming/java/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/java/types.html</loc>
+    <loc>https://sagecode.org/programming/java/types</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/control.html</loc>
+    <loc>https://sagecode.org/programming/julia/control</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/exceptions.html</loc>
+    <loc>https://sagecode.org/programming/julia/exceptions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/expressions.html</loc>
+    <loc>https://sagecode.org/programming/julia/expressions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/features.html</loc>
+    <loc>https://sagecode.org/programming/julia/features</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/functions.html</loc>
+    <loc>https://sagecode.org/programming/julia/functions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/index.html</loc>
+    <loc>https://sagecode.org/programming/julia/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/modules.html</loc>
+    <loc>https://sagecode.org/programming/julia/modules</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/syntax.html</loc>
+    <loc>https://sagecode.org/programming/julia/syntax</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/template.html</loc>
+    <loc>https://sagecode.org/programming/julia/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/julia/types.html</loc>
+    <loc>https://sagecode.org/programming/julia/types</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/errors.html</loc>
+    <loc>https://sagecode.org/programming/nim/errors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/functions.html</loc>
+    <loc>https://sagecode.org/programming/nim/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/index.html</loc>
+    <loc>https://sagecode.org/programming/nim/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/modules.html</loc>
+    <loc>https://sagecode.org/programming/nim/modules</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/objects.html</loc>
+    <loc>https://sagecode.org/programming/nim/objects</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/repetition.html</loc>
+    <loc>https://sagecode.org/programming/nim/repetition</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/selection.html</loc>
+    <loc>https://sagecode.org/programming/nim/selection</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/syntax.html</loc>
+    <loc>https://sagecode.org/programming/nim/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/template.html</loc>
+    <loc>https://sagecode.org/programming/nim/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/nim/types.html</loc>
+    <loc>https://sagecode.org/programming/nim/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/arrays.html</loc>
+    <loc>https://sagecode.org/programming/php/arrays</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/classes.html</loc>
+    <loc>https://sagecode.org/programming/php/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/control.html</loc>
+    <loc>https://sagecode.org/programming/php/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/exceptions.html</loc>
+    <loc>https://sagecode.org/programming/php/exceptions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/files.html</loc>
+    <loc>https://sagecode.org/programming/php/files</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/forms.html</loc>
+    <loc>https://sagecode.org/programming/php/forms</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/functions.html</loc>
+    <loc>https://sagecode.org/programming/php/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/index.html</loc>
+    <loc>https://sagecode.org/programming/php/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/syntax.html</loc>
+    <loc>https://sagecode.org/programming/php/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/php/template.html</loc>
+    <loc>https://sagecode.org/programming/php/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/build.html</loc>
+    <loc>https://sagecode.org/programming/plsql/build</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/control.html</loc>
+    <loc>https://sagecode.org/programming/plsql/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/index.html</loc>
+    <loc>https://sagecode.org/programming/plsql/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/maintain.html</loc>
+    <loc>https://sagecode.org/programming/plsql/maintain</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/operate.html</loc>
+    <loc>https://sagecode.org/programming/plsql/operate</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/optimize.html</loc>
+    <loc>https://sagecode.org/programming/plsql/optimize</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/overview.html</loc>
+    <loc>https://sagecode.org/programming/plsql/overview</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/packages.html</loc>
+    <loc>https://sagecode.org/programming/plsql/packages</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/structure.html</loc>
+    <loc>https://sagecode.org/programming/plsql/structure</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/syntax.html</loc>
+    <loc>https://sagecode.org/programming/plsql/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/template.html</loc>
+    <loc>https://sagecode.org/programming/plsql/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/transform.html</loc>
+    <loc>https://sagecode.org/programming/plsql/transform</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/plsql/types.html</loc>
+    <loc>https://sagecode.org/programming/plsql/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/classes.html</loc>
+    <loc>https://sagecode.org/programming/python/classes</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/control.html</loc>
+    <loc>https://sagecode.org/programming/python/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/functions.html</loc>
+    <loc>https://sagecode.org/programming/python/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/index.html</loc>
+    <loc>https://sagecode.org/programming/python/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/packages.html</loc>
+    <loc>https://sagecode.org/programming/python/packages</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/syntax.html</loc>
+    <loc>https://sagecode.org/programming/python/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/template.html</loc>
+    <loc>https://sagecode.org/programming/python/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/python/variables.html</loc>
+    <loc>https://sagecode.org/programming/python/variables</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/basics.html</loc>
+    <loc>https://sagecode.org/programming/react/basics</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/bootstrap.html</loc>
+    <loc>https://sagecode.org/programming/react/bootstrap</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/css.html</loc>
+    <loc>https://sagecode.org/programming/react/css</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/environment.html</loc>
+    <loc>https://sagecode.org/programming/react/environment</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/events.html</loc>
+    <loc>https://sagecode.org/programming/react/events</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/fetch.html</loc>
+    <loc>https://sagecode.org/programming/react/fetch</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/forms.html</loc>
+    <loc>https://sagecode.org/programming/react/forms</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/index.html</loc>
+    <loc>https://sagecode.org/programming/react/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/intro.html</loc>
+    <loc>https://sagecode.org/programming/react/intro</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/rendering.html</loc>
+    <loc>https://sagecode.org/programming/react/rendering</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/state.html</loc>
+    <loc>https://sagecode.org/programming/react/state</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/react/template.html</loc>
+    <loc>https://sagecode.org/programming/react/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/blocks.html</loc>
+    <loc>https://sagecode.org/programming/ruby/blocks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/classes.html</loc>
+    <loc>https://sagecode.org/programming/ruby/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/decision.html</loc>
+    <loc>https://sagecode.org/programming/ruby/decision</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/frameworks.html</loc>
+    <loc>https://sagecode.org/programming/ruby/frameworks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/index.html</loc>
+    <loc>https://sagecode.org/programming/ruby/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/methods.html</loc>
+    <loc>https://sagecode.org/programming/ruby/methods</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/repetition.html</loc>
+    <loc>https://sagecode.org/programming/ruby/repetition</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/syntax.html</loc>
+    <loc>https://sagecode.org/programming/ruby/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/template.html</loc>
+    <loc>https://sagecode.org/programming/ruby/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/ruby/variables.html</loc>
+    <loc>https://sagecode.org/programming/ruby/variables</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/collections.html</loc>
+    <loc>https://sagecode.org/programming/rust/collections</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/composite.html</loc>
+    <loc>https://sagecode.org/programming/rust/composite</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/concurrency.html</loc>
+    <loc>https://sagecode.org/programming/rust/concurrency</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/control.html</loc>
+    <loc>https://sagecode.org/programming/rust/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/errors.html</loc>
+    <loc>https://sagecode.org/programming/rust/errors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/files.html</loc>
+    <loc>https://sagecode.org/programming/rust/files</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/frameworks.html</loc>
+    <loc>https://sagecode.org/programming/rust/frameworks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/functions.html</loc>
+    <loc>https://sagecode.org/programming/rust/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/index.html</loc>
+    <loc>https://sagecode.org/programming/rust/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/modules.html</loc>
+    <loc>https://sagecode.org/programming/rust/modules</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/objects.html</loc>
+    <loc>https://sagecode.org/programming/rust/objects</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/overview.html</loc>
+    <loc>https://sagecode.org/programming/rust/overview</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/packages.html</loc>
+    <loc>https://sagecode.org/programming/rust/packages</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/syntax.html</loc>
+    <loc>https://sagecode.org/programming/rust/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/template.html</loc>
+    <loc>https://sagecode.org/programming/rust/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/rust/types.html</loc>
+    <loc>https://sagecode.org/programming/rust/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/classes.html</loc>
+    <loc>https://sagecode.org/programming/scala/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/collections.html</loc>
+    <loc>https://sagecode.org/programming/scala/collections</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/control.html</loc>
+    <loc>https://sagecode.org/programming/scala/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/functions.html</loc>
+    <loc>https://sagecode.org/programming/scala/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/index.html</loc>
+    <loc>https://sagecode.org/programming/scala/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/packages.html</loc>
+    <loc>https://sagecode.org/programming/scala/packages</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/syntax.html</loc>
+    <loc>https://sagecode.org/programming/scala/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/template.html</loc>
+    <loc>https://sagecode.org/programming/scala/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/traits.html</loc>
+    <loc>https://sagecode.org/programming/scala/traits</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/scala/types.html</loc>
+    <loc>https://sagecode.org/programming/scala/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/angular.html</loc>
+    <loc>https://sagecode.org/programming/script/angular</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/collections.html</loc>
+    <loc>https://sagecode.org/programming/script/collections</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/control.html</loc>
+    <loc>https://sagecode.org/programming/script/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/errors.html</loc>
+    <loc>https://sagecode.org/programming/script/errors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/frameworks.html</loc>
+    <loc>https://sagecode.org/programming/script/frameworks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/functions.html</loc>
+    <loc>https://sagecode.org/programming/script/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/index.html</loc>
+    <loc>https://sagecode.org/programming/script/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/libraries.html</loc>
+    <loc>https://sagecode.org/programming/script/libraries</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/objects.html</loc>
+    <loc>https://sagecode.org/programming/script/objects</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/react-overview.html</loc>
+    <loc>https://sagecode.org/programming/script/react-overview</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/server.html</loc>
+    <loc>https://sagecode.org/programming/script/server</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/svelte.html</loc>
+    <loc>https://sagecode.org/programming/script/svelte</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/syntax.html</loc>
+    <loc>https://sagecode.org/programming/script/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/template.html</loc>
+    <loc>https://sagecode.org/programming/script/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/variables.html</loc>
+    <loc>https://sagecode.org/programming/script/variables</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/vue.html</loc>
+    <loc>https://sagecode.org/programming/script/vue</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/script/website.html</loc>
+    <loc>https://sagecode.org/programming/script/website</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/concurency.html</loc>
+    <loc>https://sagecode.org/programming/swift/concurency</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/control.html</loc>
+    <loc>https://sagecode.org/programming/swift/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/errors.html</loc>
+    <loc>https://sagecode.org/programming/swift/errors</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/expressions.html</loc>
+    <loc>https://sagecode.org/programming/swift/expressions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/features.html</loc>
+    <loc>https://sagecode.org/programming/swift/features</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/files.html</loc>
+    <loc>https://sagecode.org/programming/swift/files</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/functions.html</loc>
+    <loc>https://sagecode.org/programming/swift/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/index.html</loc>
+    <loc>https://sagecode.org/programming/swift/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/objects.html</loc>
+    <loc>https://sagecode.org/programming/swift/objects</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/packages.html</loc>
+    <loc>https://sagecode.org/programming/swift/packages</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/syntax.html</loc>
+    <loc>https://sagecode.org/programming/swift/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/template.html</loc>
+    <loc>https://sagecode.org/programming/swift/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/testing.html</loc>
+    <loc>https://sagecode.org/programming/swift/testing</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/types.html</loc>
+    <loc>https://sagecode.org/programming/swift/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/swift/variables.html</loc>
+    <loc>https://sagecode.org/programming/swift/variables</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/advanced-types.html</loc>
+    <loc>https://sagecode.org/programming/tscript/advanced-types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/classes.html</loc>
+    <loc>https://sagecode.org/programming/tscript/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/decorators.html</loc>
+    <loc>https://sagecode.org/programming/tscript/decorators</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/frameworks.html</loc>
+    <loc>https://sagecode.org/programming/tscript/frameworks</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/functions.html</loc>
+    <loc>https://sagecode.org/programming/tscript/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/generics.html</loc>
+    <loc>https://sagecode.org/programming/tscript/generics</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/index.html</loc>
+    <loc>https://sagecode.org/programming/tscript/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/interfaces.html</loc>
+    <loc>https://sagecode.org/programming/tscript/interfaces</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/modules.html</loc>
+    <loc>https://sagecode.org/programming/tscript/modules</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/setup.html</loc>
+    <loc>https://sagecode.org/programming/tscript/setup</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/tscript/template.html</loc>
+    <loc>https://sagecode.org/programming/tscript/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/zig/index.html</loc>
+    <loc>https://sagecode.org/programming/zig/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/programming/zig/template.html</loc>
+    <loc>https://sagecode.org/programming/zig/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://sagecode.org/projects/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/collections.html</loc>
+    <loc>https://sagecode.org/projects/bee/collections</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/concurrency.html</loc>
+    <loc>https://sagecode.org/projects/bee/concurrency</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/control.html</loc>
+    <loc>https://sagecode.org/projects/bee/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/features.html</loc>
+    <loc>https://sagecode.org/projects/bee/features</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/functions.html</loc>
+    <loc>https://sagecode.org/projects/bee/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/graphics.html</loc>
+    <loc>https://sagecode.org/projects/bee/graphics</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/index.html</loc>
+    <loc>https://sagecode.org/projects/bee/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/library.html</loc>
+    <loc>https://sagecode.org/projects/bee/library</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/objects.html</loc>
+    <loc>https://sagecode.org/projects/bee/objects</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/processing.html</loc>
+    <loc>https://sagecode.org/projects/bee/processing</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/rules.html</loc>
+    <loc>https://sagecode.org/projects/bee/rules</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/structure.html</loc>
+    <loc>https://sagecode.org/projects/bee/structure</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/syntax.html</loc>
+    <loc>https://sagecode.org/projects/bee/syntax</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/template.html</loc>
+    <loc>https://sagecode.org/projects/bee/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/bee/types.html</loc>
+    <loc>https://sagecode.org/projects/bee/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/algorithms.html</loc>
+    <loc>https://sagecode.org/projects/eve/algorithms</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/classes.html</loc>
+    <loc>https://sagecode.org/projects/eve/classes</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/collections.html</loc>
+    <loc>https://sagecode.org/projects/eve/collections</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/command.html</loc>
+    <loc>https://sagecode.org/projects/eve/command</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/concurency.html</loc>
+    <loc>https://sagecode.org/projects/eve/concurency</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/control.html</loc>
+    <loc>https://sagecode.org/projects/eve/control</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/databases.html</loc>
+    <loc>https://sagecode.org/projects/eve/databases</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/features.html</loc>
+    <loc>https://sagecode.org/projects/eve/features</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/functions.html</loc>
+    <loc>https://sagecode.org/projects/eve/functions</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/index.html</loc>
+    <loc>https://sagecode.org/projects/eve/</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/library.html</loc>
+    <loc>https://sagecode.org/projects/eve/library</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/option.html</loc>
+    <loc>https://sagecode.org/projects/eve/option</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/processing.html</loc>
+    <loc>https://sagecode.org/projects/eve/processing</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/structure.html</loc>
+    <loc>https://sagecode.org/projects/eve/structure</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/syntax.html</loc>
+    <loc>https://sagecode.org/projects/eve/syntax</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/template.html</loc>
+    <loc>https://sagecode.org/projects/eve/template</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/eve/types.html</loc>
+    <loc>https://sagecode.org/projects/eve/types</loc>
     <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/adjectives.html</loc>
+    <loc>https://sagecode.org/projects/maj/adjectives</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/adverbs.html</loc>
+    <loc>https://sagecode.org/projects/maj/adverbs</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/alphabet.html</loc>
+    <loc>https://sagecode.org/projects/maj/alphabet</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/articles.html</loc>
+    <loc>https://sagecode.org/projects/maj/articles</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/expressions.html</loc>
+    <loc>https://sagecode.org/projects/maj/expressions</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/inception.html</loc>
+    <loc>https://sagecode.org/projects/maj/inception</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/index.html</loc>
+    <loc>https://sagecode.org/projects/maj/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/lexicon/bebe.html</loc>
+    <loc>https://sagecode.org/projects/maj/lexicon/bebe</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/lexicon/challanges.html</loc>
+    <loc>https://sagecode.org/projects/maj/lexicon/challanges</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/lexicon/guta.html</loc>
+    <loc>https://sagecode.org/projects/maj/lexicon/guta</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/lexicon/index.html</loc>
+    <loc>https://sagecode.org/projects/maj/lexicon/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/lexicon/nime.html</loc>
+    <loc>https://sagecode.org/projects/maj/lexicon/nime</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/lexicon/pome.html</loc>
+    <loc>https://sagecode.org/projects/maj/lexicon/pome</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/nouns.html</loc>
+    <loc>https://sagecode.org/projects/maj/nouns</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/numerals.html</loc>
+    <loc>https://sagecode.org/projects/maj/numerals</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/practice/index.html</loc>
+    <loc>https://sagecode.org/projects/maj/practice/</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/practice/moka.html</loc>
+    <loc>https://sagecode.org/projects/maj/practice/moka</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/practice/pese.html</loc>
+    <loc>https://sagecode.org/projects/maj/practice/pese</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/practice/siza.html</loc>
+    <loc>https://sagecode.org/projects/maj/practice/siza</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/practice/ultimate.html</loc>
+    <loc>https://sagecode.org/projects/maj/practice/ultimate</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/preposition.html</loc>
+    <loc>https://sagecode.org/projects/maj/preposition</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/pronouns.html</loc>
+    <loc>https://sagecode.org/projects/maj/pronouns</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/template.html</loc>
+    <loc>https://sagecode.org/projects/maj/template</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://sagecode.org/projects/maj/verbs.html</loc>
+    <loc>https://sagecode.org/projects/maj/verbs</loc>
     <lastmod>2026-04-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
 </urlset>
