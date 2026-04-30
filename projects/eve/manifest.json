@@ -9,10 +9,15 @@
     "title": "Eve architecture",
     "link": "#architecture"
   },
+    {
+    "target": "machine",
+    "title": "Virtual Machine",
+    "link": "#machine"
+  },
   {
     "target": "features",
     "title": "Eve Features",
-    "link": "#title",
+    "link": "#features",
     "children": [
       {
         "target": "readable",
@@ -42,14 +47,9 @@
     ]
   },
   {
-    "target": "code-example",
+    "target": "example",
     "title": "Code Example",
-    "link": "#code-example"
-  },
-  {
-    "target": "explanation",
-    "title": "Explanation",
-    "link": "#explanation"
+    "link": "#example"
   },
   {"title": "Next: Syntax", 
    "link": "./syntax.html"}
