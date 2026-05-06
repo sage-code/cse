@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = ""; // Clear initial state
 
         const text = `Study for free at your own pace.
-With comprehensive open-source roadmaps.
-Optional 42-day free trial mentorship.
-For those who wish to reinvent themselves!`;
+Access comprehensive, open-source roadmaps.
+Master the craft of software engineering.
+Downloadable resources for offline use.
+Optional 42-day mentorship program.`;
 
         let i = 0;
 
