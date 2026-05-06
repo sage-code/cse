@@ -12,11 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
         container.dataset.started = "true";
         container.innerHTML = ""; // Clear initial state
 
-        const text = `Study for free at your own pace.
-Access comprehensive, open-source roadmaps.
-Master the craft of software engineering.
-Downloadable resources for offline use.
-Optional 42-day mentorship program.`;
+        const text = `Master the craft of software engineering.
+Study for free at your own pace.
+With comprehensive, open-source roadmaps.
+Or download resources for offline use.
+Claim 42-day optional trial mentorship.`;
 
         let i = 0;
 
