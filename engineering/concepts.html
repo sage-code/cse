@@ -41,7 +41,7 @@
       </aside>
 
       <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
-<h1>Programming Concepts</h1>
+<h1 id="concepts">Programming Concepts</h1>
 
       <div class="alert alert-secondary shadow-sm">
 This article is intended for those new to computer science. We begin by exploring the fundamental concepts that form the foundation of programming and software engineering. These concepts are essential for creating new software, solving problems, and supporting business operations. Understanding them will help you build a strong base for further study and creation of practical applications.</div>
@@ -54,15 +54,91 @@ This article is intended for those new to computer science. We begin by explorin
 Computer programs, often called applications, are fundamentally a series of step-by-step instructions executed by a computer. These instructions are organized into statements, which are then grouped into modules or packages. A single program can consist of numerous packages and may include embedded data or rely on external files for data storage.
 </div>
 
+<section>
+
 <h3 id="app-purpose">Application Purpose</h3>
 
-<p>Applications are built using one or more programming languages and are typically designed to solve a specific problem. They often include multiple features that allow users to interact with the system, sending or receiving information through input/output devices such as a console display or a printer.</p>
+  <p>
+    Software applications are purposeful tools engineered to bridge the gap between human needs and computational power. While a simple script might perform a single calculation, modern applications are complex ecosystems built to address specific challenges, automate workflows, or provide entertainment.
+  </p>
 
-<h3 id="app-execution">Application Execution</h3>
+  <p>
+    Applications are rarely static; they are defined by <strong>features</strong>. These are specific capabilities that allow a user to achieve a goal. These features serve as the functional building blocks that transform a raw program into a useful product.
+  </p>
 
-<p>The execution of a program aims to resolve a problem and communicate the result, or it can produce a physical effect, such as displaying a message on a monitor or controlling a robotic arm. A program can be designed to be executed a single time or multiple times as needed.</p>
+</section>  
 
-<h3 id="code-base">Code base</h3>
+<hr>
+
+<section>
+  <h3 id="app-execution">Application Execution</h3>
+
+  <p>
+    At its core, <strong>application execution</strong> is the process of a computer program carrying out a specific set of instructions to solve a problem, process data, or trigger a physical action—such as moving a robotic arm. A program's lifecycle is flexible; it can be a one-time script or a persistent tool used daily.
+  </p>
+
+  <p>Applications are generally categorized by how they interact with the user and the operating system:</p>
+
+  <ul>
+    <li>
+      <strong>Interactive Applications (GUI/UX):</strong> 
+      Designed with a <strong>Graphical User Interface (GUI)</strong>, these apps start on demand and focus on the <strong>User Experience (UX)</strong>. They remain active while the user performs various tasks through visual elements like windows, buttons, and menus.
+    </li>
+    <li>
+      <strong>Command-Line Interfaces (CLI):</strong> 
+      These run within a console or terminal. They are often used for automated tasks, development tools, or quick system commands where a visual interface isn't necessary.
+    </li>
+    <li>
+      <strong>Background Processes:</strong> 
+      These applications run without direct user intervention.
+      <ul>
+        <li><strong>Services:</strong> The standard term used in <strong>Windows</strong> environments.</li>
+        <li><strong>Daemons:</strong> The equivalent term used in <strong>Linux/Unix</strong> systems.</li>
+      </ul>
+      <blockquote>
+        <strong>Note:</strong> Services and daemons typically launch automatically during the system boot sequence and remain active until the computer is shut down.
+      </blockquote>
+    </li>
+  </ul>
+</section>
+
+<section>
+<h3 id="io-cycle">The Input/Output (I/O) Cycle</h3>
+  <p>
+    To be effective, an application must communicate with the world. This is achieved through the <strong>Input/Output (I/O)</strong> model:
+  </p>
+
+  <table>
+    <tr style="background-color: #f2f2f2;">
+      <th style="padding: 10px;">Component</th>
+      <th style="padding: 10px;">Function</th>
+      <th style="padding: 10px;">Examples</th>
+    </tr>
+    <tr>
+      <td style="padding: 10px;"><strong>Input</strong></td>
+      <td style="padding: 10px;">How the system receives instructions or data.</td>
+      <td style="padding: 10px;">Keyboard, Mouse, Touchscreen, Microphones, or API calls.</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px;"><strong>Processing</strong></td>
+      <td style="padding: 10px;">The application logic manipulating the input.</td>
+      <td style="padding: 10px;">Algorithms, data sorting, or mathematical calculations.</td>
+    </tr>
+    <tr>
+      <td style="padding: 10px;"><strong>Output</strong></td>
+      <td style="padding: 10px;">How the system communicates the result.</td>
+      <td style="padding: 10px;">Console displays, Monitors, Printers, or saved Files.</td>
+    </tr>
+  </table>
+
+
+  <blockquote>
+    <strong>Key Takeaway:</strong> Whether it is a word processor, a video game, or a robotic controller, every application exists to take <strong>Input</strong>, apply <strong>Logic</strong> (the purpose), and deliver a meaningful <strong>Result</strong>.
+  </blockquote>
+</section>
+
+
+<h3 id="code-base">Application Code base</h3>
 
 <p>A code base is all the source code that is used to build a particular software system or application. It can consist of one or more projects. The term has been around for many years and is a valuable metric for understanding the complexity of a system.</p>
 

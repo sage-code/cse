@@ -1,5 +1,9 @@
-
 [
+  {
+    "target": "concepts",
+    "title": "Programming Concepts",
+    "link": "#concepts"
+  },
   {
     "target": "programs",
     "title": "Computer programs",
@@ -16,8 +20,13 @@
         "link": "#app-execution"
       },
       {
+        "target": "io-cycle",
+        "title": "Application IO Cycle",
+        "link": "#io-cycle"
+      },
+      {
         "target": "code-base",
-        "title": "Code base",
+        "title": "Application code base",
         "link": "#code-base"
       }
     ]
