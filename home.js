@@ -12,11 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
         container.dataset.started = "true";
         container.innerHTML = ""; // Clear initial state
 
-        const text = `Master the craft of software engineering.
-Study for free at your own pace.
-With comprehensive, open-source roadmaps.
-Or download resources for offline use.
-Claim 42-day optional trial mentorship.`;
+        const text = `Master Software Engineering & Programming
+🔹 100% Free & Self-Paced: Learn on your own schedule.
+🔹 Open-Source Roadmaps: Clear paths for guided or independent study.
+🔹 Learn by Doing: Build practical experience and level up your CV.`;
 
         let i = 0;
 

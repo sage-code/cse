@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Introduction",
+    "link": "#intro"
+  },
+  {
+    "title": "Algorithm Properties",
+    "link": "#properties"
+  },
+  {
+    "title": "Quality Attributes",
+    "link": "#quality"
+  },
+  {
+    "title": "Algorithm Categories",
+    "link": "#categories",
+    "children": [
+      {
+        "title": "Sorting",
+        "link": "#sorting"
+      },
+      {
+        "title": "Searching",
+        "link": "#searching"
+      },
+      {
+        "title": "Graph",
+        "link": "#graph"
+      },
+      {
+        "title": "Dynamic Programming",
+        "link": "#dynamic"
+      },
+      {
+        "title": "Greedy",
+        "link": "#greedy"
+      },
+      {
+        "title": "Divide & Conquer",
+        "link": "#divide"
+      }
+    ]
+  },
+  {
+    "title": "Efficiency",
+    "link": "#efficiency"
+  },
+  {
+    "title": "Future of Algorithms",
+    "link": "#future"
+  },
+  {"title": "Next: Programming Paradigms", "link": "./paradigms.html"}
+]

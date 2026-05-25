@@ -64,5 +64,6 @@
   {
     "title": "String Representation",
     "link": "#strings"
-  }
+  },
+  {"title": "Next: Algorithms", "link": "./algorithms.html"}
 ]

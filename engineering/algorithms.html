@@ -32,37 +32,21 @@
 <div class="container-fluid px-0">
   <div class="row g-0">
     <aside class="side-bar col-lg-3 col-12">
-      <div id="study-sidebar" class="sidebar-content shadow-sm p-1 sticky-top">
-        <h5>Study Progress</h5>
+      <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
         <div class="progress mb-3" style="height: 8px;">
           <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
         </div>
         <hr>
         <ul id="bookmark-list" class="list-unstyled">
-          <li><input type="checkbox" class="topic-check" data-target="intro"><a href="#intro">Introduction</a></li>
-          <li><input type="checkbox" class="topic-check" data-target="properties"><a href="#properties">Properties</a></li>
-          <li><input type="checkbox" class="topic-check" data-target="quality"><a href="#quality">Quality Attributes</a></li>
-          <li>
-            <input type="checkbox" class="topic-check" data-target="categories"><a href="#categories">Algorithm Categories</a>
-            <ul class="list-unstyled">
-              <li><input type="checkbox" class="topic-check" data-target="sorting"><a href="#sorting">Sorting</a></li>
-              <li><input type="checkbox" class="topic-check" data-target="searching"><a href="#searching">Searching</a></li>
-              <li><input type="checkbox" class="topic-check" data-target="graph"><a href="#graph">Graph</a></li>
-              <li><input type="checkbox" class="topic-check" data-target="dynamic"><a href="#dynamic">Dynamic Programming</a></li>
-              <li><input type="checkbox" class="topic-check" data-target="greedy"><a href="#greedy">Greedy</a></li>
-              <li><input type="checkbox" class="topic-check" data-target="divide"><a href="#divide">Divide & Conquer</a></li>
-            </ul>
-          </li>
-          <li><input type="checkbox" class="topic-check" data-target="efficiency"><a href="#efficiency">Efficiency</a></li>
-          <li><input type="checkbox" class="topic-check" data-target="future"><a href="#future">Future of Algorithms</a></li>
         </ul>
-        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
-          <span style="font-size: 24px;">☰</span>
-        </button>
       </div>
     </aside>
 
-<main class="col-lg-9 col-12 order-2 order-lg-1">
+<main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
 
 <h1 id="intro">Programming Algorithms</h1>
 
@@ -176,8 +160,6 @@ An algorithm is a finite set of well-defined instructions or rules designed to s
 <p>Future advancements are expected in areas like quantum computing, deep learning, and advanced AI. New algorithmic paradigms will be required to tackle even more challenging problems in fields like drug discovery, climate modeling, and space exploration. As algorithms become more integrated into our lives, their responsible design and ethical implications will become increasingly critical.</p>
 <hr>
 
-<p><b>Read next:</b> <a href="/engineering/paradigms/">Programming Paradigms</a></p>
-
 </main>
   </div>
 </div>
@@ -186,9 +168,27 @@ An algorithm is a finite set of well-defined instructions or rules designed to s
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
+
 </div>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'engineering',
+    topicId: 'algorithms',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
 <script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
-<script src="/common/progress-legacy.js" defer></script>
+
 </body>
 </html>
