@@ -34,64 +34,21 @@
   <div class="row g-0">
     <aside class="side-bar col-lg-3 col-12">
       <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
-        <h5>Study Progress</h5>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
         <div class="progress mb-3" style="height: 8px;">
           <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
         </div>
-
         <hr>
-        
         <ul id="bookmark-list" class="list-unstyled">
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="linear"> 
-            <a href="#linear" class="fw-bold">Linear Programming</a>
-            <ul class="list-unstyled ms-4 mt-1">
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="xml-syntax"> <a href="#xml-syntax">XML Syntax</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="structured"> 
-            <a href="#structured" class="fw-bold">Structured Programming</a>
-            <ul class="list-unstyled ms-4 mt-1">
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="decision"> <a href="#decision">Decision</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="repetition"> <a href="#repetition">Repetition</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="selection"> <a href="#selection">Selection</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="objectual"> 
-            <a href="#objectual" class="fw-bold">Object Oriented</a>
-            <ul class="list-unstyled ms-4 mt-1">
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="oop-usability"> <a href="#oop-usability">Usability</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="oop-principles"> <a href="#oop-principles">Principles</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="abstraction"> <a href="#abstraction">Abstraction</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="encapsulation"> <a href="#encapsulation">Encapsulation</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="inheritance"> <a href="#inheritance">Inheritance</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="polymorphism"> <a href="#polymorphism">Polymorphism</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="functional"> 
-            <a href="#functional" class="fw-bold">Functional Programming</a>
-            <ul class="list-unstyled ms-4 mt-1">
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="function"> <a href="#function">Function</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="fp-languages"> <a href="#fp-languages">Languages</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="scope-model"> <a href="#scope-model">Scope Model</a></li>
-            </ul>
-          </li>
         </ul>
-
-        <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
-          <span style="font-size: 24px;">☰</span>
-        </button>
       </div>
     </aside>
 
 <!-- main content --> 
-<main class="col-lg-9 col-12 order-2 order-lg-1">
+<main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
 
 <h1>Programming Paradigms</h1>
 
@@ -425,21 +382,36 @@ In programming a function is a named block of code designed to perform a particu
 <p>There are advantages and disadvantages to each programming paradigm. Therefore, many computer languages implement multiple paradigms. I find this to be a good approach. Now you are prepared to study the history, present, and future of computer languages. Congratulations, and read on!</p>
 
 <hr>
-<p><b>Read next:</b>
-<a href="/engineering/languages/">Programming Languages</a></p>
 
 </main>
 </div>
 </div>
-<hr>
 
 <!-- Footer -->
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
+
 </div>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'engineering',
+    topicId: 'paradigms',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
 <script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
-<script src="/common/progress-legacy.js" defer></script>
+
 </body>
 </html>
