@@ -34,52 +34,16 @@
   <div class="row g-0">
     <aside class="side-bar col-lg-3 col-12">
       <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
-        <h5>Study Progress</h5>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
         <div class="progress mb-3" style="height: 8px;">
           <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
         </div>
 
         <hr>
-        
         <ul id="bookmark-list" class="list-unstyled">
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="features"> 
-            <a href="#features" class="fw-bold">Language Features</a>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="classification"> 
-            <a href="#classification" class="fw-bold">Language Classification</a>
-            <ul class="list-unstyled ms-4 mt-1">
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="modern-languages"> <a href="#modern-languages">Modern Languages</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="scripting-languages"> <a href="#scripting-languages">Scripting Languages</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="traditional-compiled"> <a href="#traditional-compiled">Traditional Compiled</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="history"> 
-            <a href="#history" class="fw-bold">Historic Languages</a>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="traditional-table"> 
-            <a href="#traditional-table" class="fw-bold">Traditional Languages</a>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="emerging"> 
-            <a href="#emerging" class="fw-bold">Emerging Languages</a>
-          </li>
-
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="future"> 
-            <a href="#future" class="fw-bold">Future Development</a>
-            <ul class="list-unstyled ms-4 mt-1">
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="bob-martin"> <a href="#bob-martin">Bob Martin</a></li>
-               <li class="nav-item"><input type="checkbox" class="topic-check" data-target="sage-opinion"> <a href="#sage-opinion">Sage Opinion</a></li>
-            </ul>
-          </li>
         </ul>
 
         <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
@@ -89,7 +53,7 @@
     </aside>
 
 <!-- main content --> 
-<main class="col-lg-9 col-12 order-2 order-lg-1">
+<main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
 
 <h1>Programming Languages</h1>
 
@@ -411,8 +375,6 @@
 <p>AI is designed to replace programmers. However, English is not a good programming language. So far, AI has failed to produce executable, meaningful software. We have done our best to create tutorials for learning the fundamentals of programming. If AI manages to create software without using programming languages, then in the future we will no longer use traditional programming. That is likely to happen next century.</p>
 
 <hr>
-<p><b>Read next:</b>
-<a href="/engineering/platforms/">Operating Systems</a></p>
 
 </main>
     </div>
@@ -424,8 +386,22 @@
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
 
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'engineering',
+    topicId: 'languages',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
 <script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
-<script src="/common/progress-legacy.js" defer></script>
-</body>
-</html>
+</div>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>

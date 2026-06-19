@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Purpose",
+    "link": "#purpose"
+  },
+  {
+    "title": "Quality Concerns",
+    "link": "#quality-concerns"
+  },
+  {
+    "title": "Economic Concerns",
+    "link": "#economic-concerns"
+  },
+  {
+    "title": "Principles",
+    "link": "#principles"
+  },
+  {
+    "title": "Best Practices",
+    "link": "#best-practices"
+  },
+  {"title": "Next: Hardware Fundamentals", "link": "./hdw.html"}
+]

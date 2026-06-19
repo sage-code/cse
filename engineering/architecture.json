@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Architectural Principles",
+    "link": "#principles"
+  },
+  {
+    "title": "System Quality",
+    "link": "#quality"
+  },
+  {
+    "title": "Code Quality",
+    "link": "#code",
+    "children": [
+      {
+        "title": "Code Attributes",
+        "link": "#code-attributes"
+      },
+      {
+        "title": "Making Documentation",
+        "link": "#making-documentation"
+      }
+    ]
+  },
+  {
+    "title": "Design Patterns",
+    "link": "#patterns"
+  },
+  {
+    "title": "Application Tiers",
+    "link": "#tiers"
+  },
+  {
+    "title": "Building a Website",
+    "link": "#website"
+  },
+  {
+    "title": "SOLID in Web Development",
+    "link": "#solid"
+  },
+  {
+    "title": "Setting-up a Project",
+    "link": "#project"
+  },
+  {"title": "Next: Design Patterns", "link": "./patterns.html"}
+]

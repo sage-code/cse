@@ -1,0 +1,53 @@
+[
+  {
+    "title": "Language Features",
+    "link": "#features"
+  },
+  {
+    "title": "Language Classification",
+    "link": "#classification",
+    "children": [
+      {
+        "title": "Modern Languages",
+        "link": "#modern-languages"
+      },
+      {
+        "title": "Scripting Languages",
+        "link": "#scripting-languages"
+      },
+      {
+        "title": "Traditional Compiled Languages",
+        "link": "#traditional-compiled"
+      }
+    ]
+  },
+  {
+    "title": "Historic Languages",
+    "link": "#history",
+    "children": [
+      {
+        "title": "Traditional Languages",
+        "link": "#traditional-table"
+      }
+    ]
+  },
+  {
+    "title": "Emerging Languages",
+    "link": "#emerging"
+  },
+  {
+    "title": "Future Development",
+    "link": "#future",
+    "children": [
+      {
+        "title": "Bob Martin",
+        "link": "#bob-martin"
+      },
+      {
+        "title": "Sage Opinion",
+        "link": "#sage-opinion"
+      }
+    ]
+  },
+  {"title": "Next: Operating Systems", "link": "./systems.html"}
+]

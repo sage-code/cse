@@ -35,36 +35,24 @@
   <div class="row g-0">
     <aside class="side-bar col-lg-3 col-12">
       <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
-        <h5>Study Progress</h5>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
         <div class="progress mb-3" style="height: 8px;">
           <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
         </div>
         <hr>
         <ul id="bookmark-list" class="list-unstyled">
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="principles"> 
-            <a href="#principles" class="fw-bold">Architectural principles</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="quality"> 
-            <a href="#quality" class="fw-bold">System quality</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="code"> 
-            <a href="#code" class="fw-bold">Code Quality</a>
-            <ul class="list-unstyled ms-4 mt-1">
-              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="code-attributes"> <a href="#code-attributes">Code attributes</a></li>
-              <li class="nav-item"><input type="checkbox" class="topic-check" data-target="making-documentation"> <a href="#making-documentation">Making Documentation</a></li>
-            </ul>
-          </li>
         </ul>
+
         <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
           <span style="font-size: 24px;">☰</span>
         </button>
       </div>
     </aside>
 <!-- main content -->
-    <main class="col-lg-9 col-12 order-2 order-lg-1">
+    <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
 
 <h1>Software Architecture</h1>
 
@@ -403,11 +391,11 @@ pass # end if</code></pre>
 <p>Doing automating formatting for totally new code can be beneficial for learning how your code should look like. You can apply automatic formatting in early stage of a new file but never to an older file. Later code review will be impossible. I advice you to do only manual code re-formatting.</p>
 
 
-<h2><a id="patterns"></a>Design Patterns</h2>
+<h2 id="patterns">Design Patterns</h2>
 
 <p>A design pattern is a general, reusable solution to a commonly occurring problem in software architecture within a given context. There are many recognized architectural patterns and styles. We will elaborate this topic in next article.</p>
 
-<h2><a id="tiers"></a>Application Tiers</h2>
+<h2 id="tiers">Application Tiers</h2>
 
 <p>In many software systems we use a database on a server to organize large amount of data. When we use a database server the application is centralized. A database can be used in many different architecture patterns:</p>
 <ul>
@@ -496,7 +484,7 @@ pass # end if</code></pre>
 
 <p>Serverless technology is based on <em>stateless</em> functions that run inside a <em>container.</em> This need a "warm-up" time you have to consider when you call a function. The duration of cold start depends on the runtime (language) and the function size. The architecture of serverless applications must consider these challenges.</p>
 
-<h2><a id="website"></a>Building a Website</h2>
+<h2 id="website">Building a Website</h2>
 
 <p>To build a website you can use HTML/CSS and JavaScript. HTML/CSS are not Turing complete programming languages. You can do static pages using only HTML. Fortunately the web browsers are programmable platforms. You can interact with these programs using JavaScript.</p>
 
@@ -536,7 +524,7 @@ pass # end if</code></pre>
 <li>Java and SQL are traditional back-end languages. These you should be learning in school. So we do not focus on these languages. However we will have an introductory tutorial to get you started. You can learn these languages if you are looking for a permanent position in a company but these are not good languages for a startup project. Both SQL and Java are harshly criticized and replaced by NoSQL and functional programming languages like Julia, Go and Rust.</li>
 </ol>
 
-<h2><a id="solid"></a>SOLID in Web Development</h2>
+<h2 id="solid">SOLID in Web Development</h2>
 
 <p>SOLID is a set of five principles for object-oriented design (OOD) that are intended to make software more understandable, flexible, and maintainable. The principles are:</p>
 
@@ -561,7 +549,7 @@ pass # end if</code></pre>
 <p>By following SOLID principles, developers can create web applications that are easier to understand, maintain, and extend. This can lead to shorter development cycles, fewer bugs, and happier users.</p>
 
 
-<h2><a id="project"></a>Setting-up a project</h2>
+<h2 id="project">Setting-up a project</h2>
 
 <p>Here's some things you must do to set-up a project. At the beginning you may be working alone but you will probably add some more people in a few months and it's not going so smoothly if you do not set-up the project properly. Let's say you currently work at a company on some big Web development , software &amp; programming projects. You do everything by yourself from back-end to front-end. What is wrong with this?</p>
 <p>It is not very good to do all by yourself. In computer programming we work in a team. Somebody is doing something and someone else is doing something different. The collaboration is helping team members to learn from each other. This is how we can build larger projects.</p>
@@ -605,9 +593,26 @@ pass # end if</code></pre>
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
-</div>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'engineering',
+    topicId: 'architecture',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
 <script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
-<script src="/common/progress-legacy.js" defer></script>
+</div>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
 </body>
 </html>

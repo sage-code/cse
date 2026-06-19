@@ -35,44 +35,24 @@
   <div class="row g-0">
     <aside class="side-bar col-lg-3 col-12">
       <div id="study-sidebar" class="sidebar-content shadow-sm p-3 sticky-top">
-        <h5>Study Progress</h5>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h5 class="mb-0">Learning Path</h5>
+          <a id="home-link" href="./index.html#topics" class="btn btn-sm btn-secondary" title="Back to topics">↩</a>
+        </div>
         <div class="progress mb-3" style="height: 8px;">
           <div id="main-progress" class="progress-bar bg-success" style="width: 0%;"></div>
         </div>
         <hr>
         <ul id="bookmark-list" class="list-unstyled">
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="system-design"> 
-            <a href="#system-design" class="fw-bold">System Design</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="purpose"> 
-            <a href="#purpose" class="fw-bold">Purpose</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="quality-concerns"> 
-            <a href="#quality-concerns" class="fw-bold">Quality Concerns</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="economic-concerns"> 
-            <a href="#economic-concerns" class="fw-bold">Economic concerns</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="principles"> 
-            <a href="#principles" class="fw-bold">Principles</a>
-          </li>
-          <li class="nav-item mb-2">
-            <input type="checkbox" class="topic-check" data-target="best-practices"> 
-            <a href="#best-practices" class="fw-bold">Best Practices</a>
-          </li>
         </ul>
+
         <button id="open-sidebar" class="btn btn-primary d-lg-none fixed-bottom m-3 rounded-circle shadow-lg">
           <span style="font-size: 24px;">☰</span>
         </button>
       </div>
     </aside>
 <!-- main content -->
-    <main class="col-lg-9 col-12 order-2 order-lg-1">
+    <main id="main-content" class="col-lg-9 col-12 order-2 order-lg-1 p-3">
 
 <h1 id="system-design">System Design</h1>
 
@@ -159,10 +139,8 @@
 
 
 <hr>
-<p><b>Read next:</b>
-<a href="/engineering/architecture/">Software Architecture</a></p>
 
-    </main>
+</main>
     </div>
   </div>
 </div>
@@ -171,9 +149,26 @@
 <footer class="footer copyright">
   <p class="x-small text-secondary mb-0">&copy; 2026 Sage-Code Laboratory</p>
 </footer>
-</div>
+
+<script>
+  window.TOPIC_CONFIG = {
+    labId: 'engineering',
+    topicId: 'systems',
+    homeLink: './index.html#topics',
+    labHomeLink: './index.html',
+    inlineContent: true
+  };
+</script>
 <script src="/sage.js" defer></script>
+<script src="/common/progress.js" defer></script>
+<script src="/common/lab-progress-bridge.js" defer></script>
+<script src="/common/topic-loader.js" defer></script>
 <script src="/common/sidebar.js" defer></script>
-<script src="/common/progress-legacy.js" defer></script>
+</div>
+
+<button id="open-sidebar" class="btn btn-primary d-lg-none shadow-lg" type="button">
+  <span style="font-size: 24px;">☰</span>
+</button>
+
 </body>
 </html>
