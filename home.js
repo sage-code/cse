@@ -13,9 +13,12 @@ document.addEventListener("DOMContentLoaded", function () {
         container.innerHTML = ""; // Clear initial state
 
         const text = `Master Software Engineering & Programming
-🔹 100% Free & Self-Paced: Learn on your own schedule.
-🔹 Open-Source Roadmaps: Clear paths for guided or independent study.
-🔹 Learn by Doing: Build practical experience and level up your CV.`;
+  * Learn at your own speed, completely free.
+  * Follow expert-vetted roadmaps to reach your goals faster.
+  * Gain job-ready experience by building projects that matter.
+  * No tracking, no ads, no lag, optional registration. 
+If you learn here, consider yourself one of us.
+ `;
 
         let i = 0;
 
